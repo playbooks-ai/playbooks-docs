@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbook-types/exported-vs-public-playbooks/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbook-types/builtin-playbooks/">
       
       
         <link rel="prev" href="../python-playbooks/">
       
       
-        <link rel="next" href="../../agents/">
+        <link rel="next" href="../../triggers/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Exported vs Public Playbooks - Playbooks AI</title>
+        <title>Built-in Playbooks - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exported-vs-public-playbooks" class="md-skip">
+        <a href="#built-in-playbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exported vs Public Playbooks
+              Built-in Playbooks
             
           </span>
         </div>
@@ -883,7 +883,7 @@
   
   
   <span class="md-ellipsis">
-    Exported vs Public Playbooks
+    Built-in Playbooks
     
   </span>
   
@@ -896,7 +896,7 @@
   
   
   <span class="md-ellipsis">
-    Exported vs Public Playbooks
+    Built-in Playbooks
     
   </span>
   
@@ -919,148 +919,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exported-playbooks" class="md-nav__link">
+  <a href="#available-built-in-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Exported Playbooks
+      Available Built-in Playbooks
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-exported-playbooks-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Exported Playbooks Work
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Exported Playbooks Work">
+    <nav class="md-nav" aria-label="Available Built-in Playbooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exporting-playbooks" class="md-nav__link">
+  <a href="#sendmessagetarget_agent_id-str-message-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Exporting Playbooks
+      SendMessage(target_agent_id: str, message: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#importing-exported-playbook-implementations" class="md-nav__link">
+  <a href="#saymessage-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Importing Exported Playbook Implementations
+      Say(message: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-imported-playbooks" class="md-nav__link">
+  <a href="#waitformessagesource_agent_id-str-str-none" class="md-nav__link">
     <span class="md-ellipsis">
-      Using Imported Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-public-playbooks-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Public Playbooks Work
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Public Playbooks Work">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#marking-playbooks-as-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      Marking Playbooks as Public
+      WaitForMessage(source_agent_id: str) -&gt; str | None
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-public-playbooks" class="md-nav__link">
+  <a href="#saveartifactartifact_name-str-artifact_summary-str-artifact_content-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Calling Public Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#differences-between-exported-and-public-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Differences Between Exported and Public Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-agent-ecosystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Agent Ecosystem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example: Agent Ecosystem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-databaseagent" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. DatabaseAgent
+      SaveArtifact(artifact_name: str, artifact_summary: str, artifact_content: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-authenticationagent" class="md-nav__link">
+  <a href="#loadartifactartifact_name-str" class="md-nav__link">
     <span class="md-ellipsis">
-      2. AuthenticationAgent
+      LoadArtifact(artifact_name: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-apigatewayagent" class="md-nav__link">
+  <a href="#returnvaluenone" class="md-nav__link">
     <span class="md-ellipsis">
-      3. APIGatewayAgent
+      Return(value=None)
     </span>
   </a>
   
@@ -1121,12 +1037,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../agents/" class="md-nav__link ">
+            <a href="../../triggers/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Agents
+    Triggers
     
   </span>
   
@@ -1138,7 +1054,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Agents
+            Triggers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1176,12 +1092,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../triggers/" class="md-nav__link ">
+            <a href="../../artifacts/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Triggers
+    Artifacts
     
   </span>
   
@@ -1193,7 +1109,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Triggers
+            Artifacts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1231,12 +1147,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../observability/" class="md-nav__link ">
+            <a href="../../agents/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Observability
+    Agents
     
   </span>
   
@@ -1248,7 +1164,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Observability
+            Agents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1274,6 +1190,8 @@
           
         
       
+        
+      
     
     
     
@@ -1286,27 +1204,55 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../artifacts/" class="md-nav__link ">
+            <a href="../../multi-agent-systems/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Artifacts
+    Multi-Agent Systems
     
   </span>
   
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Artifacts
+            Multi-Agent Systems
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multi-agent-systems/exported-and-public-playbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exported and Public Playbooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1341,12 +1287,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api-reference/" class="md-nav__link ">
+            <a href="../../observability/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    API Reference
+    Observability
     
   </span>
   
@@ -1358,7 +1304,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            API Reference
+            Observability
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1398,148 +1344,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exported-playbooks" class="md-nav__link">
+  <a href="#available-built-in-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Exported Playbooks
+      Available Built-in Playbooks
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Public Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-exported-playbooks-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Exported Playbooks Work
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Exported Playbooks Work">
+    <nav class="md-nav" aria-label="Available Built-in Playbooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exporting-playbooks" class="md-nav__link">
+  <a href="#sendmessagetarget_agent_id-str-message-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Exporting Playbooks
+      SendMessage(target_agent_id: str, message: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#importing-exported-playbook-implementations" class="md-nav__link">
+  <a href="#saymessage-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Importing Exported Playbook Implementations
+      Say(message: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-imported-playbooks" class="md-nav__link">
+  <a href="#waitformessagesource_agent_id-str-str-none" class="md-nav__link">
     <span class="md-ellipsis">
-      Using Imported Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-public-playbooks-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Public Playbooks Work
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Public Playbooks Work">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#marking-playbooks-as-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      Marking Playbooks as Public
+      WaitForMessage(source_agent_id: str) -&gt; str | None
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-public-playbooks" class="md-nav__link">
+  <a href="#saveartifactartifact_name-str-artifact_summary-str-artifact_content-str" class="md-nav__link">
     <span class="md-ellipsis">
-      Calling Public Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#differences-between-exported-and-public-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Differences Between Exported and Public Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-agent-ecosystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Agent Ecosystem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example: Agent Ecosystem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-databaseagent" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. DatabaseAgent
+      SaveArtifact(artifact_name: str, artifact_summary: str, artifact_content: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-authenticationagent" class="md-nav__link">
+  <a href="#loadartifactartifact_name-str" class="md-nav__link">
     <span class="md-ellipsis">
-      2. AuthenticationAgent
+      LoadArtifact(artifact_name: str)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-apigatewayagent" class="md-nav__link">
+  <a href="#returnvaluenone" class="md-nav__link">
     <span class="md-ellipsis">
-      3. APIGatewayAgent
+      Return(value=None)
     </span>
   </a>
   
@@ -1578,176 +1440,159 @@
   
 
 
-<h1 id="exported-vs-public-playbooks">Exported vs Public Playbooks<a class="headerlink" href="#exported-vs-public-playbooks" title="Permanent link">&para;</a></h1>
-<h2 id="exported-playbooks">Exported Playbooks<a class="headerlink" href="#exported-playbooks" title="Permanent link">&para;</a></h2>
-<p>Exported playbooks are a powerful feature of Playbooks AI that allows an agent to execute playbooks defined by another agent within its own execution context as if they were implemented locally within the importing agent.</p>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Playbooks AI's exported playbooks capability is significantly more powerful than MCP's prompts because it enables true capability sharing and execution between agents, not just structured guidance. While MCP prompts are valuable for standardizing LLM interactions, Playbooks AI enables building extensible agent ecosystems with genuine code reuse and modular architectures.</p>
-</blockquote>
-<h2 id="public-playbooks">Public Playbooks<a class="headerlink" href="#public-playbooks" title="Permanent link">&para;</a></h2>
-<p>When an agent marks a playbook as public, another agent can call that playbook remotely.</p>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Public playbooks are similar to MCP's tools. When a client calls a tool, it is executed on the MCP server. Similarly, when an agent calls a public playbook on another agent, it is executed on the called agent's server.</p>
-</blockquote>
-<h2 id="how-exported-playbooks-work">How Exported Playbooks Work<a class="headerlink" href="#how-exported-playbooks-work" title="Permanent link">&para;</a></h2>
-<p>When an agent exports a playbook, another agent can import implementation of that playbook and then execute that playbook within its execution context.</p>
-<h3 id="exporting-playbooks">Exporting Playbooks<a class="headerlink" href="#exporting-playbooks" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> This feature under active development and not available yet.</p>
-</blockquote>
-<p>Exported playbooks are marked using the <code>export</code> keyword:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># AccountManagementAgent</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sb">```python</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nd">@playbook</span><span class="p">(</span><span class="n">export</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">CloseAccount</span><span class="p">(</span><span class="err">$</span><span class="n">user_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Close an account for a user.&quot;&quot;&quot;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="c1"># ...</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sb">```</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gu">## export: ProvisionAccount($user_id, $service_tier)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="gu">### Steps</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>...
+<h1 id="built-in-playbooks">Built-in Playbooks<a class="headerlink" href="#built-in-playbooks" title="Permanent link">&para;</a></h1>
+<p>Playbooks AI provides a set of built-in playbooks that are available to every agent without requiring explicit import or definition. These playbooks handle common operations like communication, artifact management, and program control flow.</p>
+<h2 id="available-built-in-playbooks">Available Built-in Playbooks<a class="headerlink" href="#available-built-in-playbooks" title="Permanent link">&para;</a></h2>
+<h3 id="sendmessagetarget_agent_id-str-message-str"><code>SendMessage(target_agent_id: str, message: str)</code><a class="headerlink" href="#sendmessagetarget_agent_id-str-message-str" title="Permanent link">&para;</a></h3>
+<p>Sends a message to another agent or the user.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">target_agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    Send a message to another agent.</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">        target_agent_id (str): The ID of the agent to send the message to.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">                               Use &quot;human&quot; to send a message to the user.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">        message (str): The content of the message.</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    Returns:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">        None</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>In this example, the <code>AccountManagementAgent</code> exports the <code>CloseAccount</code> and <code>ProvisionAccount</code> playbooks.</p>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Implementations of both markdown and Python playbooks can be exported.</p>
-</blockquote>
-<h3 id="importing-exported-playbook-implementations">Importing Exported Playbook Implementations<a class="headerlink" href="#importing-exported-playbook-implementations" title="Permanent link">&para;</a></h3>
-<p>To import a playbook's implementation from another remote agent, register that remote agent and then use the <code>import</code> statement:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># AccountManagementAgent(url=&quot;https://acme.com/account-management&quot;)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gh"># ServiceAgent</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>import CloseAccount, ProvisionAccount from AccountManagementAgent
+<p><strong>Example usage:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">### Steps</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">-</span><span class="w"> </span>Send message to SupportAgent &quot;Please assist with this customer inquiry&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">-</span><span class="w"> </span>Tell the user their request has been forwarded to a specialist
+</span></code></pre></div></p>
+<h3 id="saymessage-str"><code>Say(message: str)</code><a class="headerlink" href="#saymessage-str" title="Permanent link">&para;</a></h3>
+<p>A convenience playbook that sends a message to the human user.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">Say</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    Send a message to the human user.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">    This is a convenience wrapper around SendMessage(&quot;human&quot;, message).</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="sd">    Args:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="sd">        message (str): The message to send to the user.</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="sd">    Returns:</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="sd">        None</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">await</span> <span class="n">SendMessage</span><span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This imports implementations of the <code>CloseAccount</code> Python playbook and the <code>ProvisionAccount</code> markdown playbook from the <code>AccountManagementAgent</code> agent.</p>
-<h3 id="using-imported-playbooks">Using Imported Playbooks<a class="headerlink" href="#using-imported-playbooks" title="Permanent link">&para;</a></h3>
-<p>Once imported, you can use the playbook just like any other playbook defined within your agent:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## CreateAccount</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gu">### Steps</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">-</span><span class="w"> </span>Validate user information
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">-</span><span class="w"> </span>Create user record in database
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">-</span><span class="w"> </span>ProvisionAccount($user_id, $service_tier)
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">-</span><span class="w"> </span>Send welcome email to user
+<p><strong>Example usage:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gu">### Steps</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">-</span><span class="w"> </span>Say hello to the user
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">-</span><span class="w"> </span>Say(&quot;Here&#39;s your ticket link: https://support.playbooks.ai/tickets/{$ticket_id}&quot;)
+</span></code></pre></div></p>
+<h3 id="waitformessagesource_agent_id-str-str-none"><code>WaitForMessage(source_agent_id: str) -&gt; str | None</code><a class="headerlink" href="#waitformessagesource_agent_id-str-str-none" title="Permanent link">&para;</a></h3>
+<p>Waits for a message from a specific agent or user.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">WaitForMessage</span><span class="p">(</span><span class="n">source_agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="sd">    Wait for a message from a specific agent.</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="sd">    Args:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="sd">        source_agent_id (str): The ID of the agent to wait for a message from.</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="sd">                               Use &quot;human&quot; to wait for a user message.</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="sd">    Returns:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="sd">        str or None: The content of the received message, or None if the wait timed out.</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>The imported <code>ProvisionAccount</code> playbook is called as if it were a local playbook.</p>
-<h2 id="how-public-playbooks-work">How Public Playbooks Work<a class="headerlink" href="#how-public-playbooks-work" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> This feature under active development and not available yet.</p>
-</blockquote>
-<p>When agent A marks a playbook as public, another agent B can <strong>call that playbook remotely on a running instance of agent A</strong>.</p>
-<h3 id="marking-playbooks-as-public">Marking Playbooks as Public<a class="headerlink" href="#marking-playbooks-as-public" title="Permanent link">&para;</a></h3>
-<p>To mark a playbook as public, use the <code>public</code> keyword:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># AuthenticationAgent
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>This agent handles user authentication.
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>## public: VerifyCredentials($username, $password)
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>### Steps
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>- Check credentials against secure store
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>- Return authentication result and user details if valid
+<p><strong>Example:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gu">### Steps</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">-</span><span class="w"> </span>SendMessage(&quot;SupportAgent&quot;, &quot;What is the return policy for Canada?&quot;)
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">-</span><span class="w"> </span>$return_policy = WaitForMessage(&quot;SupportAgent&quot;)
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">-</span><span class="w"> </span>...
+</span></code></pre></div></p>
+<h3 id="saveartifactartifact_name-str-artifact_summary-str-artifact_content-str"><code>SaveArtifact(artifact_name: str, artifact_summary: str, artifact_content: str)</code><a class="headerlink" href="#saveartifactartifact_name-str-artifact_summary-str-artifact_content-str" title="Permanent link">&para;</a></h3>
+<p>Saves data as a named artifact for later retrieval.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">SaveArtifact</span><span class="p">(</span><span class="n">artifact_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">artifact_summary</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">artifact_content</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    Save data as a named artifact.</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">    Args:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">        artifact_name (str): The name to give the artifact, typically with an extension</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="sd">                             (e.g., &quot;report.md&quot;, &quot;data.json&quot;).</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">        artifact_summary (str): A brief description of the artifact.</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">        artifact_content (str): The actual content to store in the artifact.</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="sd">    Returns:</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="sd">        None</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>Both markdown and Python playbooks can be marked as public.</p>
-<h3 id="calling-public-playbooks">Calling Public Playbooks<a class="headerlink" href="#calling-public-playbooks" title="Permanent link">&para;</a></h3>
-<p>To call a public playbook, first register the remote agent and then call the playbook as a method on that agent:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># AuthenticationAgent(url=&quot;https://acme.com/authentication&quot;)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a># APIGatewayAgent
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>## HandleRequest
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>### Steps
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>- $auth_result = AuthenticationAgent.VerifyCredentials($request.auth.username, $request.auth.password)
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>- ...
+<p><strong>Example:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gu">### Steps</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">-</span><span class="w"> </span>Generate a detailed analysis report
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">-</span><span class="w"> </span>SaveArtifact(&quot;quarterly_report.md&quot;, &quot;Q3 2023 Sales Analysis&quot;, generated report)
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">-</span><span class="w"> </span>Tell the user the report has been saved at Artifact[&quot;quarterly_report.md&quot;]
+</span></code></pre></div></p>
+<h3 id="loadartifactartifact_name-str"><code>LoadArtifact(artifact_name: str)</code><a class="headerlink" href="#loadartifactartifact_name-str" title="Permanent link">&para;</a></h3>
+<p>Loads a previously saved artifact by name.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">LoadArtifact</span><span class="p">(</span><span class="n">artifact_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">    Load a previously saved artifact by name.</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="sd">    Args:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="sd">        artifact_name (str): The name of the artifact to load.</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="sd">    Returns:</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="sd">        Artifact: An object with properties:</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="sd">            - name: The artifact&#39;s name</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="sd">            - description: The artifact&#39;s summary</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="sd">            - content: The artifact&#39;s content</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="sd">    Raises:</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="sd">        KeyError: If the artifact doesn&#39;t exist</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>Here, the <code>APIGatewayAgent</code> directly calls the <code>VerifyCredentials</code> playbook on the <code>AuthenticationAgent</code> instance running at <code>https://acme.com/authentication</code>. The playbook is executed on the remote agent's server and the result is returned to the calling agent.</p>
-<h2 id="differences-between-exported-and-public-playbooks">Differences Between Exported and Public Playbooks<a class="headerlink" href="#differences-between-exported-and-public-playbooks" title="Permanent link">&para;</a></h2>
-<p>Exported playbooks differ from public playbooks in several important ways:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Exported Playbooks</th>
-<th>Public Playbooks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Example</strong></td>
-<td><code>import CloseAccount from AccountManagementAgent</code> and then <code>CloseAccount($user_id)</code></td>
-<td><code># PaymentProcessingAgent("https://acme.com/ppa")</code> and then <code>PaymentProcessingAgent.ProcessPayment($amount, $payment_method)</code></td>
-</tr>
-<tr>
-<td><strong>Execution Context</strong></td>
-<td>Local execution in importing agent's context</td>
-<td>Remote procedure call on the remote agent instance</td>
-</tr>
-<tr>
-<td><strong>State Access</strong></td>
-<td>Can access local agent's state</td>
-<td>Cannot access local agent's state</td>
-</tr>
-</tbody>
-</table>
-<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><img alt="💥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a5.svg" title=":boom:" /> Be careful! Importing playbooks raise several security considerations.</p>
-</blockquote>
-<ol>
-<li>
-<p><strong>Code Injection</strong>: An agent that imports playbooks from another agent must trust that agent. Importing playbook implementations from untrusted agents and executing them can lead to security vulnerabilities like code injection attacks.</p>
-</li>
-<li>
-<p><strong>Version Control</strong>: Changes to exported playbooks may affect importing agents, requiring careful version management.</p>
-</li>
-</ol>
-<h2 id="example-agent-ecosystem">Example: Agent Ecosystem<a class="headerlink" href="#example-agent-ecosystem" title="Permanent link">&para;</a></h2>
-<p>Let's say that we have an ecosystem of three agents.</p>
-<h3 id="1-databaseagent">1. DatabaseAgent<a class="headerlink" href="#1-databaseagent" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gh"># DatabaseAgent</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>This agent provides database access capabilities.
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gu">## export: FindTable($query, $database)</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="gu">### Steps</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">-</span><span class="w"> </span>List all tables in the $database
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">-</span><span class="w"> </span>Find the table that is most likely to contain data to answer the $query
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">-</span><span class="w"> </span>Return the table name
+<p><strong>Example:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gu">### Steps</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">-</span><span class="w"> </span>LoadArtifact(&quot;Q1_report.md&quot;)
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">-</span><span class="w"> </span>LoadArtifact(&quot;Q2_report.md&quot;)
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">-</span><span class="w"> </span>LoadArtifact(&quot;Q3_report.md&quot;)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">-</span><span class="w"> </span>LoadArtifact(&quot;Q4_report.md&quot;)
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">-</span><span class="w"> </span>Analyze the content of the quarterly reports and generate annual report
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">-</span><span class="w"> </span>SaveArtifact(&quot;annual_report.md&quot;, &quot;Annual Report&quot;, generated annual report)
+</span></code></pre></div></p>
+<h3 id="returnvaluenone"><code>Return(value=None)</code><a class="headerlink" href="#returnvaluenone" title="Permanent link">&para;</a></h3>
+<p>Returns a value from the current playbook and ends its execution.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nd">@playbook</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">Return</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="sd">    Return a value from the current playbook and end execution.</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="sd">    Args:</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="sd">        value: The value to return (optional).</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="sd">    Returns:</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="sd">        The provided value, or None if no value was provided.</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<p>Let's say that <code>DatabaseAgent</code> is available at the URL <code>https://acme.com/database.agent</code>. It exports the <code>FindTable</code> playbook. It is a generic procedure for finding a database table.</p>
-<h3 id="2-authenticationagent">2. AuthenticationAgent<a class="headerlink" href="#2-authenticationagent" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gh"># AuthenticationAgent</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>This agent handles user authentication.
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gu">## public: VerifyCredentials($username, $password)</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="gu">### Steps</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">-</span><span class="w"> </span>Check credentials against secure store
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">-</span><span class="w"> </span>Return authentication result and user details if valid
-</span></code></pre></div>
-<p>Let's say that an instance of the <code>AuthenticationAgent</code> is running at the URL <code>https://acme.com/authentication.agent</code>. The public <code>VerifyCredentials</code> playbook requires access to the secure store within ACME Corp's infrastructure.</p>
-<h3 id="3-apigatewayagent">3. APIGatewayAgent<a class="headerlink" href="#3-apigatewayagent" title="Permanent link">&para;</a></h3>
-<p>APIGatewayAgent uses the above two agents. It first registers those two agents, specifying their URLs. Then it imports the <code>FindTable</code> playbook from the <code>DatabaseAgent</code>. It then remotely calls the <code>VerifyCredentials</code> playbook on the <code>AuthenticationAgent</code> instance. Finally, it locally executes the <code>FindTable</code> playbook.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># DatabaseAgent(url=&quot;https://acme.com/database.agent&quot;)
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a># AuthenticationAgent(url=&quot;https://acme.com/authentication.agent&quot;)
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a># APIGatewayAgent
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>import FindTable from DatabaseAgent
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>## HandleRequest
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>### Triggers
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>- When an API request is received
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>### Steps
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>- $auth_result = AuthenticationAgent.VerifyCredentials($request.auth.username, $request.auth.password)
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>- If $auth_result.success is true
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>  - $table_name = FindTable($request.query, $database)
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>  - Return $table_name
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>- Otherwise
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>  - Return authentication error
-</span></code></pre></div>
+<p><strong>Example:</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gu">## GetDiscount($membership_level)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="gu">### Steps</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">-</span><span class="w"> </span>If $membership_level is &quot;premium&quot;
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return(0.15)  # 15% discount
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">-</span><span class="w"> </span>If $membership_level is &quot;standard&quot;
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return(0.05)  # 5% discount
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">-</span><span class="w"> </span>Return(0)  # No discount
+</span></code></pre></div></p>
 <h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../tutorials/multi-agent-programming/">Multi-Agent Programming</a> - More about setting up and using multiple agents</li>
-<li><a href="../agents/agent-communication.md">Agent Communication</a> - How agents can communicate beyond playbook calls</li>
-<li><a href="../python-playbooks/">Python Playbooks</a> - How to create playbooks using Python</li>
-<li><a href="../markdown-playbooks/">Markdown Playbooks</a> - Standard playbook structure</li>
+<li><a href="../markdown-playbooks/">Markdown Playbooks</a> - Using built-in playbooks in markdown</li>
+<li><a href="../python-playbooks/">Python Playbooks</a> - Using built-in playbooks in Python</li>
+<li><a href="../../tutorials/working-with-artifacts/">Working with Artifacts</a> - More on artifacts</li>
+<li><a href="../../multi-agent-systems/">Multi-Agent Systems</a> - Communication between agents</li>
 </ul>
 
 
@@ -1803,13 +1648,13 @@
         
         
           
-          <a href="../../agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Agents">
+          <a href="../../triggers/" class="md-footer__link md-footer__link--next" aria-label="Next: Triggers">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Agents
+                Triggers
               </div>
             </div>
             <div class="md-footer__button md-icon">

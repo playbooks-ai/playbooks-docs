@@ -965,12 +965,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbook-types/exported-vs-public-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/builtin-playbooks/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Exported vs Public Playbooks
+    Built-in Playbooks
     
   </span>
   
@@ -1013,12 +1013,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../agents/" class="md-nav__link ">
+            <a href="../../triggers/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Agents
+    Triggers
     
   </span>
   
@@ -1030,7 +1030,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Agents
+            Triggers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1068,12 +1068,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../triggers/" class="md-nav__link ">
+            <a href="../../artifacts/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Triggers
+    Artifacts
     
   </span>
   
@@ -1085,7 +1085,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Triggers
+            Artifacts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1123,12 +1123,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../observability/" class="md-nav__link ">
+            <a href="../../agents/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Observability
+    Agents
     
   </span>
   
@@ -1140,7 +1140,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Observability
+            Agents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1166,6 +1166,8 @@
           
         
       
+        
+      
     
     
     
@@ -1178,27 +1180,55 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../artifacts/" class="md-nav__link ">
+            <a href="../../multi-agent-systems/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Artifacts
+    Multi-Agent Systems
     
   </span>
   
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Artifacts
+            Multi-Agent Systems
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multi-agent-systems/exported-and-public-playbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exported and Public Playbooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1233,12 +1263,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api-reference/" class="md-nav__link ">
+            <a href="../../observability/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    API Reference
+    Observability
     
   </span>
   
@@ -1250,7 +1280,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            API Reference
+            Observability
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1403,11 +1433,7 @@
 </ul>
 <h2 id="step-3-run-your-playbooks-program">Step 3: Run Your Playbooks program<a class="headerlink" href="#step-3-run-your-playbooks-program" title="Permanent link">&para;</a></h2>
 <p>Now, run your program:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>src/playbooks/applications/agent_chat.py<span class="w"> </span>hello.md<span class="w"> </span>--verbose
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># or</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>playbooks<span class="w"> </span>hello.md<span class="w"> </span>--application<span class="w"> </span>AgentChat<span class="w"> </span>--verbose
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>playbooks.applications.agent_chat<span class="w"> </span>hello.md<span class="w"> </span>--verbose
 </span></code></pre></div>
 <p>You should see output similar to:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Loading playbooks from: [&#39;hello.md&#39;]
@@ -1441,9 +1467,9 @@
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now that you've run your first playbook, you can:</p>
 <ul>
-<li>Go through the <a href="/tutorials">tutorials</a></li>
+<li>Go through the <a href="../../tutorials/">tutorials</a></li>
 <li>Learn about <a href="../../triggers/">Triggers</a> for more advanced event-based programming</li>
-<li>Learn how to create <a href="/agents/multi-agents.md">multi-agent systems</a></li>
+<li>Learn how to create <a href="../../multi-agent-systems/">multi-agent systems</a></li>
 </ul>
 
 

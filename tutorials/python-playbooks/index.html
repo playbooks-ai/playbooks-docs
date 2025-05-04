@@ -1025,12 +1025,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbook-types/exported-vs-public-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/builtin-playbooks/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Exported vs Public Playbooks
+    Built-in Playbooks
     
   </span>
   
@@ -1073,12 +1073,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../agents/" class="md-nav__link ">
+            <a href="../../triggers/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Agents
+    Triggers
     
   </span>
   
@@ -1090,7 +1090,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Agents
+            Triggers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1128,12 +1128,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../triggers/" class="md-nav__link ">
+            <a href="../../artifacts/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Triggers
+    Artifacts
     
   </span>
   
@@ -1145,7 +1145,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Triggers
+            Artifacts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1183,12 +1183,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../observability/" class="md-nav__link ">
+            <a href="../../agents/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Observability
+    Agents
     
   </span>
   
@@ -1200,7 +1200,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Observability
+            Agents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1226,6 +1226,8 @@
           
         
       
+        
+      
     
     
     
@@ -1238,27 +1240,55 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../artifacts/" class="md-nav__link ">
+            <a href="../../multi-agent-systems/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Artifacts
+    Multi-Agent Systems
     
   </span>
   
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Artifacts
+            Multi-Agent Systems
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multi-agent-systems/exported-and-public-playbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exported and Public Playbooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1293,12 +1323,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api-reference/" class="md-nav__link ">
+            <a href="../../observability/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    API Reference
+    Observability
     
   </span>
   
@@ -1310,7 +1340,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            API Reference
+            Observability
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1564,7 +1594,7 @@
 <p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Triggers are evaluated after each line in markdown playbook is executed. They are NOT evaluated during a Python playbook's execution.</p>
 </blockquote>
 <h2 id="public-python-playbooks">Public Python Playbooks<a class="headerlink" href="#public-python-playbooks" title="Permanent link">&para;</a></h2>
-<p>To make a Python playbook available to other <a href="/agents">agents</a>, you can use the <code>public</code> parameter:</p>
+<p>To make a Python playbook available to other <a href="../../agents/">agents</a>, you can use the <code>public</code> parameter:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@playbook</span><span class="p">(</span><span class="n">public</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">calculate_price</span><span class="p">(</span><span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">return</span> <span class="n">quantity</span> <span class="o">*</span> <span class="n">unit_price</span>
@@ -1626,7 +1656,7 @@
 </span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>- Process all countries
 </span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>- End program
 </span></code></pre></div>
-<p>Notice that the <code>Main</code> playbook now calls the <code>process_countries</code> Python playbook with the list of countries. The <code>process_countries</code> playbook then calls the <code>GetCountryFact</code> markdown playbook for each country and a <a href="/builtin-playbooks">built-in</a> <code>Say</code> playbook to tell the user about each country.</p>
+<p>Notice that the <code>Main</code> playbook now calls the <code>process_countries</code> Python playbook with the list of countries. The <code>process_countries</code> playbook then calls the <code>GetCountryFact</code> markdown playbook for each country and a <a href="../../playbook-types/builtin-playbooks/">built-in</a> <code>Say</code> playbook to tell the user about each country.</p>
 <blockquote>
 <p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> You can call markdown playbooks from Python playbooks and vice versa.</p>
 </blockquote>
@@ -1680,7 +1710,7 @@
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>```
 </span></code></pre></div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<p>Now that you know how to create Python playbooks, you're ready to learn about <a href="/tutorials/triggers-advanced">Advanced Triggers</a> to see how to use more complex triggers to control the execution of your playbooks.</p>
+<p>Now that you know how to create Python playbooks, you're ready to learn about <a href="../triggers-advanced/">Advanced Triggers</a> to see how to use more complex triggers to control the execution of your playbooks.</p>
 
 
 
