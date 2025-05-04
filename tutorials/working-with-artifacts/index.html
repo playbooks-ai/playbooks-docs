@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/tutorials/working-with-artifacts/">
       
       
+        <link rel="prev" href="../multi-agent-programming/">
       
-        <link rel="next" href="get-started/">
+      
+        <link rel="next" href="../../playbooks-language/">
       
       
-      <link rel="icon" href="assets/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Playbooks AI</title>
+        <title>Working with Artifacts - Playbooks AI</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/custom.css">
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-playbooks-ai" class="md-skip">
+        <a href="#working-with-artifacts" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Playbooks AI" class="md-header__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+    <a href="../.." title="Playbooks AI" class="md-header__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Working with Artifacts
             
           </span>
         </div>
@@ -219,8 +221,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -230,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Playbooks AI" class="md-nav__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+    <a href="../.." title="Playbooks AI" class="md-nav__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -257,30 +257,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -291,42 +271,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-playbooks-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is Playbooks AI?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learn-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learn more
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -360,7 +304,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="get-started/" class="md-nav__link ">
+            <a href="../../get-started/" class="md-nav__link ">
               
   
   
@@ -395,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="get-started/installation/" class="md-nav__link">
+      <a href="../../get-started/installation/" class="md-nav__link">
         
   
   
@@ -418,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="get-started/quickstart/" class="md-nav__link">
+      <a href="../../get-started/quickstart/" class="md-nav__link">
         
   
   
@@ -445,6 +389,8 @@
       
   
   
+    
+  
   
   
     
@@ -474,15 +420,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="tutorials/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -501,7 +447,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -517,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/anatomy-of-a-playbook/" class="md-nav__link">
+      <a href="../anatomy-of-a-playbook/" class="md-nav__link">
         
   
   
@@ -540,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/adding-triggers/" class="md-nav__link">
+      <a href="../adding-triggers/" class="md-nav__link">
         
   
   
@@ -563,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/user-interaction/" class="md-nav__link">
+      <a href="../user-interaction/" class="md-nav__link">
         
   
   
@@ -586,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/calling-playbooks/" class="md-nav__link">
+      <a href="../calling-playbooks/" class="md-nav__link">
         
   
   
@@ -609,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/python-playbooks/" class="md-nav__link">
+      <a href="../python-playbooks/" class="md-nav__link">
         
   
   
@@ -632,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/triggers-advanced/" class="md-nav__link">
+      <a href="../triggers-advanced/" class="md-nav__link">
         
   
   
@@ -655,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/multi-agent-programming/" class="md-nav__link">
+      <a href="../multi-agent-programming/" class="md-nav__link">
         
   
   
@@ -675,10 +621,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="tutorials/working-with-artifacts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Working with Artifacts
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -689,6 +657,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Artifacts?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-saving-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating and Saving Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact References
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-is-an-artifact-included-in-an-llm-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      When is an artifact included in an LLM call?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When is an artifact included in an LLM call?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-new-artifact-is-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      When a new artifact is created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-an-artifact-is-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      When an artifact is loaded
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-artifacts-in-python-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Artifacts in Python Playbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-artifacts-between-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing Artifacts Between Agents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-working-with-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Working with Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -728,7 +848,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="playbooks-language/" class="md-nav__link ">
+            <a href="../../playbooks-language/" class="md-nav__link ">
               
   
   
@@ -763,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbooks-language/intermediate-representation/" class="md-nav__link">
+      <a href="../../playbooks-language/intermediate-representation/" class="md-nav__link">
         
   
   
@@ -819,7 +939,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="playbook-types/" class="md-nav__link ">
+            <a href="../../playbook-types/" class="md-nav__link ">
               
   
   
@@ -854,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbook-types/markdown-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/markdown-playbooks/" class="md-nav__link">
         
   
   
@@ -877,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbook-types/react-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/react-playbooks/" class="md-nav__link">
         
   
   
@@ -900,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbook-types/python-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/python-playbooks/" class="md-nav__link">
         
   
   
@@ -923,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbook-types/exported-vs-public-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/exported-vs-public-playbooks/" class="md-nav__link">
         
   
   
@@ -971,7 +1091,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="agents/" class="md-nav__link ">
+            <a href="../../agents/" class="md-nav__link ">
               
   
   
@@ -1026,7 +1146,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="triggers/" class="md-nav__link ">
+            <a href="../../triggers/" class="md-nav__link ">
               
   
   
@@ -1081,7 +1201,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="observability/" class="md-nav__link ">
+            <a href="../../observability/" class="md-nav__link ">
               
   
   
@@ -1136,7 +1256,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="artifacts/" class="md-nav__link ">
+            <a href="../../artifacts/" class="md-nav__link ">
               
   
   
@@ -1191,7 +1311,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="api-reference/" class="md-nav__link ">
+            <a href="../../api-reference/" class="md-nav__link ">
               
   
   
@@ -1229,9 +1349,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1239,6 +1357,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1248,18 +1368,132 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-playbooks-ai" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
-      What is Playbooks AI?
+      Objective
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#learn-more" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Learn more
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Artifacts?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-saving-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating and Saving Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact References
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-is-an-artifact-included-in-an-llm-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      When is an artifact included in an LLM call?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When is an artifact included in an LLM call?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-new-artifact-is-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      When a new artifact is created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-an-artifact-is-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      When an artifact is loaded
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-artifacts-in-python-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Artifacts in Python Playbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-artifacts-between-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing Artifacts Between Agents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-working-with-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Working with Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
     </span>
   </a>
   
@@ -1278,88 +1512,119 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<div style="text-align: center;">
-  <div class="centered-logo-text-group">
-    <h1>Playbooks AI</h1>
-  </div>
-</div>
-
-<h2 id="what-is-playbooks-ai">What is Playbooks AI?<a class="headerlink" href="#what-is-playbooks-ai" title="Permanent link">&para;</a></h2>
-<p>Playbooks AI is a powerful framework for <strong>building AI agents with Natural Language Programming</strong>. 
-It introduces a new "english-like", semantically interpreted programming language with reliable, 
-auditable execution. Playbooks can be written as step-by-step instructions, as agentic prompts, or as Python functions, enabling 
-seamless composition of complex workflows across natural language and Python.</p>
-<div class="install-command-container">
-  <p style="text-align:center;">
-    Get started:
-    <br/>
-    <code>pip install playbooks</code>
-  </p>
-</div>
-
-<p style="text-align:center;">
-  <a href="get-started/quickstart/" class="md-button" style="margin:3px">Quickstart</a>
-  <a href="tutorials/" class="md-button" style="margin:3px">Tutorials</a>
-  <a href="api-reference/" class="md-button" style="margin:3px">API Reference</a>
-  <a href="playbooks-language/" class="md-button" style="margin:3px">Playbooks Language</a>
-</p>
-
-<hr />
-<h2 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
+<h1 id="working-with-artifacts">Working with Artifacts<a class="headerlink" href="#working-with-artifacts" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, you'll learn how to create, store, and manage data using artifacts in Playbooks AI.</p>
+<blockquote>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Support for artifacts is under active development and is subject to change.</p>
+</blockquote>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<p>By the end of this tutorial, you'll understand:</p>
 <ul>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.56 18H3.44C2.65 18 2 17.37 2 16.59V7.41C2 6.63 2.65 6 3.44 6h17.12c.79 0 1.44.63 1.44 1.41v9.18c0 .78-.65 1.41-1.44 1.41M6.81 15.19v-3.66l1.92 2.35 1.92-2.35v3.66h1.93V8.81h-1.93l-1.92 2.35-1.92-2.35H4.89v6.38zM19.69 12h-1.92V8.81h-1.92V12h-1.93l2.89 3.28z"/></svg></span> <strong>Natural Language Programming</strong></p>
-<hr />
-<p>Create AI agents using natural language, with Markdown playbooks for step-by-step instructions,
-suitable for prescribed business processes. Mix prescribed workflows with dynamic planning.</p>
-<p><a href="playbooks-language/"><strong>Learn about Playbooks Language</strong></a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3v2h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2v-2H8v-5a2 2 0 0 0-2-2 2 2 0 0 0 2-2V5h2V3m6 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3z"/></svg></span> <strong>Python Integration</strong></p>
-<hr />
-<p>Turn any async Python function into a playbook with the <code>@playbook</code> decorator. Call other playbooks
-(including natural language playbooks) from Python and vice versa.</p>
-<p><a href="python-playbooks/index.md"><strong>Explore Python Playbooks</strong></a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg></span> <strong>Multi-Agent Architecture</strong></p>
-<hr />
-<p>Natively support multi-agent systems with agent-to-agent calls and messaging. Enable natural language 
-message passing and multi-turn dialogue between agents with direct playbook invocation.</p>
-<p><a href="agents/multi-agents.md"><strong>Discover Multi-Agent Systems</strong></a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2m9.75-17.81-1.42 1.42A8.98 8.98 0 0 1 21 11h2c0-2.93-1.16-5.75-3.25-7.81M1 11h2c0-2.4.96-4.7 2.67-6.39L4.25 3.19A10.96 10.96 0 0 0 1 11"/></svg></span> <strong>Event-Driven Programming</strong></p>
-<hr />
-<p>Use triggers for declarative event-driven programming. Playbooks are dynamically invoked when specified 
-conditions are met, including temporal, state-based, execution flow, user interaction, and external events.</p>
-<p><a href="triggers/"><strong>Explore Triggers</strong></a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 22v-2h3v-3h2v3.5c0 .39-.16.74-.46 1.04s-.65.46-1.04.46zM7 22H3.5c-.39 0-.74-.16-1.04-.46S2 20.89 2 20.5V17h2v3h3zM17 2h3.5c.39 0 .74.16 1.04.46s.46.65.46 1.04V7h-2V4h-3zM7 2v2H4v3H2V3.5c0-.39.16-.74.46-1.04S3.11 2 3.5 2zm3.5 4C13 6 15 8 15 10.5c0 .88-.25 1.7-.69 2.4l3.26 3.26-1.41 1.41-3.26-3.26c-.7.44-1.52.69-2.4.69C8 15 6 13 6 10.5S8 6 10.5 6m0 2a2.5 2.5 0 0 0 0 5 2.5 2.5 0 0 0 0-5"/></svg></span> <strong>Execution Observability</strong></p>
-<hr />
-<p>Playbooks framework tracks call stack and variables. Step-by-step execution is verified using static 
-analysis of the program, with fully inspectable LLM program execution.</p>
-<p><a href="observability/"><strong>Learn about Observability</strong></a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg></span> <strong>Artifacts and State Management</strong></p>
-<hr />
-<p>Store and retrieve data with artifacts. Manage state across playbook executions and between agents.</p>
-<p><a href="artifacts/"><strong>Manage Artifacts</strong></a></p>
-</li>
+<li>What artifacts are and why they're useful</li>
+<li>How to create and save artifacts</li>
+<li>How to load and use artifacts in playbooks</li>
+<li>How to share artifacts between agents</li>
 </ul>
-</div>
-<div class="footer"></div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Completion of <a href="../python-playbooks/">Python Playbooks</a></li>
+<li>Understanding of variables and data manipulation</li>
+</ul>
+<h2 id="what-are-artifacts">What Are Artifacts?<a class="headerlink" href="#what-are-artifacts" title="Permanent link">&para;</a></h2>
+<p>Artifacts in Playbooks AI are similar to variables, but their values are <strong>not</strong> included in LLM calls by default. This makes them suitable for storing large data objects. Artifacts need to be explicitly loaded for their content to be included in LLM calls.</p>
+<p>For now, artifacts support text content only. Support for other types of content, such as images, will be added in the future.</p>
+<p>Artifacts are useful for:</p>
+<ul>
+<li>Storing data that for use within a given session, such as results of a web search</li>
+<li>Sharing large amounts of data between playbooks or agents</li>
+<li>Storing created reports and documents</li>
+</ul>
+<blockquote>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Use artifacts to keep LLM token usage low.</p>
+</blockquote>
+<h2 id="creating-and-saving-artifacts">Creating and Saving Artifacts<a class="headerlink" href="#creating-and-saving-artifacts" title="Permanent link">&para;</a></h2>
+<p>You can create artifacts using the <code>SaveArtifact</code> function:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## CreateReport</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gu">### Steps</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">-</span><span class="w"> </span>$report = SaveArtifact(&quot;sales_report.md&quot;, 2-3 line summary of sales report, 10-20 page long sales report)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">-</span><span class="w"> </span>Tell the user that the sales report has been created
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">-</span><span class="w"> </span>Share $report with the user
+</span></code></pre></div>
+<p>The <code>SaveArtifact</code> function takes three parameters:</p>
+<ol>
+<li><code>name</code>: A unique identifier for the artifact (often with a file extension)</li>
+<li><code>summary</code>: A brief summary of what the artifact contains</li>
+<li><code>content</code>: The actual content to store in the artifact (can be text, JSON, or other data)</li>
+</ol>
+<h2 id="loading-artifacts">Loading Artifacts<a class="headerlink" href="#loading-artifacts" title="Permanent link">&para;</a></h2>
+<p>You can load artifacts using the <code>LoadArtifact</code> function:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## ViewReport</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gu">### Steps</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">-</span><span class="w"> </span>$report = LoadArtifact(&quot;sales_report.md&quot;)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">-</span><span class="w"> </span>Tell the user &quot;Here is the sales report: Artifact[sales_report.md]&quot;
+</span></code></pre></div>
+<p>The <code>LoadArtifact</code> function returns an artifact object.</p>
+<h2 id="artifact-references">Artifact References<a class="headerlink" href="#artifact-references" title="Permanent link">&para;</a></h2>
+<p>When you want to refer to an artifact without loading its entire content, you can use artifact references:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## ShareReport</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gu">### Steps</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">-</span><span class="w"> </span>Tell the user: &quot;Here is your report: Artifact[sales_report.md]&quot;
+</span></code></pre></div>
+<p>This will display a link or reference to the artifact in the user interface, allowing the user to access it directly.</p>
+<p>Alternatively, you can ask Playbooks to share an artifact object with the user:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">-</span><span class="w"> </span>Share $report with the user
+</span></code></pre></div>
+<p>You can also ask Playbooks to share an artifact by name:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">-</span><span class="w"> </span>Share sales_report.md with the user
+</span></code></pre></div>
+<h2 id="when-is-an-artifact-included-in-an-llm-call">When is an artifact included in an LLM call?<a class="headerlink" href="#when-is-an-artifact-included-in-an-llm-call" title="Permanent link">&para;</a></h2>
+<h3 id="when-a-new-artifact-is-created">When a new artifact is created<a class="headerlink" href="#when-a-new-artifact-is-created" title="Permanent link">&para;</a></h3>
+<p>When a new artifact is created, it is included in the subsequent LLM call.</p>
+<h3 id="when-an-artifact-is-loaded">When an artifact is loaded<a class="headerlink" href="#when-an-artifact-is-loaded" title="Permanent link">&para;</a></h3>
+<p>When an artifact is loaded using LoadArtifact, it is included in the subsequent LLM call.</p>
+<h2 id="using-artifacts-in-python-playbooks">Using Artifacts in Python Playbooks<a class="headerlink" href="#using-artifacts-in-python-playbooks" title="Permanent link">&para;</a></h2>
+<p>You can use SaveArtifact and LoadArtifact in Python playbooks.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>```python
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>@playbook
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>async def CompileReports(report_names: list[str]) -&gt; str:
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    compiled_report = []
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    for report_name in report_names:
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        report = await LoadArtifact(report_name)
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        compiled_report.append(report.content[:100])
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    compiled_report = &quot;\n&quot;.join(compiled_report)
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    await SaveArtifact(&quot;compiled_report.md&quot;, &quot;Compiled Report&quot;, compiled_report)
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    return &quot;Artifact[compiled_report.md]&quot;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>```
+</span></code></pre></div>
+<p>In this example, the <code>CompileReports</code> playbook loads the reports and saves the compiled report as an artifact. It then returns reference to the compiled report.</p>
+<h2 id="sharing-artifacts-between-agents">Sharing Artifacts Between Agents<a class="headerlink" href="#sharing-artifacts-between-agents" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Sharing artifacts between agents is not yet supported.</p>
+</blockquote>
+<h2 id="best-practices-for-working-with-artifacts">Best Practices for Working with Artifacts<a class="headerlink" href="#best-practices-for-working-with-artifacts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Use meaningful names</strong>: Choose artifact names that describe their content</li>
+<li><strong>Provide good descriptions</strong>: Include detailed descriptions to help Playbooks runtime select appropriate artifact</li>
+</ul>
+<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Write a RAG agent that stores intermediate search results as artifacts</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Congratulations! You've now completed the basic tutorials for Playbooks AI.</p>
+<p>To continue learning, explore these topics:</p>
+<ul>
+<li><a href="python-markdown-interop.md">Python-Markdown Interop</a></li>
+<li><a href="agent-communication.md">Agent Communication</a></li>
+<li><a href="../../playbooks-language/intermediate-representation/">Intermediate Representation</a></li>
+</ul>
 
 
 
@@ -1367,13 +1632,8 @@ analysis of the program, with fully inspectable LLM program execution.</p>
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
@@ -1399,19 +1659,33 @@ analysis of the program, with fully inspectable LLM program execution.</p>
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../multi-agent-programming/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Multi-Agent Programming">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Multi-Agent Programming
+              </div>
+            </div>
+          </a>
         
         
           
-          <a href="get-started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started with Playbooks AI">
+          <a href="../../playbooks-language/" class="md-footer__link md-footer__link--next" aria-label="Next: Playbooks Language">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Getting Started with Playbooks AI
+                Playbooks Language
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1453,10 +1727,10 @@ analysis of the program, with fully inspectable LLM program execution.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
