@@ -1,2 +1,118 @@
+# Project information
 site_name: Playbooks AI
-theme: material
+site_url: https://github.com/playbooks-ai/playbooks
+site_description: >-
+  Build AI Agents with Natural Language Programming
+
+# Repository
+repo_name: playbooks
+repo_url: https://github.com/playbooks-ai/playbooks
+
+# Copyright
+copyright: Copyright Playbooks AI 2025
+
+# Custom CSS
+extra_css:
+  - stylesheets/custom.css
+
+# Configuration
+theme:
+  name: material
+  font:
+    text: Google Sans
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+
+# Navigation
+nav:
+  - Home: index.md
+  - Get Started:
+    - get-started/index.md
+    - Installation: get-started/installation.md
+    - Quickstart: get-started/quickstart.md
+  - Tutorials:
+    - tutorials/index.md
+    - Anatomy of a Playbook: tutorials/anatomy-of-a-playbook.md
+    - Adding Triggers: tutorials/adding-triggers.md
+    - User Interaction: tutorials/user-interaction.md
+    - Calling Playbooks: tutorials/calling-playbooks.md
+    - Python Playbooks: tutorials/python-playbooks.md
+    - Advanced Triggers: tutorials/triggers-advanced.md
+    - Multi-Agent Programming: tutorials/multi-agent-programming.md
+    - Working with Artifacts: tutorials/working-with-artifacts.md
+  - Playbooks Language:
+    - playbooks-language/index.md
+    - Intermediate Representation: playbooks-language/intermediate-representation.md
+  - Playbook Types:
+    - playbook-types/index.md
+    - Markdown Playbooks: playbook-types/markdown-playbooks.md
+    - ReAct Playbooks: playbook-types/react-playbooks.md
+    - Python Playbooks: playbook-types/python-playbooks.md
+    - Exported vs Public Playbooks: playbook-types/exported-vs-public-playbooks.md
+  - Agents:
+    - agents/index.md
+  - Triggers:
+    - triggers/index.md
+  - Observability:
+    - observability/index.md
+  - Artifacts:
+    - artifacts/index.md
+  - API Reference:
+    - api-reference/index.md
