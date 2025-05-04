@@ -1,4 +1,4 @@
 # Agents
 
-- See [Multi-Agent Programming](/tutorials/multi-agent-programming)
-- Refer to [tutorials](/tutorials) for other topics
+- See [Multi-Agent Programming](../multi-agent-systems/index.md)
+- Refer to [tutorials](../tutorials/index.md) for other topics

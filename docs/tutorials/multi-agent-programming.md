@@ -11,9 +11,9 @@ By the end of this tutorial, you'll understand:
 
 ## Prerequisites
 
-- Completion of [Advanced Triggers](triggers-advanced.md)
-- Understanding of [Python Playbooks](python-playbooks.md)
-- Familiarity with [Python-Markdown Interop](python-markdown-interop.md)
+- Completion of [Advanced Triggers](../tutorials/triggers-advanced.md)
+- Understanding of [Python Playbooks](../playbook-types/python-playbooks.md)
+- Familiarity with [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md)
 
 ## Multi-Agent Architecture
 
@@ -55,6 +55,8 @@ Each agent is defined by a top-level heading (`#`) followed by its playbooks.
 ## Public Playbooks
 
 Agents can call public playbooks from other agents.
+
+>:bulb: For more information on public playbooks, see [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md).
 
 ### Public Markdown Playbooks
 
@@ -140,9 +142,11 @@ Agents can pass natural language messages with each other. This is useful for co
 - VendorAgent.ProcessOrder($quantity, price=negotiated price)
 ```
 
-## Exposed Playbooks
+## Exported Playbooks
 
 >:warning: This is not yet implemented.
+
+>:bulb: For more information on exported playbooks, see [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md).
 
 Agents can expose implementation of playbooks to other agents. The other agent can then execute the playbook as if it were their own.
 

@@ -18,6 +18,6 @@ Triggers provide several advantages:
 
 ## Next Steps
 
-- See [Adding Triggers](/tutorials/adding-triggers) tutorial
-- See [Advanced Triggers](/tutorials/triggers-advanced) tutorial
-- Refer to [tutorials](/tutorials) for other topics
+- See [Adding Triggers](../tutorials/adding-triggers.md) tutorial
+- See [Advanced Triggers](../tutorials/triggers-advanced.md) tutorial
+- Refer to [tutorials](../tutorials/index.md) for other topics

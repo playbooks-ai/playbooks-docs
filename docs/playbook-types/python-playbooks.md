@@ -226,6 +226,5 @@ async def safe_api_call(endpoint: str, params: dict) -> dict:
 
 ## Related Topics
 
-- [Markdown Playbooks](markdown-playbooks.md) - For structured, step-by-step flows
-- [ReAct Playbooks](react-playbooks.md) - For reasoning-based, adaptive behavior
-- [Python and Markdown Interop](../tutorials/python-markdown-interop.md) - How Python and markdown playbooks can work together
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - For structured, step-by-step flows
+- [ReAct Playbooks](../playbook-types/react-playbooks.md) - For reasoning-based, adaptive behavior

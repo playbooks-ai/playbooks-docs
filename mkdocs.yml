@@ -105,14 +105,17 @@ nav:
     - Markdown Playbooks: playbook-types/markdown-playbooks.md
     - ReAct Playbooks: playbook-types/react-playbooks.md
     - Python Playbooks: playbook-types/python-playbooks.md
-    - Exported vs Public Playbooks: playbook-types/exported-vs-public-playbooks.md
-  - Agents:
-    - agents/index.md
+    - Built-in Playbooks: playbook-types/builtin-playbooks.md
   - Triggers:
     - triggers/index.md
-  - Observability:
-    - observability/index.md
   - Artifacts:
     - artifacts/index.md
-  - API Reference:
-    - api-reference/index.md
+  - Agents:
+    - agents/index.md
+  - Multi-Agent Systems:
+    - multi-agent-systems/index.md
+    - Exported and Public Playbooks: multi-agent-systems/exported-and-public-playbooks.md
+  - Observability:
+    - observability/index.md
+  # - API Reference:
+  #   - api-reference/index.md

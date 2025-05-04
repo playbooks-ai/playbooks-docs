@@ -24,7 +24,7 @@ Follow these guides to start building with Playbooks AI:
 
 - [Installation](installation.md): Detailed installation instructions
 - [Quickstart](quickstart.md): Create your first playbook in minutes
-- [Tutorials](/tutorials): Tutorials to learn from
+- [Tutorials](../tutorials/index.md): Tutorials to learn from
 
 ## Core Concepts
 

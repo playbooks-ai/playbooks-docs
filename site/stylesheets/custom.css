@@ -1,0 +1,77 @@
+/* Custom styles for Playbooks AI documentation */
+
+/* Custom container for the installation command */
+.install-command-container {
+    margin: 2em 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    padding: 1em;
+}
+
+/* Center logo and text */
+.centered-logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+/* Footer styles */
+.footer {
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Cards grid */
+.grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+/* Card styles */
+.grid.cards>* {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.grid.cards>*:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Material icons adjustments */
+.md-button {
+    transition: all 0.3s ease;
+}
+
+.md-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Code blocks */
+.highlight {
+    border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .install-command-container {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .grid.cards>* {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .grid.cards {
+        grid-template-columns: 1fr;
+    }
+}

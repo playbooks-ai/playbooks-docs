@@ -11,10 +11,11 @@ hide:
 
 ## What is Playbooks AI?
 
-Playbooks AI is a powerful framework for **building AI agents with Natural Language Programming**. 
-It introduces a new "english-like", semantically interpreted programming language with reliable, 
-auditable execution. Playbooks can be written as step-by-step instructions, as agentic prompts, or as Python functions, enabling 
-seamless composition of complex workflows across natural language and Python.
+Playbooks AI is a novel framework for **building AI agents using Natural Language Programming**. 
+
+- A new "english-like", semantically interpreted programming language
+- Runtime for reliable, auditable and verifiable execution
+- Seamless composition of complex workflows across natural language and Python
 
 <div class="install-command-container">
   <p style="text-align:center;">
@@ -27,7 +28,7 @@ seamless composition of complex workflows across natural language and Python.
 <p style="text-align:center;">
   <a href="get-started/quickstart/" class="md-button" style="margin:3px">Quickstart</a>
   <a href="tutorials/" class="md-button" style="margin:3px">Tutorials</a>
-  <a href="api-reference/" class="md-button" style="margin:3px">API Reference</a>
+  <!-- <a href="api-reference/" class="md-button" style="margin:3px">API Reference</a> -->
   <a href="playbooks-language/" class="md-button" style="margin:3px">Playbooks Language</a>
 </p>
 
@@ -53,7 +54,7 @@ seamless composition of complex workflows across natural language and Python.
     Turn any async Python function into a playbook with the `@playbook` decorator. Call other playbooks
     (including natural language playbooks) from Python and vice versa.
 
-    [**Explore Python Playbooks**](python-playbooks/index.md)
+    [**Explore Python Playbooks**](playbook-types/python-playbooks.md)
 
 -   :material-account-group: **Multi-Agent Architecture**
 
@@ -62,7 +63,7 @@ seamless composition of complex workflows across natural language and Python.
     Natively support multi-agent systems with agent-to-agent calls and messaging. Enable natural language 
     message passing and multi-turn dialogue between agents with direct playbook invocation.
 
-    [**Discover Multi-Agent Systems**](agents/multi-agents.md)
+    [**Discover Multi-Agent Systems**](tutorials/multi-agent-programming.md)
 
 -   :material-bell-ring: **Event-Driven Programming**
 

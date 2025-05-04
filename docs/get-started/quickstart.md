@@ -55,11 +55,7 @@ This simple Playbooks program:
 Now, run your program:
 
 ```bash
-python src/playbooks/applications/agent_chat.py hello.md --verbose
-
-# or
-
-playbooks hello.md --application AgentChat --verbose
+python -m playbooks.applications.agent_chat hello.md --verbose
 ```
 
 You should see output similar to:
@@ -100,6 +96,6 @@ Let's break down what happened:
 
 Now that you've run your first playbook, you can:
 
-- Go through the [tutorials](/tutorials)
+- Go through the [tutorials](../tutorials/index.md)
 - Learn about [Triggers](../triggers/index.md) for more advanced event-based programming
-- Learn how to create [multi-agent systems](/agents/multi-agents.md)
+- Learn how to create [multi-agent systems](../multi-agent-systems/index.md)

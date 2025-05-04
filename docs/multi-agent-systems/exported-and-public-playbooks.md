@@ -1,4 +1,4 @@
-# Exported vs Public Playbooks
+# Exported and Public Playbooks
 
 ## Exported Playbooks
 Exported playbooks are a powerful feature of Playbooks AI that allows an agent to execute playbooks defined by another agent within its own execution context as if they were implemented locally within the importing agent.
@@ -44,7 +44,7 @@ In this example, the `AccountManagementAgent` exports the `CloseAccount` and `Pr
 To import a playbook's implementation from another remote agent, register that remote agent and then use the `import` statement:
 
 ```markdown
-# AccountManagementAgent(url="https://acme.com/account-management")
+# AccountManagementAgent(url="https://cloud.runplaybooks.ai/account-management")
 
 # ServiceAgent
 import CloseAccount, ProvisionAccount from AccountManagementAgent
@@ -94,7 +94,7 @@ Both markdown and Python playbooks can be marked as public.
 To call a public playbook, first register the remote agent and then call the playbook as a method on that agent:
 
 ```
-# AuthenticationAgent(url="https://acme.com/authentication")
+# AuthenticationAgent(url="https://cloud.runplaybooks.ai/authentication")
 
 # APIGatewayAgent
 
@@ -104,7 +104,7 @@ To call a public playbook, first register the remote agent and then call the pla
 - ...
 ```
 
-Here, the `APIGatewayAgent` directly calls the `VerifyCredentials` playbook on the `AuthenticationAgent` instance running at `https://acme.com/authentication`. The playbook is executed on the remote agent's server and the result is returned to the calling agent.
+Here, the `APIGatewayAgent` directly calls the `VerifyCredentials` playbook on the `AuthenticationAgent` instance running at `https://cloud.runplaybooks.ai/authentication`. The playbook is executed on the remote agent's server and the result is returned to the calling agent.
 
 
 ## Differences Between Exported and Public Playbooks
@@ -113,7 +113,7 @@ Exported playbooks differ from public playbooks in several important ways:
 
 |  | Exported Playbooks | Public Playbooks |
 |---------|-------------------|----------------------|
-| **Example** | `import CloseAccount from AccountManagementAgent` and then `CloseAccount($user_id)` | `# PaymentProcessingAgent("https://acme.com/ppa")` and then `PaymentProcessingAgent.ProcessPayment($amount, $payment_method)` |
+| **Example** | `import CloseAccount from AccountManagementAgent` and then `CloseAccount($user_id)` | `# PaymentProcessingAgent("https://cloud.runplaybooks.ai/ppa")` and then `PaymentProcessingAgent.ProcessPayment($amount, $payment_method)` |
 | **Execution Context** | Local execution in importing agent's context | Remote procedure call on the remote agent instance |
 | **State Access** | Can access local agent's state | Cannot access local agent's state |
 
@@ -132,7 +132,7 @@ Let's say that we have an ecosystem of three agents.
 ### 1. DatabaseAgent
 ```markdown
 # DatabaseAgent
-This agent provides database access capabilities.
+This agent provides recipes for various database related tasks.
 
 ## export: FindTable($query, $database)
 ### Steps
@@ -141,7 +141,7 @@ This agent provides database access capabilities.
 - Return the table name
 ```
 
-Let's say that `DatabaseAgent` is available at the URL `https://acme.com/database.agent`. It exports the `FindTable` playbook. It is a generic procedure for finding a database table.
+Let's say that `DatabaseAgent` is available at the URL `https://cloud.runplaybooks.ai/database.agent`. It exports the `FindTable` playbook. It is a generic procedure for finding a database table.
 
 ### 2. AuthenticationAgent
 ```markdown
@@ -154,15 +154,15 @@ This agent handles user authentication.
 - Return authentication result and user details if valid
 ```
 
-Let's say that an instance of the `AuthenticationAgent` is running at the URL `https://acme.com/authentication.agent`. The public `VerifyCredentials` playbook requires access to the secure store within ACME Corp's infrastructure.
+Let's say that an instance of the `AuthenticationAgent` is running at the URL `https://cloud.runplaybooks.ai/authentication.agent`. The public `VerifyCredentials` playbook requires access to the secure store within ACME Corp's infrastructure.
 
 ### 3. APIGatewayAgent
 APIGatewayAgent uses the above two agents. It first registers those two agents, specifying their URLs. Then it imports the `FindTable` playbook from the `DatabaseAgent`. It then remotely calls the `VerifyCredentials` playbook on the `AuthenticationAgent` instance. Finally, it locally executes the `FindTable` playbook.
 
 ```
-# DatabaseAgent(url="https://acme.com/database.agent")
+# DatabaseAgent(url="https://cloud.runplaybooks.ai/database.agent")
 
-# AuthenticationAgent(url="https://acme.com/authentication.agent")
+# AuthenticationAgent(url="https://cloud.runplaybooks.ai/authentication.agent")
 
 # APIGatewayAgent
 import FindTable from DatabaseAgent
@@ -181,7 +181,6 @@ import FindTable from DatabaseAgent
 
 ## Related Topics
 
-- [Multi-Agent Programming](../tutorials/multi-agent-programming.md) - More about setting up and using multiple agents
-- [Agent Communication](../agents/agent-communication.md) - How agents can communicate beyond playbook calls
-- [Python Playbooks](python-playbooks.md) - How to create playbooks using Python
-- [Markdown Playbooks](markdown-playbooks.md) - Standard playbook structure
+- [Multi-Agent Programming](../multi-agent-systems/index.md) - More about setting up and using multiple agents
+- [Python Playbooks](../playbook-types/python-playbooks.md) - How to create playbooks using Python
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - Standard playbook structure

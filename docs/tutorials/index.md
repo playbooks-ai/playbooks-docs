@@ -15,10 +15,9 @@ These tutorials are designed to be followed in order, with each one building on 
 3. [User Interaction](user-interaction.md) - Handle user input and responses
 4. [Calling Playbooks](calling-playbooks.md) - Call one playbook from another
 5. [Python Playbooks](python-playbooks.md) - Create playbooks using Python code
-6. [Python and Markdown Interop](python-markdown-interop.md) - Call Python playbooks from markdown and vice versa
-7. [Advanced Triggers](triggers-advanced.md) - Explore more advanced triggers for validation, sentiment, and error handling
-8. [Multi-Agent Programming](multi-agent-programming.md) - Create programs with multiple agents
-9. [Working with Artifacts](working-with-artifacts.md) - Store and retrieve data using artifacts
+6. [Advanced Triggers](triggers-advanced.md) - Explore more advanced triggers for validation, sentiment, and error handling
+7. [Multi-Agent Programming](multi-agent-programming.md) - Create programs with multiple agents
+8. [Working with Artifacts](working-with-artifacts.md) - Store and retrieve data using artifacts
 
 ## Key Concepts Coverage
 

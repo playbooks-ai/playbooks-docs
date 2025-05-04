@@ -81,3 +81,8 @@ Explore each playbook type in detail:
 - [Markdown Playbooks](markdown-playbooks.md) - For structured, step-by-step flows
 - [ReAct Playbooks](react-playbooks.md) - For reasoning-based, adaptive behavior
 - [Python Playbooks](python-playbooks.md) - For complex logic and integrations
+
+Also see:
+
+- [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md) - For multi-agent systems
+- [Multi-Agent Programming](../multi-agent-systems/index.md) - For creating multi-agent systems

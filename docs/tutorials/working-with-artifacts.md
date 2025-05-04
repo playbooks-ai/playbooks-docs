@@ -135,6 +135,5 @@ Congratulations! You've now completed the basic tutorials for Playbooks AI.
 
 To continue learning, explore these topics:
 
-- [Python-Markdown Interop](python-markdown-interop.md)
-- [Agent Communication](agent-communication.md)
+- [Multi-Agent Systems](../multi-agent-systems/index.md)
 - [Intermediate Representation](../playbooks-language/intermediate-representation.md)

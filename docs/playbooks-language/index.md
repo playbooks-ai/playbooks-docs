@@ -132,27 +132,6 @@ The `### Notes` section can provide additional guidance or rules for the playboo
 - If the user is from California, mention that we're compliant with CCPA
 ```
 
-## Public Playbooks
-
->:bulb: The public playbooks feature is under development.
-
-Playbooks can be made public to make them callable by other agents using the `public:` prefix:
-
-```markdown
-## public: CalculateShipping($weight, $destination)
-This playbook calculates shipping costs based on weight and destination.
-```
-
-For Python playbooks, use the `public=True` parameter:
-
-```python
-@playbook(public=True)
-async def validate_address(address: dict) -> bool:
-    """Validate a shipping address."""
-    # Address validation logic
-    return True
-```
-
 ## Variable Usage
 
 Variables in Playbooks are denoted with a `$` prefix:
@@ -171,9 +150,9 @@ Variables can store:
 - Dictionaries
 - Null values
 
-## Example: Complete Playbook
+## Example: Complete Playbooks program
 
-Here's a complete example of a simple playbook:
+Here's a complete example of a simple playbooks program:
 
 ````markdown
 # CustomerSupportAgent

@@ -151,6 +151,6 @@ N1 Be polite and professional
 
 Explore different types of playbooks:
 
-- [Markdown Playbooks](playbook-types/markdown-playbooks.md) - How to write playbooks in markdown
-- [ReAct Playbooks](playbook-types/react-playbooks.md) - How to write playbooks in ReAct
-- [Python Playbooks](playbook-types/python-playbooks.md) - Using Python functions as playbooks 
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - How to write playbooks in markdown
+- [ReAct Playbooks](../playbook-types/react-playbooks.md) - How to write playbooks in ReAct
+- [Python Playbooks](../playbook-types/python-playbooks.md) - Using Python functions as playbooks 

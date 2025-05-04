@@ -149,7 +149,7 @@ This program demonstrates different types of triggers.
 2. Run your playbook:
 
 ```bash
-python src/playbooks/applications/agent_chat.py triggers-demo.md --verbose
+python -m playbooks.applications.agent_chat triggers-demo.md --verbose
 ```
 
 3. When you run this program and enter a value, you should notice:

@@ -5,6 +5,7 @@ In this tutorial, you'll learn about the structure of a basic Playbooks AI progr
 ## Objective
 
 By the end of this tutorial, you'll understand:
+
 - The basic structure of a markdown playbook
 - How to define a playbook with steps
 - How triggers control playbook execution
@@ -109,11 +110,7 @@ This playbooks demo prints a hello playbooks message
 2. Run your playbook:
 
 ```bash
-python src/playbooks/applications/agent_chat.py hello.md --verbose
-
-# or 
-
-playbooks hello.md --application AgentChat --verbose
+python -m playbooks.applications.agent_chat hello.md --verbose
 ```
 
 3. You should see output similar to:

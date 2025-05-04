@@ -210,7 +210,7 @@ This program collects registration information from users.
 2. Run your playbook:
 
 ```bash
-python src/playbooks/applications/agent_chat.py user-form.md --verbose
+python -m playbooks.applications.agent_chat user-form.md --verbose
 ```
 
 When you run this program, you'll experience:

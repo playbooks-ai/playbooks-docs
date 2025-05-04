@@ -97,7 +97,7 @@ This Python playbook will be triggered when the condition "When you want to appl
 
 ## Public Python Playbooks
 
-To make a Python playbook available to other [agents](/agents), you can use the `public` parameter:
+To make a Python playbook available to other [agents](../agents/index.md), you can use the `public` parameter:
 
 ```python
 @playbook(public=True)
@@ -172,7 +172,7 @@ async def process_countries(countries: list[str]) -> None:
 - End program
 ````
 
-Notice that the `Main` playbook now calls the `process_countries` Python playbook with the list of countries. The `process_countries` playbook then calls the `GetCountryFact` markdown playbook for each country and a [built-in](/builtin-playbooks) `Say` playbook to tell the user about each country.
+Notice that the `Main` playbook now calls the `process_countries` Python playbook with the list of countries. The `process_countries` playbook then calls the `GetCountryFact` markdown playbook for each country and a [built-in](../playbook-types/builtin-playbooks.md) `Say` playbook to tell the user about each country.
 
 >:bulb: You can call markdown playbooks from Python playbooks and vice versa.
 
@@ -235,4 +235,4 @@ async def get_weather(city: str) -> dict:
 
 ## Next Steps
 
-Now that you know how to create Python playbooks, you're ready to learn about [Advanced Triggers](/tutorials/triggers-advanced) to see how to use more complex triggers to control the execution of your playbooks.
+Now that you know how to create Python playbooks, you're ready to learn about [Advanced Triggers](../tutorials/triggers-advanced.md) to see how to use more complex triggers to control the execution of your playbooks.

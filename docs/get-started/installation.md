@@ -6,7 +6,7 @@ This guide will walk you through the process of installing Playbooks AI and sett
 
 Before installing Playbooks AI, ensure you have:
 
-- Python 3.9 or higher
+- Python 3.10 or higher
 - pip (Python package installer)
 - A virtual environment tool (optional but recommended)
 
@@ -104,5 +104,4 @@ If you encounter any issues during installation:
 Now that you have Playbooks AI installed, you can:
 
 - Follow the [Quickstart Guide](quickstart.md) to create your first playbook
-- Check out the [Sample Playbooks](samples.md) for inspiration
 - Explore the [Playbooks Language](../playbooks-language/index.md) documentation to learn about the syntax
