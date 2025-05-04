@@ -1445,15 +1445,15 @@
 </span></code></pre></div>
 <p>Steps support:</p>
 <ul>
-<li>Imperative instructions (e.g., "Greet the user")</li>
-<li>Variable assignments (e.g., "$total = $price * $quantity", "Extract $relevant_info from search results")</li>
-<li>Conditionals (e.g., "If $status is 'approved'", "If user is not satisfied with the answer")</li>
-<li>Loops (e.g., "While conversation is active", "While $attempts &lt; 3", "For each $product in all products")</li>
-<li>Playbook calls (e.g., "ProcessPayment($amount)")</li>
-<li>Control flow (e.g., "End program", "Return $result")</li>
+<li>Imperative instructions (e.g., <code>Greet the user</code>)</li>
+<li>Variable assignments (e.g., <code>$total = $price * $quantity</code>, <code>Extract $relevant_info from search results</code>)</li>
+<li>Conditionals (e.g., <code>If $status is 'approved'</code>, <code>If user is not satisfied with the answer</code>)</li>
+<li>Loops (e.g., <code>While conversation is active</code>, <code>While $attempts &lt; 3</code>, <code>For each $product</code>)</li>
+<li>Playbook calls (e.g., <code>ProcessPayment($amount)</code> <code>Calculate discount on $total</code>)</li>
+<li>Control flow (e.g., <code>End program</code>, <code>Return $result</code>)</li>
 </ul>
 <blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a ReAct-style prompt.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a <a href="../playbook-types/react-playbooks/">ReAct-style</a> prompt.</p>
 </blockquote>
 <h4 id="6-notes">6. Notes<a class="headerlink" href="#6-notes" title="Permanent link">&para;</a></h4>
 <p>The <code>### Notes</code> section can provide additional guidance or rules for the playbook:</p>
