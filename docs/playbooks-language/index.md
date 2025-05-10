@@ -112,14 +112,14 @@ Steps define the actual logic of a playbook, specified in a section marked by a 
 
 Steps support:
 
-- Imperative instructions (e.g., "Greet the user")
-- Variable assignments (e.g., "$total = $price * $quantity", "Extract $relevant_info from search results")
-- Conditionals (e.g., "If $status is 'approved'", "If user is not satisfied with the answer")
-- Loops (e.g., "While conversation is active", "While $attempts < 3", "For each $product in all products")
-- Playbook calls (e.g., "ProcessPayment($amount)")
-- Control flow (e.g., "End program", "Return $result")
+- Imperative instructions (e.g., `Greet the user`)
+- Variable assignments (e.g., `$total = $price * $quantity`, `Extract $relevant_info from search results`)
+- Conditionals (e.g., `If $status is 'approved'`, `If user is not satisfied with the answer`)
+- Loops (e.g., `While conversation is active`, `While $attempts < 3`, `For each $product`)
+- Playbook calls (e.g., `ProcessPayment($amount)` `Calculate discount on $total`)
+- Control flow (e.g., `End program`, `Return $result`)
 
->:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a ReAct-style prompt.
+>:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
 
 #### 6. Notes
 

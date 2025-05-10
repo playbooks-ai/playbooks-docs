@@ -5,7 +5,9 @@ hide:
 
 <div style="text-align: center;">
   <div class="centered-logo-text-group">
-    <h1>Playbooks AI</h1>
+    <h1>
+    <img src="assets/images/playbooks-logo.png" alt="Playbooks AI" style="width: 200px; height: 200px;">
+    </h1>
   </div>
 </div>
 

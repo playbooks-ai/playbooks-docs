@@ -17,7 +17,7 @@ A ReAct playbook is defined as a standard markdown playbook, but without the `##
 
 ```markdown
 ## PlaybookName
-Detailed description of the task, goals, and constraints. Write full prompt here.
+Detailed description or prompt for the task, goals, and constraints. Do not use markdown in the prompt.
 
 ### Triggers
 - Trigger condition 1
@@ -25,6 +25,8 @@ Detailed description of the task, goals, and constraints. Write full prompt here
 ```
 
 The key difference is that ReAct playbooks **do not** include a `### Steps` section. Instead, the system provides a default ReAct execution flow that implements a "think - plan - select tool - execute tool - interact - evaluate" cycle.
+
+>:warning: **Do not use markdown in the prompt** for ReAct playbooks because that will interfere with the playbook program's structure that uses #, ## and ### headings. Use xml tags like `<output_format>`, `<planning_rules>`,  `<style_guide>`, etc. for defining various parts of the prompt.
 
 ### Playbook Definition
 

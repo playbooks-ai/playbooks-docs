@@ -24,16 +24,15 @@ theme:
   favicon: assets/favicon.png
   icon:
     repo: fontawesome/brands/github
+    logo: fontawesome/solid/play
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: slate
+      accent: slate
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
