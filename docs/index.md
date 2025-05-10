@@ -6,7 +6,8 @@ hide:
 <div style="text-align: center;">
   <div class="centered-logo-text-group">
     <h1>
-    <img src="assets/images/playbooks-logo.png" alt="Playbooks AI" style="width: 200px; height: 200px;">
+    <img src="assets/images/playbooks-logo.png#gh-light-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
+    <img src="assets/images/playbooks-logo-dark.png#gh-dark-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
     </h1>
   </div>
 </div>
@@ -16,7 +17,7 @@ hide:
 Playbooks AI is a novel framework for **building AI agents using Natural Language Programming**. 
 
 - A new "english-like", semantically interpreted programming language
-- Runtime for reliable, auditable and verifiable execution
+- Runtime for reliable, auditable and verifiable execution of complex prompts and workflows
 - Seamless composition of complex workflows across natural language and Python
 
 <div class="install-command-container">
