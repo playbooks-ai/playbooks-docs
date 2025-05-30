@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/roadmap/mcp-a2a/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/advanced/playbooks-protocol/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../mcp-a2a/">
       
       
-        <link rel="next" href="../playbooks-protocol/">
+        <link rel="next" href="../observer-agents/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>MCP and A2A - Playbooks AI</title>
+        <title>Playbooks Protocol - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#playbooks-via-mcp-and-a2a-protocols" class="md-skip">
+        <a href="#playbooks-protocol" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP and A2A
+              Playbooks Protocol
             
           </span>
         </div>
@@ -1214,6 +1214,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1231,7 +1237,7 @@
   
   
   <span class="md-ellipsis">
-    Roadmap
+    Advanced Concepts
     
   </span>
   
@@ -1248,10 +1254,33 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
-            Roadmap
+            Advanced Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-a2a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and A2A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1275,7 +1304,7 @@
   
   
   <span class="md-ellipsis">
-    MCP and A2A
+    Playbooks Protocol
     
   </span>
   
@@ -1288,7 +1317,7 @@
   
   
   <span class="md-ellipsis">
-    MCP and A2A
+    Playbooks Protocol
     
   </span>
   
@@ -1311,18 +1340,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
+  <a href="#tools-exposed-by-services-are-simply-api-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
-      MCP
+      "Tools" exposed by services are simply API endpoints
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a2a" class="md-nav__link">
+  <a href="#tools-are-agents-public-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      A2A
+      "Tools" are agent's public methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expose-prompts-or-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expose Prompts or Playbooks?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbooks-as-a-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbooks as a standard
     </span>
   </a>
   
@@ -1344,12 +1391,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-protocol/" class="md-nav__link">
+      <a href="../observer-agents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Playbooks Protocol
+    Observer Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-playbook-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Playbook Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-playbook-rewriting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Playbook Rewriting
     
   </span>
   
@@ -1394,18 +1487,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
+  <a href="#tools-exposed-by-services-are-simply-api-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
-      MCP
+      "Tools" exposed by services are simply API endpoints
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a2a" class="md-nav__link">
+  <a href="#tools-are-agents-public-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      A2A
+      "Tools" are agent's public methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expose-prompts-or-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expose Prompts or Playbooks?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbooks-as-a-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbooks as a standard
     </span>
   </a>
   
@@ -1430,16 +1541,19 @@
   
 
 
-<h1 id="playbooks-via-mcp-and-a2a-protocols">Playbooks via MCP and A2A Protocols<a class="headerlink" href="#playbooks-via-mcp-and-a2a-protocols" title="Permanent link">&para;</a></h1>
-<p>In order to align with the emerging ecosystem standards, Playbooks agents will speak the following two protocols, apart from a playbooks-native protocol that we think will lead to more capable multi-agent systems:</p>
-<ul>
-<li><a href="https://modelcontextprotocol.io/">Model Context Protocol (MCP)</a>: Connects agents to tools, APIs, and resources with structured inputs/outputs. Think of it as the way agents access their capabilities.</li>
-<li><a href="https://google.github.io/A2A/">Agent2Agent Protocol (A2A)</a>: Facilitates dynamic, multimodal communication between different agents as peers. It's how agents collaborate, delegate, and manage shared tasks.</li>
-</ul>
-<h2 id="mcp">MCP<a class="headerlink" href="#mcp" title="Permanent link">&para;</a></h2>
-<p>TODO - relevant discussion in <a href="../playbooks-protocol/">Playbooks Protocol</a></p>
-<h2 id="a2a">A2A<a class="headerlink" href="#a2a" title="Permanent link">&para;</a></h2>
-<p>TODO - relevant discussion in <a href="../playbooks-protocol/">Playbooks Protocol</a></p>
+<h1 id="playbooks-protocol">Playbooks Protocol<a class="headerlink" href="#playbooks-protocol" title="Permanent link">&para;</a></h1>
+<p>Protocols like <a href="https://modelcontextprotocol.io/">MCP</a> and <a href="https://google.github.io/A2A/">A2A</a> are emerging as standards for multi-agent systems. Playbooks will <a href="../mcp-a2a/">support these protocols</a>, but we do not think that those protocols are the best way for AI agents to share their capabilities and communicate with each other.</p>
+<p>We are developing a new protocol that we believe will lead to more capable, flexible and secure multi-agent systems.</p>
+<h2 id="tools-exposed-by-services-are-simply-api-endpoints">"Tools" exposed by services are simply API endpoints<a class="headerlink" href="#tools-exposed-by-services-are-simply-api-endpoints" title="Permanent link">&para;</a></h2>
+<p>The standard method for applications to expose their capabilities is through API endpoints. "Tools" in MCP are simply these public API endpoints. There are existing standards for API discovery and documentation, such as <a href="https://www.openapis.org/">OpenAPI</a> and <a href="https://swagger.io/">Swagger</a>. We think that "tools" should be exposed through these existing standards.</p>
+<p>So, along with supporting MCP as way to publish capabilities, playbooks will also support OpenAPI as way to publish capabilities.</p>
+<h2 id="tools-are-agents-public-methods">"Tools" are agent's public methods<a class="headerlink" href="#tools-are-agents-public-methods" title="Permanent link">&para;</a></h2>
+<p>In Object-Oriented Programming, classes expose their capabilities through public methods. When an agent wants to publish its capabilities, why not use public methods of the agent? Playbooks has native support for <a href="../../multi-agent-systems/exported-and-public-playbooks/">public playbooks</a>, where an agent can expose certain playbooks for other agents or systems to call.</p>
+<h2 id="expose-prompts-or-playbooks">Expose Prompts or Playbooks?<a class="headerlink" href="#expose-prompts-or-playbooks" title="Permanent link">&para;</a></h2>
+<p>In MCP (Model Context Protocol), "prompts" are predefined templates or instructions that MCP servers can expose to client applications. They serve as reusable, parameterized templates that define specific ways to interact with or use the resources and capabilities that the MCP server provides. They help standardize common operations across different MCP implementations. For example, a "prompt" might expose a specific way to executing a coding task, or how data should be retrieved using specific queries, or even multi-step workflows.</p>
+<p>Playbooks are multi-step workflows that can be executed reliably. They are a more powerful and flexible concept than prompts. We believe that exporting playbooks that can be executed by the caller within their own context is the most useful way to expose these capabilities. Playbooks has native support for <a href="../../multi-agent-systems/exported-and-public-playbooks/">exporting playbooks</a>. A Playbooks oriented protocol would allow seamless transfer and execution of such playbooks, through standard programming paradigms like "import" directives and function calls. Exported playbooks can be "imported" into another agent and then called and executed as if they were local playbooks.</p>
+<h2 id="playbooks-as-a-standard">Playbooks as a standard<a class="headerlink" href="#playbooks-as-a-standard" title="Permanent link">&para;</a></h2>
+<p>Playbooks not only has the potential to be a stadard for exposing agnet capabilities to LLMs and for agent to agent communication, but it also has the potential to be a standardize how agents are described, discovered and used.</p>
 
 
 
@@ -1477,7 +1591,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Concepts and Roadmap">
+          <a href="../mcp-a2a/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MCP and A2A">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1487,20 +1601,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Advanced Concepts and Roadmap
+                MCP and A2A
               </div>
             </div>
           </a>
         
         
           
-          <a href="../playbooks-protocol/" class="md-footer__link md-footer__link--next" aria-label="Next: Playbooks Protocol">
+          <a href="../observer-agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Observer Agents">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Playbooks Protocol
+                Observer Agents
               </div>
             </div>
             <div class="md-footer__button md-icon">

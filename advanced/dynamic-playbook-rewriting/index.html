@@ -10,10 +10,10 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/roadmap/playbooks-protocol/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/advanced/dynamic-playbook-rewriting/">
       
       
-        <link rel="prev" href="../mcp-a2a/">
+        <link rel="prev" href="../dynamic-playbook-generation/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Playbooks Protocol - Playbooks AI</title>
+        <title>Dynamic Playbook Rewriting - Playbooks AI</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#playbooks-protocol" class="md-skip">
+        <a href="#dynamic-playbook-rewriting-roadmap" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Playbooks Protocol
+              Dynamic Playbook Rewriting
             
           </span>
         </div>
@@ -1212,6 +1212,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1229,7 +1235,7 @@
   
   
   <span class="md-ellipsis">
-    Roadmap
+    Advanced Concepts
     
   </span>
   
@@ -1246,7 +1252,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
-            Roadmap
+            Advanced Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1279,6 +1285,75 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbooks-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observer-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Observer Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-playbook-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Playbook Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1296,7 +1371,7 @@
   
   
   <span class="md-ellipsis">
-    Playbooks Protocol
+    Dynamic Playbook Rewriting
     
   </span>
   
@@ -1309,7 +1384,7 @@
   
   
   <span class="md-ellipsis">
-    Playbooks Protocol
+    Dynamic Playbook Rewriting
     
   </span>
   
@@ -1332,36 +1407,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tools-exposed-by-services-are-simply-api-endpoints" class="md-nav__link">
+  <a href="#how-dynamic-playbook-rewriting-works" class="md-nav__link">
     <span class="md-ellipsis">
-      "Tools" exposed by services are simply API endpoints
+      How Dynamic Playbook Rewriting Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Dynamic Playbook Rewriting Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-playbook-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Playbook Generation
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-are-agents-public-methods" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#active-monitoring-by-observer-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      "Tools" are agent's public methods
+      Active Monitoring by Observer Agent
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#expose-prompts-or-playbooks" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#playbook-abortion-and-rewriting" class="md-nav__link">
     <span class="md-ellipsis">
-      Expose Prompts or Playbooks?
+      Playbook Abortion and Rewriting
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-revised-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution of Revised Playbooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#playbooks-as-a-standard" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Playbooks as a standard
+      Use Cases
     </span>
   </a>
   
@@ -1410,36 +1509,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tools-exposed-by-services-are-simply-api-endpoints" class="md-nav__link">
+  <a href="#how-dynamic-playbook-rewriting-works" class="md-nav__link">
     <span class="md-ellipsis">
-      "Tools" exposed by services are simply API endpoints
+      How Dynamic Playbook Rewriting Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Dynamic Playbook Rewriting Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-playbook-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Playbook Generation
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-are-agents-public-methods" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#active-monitoring-by-observer-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      "Tools" are agent's public methods
+      Active Monitoring by Observer Agent
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#expose-prompts-or-playbooks" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#playbook-abortion-and-rewriting" class="md-nav__link">
     <span class="md-ellipsis">
-      Expose Prompts or Playbooks?
+      Playbook Abortion and Rewriting
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-of-revised-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution of Revised Playbooks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#playbooks-as-a-standard" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Playbooks as a standard
+      Use Cases
     </span>
   </a>
   
@@ -1464,19 +1587,40 @@
   
 
 
-<h1 id="playbooks-protocol">Playbooks Protocol<a class="headerlink" href="#playbooks-protocol" title="Permanent link">&para;</a></h1>
-<p>Protocols like <a href="https://modelcontextprotocol.io/">MCP</a> and <a href="https://google.github.io/A2A/">A2A</a> are emerging as standards for multi-agent systems. Playbooks will <a href="../mcp-a2a/">support these protocols</a>, but we do not think that those protocols are the best way for AI agents to share their capabilities and communicate with each other.</p>
-<p>We are developing a new protocol that we believe will lead to more capable, flexible and secure multi-agent systems.</p>
-<h2 id="tools-exposed-by-services-are-simply-api-endpoints">"Tools" exposed by services are simply API endpoints<a class="headerlink" href="#tools-exposed-by-services-are-simply-api-endpoints" title="Permanent link">&para;</a></h2>
-<p>The standard method for applications to expose their capabilities is through API endpoints. "Tools" in MCP are simply these public API endpoints. There are existing standards for API discovery and documentation, such as <a href="https://www.openapis.org/">OpenAPI</a> and <a href="https://swagger.io/">Swagger</a>. We think that "tools" should be exposed through these existing standards.</p>
-<p>So, along with supporting MCP as way to publish capabilities, playbooks will also support OpenAPI as way to publish capabilities.</p>
-<h2 id="tools-are-agents-public-methods">"Tools" are agent's public methods<a class="headerlink" href="#tools-are-agents-public-methods" title="Permanent link">&para;</a></h2>
-<p>In Object-Oriented Programming, classes expose their capabilities through public methods. When an agent wants to publish its capabilities, why not use public methods of the agent? Playbooks has native support for <a href="../../multi-agent-systems/exported-and-public-playbooks/">public playbooks</a>, where an agent can expose certain playbooks for other agents or systems to call.</p>
-<h2 id="expose-prompts-or-playbooks">Expose Prompts or Playbooks?<a class="headerlink" href="#expose-prompts-or-playbooks" title="Permanent link">&para;</a></h2>
-<p>In MCP (Model Context Protocol), "prompts" are predefined templates or instructions that MCP servers can expose to client applications. They serve as reusable, parameterized templates that define specific ways to interact with or use the resources and capabilities that the MCP server provides. They help standardize common operations across different MCP implementations. For example, a "prompt" might expose a specific way to executing a coding task, or how data should be retrieved using specific queries, or even multi-step workflows.</p>
-<p>Playbooks are multi-step workflows that can be executed reliably. They are a more powerful and flexible concept than prompts. We believe that exporting playbooks that can be executed by the caller within their own context is the most useful way to expose these capabilities. Playbooks has native support for <a href="../../multi-agent-systems/exported-and-public-playbooks/">exporting playbooks</a>. A Playbooks oriented protocol would allow seamless transfer and execution of such playbooks, through standard programming paradigms like "import" directives and function calls. Exported playbooks can be "imported" into another agent and then called and executed as if they were local playbooks.</p>
-<h2 id="playbooks-as-a-standard">Playbooks as a standard<a class="headerlink" href="#playbooks-as-a-standard" title="Permanent link">&para;</a></h2>
-<p>Playbooks not only has the potential to be a stadard for exposing agnet capabilities to LLMs and for agent to agent communication, but it also has the potential to be a standardize how agents are described, discovered and used.</p>
+<h1 id="dynamic-playbook-rewriting-roadmap">Dynamic Playbook Rewriting (Roadmap)<a class="headerlink" href="#dynamic-playbook-rewriting-roadmap" title="Permanent link">&para;</a></h1>
+<p>Dynamic Playbook Rewriting is an advanced feature in Playbooks AI that enhances adaptive behavior by continuously monitoring, revising, and executing generated playbooks in real-time. This capability ensures that agent behaviors remain coherent and optimal, even as circumstances change during the execution of complex, long-running processes.</p>
+<h2 id="how-dynamic-playbook-rewriting-works">How Dynamic Playbook Rewriting Works<a class="headerlink" href="#how-dynamic-playbook-rewriting-works" title="Permanent link">&para;</a></h2>
+<h3 id="initial-playbook-generation">Initial Playbook Generation<a class="headerlink" href="#initial-playbook-generation" title="Permanent link">&para;</a></h3>
+<p>An agent first generates an initial playbook through a process involving deep reasoning and structured planning:</p>
+<ul>
+<li>Contextual assessment and comprehensive planning define a coherent initial strategy.</li>
+<li>A dynamic playbook is generated, detailing actionable, sequential steps.</li>
+</ul>
+<h3 id="active-monitoring-by-observer-agent">Active Monitoring by Observer Agent<a class="headerlink" href="#active-monitoring-by-observer-agent" title="Permanent link">&para;</a></h3>
+<p>Once the generated playbook begins execution, an Active Observer Agent continuously evaluates each step:</p>
+<ul>
+<li>Assesses whether the current and upcoming steps remain valid and effective.</li>
+<li>Monitors ongoing relevance considering evolving context and objectives.</li>
+</ul>
+<h3 id="playbook-abortion-and-rewriting">Playbook Abortion and Rewriting<a class="headerlink" href="#playbook-abortion-and-rewriting" title="Permanent link">&para;</a></h3>
+<p>When an Observer Agent identifies steps that are no longer applicable or effective:</p>
+<ul>
+<li>The ongoing execution of the current playbook is immediately halted.</li>
+<li>A new reasoning and planning cycle commences, recalibrating the agent's strategy based on current conditions.</li>
+<li>A revised playbook is generated, integrating real-time insights and updated objectives.</li>
+</ul>
+<h3 id="execution-of-revised-playbooks">Execution of Revised Playbooks<a class="headerlink" href="#execution-of-revised-playbooks" title="Permanent link">&para;</a></h3>
+<p>After rewriting, the agent seamlessly transitions into executing the newly generated playbook:</p>
+<ul>
+<li>Ensures continuity in long-running agent processes without losing strategic coherence.</li>
+<li>Repeated cycles of rewriting guarantee continually optimized and contextually appropriate behavior.</li>
+</ul>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Long-term Autonomous Operations</strong>: Ensuring ongoing coherence in tasks like autonomous fleet management or logistics.</li>
+<li><strong>Adaptive Research Processes</strong>: Dynamically rewriting experimental protocols based on emerging data and interim findings.</li>
+<li><strong>Real-time Strategic Games</strong>: Adjusting complex strategies mid-game in response to evolving opponent behaviors.</li>
+</ul>
 
 
 
@@ -1514,7 +1658,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../mcp-a2a/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MCP and A2A">
+          <a href="../dynamic-playbook-generation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dynamic Playbook Generation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1524,7 +1668,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MCP and A2A
+                Dynamic Playbook Generation
               </div>
             </div>
           </a>

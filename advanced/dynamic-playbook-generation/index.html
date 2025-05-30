@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/tutorials/calling-playbooks/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/advanced/dynamic-playbook-generation/">
       
       
-        <link rel="prev" href="../user-interaction/">
+        <link rel="prev" href="../observer-agents/">
       
       
-        <link rel="next" href="../python-playbooks/">
+        <link rel="next" href="../dynamic-playbook-rewriting/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Calling Playbooks - Playbooks AI</title>
+        <title>Dynamic Playbook Generation - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#calling-playbooks" class="md-skip">
+        <a href="#dynamic-playbook-generation-roadmap" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Calling Playbooks
+              Dynamic Playbook Generation
             
           </span>
         </div>
@@ -389,8 +389,6 @@
       
   
   
-    
-  
   
   
     
@@ -420,15 +418,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../tutorials/" class="md-nav__link ">
               
   
   
@@ -447,7 +445,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -463,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../anatomy-of-a-playbook/" class="md-nav__link">
+      <a href="../../tutorials/anatomy-of-a-playbook/" class="md-nav__link">
         
   
   
@@ -486,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../adding-triggers/" class="md-nav__link">
+      <a href="../../tutorials/adding-triggers/" class="md-nav__link">
         
   
   
@@ -509,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-interaction/" class="md-nav__link">
+      <a href="../../tutorials/user-interaction/" class="md-nav__link">
         
   
   
@@ -529,32 +527,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Calling Playbooks
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tutorials/calling-playbooks/" class="md-nav__link">
         
   
   
@@ -565,188 +541,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objective
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-call-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Call Playbooks?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#defining-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Defining Playbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Defining Playbooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-explicit-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      With Explicit Parameters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#with-implicit-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      With Implicit Parameters
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calling-a-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Calling a Playbook
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Calling a Playbook">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#like-a-python-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Like a Python Function
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implicitly" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implicitly
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#capturing-return-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Capturing Return Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Capturing Return Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-a-python-like-syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      With a Python-like Syntax
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implicitly_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implicitly
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fully-semantic-calls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fully Semantic Calls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-practical-example-country-facts" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Practical Example: Country Facts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercises
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -759,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python-playbooks/" class="md-nav__link">
+      <a href="../../tutorials/python-playbooks/" class="md-nav__link">
         
   
   
@@ -782,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../triggers-advanced/" class="md-nav__link">
+      <a href="../../tutorials/triggers-advanced/" class="md-nav__link">
         
   
   
@@ -805,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multi-agent-programming/" class="md-nav__link">
+      <a href="../../tutorials/multi-agent-programming/" class="md-nav__link">
         
   
   
@@ -828,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../working-with-artifacts/" class="md-nav__link">
+      <a href="../../tutorials/working-with-artifacts/" class="md-nav__link">
         
   
   
@@ -1405,6 +1199,8 @@
       
   
   
+    
+  
   
   
     
@@ -1428,15 +1224,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../advanced/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1455,7 +1251,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Advanced Concepts
@@ -1471,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/mcp-a2a/" class="md-nav__link">
+      <a href="../mcp-a2a/" class="md-nav__link">
         
   
   
@@ -1494,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/playbooks-protocol/" class="md-nav__link">
+      <a href="../playbooks-protocol/" class="md-nav__link">
         
   
   
@@ -1517,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/observer-agents/" class="md-nav__link">
+      <a href="../observer-agents/" class="md-nav__link">
         
   
   
@@ -1537,10 +1333,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../advanced/dynamic-playbook-generation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Playbook Generation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1551,6 +1369,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-dynamic-playbook-generation-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Dynamic Playbook Generation Works
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Dynamic Playbook Generation Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reasoning-and-planning-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reasoning and Planning Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playbook-generation-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbook Generation Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Phase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1563,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/dynamic-playbook-rewriting/" class="md-nav__link">
+      <a href="../dynamic-playbook-rewriting/" class="md-nav__link">
         
   
   
@@ -1613,55 +1511,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Objective
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#how-dynamic-playbook-generation-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      How Dynamic Playbook Generation Works
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-call-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Call Playbooks?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#defining-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Defining Playbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Defining Playbooks">
+    <nav class="md-nav" aria-label="How Dynamic Playbook Generation Works">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#with-explicit-parameters" class="md-nav__link">
+  <a href="#reasoning-and-planning-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      With Explicit Parameters
+      Reasoning and Planning Phase
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#with-implicit-parameters" class="md-nav__link">
+  <a href="#playbook-generation-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      With Implicit Parameters
+      Playbook Generation Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Phase
     </span>
   </a>
   
@@ -1673,102 +1562,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calling-a-playbook" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Calling a Playbook
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Calling a Playbook">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#like-a-python-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Like a Python Function
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implicitly" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implicitly
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#capturing-return-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Capturing Return Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Capturing Return Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-a-python-like-syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      With a Python-like Syntax
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implicitly_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implicitly
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fully-semantic-calls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fully Semantic Calls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-practical-example-country-facts" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Practical Example: Country Facts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercises
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
+      Use Cases
     </span>
   </a>
   
@@ -1793,150 +1589,46 @@
   
 
 
-<h1 id="calling-playbooks">Calling Playbooks<a class="headerlink" href="#calling-playbooks" title="Permanent link">&para;</a></h1>
-<p>In this tutorial, you'll learn how to call one playbook from another to create modular, reusable components.</p>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
-<p>By the end of this tutorial, you'll understand:</p>
+<h1 id="dynamic-playbook-generation-roadmap">Dynamic Playbook Generation (Roadmap)<a class="headerlink" href="#dynamic-playbook-generation-roadmap" title="Permanent link">&para;</a></h1>
+<p>Dynamic Playbook Generation is an advanced capability in Playbooks AI that allows an agent to autonomously generate and execute new playbooks based on deep reasoning and strategic planning. This enables highly adaptive and sophisticated agent behaviors suited to diverse and complex tasks.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>At its core, Dynamic Playbook Generation empowers agents to:</p>
 <ul>
-<li>How to define playbooks that accept parameters</li>
-<li>How to call one playbook from another</li>
-<li>How to capture and use return values from playbooks</li>
-<li>How to create modular, reusable playbook components</li>
+<li><strong>Reason deeply</strong> about their current context, objectives, and available actions.</li>
+<li><strong>Strategically plan</strong> optimal sequences of actions tailored precisely to the task at hand.</li>
+<li><strong>Generate new playbooks</strong> dynamically based on the reasoning and planning outcomes.</li>
+<li><strong>Execute the generated playbooks</strong> seamlessly, thereby adapting to novel or evolving scenarios.</li>
 </ul>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="how-dynamic-playbook-generation-works">How Dynamic Playbook Generation Works<a class="headerlink" href="#how-dynamic-playbook-generation-works" title="Permanent link">&para;</a></h2>
+<h3 id="reasoning-and-planning-phase">Reasoning and Planning Phase<a class="headerlink" href="#reasoning-and-planning-phase" title="Permanent link">&para;</a></h3>
+<p>The initial step involves instructing the agent through a primary playbook to thoroughly evaluate its context and objectives:</p>
 <ul>
-<li>Completion of <a href="../user-interaction/">User Interaction</a></li>
-<li>Understanding of variables in playbooks</li>
+<li>Assess current state, including variables, objectives, and constraints.</li>
+<li>Utilize LLM reasoning capabilities to explore multiple potential pathways.</li>
+<li>Develop a comprehensive and optimal plan through iterative reflection and refinement.</li>
 </ul>
-<h2 id="why-call-playbooks">Why Call Playbooks?<a class="headerlink" href="#why-call-playbooks" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Each playbook is equivalent to a function.</p>
-</blockquote>
-<p>Calling playbooks allows you to:</p>
+<h3 id="playbook-generation-phase">Playbook Generation Phase<a class="headerlink" href="#playbook-generation-phase" title="Permanent link">&para;</a></h3>
+<p>Once the agent has identified a clear, structured plan, it dynamically generates a new, executable playbook:</p>
 <ul>
-<li>Break complex processes into smaller, reusable components</li>
-<li>Create libraries of common functionality</li>
-<li>Improve readability and maintainability</li>
-<li>Enable more complex logic through composition</li>
+<li>The generated playbook captures the strategic reasoning in structured, actionable steps.</li>
+<li>Playbooks are created following standardized Playbooks AI formats, ensuring compatibility and ease of execution.</li>
 </ul>
-<h2 id="defining-playbooks">Defining Playbooks<a class="headerlink" href="#defining-playbooks" title="Permanent link">&para;</a></h2>
-<h3 id="with-explicit-parameters">With Explicit Parameters<a class="headerlink" href="#with-explicit-parameters" title="Permanent link">&para;</a></h3>
-<p>To create a reusable playbook, you can define it with parameters:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## Greeting($name)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Greet the user by welcoming them to the service
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">### Steps</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">-</span><span class="w"> </span>Say &quot;Hello, $name! Welcome to our service.&quot;
-</span></code></pre></div>
-<h3 id="with-implicit-parameters">With Implicit Parameters<a class="headerlink" href="#with-implicit-parameters" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> A playbook has access to all state variables.</p>
-</blockquote>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## Greeting</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Greet the user by welcoming them to the service
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### Steps</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">-</span><span class="w"> </span>Say &quot;Hello, $name! Welcome to our service.&quot;
-</span></code></pre></div>
-<p>This playbook does not specify a parameter. It can still use the <code>$name</code> variable if it is set previously, say from the calling playbook.</p>
-<h2 id="calling-a-playbook">Calling a Playbook<a class="headerlink" href="#calling-a-playbook" title="Permanent link">&para;</a></h2>
-<h3 id="like-a-python-function">Like a Python Function<a class="headerlink" href="#like-a-python-function" title="Permanent link">&para;</a></h3>
-<p>You can call a playbook from another playbook like a python function call:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## Main</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="gu">### Triggers</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="gu">### Steps</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">-</span><span class="w"> </span>Ask the user for their $user_name and $city
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">-</span><span class="w"> </span>Greeting($user_name, city=$city, age=50, state=&quot;WA&quot;)
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> It is OK to deviate from standard Python syntax.</p>
-</blockquote>
-<p>For example, the following is also valid Playbooks code:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">-</span><span class="w"> </span>Greeting($user_name, city=$city, age=50, state=two letter state code where Seattle is located)
-</span></code></pre></div>
-<p>The Playbooks runtime will automatically convert <code>state=two letter state code where Seattle is located</code> to <code>state="WA"</code>!</p>
-<h3 id="implicitly">Implicitly<a class="headerlink" href="#implicitly" title="Permanent link">&para;</a></h3>
-<p>You can also call a playbook implicitly:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gu">## Main</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gu">### Triggers</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gu">### Steps</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">-</span><span class="w"> </span>Ask the user for their $name
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">-</span><span class="w"> </span>Greet the user using their $name
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Playbooks runtime can infer which playbook to call based on the description of the playbook and current context.</p>
-</blockquote>
-<p>Note that Playbooks runtime will interpret "Greet the user" as a call to the <code>Greeting</code> playbook based on the description of the playbook <code>Greet the user by welcoming them to the service</code>. It will also automatically pass the <code>$name</code> variable to the <code>Greeting</code> playbook based on the signature of the playbook.</p>
-<h2 id="capturing-return-values">Capturing Return Values<a class="headerlink" href="#capturing-return-values" title="Permanent link">&para;</a></h2>
-<h3 id="with-a-python-like-syntax">With a Python-like Syntax<a class="headerlink" href="#with-a-python-like-syntax" title="Permanent link">&para;</a></h3>
-<p>Playbooks can return values that can be captured and used by the calling playbook:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gu">## CalculateTotal($price, $quantity)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Calculates the total bill amount from the price and quantity
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gu">### Steps</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">-</span><span class="w"> </span>$total = $price * $quantity
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">-</span><span class="w"> </span>Return $total
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="gu">## OrderProcess</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="gu">### Triggers</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="gu">### Steps</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">-</span><span class="w"> </span>Ask the user for the item $price
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">-</span><span class="w"> </span>Ask the user for the $quantity
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">-</span><span class="w"> </span>$bill_amount = CalculateTotal($price, $quantity)
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">-</span><span class="w"> </span>Tell user that their total bill is $bill_amount
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<h3 id="implicitly_1">Implicitly<a class="headerlink" href="#implicitly_1" title="Permanent link">&para;</a></h3>
-<p>If you don't need the returned value beyond a yield point, do not capture it explicitly. For example,</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">-</span><span class="w"> </span>Get total bill amount from CalculateTotal($price, $quantity)
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">-</span><span class="w"> </span>Tell user what their total bill is
-</span></code></pre></div>
-<h2 id="fully-semantic-calls">Fully Semantic Calls<a class="headerlink" href="#fully-semantic-calls" title="Permanent link">&para;</a></h2>
-<p>Combined with semantic playbook calls with implicit parameters and return values, this can also be expressed as:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">-</span><span class="w"> </span>Calculate total bill amount
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">-</span><span class="w"> </span>Tell user what their total bill is
-</span></code></pre></div>
-<blockquote>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> This is the preferred way to author playbooks, because it is more readable and easier to maintain.</p>
-</blockquote>
-<h2 id="a-practical-example-country-facts">A Practical Example: Country Facts<a class="headerlink" href="#a-practical-example-country-facts" title="Permanent link">&para;</a></h2>
-<p>Let's create a more complex example that demonstrates both parameters and return values:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Facts about nearby countries</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>This program prints interesting facts about nearby countries
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="gu">## GetCountryFact($country)</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gu">### Steps</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">-</span><span class="w"> </span>Return an unusual historical fact about $country
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="gu">## Main</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="gu">### Triggers</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="gu">### Steps</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">-</span><span class="w"> </span>Ask user what $country they are from
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">-</span><span class="w"> </span>List 5 $countries near $country
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">-</span><span class="w"> </span>Tell the user that here are 5 nearby countries to the one they are from
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">-</span><span class="w"> </span>Inform the user that you will now tell them some interesting facts about each of the countries
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">-</span><span class="w"> </span>For each $country in $countries
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>$fact = GetCountryFact($country)
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell the user: &quot;$country: $fact&quot;
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<p>In this example:</p>
+<h3 id="execution-phase">Execution Phase<a class="headerlink" href="#execution-phase" title="Permanent link">&para;</a></h3>
+<p>After generation, the new playbook is immediately executed:</p>
 <ul>
-<li><code>GetCountryFact</code> takes a country name and returns a fact about it</li>
-<li><code>Main</code> calls <code>GetCountryFact</code> for each country in a list</li>
-<li>The return value is stored and used in the response</li>
+<li>The agent invokes the generated playbook as part of its execution pipeline.</li>
+<li>Real-time monitoring ensures execution fidelity, with the option for Observer Agents to supervise correctness.</li>
 </ul>
-<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create a program with playbooks that process a shopping cart (add items, calculate total, apply discounts)</li>
-<li>Create a playbook to implement tic-tac-toe</li>
-</ol>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<p>Now that you know how to call playbooks from markdown, it's time to learn about <a href="../python-playbooks/">Python Playbooks</a> for more advanced functionality. </p>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Adaptive Customer Support</strong>: Creating customized support scripts tailored to individual customer situations.</li>
+<li><strong>Advanced Coding Agents</strong>: Dynamically creating precise coding strategies and solutions for complex software tasks.</li>
+<li><strong>Software Engineer Agents</strong>: Autonomously generating detailed software development playbooks to guide project execution.</li>
+<li><strong>Manus-type Agents</strong>: Creating sophisticated strategic plans and execution sequences for complex, multi-objective scenarios.</li>
+<li><strong>Automated Scientific Research</strong>: Generating research protocols dynamically based on evolving hypotheses and experiment outcomes.</li>
+<li><strong>Interactive Game AI</strong>: Crafting unique and adaptive narratives, strategies, and character interactions in real-time.</li>
+<li><strong>Educational Agents</strong>: Creating personalized learning pathways and materials tailored to the learner’s evolving knowledge and skills.</li>
+</ul>
 
 
 
@@ -1974,7 +1666,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../user-interaction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Interaction">
+          <a href="../observer-agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Observer Agents">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1984,20 +1676,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                User Interaction
+                Observer Agents
               </div>
             </div>
           </a>
         
         
           
-          <a href="../python-playbooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Playbooks">
+          <a href="../dynamic-playbook-rewriting/" class="md-footer__link md-footer__link--next" aria-label="Next: Dynamic Playbook Rewriting">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Python Playbooks
+                Dynamic Playbook Rewriting
               </div>
             </div>
             <div class="md-footer__button md-icon">
