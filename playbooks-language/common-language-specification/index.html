@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbooks-language/intermediate-representation/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbooks-language/common-language-specification/">
       
       
         <link rel="prev" href="../">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Intermediate Representation - Playbooks AI</title>
+        <title>Common Language Specification - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-representation" class="md-skip">
+        <a href="#common-language-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Representation
+              Common Language Specification
             
           </span>
         </div>
@@ -723,7 +723,7 @@
   
   
   <span class="md-ellipsis">
-    Intermediate Representation
+    Common Language Specification
     
   </span>
   
@@ -736,7 +736,7 @@
   
   
   <span class="md-ellipsis">
-    Intermediate Representation
+    Common Language Specification
     
   </span>
   
@@ -759,18 +759,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose-of-the-intermediate-representation" class="md-nav__link">
+  <a href="#purpose-of-the-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose of the Intermediate Representation
+      Purpose of the Common Language Specification
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure-of-the-intermediate-format" class="md-nav__link">
+  <a href="#ecosystem-benefits" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure of the Intermediate Format
+      Ecosystem Benefits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-common-language-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the Common Language Specification
     </span>
   </a>
   
@@ -804,9 +813,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transformation-from-playbooks-language-to-intermediate-format" class="md-nav__link">
+  <a href="#transformation-from-playbooks-language-to-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformation from Playbooks Language to Intermediate Format
+      Transformation from Playbooks Language to Common Language Specification
     </span>
   </a>
   
@@ -832,9 +841,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#transformed-intermediate-format" class="md-nav__link">
+  <a href="#corresponding-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformed Intermediate Format
+      Corresponding Common Language Specification
     </span>
   </a>
   
@@ -846,9 +855,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benefits-of-the-intermediate-format" class="md-nav__link">
+  <a href="#benefits-of-the-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits of the Intermediate Format
+      Benefits of the Common Language Specification
     </span>
   </a>
   
@@ -1556,18 +1565,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose-of-the-intermediate-representation" class="md-nav__link">
+  <a href="#purpose-of-the-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose of the Intermediate Representation
+      Purpose of the Common Language Specification
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure-of-the-intermediate-format" class="md-nav__link">
+  <a href="#ecosystem-benefits" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure of the Intermediate Format
+      Ecosystem Benefits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-the-common-language-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of the Common Language Specification
     </span>
   </a>
   
@@ -1601,9 +1619,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transformation-from-playbooks-language-to-intermediate-format" class="md-nav__link">
+  <a href="#transformation-from-playbooks-language-to-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformation from Playbooks Language to Intermediate Format
+      Transformation from Playbooks Language to Common Language Specification
     </span>
   </a>
   
@@ -1629,9 +1647,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#transformed-intermediate-format" class="md-nav__link">
+  <a href="#corresponding-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformed Intermediate Format
+      Corresponding Common Language Specification
     </span>
   </a>
   
@@ -1643,9 +1661,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benefits-of-the-intermediate-format" class="md-nav__link">
+  <a href="#benefits-of-the-common-language-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits of the Intermediate Format
+      Benefits of the Common Language Specification
     </span>
   </a>
   
@@ -1679,36 +1697,28 @@
   
 
 
-<h1 id="intermediate-representation">Intermediate Representation<a class="headerlink" href="#intermediate-representation" title="Permanent link">&para;</a></h1>
-<p>The Playbooks Language is designed to be human-readable, but to execute it reliably, the system transpiles it into an Intermediate Representation (IR) format. This IR serves as a bridge between the natural language programming model and the execution engine.</p>
-<h2 id="purpose-of-the-intermediate-representation">Purpose of the Intermediate Representation<a class="headerlink" href="#purpose-of-the-intermediate-representation" title="Permanent link">&para;</a></h2>
-<p>The Intermediate Representation:</p>
+<h1 id="common-language-specification">Common Language Specification<a class="headerlink" href="#common-language-specification" title="Permanent link">&para;</a></h1>
+<p>The Playbooks Language is designed to be human-readable, but to execute it reliably and enable interoperability across different implementations, the system compiles it into a Common Language Specification (CLS) format. This specification serves as the canonical representation for LLM-executed programs, enabling multiple implementations and tools to target the same runtime format.</p>
+<h2 id="purpose-of-the-common-language-specification">Purpose of the Common Language Specification<a class="headerlink" href="#purpose-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
+<p>The Common Language Specification:</p>
 <ul>
-<li>Standardizes playbooks for consistent execution</li>
-<li>Preserves the semantics of the original playbooks</li>
-<li>Enables precise tracking of execution state</li>
-<li>Facilitates programmatic analysis and validation</li>
-<li>Allows for more efficient runtime processing</li>
+<li>Provides a canonical format for representing LLM-executed programs</li>
+<li>Enables interoperability between different authoring tools (markdown, visual designers, etc.)</li>
+<li>Allows multiple runtime implementations to execute the same programs</li>
+<li>Supports tooling ecosystem development around a common format</li>
 </ul>
-<h2 id="structure-of-the-intermediate-format">Structure of the Intermediate Format<a class="headerlink" href="#structure-of-the-intermediate-format" title="Permanent link">&para;</a></h2>
-<p>When a Playbooks program is transpiled, it follows a structured format:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># &lt;AgentName&gt;
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;Agent description&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>```python
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>@playbook and other functions
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>```
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>## &lt;PlaybookName&gt;(&lt;params&gt;) -&gt; &lt;returnVar | None&gt;
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&lt;Playbook description&gt;
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>### Triggers
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>T&lt;n&gt;:&lt;BGN|CND|EVT&gt; &lt;trigger text&gt;
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>### Steps
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>01:&lt;CMD&gt; ...  # two-digit numbering; dot-notation for sub-steps
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>... more steps ...
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>### Notes
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>N&lt;n&gt; &lt;text&gt;
-</span></code></pre></div>
+<h2 id="ecosystem-benefits">Ecosystem Benefits<a class="headerlink" href="#ecosystem-benefits" title="Permanent link">&para;</a></h2>
+<p>The CLS enables a rich ecosystem where:</p>
+<ul>
+<li><strong>Visual workflow designers</strong> can generate programs targeting the CLS</li>
+<li><strong>Different authoring tools</strong> (markdown, YAML, GUI builders) can compile to the same format</li>
+<li>Implementations using <strong>other frameworks</strong> such as LangGraph, Google Agent Development Kit, Autogen, etc can be converted into CLS format</li>
+<li><strong>Multiple runtime implementations</strong> can execute CLS programs, enabling specialized execution runtimes for different use cases, hardwares, etc.</li>
+<li><strong>Analysis tools</strong> can work with any CLS-compliant program</li>
+<li><strong>Debugging and monitoring tools</strong> have a consistent format to target</li>
+</ul>
+<h2 id="structure-of-the-common-language-specification">Structure of the Common Language Specification<a class="headerlink" href="#structure-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
+<p>When a Playbooks program is compiled to CLS format, it follows a structured representation:</p>
 <h2 id="trigger-representation">Trigger Representation<a class="headerlink" href="#trigger-representation" title="Permanent link">&para;</a></h2>
 <p>Triggers are standardized with specific codes:</p>
 <table>
@@ -1799,12 +1809,12 @@
 <li>Nested sub-steps add another level: <code>01.01.01</code>, etc.</li>
 </ul>
 <p>For example, an if-condition with nested steps would be represented as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>03:CND If $total &gt; 100
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  03.01:EXE Apply $discount of 10%
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  03.02:QUE Tell the user they received a discount
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>04:EXE Continue with checkout
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>03:CND If $total &gt; 100
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  03.01:EXE Apply $discount of 10%
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  03.02:QUE Tell the user they received a discount
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>04:EXE Continue with checkout
 </span></code></pre></div>
-<h2 id="transformation-from-playbooks-language-to-intermediate-format">Transformation from Playbooks Language to Intermediate Format<a class="headerlink" href="#transformation-from-playbooks-language-to-intermediate-format" title="Permanent link">&para;</a></h2>
+<h2 id="transformation-from-playbooks-language-to-common-language-specification">Transformation from Playbooks Language to Common Language Specification<a class="headerlink" href="#transformation-from-playbooks-language-to-common-language-specification" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Agent names are converted to CamelCase without spaces: <code>CustomerService</code> instead of <code>Customer Service</code></li>
 <li>Playbook names are also converted to CamelCase without spaces: <code>Greeting</code> instead of <code>Greet the user</code></li>
@@ -1815,54 +1825,57 @@
 <li>Checks for notes are added as <code>CHK</code> steps at appropriate places</li>
 </ul>
 <h2 id="example-transformation">Example Transformation<a class="headerlink" href="#example-transformation" title="Permanent link">&para;</a></h2>
-<p>Here's an example of how a simple markdown playbook is transformed to the intermediate format:</p>
+<p>Here's an example of how a simple markdown playbook is transformed to the CLS format:</p>
 <h3 id="original-markdown">Original Markdown<a class="headerlink" href="#original-markdown" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Customer Support</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gu">## Greeting</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>This playbook greets the user and asks for their order number.
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="gu">### Triggers</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gu">### Steps</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">-</span><span class="w"> </span>Greet the user and ask for their order number
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">-</span><span class="w"> </span>If user provides an invalid order number
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask them to try again
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">-</span><span class="w"> </span>Look up order status
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>Tell the user their order status
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="gu">### Notes</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">-</span><span class="w"> </span>Be polite and professional
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Customer Support</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">## Greeting</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>This playbook greets the user and asks for their order number.
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gu">### Triggers</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="gu">### Steps</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span>Greet the user and ask for their order number
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">-</span><span class="w"> </span>If user provides an invalid order number
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask them to try again
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">-</span><span class="w"> </span>Look up order status
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">-</span><span class="w"> </span>Tell the user their order status
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="gu">### Notes</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span>Be polite and professional
 </span></code></pre></div>
-<h3 id="transformed-intermediate-format">Transformed Intermediate Format<a class="headerlink" href="#transformed-intermediate-format" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># CustomerSupport
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>This agent provides customer support services, helping users track orders and resolve issues.
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>## Greeting() -&gt; None
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>This playbook greets the user and asks for their order number.
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>### Triggers
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>T1:BGN At the beginning
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>### Steps
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>01:QUE Greet the user and ask for their order number
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>02:YLD user
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>03:CND If user provides an invalid order number
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  03.01:QUE Ask them to try again
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  03.02:YLD user
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  03.03:JMP 03 to check again
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>04:QUE Look up order status
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>05:QUE Tell the user their order status
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>06:RET
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>### Notes
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>N1 Be polite and professional
+<h3 id="corresponding-common-language-specification">Corresponding Common Language Specification<a class="headerlink" href="#corresponding-common-language-specification" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># CustomerSupport
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This agent provides customer support services, helping users track orders and resolve issues.
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>## Greeting() -&gt; None
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>This playbook greets the user and asks for their order number.
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>### Triggers
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>T1:BGN At the beginning
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>### Steps
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>01:QUE Greet the user and ask for their order number
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>02:YLD user
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>03:CND If user provides an invalid order number
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  03.01:QUE Ask them to try again
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  03.02:YLD user
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  03.03:JMP 03 to check again
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>04:QUE Look up order status
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>05:QUE Tell the user their order status
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>06:RET
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>### Notes
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>N1 Be polite and professional
 </span></code></pre></div>
-<h2 id="benefits-of-the-intermediate-format">Benefits of the Intermediate Format<a class="headerlink" href="#benefits-of-the-intermediate-format" title="Permanent link">&para;</a></h2>
+<h2 id="benefits-of-the-common-language-specification">Benefits of the Common Language Specification<a class="headerlink" href="#benefits-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Standardization</strong>: Consistent representation regardless of the original playbook style</li>
+<li><strong>Interoperability</strong>: Multiple authoring tools can target the same runtime format</li>
+<li><strong>Ecosystem</strong>: Enables rich tooling ecosystem around a canonical specification</li>
+<li><strong>Runtime Flexibility</strong>: Multiple runtime implementations can execute CLS programs</li>
+<li><strong>Standardization</strong>: Consistent representation regardless of the original authoring method</li>
+<li><strong>Tool Development</strong>: Visual designers, IDEs, and other tools can generate CLS-compliant programs</li>
 <li><strong>Clarity</strong>: Explicit indication of step types and control flow</li>
-<li><strong>Debugging</strong>: Easier to track execution and identify issues</li>
+<li><strong>Debugging</strong>: Easier to track execution and identify issues across different tools</li>
 <li><strong>Optimization</strong>: Better performance through structured representation</li>
-<li><strong>Interoperability</strong>: Enables different execution engines and integrations</li>
 </ol>
 <h2 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
 <p>Explore different types of playbooks:</p>
