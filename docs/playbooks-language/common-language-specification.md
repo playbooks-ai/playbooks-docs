@@ -1,39 +1,30 @@
-# Intermediate Representation
+# Common Language Specification
 
-The Playbooks Language is designed to be human-readable, but to execute it reliably, the system transpiles it into an Intermediate Representation (IR) format. This IR serves as a bridge between the natural language programming model and the execution engine.
+The Playbooks Language is designed to be human-readable, but to execute it reliably and enable interoperability across different implementations, the system compiles it into a Common Language Specification (CLS) format. This specification serves as the canonical representation for LLM-executed programs, enabling multiple implementations and tools to target the same runtime format.
 
-## Purpose of the Intermediate Representation
+## Purpose of the Common Language Specification
 
-The Intermediate Representation:
+The Common Language Specification:
 
-- Standardizes playbooks for consistent execution
-- Preserves the semantics of the original playbooks
-- Enables precise tracking of execution state
-- Facilitates programmatic analysis and validation
-- Allows for more efficient runtime processing
+- Provides a canonical format for representing LLM-executed programs
+- Enables interoperability between different authoring tools (markdown, visual designers, etc.)
+- Allows multiple runtime implementations to execute the same programs
+- Supports tooling ecosystem development around a common format
 
-## Structure of the Intermediate Format
+## Ecosystem Benefits
 
-When a Playbooks program is transpiled, it follows a structured format:
+The CLS enables a rich ecosystem where:
 
-````
-# <AgentName>
-<Agent description>
+- **Visual workflow designers** can generate programs targeting the CLS
+- **Different authoring tools** (markdown, YAML, GUI builders) can compile to the same format
+- Implementations using **other frameworks** such as LangGraph, Google Agent Development Kit, Autogen, etc can be converted into CLS format
+- **Multiple runtime implementations** can execute CLS programs, enabling specialized execution runtimes for different use cases, hardwares, etc.
+- **Analysis tools** can work with any CLS-compliant program
+- **Debugging and monitoring tools** have a consistent format to target
 
-```python
-@playbook and other functions
-```
+## Structure of the Common Language Specification
 
-## <PlaybookName>(<params>) -> <returnVar | None>
-<Playbook description>
-### Triggers
-T<n>:<BGN|CND|EVT> <trigger text>
-### Steps
-01:<CMD> ...  # two-digit numbering; dot-notation for sub-steps
-... more steps ...
-### Notes
-N<n> <text>
-````
+When a Playbooks program is compiled to CLS format, it follows a structured representation:
 
 ## Trigger Representation
 
@@ -79,7 +70,7 @@ For example, an if-condition with nested steps would be represented as:
 04:EXE Continue with checkout
 ```
 
-## Transformation from Playbooks Language to Intermediate Format
+## Transformation from Playbooks Language to Common Language Specification
 
 - Agent names are converted to CamelCase without spaces: `CustomerService` instead of `Customer Service`
 - Playbook names are also converted to CamelCase without spaces: `Greeting` instead of `Greet the user`
@@ -91,7 +82,7 @@ For example, an if-condition with nested steps would be represented as:
 
 ## Example Transformation
 
-Here's an example of how a simple markdown playbook is transformed to the intermediate format:
+Here's an example of how a simple markdown playbook is transformed to the CLS format:
 
 ### Original Markdown
 
@@ -115,7 +106,7 @@ This playbook greets the user and asks for their order number.
 - Be polite and professional
 ```
 
-### Transformed Intermediate Format
+### Corresponding Common Language Specification
 
 ```
 # CustomerSupport
@@ -139,13 +130,16 @@ T1:BGN At the beginning
 N1 Be polite and professional
 ```
 
-## Benefits of the Intermediate Format
+## Benefits of the Common Language Specification
 
-1. **Standardization**: Consistent representation regardless of the original playbook style
-2. **Clarity**: Explicit indication of step types and control flow
-3. **Debugging**: Easier to track execution and identify issues
-4. **Optimization**: Better performance through structured representation
-5. **Interoperability**: Enables different execution engines and integrations
+1. **Interoperability**: Multiple authoring tools can target the same runtime format
+2. **Ecosystem**: Enables rich tooling ecosystem around a canonical specification
+3. **Runtime Flexibility**: Multiple runtime implementations can execute CLS programs
+4. **Standardization**: Consistent representation regardless of the original authoring method
+5. **Tool Development**: Visual designers, IDEs, and other tools can generate CLS-compliant programs
+6. **Clarity**: Explicit indication of step types and control flow
+7. **Debugging**: Easier to track execution and identify issues across different tools
+8. **Optimization**: Better performance through structured representation
 
 ## Learn More
 

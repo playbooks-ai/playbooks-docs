@@ -83,6 +83,17 @@ pip install playbooks[test]
 pip install playbooks[docs]
 ``` -->
 
+## VSCode Debugging Support
+
+For enhanced development experience, install the **Playbooks Language Support** extension for Visual Studio Code:
+
+1. Open VSCode
+2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Search for "Playbooks Language Support"
+4. Click Install
+
+The extension provides debugging capabilities for playbooks programs, making it easier to develop and troubleshoot your AI agents. Once the plugin is installed, you can open a playbooks `.pb` file and start debugging!
+
 ## Troubleshooting
 
 ### Common Issues

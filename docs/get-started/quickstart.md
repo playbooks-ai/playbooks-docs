@@ -7,22 +7,18 @@ This quickstart guide will help you create and run your first Playbooks AI progr
 Before you begin, make sure you have:
 
 - Installed Playbooks AI (see the [Installation Guide](installation.md))
-- An API key for either Anthropic (Claude) or OpenAI (GPT-4o)
+- An API key for Anthropic (Claude Sonnet 4.0)
 
 ## Step 1: Set Up Your Environment
 
-First, you need to set up your environment variables to authenticate with the LLM provider of your choice.
+First, you need to set up your environment variables to authenticate with Anthropic.
 
 Create a `.env` file in your text editor and configure your API key and model:
 
 ```
-# For Anthropic
+# For Anthropic (Claude Sonnet 4.0)
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
-MODEL=claude-3-7-sonnet-latest
-
-# OR for OpenAI
-# OPENAI_API_KEY=your_openai_api_key_here
-# MODEL=gpt-4o
+MODEL=claude-sonnet-4-20250514
 
 # Cache LLM responses to disk
 LLM_CACHE_TYPE="disk"
@@ -35,9 +31,13 @@ LLM_CACHE_PATH=".llm_cache" # for disk cache
 # LANGFUSE_HOST="http://localhost:3000"
 ```
 
-Make sure to uncomment the appropriate API key and model for the service you're using, and replace the placeholder with your actual API key. 
+Make sure to replace the placeholder with your actual Anthropic API key. 
 
->:warning: We recommend using Claude Sonnet 3.7 or GPT-4o. Playbooks has not been tested with other models.
+>:warning: Playbooks AI supports Claude Sonnet 4.0 only. Playbooks is not tested with other models.
+
+### VSCode Support (optional)
+
+For the best development experience, consider setting up VSCode with debugging support. See the [Installation Guide](installation.md#vscode-debugging-support) for instructions on installing the **Playbooks Language Support** extension, which provides debugging capabilities for your playbooks programs.
 
 ### Langfuse (optional)
 You can specify Langfuse credentials for tracing the execution of your Playbooks programs. For developement environment, we recommend using the [docker compose setup for Langfuse](https://langfuse.com/self-hosting/docker-compose). After following these instructions, launch Langfuse at http://localhost:3000, create a new organization and project, and create a new secret key and public key to enable tracing.

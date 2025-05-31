@@ -192,4 +192,4 @@ This playbook helps customers check their order status.
 ````
 ## Next Steps
 
-- [Intermediate Representation](intermediate-representation.md) - How playbooks are transpiled for execution
+- [Common Language Specification](common-language-specification.md) - How playbooks are compiled for execution

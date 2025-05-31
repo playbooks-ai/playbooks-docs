@@ -2,3 +2,5 @@
 .DS_Store
 .venv
 site/
+llm.txt
+*.code-workspace

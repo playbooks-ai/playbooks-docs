@@ -98,7 +98,7 @@ nav:
     - Working with Artifacts: tutorials/working-with-artifacts.md
   - Playbooks Language:
     - playbooks-language/index.md
-    - Intermediate Representation: playbooks-language/intermediate-representation.md
+    - Common Language Specification: playbooks-language/common-language-specification.md
   - Playbook Types:
     - playbook-types/index.md
     - Markdown Playbooks: playbook-types/markdown-playbooks.md

@@ -136,4 +136,4 @@ Congratulations! You've now completed the basic tutorials for Playbooks AI.
 To continue learning, explore these topics:
 
 - [Multi-Agent Systems](../multi-agent-systems/index.md)
-- [Intermediate Representation](../playbooks-language/intermediate-representation.md)
+- [Common Language Specification](../playbooks-language/common-language-specification.md)
