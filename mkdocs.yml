@@ -116,5 +116,12 @@ nav:
     - Exported and Public Playbooks: multi-agent-systems/exported-and-public-playbooks.md
   - Observability:
     - observability/index.md
+  - Advanced Concepts:
+    - advanced/index.md
+    - MCP and A2A: advanced/mcp-a2a.md
+    - Playbooks Protocol: advanced/playbooks-protocol.md
+    - Observer Agents: advanced/observer-agents.md
+    - Dynamic Playbook Generation: advanced/dynamic-playbook-generation.md
+    - Dynamic Playbook Rewriting: advanced/dynamic-playbook-rewriting.md
   # - API Reference:
   #   - api-reference/index.md

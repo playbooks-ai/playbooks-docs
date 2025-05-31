@@ -1,0 +1,3597 @@
+****index.md****
+---
+hide:
+  - toc
+---
+
+<div style="text-align: center;">
+  <div class="centered-logo-text-group">
+    <h1>
+    <img src="assets/images/playbooks-logo.png#gh-light-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
+    <img src="assets/images/playbooks-logo-dark.png#gh-dark-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
+    </h1>
+  </div>
+</div>
+
+## What is Playbooks AI?
+
+Playbooks AI is a novel framework for **building AI agents using Natural Language Programming**. 
+
+- A new "english-like", semantically interpreted programming language
+- Runtime for reliable, auditable and verifiable execution of complex prompts and workflows
+- Seamless composition of complex workflows across natural language and Python
+
+<div class="install-command-container">
+  <p style="text-align:center;">
+    Get started:
+    <br/>
+    <code>pip install playbooks</code>
+  </p>
+</div>
+
+<p style="text-align:center;">
+  <a href="get-started/quickstart/" class="md-button" style="margin:3px">Quickstart</a>
+  <a href="tutorials/" class="md-button" style="margin:3px">Tutorials</a>
+  <!-- <a href="api-reference/" class="md-button" style="margin:3px">API Reference</a> -->
+  <a href="playbooks-language/" class="md-button" style="margin:3px">Playbooks Language</a>
+</p>
+
+---
+
+## Learn more
+
+<div class="grid cards" markdown>
+
+-   :material-language-markdown: **Natural Language Programming**
+
+    ---
+
+    Create AI agents using natural language, with Markdown playbooks for step-by-step instructions,
+    suitable for prescribed business processes. Mix prescribed workflows with dynamic planning.
+
+    [**Learn about Playbooks Language**](playbooks-language/index.md)
+
+-   :material-code-braces: **Python Integration**
+
+    ---
+
+    Turn any async Python function into a playbook with the `@playbook` decorator. Call other playbooks
+    (including natural language playbooks) from Python and vice versa.
+
+    [**Explore Python Playbooks**](playbook-types/python-playbooks.md)
+
+-   :material-account-group: **Multi-Agent Architecture**
+
+    ---
+
+    Natively support multi-agent systems with agent-to-agent calls and messaging. Enable natural language 
+    message passing and multi-turn dialogue between agents with direct playbook invocation.
+
+    [**Discover Multi-Agent Systems**](tutorials/multi-agent-programming.md)
+
+-   :material-bell-ring: **Event-Driven Programming**
+
+    ---
+
+    Use triggers for declarative event-driven programming. Playbooks are dynamically invoked when specified 
+    conditions are met, including temporal, state-based, execution flow, user interaction, and external events.
+
+    [**Explore Triggers**](triggers/index.md)
+
+-   :material-magnify-scan: **Execution Observability**
+
+    ---
+
+    Playbooks framework tracks call stack and variables. Step-by-step execution is verified using static 
+    analysis of the program, with fully inspectable LLM program execution.
+
+    [**Learn about Observability**](observability/index.md)
+
+-   :material-database: **Artifacts and State Management**
+
+    ---
+
+    Store and retrieve data with artifacts. Manage state across playbook executions and between agents.
+
+    [**Manage Artifacts**](artifacts/index.md)
+
+</div>
+
+<div class="footer"></div>
+
+============
+****index.md****
+# Getting Started with Playbooks AI
+
+Playbooks AI is a framework for building AI agents using natural language programming. It allows you to create AI agents that can understand and execute natural language instructions, interact with users, and call Python functions seamlessly.
+
+## What are Playbooks?
+
+Playbooks are procedures that define the behavior of AI agents. They can be written as:
+
+1. **Natural language instructions** - Step-by-step instructions for prescribed business processes
+2. **Agentic prompts** - Prompt-based playbooks for dynamically planned tasks where the AI agent decides the next steps
+3. **Python functions** - Python functions that can be called from playbooks and can call playbooks
+
+## Installation
+
+To get started with Playbooks AI, you need to install the `playbooks` package:
+
+```bash
+pip install playbooks
+```
+
+## First Steps
+
+Follow these guides to start building with Playbooks AI:
+
+- [Installation](installation.md): Detailed installation instructions
+- [Quickstart](quickstart.md): Create your first playbook in minutes
+- [Tutorials](../tutorials/index.md): Tutorials to learn from
+
+## Core Concepts
+
+Playbooks AI is built around these core concepts:
+
+- **Playbooks Language**: The natural language programming syntax
+- **Agent Framework**: The environment that Playbooks programs run in
+- **Playbooks Runtime**: Manages interpreter, control flow, variables, artifacts, etc.
+- **Triggers**: Event-driven programming through natural language conditions
+- **Artifacts**: Store and access data from playbooks
+
+Ready to dive in? Check out the [Quickstart Guide](quickstart.md) to create your first playbook. 
+============
+****installation.md****
+# Installation
+
+This guide will walk you through the process of installing Playbooks AI and setting up your development environment.
+
+## Prerequisites
+
+Before installing Playbooks AI, ensure you have:
+
+- Python 3.10 or higher
+- pip (Python package installer)
+- A virtual environment tool (optional but recommended)
+
+## Installing Playbooks AI
+
+### Basic Installation
+
+The simplest way to install Playbooks AI is using pip:
+
+```bash
+pip install playbooks
+```
+
+This will install the core Playbooks AI package with all the essential dependencies.
+
+### Installation in a Virtual Environment
+
+For a cleaner installation that doesn't affect your global Python environment, we recommend using a virtual environment:
+
+#### Using venv (built into Python)
+
+```bash
+# Create a virtual environment
+python -m venv playbooks-env
+
+# Activate the virtual environment
+# On Windows
+playbooks-env\Scripts\activate
+# On macOS/Linux
+source playbooks-env/bin/activate
+
+# Install Playbooks AI
+pip install playbooks
+```
+
+#### Using Poetry
+
+If you're using Poetry for dependency management:
+
+```bash
+# Create a new project with Poetry
+poetry new my-playbooks-project
+cd my-playbooks-project
+
+# Add Playbooks AI as a dependency
+poetry add playbooks
+
+# Activate the virtual environment
+poetry shell
+```
+
+## Verifying Installation
+
+You can verify that Playbooks AI is installed correctly by running:
+
+```bash
+python -c "import playbooks; print(playbooks.__name__)"
+```
+
+This should print "playbooks" if the installation is successful.
+
+## Optional Dependencies
+No optional dependencies are required for Playbooks AI.
+<!-- Depending on your use case, you might want to install additional dependencies:
+
+```bash
+# For development tools
+pip install playbooks[dev]
+
+# For testing tools
+pip install playbooks[test]
+
+# For documentation tools
+pip install playbooks[docs]
+``` -->
+
+## Troubleshooting
+
+### Common Issues
+
+- **ImportError: No module named 'playbooks'**: The package isn't installed correctly. Try reinstalling.
+- **Version conflicts**: If you have dependency conflicts, try installing in a fresh virtual environment.
+- **Permission errors**: You might need administrator privileges. Try using `sudo pip install playbooks` on Unix systems or run as administrator on Windows.
+
+### Getting Help
+
+If you encounter any issues during installation:
+
+- Check the [GitHub repository](https://github.com/playbooks-ai/playbooks) for known issues
+- Join our community on [Discord](https://discord.gg/playbooks-ai) to get help from other users
+- File an issue on [GitHub](https://github.com/playbooks-ai/playbooks/issues) if you've found a bug
+
+## Next Steps
+
+Now that you have Playbooks AI installed, you can:
+
+- Follow the [Quickstart Guide](quickstart.md) to create your first playbook
+- Explore the [Playbooks Language](../playbooks-language/index.md) documentation to learn about the syntax
+
+============
+****quickstart.md****
+# Quickstart
+
+This quickstart guide will help you create and run your first Playbooks AI program. By the end, you'll have a simple interactive program that asks for your name and provides a personalized greeting.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- Installed Playbooks AI (see the [Installation Guide](installation.md))
+- An API key for either Anthropic (Claude) or OpenAI (GPT-4o)
+
+## Step 1: Set Up Your Environment
+
+First, you need to set up your environment variables to authenticate with the LLM provider of your choice.
+
+Create a `.env` file in your text editor and configure your API key and model:
+
+```
+# For Anthropic
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+MODEL=claude-3-7-sonnet-latest
+
+# OR for OpenAI
+# OPENAI_API_KEY=your_openai_api_key_here
+# MODEL=gpt-4o
+
+# Cache LLM responses to disk
+LLM_CACHE_TYPE="disk"
+LLM_CACHE_ENABLED="true"
+LLM_CACHE_PATH=".llm_cache" # for disk cache
+
+# Langfuse (optional)
+# LANGFUSE_SECRET_KEY="sk-lf-..."
+# LANGFUSE_PUBLIC_KEY="pk-lf-..."
+# LANGFUSE_HOST="http://localhost:3000"
+```
+
+Make sure to uncomment the appropriate API key and model for the service you're using, and replace the placeholder with your actual API key. 
+
+>:warning: We recommend using Claude Sonnet 3.7 or GPT-4o. Playbooks has not been tested with other models.
+
+### Langfuse (optional)
+You can specify Langfuse credentials for tracing the execution of your Playbooks programs. For developement environment, we recommend using the [docker compose setup for Langfuse](https://langfuse.com/self-hosting/docker-compose). After following these instructions, launch Langfuse at http://localhost:3000, create a new organization and project, and create a new secret key and public key to enable tracing.
+
+## Step 2: Create Your First Playbooks program
+
+Create a new file named `hello.md` with the following content:
+
+```markdown
+# Personalized greeting
+This program greets the user by name
+
+## Greet
+## Triggers
+- At the beginning
+## Steps
+- Ask the user for their name
+- Say hello to the user by name and welcome them to Playbooks AI
+- End program
+```
+
+This simple Playbooks program:
+
+- Defines a "Personalized greeting" agent
+- Defines a "Greet" playbook that triggers at the beginning of program execution
+- Specifies steps to ask for the user's name and respond with a personalized greeting
+
+## Step 3: Run Your Playbooks program
+
+Now, run your program:
+
+```bash
+python -m playbooks.applications.agent_chat hello.md --verbose
+```
+
+You should see output similar to:
+
+```
+Loading playbooks from: ['hello.md']
+Transpiled playbook content
+
+╭─ PersonalizedGreeting ────╮
+│ Hello! What is your name? │
+╰───────────────────────────╯
+
+User: hey, my name is Amol
+
+╭─ PersonalizedGreeting ───────────────╮
+│ Hello Amol! Welcome to Playbooks AI. │
+╰──────────────────────────────────────╯
+Execution finished. Exiting...
+```
+
+Congratulations! You've successfully run your first Playbooks program.
+
+## Understanding What's Happening
+
+Let's break down what happened:
+
+1. The Playbooks AI framework loaded your markdown file and transpiled it into an executable format
+2. The AgentChat application was launched, which provides a simple command-line chat interface
+3. The application started executing the program
+4. The playbook with the "At the beginning" trigger was automatically executed
+5. The agent followed the steps defined in your playbook:
+   - Asked for your name
+   - Processed your response
+   - Generated a personalized greeting
+   - Ended the program
+
+## Next Steps
+
+Now that you've run your first playbook, you can:
+
+- Go through the [tutorials](../tutorials/index.md)
+- Learn about [Triggers](../triggers/index.md) for more advanced event-based programming
+- Learn how to create [multi-agent systems](../multi-agent-systems/index.md)
+
+============
+****index.md****
+# Tutorials
+
+Welcome to the Playbooks AI tutorials. These step-by-step guides will help you learn how to use Playbooks AI to build intelligent agents by introducing one concept at a time.
+
+## Getting Started
+
+If you haven't installed Playbooks AI yet, follow the [installation guide](../get-started/installation.md) and then the [quickstart guide](../get-started/quickstart.md) to set up your environment.
+
+## Tutorial Sequence
+
+These tutorials are designed to be followed in order, with each one building on concepts introduced in previous tutorials:
+
+1. [Anatomy of a Playbook](anatomy-of-a-playbook.md) - Understand the structure and components of a basic playbook
+2. [Adding Triggers](adding-triggers.md) - Learn how to use triggers to control when playbooks execute
+3. [User Interaction](user-interaction.md) - Handle user input and responses
+4. [Calling Playbooks](calling-playbooks.md) - Call one playbook from another
+5. [Python Playbooks](python-playbooks.md) - Create playbooks using Python code
+6. [Advanced Triggers](triggers-advanced.md) - Explore more advanced triggers for validation, sentiment, and error handling
+7. [Multi-Agent Programming](multi-agent-programming.md) - Create programs with multiple agents
+8. [Working with Artifacts](working-with-artifacts.md) - Store and retrieve data using artifacts
+
+## Key Concepts Coverage
+
+Throughout these tutorials, you'll explore these key Playbooks AI concepts:
+
+- **Markdown Playbooks** - Writing playbooks in natural language
+- **Python Playbooks** - Writing playbooks with Python code
+- **Triggers** - Controlling when playbooks execute
+- **Variables** - Storing and manipulating data
+- **User Interaction** - Creating conversational flows
+- **Multi-Agent Systems** - Building systems with specialized agents
+- **Artifacts** - Managing persistent data
+
+Ready to get started? Begin with [Anatomy of a Playbook](anatomy-of-a-playbook.md)!
+
+============
+****anatomy-of-a-playbook.md****
+# Anatomy of a Playbook
+
+In this tutorial, you'll learn about the structure of a basic Playbooks AI program and understand the components that make up a playbook.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- The basic structure of a markdown playbook
+- How to define a playbook with steps
+- How triggers control playbook execution
+- How to create and run a simple "Hello World" playbook
+
+## Prerequisites
+
+- [Playbooks AI installed](../get-started/installation.md)
+- Basic familiarity with markdown
+
+## The Structure of a Playbook
+
+A Playbooks AI program consists of one or more playbooks written in markdown format. Let's break down the structure of a basic "Hello World" playbook:
+
+```markdown
+# Hello world
+This is a hello world demo for the playbooks system
+
+## Hello world demo
+This playbooks demo prints a hello playbooks message
+
+### Triggers
+- At the beginning
+
+### Steps
+- Greet the user with a hello playbooks message
+- Tell the user that this is a demo for the playbooks system
+- Say goodbye to the user
+- End program
+```
+
+Let's examine each part:
+
+### 1. Program Title and Description
+
+```markdown
+# Hello world
+This is a hello world demo for the playbooks system
+```
+
+- The top-level heading (`#`) defines the program title
+- The text immediately following defines the program description
+
+### 2. Playbook Definition
+
+```markdown
+## Hello world demo
+This playbooks demo prints a hello playbooks message
+```
+
+- Second-level headings (`##`) define individual playbooks within the program
+- The text immediately following describes what this playbook does
+
+### 3. Triggers Section
+
+```markdown
+### Triggers
+- At the beginning
+```
+
+- The "Triggers" section (denoted by `### Triggers`) defines when this playbook should execute
+- In this example, `At the beginning` means this playbook will run as soon as the program starts
+
+### 4. Steps Section
+
+```markdown
+### Steps
+- Greet the user with a hello playbooks message
+- Tell the user that this is a demo for the playbooks system
+- Say goodbye to the user
+- End program
+```
+
+- The "Steps" section (denoted by `### Steps`) defines what the playbook should do
+- Each bullet point (`-`) represents a discrete step in natural language
+- Steps are executed in the order they are listed
+- The last step `End program` terminates the program execution
+
+## Creating Your First Playbook
+
+Let's create your first playbook:
+
+1. Create a new file named `hello.md` with the following content:
+
+```markdown
+# Hello world
+This is a hello world demo for the playbooks system
+
+## Hello world demo
+This playbooks demo prints a hello playbooks message
+
+### Triggers
+- At the beginning
+
+### Steps
+- Greet the user with a hello playbooks message
+- Tell the user that this is a demo for the playbooks system
+- Say goodbye to the user
+- End program
+```
+
+2. Run your playbook:
+
+```bash
+python -m playbooks.applications.agent_chat hello.md --verbose
+```
+
+3. You should see output similar to:
+
+```
+Loading playbooks from: ['hello.md']
+Transpiled playbook content
+
+╭─ HelloWorld ───────────────────────────────────────────────────╮
+│ Hello! Welcome to Playbooks AI!                                │
+│                                                                │
+│ This is a demonstration of the Playbooks system, which allows  │
+│ you to create AI agents using natural language programming.    │
+│                                                                │
+│ Thank you for trying out this demo. Goodbye!                   │
+╰────────────────────────────────────────────────────────────────╯
+Execution finished. Exiting...
+```
+
+## Understanding the Execution
+
+When you run the playbook:
+
+1. The Playbooks AI framework loads and parses your markdown file
+2. It transpiles the natural language into an executable format
+3. It identifies playbooks with triggers that match the current state (in this case, "At the beginning")
+4. It executes the steps in order, generating appropriate responses for each step
+5. When it reaches the "End program" step, execution terminates
+
+## Variables in Playbooks
+
+Playbooks can also use variables to store and manipulate data. Variables are denoted with a `$` prefix. We'll explore variables in more detail in later tutorials.
+
+## Best Practices
+
+When creating playbooks:
+
+- Give your playbooks descriptive titles that explain their purpose
+- Break complex processes into multiple playbooks with clear responsibilities
+- Use clear, concise natural language for your steps
+- Use triggers to control when playbooks execute
+- End your program explicitly with the "End program" step
+
+## Exercises
+
+1. Modify the "Hello World" playbook to ask for the user's name and include it in the greeting
+2. Create a playbook that tells a short joke or story
+3. Try creating a playbook with multiple sets of steps and see what happens
+
+## Next Steps
+
+Now that you understand the basic structure of a playbook, you're ready to learn about [Adding Triggers](adding-triggers.md) to control when your playbooks execute. 
+============
+****adding-triggers.md****
+# Adding Triggers
+
+In this tutorial, you'll learn how to use triggers to control when your playbooks execute.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+- What triggers are and why they're useful
+- How to define different types of triggers in your playbooks
+- How to execute playbooks conditionally using triggers
+
+## Prerequisites
+
+- Completion of [Anatomy of a Playbook](anatomy-of-a-playbook.md)
+- A basic understanding of playbook structure
+
+## What Are Triggers?
+
+Triggers are conditions that determine when a playbook should execute. They enable semantic event-driven programming. Rather than relying on complex if-else statements, you can define in plain English when your playbook should run.
+
+## Types of Triggers
+
+Playbooks AI supports several types of triggers:
+
+### 1. Temporal Triggers
+
+Temporal triggers execute playbooks at specific times or moments:
+
+```markdown
+### Triggers
+- At the beginning
+
+### Triggers
+- When the program ends
+```
+
+### 2. State-Based Triggers
+
+State-based triggers execute playbooks when variables reach certain states or values:
+
+```markdown
+### Triggers
+- When $x becomes larger than 15
+- When $account_balance is negative
+```
+
+### 3. Execution Flow Triggers
+
+Execution flow triggers execute playbooks before, during, or after other playbooks:
+
+```markdown
+### Triggers
+- After calling LoadAccount
+- Before calling ProcessPayment
+```
+
+### 4. User Interaction Triggers
+
+User interaction triggers execute playbooks in response to user actions:
+
+```markdown
+### Triggers
+- When user provides a PIN
+- When user wants to know the account balance
+```
+
+## Example: Using Multiple Types of Triggers
+
+Let's create a more complex example that uses different types of triggers:
+
+```markdown
+# Account Management
+This program demonstrates various types of triggers.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user for a PIN
+- Ask user for email
+- $x = 10
+- Load user account
+- $x = $x * 2
+- Tell the user their account balance
+
+## LoadAccount($email, $pin)
+### Steps
+- Return {"balance": 8999}
+
+## Validation
+### Triggers
+- When user provides a PIN
+### Steps
+- While PIN is not 4 digits
+  - Tell user PIN is not valid and ask for PIN again
+  - If the user gives up
+    - Apologize and end the conversation
+- Return PIN
+
+## TooBig
+### Triggers
+- When $x > 15
+### Steps
+- Tell user $x is too big
+
+## AccountLoaded
+### Triggers
+- After calling LoadAccount
+### Steps
+- Tell user that you have loaded their account
+```
+
+In this example:
+
+1. The `Main` playbook runs at the beginning
+2. When the user provides a PIN, the `Validation` playbook runs to verify it
+3. When the variable `$x` becomes greater than 15, the `TooBig` playbook runs
+4. After the `LoadAccount` playbook is called, the `AccountLoaded` playbook runs
+
+## Creating a Playbook with Triggers
+
+Let's create a simpler version that demonstrates triggers:
+
+1. Create a new file named `triggers-demo.md` with the following content:
+
+```markdown
+# Trigger Demo
+This program demonstrates different types of triggers.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Tell the user this is a trigger demonstration
+- $counter = 5
+- Ask the user to provide a number
+- $counter = $counter * 2
+- Tell the user that the counter is now $counter
+- End program
+
+## BigNumber
+### Triggers
+- When $counter > 15
+### Steps
+- Tell the user that the counter has exceeded 15
+- Tell the user that this message was triggered automatically
+```
+
+2. Run your playbook:
+
+```bash
+python -m playbooks.applications.agent_chat triggers-demo.md --verbose
+```
+
+3. When you run this program and enter a value, you should notice:
+   - The `Main` playbook executes at the start
+   - If your inputs cause `$counter` to exceed 15, the `BigNumber` playbook executes automatically
+
+## How Triggers Work
+
+When you run a Playbooks AI program:
+
+1. The framework monitors the program state, including variables, user inputs, and execution flow
+2. When a state change occurs (e.g., a variable is updated) or a step is executed, the framework checks all trigger conditions
+3. If any trigger conditions are met, the corresponding playbooks are queued for execution
+4. Triggered playbooks execute after the current step completes
+
+## Best Practices for Using Triggers
+
+- Use clear and specific trigger conditions
+- Avoid trigger loops where playbooks could trigger each other indefinitely
+- Use state-based triggers (`When $x > 15`) to handle exceptions rather than checking conditions in steps so that the main playbook does not become too complex
+- Consider the execution order when using multiple triggers
+
+## Advanced Trigger Patterns
+
+### Chaining Triggers
+
+You can create chains of triggers where one playbook triggers another:
+
+```markdown
+## Step1
+### Triggers
+- At the beginning
+### Steps
+- $x = 10
+
+## Step2
+### Triggers
+- When $x becomes 10
+### Steps
+- $y = 20
+
+## Step3
+### Triggers
+- When $y becomes 20
+### Steps
+- Tell the user the chain is complete
+```
+
+### Combining Trigger Conditions
+
+You can use multiple trigger conditions for a single playbook:
+
+```markdown
+## EmergencyAlert
+### Triggers
+- When $temperature > 90
+- When $pressure < 30
+- When user reports an emergency
+### Steps
+- Alert the maintenance team
+```
+
+### Triggering Multiple Playbooks
+
+Multiple playbooks can be triggered by the same condition, creating a fan-out pattern where a single event causes multiple playbooks to execute:
+
+```markdown
+## UpdateInventory
+### Triggers
+- When an item is purchased
+### Steps
+- Reduce the inventory count for the purchased item
+- If inventory is below reorder threshold
+  - Flag item for reordering
+
+## NotifyShipping
+### Triggers
+- When an item is purchased
+### Steps
+- Create a shipping label
+- Notify the warehouse to prepare the package
+
+## RecordSale
+### Triggers
+- When an item is purchased
+### Steps
+- Record the sale details in the accounting system
+- Update sales analytics dashboard
+```
+
+In this example, when an item is purchased:
+
+1. `UpdateInventory` executes to adjust inventory counts
+2. `NotifyShipping` executes to start the shipping process
+3. `RecordSale` executes to record financial details
+
+This pattern allows you to:
+
+- Separate concerns into distinct playbooks
+- Add new behaviors without modifying existing playbooks
+- Create modular, maintainable event-driven systems
+
+Caution! The framework does not guarantee the order of execution of triggered playbooks, so those playbooks should be independent of each other.
+
+## Exercises
+
+1. Modify the trigger demo to add a new playbook that triggers when the user enters a specific word
+2. Create a playbook with multiple trigger conditions
+3. Create a chain of three playbooks that trigger each other in sequence
+
+## Next Steps
+
+Now that you understand how to use triggers, you're ready to learn about [User Interaction](user-interaction.md) in Playbooks AI. 
+============
+****user-interaction.md****
+# User Interaction
+
+In this tutorial, you'll learn how to create playbooks that interact with users, gather input, and respond dynamically.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- How to ask users for information
+- How to store user responses in variables
+- How to validate user input
+- How to create conversational flows that adapt to user input
+
+## Prerequisites
+
+- Completion of [Adding Triggers](adding-triggers.md)
+- Understanding of playbook structure and triggers
+
+## Basic User Interaction
+
+The most basic form of user interaction is asking a question and receiving a response. Let's create a simple example:
+
+```markdown
+# Personalized Greeting
+This program greets the user by name
+
+## Greet
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for their name
+- Say hello to the user by name and welcome them to Playbooks
+- End program
+```
+
+## Storing User Responses in Variables
+
+To create more complex interactions, you'll often need to store user responses in variables for later use:
+
+```markdown
+# Personal Information
+This program collects and uses personal information.
+
+## Collect
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for their $name
+- Ask the user for their favorite $color
+- Say hello to the user by $name and say that your will remember their favorite color is $color
+- End program
+```
+
+In this example:
+
+- `$name` stores the user's name
+- `$color` stores the user's favorite color
+- These variables are then used in the response
+
+## Input Validation
+
+You can validate user input using natural language conditions:
+
+```markdown
+# PIN Validator
+This program validates a user's PIN.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask the user to enter a 4-digit $pin
+- While $pin is not a 4-digit number
+  - Tell the user their PIN is invalid
+  - Ask the user to enter a 4-digit $pin again
+- Tell the user their PIN has been accepted
+- End program
+```
+
+This example:
+
+- Asks for a PIN
+- Checks if the PIN is a 4-digit number
+- If not, it asks again until a valid PIN is provided
+
+## Handling Specific Responses
+
+You can create branching conversations based on user responses:
+
+```markdown
+# Food Preference
+This program recommends restaurants based on food preferences.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask the user what type of food they're in the mood for
+- $preference = user's response
+- If $preference indicates Italian food
+  - Tell the user about some great Italian restaurants
+- If $preference indicates Mexican food
+  - Tell the user about some great Mexican restaurants
+- If $preference indicates Asian food
+  - Tell the user about some great Asian restaurants
+- Otherwise
+  - Tell the user you don't have recommendations for that type of food
+- End program
+```
+
+This example creates different responses based on the keywords in the user's input.
+
+## Advanced Validation Using Triggers
+
+For more sophisticated validation, you can use triggers to handle user input:
+
+```markdown
+# Account Access
+This program validates user credentials.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user for a $pin
+- Ask user for $email
+- Load user account
+- Tell the user their account balance
+
+## Validation($pin)
+### Triggers
+- When user provides a PIN
+### Steps
+- While $pin is not 4 digits
+  - Tell user $pin is not valid and ask for $pin again
+  - If the user gives up
+    - Apologize and end the conversation
+- Return $pin
+
+## EmailValidation($email)
+### Triggers
+- When user provides an email
+### Steps
+- While email is not a valid email or is a throwaway email
+  - Tell user email is not valid and ask for email again
+- Return email
+```
+
+In this example:
+
+- The `Validation` playbook triggers when a user provides a PIN
+- It validates that the PIN is 4 digits
+- Similarly, the `EmailValidation` playbook validates email addresses
+
+## Creating a Practical Example
+
+Let's put everything together in a practical example that collects user information:
+
+1. Create a new file named `user-form.md` with the following content:
+
+```markdown
+# User Registration
+This program collects registration information from users.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Welcome the user to the registration process
+- Ask the user for their $name
+- Ask the user for their $email
+- Ask the user to create a $password
+- Ask the user for their $age
+- Tell the user: "Thank you, $name! Your registration is complete."
+- Provide a summary of the collected information (excluding the password)
+- End program
+
+## EmailValidation
+### Triggers
+- When user provides an email address
+### Steps
+- While $email does not contain "@" and "."
+  - Tell the user their email is invalid
+  - Ask the user to provide a valid $email address
+- Return $email
+
+## PasswordValidation
+### Triggers
+- When user creates a password
+### Steps
+- While length of $password < 8
+  - Tell the user their password is too short
+  - Ask the user to create a stronger password with at least 8 characters
+  - $password = user's response
+- Return $password
+
+## AgeValidation($age)
+### Triggers
+- When user provides their age
+### Steps
+- While $age < 18 or $age > 120
+  - If $age < 18
+    - Tell the user they must be 18 or older to register
+  - If $age > 120
+    - Tell the user the provided age seems incorrect
+  - Ask the user to provide their correct $age
+- Return $age
+```
+
+2. Run your playbook:
+
+```bash
+python -m playbooks.applications.agent_chat user-form.md --verbose
+```
+
+When you run this program, you'll experience:
+
+- A guided registration process
+- Different validation rules for each field
+- Trigger-based validation that runs automatically when the user provides input
+
+## Best Practices for User Interaction
+
+- Be clear about what information you're requesting
+- Provide helpful error messages when validation fails
+- Use variables to personalize responses
+- Break complex interactions into multiple steps
+- Use triggers for validation to keep your main flow clean
+- Always provide feedback so users know their input was received
+
+## Exercises
+
+1. Create a playbook that plays a simple number guessing game
+2. Extend the registration form to collect additional information like address or phone number
+3. Create a playbook that adapts its responses based on the user's sentiment (detected from their responses)
+
+## Next Steps
+
+Now that you know how to interact with users, you're ready to learn about [Calling Playbooks](calling-playbooks.md) to create more modular programs. 
+============
+****calling-playbooks.md****
+# Calling Playbooks
+
+In this tutorial, you'll learn how to call one playbook from another to create modular, reusable components.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- How to define playbooks that accept parameters
+- How to call one playbook from another
+- How to capture and use return values from playbooks
+- How to create modular, reusable playbook components
+
+## Prerequisites
+
+- Completion of [User Interaction](user-interaction.md)
+- Understanding of variables in playbooks
+
+## Why Call Playbooks?
+
+>:bulb: Each playbook is equivalent to a function.
+
+Calling playbooks allows you to:
+
+- Break complex processes into smaller, reusable components
+- Create libraries of common functionality
+- Improve readability and maintainability
+- Enable more complex logic through composition
+
+## Defining Playbooks
+
+### With Explicit Parameters
+
+To create a reusable playbook, you can define it with parameters:
+
+```markdown
+## Greeting($name)
+Greet the user by welcoming them to the service
+### Steps
+- Say "Hello, $name! Welcome to our service."
+```
+
+### With Implicit Parameters
+
+>:bulb: A playbook has access to all state variables.
+
+```markdown
+## Greeting
+Greet the user by welcoming them to the service
+### Steps
+- Say "Hello, $name! Welcome to our service."
+```
+
+This playbook does not specify a parameter. It can still use the `$name` variable if it is set previously, say from the calling playbook.
+
+## Calling a Playbook
+
+### Like a Python Function
+
+You can call a playbook from another playbook like a python function call:
+
+```markdown
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for their $user_name and $city
+- Greeting($user_name, city=$city, age=50, state="WA")
+- End program
+```
+
+>:bulb: It is OK to deviate from standard Python syntax.
+
+For example, the following is also valid Playbooks code:
+
+```markdown
+- Greeting($user_name, city=$city, age=50, state=two letter state code where Seattle is located)
+```
+
+The Playbooks runtime will automatically convert `state=two letter state code where Seattle is located` to `state="WA"`!
+
+### Implicitly
+
+You can also call a playbook implicitly:
+
+```markdown
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for their $name
+- Greet the user using their $name
+- End program
+```
+
+>:bulb: Playbooks runtime can infer which playbook to call based on the description of the playbook and current context.
+
+Note that Playbooks runtime will interpret "Greet the user" as a call to the `Greeting` playbook based on the description of the playbook `Greet the user by welcoming them to the service`. It will also automatically pass the `$name` variable to the `Greeting` playbook based on the signature of the playbook.
+
+## Capturing Return Values 
+
+### With a Python-like Syntax
+
+Playbooks can return values that can be captured and used by the calling playbook:
+
+```markdown
+## CalculateTotal($price, $quantity)
+Calculates the total bill amount from the price and quantity
+
+### Steps
+- $total = $price * $quantity
+- Return $total
+
+## OrderProcess
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for the item $price
+- Ask the user for the $quantity
+- $bill_amount = CalculateTotal($price, $quantity)
+- Tell user that their total bill is $bill_amount
+- End program
+```
+
+### Implicitly
+
+If you don't need the returned value beyond a yield point, do not capture it explicitly. For example,
+
+```markdown
+- Get total bill amount from CalculateTotal($price, $quantity)
+- Tell user what their total bill is
+```
+
+## Fully Semantic Calls
+
+Combined with semantic playbook calls with implicit parameters and return values, this can also be expressed as:
+
+```markdown
+- Calculate total bill amount
+- Tell user what their total bill is
+```
+
+>:bulb: This is the preferred way to author playbooks, because it is more readable and easier to maintain.
+
+## A Practical Example: Country Facts
+
+Let's create a more complex example that demonstrates both parameters and return values:
+
+```markdown
+# Facts about nearby countries
+This program prints interesting facts about nearby countries
+
+## GetCountryFact($country)
+### Steps
+- Return an unusual historical fact about $country
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user what $country they are from
+- List 5 $countries near $country
+- Tell the user that here are 5 nearby countries to the one they are from
+- Inform the user that you will now tell them some interesting facts about each of the countries
+- For each $country in $countries
+  - $fact = GetCountryFact($country)
+  - Tell the user: "$country: $fact"
+- End program
+```
+
+In this example:
+
+- `GetCountryFact` takes a country name and returns a fact about it
+- `Main` calls `GetCountryFact` for each country in a list
+- The return value is stored and used in the response
+
+
+## Exercises
+
+1. Create a program with playbooks that process a shopping cart (add items, calculate total, apply discounts)
+2. Create a playbook to implement tic-tac-toe
+
+## Next Steps
+
+Now that you know how to call playbooks from markdown, it's time to learn about [Python Playbooks](python-playbooks.md) for more advanced functionality. 
+============
+****python-playbooks.md****
+# Python Playbooks
+
+In this tutorial, you'll learn how to create Python playbooks that can be used alongside markdown playbooks in your Playbooks AI programs.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- How to define playbooks using Python code
+- How to use the `@playbook` decorator
+- How to pass parameters and return values
+- How to add triggers to Python playbooks
+
+## Prerequisites
+
+- Completion of [Calling Playbooks](calling-playbooks.md)
+- Basic Python programming knowledge
+
+## Why Use Python Playbooks?
+
+While markdown playbooks are great for expressing workflows in natural language, Python playbooks allow you to:
+
+- Implement complex logic and algorithms
+- Integrate with external systems and APIs
+- Process and transform data
+- Perform calculations and validations
+- Leverage existing Python libraries
+
+## Creating a Basic Python Playbook
+
+A Python playbook is a Python function decorated with the `@playbook` decorator:
+
+```python
+@playbook
+async def greeting(name: str) -> str:
+    return f"Hello, {name}! Welcome to Playbooks AI."
+```
+
+Key features:
+
+- The `@playbook` decorator registers the function as a playbook
+- Python playbooks must be async functions
+- Parameter types and return types are specified using Python type hints
+
+>:bulb: Python playbooks are executed as Python code, so must be valid Python code.
+
+Python playbooks run in an isolated Python environment and can access all installed Python modules.
+
+## Adding Python Playbooks to Your Program
+
+Python playbooks are included within markdown playbooks using code blocks:
+
+````markdown
+# Python Demo
+This program demonstrates Python playbooks.
+
+```python
+@playbook
+async def greeting(name: str) -> str:
+    return f"Hello, {name}! Welcome to Playbooks AI."
+```
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask the user for their name
+- $name = user's response
+- $message = greeting($name)
+- Tell the user: $message
+- End program
+````
+
+Notice that:
+
+1. The Python code is enclosed in a triple-backtick code block with the `python` language specifier
+2. The markdown playbook can call the Python playbook just like any other playbook
+
+## Adding Triggers to Python Playbooks
+
+You can add triggers to Python playbooks using the `triggers` parameter:
+
+````
+```python
+import math
+
+@playbook(triggers=["When you want to apply magic operator to a number"])
+async def magic_operator(input: str) -> float:
+    input_num = float(input)
+    return input_num * math.sin(input_num)
+```
+````
+
+This Python playbook will be triggered when the condition "When you want to apply magic operator to a number" is met.
+
+>:warning: Triggers are evaluated after each line in markdown playbook is executed. They are NOT evaluated during a Python playbook's execution.
+
+## Public Python Playbooks
+
+To make a Python playbook available to other [agents](../agents/index.md), you can use the `public` parameter:
+
+```python
+@playbook(public=True)
+async def calculate_price(quantity: int, unit_price: float) -> float:
+    return quantity * unit_price
+```
+
+Public playbooks can be called by other agents in a multi-agent system.
+
+## Exercise
+
+Consider the following Playbooks program:
+
+
+```markdown
+# Facts about nearby countries
+This program prints interesting facts about nearby countries
+
+## GetCountryFact($country)
+### Steps
+- Return an unusual historical fact about $country
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user what $country they are from
+- List 5 $countries near $country
+- Tell the user that here are 5 nearby countries to the one they are from
+- Inform the user that you will now tell them some interesting facts about each of the countries
+- For each $country in $countries
+  - $fact = GetCountryFact($country)
+  - Tell the user: "$country: $fact"
+- End program
+```
+
+Notice that the `Main` playbook loops through the list of countries and calls the `GetCountryFact` playbook for each country.
+
+Let's use a Python playbook to execute the loop instead.
+
+````
+# Facts about nearby countries
+This program prints interesting facts about nearby countries
+
+```python
+@playbook
+async def process_countries(countries: list[str]) -> None:
+    """
+    Process all countries and tell the user about them
+
+    Args:
+        countries: A list of countries to process
+    """
+    for country in countries:
+        fact = await GetCountryFact(country)
+        await Say(f"{country}: {fact}")
+```
+
+## GetCountryFact($country)
+### Steps
+- Return an unusual historical fact about $country
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user what $country they are from
+- List 5 $countries near $country
+- Tell the user that here are 5 nearby countries to the one they are from
+- Inform the user that you will now tell them some interesting facts about each of the countries
+- Process all countries
+- End program
+````
+
+Notice that the `Main` playbook now calls the `process_countries` Python playbook with the list of countries. The `process_countries` playbook then calls the `GetCountryFact` markdown playbook for each country and a [built-in](../playbook-types/builtin-playbooks.md) `Say` playbook to tell the user about each country.
+
+>:bulb: You can call markdown playbooks from Python playbooks and vice versa.
+
+## Best Practices for Python Playbooks
+
+- Use Python for complex logic and calculations
+- Keep Python playbooks focused on a single task
+- Handle errors gracefully with try/except blocks
+- Use type hints to document parameters and return types
+- Import only the libraries you need
+- Document your Python playbooks with docstrings
+
+### Using Docstrings
+
+Add documentation to your Python playbooks using docstrings:
+
+````
+```python
+@playbook
+async def calculate_discount(price: float, discount_percent: float) -> float:
+    """
+    Calculates the final price after applying a discount.
+    
+    Args:
+        price: The original price
+        discount_percent: The discount percentage (0-100)
+        
+    Returns:
+        The final price after discount
+    """
+    if not 0 <= discount_percent <= 100:
+        return("Discount percentage must be between 0 and 100")
+    
+    discount_amount = price * (discount_percent / 100)
+    return price - discount_amount
+```
+````
+
+### External API Integration
+
+Python playbooks are perfect for integrating with external APIs:
+
+````
+```python
+import requests
+
+@playbook
+async def get_weather(city: str) -> dict:
+    """Get weather information for a city"""
+    
+    api_key = os.environ.get("WEATHER_API_KEY")
+    url = f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
+    
+    response = requests.get(url)
+    response.raise_for_status()  # Raise exception for HTTP errors
+    
+    return response.json()
+```
+````
+
+## Next Steps
+
+Now that you know how to create Python playbooks, you're ready to learn about [Advanced Triggers](../tutorials/triggers-advanced.md) to see how to use more complex triggers to control the execution of your playbooks.
+============
+****triggers-advanced.md****
+# Advanced Triggers
+
+In this tutorial, you'll explore more advanced trigger patterns and use cases in Playbooks AI.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- How to create complex data validation triggers
+- How to use sentiment and intent-based triggers
+- How to implement communication-based triggers
+- How to build robust error handling with triggers
+
+## Prerequisites
+
+- Completion of [Basic Triggers](adding-triggers.md)
+- Understanding of [User Interaction](user-interaction.md)
+- Familiarity with [Calling Playbooks](calling-playbooks.md)
+
+## Data Validation Triggers
+
+One powerful application of triggers is data validation. You can create playbooks that automatically trigger when users provide certain types of data:
+
+```markdown
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Tell the user this is a banking system
+- Ask the user for their account number
+- Ask the user for their PIN
+- Load account information
+- ...
+
+## AccountNumberValidation
+### Triggers
+- When user provides an account number
+### Steps
+- While account number is not exactly 10 digits
+  - Tell the user their account number is invalid
+  - Ask the user to provide a valid 10-digit account number
+  - If the user wants to quit
+    - End program
+- Return the account number
+
+## PinValidation
+### Triggers
+- When user provides a PIN
+### Steps
+- While PIN is not exactly 4 digits
+  - Tell the user their PIN is invalid
+  - Ask the user to provide a valid 4-digit PIN
+  - If the user has made 3 failed attempts
+    - Lock user account
+    - Tell the user their account is locked
+    - End program
+- Return the PIN
+```
+
+This pattern:
+
+- Separates validation logic from the main workflow
+- Automatically triggers validation when specific data is provided
+- Provides clear error messages and recovery paths
+
+## Sentiment-Based Triggers
+
+You can create triggers that respond to user sentiment, enabling more natural conversations:
+
+```markdown
+## AngryCustomerResponse
+### Triggers
+- When user is frustrated or abusive
+### Steps
+- Apologize to the user for the frustration
+- Offer to connect them with a human support agent
+- Ask if they would like to continue or speak with a human
+- ...
+```
+
+This trigger activates when the system detects negative sentiment in the user's messages, allowing for empathetic responses at the right time.
+
+## Intent-Based Triggers
+
+Similar to sentiment, you can create triggers based on user intent:
+
+```markdown
+## AccountBalanceInquiry
+### Triggers
+- When user wants to know their account balance
+### Steps
+- ...
+```
+
+This trigger activates when the user expresses a need for help or shows signs of confusion, providing assistance without explicit commands.
+
+## Communication-Based Triggers
+
+In multi-agent systems, triggers can respond to messages from other agents:
+
+```markdown
+## StockUpdateNotification
+### Triggers
+- When you receive message from InventoryAgent asking for stock level
+### Steps
+- ...
+```
+
+This allows agents to communicate and react to information shared by other agents.
+
+## Error Handling with Triggers
+
+Triggers can implement robust error handling patterns:
+
+```markdown
+## MissingPlaybook
+### Triggers
+- When no suitable playbook is available
+### Steps
+- Tell the user that an error occurred
+- ...
+```
+
+This creates a centralized error handling approach that can cover your entire application.
+
+## Combining Multiple Trigger Types
+
+For complex scenarios, you can combine multiple trigger types:
+
+```markdown
+## SecurityAlert
+### Triggers
+- When user attempts more than 3 failed logins
+- When user attempts more than 3 failed credit card transactions
+### Steps
+- Log the security concern
+- ...
+```
+
+This pattern creates sophisticated security monitoring by evaluating multiple risk factors.
+
+## Best Practices for Advanced Triggers
+
+- **Prioritize user experience**: Use triggers to make conversations feel natural and responsive
+- **Handle edge cases**: Create specific triggers for error conditions and unusual scenarios
+- **Test thoroughly**: Complex trigger systems need careful testing with various user inputs
+- **Document your trigger strategy**: Make it clear which triggers exist and when they activate
+
+## Exercises
+
+1. Implement a simple customer support agent who helps with order status and account renewal requests.
+
+## Next Steps
+
+Now that you understand advanced trigger patterns, you're ready to explore [Multi-Agent Programming](multi-agent-programming.md) to create systems with multiple specialized agents. 
+============
+****multi-agent-programming.md****
+# Multi-Agent Programming
+
+In this tutorial, you'll learn how to create and orchestrate systems with multiple agents.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- How to define multiple agents in a program
+- How to make playbooks public for use by other agents
+
+## Prerequisites
+
+- Completion of [Advanced Triggers](../tutorials/triggers-advanced.md)
+- Understanding of [Python Playbooks](../playbook-types/python-playbooks.md)
+- Familiarity with [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md)
+
+## Multi-Agent Architecture
+
+Playbooks AI allows you to create systems with multiple specialized agents that work together. This approach enables:
+
+- Better separation of concerns
+- Specialized capabilities for different aspects of your system
+- More natural modeling of complex domains
+- Scalable architectures for larger applications
+- Emergent behavior from the interaction of the agents
+- Using external agents, potentially built using other frameworks
+
+## Defining Multiple Agents
+
+A multi-agent Playbooks program defines multiple agents using separate sections:
+
+```markdown
+# Order Management Agent
+This agent handles customer inquiries about orders
+
+## Order Status Inquiry
+### Triggers
+- When user wants to know the status of an order
+### Steps
+- ...
+
+# Billing Agent
+This agent helps with billing inquiries
+
+## Update Credit Card Request
+### Triggers
+- When user wants to update their credit card on file
+### Steps
+- ...
+```
+
+Each agent is defined by a top-level heading (`#`) followed by its playbooks.
+
+## Public Playbooks
+
+Agents can call public playbooks from other agents.
+
+>:bulb: For more information on public playbooks, see [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md).
+
+### Public Markdown Playbooks
+
+```markdown
+# Billing Agent
+This agent helps with billing inquiries
+
+## public: UpdateCreditCardRequest
+### Triggers
+- When user wants to update their credit card on file
+### Steps
+- ...
+```
+
+The `public:` prefix in the playbook name makes it available to other agents in the system.
+
+### Public Python Playbooks
+
+You can also make Python playbooks public using the `public=True` parameter:
+
+````
+# Account Management Agent
+This agent helps with account management
+
+```python
+@playbook(public=True)
+async def LockAccount(account_id: str, auth_token: str, reason: str) -> float:
+    """Lock an account."""
+    requests.post(
+        f"https://api.playbooks.ai/v1/accounts/{account_id}/lock",
+        headers={"Authorization": f"Bearer {auth_token}"},
+        json={"reason": reason},
+    )
+```
+````
+
+## Calling Playbooks from Other Agents
+
+>:warning: This is not yet implemented.
+
+Once playbooks are public, other agents can call them:
+
+### As a Function Call
+
+```markdown
+# BillingAgent
+
+## UpdateCreditCardRequest
+### Triggers
+- When user wants to update their credit card on file
+### Steps
+- ...
+- AccountManagementAgent.LockAccount($account_id, $auth_token, $reason)
+```
+
+In this example, the `BillingAgent` calls playbooks from the `AccountManagementAgent`.
+
+### Implicit Call
+
+```markdown
+- Ask account management agent to lock the account
+```
+
+## Triggering Playbooks Across Agents
+
+>:warning: This is not yet implemented.
+
+If public playbooks have triggers defined on them, those playbooks will be triggered automatically when the trigger event occurs.
+
+## Message Passing Between Agents
+
+>:warning: This is not yet implemented.
+
+Agents can pass natural language messages with each other. This is useful for coordinating actions, negotiating, collaborating, and more.
+
+```markdown
+- Ask vendor agent for a discount
+- While negotiation is in progress
+  - Wait for vendor agent to respond
+  - If the vendor made a counter offer
+    - Evaluate the counter offer
+    - ...
+- VendorAgent.ProcessOrder($quantity, price=negotiated price)
+```
+
+## Exported Playbooks
+
+>:warning: This is not yet implemented.
+
+>:bulb: For more information on exported playbooks, see [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md).
+
+Agents can expose implementation of playbooks to other agents. The other agent can then execute the playbook as if it were their own.
+
+```markdown
+# AccountManagementAgent
+import ProvisionAccount from VendorAgent
+
+## CreateAccount
+### Steps
+- ...
+- Provision user account
+```
+
+## Best Practices for Multi-Agent Systems
+
+- **Define clear responsibilities**: Each agent should have a specific role
+- **Properly scope public playbooks**: Only make playbooks public that need to be called by other agents
+- **Design for failure**: Handle cases where an agent might not be available
+- **Consider security**: Think about which agents should have access to which playbooks
+- **Document interfaces**: Define clear interfaces between agents
+
+## Exercises
+
+1. Create a multi-agent system for a shopping application with specialized agents for product search, recommendations, and checkout
+
+## Next Steps
+
+Now that you understand multi-agent programming, you're ready to learn about [Working with Artifacts](working-with-artifacts.md) for managing large text blobs, images and other artifacts.
+============
+****working-with-artifacts.md****
+# Working with Artifacts
+
+In this tutorial, you'll learn how to create, store, and manage data using artifacts in Playbooks AI.
+
+> :warning: Support for artifacts is under active development and is subject to change.
+
+## Objective
+
+By the end of this tutorial, you'll understand:
+
+- What artifacts are and why they're useful
+- How to create and save artifacts
+- How to load and use artifacts in playbooks
+- How to share artifacts between agents
+
+## Prerequisites
+
+- Completion of [Python Playbooks](python-playbooks.md)
+- Understanding of variables and data manipulation
+
+## What Are Artifacts?
+
+Artifacts in Playbooks AI are similar to variables, but their values are **not** included in LLM calls by default. This makes them suitable for storing large data objects. Artifacts need to be explicitly loaded for their content to be included in LLM calls.
+
+For now, artifacts support text content only. Support for other types of content, such as images, will be added in the future.
+
+Artifacts are useful for:
+
+- Storing data that for use within a given session, such as results of a web search
+- Sharing large amounts of data between playbooks or agents
+- Storing created reports and documents
+
+>:bulb: Use artifacts to keep LLM token usage low.
+
+## Creating and Saving Artifacts
+
+You can create artifacts using the `SaveArtifact` function:
+
+```markdown
+## CreateReport
+### Steps
+- $report = SaveArtifact("sales_report.md", 2-3 line summary of sales report, 10-20 page long sales report)
+- Tell the user that the sales report has been created
+- Share $report with the user
+```
+
+The `SaveArtifact` function takes three parameters:
+
+1. `name`: A unique identifier for the artifact (often with a file extension)
+2. `summary`: A brief summary of what the artifact contains
+3. `content`: The actual content to store in the artifact (can be text, JSON, or other data)
+
+## Loading Artifacts
+
+You can load artifacts using the `LoadArtifact` function:
+
+```markdown
+## ViewReport
+### Steps
+- $report = LoadArtifact("sales_report.md")
+- Tell the user "Here is the sales report: Artifact[sales_report.md]"
+```
+
+The `LoadArtifact` function returns an artifact object.
+
+## Artifact References
+
+When you want to refer to an artifact without loading its entire content, you can use artifact references:
+
+```markdown
+## ShareReport
+### Steps
+- Tell the user: "Here is your report: Artifact[sales_report.md]"
+```
+
+This will display a link or reference to the artifact in the user interface, allowing the user to access it directly.
+
+Alternatively, you can ask Playbooks to share an artifact object with the user:
+
+```markdown
+- Share $report with the user
+```
+
+You can also ask Playbooks to share an artifact by name:
+
+```markdown
+- Share sales_report.md with the user
+```
+
+## When is an artifact included in an LLM call?
+
+### When a new artifact is created
+When a new artifact is created, it is included in the subsequent LLM call.
+
+### When an artifact is loaded
+When an artifact is loaded using LoadArtifact, it is included in the subsequent LLM call.
+
+## Using Artifacts in Python Playbooks
+
+You can use SaveArtifact and LoadArtifact in Python playbooks.
+
+````
+```python
+@playbook
+async def CompileReports(report_names: list[str]) -> str:
+    compiled_report = []
+    for report_name in report_names:
+        report = await LoadArtifact(report_name)
+        compiled_report.append(report.content[:100])
+
+    compiled_report = "\n".join(compiled_report)
+    await SaveArtifact("compiled_report.md", "Compiled Report", compiled_report)
+    return "Artifact[compiled_report.md]"
+```
+````
+
+In this example, the `CompileReports` playbook loads the reports and saves the compiled report as an artifact. It then returns reference to the compiled report.
+
+## Sharing Artifacts Between Agents
+
+>:warning: Sharing artifacts between agents is not yet supported.
+
+## Best Practices for Working with Artifacts
+
+- **Use meaningful names**: Choose artifact names that describe their content
+- **Provide good descriptions**: Include detailed descriptions to help Playbooks runtime select appropriate artifact
+
+## Exercises
+
+1. Write a RAG agent that stores intermediate search results as artifacts
+
+## Next Steps
+
+Congratulations! You've now completed the basic tutorials for Playbooks AI.
+
+To continue learning, explore these topics:
+
+- [Multi-Agent Systems](../multi-agent-systems/index.md)
+- [Intermediate Representation](../playbooks-language/intermediate-representation.md)
+============
+****index.md****
+# Playbooks Language
+
+Playbooks Language is a human-readable, semantically interpreted programming language designed specifically for building AI agents. It allows developers to define agent behavior using natural language within a structured markdown format, combined with the power and flexibility of Python.
+
+## Overview
+
+Playbooks Language enables you to:
+
+- Write agent logic in a way that's understandable by both humans and AI
+- Seamlessly integrate natural language instructions with Python code
+- Create reusable, modular components that can be composed into complex workflows
+- Implement event-driven behavior through triggers
+- Build multi-agent systems where agents can communicate and collaborate
+
+## Program Structure
+
+A Playbooks program consists of one or more agents, each containing one or more playbooks. The basic structure follows standard markdown heading conventions:
+
+````markdown
+# Agent name
+Agent description and overview
+
+```python
+# Python playbooks are defined here using the @playbook decorator
+```
+
+## Playbook name
+Playbook description
+
+### Triggers
+- Trigger conditions
+
+### Steps
+- Step-by-step instructions
+
+### Notes
+- Additional notes, instructions and rules
+````
+
+### Program Components
+
+#### 1. Agent Definition
+
+Agents are defined using a top-level heading (`#`) followed by the agent name and an optional description:
+
+```markdown
+# Customer Service Agent
+This agent handles customer service inquiries and guides users through the support process.
+```
+
+An agent can have multiple playbooks and can include Python code that's accessible to its playbooks.
+
+#### 2. Python Functions as Playbooks
+
+Python functions can be defined as playbooks using the `@playbook` decorator:
+
+```python
+@playbook
+async def CalculateTotal(price: float, quantity: int) -> float:
+    """Calculate the total price for a given quantity of items."""
+    return price * quantity
+
+@playbook(triggers=["When user provides payment information"])
+async def ProcessPayment(amount: float, card_info: dict) -> bool:
+    """Process a payment transaction."""
+    # Payment processing logic
+    return True
+```
+
+>:bulb: By convention, Playbook names are PascalCase. While Python functions are typically named using snake_case, we suggest using PascalCase for Python playbook names.
+
+#### 3. Markdown Playbooks
+
+Markdown playbooks are defined using second-level headings (`##`) followed by the playbook name and an optional description:
+
+```markdown
+## GreetCustomer
+This playbook greets the customer and collects their basic information.
+```
+
+Playbooks can accept parameters:
+
+```markdown
+## CalculateDiscount($total, $membership_level)
+This playbook calculates the appropriate discount based on the total and membership level.
+```
+
+#### 4. Triggers
+
+Triggers define when a playbook should execute. They're specified in a section marked by a `### Triggers` heading. The playbook will execute when **any** of the triggers are met.
+
+```markdown
+### Triggers
+- At the beginning
+- When user provides their name
+- When $order_total exceeds 100
+```
+
+#### 5. Steps
+
+Steps define the actual logic of a playbook, specified in a section marked by a `### Steps` heading:
+
+```markdown
+### Steps
+- Greet the user and ask for their $age
+- If $age is less than 68
+  - Tell the user about retirement products
+- Otherwise
+  - Tell the user about investment products
+- End program
+```
+
+Steps support:
+
+- Imperative instructions (e.g., `Greet the user`)
+- Variable assignments (e.g., `$total = $price * $quantity`, `Extract $relevant_info from search results`)
+- Conditionals (e.g., `If $status is 'approved'`, `If user is not satisfied with the answer`)
+- Loops (e.g., `While conversation is active`, `While $attempts < 3`, `For each $product`)
+- Playbook calls (e.g., `ProcessPayment($amount)` `Calculate discount on $total`)
+- Control flow (e.g., `End program`, `Return $result`)
+
+>:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
+
+#### 6. Notes
+
+The `### Notes` section can provide additional guidance or rules for the playbook:
+
+```markdown
+### Notes
+- Maintain a professional tone throughout the conversation
+- If the user mentions a competitor, highlight our unique advantages
+- If the user is from California, mention that we're compliant with CCPA
+```
+
+## Variable Usage
+
+Variables in Playbooks are denoted with a `$` prefix:
+
+```markdown
+- $total = $price * $quantity
+- Tell the user their $total
+```
+
+Variables can store:
+
+- Strings
+- Numbers
+- Booleans
+- Lists
+- Dictionaries
+- Null values
+
+## Example: Complete Playbooks program
+
+Here's a complete example of a simple playbooks program:
+
+````markdown
+# CustomerSupportAgent
+This agent handles customer support inquiries.
+
+```python
+@playbook(triggers=["When user provides order number"])
+async def ValidateOrderNumber(order_number: str) -> bool:
+    """Validate that an order number is in the correct format."""
+    import re
+    pattern = r"^ORD-\d{6}$"
+    return bool(re.match(pattern, order_number))
+```
+
+## OrderStatus
+This playbook helps customers check their order status.
+
+### Triggers
+- When user asks about order status
+
+### Steps
+- Greet the user and ask for their order number
+- If order number is not valid
+  - Tell the user their order number is invalid
+  - Ask the user to provide a valid order number in the format ORD-XXXXXX
+  - If order number is still not valid
+    - Apologize and offer to connect them with a human agent
+    - End program
+- $order_details = LookUpOrder($order_number)
+- Tell the user the current status of their order
+- Ask if they need any additional assistance
+
+### Notes
+- If the user becomes frustrated, offer to connect them with a human agent
+- Always thank the user for their patience
+```
+````
+## Next Steps
+
+- [Intermediate Representation](intermediate-representation.md) - How playbooks are transpiled for execution
+
+============
+****intermediate-representation.md****
+# Intermediate Representation
+
+The Playbooks Language is designed to be human-readable, but to execute it reliably, the system transpiles it into an Intermediate Representation (IR) format. This IR serves as a bridge between the natural language programming model and the execution engine.
+
+## Purpose of the Intermediate Representation
+
+The Intermediate Representation:
+
+- Standardizes playbooks for consistent execution
+- Preserves the semantics of the original playbooks
+- Enables precise tracking of execution state
+- Facilitates programmatic analysis and validation
+- Allows for more efficient runtime processing
+
+## Structure of the Intermediate Format
+
+When a Playbooks program is transpiled, it follows a structured format:
+
+````
+# <AgentName>
+<Agent description>
+
+```python
+@playbook and other functions
+```
+
+## <PlaybookName>(<params>) -> <returnVar | None>
+<Playbook description>
+### Triggers
+T<n>:<BGN|CND|EVT> <trigger text>
+### Steps
+01:<CMD> ...  # two-digit numbering; dot-notation for sub-steps
+... more steps ...
+### Notes
+N<n> <text>
+````
+
+## Trigger Representation
+
+Triggers are standardized with specific codes:
+
+| Code | Meaning | Description |
+|------|---------|-------------|
+| BGN  | Beginning | Trigger at the beginning of program execution |
+| CND  | Conditional | Trigger when a condition is met |
+| EVT  | Event | Trigger when an external event occurs |
+
+Each trigger is numbered sequentially (`T1`, `T2`, etc.) for reference during execution.
+
+## Command Codes
+
+Each step in the intermediate format is assigned a three-letter command code that defines its purpose:
+
+| Code | Meaning | Description |
+|------|---------|-------------|
+| EXE  | Execute | Perform an imperative action or assignment |
+| QUE  | Queue | Queue a playbook or function call for execution |
+| TNK  | Think | Think deeply step by step before continuing |
+| CND  | Condition | Represent an `if`, `else`, `while`, or `for` condition |
+| CHK  | Check | Apply a note or rule to the current context |
+| RET  | Return | Return from the current playbook |
+| JMP  | Jump | Jump to another step in the playbook |
+| YLD  | Yield | Yield control, with different targets: user, call, return, exit |
+
+## Line Numbering
+
+The intermediate format uses a precise line numbering system:
+
+- Top-level steps use two-digit numbers: `01`, `02`, `03`, etc.
+- Sub-steps use dot notation: `01.01`, `01.02`, etc.
+- Nested sub-steps add another level: `01.01.01`, etc.
+
+For example, an if-condition with nested steps would be represented as:
+
+```
+03:CND If $total > 100
+  03.01:EXE Apply $discount of 10%
+  03.02:QUE Tell the user they received a discount
+04:EXE Continue with checkout
+```
+
+## Transformation from Playbooks Language to Intermediate Format
+
+- Agent names are converted to CamelCase without spaces: `CustomerService` instead of `Customer Service`
+- Playbook names are also converted to CamelCase without spaces: `Greeting` instead of `Greet the user`
+- Parameters are preserved with their `$` prefix
+- Return values are explicitly declared in the playbook header
+- Documentation is added if missing or incomplete
+- Composite steps are expanded into individual steps
+- Checks for notes are added as `CHK` steps at appropriate places
+
+## Example Transformation
+
+Here's an example of how a simple markdown playbook is transformed to the intermediate format:
+
+### Original Markdown
+
+```markdown
+# Customer Support
+
+## Greeting
+This playbook greets the user and asks for their order number.
+
+### Triggers
+- At the beginning
+
+### Steps
+- Greet the user and ask for their order number
+- If user provides an invalid order number
+  - Ask them to try again
+- Look up order status
+- Tell the user their order status
+
+### Notes
+- Be polite and professional
+```
+
+### Transformed Intermediate Format
+
+```
+# CustomerSupport
+This agent provides customer support services, helping users track orders and resolve issues.
+
+## Greeting() -> None
+This playbook greets the user and asks for their order number.
+### Triggers
+T1:BGN At the beginning
+### Steps
+01:QUE Greet the user and ask for their order number
+02:YLD user
+03:CND If user provides an invalid order number
+  03.01:QUE Ask them to try again
+  03.02:YLD user
+  03.03:JMP 03 to check again
+04:QUE Look up order status
+05:QUE Tell the user their order status
+06:RET
+### Notes
+N1 Be polite and professional
+```
+
+## Benefits of the Intermediate Format
+
+1. **Standardization**: Consistent representation regardless of the original playbook style
+2. **Clarity**: Explicit indication of step types and control flow
+3. **Debugging**: Easier to track execution and identify issues
+4. **Optimization**: Better performance through structured representation
+5. **Interoperability**: Enables different execution engines and integrations
+
+## Learn More
+
+Explore different types of playbooks:
+
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - How to write playbooks in markdown
+- [ReAct Playbooks](../playbook-types/react-playbooks.md) - How to write playbooks in ReAct
+- [Python Playbooks](../playbook-types/python-playbooks.md) - Using Python functions as playbooks 
+============
+****index.md****
+# Playbook Types
+
+Playbooks AI supports multiple types of playbooks, each with its own strengths and use cases. This flexibility allows you to choose the right tool for each aspect of your agent's behavior.
+
+## Overview of Playbook Types
+
+### [Markdown Playbooks](markdown-playbooks.md)
+
+Markdown playbooks use a structured format with clear sections for triggers, steps, and notes. They are ideal for:
+
+- Prescribed business processes with clear steps
+- Customer service workflows
+- Support scripts
+- Situations where the agent should follow a specific, predefined flow
+
+```markdown
+## GreetCustomer
+This playbook greets the customer and collects their information.
+
+### Triggers
+- At the beginning
+
+### Steps
+- Greet the user and ask for their name
+- Ask the user how you can help them today
+```
+
+### [ReAct Playbooks](react-playbooks.md)
+
+ReAct playbooks leverage the LLM's reasoning capabilities through a descriptive prompt. They are ideal for:
+
+- Complex problem-solving tasks
+- Research and information gathering
+- Dynamic planning
+- Situations requiring flexible, adaptive behavior
+
+```markdown
+## ResearchProduct
+Research information about a product the user is interested in.
+
+Search for detailed product information, customer reviews, 
+pricing data, and comparisons with similar products. Analyze 
+the information to provide a comprehensive overview that 
+helps the user make an informed decision.
+```
+
+### [Python Playbooks](python-playbooks.md)
+
+Python playbooks give you the full power of Python for complex logic and external integrations. They are ideal for:
+
+- Complex calculations
+- Data processing and transformation
+- Integration with external systems and APIs
+- Implementing business logic
+
+````
+```python
+@playbook
+async def CalculateShipping(weight: float, destination: str) -> float:
+    """Calculate shipping costs based on weight and destination."""
+    base_rate = 5.99
+    
+    # Apply weight multiplier
+    weight_cost = weight * 0.5
+    
+    # Apply destination surcharge
+    destination_surcharge = get_destination_surcharge(destination)
+    
+    return base_rate + weight_cost + destination_surcharge
+```
+````
+
+## Mixing Playbook Types
+
+One of the powerful features of Playbooks AI is the ability to mix different types of playbooks within the same agent or program. This allows you to define your agent's behavior in a flexible and modular way.
+
+## Next Steps
+
+Explore each playbook type in detail:
+
+- [Markdown Playbooks](markdown-playbooks.md) - For structured, step-by-step flows
+- [ReAct Playbooks](react-playbooks.md) - For reasoning-based, adaptive behavior
+- [Python Playbooks](python-playbooks.md) - For complex logic and integrations
+
+Also see:
+
+- [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md) - For multi-agent systems
+- [Multi-Agent Programming](../multi-agent-systems/index.md) - For creating multi-agent systems
+============
+****markdown-playbooks.md****
+# Markdown Playbooks
+
+Markdown playbooks are used to define a business process that the agent should follow. They define agent behavior using a clear, step-by-step approach with explicit sections for triggers, steps, and notes.
+
+## Overview
+
+Markdown playbooks are ideal for:
+
+- Prescribed business processes with clear steps
+- Customer service workflows
+- Support scripts
+- Situations where the agent should follow a specific, predefined flow
+
+## Structure of a Markdown Playbook
+
+A markdown playbook follows this structure:
+
+```markdown
+## PlaybookName
+Playbook description
+
+### Triggers
+- Trigger condition 1
+- Trigger condition 2
+
+### Steps
+- Step 1
+- Step 2
+- Step 3
+
+### Notes
+- Note 1
+- Note 2
+```
+
+### Playbook Definition
+
+The playbook is defined with a second-level heading (`##`) followed by the playbook name. By convention, playbook names use PascalCase (e.g., `GreetCustomer`, `ProcessOrder`), but they can be any text (e.g. `greet the customer`, `process_order`).
+
+A description should follow the playbook name, explaining what the playbook does and when it should be used.
+
+### Parameters
+
+Playbooks can accept parameters, which are indicated in the playbook name:
+
+```markdown
+## CalculateDiscount($total, $membership_level)
+This playbook calculates the appropriate discount based on the total order value and membership level.
+```
+
+These parameters will be available as variables within the playbook.
+
+### Triggers Section
+
+The `### Triggers` section defines the conditions under which the playbook should execute. The playbook will run when **any** of the listed triggers are met.
+
+Common trigger types include:
+
+#### Temporal Triggers
+```markdown
+### Triggers
+- At the beginning
+- When program starts
+- After 5 minutes
+```
+
+#### User Interaction Triggers
+```markdown
+### Triggers
+- When user provides their email
+- When user asks about pricing
+- When user wants to speak to a human
+```
+
+#### State-Based Triggers
+```markdown
+### Triggers
+- When $balance becomes negative
+- When $cart_total exceeds 100
+- When $attempts is greater than 3
+```
+
+#### Execution Flow Triggers
+```markdown
+### Triggers
+- After calling VerifyIdentity
+- Before calling ProcessPayment
+- When CheckoutProcess fails
+```
+
+### Steps Section
+
+The `### Steps` section contains a list of steps to execute, in order. Each step is a bullet point that describes an action to take:
+
+```markdown
+### Steps
+- Greet the user and ask for their name
+- $name = user's response
+- If $name is empty
+  - Ask for their name again
+- Tell the user "Hello, $name! How can I help you today?"
+```
+
+Steps can include:
+
+#### Imperative Actions
+```markdown
+- Greet the user
+- Ask the user for their order number
+- Tell the user their order status
+```
+
+#### Variable Assignments
+```markdown
+- $total = $price * $quantity
+- $shipping_cost = CalculateShipping($weight, $destination)
+- Extract $relevant_info from the search results
+```
+
+#### Conditional Logic
+```markdown
+- If $order_total > 100
+  - Apply free shipping
+- If user is not satisfied
+  - Offer a discount
+  - Ask if they want to speak with a manager
+- Otherwise
+  - Thank them for their feedback
+```
+
+#### Loops
+```markdown
+- While conversation is active
+  - Wait for user input
+  - Respond appropriately
+- For each $product in $cart
+  - Calculate $product_total
+  - Add $product_total to $grand_total
+```
+
+#### Playbook Calls
+```markdown
+- ValidateEmail($email)
+- $shipping_cost = CalculateShipping($weight, $destination)
+- ProcessPayment($order_total)
+```
+
+#### Control Flow
+```markdown
+- End program
+- Return $result
+```
+
+### Notes Section
+
+The `### Notes` section provides additional guidance or rules for the playbook's execution:
+
+```markdown
+### Notes
+- Maintain a professional tone throughout the conversation
+- If the user mentions a competitor, highlight our unique advantages
+- If the user is from California, mention that we're compliant with CCPA
+```
+
+Notes are used to handle exceptions, provide style guidance, or specify business rules that apply throughout the playbook.
+
+## Example: Customer Support Playbook
+
+Here's a complete example of a markdown playbook for handling order status inquiries:
+
+```markdown
+## CheckOrderStatusFlow($authToken)
+Check the status of an order.
+
+### Trigger
+- When the user is authenticated and requests order status
+
+### Steps
+- Ask user for $orderId
+- $orderStatus = GetOrderStatus($orderId)
+- Extract $expectedDeliveryDate from $orderStatus
+- Say("Your order {$orderId} is expected to be delivered on {$expectedDeliveryDate}.")
+
+### Notes
+- The $orderStatus dictionary includes the keys: orderId, expectedDeliveryDate.
+- Always confirm that $authToken is valid before calling GetOrderStatus.
+```
+
+## Best Practices for Markdown Playbooks
+
+1. **Be specific and clear**: Write steps that clearly describe what the agent should do.
+2. **Use variables consistently**: Use the `$` prefix for all variables and maintain consistent naming.
+3. **Handle edge cases**: Include steps for handling unexpected user responses or system failures.
+4. **Break down complex tasks**: Keep steps simple and focused on a single action.
+5. **Use playbook calls**: Factor out reusable logic into separate playbooks that can be called.
+6. **Provide helpful notes**: Use the Notes section to guide the agent on tone, exceptions, and business rules.
+7. **Use meaningful trigger conditions**: Make trigger conditions specific to ensure playbooks run at the right time.
+
+## Related Topics
+
+- [ReAct Playbooks](react-playbooks.md) - For less structured, reasoning-based approaches
+- [Python Playbooks](python-playbooks.md) - For complex logic and integrations
+- [Calling Playbooks](../tutorials/calling-playbooks.md) - How to call one playbook from another
+- [Adding Triggers](../tutorials/adding-triggers.md) - More about trigger types and usage
+
+============
+****react-playbooks.md****
+# ReAct Playbooks
+
+ReAct playbooks are a specialized type of playbook in the Playbooks AI framework that leverage the reasoning and planning capabilities of large language models. Unlike standard markdown playbooks, ReAct playbooks focus on dynamic problem-solving with less rigid structure.
+
+## Overview
+
+ReAct playbooks are ideal for:
+
+- Complex problem-solving tasks
+- Deep research and information gathering tasks
+- Dynamic planning
+- Tasks where the exact steps aren't known in advance
+
+## Structure of a ReAct Playbook
+
+A ReAct playbook is defined as a standard markdown playbook, but without the `### Steps` section:
+
+```markdown
+## PlaybookName
+Detailed description or prompt for the task, goals, and constraints. Do not use markdown in the prompt.
+
+### Triggers
+- Trigger condition 1
+- Trigger condition 2
+```
+
+The key difference is that ReAct playbooks **do not** include a `### Steps` section. Instead, the system provides a default ReAct execution flow that implements a "think - plan - select tool - execute tool - interact - evaluate" cycle.
+
+>:warning: **Do not use markdown in the prompt** for ReAct playbooks because that will interfere with the playbook program's structure that uses #, ## and ### headings. Use xml tags like `<output_format>`, `<planning_rules>`,  `<style_guide>`, etc. for defining various parts of the prompt.
+
+### Playbook Definition
+
+Like other playbooks, a ReAct playbook is defined with a second-level heading (`##`) followed by the playbook name.
+
+The description that follows the playbook name is much more important in ReAct playbooks, as it serves as the primary instruction set for the LLM. This description should be detailed and clear about:
+
+1. The objective of the playbook
+2. The constraints and requirements
+3. The expected output or deliverable
+4. Any special considerations or approaches to take
+
+### Triggers Section
+
+The `### Triggers` section works the same way as in standard markdown playbooks, defining the conditions under which the playbook should execute.
+
+## Default ReAct Execution Flow
+
+When a ReAct playbook is executed, the system applies a default execution flow that follows this pattern (this is a reference implementation, and may change in the future):
+
+```markdown
+- Think deeply about the task to understand requirements and context
+- If task needs clarification
+  - Ask the user clarification questions
+  - Wait for user response
+  - Update understanding of the task with user's response
+- Initialize $task with clarified understanding and context of the task
+- Initialize $task_status with "started"
+- While $task_status is not "complete"
+  - Think about the current state; Check if any playbooks can be used; create/update your plan for completing the task
+  - Based on the plan, decide the next $task_action, one of ["call", "communicate", "finish"]; must produce a "finish" action at the end
+  - If $task_action is "call"
+    - Queue calls to appropriate playbooks with appropriate parameters
+    - Wait for all the calls to complete
+  - If $task_action is "communicate"
+    - Decide whether to ask or tell: $communication_type
+    - If $communication_type is "ask"
+      - Formulate and ask question to the user
+      - Wait for user response
+    - If $communication_type is "tell"
+      - Say appropriate message to the user
+  - If $task_action is "finish"
+    - If task is expected to produce a comprehensive report
+      - Generate final result; follow the output format if specified; save the result as an artifact `SaveArtifact("name of report file.md", "One line summary of the report", "report content...")`
+      - Return artifact reference 'Artifact["name of report file.md"]'
+    - If task is expected to produce a short answer
+      - Generate final result; follow the output format if specified
+      - Return the answer as a string
+    - Set $task_status to "complete"
+```
+
+This execution flow enables the LLM to:
+
+1. **Think** - Analyze the task and context
+2. **Plan** - Formulate a strategy to complete the task
+3. **Act** - Execute the plan through calling playbooks, communicating with the user, or producing a final result
+4. **Observe** - Process results and user feedback
+5. **Reflect** - Update understanding and refine the plan
+
+## Example: Research Playbook
+
+Here's an example of a ReAct playbook for product research:
+
+```markdown
+## ResearchProduct
+This playbook conducts comprehensive research on a product specified by the user. The research should include:
+
+1. General product information (features, specifications, pricing)
+2. Customer reviews and sentiment analysis
+3. Comparison with at least 3 competing products
+4. Pros and cons based on the research
+5. A final recommendation with justification
+
+Use WebSearch to find relevant information. Analyze the data critically and present findings in a clear, organized format. Prioritize recent sources (within the last year if possible) and reputable websites.
+
+<planning_rules>
+- Always start by determining the exact product to research
+- Create a structured research plan with specific queries
+- Perform multiple searches with different queries to get comprehensive information
+- Group searches by category (general info, reviews, comparisons)
+- Verify information across multiple sources when possible
+- If conflicting information is found, note the discrepancy and evaluate source credibility
+</planning_rules>
+
+<style_guide>
+- Write in a neutral, objective tone
+- Use clear headings and subheadings for organization
+- Present pros and cons in balanced fashion
+- Support claims with evidence from research
+- When providing your recommendation, clearly explain your reasoning
+</style_guide>
+
+<output_format>
+# Product Research: [Product Name]
+
+## Overview
+[General product information]
+
+## Features and Specifications
+[Detailed features]
+
+## Customer Sentiment
+[Analysis of customer reviews]
+
+## Competitive Comparison
+[Comparison with alternatives]
+
+## Pros and Cons
+[Balanced assessment]
+
+## Recommendation
+[Final recommendation with justification]
+</output_format>
+
+### Triggers
+- When user wants to research a product
+```
+
+## Benefits of ReAct Playbooks
+
+ReAct playbooks offer several advantages:
+
+1. **Flexibility**: They can handle a wide range of tasks without needing to specify exact steps in advance.
+2. **Reasoning**: They leverage the LLM's reasoning capabilities to solve complex problems.
+3. **Adaptability**: They can adjust their approach based on new information or changing requirements.
+4. **Contextual understanding**: They consider the broader context and can make more nuanced decisions.
+5. **Natural language guidance**: They can be directed with natural language instructions rather than rigid steps.
+
+## When to Use ReAct Playbooks vs. Markdown Playbooks
+
+Use ReAct playbooks when:
+
+- The exact sequence of steps can't be predetermined
+- The task requires complex reasoning or research
+- The task has many possible approaches or paths
+- You want to leverage the LLM's problem-solving abilities
+- The task requires synthesis of information from multiple sources
+
+Use standard markdown playbooks when:
+
+- The workflow is well-defined and predictable
+- You want to ensure specific steps are followed in a precise order
+- The task is relatively simple with clear decision points
+- Consistency and predictability are more important than flexibility
+
+## Best Practices for ReAct Playbooks
+
+1. **Be clear about objectives**: Clearly define what the playbook should accomplish.
+2. **Provide context**: Include relevant background information.
+3. **Define constraints**: Specify any limitations or requirements.
+4. **Use special sections**: Leverage planning rules, style guides, and output format sections.
+5. **Don't overspecify**: Avoid trying to dictate the exact thinking process.
+6. **Test extensively**: ReAct playbooks may behave differently across runs, so test thoroughly.
+
+## Related Topics
+
+- [Markdown Playbooks](markdown-playbooks.md) - For more structured, step-by-step approaches
+- [Python Playbooks](python-playbooks.md) - For complex logic and integrations
+- [Working with Artifacts](../tutorials/working-with-artifacts.md) - How ReAct playbooks can create and store data
+
+============
+****python-playbooks.md****
+# Python Playbooks
+
+Python playbooks provide the full power and flexibility of Python within the Playbooks AI framework. They allow you to implement complex logic, integrate with external systems, and leverage the entire Python ecosystem.
+
+## Overview
+
+Python playbooks are ideal for:
+
+- Complex calculations and algorithms
+- Data processing and transformation
+- Integration with external systems and APIs
+- Implementing precise business logic
+- Working with databases and file systems
+- Handling structured data
+
+## Creating Python Playbooks
+
+Python playbooks are defined using the `@playbook` decorator applied to async Python functions in a ```python code block:
+
+````
+```python
+@playbook
+async def calculate_shipping(weight: float, destination: str) -> float:
+    """Calculate shipping costs based on weight and destination."""
+    base_rate = 5.99
+    
+    # Apply weight multiplier
+    weight_cost = weight * 0.5
+    
+    # Apply destination surcharge
+    destination_surcharge = get_destination_surcharge(destination)
+    
+    return base_rate + weight_cost + destination_surcharge
+```
+````
+
+### The @playbook Decorator
+
+The `@playbook` decorator registers a Python function as a playbook that can be called by other playbooks or triggered based on conditions.
+
+```python
+@playbook(
+    triggers=["When user provides payment information"],
+    public=True
+)
+async def process_payment(amount: float, card_info: dict) -> bool:
+    """Process a payment transaction."""
+    # Payment processing logic
+    return True
+```
+
+#### Decorator Parameters
+
+The `@playbook` decorator accepts several optional parameters:
+
+- `triggers`: A list of trigger conditions (as strings) that will cause the playbook to execute
+- `public`: A boolean indicating whether the playbook should be available to other agents
+- `description`: An optional description of the playbook (the docstring is used if not provided)
+
+### Type Annotations
+
+Python playbooks should use type annotations for parameters and return values:
+
+```python
+@playbook
+async def calculate_total(
+    price: float,      # The price per item
+    quantity: int,     # The number of items
+    discount: float = 0.0  # Optional discount percentage
+) -> float:            # The total price
+    """Calculate the total price after applying discount."""
+    total = price * quantity
+    if discount > 0:
+        total = total * (1 - discount / 100)
+    return total
+```
+
+### Docstrings
+
+Every Python playbook should include a docstring that explains:
+- What the playbook does
+- The purpose of each parameter
+- What the return value represents
+- Any side effects or important behavior notes
+
+```python
+@playbook
+async def validate_address(address: dict) -> bool:
+    """
+    Validate a shipping address against postal service records.
+    
+    Args:
+        address (dict): A dictionary containing address components:
+            - street: The street address
+            - city: The city name
+            - state: The state/province code
+            - zip: The postal/zip code
+            - country: The country code (ISO 2-letter)
+    
+    Returns:
+        bool: True if the address is valid, False otherwise
+    
+    Note:
+        This playbook makes API calls to an external validation service
+        and may have rate limits.
+    """
+    # Address validation logic
+    return True
+```
+
+## Including Python Playbooks in Your Program
+
+Python playbooks are included within markdown playbooks using code blocks:
+
+````markdown
+# Order Processing
+This program handles order processing workflows.
+
+```python
+@playbook
+async def calculate_tax(subtotal: float, state: str) -> float:
+    """Calculate sales tax based on state."""
+    tax_rates = {
+        "CA": 0.0725,
+        "NY": 0.045,
+        "TX": 0.0625,
+        # Other states...
+    }
+    
+    default_rate = 0.05  # Default tax rate
+    rate = tax_rates.get(state.upper(), default_rate)
+    
+    return subtotal * rate
+```
+
+## ProcessOrder
+This playbook processes a new order.
+
+### Triggers
+- When user submits an order
+
+### Steps
+- Validate the order details
+- Calculate the subtotal
+- $tax = calculate_tax($subtotal, $customer.state)
+- $total = $subtotal + $tax + $shipping
+- Process the payment
+- Create the order in the database
+- Send confirmation to the customer
+````
+
+
+## Async and Await
+
+All Python playbooks must be defined as `async` functions, and when calling other playbooks, you must use the `await` keyword:
+
+```python
+@playbook
+async def process_order(order: dict) -> bool:
+    """Process an order end-to-end."""
+    # Validate order
+    is_valid = await validate_order(order)
+    if not is_valid:
+        return False
+    
+    # Calculate costs
+    subtotal = calculate_subtotal(order["items"])
+    tax = await calculate_tax(subtotal, order["state"])
+    shipping = await calculate_shipping(order["weight"], order["address"])
+    
+    # Process payment
+    payment_success = await process_payment(subtotal + tax + shipping, order["payment"])
+    
+    return payment_success
+```
+
+## Public Python Playbooks
+
+To make a Python playbook available to other agents to call, use the `public=True` parameter:
+
+```python
+@playbook(public=True)
+async def currency_conversion(amount: float, from_currency: str, to_currency: str) -> float:
+    """Convert an amount between currencies using current exchange rates."""
+    # Currency conversion logic
+    return converted_amount
+```
+
+## Error Handling
+
+Python playbooks should include proper error handling:
+
+```python
+@playbook
+async def safe_api_call(endpoint: str, params: dict) -> dict:
+    """Make a safer API call with error handling."""
+    import requests
+    
+    try:
+        response = requests.get(endpoint, params=params, timeout=10)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.Timeout:
+        await Say("The service is taking too long to respond. Please try again later.")
+        return {"error": "timeout"}
+    except requests.exceptions.HTTPError as e:
+        await Say(f"There was an error communicating with the service: {e}")
+        return {"error": "http_error", "details": str(e)}
+    except Exception as e:
+        await Say("An unexpected error occurred. Please try again later.")
+        return {"error": "unknown", "details": str(e)}
+```
+
+## Best Practices for Python Playbooks
+
+1. **Keep functions focused**: Each playbook should do one thing well
+2. **Use proper typing**: Include type annotations for all parameters and return values
+3. **Add comprehensive docstrings**: Document what the playbook does and how to use it
+4. **Handle errors gracefully**: Include try/except blocks and provide helpful error messages
+5. **Be mindful of performance**: Consider execution time, especially for external API calls
+6. **Use environment variables for secrets**: Never hardcode API keys or credentials
+7. **Modularize complex logic**: Break down complex tasks into multiple playbooks
+8. **Use consistent naming**: Follow a consistent convention for playbook names (usually snake_case)
+9. **Test thoroughly**: Ensure playbooks handle edge cases and unexpected inputs
+10. **Consider concurrency**: Use async patterns effectively for I/O-bound operations
+
+## Related Topics
+
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - For structured, step-by-step flows
+- [ReAct Playbooks](../playbook-types/react-playbooks.md) - For reasoning-based, adaptive behavior
+
+============
+****builtin-playbooks.md****
+# Built-in Playbooks
+
+Playbooks AI provides a set of built-in playbooks that are available to every agent without requiring explicit import or definition. These playbooks handle common operations like communication, artifact management, and program control flow.
+
+## Available Built-in Playbooks
+
+### `SendMessage(target_agent_id: str, message: str)`
+
+Sends a message to another agent or the user.
+
+```python
+@playbook
+async def SendMessage(target_agent_id: str, message: str):
+    """
+    Send a message to another agent.
+    
+    Args:
+        target_agent_id (str): The ID of the agent to send the message to.
+                               Use "human" to send a message to the user.
+        message (str): The content of the message.
+    
+    Returns:
+        None
+    """
+    ...
+```
+
+**Example usage:**
+```markdown
+### Steps
+- Send message to SupportAgent "Please assist with this customer inquiry"
+- Tell the user their request has been forwarded to a specialist
+```
+
+### `Say(message: str)`
+
+A convenience playbook that sends a message to the human user.
+
+```python
+@playbook
+async def Say(message: str):
+    """
+    Send a message to the human user.
+    
+    This is a convenience wrapper around SendMessage("human", message).
+    
+    Args:
+        message (str): The message to send to the user.
+    
+    Returns:
+        None
+    """
+    await SendMessage("human", message)
+```
+
+**Example usage:**
+```markdown
+### Steps
+- Say hello to the user
+- Say("Here's your ticket link: https://support.playbooks.ai/tickets/{$ticket_id}")
+```
+
+### `WaitForMessage(source_agent_id: str) -> str | None`
+
+Waits for a message from a specific agent or user.
+
+```python
+@playbook
+async def WaitForMessage(source_agent_id: str) -> str | None:
+    """
+    Wait for a message from a specific agent.
+    
+    Args:
+        source_agent_id (str): The ID of the agent to wait for a message from.
+                               Use "human" to wait for a user message.
+    
+    Returns:
+        str or None: The content of the received message, or None if the wait timed out.
+    """
+    ...
+```
+
+**Example:**
+```markdown
+### Steps
+- SendMessage("SupportAgent", "What is the return policy for Canada?")
+- $return_policy = WaitForMessage("SupportAgent")
+- ...
+```
+
+### `SaveArtifact(artifact_name: str, artifact_summary: str, artifact_content: str)`
+
+Saves data as a named artifact for later retrieval.
+
+```python
+@playbook
+async def SaveArtifact(artifact_name: str, artifact_summary: str, artifact_content: str):
+    """
+    Save data as a named artifact.
+    
+    Args:
+        artifact_name (str): The name to give the artifact, typically with an extension
+                             (e.g., "report.md", "data.json").
+        artifact_summary (str): A brief description of the artifact.
+        artifact_content (str): The actual content to store in the artifact.
+    
+    Returns:
+        None
+    """
+    ...
+```
+
+**Example:**
+```markdown
+### Steps
+- Generate a detailed analysis report
+- SaveArtifact("quarterly_report.md", "Q3 2023 Sales Analysis", generated report)
+- Tell the user the report has been saved at Artifact["quarterly_report.md"]
+```
+
+### `LoadArtifact(artifact_name: str)`
+
+Loads a previously saved artifact by name.
+
+```python
+@playbook
+async def LoadArtifact(artifact_name: str):
+    """
+    Load a previously saved artifact by name.
+    
+    Args:
+        artifact_name (str): The name of the artifact to load.
+    
+    Returns:
+        Artifact: An object with properties:
+            - name: The artifact's name
+            - description: The artifact's summary
+            - content: The artifact's content
+    
+    Raises:
+        KeyError: If the artifact doesn't exist
+    """
+    ...
+```
+
+**Example:**
+```markdown
+### Steps
+- LoadArtifact("Q1_report.md")
+- LoadArtifact("Q2_report.md")
+- LoadArtifact("Q3_report.md")
+- LoadArtifact("Q4_report.md")
+- Analyze the content of the quarterly reports and generate annual report
+- SaveArtifact("annual_report.md", "Annual Report", generated annual report)
+```
+
+### `Return(value=None)`
+
+Returns a value from the current playbook and ends its execution.
+
+```python
+@playbook
+async def Return(value=None):
+    """
+    Return a value from the current playbook and end execution.
+    
+    Args:
+        value: The value to return (optional).
+    
+    Returns:
+        The provided value, or None if no value was provided.
+    """
+    ...
+```
+
+**Example:**
+```markdown
+## GetDiscount($membership_level)
+### Steps
+- If $membership_level is "premium"
+  - Return(0.15)  # 15% discount
+- If $membership_level is "standard"
+  - Return(0.05)  # 5% discount
+- Return(0)  # No discount
+```
+
+## Related Topics
+
+- [Markdown Playbooks](markdown-playbooks.md) - Using built-in playbooks in markdown
+- [Python Playbooks](python-playbooks.md) - Using built-in playbooks in Python
+- [Working with Artifacts](../tutorials/working-with-artifacts.md) - More on artifacts
+- [Multi-Agent Systems](../multi-agent-systems/index.md) - Communication between agents
+
+============
+****index.md****
+# Triggers
+
+Triggers are a powerful feature in Playbooks AI that enable declarative event-driven programming through natural language conditions. They allow playbooks to be dynamically invoked when specified conditions are met.
+
+## What are Triggers?
+
+Triggers are conditions written in natural language that, when met, cause a playbook to be executed. They enable reactive and event-driven behavior in your AI agents.
+
+## Benefits of Triggers
+
+Triggers provide several advantages:
+
+- **Reactive Programming**: Build systems that respond to events without polling
+- **Separation of Concerns**: Organize code around events rather than control flow
+- **Natural Language Expressiveness**: Specify complex conditions in plain language
+- **Reduced Complexity**: Avoid complex if-else chains and state management
+- **Event-Driven Architecture**: Create loosely coupled components that interact through events 
+
+## Next Steps
+
+- See [Adding Triggers](../tutorials/adding-triggers.md) tutorial
+- See [Advanced Triggers](../tutorials/triggers-advanced.md) tutorial
+- Refer to [tutorials](../tutorials/index.md) for other topics
+============
+****index.md****
+# Artifacts
+
+- See [Working with Artifacts](../tutorials/working-with-artifacts.md) tutorial
+- Refer to [tutorials](../tutorials/index.md) for other topics
+============
+****index.md****
+# Agents
+
+- See [Multi-Agent Programming](../multi-agent-systems/index.md)
+- Refer to [tutorials](../tutorials/index.md) for other topics
+============
+****index.md****
+# Multi-Agent Systems
+
+- See [Multi-Agent Programming](../tutorials/multi-agent-programming.md) tutorial
+- See [Exported and Public Playbooks](exported-and-public-playbooks.md)
+
+============
+****exported-and-public-playbooks.md****
+# Exported and Public Playbooks
+
+## Exported Playbooks
+Exported playbooks are a powerful feature of Playbooks AI that allows an agent to execute playbooks defined by another agent within its own execution context as if they were implemented locally within the importing agent.
+
+>:bulb: Playbooks AI's exported playbooks capability is significantly more powerful than MCP's prompts because it enables true capability sharing and execution between agents, not just structured guidance. While MCP prompts are valuable for standardizing LLM interactions, Playbooks AI enables building extensible agent ecosystems with genuine code reuse and modular architectures.
+
+## Public Playbooks
+When an agent marks a playbook as public, another agent can call that playbook remotely.
+
+>:bulb: Public playbooks are similar to MCP's tools. When a client calls a tool, it is executed on the MCP server. Similarly, when an agent calls a public playbook on another agent, it is executed on the called agent's server.
+
+## How Exported Playbooks Work
+
+When an agent exports a playbook, another agent can import implementation of that playbook and then execute that playbook within its execution context.
+
+### Exporting Playbooks
+
+>:warning: This feature under active development and not available yet.
+
+Exported playbooks are marked using the `export` keyword:
+
+````markdown
+# AccountManagementAgent
+
+```python
+@playbook(export=True)
+async def CloseAccount($user_id) -> str:
+    """Close an account for a user."""
+    # ...
+```
+
+## export: ProvisionAccount($user_id, $service_tier)
+### Steps
+- ...
+````
+
+In this example, the `AccountManagementAgent` exports the `CloseAccount` and `ProvisionAccount` playbooks.
+
+>:bulb: Implementations of both markdown and Python playbooks can be exported.
+
+### Importing Exported Playbook Implementations
+
+To import a playbook's implementation from another remote agent, register that remote agent and then use the `import` statement:
+
+```markdown
+# AccountManagementAgent(url="https://cloud.runplaybooks.ai/account-management")
+
+# ServiceAgent
+import CloseAccount, ProvisionAccount from AccountManagementAgent
+```
+
+This imports implementations of the `CloseAccount` Python playbook and the `ProvisionAccount` markdown playbook from the `AccountManagementAgent` agent.
+
+### Using Imported Playbooks
+
+Once imported, you can use the playbook just like any other playbook defined within your agent:
+
+```markdown
+## CreateAccount
+### Steps
+- Validate user information
+- Create user record in database
+- ProvisionAccount($user_id, $service_tier)
+- Send welcome email to user
+```
+
+The imported `ProvisionAccount` playbook is called as if it were a local playbook.
+
+## How Public Playbooks Work
+
+>:warning: This feature under active development and not available yet.
+
+When agent A marks a playbook as public, another agent B can **call that playbook remotely on a running instance of agent A**.
+
+### Marking Playbooks as Public
+
+To mark a playbook as public, use the `public` keyword:
+
+```
+# AuthenticationAgent
+This agent handles user authentication.
+
+## public: VerifyCredentials($username, $password)
+### Steps
+- Check credentials against secure store
+- Return authentication result and user details if valid
+```
+
+Both markdown and Python playbooks can be marked as public.
+
+### Calling Public Playbooks
+
+To call a public playbook, first register the remote agent and then call the playbook as a method on that agent:
+
+```
+# AuthenticationAgent(url="https://cloud.runplaybooks.ai/authentication")
+
+# APIGatewayAgent
+
+## HandleRequest
+### Steps
+- $auth_result = AuthenticationAgent.VerifyCredentials($request.auth.username, $request.auth.password)
+- ...
+```
+
+Here, the `APIGatewayAgent` directly calls the `VerifyCredentials` playbook on the `AuthenticationAgent` instance running at `https://cloud.runplaybooks.ai/authentication`. The playbook is executed on the remote agent's server and the result is returned to the calling agent.
+
+
+## Differences Between Exported and Public Playbooks
+
+Exported playbooks differ from public playbooks in several important ways:
+
+|  | Exported Playbooks | Public Playbooks |
+|---------|-------------------|----------------------|
+| **Example** | `import CloseAccount from AccountManagementAgent` and then `CloseAccount($user_id)` | `# PaymentProcessingAgent("https://cloud.runplaybooks.ai/ppa")` and then `PaymentProcessingAgent.ProcessPayment($amount, $payment_method)` |
+| **Execution Context** | Local execution in importing agent's context | Remote procedure call on the remote agent instance |
+| **State Access** | Can access local agent's state | Cannot access local agent's state |
+
+## Security Considerations
+
+>:boom: Be careful! Importing playbooks raise several security considerations.
+
+1. **Code Injection**: An agent that imports playbooks from another agent must trust that agent. Importing playbook implementations from untrusted agents and executing them can lead to security vulnerabilities like code injection attacks.
+
+2. **Version Control**: Changes to exported playbooks may affect importing agents, requiring careful version management.
+
+## Example: Agent Ecosystem
+
+Let's say that we have an ecosystem of three agents.
+
+### 1. DatabaseAgent
+```markdown
+# DatabaseAgent
+This agent provides recipes for various database related tasks.
+
+## export: FindTable($query, $database)
+### Steps
+- List all tables in the $database
+- Find the table that is most likely to contain data to answer the $query
+- Return the table name
+```
+
+Let's say that `DatabaseAgent` is available at the URL `https://cloud.runplaybooks.ai/database.agent`. It exports the `FindTable` playbook. It is a generic procedure for finding a database table.
+
+### 2. AuthenticationAgent
+```markdown
+# AuthenticationAgent
+This agent handles user authentication.
+
+## public: VerifyCredentials($username, $password)
+### Steps
+- Check credentials against secure store
+- Return authentication result and user details if valid
+```
+
+Let's say that an instance of the `AuthenticationAgent` is running at the URL `https://cloud.runplaybooks.ai/authentication.agent`. The public `VerifyCredentials` playbook requires access to the secure store within ACME Corp's infrastructure.
+
+### 3. APIGatewayAgent
+APIGatewayAgent uses the above two agents. It first registers those two agents, specifying their URLs. Then it imports the `FindTable` playbook from the `DatabaseAgent`. It then remotely calls the `VerifyCredentials` playbook on the `AuthenticationAgent` instance. Finally, it locally executes the `FindTable` playbook.
+
+```
+# DatabaseAgent(url="https://cloud.runplaybooks.ai/database.agent")
+
+# AuthenticationAgent(url="https://cloud.runplaybooks.ai/authentication.agent")
+
+# APIGatewayAgent
+import FindTable from DatabaseAgent
+
+## HandleRequest
+### Triggers
+- When an API request is received
+### Steps
+- $auth_result = AuthenticationAgent.VerifyCredentials($request.auth.username, $request.auth.password)
+- If $auth_result.success is true
+  - $table_name = FindTable($request.query, $database)
+  - Return $table_name
+- Otherwise
+  - Return authentication error
+```
+
+## Related Topics
+
+- [Multi-Agent Programming](../multi-agent-systems/index.md) - More about setting up and using multiple agents
+- [Python Playbooks](../playbook-types/python-playbooks.md) - How to create playbooks using Python
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - Standard playbook structure
+
+============
+****index.md****
+# Observability
+
+Playbooks AI provides comprehensive observability capabilities to help you monitor, debug, and optimize your AI agents. This is essential for building reliable and trustworthy AI systems, especially in production environments.
+
+## Overview
+
+The observability features in Playbooks AI enable you to:
+
+- Monitor playbook execution and performance
+- Track LLM interactions and token usage
+- Debug complex agent workflows
+- Gain insights into agent decision-making processes
+- Measure and optimize costs
+- Ensure compliance and auditability
+
+## LangFuse Integration
+
+Playbooks AI integrates with [LangFuse](https://langfuse.com), an open-source observability platform specifically designed for LLM applications. LangFuse provides tracing, evaluation, and analytics for your AI agents.
+
+### Setting Up LangFuse
+
+To enable LangFuse integration, you need to:
+
+1. Deploy your own LangFuse instance [using docker compose](https://langfuse.com/self-hosting/docker-compose) or set up an account on [LangFuse Cloud](https://cloud.langfuse.com).
+2. Configure your environment variables in the `.env` file
+    ```
+    # LangFuse Configuration
+    LANGFUSE_ENABLED=true
+    LANGFUSE_PUBLIC_KEY=your_langfuse_public_key
+    LANGFUSE_SECRET_KEY=your_langfuse_secret_key
+    LANGFUSE_HOST=your_langfuse_instance_url
+    ```
+
+## What Playbooks AI Traces
+
+When LangFuse integration is enabled, Playbooks AI automatically traces:
+
+1. **Playbook Executions**: Each markdown and Python playbook run with timing and context
+2. **LLM Interactions**: Prompts, completions, tokens, and latency
+3. **User Interactions**: Messages and responses
+4. **Agent State Changes**: Variables and context updates
+5. **Errors and Exceptions**: Problems encountered during execution
+
+## Viewing and Analyzing Data
+
+After integrating with LangFuse, run a Playbooks program and then view the traces in the LangFuse dashboard.
+============
+****index.md****
+# Advanced Concepts and Roadmap
+
+Playbooks is under active development. We are developing it in full view of the community and welcome community contributions and feedback.
+
+Here are some of the advanced concepts we are exploring:
+
+- [Playbooks Protocol](playbooks-protocol.md)
+- Playbooks via [MCP and A2A](mcp-a2a.md) protocols
+- [Observer Agents (Passive)](passive-observer-agents.md)
+- [Observer Agents (Active)](active-observer-agents.md)
+- [Dynamic Playbook Generation](dynamic-playbook-generation.md)
+- [Observing Generated Playbook Execution](observing-generated-playbook-execution.md)
+- [Dynamic Playbook Rewriting](dynamic-playbook-rewriting.md)
+
+============
+****mcp-a2a.md****
+# Playbooks via MCP and A2A Protocols
+
+In order to align with the emerging ecosystem standards, Playbooks agents will speak the following two protocols, apart from a playbooks-native protocol that we think will lead to more capable multi-agent systems:
+
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/): Connects agents to tools, APIs, and resources with structured inputs/outputs. Think of it as the way agents access their capabilities.
+- [Agent2Agent Protocol (A2A)](https://google.github.io/A2A/): Facilitates dynamic, multimodal communication between different agents as peers. It's how agents collaborate, delegate, and manage shared tasks.
+
+## MCP
+TODO - relevant discussion in [Playbooks Protocol](playbooks-protocol.md)
+
+## A2A
+TODO - relevant discussion in [Playbooks Protocol](playbooks-protocol.md)
+
+============
+****playbooks-protocol.md****
+# Playbooks Protocol
+
+Protocols like [MCP](https://modelcontextprotocol.io/) and [A2A](https://google.github.io/A2A/) are emerging as standards for multi-agent systems. Playbooks will [support these protocols](mcp-a2a.md), but we do not think that those protocols are the best way for AI agents to share their capabilities and communicate with each other.
+
+We are developing a new protocol that we believe will lead to more capable, flexible and secure multi-agent systems.
+
+## "Tools" exposed by services are simply API endpoints
+The standard method for applications to expose their capabilities is through API endpoints. "Tools" in MCP are simply these public API endpoints. There are existing standards for API discovery and documentation, such as [OpenAPI](https://www.openapis.org/) and [Swagger](https://swagger.io/). We think that "tools" should be exposed through these existing standards.
+
+So, along with supporting MCP as way to publish capabilities, playbooks will also support OpenAPI as way to publish capabilities.
+
+## "Tools" are agent's public methods
+In Object-Oriented Programming, classes expose their capabilities through public methods. When an agent wants to publish its capabilities, why not use public methods of the agent? Playbooks has native support for [public playbooks](../multi-agent-systems/exported-and-public-playbooks.md), where an agent can expose certain playbooks for other agents or systems to call.
+
+## Expose Prompts or Playbooks?
+In MCP (Model Context Protocol), "prompts" are predefined templates or instructions that MCP servers can expose to client applications. They serve as reusable, parameterized templates that define specific ways to interact with or use the resources and capabilities that the MCP server provides. They help standardize common operations across different MCP implementations. For example, a "prompt" might expose a specific way to executing a coding task, or how data should be retrieved using specific queries, or even multi-step workflows.
+
+Playbooks are multi-step workflows that can be executed reliably. They are a more powerful and flexible concept than prompts. We believe that exporting playbooks that can be executed by the caller within their own context is the most useful way to expose these capabilities. Playbooks has native support for [exporting playbooks](../multi-agent-systems/exported-and-public-playbooks.md). A Playbooks oriented protocol would allow seamless transfer and execution of such playbooks, through standard programming paradigms like "import" directives and function calls. Exported playbooks can be "imported" into another agent and then called and executed as if they were local playbooks.
+
+## Playbooks as a standard
+Playbooks not only has the potential to be a stadard for exposing agnet capabilities to LLMs and for agent to agent communication, but it also has the potential to be a standardize how agents are described, discovered and used.
+
+
+============

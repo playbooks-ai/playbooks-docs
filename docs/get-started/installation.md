@@ -63,10 +63,10 @@ poetry shell
 You can verify that Playbooks AI is installed correctly by running:
 
 ```bash
-python -c "import playbooks; print(playbooks.__version__)"
+python -c "import playbooks; print(playbooks.__name__)"
 ```
 
-This should print the version number of the installed Playbooks AI package.
+This should print "playbooks" if the installation is successful.
 
 ## Optional Dependencies
 No optional dependencies are required for Playbooks AI.

@@ -7,7 +7,7 @@ This quickstart guide will help you create and run your first Playbooks AI progr
 Before you begin, make sure you have:
 
 - Installed Playbooks AI (see the [Installation Guide](installation.md))
-- An API key for either Anthropic (Claude) or OpenAI (GPT-4)
+- An API key for either Anthropic (Claude) or OpenAI (GPT-4o)
 
 ## Step 1: Set Up Your Environment
 
@@ -23,9 +23,24 @@ MODEL=claude-3-7-sonnet-latest
 # OR for OpenAI
 # OPENAI_API_KEY=your_openai_api_key_here
 # MODEL=gpt-4o
+
+# Cache LLM responses to disk
+LLM_CACHE_TYPE="disk"
+LLM_CACHE_ENABLED="true"
+LLM_CACHE_PATH=".llm_cache" # for disk cache
+
+# Langfuse (optional)
+# LANGFUSE_SECRET_KEY="sk-lf-..."
+# LANGFUSE_PUBLIC_KEY="pk-lf-..."
+# LANGFUSE_HOST="http://localhost:3000"
 ```
 
-Make sure to uncomment the appropriate API key and model for the service you're using, and replace the placeholder with your actual API key.
+Make sure to uncomment the appropriate API key and model for the service you're using, and replace the placeholder with your actual API key. 
+
+>:warning: We recommend using Claude Sonnet 3.7 or GPT-4o. Playbooks has not been tested with other models.
+
+### Langfuse (optional)
+You can specify Langfuse credentials for tracing the execution of your Playbooks programs. For developement environment, we recommend using the [docker compose setup for Langfuse](https://langfuse.com/self-hosting/docker-compose). After following these instructions, launch Langfuse at http://localhost:3000, create a new organization and project, and create a new secret key and public key to enable tracing.
 
 ## Step 2: Create Your First Playbooks program
 
