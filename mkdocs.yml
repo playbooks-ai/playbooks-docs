@@ -98,7 +98,7 @@ nav:
     - Working with Artifacts: tutorials/working-with-artifacts.md
   - Playbooks Language:
     - playbooks-language/index.md
-    - Common Language Specification: playbooks-language/common-language-specification.md
+    - Playbooks Assembly Language: playbooks-language/playbooks-assembly-language.md
   - Playbook Types:
     - playbook-types/index.md
     - Markdown Playbooks: playbook-types/markdown-playbooks.md

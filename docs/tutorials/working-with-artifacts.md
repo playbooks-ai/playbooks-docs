@@ -136,4 +136,4 @@ Congratulations! You've now completed the basic tutorials for Playbooks AI.
 To continue learning, explore these topics:
 
 - [Multi-Agent Systems](../multi-agent-systems/index.md)
-- [Common Language Specification](../playbooks-language/common-language-specification.md)
+- [Playbooks Assembly Language](../playbooks-language/playbooks-assembly-language.md)

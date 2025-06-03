@@ -1,10 +1,10 @@
-# Common Language Specification
+# Playbooks Assembly Language
 
-The Playbooks Language is designed to be human-readable, but to execute it reliably and enable interoperability across different implementations, the system compiles it into a Common Language Specification (CLS) format. This specification serves as the canonical representation for LLM-executed programs, enabling multiple implementations and tools to target the same runtime format.
+The Playbooks Language is designed to be human-readable, but to execute it reliably and enable interoperability across different implementations, the system compiles it into a Playbooks Assembly Language (PAL) format. This specification serves as the canonical representation for LLM-executed programs, enabling multiple implementations and tools to target the same runtime format.
 
-## Purpose of the Common Language Specification
+## Purpose of the Playbooks Assembly Language
 
-The Common Language Specification:
+The Playbooks Assembly Language:
 
 - Provides a canonical format for representing LLM-executed programs
 - Enables interoperability between different authoring tools (markdown, visual designers, etc.)
@@ -13,18 +13,18 @@ The Common Language Specification:
 
 ## Ecosystem Benefits
 
-The CLS enables a rich ecosystem where:
+The PAL enables a rich ecosystem where:
 
-- **Visual workflow designers** can generate programs targeting the CLS
+- **Visual workflow designers** can generate programs targeting the PAL
 - **Different authoring tools** (markdown, YAML, GUI builders) can compile to the same format
-- Implementations using **other frameworks** such as LangGraph, Google Agent Development Kit, Autogen, etc can be converted into CLS format
-- **Multiple runtime implementations** can execute CLS programs, enabling specialized execution runtimes for different use cases, hardwares, etc.
-- **Analysis tools** can work with any CLS-compliant program
+- Implementations using **other frameworks** such as LangGraph, Google Agent Development Kit, Autogen, etc can be converted into PAL format
+- **Multiple runtime implementations** can execute PAL programs, enabling specialized execution runtimes for different use cases, hardwares, etc.
+- **Analysis tools** can work with any PAL-compliant program
 - **Debugging and monitoring tools** have a consistent format to target
 
-## Structure of the Common Language Specification
+## Structure of the Playbooks Assembly Language
 
-When a Playbooks program is compiled to CLS format, it follows a structured representation:
+When a Playbooks program is compiled to PAL format, it follows a structured representation:
 
 ## Trigger Representation
 
@@ -40,7 +40,7 @@ Each trigger is numbered sequentially (`T1`, `T2`, etc.) for reference during ex
 
 ## Command Codes
 
-Each step in the intermediate format is assigned a three-letter command code that defines its purpose:
+Each step in the assembly format is assigned a three-letter command code that defines its purpose:
 
 | Code | Meaning | Description |
 |------|---------|-------------|
@@ -55,7 +55,7 @@ Each step in the intermediate format is assigned a three-letter command code tha
 
 ## Line Numbering
 
-The intermediate format uses a precise line numbering system:
+The assembly format uses a precise line numbering system:
 
 - Top-level steps use two-digit numbers: `01`, `02`, `03`, etc.
 - Sub-steps use dot notation: `01.01`, `01.02`, etc.
@@ -70,7 +70,7 @@ For example, an if-condition with nested steps would be represented as:
 04:EXE Continue with checkout
 ```
 
-## Transformation from Playbooks Language to Common Language Specification
+## Transformation from Playbooks Language to Playbooks Assembly Language
 
 - Agent names are converted to CamelCase without spaces: `CustomerService` instead of `Customer Service`
 - Playbook names are also converted to CamelCase without spaces: `Greeting` instead of `Greet the user`
@@ -82,7 +82,7 @@ For example, an if-condition with nested steps would be represented as:
 
 ## Example Transformation
 
-Here's an example of how a simple markdown playbook is transformed to the CLS format:
+Here's an example of how a simple markdown playbook is transformed to the PAL format:
 
 ### Original Markdown
 
@@ -106,7 +106,7 @@ This playbook greets the user and asks for their order number.
 - Be polite and professional
 ```
 
-### Corresponding Common Language Specification
+### Corresponding Playbooks Assembly Language
 
 ```
 # CustomerSupport
@@ -130,13 +130,13 @@ T1:BGN At the beginning
 N1 Be polite and professional
 ```
 
-## Benefits of the Common Language Specification
+## Benefits of the Playbooks Assembly Language
 
 1. **Interoperability**: Multiple authoring tools can target the same runtime format
 2. **Ecosystem**: Enables rich tooling ecosystem around a canonical specification
-3. **Runtime Flexibility**: Multiple runtime implementations can execute CLS programs
+3. **Runtime Flexibility**: Multiple runtime implementations can execute PAL programs
 4. **Standardization**: Consistent representation regardless of the original authoring method
-5. **Tool Development**: Visual designers, IDEs, and other tools can generate CLS-compliant programs
+5. **Tool Development**: Visual designers, IDEs, and other tools can generate PAL-compliant programs
 6. **Clarity**: Explicit indication of step types and control flow
 7. **Debugging**: Easier to track execution and identify issues across different tools
 8. **Optimization**: Better performance through structured representation

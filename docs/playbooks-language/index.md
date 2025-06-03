@@ -192,4 +192,4 @@ This playbook helps customers check their order status.
 ````
 ## Next Steps
 
-- [Common Language Specification](common-language-specification.md) - How playbooks are compiled for execution
+- [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution
