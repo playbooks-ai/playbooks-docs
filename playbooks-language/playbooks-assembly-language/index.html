@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbooks-language/common-language-specification/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbooks-language/playbooks-assembly-language/">
       
       
         <link rel="prev" href="../">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Common Language Specification - Playbooks AI</title>
+        <title>Playbooks Assembly Language - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#common-language-specification" class="md-skip">
+        <a href="#playbooks-assembly-language" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Common Language Specification
+              Playbooks Assembly Language
             
           </span>
         </div>
@@ -723,7 +723,7 @@
   
   
   <span class="md-ellipsis">
-    Common Language Specification
+    Playbooks Assembly Language
     
   </span>
   
@@ -736,7 +736,7 @@
   
   
   <span class="md-ellipsis">
-    Common Language Specification
+    Playbooks Assembly Language
     
   </span>
   
@@ -759,91 +759,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose-of-the-common-language-specification" class="md-nav__link">
+  <a href="#the-llm-as-cpu-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose of the Common Language Specification
+      The LLM as CPU Architecture
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ecosystem-benefits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ecosystem Benefits
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structure-of-the-common-language-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structure of the Common Language Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trigger-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trigger Representation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Codes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#line-numbering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Line Numbering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformation-from-playbooks-language-to-common-language-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transformation from Playbooks Language to Common Language Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Transformation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Transformation">
+    <nav class="md-nav" aria-label="The LLM as CPU Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#original-markdown" class="md-nav__link">
+  <a href="#traditional-cpu-vs-llm-execution-engine" class="md-nav__link">
     <span class="md-ellipsis">
-      Original Markdown
+      Traditional CPU vs LLM Execution Engine
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#corresponding-common-language-specification" class="md-nav__link">
+  <a href="#the-llm-execution-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Corresponding Common Language Specification
+      The LLM Execution Model
     </span>
   </a>
   
@@ -855,9 +792,237 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benefits-of-the-common-language-specification" class="md-nav__link">
+  <a href="#the-pbasm-instruction-set" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits of the Common Language Specification
+      The PBASM Instruction Set
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The PBASM Instruction Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yield-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yield Reasons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-output-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Output Protocol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-events-llm-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Events (LLM Interrupts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-from-natural-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilation from Natural Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation from Natural Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-format-playbooks-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Format (Playbooks Language)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiled-format-pbasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiled Format (PBASM)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-numbering-and-control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line Numbering and Control Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-system-llm-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger System: LLM Interrupts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trigger System: LLM Interrupts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-registration-and-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Registration and Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-handling-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupt Handling Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-execution-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Execution Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Execution Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Rules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-pbasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of PBASM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-traditional-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with Traditional Assembly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -1565,91 +1730,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose-of-the-common-language-specification" class="md-nav__link">
+  <a href="#the-llm-as-cpu-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose of the Common Language Specification
+      The LLM as CPU Architecture
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ecosystem-benefits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ecosystem Benefits
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structure-of-the-common-language-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structure of the Common Language Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trigger-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trigger Representation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Codes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#line-numbering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Line Numbering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformation-from-playbooks-language-to-common-language-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transformation from Playbooks Language to Common Language Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Transformation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Transformation">
+    <nav class="md-nav" aria-label="The LLM as CPU Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#original-markdown" class="md-nav__link">
+  <a href="#traditional-cpu-vs-llm-execution-engine" class="md-nav__link">
     <span class="md-ellipsis">
-      Original Markdown
+      Traditional CPU vs LLM Execution Engine
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#corresponding-common-language-specification" class="md-nav__link">
+  <a href="#the-llm-execution-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Corresponding Common Language Specification
+      The LLM Execution Model
     </span>
   </a>
   
@@ -1661,9 +1763,237 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benefits-of-the-common-language-specification" class="md-nav__link">
+  <a href="#the-pbasm-instruction-set" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits of the Common Language Specification
+      The PBASM Instruction Set
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The PBASM Instruction Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yield-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yield Reasons
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-output-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Output Protocol
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-events-llm-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Events (LLM Interrupts)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compilation-from-natural-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilation from Natural Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation from Natural Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-format-playbooks-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Format (Playbooks Language)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiled-format-pbasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiled Format (PBASM)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-numbering-and-control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line Numbering and Control Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-system-llm-interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger System: LLM Interrupts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trigger System: LLM Interrupts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trigger-registration-and-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Registration and Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-handling-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interrupt Handling Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-execution-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Execution Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Execution Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Rules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-pbasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of PBASM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-traditional-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with Traditional Assembly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
     </span>
   </a>
   
@@ -1697,186 +2027,259 @@
   
 
 
-<h1 id="common-language-specification">Common Language Specification<a class="headerlink" href="#common-language-specification" title="Permanent link">&para;</a></h1>
-<p>The Playbooks Language is designed to be human-readable, but to execute it reliably and enable interoperability across different implementations, the system compiles it into a Common Language Specification (CLS) format. This specification serves as the canonical representation for LLM-executed programs, enabling multiple implementations and tools to target the same runtime format.</p>
-<h2 id="purpose-of-the-common-language-specification">Purpose of the Common Language Specification<a class="headerlink" href="#purpose-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
-<p>The Common Language Specification:</p>
-<ul>
-<li>Provides a canonical format for representing LLM-executed programs</li>
-<li>Enables interoperability between different authoring tools (markdown, visual designers, etc.)</li>
-<li>Allows multiple runtime implementations to execute the same programs</li>
-<li>Supports tooling ecosystem development around a common format</li>
-</ul>
-<h2 id="ecosystem-benefits">Ecosystem Benefits<a class="headerlink" href="#ecosystem-benefits" title="Permanent link">&para;</a></h2>
-<p>The CLS enables a rich ecosystem where:</p>
-<ul>
-<li><strong>Visual workflow designers</strong> can generate programs targeting the CLS</li>
-<li><strong>Different authoring tools</strong> (markdown, YAML, GUI builders) can compile to the same format</li>
-<li>Implementations using <strong>other frameworks</strong> such as LangGraph, Google Agent Development Kit, Autogen, etc can be converted into CLS format</li>
-<li><strong>Multiple runtime implementations</strong> can execute CLS programs, enabling specialized execution runtimes for different use cases, hardwares, etc.</li>
-<li><strong>Analysis tools</strong> can work with any CLS-compliant program</li>
-<li><strong>Debugging and monitoring tools</strong> have a consistent format to target</li>
-</ul>
-<h2 id="structure-of-the-common-language-specification">Structure of the Common Language Specification<a class="headerlink" href="#structure-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
-<p>When a Playbooks program is compiled to CLS format, it follows a structured representation:</p>
-<h2 id="trigger-representation">Trigger Representation<a class="headerlink" href="#trigger-representation" title="Permanent link">&para;</a></h2>
-<p>Triggers are standardized with specific codes:</p>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Meaning</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BGN</td>
-<td>Beginning</td>
-<td>Trigger at the beginning of program execution</td>
-</tr>
-<tr>
-<td>CND</td>
-<td>Conditional</td>
-<td>Trigger when a condition is met</td>
-</tr>
-<tr>
-<td>EVT</td>
-<td>Event</td>
-<td>Trigger when an external event occurs</td>
-</tr>
-</tbody>
-</table>
-<p>Each trigger is numbered sequentially (<code>T1</code>, <code>T2</code>, etc.) for reference during execution.</p>
-<h2 id="command-codes">Command Codes<a class="headerlink" href="#command-codes" title="Permanent link">&para;</a></h2>
-<p>Each step in the intermediate format is assigned a three-letter command code that defines its purpose:</p>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Meaning</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EXE</td>
-<td>Execute</td>
-<td>Perform an imperative action or assignment</td>
-</tr>
-<tr>
-<td>QUE</td>
-<td>Queue</td>
-<td>Queue a playbook or function call for execution</td>
-</tr>
-<tr>
-<td>TNK</td>
-<td>Think</td>
-<td>Think deeply step by step before continuing</td>
-</tr>
-<tr>
-<td>CND</td>
-<td>Condition</td>
-<td>Represent an <code>if</code>, <code>else</code>, <code>while</code>, or <code>for</code> condition</td>
-</tr>
-<tr>
-<td>CHK</td>
-<td>Check</td>
-<td>Apply a note or rule to the current context</td>
-</tr>
-<tr>
-<td>RET</td>
-<td>Return</td>
-<td>Return from the current playbook</td>
-</tr>
-<tr>
-<td>JMP</td>
-<td>Jump</td>
-<td>Jump to another step in the playbook</td>
-</tr>
-<tr>
-<td>YLD</td>
-<td>Yield</td>
-<td>Yield control, with different targets: user, call, return, exit</td>
-</tr>
-</tbody>
-</table>
-<h2 id="line-numbering">Line Numbering<a class="headerlink" href="#line-numbering" title="Permanent link">&para;</a></h2>
-<p>The intermediate format uses a precise line numbering system:</p>
-<ul>
-<li>Top-level steps use two-digit numbers: <code>01</code>, <code>02</code>, <code>03</code>, etc.</li>
-<li>Sub-steps use dot notation: <code>01.01</code>, <code>01.02</code>, etc.</li>
-<li>Nested sub-steps add another level: <code>01.01.01</code>, etc.</li>
-</ul>
-<p>For example, an if-condition with nested steps would be represented as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>03:CND If $total &gt; 100
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  03.01:EXE Apply $discount of 10%
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  03.02:QUE Tell the user they received a discount
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>04:EXE Continue with checkout
-</span></code></pre></div>
-<h2 id="transformation-from-playbooks-language-to-common-language-specification">Transformation from Playbooks Language to Common Language Specification<a class="headerlink" href="#transformation-from-playbooks-language-to-common-language-specification" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Agent names are converted to CamelCase without spaces: <code>CustomerService</code> instead of <code>Customer Service</code></li>
-<li>Playbook names are also converted to CamelCase without spaces: <code>Greeting</code> instead of <code>Greet the user</code></li>
-<li>Parameters are preserved with their <code>$</code> prefix</li>
-<li>Return values are explicitly declared in the playbook header</li>
-<li>Documentation is added if missing or incomplete</li>
-<li>Composite steps are expanded into individual steps</li>
-<li>Checks for notes are added as <code>CHK</code> steps at appropriate places</li>
-</ul>
-<h2 id="example-transformation">Example Transformation<a class="headerlink" href="#example-transformation" title="Permanent link">&para;</a></h2>
-<p>Here's an example of how a simple markdown playbook is transformed to the CLS format:</p>
-<h3 id="original-markdown">Original Markdown<a class="headerlink" href="#original-markdown" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Customer Support</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">## Greeting</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>This playbook greets the user and asks for their order number.
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gu">### Triggers</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="gu">### Steps</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span>Greet the user and ask for their order number
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">-</span><span class="w"> </span>If user provides an invalid order number
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask them to try again
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">-</span><span class="w"> </span>Look up order status
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">-</span><span class="w"> </span>Tell the user their order status
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="gu">### Notes</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span>Be polite and professional
-</span></code></pre></div>
-<h3 id="corresponding-common-language-specification">Corresponding Common Language Specification<a class="headerlink" href="#corresponding-common-language-specification" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># CustomerSupport
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This agent provides customer support services, helping users track orders and resolve issues.
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>## Greeting() -&gt; None
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>This playbook greets the user and asks for their order number.
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>### Triggers
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>T1:BGN At the beginning
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>### Steps
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>01:QUE Greet the user and ask for their order number
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>02:YLD user
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>03:CND If user provides an invalid order number
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  03.01:QUE Ask them to try again
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  03.02:YLD user
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  03.03:JMP 03 to check again
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>04:QUE Look up order status
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>05:QUE Tell the user their order status
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>06:RET
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>### Notes
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>N1 Be polite and professional
-</span></code></pre></div>
-<h2 id="benefits-of-the-common-language-specification">Benefits of the Common Language Specification<a class="headerlink" href="#benefits-of-the-common-language-specification" title="Permanent link">&para;</a></h2>
+<h1 id="playbooks-assembly-language">Playbooks Assembly Language<a class="headerlink" href="#playbooks-assembly-language" title="Permanent link">&para;</a></h1>
+<p>The Playbooks Assembly Language (PBASM) is a low-level, structured representation of Playbooks programs designed specifically for execution by Large Language Models. Just as traditional assembly languages use instruction sets optimized for CPU architectures, PBASM uses an instruction set optimized for the unique capabilities and characteristics of LLMs as execution engines.</p>
+<h2 id="the-llm-as-cpu-architecture">The LLM as CPU Architecture<a class="headerlink" href="#the-llm-as-cpu-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="traditional-cpu-vs-llm-execution-engine">Traditional CPU vs LLM Execution Engine<a class="headerlink" href="#traditional-cpu-vs-llm-execution-engine" title="Permanent link">&para;</a></h3>
+<p>Traditional assembly languages target CPUs that operate on:
+- Binary data in registers and memory
+- Precise arithmetic and logical operations<br />
+- Deterministic branching based on flags
+- Direct memory addressing</p>
+<p>PBASM targets LLMs that operate on:
+- Semantic understanding of natural language instructions
+- Contextual reasoning and inference capabilities
+- Probabilistic decision-making under uncertainty
+- Conversational state and dialogue management
+- Structured output generation that can be parsed and verified</p>
+<h3 id="the-llm-execution-model">The LLM Execution Model<a class="headerlink" href="#the-llm-execution-model" title="Permanent link">&para;</a></h3>
+<p>The LLM execution engine has several key characteristics that inform PBASM's design:</p>
 <ol>
-<li><strong>Interoperability</strong>: Multiple authoring tools can target the same runtime format</li>
-<li><strong>Ecosystem</strong>: Enables rich tooling ecosystem around a canonical specification</li>
-<li><strong>Runtime Flexibility</strong>: Multiple runtime implementations can execute CLS programs</li>
-<li><strong>Standardization</strong>: Consistent representation regardless of the original authoring method</li>
-<li><strong>Tool Development</strong>: Visual designers, IDEs, and other tools can generate CLS-compliant programs</li>
-<li><strong>Clarity</strong>: Explicit indication of step types and control flow</li>
-<li><strong>Debugging</strong>: Easier to track execution and identify issues across different tools</li>
-<li><strong>Optimization</strong>: Better performance through structured representation</li>
+<li><strong>Semantic Processing</strong>: Unlike CPUs that manipulate binary data, LLMs process meaning and context</li>
+<li><strong>Structured Output</strong>: LLMs can generate parseable, structured responses that the runtime can verify</li>
+<li><strong>Asynchronous Operations</strong>: LLMs can queue operations and yield control while waiting for external calls</li>
+<li><strong>Context Awareness</strong>: LLMs maintain conversational state and can apply rules contextually</li>
+<li><strong>Reasoning Capability</strong>: LLMs can think through problems step-by-step before taking action</li>
 </ol>
+<h2 id="the-pbasm-instruction-set">The PBASM Instruction Set<a class="headerlink" href="#the-pbasm-instruction-set" title="Permanent link">&para;</a></h2>
+<p>PBASM's instruction set is specifically designed for these LLM characteristics:</p>
+<h3 id="core-instructions">Core Instructions<a class="headerlink" href="#core-instructions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Purpose</th>
+<th>LLM Operation</th>
+<th>Runtime Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EXE</strong></td>
+<td>Execute imperative action/assignment</td>
+<td>Process semantic instruction, update state</td>
+<td>Parse variable assignments, validate state changes</td>
+</tr>
+<tr>
+<td><strong>TNK</strong></td>
+<td>Think deeply step by step</td>
+<td>Engage reasoning capabilities before proceeding</td>
+<td>Verify structured thinking output</td>
+</tr>
+<tr>
+<td><strong>QUE</strong></td>
+<td>Queue playbook/function call</td>
+<td>Prepare asynchronous operation</td>
+<td>Parse function calls with parameters</td>
+</tr>
+<tr>
+<td><strong>CND</strong></td>
+<td>Conditional/loop construct</td>
+<td>Evaluate semantic conditions and control flow</td>
+<td>Track conditional logic and execution paths</td>
+</tr>
+<tr>
+<td><strong>CHK</strong></td>
+<td>Apply contextual note/rule</td>
+<td>Incorporate business rules into context</td>
+<td>Verify rule application</td>
+</tr>
+<tr>
+<td><strong>RET</strong></td>
+<td>Return from playbook</td>
+<td>Complete function execution with optional value</td>
+<td>Parse return values</td>
+</tr>
+<tr>
+<td><strong>JMP</strong></td>
+<td>Jump to specific line</td>
+<td>Transfer execution control</td>
+<td>Validate line number targets</td>
+</tr>
+<tr>
+<td><strong>YLD</strong></td>
+<td>Yield control to runtime</td>
+<td>Pause execution, transfer control</td>
+<td>Parse yield targets (user/call/return/exit)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="yield-reasons">Yield Reasons<a class="headerlink" href="#yield-reasons" title="Permanent link">&para;</a></h3>
+<p>The <strong>YLD</strong> instruction includes specific reasons that define why the LLM is yielding control:</p>
+<ul>
+<li><code>YLD user</code> - Wait for user input</li>
+<li><code>YLD call</code> - Wait for queued function calls to complete  </li>
+<li><code>YLD return</code> - Return from current playbook</li>
+<li><code>YLD exit</code> - Exit the entire program</li>
+</ul>
+<h2 id="structured-output-protocol">Structured Output Protocol<a class="headerlink" href="#structured-output-protocol" title="Permanent link">&para;</a></h2>
+<p>Unlike traditional assembly that modifies CPU registers, PBASM instructions produce structured outputs that the runtime can parse and verify:</p>
+<h3 id="variable-operations">Variable Operations<a class="headerlink" href="#variable-operations" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Var[$name, &lt;value&gt;]
+</span></code></pre></div>
+Similar to how assembly instructions modify CPU registers, but operates on named variables with semantic meaning.</p>
+<h3 id="function-calls">Function Calls<a class="headerlink" href="#function-calls" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$result = FunctionName(param1=$value1, param2=$value2)
+</span></code></pre></div>
+Unlike traditional CALL instructions that use memory addresses, PBASM uses semantic function names with typed parameters.</p>
+<h3 id="trigger-events-llm-interrupts">Trigger Events (LLM Interrupts)<a class="headerlink" href="#trigger-events-llm-interrupts" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Trigger[&quot;PlaybookName:LineNumber:CommandCode&quot;]
+</span></code></pre></div>
+PBASM's interrupt system - the LLM can signal semantic events that interrupt normal execution flow and trigger other playbooks to execute, similar to how hardware/software interrupts work in traditional CPUs.</p>
+<h3 id="communication">Communication<a class="headerlink" href="#communication" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Say(&quot;message to user&quot;)
+</span></code></pre></div>
+Direct semantic output to users, leveraging the LLM's natural language generation capabilities.</p>
+<h3 id="artifacts">Artifacts<a class="headerlink" href="#artifacts" title="Permanent link">&para;</a></h3>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>SaveArtifact($name, &quot;summary&quot;, &quot;content&quot;)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>LoadArtifact(&quot;artifact_name&quot;)
+</span></code></pre></div>
+Persistent storage operations that maintain context across execution sessions.</p>
+<h2 id="compilation-from-natural-language">Compilation from Natural Language<a class="headerlink" href="#compilation-from-natural-language" title="Permanent link">&para;</a></h2>
+<h3 id="source-format-playbooks-language">Source Format (Playbooks Language)<a class="headerlink" href="#source-format-playbooks-language" title="Permanent link">&para;</a></h3>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gu">## GreetUser</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>This playbook greets the user and asks for their name.
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gu">### Triggers</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="gu">### Steps</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">-</span><span class="w"> </span>Greet the user and ask for their name
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">-</span><span class="w"> </span>If name is provided
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Thank the user by name
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask for their name again
+</span></code></pre></div>
+<h3 id="compiled-format-pbasm">Compiled Format (PBASM)<a class="headerlink" href="#compiled-format-pbasm" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>## GreetUser() -&gt; None
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>This playbook greets the user and asks for their name.
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>### Triggers
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>- T1:BGN At the beginning
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>### Steps
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>- 01:QUE Ask user for their $name:str
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>- 02:YLD user
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>- 03:CND If $name is provided
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  - 03.01:QUE Thank the user by $name
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>  - 03.02:YLD call
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>- 04:CND Otherwise
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  - 04.01:QUE Ask for their $name again
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>  - 04.02:YLD user
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>- 05:RET
+</span></code></pre></div>
+<h2 id="line-numbering-and-control-flow">Line Numbering and Control Flow<a class="headerlink" href="#line-numbering-and-control-flow" title="Permanent link">&para;</a></h2>
+<p>PBASM uses a hierarchical line numbering system that enables precise control flow:</p>
+<ul>
+<li><strong>Top-level steps</strong>: <code>01</code>, <code>02</code>, <code>03</code></li>
+<li><strong>Sub-steps</strong>: <code>01.01</code>, <code>01.02</code>, <code>01.03</code></li>
+<li><strong>Nested sub-steps</strong>: <code>01.01.01</code>, <code>01.01.02</code></li>
+</ul>
+<p>This enables:
+- <strong>Precise jumping</strong>: <code>JMP 01</code> to return to a specific line
+- <strong>Conditional nesting</strong>: Clear structure for if/else and loops
+- <strong>Error recovery</strong>: Ability to resume at specific execution points</p>
+<h2 id="trigger-system-llm-interrupts">Trigger System: LLM Interrupts<a class="headerlink" href="#trigger-system-llm-interrupts" title="Permanent link">&para;</a></h2>
+<p>PBASM includes a sophisticated interrupt system that leverages the LLM's ability to recognize semantic patterns. Like traditional CPU interrupts, PBASM triggers can interrupt normal execution flow when specific conditions are met:</p>
+<h3 id="trigger-types">Trigger Types<a class="headerlink" href="#trigger-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>BGN</strong> (Beginning): Execute when program starts</li>
+<li><strong>CND</strong> (Conditional): Execute when semantic conditions are met</li>
+<li><strong>EVT</strong> (Event): Execute on external events</li>
+</ul>
+<h3 id="trigger-registration-and-handling">Trigger Registration and Handling<a class="headerlink" href="#trigger-registration-and-handling" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>T1:CND When user provides their email address
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>T2:BGN At the beginning  
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>T3:EVT When payment is processed
+</span></code></pre></div>
+<p>The LLM continuously monitors these semantic conditions during execution. When a trigger condition is met, it interrupts the current playbook execution, saves the current state, and invokes the triggered playbook - much like how a CPU handles interrupts.</p>
+<h3 id="interrupt-handling-flow">Interrupt Handling Flow<a class="headerlink" href="#interrupt-handling-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Normal Execution</strong>: LLM processes instructions sequentially</li>
+<li><strong>Condition Detection</strong>: After each step, LLM evaluates trigger conditions  </li>
+<li><strong>Interrupt Signal</strong>: If condition is met, LLM signals <code>Trigger["PlaybookName:Line:Code"]</code></li>
+<li><strong>State Preservation</strong>: Current execution context is maintained</li>
+<li><strong>Handler Invocation</strong>: Triggered playbook begins execution</li>
+<li><strong>Return/Continue</strong>: After handling, execution resumes or transfers control</li>
+</ol>
+<p>This interrupt-driven architecture enables reactive, event-driven AI systems that can respond to changing conditions without polling - a fundamental advance in AI agent architecture.</p>
+<h2 id="runtime-execution-contract">Runtime Execution Contract<a class="headerlink" href="#runtime-execution-contract" title="Permanent link">&para;</a></h2>
+<p>The PBASM runtime contract ensures deterministic execution despite the probabilistic nature of LLMs:</p>
+<h3 id="output-format">Output Format<a class="headerlink" href="#output-format" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>recap – one-sentence summary of current state
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>plan  – one-sentence immediate goal
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>`Var[$name, &lt;value&gt;]`
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>`Step[&quot;Playbook:LineNumber:CommandCode&quot;]`
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>trig? &lt;no | `Trigger[&quot;PB:Ln:Code&quot;]`&gt;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>yld &lt;user | call | return | exit&gt;
+</span></code></pre></div>
+<h3 id="verification-rules">Verification Rules<a class="headerlink" href="#verification-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Structured parsing</strong>: All outputs must be parseable by the runtime</li>
+<li><strong>Variable tracking</strong>: State changes must be explicitly declared</li>
+<li><strong>Trigger evaluation</strong>: Must check for triggers after each step</li>
+<li><strong>Execution tracing</strong>: Each step must be logged with precise line numbers</li>
+<li><strong>Control flow</strong>: Must use proper yield statements for control transfer</li>
+</ol>
+<h2 id="advantages-of-pbasm">Advantages of PBASM<a class="headerlink" href="#advantages-of-pbasm" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Interoperability</strong>: Multiple authoring tools can target PBASM</li>
+<li><strong>Analysis capability</strong>: Static analysis tools can examine PBASM programs</li>
+<li><strong>Runtime flexibility</strong>: Different LLM runtimes can execute the same PBASM code</li>
+<li><strong>Debugging support</strong>: Clear execution model enables sophisticated debugging tools</li>
+</ul>
+<h2 id="comparison-with-traditional-assembly">Comparison with Traditional Assembly<a class="headerlink" href="#comparison-with-traditional-assembly" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Traditional Assembly</th>
+<th>Playbooks Assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target CPU</strong></td>
+<td>Microprocessor</td>
+<td>Large Language Model (LLM)</td>
+</tr>
+<tr>
+<td><strong>Data Types</strong></td>
+<td>Binary, integer, float</td>
+<td>string, number, boolean, list, dict, artifact</td>
+</tr>
+<tr>
+<td><strong>Instructions</strong></td>
+<td>MOV, ADD, JMP, CALL</td>
+<td>EXE, TNK, QUE, CND, CHK, YLD</td>
+</tr>
+<tr>
+<td><strong>Control Flow</strong></td>
+<td>Flags, conditional jumps</td>
+<td>Semantic conditions, natural language triggers</td>
+</tr>
+<tr>
+<td><strong>Interrupts</strong></td>
+<td>Hardware/software interrupts, exception handlers</td>
+<td>Semantic triggers, event-driven playbook invocation</td>
+</tr>
+<tr>
+<td><strong>I/O</strong></td>
+<td>Port access, interrupts</td>
+<td>Conversation, structured output, multi-agent communication, MCP, A2A, Playbooks protocol, etc.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>PBASM represents a foundational step toward treating LLMs as first-class computational engines with their own optimized instruction sets, enabling the development of reliable, scalable, and maintainable AI agent systems.</p>
 <h2 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
 <p>Explore different types of playbooks:</p>
 <ul>
@@ -1921,7 +2324,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks Language">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks Languages">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1931,7 +2334,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Playbooks Language
+                Playbooks Languages
               </div>
             </div>
           </a>
