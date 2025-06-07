@@ -64,14 +64,15 @@ Agents can call public playbooks from other agents.
 # Billing Agent
 This agent helps with billing inquiries
 
-## public: UpdateCreditCardRequest
+## UpdateCreditCardRequest
+public: true
 ### Triggers
 - When user wants to update their credit card on file
 ### Steps
 - ...
 ```
 
-The `public:` prefix in the playbook name makes it available to other agents in the system.
+The `public: true` metadata makes the playbook available to other agents in the system.
 
 ### Public Python Playbooks
 

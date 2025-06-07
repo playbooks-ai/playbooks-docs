@@ -18,7 +18,7 @@ When an agent exports a playbook, another agent can import implementation of tha
 
 >:warning: This feature under active development and not available yet.
 
-Exported playbooks are marked using the `export` keyword:
+Exported playbooks are marked using the `export: true` metadata:
 
 ````markdown
 # AccountManagementAgent
@@ -30,7 +30,8 @@ async def CloseAccount($user_id) -> str:
     # ...
 ```
 
-## export: ProvisionAccount($user_id, $service_tier)
+## ProvisionAccount($user_id, $service_tier)
+export: true
 ### Steps
 - ...
 ````
@@ -75,13 +76,14 @@ When agent A marks a playbook as public, another agent B can **call that playboo
 
 ### Marking Playbooks as Public
 
-To mark a playbook as public, use the `public` keyword:
+To mark a playbook as public, use the `public: true` metadata:
 
 ```
 # AuthenticationAgent
 This agent handles user authentication.
 
-## public: VerifyCredentials($username, $password)
+## VerifyCredentials($username, $password)
+public: true
 ### Steps
 - Check credentials against secure store
 - Return authentication result and user details if valid
@@ -134,7 +136,8 @@ Let's say that we have an ecosystem of three agents.
 # DatabaseAgent
 This agent provides recipes for various database related tasks.
 
-## export: FindTable($query, $database)
+## FindTable($query, $database)
+export: true
 ### Steps
 - List all tables in the $database
 - Find the table that is most likely to contain data to answer the $query
@@ -148,7 +151,8 @@ Let's say that `DatabaseAgent` is available at the URL `https://cloud.runplayboo
 # AuthenticationAgent
 This agent handles user authentication.
 
-## public: VerifyCredentials($username, $password)
+## VerifyCredentials($username, $password)
+public: true
 ### Steps
 - Check credentials against secure store
 - Return authentication result and user details if valid
