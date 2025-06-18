@@ -2,138 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/dynamic-playbook-generation/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/dynamic-playbook-rewriting/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/mcp-a2a/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/observer-agents/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/advanced/playbooks-protocol/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/agents/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/api-reference/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/artifacts/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/get-started/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/get-started/installation/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/get-started/quickstart/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/multi-agent-systems/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/multi-agent-systems/exported-and-public-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/observability/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbook-types/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbook-types/builtin-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbook-types/markdown-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbook-types/python-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbook-types/react-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbooks-language/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/playbooks-ai/playbooks/playbooks-language/metadata/</loc>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbooks-language/playbooks-assembly-language/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/playbooks-language/playbooks-language/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/playbooks-ai/playbooks/runtime/</loc>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/triggers/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/adding-triggers/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/anatomy-of-a-playbook/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/calling-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/multi-agent-programming/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/python-playbooks/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/triggers-advanced/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/user-interaction/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
     <url>
          <loc>https://github.com/playbooks-ai/playbooks/tutorials/working-with-artifacts/</loc>
-         <lastmod>2025-06-06</lastmod>
+         <lastmod>2025-06-18</lastmod>
     </url>
 </urlset>

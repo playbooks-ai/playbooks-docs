@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/advanced/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/runtime/">
       
       
-        <link rel="prev" href="../observability/">
+        <link rel="prev" href="../multi-agent-systems/exported-and-public-playbooks/">
       
       
-        <link rel="next" href="mcp-a2a/">
+        <link rel="next" href="../observability/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Advanced Concepts and Roadmap - Playbooks AI</title>
+        <title>Playbooks Runtime - Playbooks AI</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-concepts-and-roadmap" class="md-skip">
+        <a href="#playbooks-runtime" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced Concepts and Roadmap
+              Playbooks Runtime
             
           </span>
         </div>
@@ -1194,6 +1194,8 @@
       
   
   
+    
+  
   
   
     
@@ -1207,15 +1209,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../runtime/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -1229,7 +1231,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Runtime
@@ -1304,8 +1306,6 @@
       
   
   
-    
-  
   
   
     
@@ -1329,15 +1329,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../advanced/" class="md-nav__link ">
               
   
   
@@ -1350,13 +1350,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_12" id="__nav_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Advanced Concepts
@@ -1372,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mcp-a2a/" class="md-nav__link">
+      <a href="../advanced/mcp-a2a/" class="md-nav__link">
         
   
   
@@ -1395,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbooks-protocol/" class="md-nav__link">
+      <a href="../advanced/playbooks-protocol/" class="md-nav__link">
         
   
   
@@ -1418,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="observer-agents/" class="md-nav__link">
+      <a href="../advanced/observer-agents/" class="md-nav__link">
         
   
   
@@ -1441,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dynamic-playbook-generation/" class="md-nav__link">
+      <a href="../advanced/dynamic-playbook-generation/" class="md-nav__link">
         
   
   
@@ -1464,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dynamic-playbook-rewriting/" class="md-nav__link">
+      <a href="../advanced/dynamic-playbook-rewriting/" class="md-nav__link">
         
   
   
@@ -1507,6 +1507,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-execution-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runtime Execution Contract
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Execution Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llm-output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification Rules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1524,16 +1565,62 @@
   
 
 
-<h1 id="advanced-concepts-and-roadmap">Advanced Concepts and Roadmap<a class="headerlink" href="#advanced-concepts-and-roadmap" title="Permanent link">&para;</a></h1>
-<p>Playbooks is under active development. We are developing it in full view of the community and welcome community contributions and feedback.</p>
-<p>Here are some of the advanced concepts we are exploring:</p>
+<h1 id="playbooks-runtime">Playbooks Runtime<a class="headerlink" href="#playbooks-runtime" title="Permanent link">&para;</a></h1>
+<p>Playbooks runtime executes Playbooks Assembly Language (PBASM) programs. This is structured as a runtime main loop that repeatedly calls LLM to execute a fragment of a playbook each time. </p>
 <ul>
-<li><a href="playbooks-protocol/">Playbooks Protocol</a></li>
-<li>Playbooks via <a href="mcp-a2a/">MCP and A2A</a> protocols</li>
-<li><a href="observer-agents/">Observer Agents</a></li>
-<li><a href="dynamic-playbook-generation/">Dynamic Playbook Generation</a></li>
-<li><a href="dynamic-playbook-rewriting/">Dynamic Playbook Rewriting</a></li>
+<li>Runtime main loop</li>
+<li>Decide which playbook to execute next<ul>
+<li>If processing a specific playbook call with provided parameters, load that playbook to execute</li>
+<li>If call stack is empty, load all BGN triggerred playbooks to execute</li>
 </ul>
+</li>
+<li>Executing a playbook<ul>
+<li>Markdown Playbook execution loop</li>
+<li>Call LLM to execute the next fragment of the playbook<ul>
+<li>Parse LLM response</li>
+<li>Verify LLM control flow and detect unexpected control flow</li>
+<li>Update execution state, variables, call stack, etc.</li>
+<li>Execute any queued playbooks</li>
+</ul>
+</li>
+<li>Python Playbook execution loop</li>
+<li>Use an isolated Python environment to execute the playbook function</li>
+<li>External Playbook (i.e. playbook from another Agent) execution loop</li>
+<li>Use an isolated Python environment to execute the playbook function which calls appropriate agent / external service, such as MCP or Playbooks server.</li>
+</ul>
+</li>
+</ul>
+<h2 id="runtime-execution-contract">Runtime Execution Contract<a class="headerlink" href="#runtime-execution-contract" title="Permanent link">&para;</a></h2>
+<p>The PBAsm runtime contract ensures deterministic execution despite the probabilistic nature of LLMs:</p>
+<h3 id="llm-output-format">LLM Output Format<a class="headerlink" href="#llm-output-format" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>recap – one-sentence summary of current state
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>plan  – one-sentence immediate goal
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>`Var[$name, &lt;value&gt;]`
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>`SaveArtifact($name, &quot;summary&quot;, &quot;content...&quot;)`
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>trig? &lt;no | `Trigger[&quot;PB:Ln:Code&quot;]`&gt;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>`Step[&quot;Playbook:LineNumber:CommandCode&quot;]` optional inline: `Say(&quot;…&quot;)` or `$x = Func($y)`
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>trig? &lt;no | `Trigger[&quot;PB:Ln:Code&quot;]`&gt;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>what? handle unexpected situation intelligently and safely
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>`Step[&quot;Playbook:LineNumber:CommandCode&quot;]` `Return[&lt;value&gt; | ]` `Var[$__, 1-5 line summary]`
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>yld &lt;user | call | exit&gt;
+</span></code></pre></div>
+<ul>
+<li><code>recap</code> and <code>plan</code> start the response.</li>
+<li>For every executed step, one or more of the following are output:</li>
+<li><code>Var[$name, &lt;value&gt;]</code> is used to update the state.</li>
+<li><code>Step["Playbook:LineNumber:CommandCode"]</code> is used to execute a step.</li>
+<li><code>trig? &lt;no |</code>Trigger["PB:Ln:Code"]<code>&gt;</code> is used to check for triggers.</li>
+<li>Finally, <code>yld &lt;user | call | exit&gt;</code> is produced and control is yielded back to the runtime main loop.</li>
+</ul>
+<h3 id="verification-rules">Verification Rules<a class="headerlink" href="#verification-rules" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Structured parsing</strong>: All outputs must be parseable by the runtime</li>
+<li><strong>Variable tracking</strong>: State changes must be explicitly declared with types</li>
+<li><strong>Trigger evaluation</strong>: Must check for triggers after each step and variable update</li>
+<li><strong>Execution tracing</strong>: Each step must be logged with precise line numbers</li>
+<li><strong>Control flow</strong>: Must use proper yield statements for control transfer</li>
+<li><strong>Summary generation</strong>: Must generate $__ variable with execution summary before returning</li>
+</ol>
 
 
 
@@ -1571,7 +1658,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../observability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Observability">
+          <a href="../multi-agent-systems/exported-and-public-playbooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exported and Public Playbooks">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1581,20 +1668,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Observability
+                Exported and Public Playbooks
               </div>
             </div>
           </a>
         
         
           
-          <a href="mcp-a2a/" class="md-footer__link md-footer__link--next" aria-label="Next: MCP and A2A">
+          <a href="../observability/" class="md-footer__link md-footer__link--next" aria-label="Next: Observability">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                MCP and A2A
+                Observability
               </div>
             </div>
             <div class="md-footer__button md-icon">
