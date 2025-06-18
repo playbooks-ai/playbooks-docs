@@ -1,6 +1,6 @@
-# Playbooks Assembly Language
+# Playbooks Assembly Language (PBAsm)
 
-The Playbooks Assembly Language (PBASM) is a low-level, structured representation of Playbooks programs designed specifically for execution by Large Language Models. Just as traditional assembly languages use instruction sets optimized for CPU architectures, PBASM uses an instruction set optimized for the unique capabilities and characteristics of LLMs as execution engines.
+The Playbooks Assembly Language (PBAsm) is a low-level, structured representation of Playbooks programs designed specifically for execution by Large Language Models. Just as traditional assembly languages use instruction sets optimized for CPU architectures, PBAsm uses an instruction set optimized for the unique capabilities and characteristics of LLMs as execution engines.
 
 ## The LLM as CPU Architecture
 
@@ -12,7 +12,7 @@ Traditional assembly languages target CPUs that operate on:
 - Deterministic branching based on flags
 - Direct memory addressing
 
-PBASM targets LLMs that operate on:
+PBAsm targets LLMs that operate on:
 - Semantic understanding of natural language instructions
 - Contextual reasoning and inference capabilities
 - Probabilistic decision-making under uncertainty
@@ -21,7 +21,7 @@ PBASM targets LLMs that operate on:
 
 ### The LLM Execution Model
 
-The LLM execution engine has several key characteristics that inform PBASM's design:
+The LLM execution engine has several key characteristics that inform PBAsm's design:
 
 1. **Semantic Processing**: Unlike CPUs that manipulate binary data, LLMs process meaning and context
 2. **Structured Output**: LLMs can generate parseable, structured responses that the runtime can verify
@@ -29,9 +29,9 @@ The LLM execution engine has several key characteristics that inform PBASM's des
 4. **Context Awareness**: LLMs maintain conversational state and can apply rules contextually
 5. **Reasoning Capability**: LLMs can think through problems step-by-step before taking action
 
-## The PBASM Instruction Set
+## The PBAsm Instruction Set
 
-PBASM's instruction set is specifically designed for these LLM characteristics:
+PBAsm's instruction set is specifically designed for these LLM characteristics:
 
 ### Core Instructions
 
@@ -50,47 +50,33 @@ PBASM's instruction set is specifically designed for these LLM characteristics:
 
 The **YLD** instruction includes specific reasons that define why the LLM is yielding control:
 
-- `YLD user` - Wait for user input
-- `YLD call` - Wait for queued function calls to complete  
-- `YLD return` - Return from current playbook
+- `YLD user` - Wait for user input (only after asking for input)
+- `YLD call` - Execute queued function calls (including Say() calls)
 - `YLD exit` - Exit the entire program
 
 ## Structured Output Protocol
 
-Unlike traditional assembly that modifies CPU registers, PBASM instructions produce structured outputs that the runtime can parse and verify:
+Unlike traditional assembly that modifies CPU registers, PBAsm instructions produce structured outputs that the runtime can parse and verify:
 
 ### Variable Operations
 ```
 Var[$name, <value>]
 ```
-Similar to how assembly instructions modify CPU registers, but operates on named variables with semantic meaning.
+Similar to how assembly instructions modify CPU registers, but operates on named variables with semantic meaning. Variables must include type annotations: `$varname:type` where type is one of: `str`, `int`, `float`, `bool`, `list`, `dict`.
 
 ### Function Calls
 ```
 $result = FunctionName(param1=$value1, param2=$value2)
 ```
-Unlike traditional CALL instructions that use memory addresses, PBASM uses semantic function names with typed parameters.
+Unlike traditional CALL instructions that use memory addresses, PBAsm uses semantic function names with typed parameters. All function calls must be wrapped in backticks and use valid Python syntax.
 
 ### Trigger Events (LLM Interrupts)
 ```
 Trigger["PlaybookName:LineNumber:CommandCode"]
 ```
-PBASM's interrupt system - the LLM can signal semantic events that interrupt normal execution flow and trigger other playbooks to execute, similar to how hardware/software interrupts work in traditional CPUs.
+PBAsm's interrupt system - the LLM can signal semantic events that interrupt normal execution flow and trigger other playbooks to execute, similar to how hardware/software interrupts work in traditional CPUs.
 
-### Communication
-```
-Say("message to user")
-```
-Direct semantic output to users, leveraging the LLM's natural language generation capabilities.
-
-### Artifacts
-```
-SaveArtifact($name, "summary", "content")
-LoadArtifact("artifact_name")
-```
-Persistent storage operations that maintain context across execution sessions.
-
-## Compilation from Natural Language
+## Compilation from Playbooks Language
 
 ### Source Format (Playbooks Language)
 ```markdown
@@ -108,40 +94,37 @@ This playbook greets the user and asks for their name.
   - Ask for their name again
 ```
 
-### Compiled Format (PBASM)
+### Compiled Format (PBAsm)
 ```
 ## GreetUser() -> None
 This playbook greets the user and asks for their name.
 ### Triggers
 - T1:BGN At the beginning
 ### Steps
-- 01:QUE Ask user for their $name:str
-- 02:YLD user
-- 03:CND If $name is provided
-  - 03.01:QUE Thank the user by $name
-  - 03.02:YLD call
-- 04:CND Otherwise
-  - 04.01:QUE Ask for their $name again
-  - 04.02:YLD user
-- 05:RET
+- 01:QUE Say(Greet the user and ask for their $name:str); YLD user
+- 02:CND If $name is provided
+  - 02.01:QUE Say(Thank the user by $name); YLD call
+- 03:CND Otherwise
+  - 03.01:QUE Say(Ask for their $name:str again); YLD user
+- 04:RET
 ```
 
 ## Line Numbering and Control Flow
 
-PBASM uses a hierarchical line numbering system that enables precise control flow:
+PBAsm uses a hierarchical line numbering system that enables precise control flow:
 
 - **Top-level steps**: `01`, `02`, `03`
 - **Sub-steps**: `01.01`, `01.02`, `01.03`
 - **Nested sub-steps**: `01.01.01`, `01.01.02`
 
 This enables:
-- **Precise jumping**: `JMP 01` to return to a specific line
+- **Precise jumping**: `JMP 01` to return to a specific line (used in loops)
 - **Conditional nesting**: Clear structure for if/else and loops
 - **Error recovery**: Ability to resume at specific execution points
 
 ## Trigger System: LLM Interrupts
 
-PBASM includes a sophisticated interrupt system that leverages the LLM's ability to recognize semantic patterns. Like traditional CPU interrupts, PBASM triggers can interrupt normal execution flow when specific conditions are met:
+PBAsm includes a sophisticated interrupt system that leverages the LLM's ability to recognize semantic patterns. Like traditional CPU interrupts, PBAsm triggers can interrupt normal execution flow when specific conditions are met:
 
 ### Trigger Types
 - **BGN** (Beginning): Execute when program starts
@@ -168,47 +151,100 @@ The LLM continuously monitors these semantic conditions during execution. When a
 
 This interrupt-driven architecture enables reactive, event-driven AI systems that can respond to changing conditions without polling - a fundamental advance in AI agent architecture.
 
-## Runtime Execution Contract
+## Key Patterns and Best Practices
 
-The PBASM runtime contract ensures deterministic execution despite the probabilistic nature of LLMs:
+### Function Call Patterns
 
-### Output Format
+**Simple function call:**
 ```
-recap – one-sentence summary of current state
-plan  – one-sentence immediate goal
-`Var[$name, <value>]`
-`Step["Playbook:LineNumber:CommandCode"]`
-trig? <no | `Trigger["PB:Ln:Code"]`>
-yld <user | call | return | exit>
+01:QUE $result:dict = GetWeather(city=$city); YLD call
 ```
 
-### Verification Rules
-1. **Structured parsing**: All outputs must be parseable by the runtime
-2. **Variable tracking**: State changes must be explicitly declared
-3. **Trigger evaluation**: Must check for triggers after each step
-4. **Execution tracing**: Each step must be logged with precise line numbers
-5. **Control flow**: Must use proper yield statements for control transfer
+**Nested function calls (decomposed):**
+```
+01:QUE $temp:str = FuncB(x=$x); YLD call
+02:QUE $result:dict = FuncA(param=$temp); YLD call
+```
 
-## Advantages of PBASM
-- **Interoperability**: Multiple authoring tools can target PBASM
-- **Analysis capability**: Static analysis tools can examine PBASM programs
-- **Runtime flexibility**: Different LLM runtimes can execute the same PBASM code
-- **Debugging support**: Clear execution model enables sophisticated debugging tools
+**Cross-agent calls:**
+```
+01:QUE $weather:dict = WeatherAgent.GetCurrentWeather(zip=98053); YLD call
+```
+
+**Batch call processing (concurrent execution):**
+```
+01:EXE Initialize empty $results:dict
+02:CND For each $item in $items:list
+  02.01:QUE ProcessItem(item=$item); do not yield
+03:YLD call to execute all queued calls concurrently
+04:EXE Collect results into $results:dict by item id
+```
+
+### User Interaction Patterns
+
+**Single question:**
+```
+01:QUE Say(Ask user for their $name:str); YLD user
+```
+
+**Multi-turn conversation:**
+```
+01:QUE Say(Welcome and ask how to help); YLD user
+02:QUE Say(Continue conversation to meet criteria); YLD user; done after criteria met
+```
+
+**Enqueue multiple messages:**
+```
+01:QUE Say(Here are the options); no yield needed
+02:QUE Say(Which would you prefer?); YLD user
+```
+
+### Metadata and Public Playbooks
+
+Agents and playbooks can include metadata in YAML format:
+
+```
+# AgentName
+metadata:
+  model: claude-sonnet-4.0
+  author: name@example.com
+---
+Agent description
+
+## PlaybookName
+metadata:
+  public: true
+---
+Playbook description
+```
+
+Public playbooks are exposed for cross-agent communication and included in the generated `public.json`.
+
+## Advantages of PBAsm
+
+1. **Semantic Precision**: Natural language instructions with assembly-like precision
+2. **Interoperability**: Multiple authoring tools can target PBAsm
+3. **Analysis capability**: Static analysis tools can examine PBAsm programs
+4. **Runtime flexibility**: Different LLM runtimes can execute the same PBAsm code
+5. **Debugging support**: Clear execution model enables sophisticated debugging tools
+6. **Concurrent execution**: Support for batched operations and asynchronous calls
+7. **Cross-agent communication**: Built-in support for multi-agent systems
 
 ## Comparison with Traditional Assembly
 
 | Aspect | Traditional Assembly | Playbooks Assembly |
 |--------|---------------------|-------------------|
 | **Target CPU** | Microprocessor | Large Language Model (LLM) |
-| **Data Types** | Binary, integer, float | string, number, boolean, list, dict, artifact |
-| **Instructions** | MOV, ADD, JMP, CALL | EXE, TNK, QUE, CND, CHK, YLD |
+| **Data Types** | Binary, integer, float | string, number, boolean, list, dict, null |
+| **Instructions** | MOV, ADD, JMP, CALL | EXE, TNK, QUE, CND, CHK, RET, JMP, YLD |
 | **Control Flow** | Flags, conditional jumps | Semantic conditions, natural language triggers |
-| **Interrupts** | Hardware/software interrupts, exception handlers | Semantic triggers, event-driven playbook invocation |
-| **I/O** | Port access, interrupts | Conversation, structured output, multi-agent communication, MCP, A2A, Playbooks protocol, etc. |
+| **Interrupts** | Hardware/software interrupts | Semantic triggers, event-driven playbook invocation |
+| **I/O** | Port access, interrupts | Conversation (Say), artifacts, multi-agent communication |
+| **Concurrency** | Thread management | Queued operations with YLD call |
 
 ## Conclusion
 
-PBASM represents a foundational step toward treating LLMs as first-class computational engines with their own optimized instruction sets, enabling the development of reliable, scalable, and maintainable AI agent systems.
+PBAsm represents a foundational step toward treating LLMs as first-class computational engines with their own optimized instruction sets, enabling the development of reliable, scalable, and maintainable AI agent systems. By providing a structured intermediate representation between natural language and LLM execution, PBAsm enables sophisticated tooling, analysis, and runtime optimization while maintaining the semantic richness that makes LLM-based computing powerful.
 
 ## Learn More
 
@@ -216,4 +252,4 @@ Explore different types of playbooks:
 
 - [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - How to write playbooks in markdown
 - [ReAct Playbooks](../playbook-types/react-playbooks.md) - How to write playbooks in ReAct
-- [Python Playbooks](../playbook-types/python-playbooks.md) - Using Python functions as playbooks 
+- [Python Playbooks](../playbook-types/python-playbooks.md) - Using Python functions as playbooks

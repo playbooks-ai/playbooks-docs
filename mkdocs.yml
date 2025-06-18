@@ -98,7 +98,9 @@ nav:
     - Working with Artifacts: tutorials/working-with-artifacts.md
   - Playbooks Language:
     - playbooks-language/index.md
+    - Playbooks Language: playbooks-language/playbooks-language.md
     - Playbooks Assembly Language: playbooks-language/playbooks-assembly-language.md
+    - Metadata: playbooks-language/metadata.md
   - Playbook Types:
     - playbook-types/index.md
     - Markdown Playbooks: playbook-types/markdown-playbooks.md
@@ -114,6 +116,8 @@ nav:
   - Multi-Agent Systems:
     - multi-agent-systems/index.md
     - Exported and Public Playbooks: multi-agent-systems/exported-and-public-playbooks.md
+  - Runtime:
+    - runtime/index.md
   - Observability:
     - observability/index.md
   - Advanced Concepts:

@@ -1,8 +1,0 @@
----
-description: 
-globs: 
-alwaysApply: true
----
-The goal is to create documentation for playbooks2 folder.
-The documentation should structurally follow adk-docs folder.
-The documentation should be written in playbooks-docs folder.

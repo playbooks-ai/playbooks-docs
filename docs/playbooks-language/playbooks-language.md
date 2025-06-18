@@ -6,11 +6,11 @@ Playbooks Language is a human-readable, semantically interpreted programming lan
 
 Playbooks Language enables you to:
 
-- Write agent logic in a way that's understandable by both humans and AI
-- Seamlessly integrate natural language instructions with Python code
-- Create reusable, modular components that can be composed into complex workflows
-- Implement event-driven behavior through triggers
-- Build multi-agent systems where agents can communicate and collaborate
+* Write agent logic in a way that's understandable by both humans and AI
+* Seamlessly integrate natural language instructions with Python code
+* Create reusable, modular components that can be composed into complex workflows
+* Implement event-driven behavior through triggers
+* Build multi-agent systems where agents can communicate and collaborate
 
 ## Program Structure
 
@@ -36,6 +36,8 @@ Playbook description
 ### Notes
 - Additional notes, instructions and rules
 ````
+
+Multiple agents can be defined within a single Playbooks program. These agents can interact with each other. To call a playbook from another agent, use the syntax `AgentName.PlaybookName()`.
 
 ### Program Components
 
@@ -67,7 +69,7 @@ async def ProcessPayment(amount: float, card_info: dict) -> bool:
     return True
 ```
 
->:bulb: By convention, Playbook names are PascalCase. While Python functions are typically named using snake_case, we suggest using PascalCase for Python playbook names.
+> \:bulb: By convention, Playbook names are PascalCase. While Python functions are typically named using snake\_case, we suggest using PascalCase for Python playbook names.
 
 #### 3. Markdown Playbooks
 
@@ -83,6 +85,22 @@ Playbooks can accept parameters:
 ```markdown
 ## CalculateDiscount($total, $membership_level)
 This playbook calculates the appropriate discount based on the total and membership level.
+```
+
+Playbooks may include additional metadata:
+
+```markdown
+## ValidateCity($city)
+public: true
+This playbook validates a city input by the user.
+<output_format>
+The output is a string of the validated city in "Austin, TX" format.
+</output_format>
+<style_guide>
+- Write in a friendly, conversational tone
+- Use simple language and avoid complex words
+- Keep sentences short and concise
+</style_guide>
 ```
 
 #### 4. Triggers
@@ -112,14 +130,15 @@ Steps define the actual logic of a playbook, specified in a section marked by a 
 
 Steps support:
 
-- Imperative instructions (e.g., `Greet the user`)
-- Variable assignments (e.g., `$total = $price * $quantity`, `Extract $relevant_info from search results`)
-- Conditionals (e.g., `If $status is 'approved'`, `If user is not satisfied with the answer`)
-- Loops (e.g., `While conversation is active`, `While $attempts < 3`, `For each $product`)
-- Playbook calls (e.g., `ProcessPayment($amount)` `Calculate discount on $total`)
-- Control flow (e.g., `End program`, `Return $result`)
+* Imperative instructions (e.g., `Greet the user`)
+* Variable assignments (e.g., `$total = $price * $quantity`, `Extract $relevant_info from search results`)
+* Conditionals (e.g., `If $status is 'approved'`, `If user is not satisfied with the answer`)
+* Loops (e.g., `While conversation is active`, `While $attempts < 3`, `For each $product`)
+* Playbook calls (e.g., `ProcessPayment($amount)` `Calculate discount on $total`)
+* Cross-agent playbook calls (e.g., `SupportAgent.HandleRequest($input)`)
+* Control flow (e.g., `End program`, `Return $result`)
 
->:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
+> \:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
 
 #### 6. Notes
 
@@ -134,25 +153,24 @@ The `### Notes` section can provide additional guidance or rules for the playboo
 
 ## Variable Usage
 
-Variables in Playbooks are denoted with a `$` prefix:
+Variables in Playbooks are denoted with a `$` prefix and must include explicit types:
 
 ```markdown
-- $total = $price * $quantity
-- Tell the user their $total
+- $total:float = $price:float * $quantity:int
+- Tell the user their $total:float
 ```
 
 Variables can store:
 
-- Strings
-- Numbers
-- Booleans
-- Lists
-- Dictionaries
-- Null values
+* Strings (`str`)
+* Numbers (`int`, `float`)
+* Booleans (`bool`)
+* Lists (`list`)
+* Dictionaries (`dict`)
+
+If a variable's type is unknown, it defaults to `str`.
 
 ## Example: Complete Playbooks program
-
-Here's a complete example of a simple playbooks program:
 
 ````markdown
 # CustomerSupportAgent
@@ -188,8 +206,8 @@ This playbook helps customers check their order status.
 ### Notes
 - If the user becomes frustrated, offer to connect them with a human agent
 - Always thank the user for their patience
-```
 ````
+
 ## Next Steps
 
-- [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution
+* [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution (separate documentation)
