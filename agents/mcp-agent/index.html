@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/playbook-types/react-playbooks/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/agents/mcp-agent/">
       
       
-        <link rel="prev" href="../markdown-playbooks/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../python-playbooks/">
+        <link rel="next" href="../../multi-agent-systems/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>ReAct Playbooks - Playbooks AI</title>
+        <title>MCP Agents - Playbooks AI</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#react-playbooks" class="md-skip">
+        <a href="#mcp-server-based-agents" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ReAct Playbooks
+              MCP Agents
             
           </span>
         </div>
@@ -786,8 +786,6 @@
       
   
   
-    
-  
   
   
     
@@ -809,15 +807,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../playbook-types/" class="md-nav__link ">
               
   
   
@@ -836,7 +834,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Playbook Types
@@ -852,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../markdown-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/markdown-playbooks/" class="md-nav__link">
         
   
   
@@ -872,32 +870,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    ReAct Playbooks
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../playbook-types/react-playbooks/" class="md-nav__link">
         
   
   
@@ -908,122 +884,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structure-of-a-react-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structure of a ReAct Playbook
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Structure of a ReAct Playbook">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#playbook-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Playbook Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#triggers-section" class="md-nav__link">
-    <span class="md-ellipsis">
-      Triggers Section
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-react-execution-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default ReAct Execution Flow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-research-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Research Playbook
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#benefits-of-react-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Benefits of ReAct Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-react-playbooks-vs-markdown-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use ReAct Playbooks vs. Markdown Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices-for-react-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices for ReAct Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Related Topics
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1036,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/python-playbooks/" class="md-nav__link">
         
   
   
@@ -1059,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../builtin-playbooks/" class="md-nav__link">
+      <a href="../../playbook-types/builtin-playbooks/" class="md-nav__link">
         
   
   
@@ -1196,6 +1056,8 @@
       
   
   
+    
+  
   
   
     
@@ -1211,15 +1073,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../agents/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1238,7 +1100,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Agents
@@ -1251,10 +1113,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agents/mcp-agent/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MCP Agents
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1265,6 +1149,122 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is MCP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-mcp-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an MCP Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an MCP Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transport Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-mcp-agents-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How MCP Agents Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-mcp-tools-as-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using MCP Tools as Playbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-multiple-mcp-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining Multiple MCP Agents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1693,28 +1693,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure-of-a-react-playbook" class="md-nav__link">
+  <a href="#what-is-mcp" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure of a ReAct Playbook
+      What is MCP?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure of a ReAct Playbook">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-mcp-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an MCP Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an MCP Agent">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#playbook-definition" class="md-nav__link">
+  <a href="#configuration-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Playbook Definition
+      Configuration Options
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#triggers-section" class="md-nav__link">
+  <a href="#transport-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Triggers Section
+      Transport Types
     </span>
   </a>
   
@@ -1726,54 +1735,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-react-execution-flow" class="md-nav__link">
+  <a href="#how-mcp-agents-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Default ReAct Execution Flow
+      How MCP Agents Work
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-research-playbook" class="md-nav__link">
+  <a href="#using-mcp-tools-as-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Research Playbook
+      Using MCP Tools as Playbooks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#benefits-of-react-playbooks" class="md-nav__link">
+  <a href="#combining-multiple-mcp-agents" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits of ReAct Playbooks
+      Combining Multiple MCP Agents
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-react-playbooks-vs-markdown-playbooks" class="md-nav__link">
+  <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      When to Use ReAct Playbooks vs. Markdown Playbooks
+      Authentication
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices-for-react-playbooks" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Best Practices for ReAct Playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Related Topics
+      Next Steps
     </span>
   </a>
   
@@ -1798,173 +1798,155 @@
   
 
 
-<h1 id="react-playbooks">ReAct Playbooks<a class="headerlink" href="#react-playbooks" title="Permanent link">&para;</a></h1>
-<p>ReAct playbooks are a specialized type of playbook in the Playbooks AI framework that leverage the reasoning and planning capabilities of large language models. Unlike standard markdown playbooks, ReAct playbooks focus on dynamic problem-solving with less rigid structure.</p>
+<h1 id="mcp-server-based-agents">MCP Server Based Agents<a class="headerlink" href="#mcp-server-based-agents" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>ReAct playbooks are ideal for:</p>
+<p>MCP (Model Context Protocol) agents are AI agents that connect to external MCP servers to expose their tools as playbooks. This allows you to integrate external services, APIs, and tools into your Playbooks AI programs seamlessly.</p>
+<h2 id="what-is-mcp">What is MCP?<a class="headerlink" href="#what-is-mcp" title="Permanent link">&para;</a></h2>
+<p>The Model Context Protocol (MCP) is an open protocol that standardizes how AI applications can access external tools and data sources. MCP servers expose tools that can perform various tasks like:</p>
 <ul>
-<li>Complex problem-solving tasks</li>
-<li>Deep research and information gathering tasks</li>
-<li>Dynamic planning</li>
-<li>Tasks where the exact steps aren't known in advance</li>
+<li>Accessing databases</li>
+<li>Making API calls</li>
+<li>Performing calculations</li>
+<li>Interacting with file systems</li>
+<li>Running specialized algorithms</li>
+<li>And much more</li>
 </ul>
-<h2 id="structure-of-a-react-playbook">Structure of a ReAct Playbook<a class="headerlink" href="#structure-of-a-react-playbook" title="Permanent link">&para;</a></h2>
-<p>A ReAct playbook is defined as a standard markdown playbook, but without the <code>### Steps</code> section:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## PlaybookName</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Detailed description or prompt for the task, goals, and constraints. Do not use markdown in the prompt.
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gu">### Triggers</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">-</span><span class="w"> </span>Trigger condition 1
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">-</span><span class="w"> </span>Trigger condition 2
+<h2 id="creating-an-mcp-agent">Creating an MCP Agent<a class="headerlink" href="#creating-an-mcp-agent" title="Permanent link">&para;</a></h2>
+<p>To create an MCP agent, you need to specify the agent's metadata with remote configuration:</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># Weather Agent</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>metadata:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  remote:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    type: mcp
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    url: http://localhost:8000/mcp
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gu">    transport: sse</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gu">---</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>This agent provides weather information through an MCP server.
 </span></code></pre></div>
-<p>The key difference is that ReAct playbooks <strong>do not</strong> include a <code>### Steps</code> section. Instead, the system provides a default ReAct execution flow that implements a "think - plan - select tool - execute tool - interact - evaluate" cycle.</p>
-<blockquote>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> <strong>Do not use markdown in the prompt</strong> for ReAct playbooks because that will interfere with the playbook program's structure that uses #, ## and ### headings. Use xml tags like <code>&lt;output_format&gt;</code>, <code>&lt;planning_rules&gt;</code>,  <code>&lt;style_guide&gt;</code>, etc. for defining various parts of the prompt.</p>
-</blockquote>
-<h3 id="playbook-definition">Playbook Definition<a class="headerlink" href="#playbook-definition" title="Permanent link">&para;</a></h3>
-<p>Like other playbooks, a ReAct playbook is defined with a second-level heading (<code>##</code>) followed by the playbook name.</p>
-<p>The description that follows the playbook name is much more important in ReAct playbooks, as it serves as the primary instruction set for the LLM. This description should be detailed and clear about:</p>
-<ol>
-<li>The objective of the playbook</li>
-<li>The constraints and requirements</li>
-<li>The expected output or deliverable</li>
-<li>Any special considerations or approaches to take</li>
-</ol>
-<h3 id="triggers-section">Triggers Section<a class="headerlink" href="#triggers-section" title="Permanent link">&para;</a></h3>
-<p>The <code>### Triggers</code> section works the same way as in standard markdown playbooks, defining the conditions under which the playbook should execute.</p>
-<h2 id="default-react-execution-flow">Default ReAct Execution Flow<a class="headerlink" href="#default-react-execution-flow" title="Permanent link">&para;</a></h2>
-<p>When a ReAct playbook is executed, the system applies a default execution flow that follows this pattern (this is a reference implementation, and may change in the future):</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">-</span><span class="w"> </span>Think deeply about the task to understand requirements and context
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">-</span><span class="w"> </span>If task needs clarification
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask the user clarification questions
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Wait for user response
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Update understanding of the task with user&#39;s response
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">-</span><span class="w"> </span>Initialize $task with clarified understanding and context of the task
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span>Initialize $task_status with &quot;started&quot;
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">-</span><span class="w"> </span>While $task_status is not &quot;complete&quot;
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Think about the current state; Check if any playbooks can be used; create/update your plan for completing the task
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Based on the plan, decide the next $task_action, one of [&quot;call&quot;, &quot;communicate&quot;, &quot;finish&quot;]; must produce a &quot;finish&quot; action at the end
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If $task_action is &quot;call&quot;
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Queue calls to appropriate playbooks with appropriate parameters
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Wait for all the calls to complete
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If $task_action is &quot;communicate&quot;
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Decide whether to ask or tell: $communication_type
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>If $communication_type is &quot;ask&quot;
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Formulate and ask question to the user
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Wait for user response
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>If $communication_type is &quot;tell&quot;
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Say appropriate message to the user
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If $task_action is &quot;finish&quot;
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>If task is expected to produce a comprehensive report
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Generate final result; follow the output format if specified; save the result as an artifact <span class="sb">`SaveArtifact(&quot;name of report file.md&quot;, &quot;One line summary of the report&quot;, &quot;report content...&quot;)`</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Return artifact reference &#39;Artifact[&quot;name of report file.md&quot;]&#39;
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>If task is expected to produce a short answer
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Generate final result; follow the output format if specified
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">      </span><span class="k">-</span><span class="w"> </span>Return the answer as a string
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Set $task_status to &quot;complete&quot;
-</span></code></pre></div>
-<p>This execution flow enables the LLM to:</p>
-<ol>
-<li><strong>Think</strong> - Analyze the task and context</li>
-<li><strong>Plan</strong> - Formulate a strategy to complete the task</li>
-<li><strong>Act</strong> - Execute the plan through calling playbooks, communicating with the user, or producing a final result</li>
-<li><strong>Observe</strong> - Process results and user feedback</li>
-<li><strong>Reflect</strong> - Update understanding and refine the plan</li>
-</ol>
-<h2 id="example-research-playbook">Example: Research Playbook<a class="headerlink" href="#example-research-playbook" title="Permanent link">&para;</a></h2>
-<p>Here's an example of a ReAct playbook for product research:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## ResearchProduct</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This playbook conducts comprehensive research on a product specified by the user. The research should include:
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">1.</span> General product information (features, specifications, pricing)
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">2.</span> Customer reviews and sentiment analysis
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">3.</span> Comparison with at least 3 competing products
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">4.</span> Pros and cons based on the research
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">5.</span> A final recommendation with justification
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Use WebSearch to find relevant information. Analyze the data critically and present findings in a clear, organized format. Prioritize recent sources (within the last year if possible) and reputable websites.
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>&lt;planning_rules&gt;
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">-</span><span class="w"> </span>Always start by determining the exact product to research
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>Create a structured research plan with specific queries
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">-</span><span class="w"> </span>Perform multiple searches with different queries to get comprehensive information
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">-</span><span class="w"> </span>Group searches by category (general info, reviews, comparisons)
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">-</span><span class="w"> </span>Verify information across multiple sources when possible
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">-</span><span class="w"> </span>If conflicting information is found, note the discrepancy and evaluate source credibility
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>&lt;/planning_rules&gt;
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>&lt;style_guide&gt;
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">-</span><span class="w"> </span>Write in a neutral, objective tone
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">-</span><span class="w"> </span>Use clear headings and subheadings for organization
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="k">-</span><span class="w"> </span>Present pros and cons in balanced fashion
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="k">-</span><span class="w"> </span>Support claims with evidence from research
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="k">-</span><span class="w"> </span>When providing your recommendation, clearly explain your reasoning
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>&lt;/style_guide&gt;
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>&lt;output_format&gt;
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="gh"># Product Research: [Product Name]</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="gu">## Overview</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>[General product information]
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="gu">## Features and Specifications</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>[Detailed features]
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="gu">## Customer Sentiment</span>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>[Analysis of customer reviews]
-</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
-</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="gu">## Competitive Comparison</span>
-</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>[Comparison with alternatives]
-</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
-</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="gu">## Pros and Cons</span>
-</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>[Balanced assessment]
-</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
-</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="gu">## Recommendation</span>
-</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>[Final recommendation with justification]
-</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>&lt;/output_format&gt;
-</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
-</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="gu">### Triggers</span>
-</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="k">-</span><span class="w"> </span>When user wants to research a product
-</span></code></pre></div>
-<h2 id="benefits-of-react-playbooks">Benefits of ReAct Playbooks<a class="headerlink" href="#benefits-of-react-playbooks" title="Permanent link">&para;</a></h2>
-<p>ReAct playbooks offer several advantages:</p>
-<ol>
-<li><strong>Flexibility</strong>: They can handle a wide range of tasks without needing to specify exact steps in advance.</li>
-<li><strong>Reasoning</strong>: They leverage the LLM's reasoning capabilities to solve complex problems.</li>
-<li><strong>Adaptability</strong>: They can adjust their approach based on new information or changing requirements.</li>
-<li><strong>Contextual understanding</strong>: They consider the broader context and can make more nuanced decisions.</li>
-<li><strong>Natural language guidance</strong>: They can be directed with natural language instructions rather than rigid steps.</li>
-</ol>
-<h2 id="when-to-use-react-playbooks-vs-markdown-playbooks">When to Use ReAct Playbooks vs. Markdown Playbooks<a class="headerlink" href="#when-to-use-react-playbooks-vs-markdown-playbooks" title="Permanent link">&para;</a></h2>
-<p>Use ReAct playbooks when:</p>
+<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
+<p>The MCP agent configuration supports the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Yes</td>
+<td>Must be <code>mcp</code> for MCP agents</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Yes</td>
+<td>The MCP server URL or command</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>transport</code></td>
+<td>No</td>
+<td>Transport type (<code>sse</code>, <code>stdio</code>, <code>websocket</code>)</td>
+<td><code>sse</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>No</td>
+<td>Timeout in seconds for tool calls</td>
+<td><code>30.0</code></td>
+</tr>
+<tr>
+<td><code>auth</code></td>
+<td>No</td>
+<td>Authentication configuration object</td>
+<td><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="transport-types">Transport Types<a class="headerlink" href="#transport-types" title="Permanent link">&para;</a></h3>
+<p>MCP agents support different transport protocols:</p>
 <ul>
-<li>The exact sequence of steps can't be predetermined</li>
-<li>The task requires complex reasoning or research</li>
-<li>The task has many possible approaches or paths</li>
-<li>You want to leverage the LLM's problem-solving abilities</li>
-<li>The task requires synthesis of information from multiple sources</li>
+<li><strong>SSE (Server-Sent Events)</strong>: Default for web-based MCP servers</li>
+<li><strong>Stdio</strong>: For local script-based MCP servers</li>
+<li><strong>WebSocket</strong>: For real-time bidirectional communication</li>
 </ul>
-<p>Use standard markdown playbooks when:</p>
-<ul>
-<li>The workflow is well-defined and predictable</li>
-<li>You want to ensure specific steps are followed in a precise order</li>
-<li>The task is relatively simple with clear decision points</li>
-<li>Consistency and predictability are more important than flexibility</li>
-</ul>
-<h2 id="best-practices-for-react-playbooks">Best Practices for ReAct Playbooks<a class="headerlink" href="#best-practices-for-react-playbooks" title="Permanent link">&para;</a></h2>
+<h2 id="how-mcp-agents-work">How MCP Agents Work<a class="headerlink" href="#how-mcp-agents-work" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Be clear about objectives</strong>: Clearly define what the playbook should accomplish.</li>
-<li><strong>Provide context</strong>: Include relevant background information.</li>
-<li><strong>Define constraints</strong>: Specify any limitations or requirements.</li>
-<li><strong>Use special sections</strong>: Leverage planning rules, style guides, and output format sections.</li>
-<li><strong>Don't overspecify</strong>: Avoid trying to dictate the exact thinking process.</li>
-<li><strong>Test extensively</strong>: ReAct playbooks may behave differently across runs, so test thoroughly.</li>
+<li><strong>Connection</strong>: When the program starts, the MCP agent connects to the specified server</li>
+<li><strong>Tool Discovery</strong>: The agent automatically discovers all available tools from the server</li>
+<li><strong>Playbook Creation</strong>: Each MCP tool becomes a playbook that can be called</li>
+<li><strong>Execution</strong>: When a playbook is called, the agent forwards the request to the MCP server</li>
 </ol>
-<h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="using-mcp-tools-as-playbooks">Using MCP Tools as Playbooks<a class="headerlink" href="#using-mcp-tools-as-playbooks" title="Permanent link">&para;</a></h2>
+<p>Once connected, all MCP tools are automatically available as playbooks. You can call them just like any other playbook:</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Weather MCP Agent</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>metadata:
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  remote:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    type: mcp
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    url: http://weather-service.example.com/mcp
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gu">    transport: sse</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="gu">---</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>This agent connects to a weather MCP service.
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="gh"># Weather Assistant</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="gu">## Main</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="gu">### Trigger</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">-</span><span class="w"> </span>When program starts
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="gu">### Steps</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">-</span><span class="w"> </span>Say &quot;Welcome to Weather Assistant! What location would you like weather for?&quot;
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span>Get user&#39;s location
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">-</span><span class="w"> </span>Call Weather MCP Agent&#39;s get_current_weather with location=$location
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">-</span><span class="w"> </span>Display the weather: &quot;Current weather in $location: $weather&quot;
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div>
+<h2 id="combining-multiple-mcp-agents">Combining Multiple MCP Agents<a class="headerlink" href="#combining-multiple-mcp-agents" title="Permanent link">&para;</a></h2>
+<p>You can use multiple MCP agents in a single program:</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Weather MCP</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>metadata:
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  remote:
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    type: mcp
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="gu">    url: http://weather-api.com/mcp</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="gu">---</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Weather service integration.
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gh"># News MCP</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>metadata:
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  remote:
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    type: mcp
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="gu">    url: http://news-api.com/mcp</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="gu">---</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>News service integration.
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="gh"># Assistant</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="gu">## DailyBriefing</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="gu">### Steps</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="k">-</span><span class="w"> </span>Get weather from Weather MCP&#39;s get_current_weather for New York
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">-</span><span class="w"> </span>Get news from News MCP&#39;s get_top_headlines with technology category
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">-</span><span class="w"> </span>Create briefing combining weather and news
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">-</span><span class="w"> </span>Present briefing to user
+</span></code></pre></div>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>For MCP servers that require authentication:</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Secure API Agent</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>metadata:
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  remote:
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    type: mcp
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    url: https://api.example.com/mcp
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    transport: sse
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    auth:
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      type: bearer
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="gu">      token: ${API_TOKEN}</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="gu">---</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Connects to a secured MCP endpoint.
+</span></code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../markdown-playbooks/">Markdown Playbooks</a> - For more structured, step-by-step approaches</li>
-<li><a href="../python-playbooks/">Python Playbooks</a> - For complex logic and integrations</li>
-<li><a href="../../tutorials/working-with-artifacts/">Working with Artifacts</a> - How ReAct playbooks can create and store data</li>
+<li>See <a href="../../multi-agent-systems/">Multi-Agent Programming</a> for complex scenarios</li>
+<li>Review <a href="../../tutorials/">tutorials</a> for more examples</li>
 </ul>
 
 
@@ -2003,7 +1985,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../markdown-playbooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Markdown Playbooks">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks AI Agents">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2013,20 +1995,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Markdown Playbooks
+                Playbooks AI Agents
               </div>
             </div>
           </a>
         
         
           
-          <a href="../python-playbooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Python Playbooks">
+          <a href="../../multi-agent-systems/" class="md-footer__link md-footer__link--next" aria-label="Next: Multi-Agent Systems">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Python Playbooks
+                Multi-Agent Systems
               </div>
             </div>
             <div class="md-footer__button md-icon">
