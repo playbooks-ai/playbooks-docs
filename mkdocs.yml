@@ -127,6 +127,7 @@ nav:
     - artifacts/index.md
   - Agents:
     - agents/index.md
+    - MCP Agents: agents/mcp-agent.md
   - Multi-Agent Systems:
     - multi-agent-systems/index.md
     - Exported and Public Playbooks: multi-agent-systems/exported-and-public-playbooks.md
