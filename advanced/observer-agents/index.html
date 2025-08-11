@@ -2074,9 +2074,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-next-12-years" class="md-nav__link">
+  <a href="#looking-ahead" class="md-nav__link">
     <span class="md-ellipsis">
-      The Next 1–2 Years
+      Looking ahead
     </span>
   </a>
   
@@ -2189,9 +2189,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-next-12-years" class="md-nav__link">
+  <a href="#looking-ahead" class="md-nav__link">
     <span class="md-ellipsis">
-      The Next 1–2 Years
+      Looking ahead
     </span>
   </a>
   
@@ -2225,8 +2225,8 @@
 <ul>
 <li><strong>Step-level gating before side effects</strong> — The Playbooks runtime cleanly separates LLM token generation from effectful execution, making it trivial to insert an observer between “intent” and “impact.”</li>
 <li><strong>Structured, interpretable programs</strong> — Observers themselves can be written as playbooks, giving them the same transparency, version control, and auditability as the agents they supervise.</li>
-<li><strong>Specialized low-latency models</strong> — Observer behavior can be distilled into ultra-fast LLMs that approve correct steps instantly and intervene only when necessary, minimizing cost and delay.</li>
-<li><strong>Portable, composable policies</strong> — Because playbooks can be public or exported, observers can be shared across agents — a compliance team could publish a “privacy observer” that any trusted agent can import and run.</li>
+<li><strong>Specialized low-latency models</strong> — Observer behavior playbooks can be executed with ultra-fast LLMs that approve correct steps instantly and intervene only when necessary, minimizing cost and delay.</li>
+<li><strong>Portable, composable policies</strong> — With public and exported playbooks, observer playbooks and agents can be shared across agents — a compliance team could publish a “privacy observer” that any trusted agent can use.</li>
 <li><strong>Protocol readiness</strong> — Through the proposed Playbooks Protocol, an observer could monitor <em>remote</em> agents, subscribing to their proposed actions and issuing approvals or corrections in real time.</li>
 </ul>
 <p>This is not a bolt-on idea for Playbooks — it is an organic extension of the design philosophy: keep the specification human-readable, the execution verifiable, and the control points programmable.</p>
@@ -2237,15 +2237,15 @@
 <li>Approve, patch, or reject the step, with an optional rationale.</li>
 <li>Optionally run longer-horizon evaluations on plan adherence, resource use, or strategic objectives.</li>
 </ol>
-<p>Our initial release will ship with reference observers for common needs — schema validation, policy enforcement, plan alignment — and a mechanism for packaging these as <em>exported observer playbooks</em> that anyone can install. Over time, we expect a marketplace of observer “policy packs” to emerge, from domain-specific QA to brand safety modules.</p>
-<h2 id="the-next-12-years">The Next 1–2 Years<a class="headerlink" href="#the-next-12-years" title="Permanent link">&para;</a></h2>
+<p>Our initial release will ship with reference observers for common needs — schema validation, policy enforcement, plan alignment — and a mechanism for packaging these as <em>exported observer playbooks</em> that anyone can bring into their own agents. Over time, we expect a marketplace of observer “policy packs” to emerge, from domain-specific QA to brand safety modules.</p>
+<h2 id="looking-ahead">Looking ahead<a class="headerlink" href="#looking-ahead" title="Permanent link">&para;</a></h2>
 <p>This is where we see the space heading:</p>
 <ul>
 <li><strong>From ad-hoc guardrails to portable observers</strong> — Organizations will want to take their governance logic with them, not rebuild it in each agent framework.</li>
 <li><strong>Specialized critic models at the edge</strong> — Ultra-light evaluators will run in real time, escalating to larger models only when confidence drops.</li>
 <li><strong>Hybrid oversight loops</strong> — Combining deterministic checks, rubric-driven LLM critics, and human escalation for high-impact actions.</li>
-<li><strong>Observer collaboration</strong> — Just as agents can work together, observers will coordinate too — cross-verifying each other’s judgments, aggregating signals, and preventing bias or collusion.</li>
-<li><strong>Standardization of oversight APIs</strong> — Much like MCP and A2A are standardizing agent communication, observer protocols will standardize how any compliant runtime can expose checkpoints for inspection and control.</li>
+<li><strong>Observer collaboration</strong> — Just as agents can work together, observers will coordinate too — cross-verifying each other’s judgments, aggregating signals, and preventing bias or collusion, with the logic for collaboration being defined as meeting playbooks.</li>
+<li><strong>Standardization of oversight APIs</strong> — Much like MCP and A2A are standardizing agent communication, observer protocols will standardize how any compliant runtime can expose checkpoints for inspection and control. This</li>
 </ul>
 <p>If autonomous AI is to scale safely, it needs more than raw intelligence — it needs a nervous system for oversight. Playbooks, with its separation of intent from action, structured and shareable logic, and forthcoming observer hooks, is in a unique position to deliver that nervous system.</p>
 <p>We believe the next generation of AI systems will be judged not just by <em>what</em> they can do, but by <em>how well</em> they can prove they did it right. Observer agents make that possible.</p>
