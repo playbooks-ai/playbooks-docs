@@ -11,3 +11,9 @@ The **Playbooks Language** is a human-readable, semantically interpreted program
 The **Playbooks Assembly Language (PBASM)** is the low-level compilation target that optimizes code execution for Large Language Models. Just as traditional programming languages compile to assembly for CPUs, Playbooks Language compiles to PBASM for LLM execution engines.
 
 **[Learn more about Playbooks Assembly Language →](playbooks-assembly-language.md)**
+
+### Playbooks as the Common Language Specification (CLS) and Common Language Runtime (CLR) for AI Applications
+
+Playbooks Assembly Language and runtime can act as a the Common Language Specification (CLS) and Common Language Runtime (CLR) for AI Applications.
+
+**[Learn more →](cls.md)**

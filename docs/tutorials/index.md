@@ -1,34 +1,18 @@
 # Tutorials
 
-Welcome to the Playbooks AI tutorials. These step-by-step guides will help you learn how to use Playbooks AI to build intelligent agents by introducing one concept at a time.
+Follow this series to learn Playbooks AI step by step. Each part ends with a concrete, verifiable result.
 
-## Getting Started
+If you have not installed Playbooks yet, complete the [Installation](../get-started/installation.md) and [Quickstart](../get-started/quickstart.md) first.
 
-If you haven't installed Playbooks AI yet, follow the [installation guide](../get-started/installation.md) and then the [quickstart guide](../get-started/quickstart.md) to set up your environment.
+## Series
 
-## Tutorial Sequence
+- Part 0: Install and first run — tutorials/part-0-install-first-run.md
+- Part 1: User interaction — tutorials/part-1-user-interaction.md
+- Part 2: Triggers — tutorials/part-2-triggers.md
+- Part 3: Calling playbooks (Markdown ↔ Python) — tutorials/part-3-calls-markdown-python.md
+- Part 4: Agent‑to‑Agent calls — tutorials/part-4-agent-to-agent.md
+- Part 5: Meetings — tutorials/part-5-meetings.md
+- Part 6: Observability and debugging — tutorials/part-6-observability-debugging.md
+- Part 7: Web Server and Playground — tutorials/part-7-web-server-playground.md
 
-These tutorials are designed to be followed in order, with each one building on concepts introduced in previous tutorials:
-
-1. [Anatomy of a Playbook](anatomy-of-a-playbook.md) - Understand the structure and components of a basic playbook
-2. [Adding Triggers](adding-triggers.md) - Learn how to use triggers to control when playbooks execute
-3. [User Interaction](user-interaction.md) - Handle user input and responses
-4. [Calling Playbooks](calling-playbooks.md) - Call one playbook from another
-5. [Python Playbooks](python-playbooks.md) - Create playbooks using Python code
-6. [Advanced Triggers](triggers-advanced.md) - Explore more advanced triggers for validation, sentiment, and error handling
-7. [Multi-Agent Programming](multi-agent-programming.md) - Create programs with multiple agents
-8. [Working with Artifacts](working-with-artifacts.md) - Store and retrieve data using artifacts
-
-## Key Concepts Coverage
-
-Throughout these tutorials, you'll explore these key Playbooks AI concepts:
-
-- **Markdown Playbooks** - Writing playbooks in natural language
-- **Python Playbooks** - Writing playbooks with Python code
-- **Triggers** - Controlling when playbooks execute
-- **Variables** - Storing and manipulating data
-- **User Interaction** - Creating conversational flows
-- **Multi-Agent Systems** - Building systems with specialized agents
-- **Artifacts** - Managing persistent data
-
-Ready to get started? Begin with [Anatomy of a Playbook](anatomy-of-a-playbook.md)!
+You can run every step using the examples under `tests/data`.

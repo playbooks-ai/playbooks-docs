@@ -7,13 +7,13 @@ This quickstart guide will help you create and run your first Playbooks AI progr
 Before you begin, make sure you have:
 
 - Installed Playbooks AI (see the [Installation Guide](installation.md))
-- An API key for Anthropic (Claude Sonnet 4.0)
+- An API key for Anthropic (Claude Sonnet 4.0) or another supported provider
 
 ## Step 1: Set Up Your Environment
 
 First, you need to set up your environment variables to authenticate with Anthropic.
 
-Create a `.env` file in your text editor and configure your API key and model:
+Create a `.env` file in your project root (the directory where you run CLI commands) and configure your API key and model:
 
 ```
 # For Anthropic (Claude Sonnet 4.0)
@@ -31,9 +31,9 @@ LLM_CACHE_PATH=".llm_cache" # for disk cache
 # LANGFUSE_HOST="http://localhost:3000"
 ```
 
-Make sure to replace the placeholder with your actual Anthropic API key. 
+Make sure to replace the placeholder with your actual API key.
 
->:warning: Playbooks AI supports Claude Sonnet 4.0 only. Playbooks is not tested with other models.
+:warning: Claude Sonnet 4.0 is the only LLM currently supported by Playbooks. Other frontier LLMs may work and can be selected by setting `MODEL` and the appropriate provider API key (see Reference > Configuration). The performance of other LLMs is not guaranteed.
 
 ### VSCode Support (optional)
 
@@ -44,16 +44,16 @@ You can specify Langfuse credentials for tracing the execution of your Playbooks
 
 ## Step 2: Create Your First Playbooks program
 
-Create a new file named `hello.md` with the following content:
+Create a new file named `hello.pb` with the following content:
 
 ```markdown
 # Personalized greeting
 This program greets the user by name
 
 ## Greet
-## Triggers
-- At the beginning
-## Steps
+### Triggers
+- At the beginning of the program
+### Steps
 - Ask the user for their name
 - Say hello to the user by name and welcome them to Playbooks AI
 - End program
@@ -70,28 +70,34 @@ This simple Playbooks program:
 Now, run your program:
 
 ```bash
-python -m playbooks.applications.agent_chat hello.md --verbose
+playbooks run hello.pb
 ```
 
 You should see output similar to:
 
 ```
-Loading playbooks from: ['hello.md']
-Transpiled playbook content
+Loading playbooks from: ['hello.pb']
+Compiling hello.pb
 
-╭─ PersonalizedGreeting ────╮
-│ Hello! What is your name? │
-╰───────────────────────────╯
+PersonalizedGreeting: Hello! What's your name?
 
-User: hey, my name is Amol
+User: Amol
 
-╭─ PersonalizedGreeting ───────────────╮
-│ Hello Amol! Welcome to Playbooks AI. │
-╰──────────────────────────────────────╯
-Execution finished. Exiting...
+PersonalizedGreeting: Hello Amol! Welcome to Playbooks AI. I'm excited to help you explore what we can do together!
+
+
+Execution finished, exiting...
+Agent PersonalizedGreeting(agent 1000) stopped
 ```
 
 Congratulations! You've successfully run your first Playbooks program.
+
+### Alternative: Run with web server + playground
+
+If you prefer a web UI:
+
+1. Start the web server: `python -m playbooks.applications.web_server`
+2. Open the HTML Playground and point it to your `hello.pb` (see Applications > HTML Playground)
 
 ## Understanding What's Happening
 
@@ -107,10 +113,24 @@ Let's break down what happened:
    - Generated a personalized greeting
    - Ended the program
 
+### Optional: Compile to Playbooks Assembly
+
+You can compile your program to `.pbasm` for inspection or to skip compilation at run time:
+
+```bash
+playbooks compile hello.pb --output hello.pbasm
+```
+
+Run a compiled program with the same agent chat application:
+
+```bash
+playbooks run hello.pbasm
+```
+
 ## Next Steps
 
 Now that you've run your first playbook, you can:
 
 - Go through the [tutorials](../tutorials/index.md)
 - Learn about [Triggers](../triggers/index.md) for more advanced event-based programming
-- Learn how to create [multi-agent systems](../multi-agent-systems/index.md)
+- Learn how to create [multi-agent systems](../agents/index.md)

@@ -1,3 +1,17 @@
+---
+title: Agents
+---
+
+# Agents
+
+Agents are first-class runtime entities in Playbooks. They can:
+
+- Run their own playbooks
+- Send messages to other agents
+- Call other agents’ public playbooks directly
+
+In multi-agent programs, use natural language to specify messaging, meetings, and public playbook calls. See the Multi-Agent Systems section for practical patterns.
+
 # Playbooks AI Agents
 
 ## Create an agent
@@ -25,6 +39,8 @@ A program is a collection of agents. Agents that are part of a program can nativ
 ```md
 # Agent 1
 ## PB1
+public: true
+### Steps
 - Say Hello
 
 # Agent 2
@@ -61,5 +77,4 @@ remote:
 
 ## Next Steps
 - See more details about [MCP Agents](mcp-agent.md)
-- See [Multi-Agent Programming](../multi-agent-systems/index.md)
 - Refer to [tutorials](../tutorials/index.md) for other topics

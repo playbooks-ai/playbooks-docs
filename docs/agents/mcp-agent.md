@@ -1,8 +1,8 @@
-# MCP Server Based Agents
+# MCP Agents
 
 ## Overview
 
-MCP (Model Context Protocol) agents are AI agents that connect to external MCP servers to expose their tools as playbooks. This allows you to integrate external services, APIs, and tools into your Playbooks AI programs seamlessly.
+Connect to external MCP servers and expose their tools as callable playbooks.
 
 ## What is MCP?
 
@@ -15,19 +15,28 @@ The Model Context Protocol (MCP) is an open protocol that standardizes how AI ap
 - Running specialized algorithms
 - And much more
 
-## Creating an MCP Agent
+## Create an MCP agent
 
 To create an MCP agent, you need to specify the agent's metadata with remote configuration:
 
 ```md
-# Weather Agent
-metadata:
-  remote:
-    type: mcp
-    url: http://localhost:8000/mcp
-    transport: sse
----
-This agent provides weather information through an MCP server.
+# Example MCP Server
+remote:
+  type: mcp
+  url: memory://test
+  transport: memory
+
+# Example MCP Client Agent
+
+## Main
+
+### Triggers
+- When program starts
+
+### Steps
+- get secret from Example MCP Server
+- reveal secret to user
+- end program
 ```
 
 ### Configuration Options
@@ -42,13 +51,13 @@ The MCP agent configuration supports the following options:
 | `timeout` | No | Timeout in seconds for tool calls | `30.0` |
 | `auth` | No | Authentication configuration object | `{}` |
 
-### Transport Types
+### Transport types
 
 MCP agents support different transport protocols:
 
-- **SSE (Server-Sent Events)**: Default for web-based MCP servers
-- **Stdio**: For local script-based MCP servers
-- **WebSocket**: For real-time bidirectional communication
+- SSE (Server-Sent Events)
+- stdio
+- WebSocket
 
 ## How MCP Agents Work
 
@@ -57,7 +66,7 @@ MCP agents support different transport protocols:
 3. **Playbook Creation**: Each MCP tool becomes a playbook that can be called
 4. **Execution**: When a playbook is called, the agent forwards the request to the MCP server
 
-## Using MCP Tools as Playbooks
+## Use MCP tools as playbooks
 
 Once connected, all MCP tools are automatically available as playbooks. You can call them just like any other playbook:
 
@@ -84,7 +93,7 @@ This agent connects to a weather MCP service.
 - End program
 ```
 
-## Combining Multiple MCP Agents
+## Combine multiple MCP agents
 
 You can use multiple MCP agents in a single program:
 
@@ -132,7 +141,22 @@ metadata:
 Connects to a secured MCP endpoint.
 ```
 
-## Next Steps
+## Run an MCP server (examples)
 
-- See [Multi-Agent Programming](../multi-agent-systems/index.md) for complex scenarios
+You can create simple MCP servers with `fastmcp`. Example servers in the repo:
+
+- Insomnia server: `tests/data/insomnia/mcp.py`
+- Travel advisor server: `tests/data/travel_advisor/mcp.py`
+
+Run them with:
+
+```bash
+python tests/data/insomnia/mcp.py
+python tests/data/travel_advisor/mcp.py
+```
+
+Then point your MCP agent `url` at the server (e.g., `http://localhost:8000` if using streamable-http) and set `transport` accordingly.
+
+## Next steps
+
 - Review [tutorials](../tutorials/index.md) for more examples

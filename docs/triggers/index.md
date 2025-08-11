@@ -18,6 +18,5 @@ Triggers provide several advantages:
 
 ## Next Steps
 
-- See [Adding Triggers](../tutorials/adding-triggers.md) tutorial
-- See [Advanced Triggers](../tutorials/triggers-advanced.md) tutorial
+- See [Adding Triggers](../guides/adding-triggers.md)
 - Refer to [tutorials](../tutorials/index.md) for other topics

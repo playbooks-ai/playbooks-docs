@@ -185,6 +185,6 @@ import FindTable from DatabaseAgent
 
 ## Related Topics
 
-- [Multi-Agent Programming](../multi-agent-systems/index.md) - More about setting up and using multiple agents
+- [Multi-Agent Programming](../agents/index.md) - More about setting up and using multiple agents
 - [Python Playbooks](../playbook-types/python-playbooks.md) - How to create playbooks using Python
 - [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - Standard playbook structure

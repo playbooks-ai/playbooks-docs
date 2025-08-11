@@ -84,5 +84,5 @@ Explore each playbook type in detail:
 
 Also see:
 
-- [Exported and Public Playbooks](../multi-agent-systems/exported-and-public-playbooks.md) - For multi-agent systems
-- [Multi-Agent Programming](../multi-agent-systems/index.md) - For creating multi-agent systems
+- [Exported and Public Playbooks](../agents/exported-and-public-playbooks.md) - For multi-agent systems
+- [Multi-Agent Programming](../agents/index.md) - For creating multi-agent systems

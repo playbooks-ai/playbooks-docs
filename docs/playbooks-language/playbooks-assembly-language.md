@@ -6,28 +6,31 @@ The Playbooks Assembly Language (PBAsm) is a low-level, structured representatio
 
 ### Traditional CPU vs LLM Execution Engine
 
-Traditional assembly languages target CPUs that operate on:
-- Binary data in registers and memory
-- Precise arithmetic and logical operations  
-- Deterministic branching based on flags
-- Direct memory addressing
-
-PBAsm targets LLMs that operate on:
-- Semantic understanding of natural language instructions
-- Contextual reasoning and inference capabilities
-- Probabilistic decision-making under uncertainty
-- Conversational state and dialogue management
-- Structured output generation that can be parsed and verified
-
-### The LLM Execution Model
-
-The LLM execution engine has several key characteristics that inform PBAsm's design:
-
-1. **Semantic Processing**: Unlike CPUs that manipulate binary data, LLMs process meaning and context
-2. **Structured Output**: LLMs can generate parseable, structured responses that the runtime can verify
-3. **Asynchronous Operations**: LLMs can queue operations and yield control while waiting for external calls
-4. **Context Awareness**: LLMs maintain conversational state and can apply rules contextually
-5. **Reasoning Capability**: LLMs can think through problems step-by-step before taking action
+|  | **CPU Executing Assembly/Binary code** | **LLM Executing PBAsm code** |
+|------------|-----------------------------------|-------------------------|
+| **Instruction Format** | Binary opcodes (e.g., `0x89 0xE5` for MOV EBP, ESP) | Semantic instructions (e.g., `01:EXE Var[$name:str, "Alice"]`) |
+| **Basic Instructions** | MOV, ADD, JMP, CALL, RET, CMP | EXE, TNK, QUE, CND, CHK, YLD, JMP, RET |
+| **Memory Model** | Direct memory addresses, registers (EAX, EBX, ESP) | Short term memory with variables (`$name:str`, `$count:int`), Long term memory system |
+| **Variable Assignment** | `MOV [0x1000], 42` (write to memory address) | `Var[$count:int, 42]` (semantic variable binding) |
+| **Function Calls** | `PUSH params; CALL 0x4000; POP result` | `$result = FunctionName(param=$value); YLD call` |
+| **Control Flow** | `CMP EAX, 0; JE label` (compare and jump) | `02:CND If $name is provided` (semantic condition) |
+| **Loops** | `loop_start: DEC ECX; JNZ loop_start` | `03:CND While $i < 10` with nested steps |
+| **Stack Operations** | `PUSH EAX; POP EBX` (explicit stack manipulation) | Implicit call stack managed by runtime |
+| **Return Values** | Store in EAX register by convention | `04:RET $result` (explicit return statement) |
+| **Interrupts** | INT 0x80 (system call), hardware IRQ | `Trigger["PlaybookName:01:EVT"]` (semantic events) |
+| **Yielding Control** | Context switch via OS scheduler | `YLD user/call/exit` (explicit yield reasons) |
+| **Line Addressing** | Absolute/relative addresses (0x4000, +10) | Hierarchical numbering (01, 01.01, 01.01.01) |
+| **Conditional Execution** | Flag-based (ZF, CF, OF) after CMP | Natural language conditions evaluated by LLM |
+| **Data Types** | Primitive (byte, word, dword, float) | Semantic types (str, int, float, bool, list, dict, artifact, memory) |
+| **Error Handling** | Segfault, divide by zero, invalid opcode | Graceful degradation, runtime validation of outputs |
+| **Debugging** | GDB breakpoints, register inspection | VSCode debugger - step debugging, variable inspection |
+| **Side Effects** | Direct I/O port access, memory writes | Queued operations via QUE, verified by runtime |
+| **Compilation** | Source → AST → Machine code | Playbooks → PBAsm → Runtime Context → LLM tokens |
+| **Parallelism** | Out-of-order execution, SIMD | Queued operations can batch (multiple QUE before YLD) |
+| **State Persistence** | CPU registers reset on context switch | Variables persist across YLD operations |
+| **Program Counter** | EIP/RIP register points to next instruction | Runtime tracks current playbook line number (e.g. OrderStatus:01.03) |
+| **Subroutines** | CALL pushes return address, RET pops | Playbook calls with QUE, across agents |
+| **Execution Context** | CPU state (registers, flags, stack) | Conversation history, variable state, queued ops |
 
 ## The PBAsm Instruction Set
 
@@ -50,9 +53,11 @@ PBAsm's instruction set is specifically designed for these LLM characteristics:
 
 The **YLD** instruction includes specific reasons that define why the LLM is yielding control:
 
-- `YLD user` - Wait for user input (only after asking for input)
 - `YLD call` - Execute queued function calls (including Say() calls)
-- `YLD exit` - Exit the entire program
+- `YLD user` - Wait for user input (only after asking for input)
+- `YLD agent` - Wait for input from another agent
+- `YLD meeting` - Wait for input from a meeting you are participating in
+- `YLD exit` - Terminate the program
 
 ## Structured Output Protocol
 
@@ -62,17 +67,20 @@ Unlike traditional assembly that modifies CPU registers, PBAsm instructions prod
 ```
 Var[$name, <value>]
 ```
-Similar to how assembly instructions modify CPU registers, but operates on named variables with semantic meaning. Variables must include type annotations: `$varname:type` where type is one of: `str`, `int`, `float`, `bool`, `list`, `dict`.
+Similar to how assembly instructions modify CPU registers, but operates on named variables with semantic meaning. Variables must include type annotations: `$varname:type` where type is one of: `str`, `int`, `float`, `bool`, `list`, `dict`, `artifact`.
 
 ### Function Calls
 ```
-$result = FunctionName(param1=$value1, param2=$value2)
+$result = PlaybookName(param1, param2=$value2) ← Standard Python syntax
+$result = Call PlaybookName with param1, param2=$value2 ← Natural language syntax
+Get $result from PlaybookName ← Implicit argument passing
+$result = PlaybookName(task user specified, details=details of the task) ← Natural language arguments
 ```
-Unlike traditional CALL instructions that use memory addresses, PBAsm uses semantic function names with typed parameters. All function calls must be wrapped in backticks and use valid Python syntax.
 
 ### Trigger Events (LLM Interrupts)
 ```
-Trigger["PlaybookName:LineNumber:CommandCode"]
+### Triggers
+- T1:BGN When program starts
 ```
 PBAsm's interrupt system - the LLM can signal semantic events that interrupt normal execution flow and trigger other playbooks to execute, similar to how hardware/software interrupts work in traditional CPUs.
 
@@ -133,9 +141,11 @@ PBAsm includes a sophisticated interrupt system that leverages the LLM's ability
 
 ### Trigger Registration and Handling
 ```
-T1:CND When user provides their email address
-T2:BGN At the beginning  
-T3:EVT When payment is processed
+### Triggers
+- T1:CND When user provides their email address
+- T2:BGN At the beginning  
+- T3:EVT When payment processed event is received
+- T4:EVT When Accountant agent is ready with the invoice
 ```
 
 The LLM continuously monitors these semantic conditions during execution. When a trigger condition is met, it interrupts the current playbook execution, saves the current state, and invokes the triggered playbook - much like how a CPU handles interrupts.
@@ -195,8 +205,8 @@ This interrupt-driven architecture enables reactive, event-driven AI systems tha
 
 **Enqueue multiple messages:**
 ```
-01:QUE Say(Here are the options); no yield needed
-02:QUE Say(Which would you prefer?); YLD user
+01:QUE Say(Present options); no yield needed
+02:QUE Say(Ask user to select one); YLD user
 ```
 
 ### Metadata and Public Playbooks
@@ -229,18 +239,6 @@ Public playbooks are exposed for cross-agent communication and included in the g
 5. **Debugging support**: Clear execution model enables sophisticated debugging tools
 6. **Concurrent execution**: Support for batched operations and asynchronous calls
 7. **Cross-agent communication**: Built-in support for multi-agent systems
-
-## Comparison with Traditional Assembly
-
-| Aspect | Traditional Assembly | Playbooks Assembly |
-|--------|---------------------|-------------------|
-| **Target CPU** | Microprocessor | Large Language Model (LLM) |
-| **Data Types** | Binary, integer, float | string, number, boolean, list, dict, null |
-| **Instructions** | MOV, ADD, JMP, CALL | EXE, TNK, QUE, CND, CHK, RET, JMP, YLD |
-| **Control Flow** | Flags, conditional jumps | Semantic conditions, natural language triggers |
-| **Interrupts** | Hardware/software interrupts | Semantic triggers, event-driven playbook invocation |
-| **I/O** | Port access, interrupts | Conversation (Say), artifacts, multi-agent communication |
-| **Concurrency** | Thread management | Queued operations with YLD call |
 
 ## Conclusion
 

@@ -6,7 +6,7 @@ This guide will walk you through the process of installing Playbooks AI and sett
 
 Before installing Playbooks AI, ensure you have:
 
-- Python 3.10 or higher
+- Python 3.12 or higher
 - pip (Python package installer)
 - A virtual environment tool (optional but recommended)
 
@@ -63,10 +63,10 @@ poetry shell
 You can verify that Playbooks AI is installed correctly by running:
 
 ```bash
-python -c "import playbooks; print(playbooks.__name__)"
+playbooks --version
 ```
 
-This should print "playbooks" if the installation is successful.
+This should print the installed version, e.g., `playbooks 0.5.0`.
 
 ## Optional Dependencies
 No optional dependencies are required for Playbooks AI.
@@ -85,14 +85,9 @@ pip install playbooks[docs]
 
 ## VSCode Debugging Support
 
-For enhanced development experience, install the **Playbooks Language Support** extension for Visual Studio Code:
+For enhanced development experience, install the **Playbooks Language Support** extension for Visual Studio Code. See the dedicated guide:
 
-1. Open VSCode
-2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-3. Search for "Playbooks Language Support"
-4. Click Install
-
-The extension provides debugging capabilities for playbooks programs, making it easier to develop and troubleshoot your AI agents. Once the plugin is installed, you can open a playbooks `.pb` file and start debugging!
+- [VSCode Extension](../integrations/vscode.md)
 
 ## Troubleshooting
 

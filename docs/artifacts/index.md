@@ -1,4 +1,4 @@
 # Artifacts
 
-- See [Working with Artifacts](../tutorials/working-with-artifacts.md) tutorial
-- Refer to [tutorials](../tutorials/index.md) for other topics
+- See [Built-in Playbooks](../playbook-types/builtin-playbooks.md) for artifact functions like `SaveArtifact` and `LoadArtifact`
+- Refer to [tutorials](../tutorials/index.md) for the guided curriculum

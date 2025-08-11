@@ -1,5 +1,39 @@
 # Playbooks Runtime
-Playbooks runtime executes Playbooks Assembly Language (PBASM) programs. This is structured as a runtime main loop that repeatedly calls LLM to execute a fragment of a playbook each time. 
+Execute PBASM programs with a fetch–decode–execute loop that verifies each step.
+
+```mermaid
+graph TD
+  A["Source Programs"] --> B["Compiler (Semantic Analysis)"]
+  B --> C["PBASM (Intermediate Representation)"]
+  C --> D["CLR Runtime"]
+  D --> E["LLM Execution (Markdown Steps)"]
+  D --> F["Python Execution (Functions)"]
+  D --> G["Agents & Messaging"]
+  D --> H["Observability & Debugging"]
+
+  subgraph CLS
+    A
+    B
+  end
+  subgraph CLR
+    C
+    D
+    E
+    F
+    G
+    H
+  end
+```
+
+## Verification contract (summary)
+
+- LLM responses must use the structured format expected by the CLR
+- Steps must map to valid program locations (line numbers and codes)
+- Variable updates must be explicit and typed
+- Triggers are evaluated between steps and on relevant updates
+- Control transfer only via yield to user, call, or exit
+
+See also: [Common Language Runtime (CLR)](clr.md) for details.
 
 - Runtime main loop
   - Decide which playbook to execute next

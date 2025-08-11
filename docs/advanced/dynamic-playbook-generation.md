@@ -4,16 +4,16 @@ Dynamic Playbook Generation is an advanced capability in Playbooks AI that allow
 
 ## Overview
 
-At its core, Dynamic Playbook Generation empowers agents to:
+Dynamic generation empowers agents to:
 
 * **Reason deeply** about their current context, objectives, and available actions.
 * **Strategically plan** optimal sequences of actions tailored precisely to the task at hand.
 * **Generate new playbooks** dynamically based on the reasoning and planning outcomes.
 * **Execute the generated playbooks** seamlessly, thereby adapting to novel or evolving scenarios.
 
-## How Dynamic Playbook Generation Works
+## How it works
 
-### Reasoning and Planning Phase
+### Reasoning and planning
 
 The initial step involves instructing the agent through a primary playbook to thoroughly evaluate its context and objectives:
 
@@ -21,14 +21,14 @@ The initial step involves instructing the agent through a primary playbook to th
 * Utilize LLM reasoning capabilities to explore multiple potential pathways.
 * Develop a comprehensive and optimal plan through iterative reflection and refinement.
 
-### Playbook Generation Phase
+### Playbook generation
 
 Once the agent has identified a clear, structured plan, it dynamically generates a new, executable playbook:
 
 * The generated playbook captures the strategic reasoning in structured, actionable steps.
 * Playbooks are created following standardized Playbooks AI formats, ensuring compatibility and ease of execution.
 
-### Execution Phase
+### Execution
 
 After generation, the new playbook is immediately executed:
 

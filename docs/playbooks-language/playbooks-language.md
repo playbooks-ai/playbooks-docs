@@ -1,10 +1,10 @@
 # Playbooks Language
 
-Playbooks Language is a human-readable, semantically interpreted programming language designed specifically for building AI agents. It allows developers to define agent behavior using natural language within a structured markdown format, combined with the power and flexibility of Python.
+Define agents with natural language and Python in a structured, verifiable form.
 
 ## Overview
 
-Playbooks Language enables you to:
+Use Playbooks Language to:
 
 * Write agent logic in a way that's understandable by both humans and AI
 * Seamlessly integrate natural language instructions with Python code
@@ -12,7 +12,7 @@ Playbooks Language enables you to:
 * Implement event-driven behavior through triggers
 * Build multi-agent systems where agents can communicate and collaborate
 
-## Program Structure
+## Program structure
 
 A Playbooks program consists of one or more agents, each containing one or more playbooks. The basic structure follows standard markdown heading conventions:
 
@@ -39,9 +39,9 @@ Playbook description
 
 Multiple agents can be defined within a single Playbooks program. These agents can interact with each other. To call a playbook from another agent, use the syntax `AgentName.PlaybookName()`.
 
-### Program Components
+### Program components
 
-#### 1. Agent Definition
+#### 1. Agent definition
 
 Agents are defined using a top-level heading (`#`) followed by the agent name and an optional description:
 
@@ -52,7 +52,7 @@ This agent handles customer service inquiries and guides users through the suppo
 
 An agent can have multiple playbooks and can include Python code that's accessible to its playbooks.
 
-#### 2. Python Functions as Playbooks
+#### 2. Python functions as playbooks
 
 Python functions can be defined as playbooks using the `@playbook` decorator:
 
@@ -69,9 +69,9 @@ async def ProcessPayment(amount: float, card_info: dict) -> bool:
     return True
 ```
 
-> \:bulb: By convention, Playbook names are PascalCase. While Python functions are typically named using snake\_case, we suggest using PascalCase for Python playbook names.
+> :bulb: By convention, Playbook names are PascalCase. While Python functions are typically named using snake\_case, we suggest using PascalCase for Python playbook names.
 
-#### 3. Markdown Playbooks
+#### 3. Markdown playbooks
 
 Markdown playbooks are defined using second-level headings (`##`) followed by the playbook name and an optional description:
 
@@ -138,7 +138,7 @@ Steps support:
 * Cross-agent playbook calls (e.g., `SupportAgent.HandleRequest($input)`)
 * Control flow (e.g., `End program`, `Return $result`)
 
-> \:bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
+> :bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
 
 #### 6. Notes
 
@@ -151,7 +151,7 @@ The `### Notes` section can provide additional guidance or rules for the playboo
 - If the user is from California, mention that we're compliant with CCPA
 ```
 
-## Variable Usage
+## Variable usage
 
 Variables in Playbooks are denoted with a `$` prefix and must include explicit types:
 
@@ -170,7 +170,7 @@ Variables can store:
 
 If a variable's type is unknown, it defaults to `str`.
 
-## Example: Complete Playbooks program
+## Example
 
 ````markdown
 # CustomerSupportAgent
@@ -192,22 +192,26 @@ This playbook helps customers check their order status.
 - When user asks about order status
 
 ### Steps
-- Greet the user and ask for their order number
+- Ask for their order number if they haven't provided it yet
 - If order number is not valid
   - Tell the user their order number is invalid
   - Ask the user to provide a valid order number in the format ORD-XXXXXX
   - If order number is still not valid
     - Apologize and offer to connect them with a human agent
     - End program
-- $order_details = LookUpOrder($order_number)
+- $order_details = Look up order details for the $order_number
 - Tell the user the current status of their order
 - Ask if they need any additional assistance
 
 ### Notes
 - If the user becomes frustrated, offer to connect them with a human agent
 - Always thank the user for their patience
+
+## Order details($order_number)
+This playbook looks up order details for a given order number.
+...
 ````
 
-## Next Steps
+## Next steps
 
-* [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution (separate documentation)
+* [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution

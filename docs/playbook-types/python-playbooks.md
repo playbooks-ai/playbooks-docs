@@ -1,16 +1,18 @@
 # Python Playbooks
 
-Python playbooks provide the full power and flexibility of Python within the Playbooks AI framework. They allow you to implement complex logic, integrate with external systems, and leverage the entire Python ecosystem.
+Implement complex logic in Python and call playbooks in both directions.
 
 ## Overview
 
-Python playbooks are python functions that can be called by other Markdown/Python playbooks, and **can call Markdown/Python playbooks**. These can also be conditionally triggered.
+- A Python playbook is an async function decorated with `@playbook`
+- It can call markdown or Python playbooks, and be called by them
+- You can add `triggers=[...]` and `public=True` when needed
 
 :bulb: Consider using an MCP server to implement simple python based tools that do not need trigger support or the ability to call Markdown playbooks.
 
-## Creating Python Playbooks
+## Create a Python playbook
 
-Python playbooks are defined using the `@playbook` decorator applied to async or normal Python functions in a ```python code block:
+Define an async function decorated with `@playbook` inside a ```python block in your `.pb`:
 
 ```python
 @playbook
@@ -29,7 +31,7 @@ async def calculate_shipping(weight: float, destination: str) -> float:
     return base_rate + weight_cost + destination_surcharge
 ```
 
-### The @playbook Decorator
+### The @playbook decorator
 
 The `@playbook` decorator registers a Python function as a playbook that can be called by other playbooks or triggered based on conditions.
 
@@ -53,15 +55,15 @@ async def validate_payment_info(amount: float, card_info: dict) -> bool:
     return True
 ```
 
-#### Decorator Parameters
+#### Decorator parameters
 
 The `@playbook` decorator accepts several parameters that control the playbook's behavior and metadata.
 
-##### Reserved Parameters
+##### Reserved parameters
 
 - `triggers`: A list of trigger conditions (as strings) that will cause the playbook to execute
 
-##### Standard Metadata Parameters
+##### Standard metadata
 
 - `public`: A boolean indicating whether the playbook should be available to other agents to call
 - `export`: A boolean indicating whether the playbook's implementation can be exported to other agents
@@ -70,19 +72,17 @@ The `@playbook` decorator accepts several parameters that control the playbook's
   - `url`: Remote service URL
   - `transport`: transport protocol to use for the remote service
 
-##### Custom Metadata
+##### Custom metadata
 
 **All other keyword arguments become metadata** attached to the playbook. This metadata can be used for documentation, configuration, etc.
 
 See [Metadata](../playbooks-language/metadata.md) for more details.
 
-## Error Handling
+## Error handling
 
-For Python playbooks that are called from Markdown playbooks, return a string with the error message, regardless of the return type of the function. This returned error message will be processed by the LLM and handled intelligently. Always catch all exceptions because Markdown playbooks do not handle Python exceptions.
+When called from markdown playbooks, return a user‑readable error string on failure; the LLM will handle it. Catch exceptions inside Python playbooks. Between Python playbooks, you may raise exceptions and handle them as usual.
 
-For Python playbooks that are called from other Python playbooks, use standard error handling such as raising exceptions.
-
-## Related Topics
+## Related topics
 
 - [Markdown Playbooks](../playbook-types/markdown-playbooks.md) - For structured, step-by-step flows
 - [ReAct Playbooks](../playbook-types/react-playbooks.md) - For reasoning-based, adaptive behavior
