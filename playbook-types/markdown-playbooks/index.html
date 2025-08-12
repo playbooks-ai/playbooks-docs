@@ -1149,9 +1149,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#playbook-calls_1" class="md-nav__link">
+  <a href="#calling-other-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Playbook calls
+      Calling other playbooks
     </span>
   </a>
   
@@ -1189,15 +1189,6 @@
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best practices
     </span>
   </a>
   
@@ -2644,9 +2635,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#playbook-calls_1" class="md-nav__link">
+  <a href="#calling-other-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Playbook calls
+      Calling other playbooks
     </span>
   </a>
   
@@ -2684,15 +2675,6 @@
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best practices
     </span>
   </a>
   
@@ -2886,10 +2868,19 @@
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Calculate $product_total
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Add $product_total to $grand_total
 </span></code></pre></div>
-<h4 id="playbook-calls_1">Playbook calls<a class="headerlink" href="#playbook-calls_1" title="Permanent link">&para;</a></h4>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">-</span><span class="w"> </span>ValidateEmail($email)
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">-</span><span class="w"> </span>$shipping_cost = CalculateShipping($weight, $destination)
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">-</span><span class="w"> </span>ProcessPayment($order_total)
+<h4 id="calling-other-playbooks">Calling other playbooks<a class="headerlink" href="#calling-other-playbooks" title="Permanent link">&para;</a></h4>
+<p>Both markdown and Python playbooks can be called using Python function syntax or natural language instruction.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">-</span><span class="w"> </span>Validate the email
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">-</span><span class="w"> </span>ValidateEmail($email)
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">-</span><span class="w"> </span>Figure out how much it would cost to ship $weight to $destination
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">-</span><span class="w"> </span>$shipping_cost = CalculateShipping($weight, $destination)
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="k">-</span><span class="w"> </span>Process payment
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="k">-</span><span class="w"> </span>ProcessPayment(total=$order_total)
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">-</span><span class="w"> </span>Ask accountant to calculate the tax amount
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">-</span><span class="w"> </span>$tax_amount = Accountant.CalculateTax($order_total)
 </span></code></pre></div>
 <h4 id="control-flow">Control flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h4>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">-</span><span class="w"> </span>End program
@@ -2905,35 +2896,26 @@
 <p>Notes are used to handle exceptions, provide style guidance, or specify business rules that apply throughout the playbook.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>Here's a complete example of a markdown playbook for handling order status inquiries:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="gu">## CheckOrderStatusFlow($authToken)</span>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="gu">## CheckOrder_statusFlow($authToken)</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Check the status of an order.
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="gu">### Trigger</span>
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">-</span><span class="w"> </span>When the user is authenticated and requests order status
 </span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="gu">### Steps</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">-</span><span class="w"> </span>Ask user for $orderId
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">-</span><span class="w"> </span>$orderStatus = GetOrderStatus($orderId)
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">-</span><span class="w"> </span>Extract $expectedDeliveryDate from $orderStatus
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">-</span><span class="w"> </span>Say(&quot;Your order {$orderId} is expected to be delivered on {$expectedDeliveryDate}.&quot;)
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">-</span><span class="w"> </span>Ask user for $order_id
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">-</span><span class="w"> </span>Get $order_status
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">-</span><span class="w"> </span>Extract $expected_delivery_date from $order_status
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">-</span><span class="w"> </span>Tell user when their order will be delivered
 </span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
 </span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="gu">### Notes</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="k">-</span><span class="w"> </span>The $orderStatus dictionary includes the keys: orderId, expectedDeliveryDate.
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="k">-</span><span class="w"> </span>The $order_status dictionary includes the keys: order_id, expected_delivery_date.
 </span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="k">-</span><span class="w"> </span>Always confirm that $authToken is valid before calling GetOrderStatus.
 </span></code></pre></div>
-<h2 id="best-practices">Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Be specific and clear</strong>: Write steps that clearly describe what the agent should do.</li>
-<li><strong>Use variables consistently</strong>: Use the <code>$</code> prefix for all variables and maintain consistent naming.</li>
-<li><strong>Handle edge cases</strong>: Include steps for handling unexpected user responses or system failures.</li>
-<li><strong>Break down complex tasks</strong>: Keep steps simple and focused on a single action.</li>
-<li><strong>Use playbook calls</strong>: Factor out reusable logic into separate playbooks that can be called.</li>
-<li><strong>Provide helpful notes</strong>: Use the Notes section to guide the agent on tone, exceptions, and business rules.</li>
-<li><strong>Use meaningful trigger conditions</strong>: Make trigger conditions specific to ensure playbooks run at the right time.</li>
-</ol>
 <h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../react-playbooks/">ReAct Playbooks</a> - For less structured, reasoning-based approaches</li>
+<li><a href="../raw-prompt-playbooks/">Raw Prompt Playbooks</a> - For simple, one-off playbooks where you want to control the prompt entirely</li>
 <li><a href="../python-playbooks/">Python Playbooks</a> - For complex logic and integrations</li>
 <li><a href="../../guides/calling-playbooks/">Calling Playbooks</a> - How to call one playbook from another</li>
 <li><a href="../../guides/adding-triggers/">Adding Triggers</a> - More about trigger types and usage</li>
