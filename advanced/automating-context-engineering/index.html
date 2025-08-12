@@ -2045,6 +2045,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2215,6 +2224,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2259,7 +2277,7 @@
 </ul>
 <p>This makes it trivial to give an agent just the right information at just the right time - and to clean it up immediately after, keeping context lean and relevant.</p>
 <h2 id="full-control-when-needed">Full Control When Needed<a class="headerlink" href="#full-control-when-needed" title="Permanent link">&para;</a></h2>
-<p>While the default stack-based context management handles the majority of cases, some scenarios require <em>total</em> control over the prompt. For those, Playbooks offers <strong>Raw Prompt Playbooks</strong>. In a raw prompt playbook, the runtime adds no automatic context at all, leaving the developer free to craft every detail of what the LLM sees. This provides a clean escape hatch for specialized tasks without sacrificing the benefits of the default system for everything else.</p>
+<p>While the default stack-based context management handles the majority of cases, some scenarios require <em>total</em> control over the prompt. For those, Playbooks offers <a href="../../playbook-types/raw-prompt-playbooks/">Raw Prompt Playbooks</a>. In a raw prompt playbook, the runtime adds no automatic context at all, leaving the developer free to craft every detail of what the LLM sees. This provides a clean escape hatch for specialized tasks without sacrificing the benefits of the default system for everything else.</p>
 <h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <p>Advanced context engineering has historically been a barrier to scaling agent complexity - it required deep expertise and constant maintenance. Playbooks’ approach turns it into infrastructure:</p>
 <ul>
@@ -2268,6 +2286,13 @@
 <li>Agents naturally benefit from future improvements to the context system without rewriting code.</li>
 </ul>
 <p>By combining <strong>stack-based execution traces</strong>, <strong>automatic compaction</strong>, <strong>dynamic resource management</strong>, and <strong>built-in system intelligence</strong>, Playbooks delivers context engineering as a <strong>platform capability</strong> - not a per-agent chore.</p>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../playbook-types/raw-prompt-playbooks/">Raw Prompt Playbooks</a></li>
+<li><a href="../../playbook-types/react-playbooks/">ReAct Playbooks</a></li>
+<li><a href="../../playbook-types/markdown-playbooks/#description-placeholders">Markdown Playbooks — Description placeholders</a></li>
+<li><a href="../../runtime/clr/">Common Language Runtime (CLR)</a></li>
+</ul>
 
 
 
