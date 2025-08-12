@@ -23,6 +23,9 @@ The UI will:
 - Connect to `ws://localhost:8001/ws/<run_id>`
 - Stream messages and execution logs with filtering controls
 
+## See also
+
+- [Web Server](web-server.md)
 
 
 

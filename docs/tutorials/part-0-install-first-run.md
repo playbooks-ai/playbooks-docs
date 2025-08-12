@@ -35,6 +35,6 @@ playbooks run tests/data/01-hello-playbooks.pb
 
 Expected: The agent prints a greeting and exits.
 
-Next: Proceed to Part 1 – User interaction.
+Next: Proceed to [Part 1 – User interaction](part-1-user-interaction.md).
 
 

@@ -1,22 +1,57 @@
-# Playbooks Protocol (Roadmap)
+# Playbooks Protocol — A Proposed Standard for Agent Interoperability and Skill Sharing
 
-Protocols like [MCP](https://modelcontextprotocol.io/) and [A2A](https://google.github.io/A2A/) are emerging standards. Playbooks will support them, while also pursuing a native protocol optimized for playbook sharing and execution.
+The Playbooks project is pursuing three complementary standards for AI agents:
 
-We are developing a new protocol that we believe will lead to more capable, flexible and secure multi-agent systems.
+* **Common Language Specification (CLS)** — a universal, human-readable, semantically precise format for defining agent behavior.
+* **Common Language Runtime (CLR)** — a verifiable, transparent execution environment for running CLS programs with consistency and safety.
+* **Playbooks Protocol** *(in exploration)* — a communication and capability-sharing standard that enables agents to call each other’s functions, import skills, and collaborate securely across systems.
 
-## Tools as API endpoints
-The standard method for applications to expose their capabilities is through API endpoints. "Tools" in MCP are simply these public API endpoints. There are existing standards for API discovery and documentation, such as [OpenAPI](https://www.openapis.org/) and [Swagger](https://swagger.io/). We think that "tools" should be exposed through these existing standards.
+The CLS and CLR define *how* agents are built and run. The Playbooks Protocol would define *how* they connect and share capabilities, forming the network layer of a unified AI agent stack.
 
-So, along with supporting MCP as way to publish capabilities, playbooks will also support OpenAPI as way to publish capabilities.
+## Purpose and Context
 
-## Tools as public methods
-In Object-Oriented Programming, classes expose their capabilities through public methods. When an agent wants to publish its capabilities, why not use public methods of the agent? Playbooks has native support for [public playbooks](../agents/exported-and-public-playbooks.md), where an agent can expose certain playbooks for other agents or systems to call.
+We are not building in isolation. Protocols like the **Model Context Protocol ([MCP](../agents/mcp-agent.md))** and **Agent-to-Agent (A2A)** are emerging standards for agent interoperability. Playbooks will support these where they fit, but we also see an opportunity for a native protocol optimized specifically for **playbook sharing and execution** — one that fully leverages the semantics, safety guarantees, and modularity of the Playbooks environment.
 
-## Prompts vs playbooks
-In MCP (Model Context Protocol), "prompts" are predefined templates or instructions that MCP servers can expose to client applications. They serve as reusable, parameterized templates that define specific ways to interact with or use the resources and capabilities that the MCP server provides. They help standardize common operations across different MCP implementations. For example, a "prompt" might expose a specific way to executing a coding task, or how data should be retrieved using specific queries, or even multi-step workflows.
+Our goal is a protocol that can make multi-agent systems more capable, flexible, and secure — without locking into brittle, ad-hoc integrations or over-indexing on any one coordination pattern.
 
-Playbooks are multi-step workflows that can be executed reliably. They are a more powerful and flexible concept than prompts. We believe that exporting playbooks that can be executed by the caller within their own context is the most useful way to expose these capabilities. Playbooks has native support for [exporting playbooks](../agents/exported-and-public-playbooks.md). A Playbooks oriented protocol would allow seamless transfer and execution of such playbooks, through standard programming paradigms like "import" directives and function calls. Exported playbooks can be "imported" into another agent and then called and executed as if they were local playbooks.
+## From Tools to Public Playbooks
 
-## Playbooks as a standard
-Playbooks can standardize how agents expose capabilities and how agents discover and use each other.
+In API design, capabilities are traditionally exposed as endpoints. MCP’s concept of listing *tools* fits this model — they are simply public API endpoints, discoverable and documented via existing standards like **OpenAPI** or **Swagger**. Playbooks will support these conventions so that agents publishing capabilities via MCP remain accessible in the wider ecosystem.
 
+But object-oriented programming offers another useful analogy: public methods. In Playbooks, **public playbooks** are exactly that — specific workflows or functions that an agent intentionally exposes for others to call. Public playbooks can be invoked remotely, with typed parameters and structured return values, just like calling a local method.
+
+## Beyond Prompts — Exported Playbooks
+
+In MCP, *prompts* are reusable templates for common operations. They’re valuable, but limited: they don’t carry execution semantics, runtime safety, or multi-step control flow. Playbooks are richer — fully defined, auditable workflows that can be executed deterministically.
+
+The Playbooks Protocol extends this further with **exported playbooks**: the actual code for a playbook, packaged for import into another agent’s environment. An agent can “import” an exported playbook from a trusted source and run it as if it were a local method. This allows agents to acquire entirely new skills — dynamically extending their capabilities without duplicating logic or reinventing proven workflows.
+
+## Agent-to-Agent Collaboration
+
+The Playbooks Protocol is designed to support multiple modes of collaboration between agents. Agents can:
+
+* **Call public playbooks on other agents** directly, using RPC-style semantics with typed parameters and structured return values.
+* **Exchange natural language messages** with other agents, conveying the semantic intent. The receiving agent can choose to execute a playbook to process the message and may respond with a natural language message. This enables multi-turn conversations for collaboration, negotiation and decision making.
+* **Multi-party meetings** — For multi-party synchronous collaboration, Playbooks runtime offers a mechanisms for conducting "meetings". Each participant can follow their own playbook as the behavior guide for the meeting.
+
+## Why Standardize
+
+Without a shared protocol, agents remain silos — each with its own format for capabilities, its own invocation semantics, its own security assumptions. The Playbooks Protocol aims to solve this by:
+
+* Defining a **portable, structured way to expose and discover capabilities**.
+* Providing a **safe, verifiable mechanism** for executing remote capabilities and imported skills.
+* Enabling **composability** so agents can be assembled into richer systems without custom glue for each integration.
+
+When combined with CLS and CLR, the Playbooks Protocol could be a key part of an open, interoperable AI stack:
+
+* **CLS** — defines the shape and semantics of agent logic.
+* **CLR** — ensures any CLS-defined program runs predictably and safely.
+* **Playbooks Protocol** — connects agents into a skill-sharing, capability-rich ecosystem.
+
+This is like the network layer for the AI agent era — one that makes interoperability, discoverability, and trust first-class features rather than afterthoughts.
+
+## See also
+
+- [Exported and Public Playbooks](../agents/exported-and-public-playbooks.md)
+- [MCP Agents](../agents/mcp-agent.md)
+- [Agents](../agents/index.md)

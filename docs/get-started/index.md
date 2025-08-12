@@ -26,14 +26,19 @@ Follow these guides to start building with Playbooks AI:
 - [Quickstart](quickstart.md): Create your first playbook in minutes
 - [Tutorials](../tutorials/index.md): Tutorials to learn from
 
+## See also
+
+- [Playbooks Language](../playbooks-language/index.md)
+- [Playbook Types](../playbook-types/index.md)
+
 ## Core Concepts
 
 Playbooks AI is built around these core concepts:
 
 - **Playbooks Language**: The natural language programming syntax
-- **Agent Framework**: The environment that Playbooks programs run in
-- **Playbooks Runtime**: Manages interpreter, control flow, variables, artifacts, etc.
-- **Triggers**: Event-driven programming through natural language conditions
-- **Artifacts**: Store and access data from playbooks
+- [**Agent Framework**](../agents/index.md): The environment that Playbooks programs run in
+- [**Playbooks Runtime**](../runtime/index.md): Manages interpreter, control flow, variables, artifacts, etc.
+- [**Triggers**](../triggers/index.md): Event-driven programming through natural language conditions
+- [**Artifacts**](../artifacts/index.md): Store and access data from playbooks
 
 Ready to dive in? Check out the [Quickstart Guide](quickstart.md) to create your first playbook. 

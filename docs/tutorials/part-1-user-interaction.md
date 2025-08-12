@@ -24,6 +24,6 @@ Concepts:
 - Say and Wait for user input
 - Variables to store user data
 
-Next: Part 2 – Triggers.
+Next: [Part 2 – Triggers](part-2-triggers.md).
 
 

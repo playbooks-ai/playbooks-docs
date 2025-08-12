@@ -22,5 +22,8 @@ playbooks compile program.pb --output program.pbasm
 playbooks run program.pbasm
 ```
 
-See also: [Environment Variables](environment-variables.md)
+## See also
+
+- [Environment Variables](environment-variables.md)
+- [Playbooks Assembly Language (PBAsm)](../playbooks-language/playbooks-assembly-language.md)
 

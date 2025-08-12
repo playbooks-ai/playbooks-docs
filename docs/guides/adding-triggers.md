@@ -44,5 +44,7 @@ Tips:
 - Avoid mutually triggering playbooks
 - Prefer triggers for validation over inline checks
 
-See also: [Triggers](../triggers/index.md)
+## See also
+
+- [Triggers](../triggers/index.md)
 

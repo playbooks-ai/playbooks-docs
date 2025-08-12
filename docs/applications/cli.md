@@ -46,6 +46,11 @@ playbooks run compiled/hello.pbasm --skip-compilation
 playbooks run compiled/hello.pbasm hello.pb
 ```
 
+## See also
+
+- [Run with CLI](../guides/run-with-cli.md)
+- [VSCode Extension](../integrations/vscode.md)
+
 ### compile
 
 Compile one or more Playbooks programs.

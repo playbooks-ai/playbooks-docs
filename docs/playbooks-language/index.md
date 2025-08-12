@@ -16,4 +16,4 @@ The **Playbooks Assembly Language (PBASM)** is the low-level compilation target 
 
 Playbooks Assembly Language and runtime can act as a the Common Language Specification (CLS) and Common Language Runtime (CLR) for AI Applications.
 
-**[Learn more →](cls.md)**
+**[Learn more →](../advanced/cls.md)**

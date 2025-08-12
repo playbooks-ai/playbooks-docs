@@ -21,4 +21,7 @@ LANGFUSE_HOST=http://localhost:3000
 
 Playbooks will include tracing spans when configured.
 
+## See also
+
+- [Observability & Debugging](../observability/index.md)
 

@@ -50,7 +50,10 @@ Raw playbooks do not add any execution context to LLM calls. The runtime sends e
 
 >:warning: Raw playbooks make a single LLM call with no loop or planning. Ensure your description, i.e. prompt, contains all necessary instructions and context.
 
-See also: [ReAct Playbooks](react-playbooks.md) for the context-enriched think–act loop execution flow.
+## See also
+
+- [ReAct Playbooks](react-playbooks.md) for the context-enriched think–act loop execution flow
+- [Automating Context Engineering](../advanced/automating-context-engineering.md)
 
 ## Description placeholders
 

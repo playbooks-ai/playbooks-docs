@@ -30,7 +30,7 @@ graph TD
 - LLM responses must use the structured format expected by the CLR
 - Steps must map to valid program locations (line numbers and codes)
 - Variable updates must be explicit and typed
-- Triggers are evaluated between steps and on relevant updates
+- [Triggers](../triggers/index.md) are evaluated between steps and on relevant updates
 - Control transfer only via yield to user, call, or exit
 
 See also: [Common Language Runtime (CLR)](clr.md) for details.

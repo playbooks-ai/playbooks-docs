@@ -28,6 +28,6 @@ Concepts:
 - Condition‑based triggers
 - Execution modes and implications
 
-Next: Part 3 – Calling playbooks (Markdown ↔ Python).
+Next: [Part 3 – Calling playbooks (Markdown ↔ Python)](part-3-calls-markdown-python.md).
 
 

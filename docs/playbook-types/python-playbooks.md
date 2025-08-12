@@ -1,22 +1,26 @@
 # Python Playbooks
 
-Implement complex logic in Python and call playbooks in both directions.
+Playbooks programs are composed of agents (markdown H1s). Each agent can have multiple markdown playbooks (H2s) and Python playbooks (Python functions).
 
 ## Overview
 
 - A Python playbook is an async function decorated with `@playbook`
-- It can call markdown or Python playbooks, and be called by them
+- It can call markdown or Python playbooks, and be called by them. Python and markdown playbooks execute on the same call stack.
 - You can add `triggers=[...]` and `public=True` when needed
+- By convention, Python playbooks are named with PascalCase.
 
-:bulb: Consider using an MCP server to implement simple python based tools that do not need trigger support or the ability to call Markdown playbooks.
+:bulb: Consider using an [MCP](../agents/mcp-agent.md) server to implement simple python based tools that do not need trigger support or the ability to call Markdown playbooks.
 
 ## Create a Python playbook
 
 Define an async function decorated with `@playbook` inside a ```python block in your `.pb`:
 
+````markdown
+# Order management agent
+
 ```python
 @playbook
-async def calculate_shipping(weight: float, destination: str) -> float:
+async def CalculateShipping(weight: float, destination: str) -> float:
     """
     Calculate shipping costs based on weight and destination.
 
@@ -30,17 +34,19 @@ async def calculate_shipping(weight: float, destination: str) -> float:
     ...    
     return base_rate + weight_cost + destination_surcharge
 ```
+````
 
 ### The @playbook decorator
 
 The `@playbook` decorator registers a Python function as a playbook that can be called by other playbooks or triggered based on conditions.
 
+````markdown
 ```python
 @playbook(
     triggers=["When user provides payment information"],
     public=True
 )
-async def validate_payment_info(amount: float, card_info: dict) -> bool:
+async def ValidatePaymentInfo(amount: float, card_info: dict) -> bool:
     """
     Validate payment information.
 
@@ -54,6 +60,7 @@ async def validate_payment_info(amount: float, card_info: dict) -> bool:
     ...
     return True
 ```
+````
 
 #### Decorator parameters
 
@@ -77,6 +84,44 @@ The `@playbook` decorator accepts several parameters that control the playbook's
 **All other keyword arguments become metadata** attached to the playbook. This metadata can be used for documentation, configuration, etc.
 
 See [Metadata](../playbooks-language/metadata.md) for more details.
+
+## Calling other playbooks
+
+Use `await` when calling other markdown or Python playbooks.
+
+````markdown
+# Example agent
+
+```python
+@playbook
+async def PythonPlaybook1():
+    number = await MarkdownPlaybook(100) # call a markdown playbook
+    number = await PythonPlaybook2(number) # call a python playbook
+    
+    return double(number) # call a normal python function
+
+def double(n):
+    return n * 2
+```
+
+## MarkdownPlaybook($num)
+### Steps
+- return PythonPlaybook3($num) # call a python playbook
+
+```python
+import math
+
+@playbook
+async def PythonPlaybook2(n):
+    return n * n
+
+@playbook
+async def PythonPlaybook3(n):
+    return math.pow(n, 3)
+
+```
+
+````
 
 ## Error handling
 

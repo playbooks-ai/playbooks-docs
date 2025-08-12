@@ -54,6 +54,9 @@ Connect to `ws://localhost:8001/ws/<run_id>` to receive a stream of events:
 2. `POST /runs/new` with `{ path: "my.pb" }`
 3. Open WebSocket and render events in your UI
 
-See also: [Playground](playground.md) for a ready-made HTML client.
+## See also
+
+- [Playground](playground.md) for a ready-made HTML client
+- [Observability & Debugging](../observability/index.md)
 
 

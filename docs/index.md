@@ -32,11 +32,11 @@ This isn't just prompting and hoping the LLM does the right thing - it’s **Nat
 ### How It Works
 
 * **Hybrid stack of English + Python**: Seamlessly combine high-level natural-language steps with embedded Python logic (e.g., for system integration, data processing) and execute on a unified call stack.
-* **Event-driven triggers**: Define reactive workflows using natural-language conditions (like “when X happens, run Y playbook”), radically simplifying the specification of complex workflows.
+* **Event-driven triggers**: Define reactive workflows using natural-language conditions (like “when X happens, run Y playbook”), radically simplifying the specification of complex workflows. See [Triggers](triggers/index.md).
 * **Reliability + Flexibility**: Every execution is trackable - variables, call stacks, decisions, runtime flow - ensuring compliance, reproducibility, and confidence in agent behavior. At the same time, using LLMs as CPUs means programs are executed intelligently with common sense and high-level instructions.
-* **Multi-agent**: Build systems of collaborating agents with public playbooks and messaging, simply by asking agents to do things or getting agents to participate in multi-party meetings.
-* **Dynamic generation of playbooks**: Let agents reason over context and objectives, then create new playbooks on the fly to tackle novel tasks. Thanks to the Playbooks runtime, execution of these dynamically generated playbooks is fully trackable and auditable.
-* **Observer agents**: Specialized overseers that monitor other agents step-by-step, catching deviations before any action takes effect, and steering them back on course for injectable governance over multi-agent systems.
+* **Multi-agent**: Build systems of collaborating agents with public playbooks and messaging, simply by asking agents to do things or getting agents to participate in multi-party meetings. See [Agents](agents/index.md).
+* **Dynamic generation of playbooks**: Let agents reason over context and objectives, then create new playbooks on the fly to tackle novel tasks. Thanks to the [Playbooks Runtime](runtime/index.md), execution of these dynamically generated playbooks is fully trackable and auditable. Learn more in [Dynamic Playbook Generation](advanced/dynamic-playbook-generation.md).
+* **Observer agents**: Specialized overseers that monitor other agents step-by-step, catching deviations before any action takes effect, and steering them back on course for injectable governance over multi-agent systems. See [Observer Agents](advanced/observer-agents.md).
 
 ---
 
@@ -50,7 +50,7 @@ This isn't just prompting and hoping the LLM does the right thing - it’s **Nat
 | **Product Strategy**              | Empowers rapid iteration - tune behaviors by editing `.pb` files, experiment safely, reuse logic, and scale confidently.         |
 
 
-Under the hood, Playbooks provides a Common Language Specification (CLS) and a Common Language Runtime (CLR) - the “LLMOS” that validates and supervises program execution.
+Under the hood, Playbooks provides a [Common Language Specification (CLS)](advanced/cls.md) and a [Common Language Runtime (CLR)](runtime/clr.md) - the “LLMOS” that validates and supervises program execution.
 
 <div class="install-command-container">
   <p style="text-align:center;">

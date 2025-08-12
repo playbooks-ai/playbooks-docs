@@ -24,6 +24,6 @@ Concepts:
 - Public playbooks
 - Cross‑agent calls with arguments and return values
 
-Next: Part 5 – Meetings.
+Next: [Part 5 – Meetings](part-5-meetings.md).
 
 

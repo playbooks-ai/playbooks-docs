@@ -31,7 +31,7 @@ The CLR expects LLM responses in a structured format (recap, plan, Var[], Step[]
 
 - Steps map to valid program locations with correct line numbers and codes
 - Variable updates are explicit and typed
-- Triggers are evaluated between steps and on relevant updates
+- [Triggers](../triggers/index.md) are evaluated between steps and on relevant updates
 - Control transfers occur only via valid yields (user, call, exit)
 
 If verification fails, the CLR treats it as unexpected control flow and can recover or surface errors.

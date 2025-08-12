@@ -100,3 +100,8 @@ playbooks run tests/data/01-hello-playbooks.pb
 - VSCode language features not active
     - Install the `playbooks` extension and reopen a `.pb` file
     - Ensure the workspace uses the correct Python interpreter
+
+## Where can I learn more concepts?
+
+- [Playbook Types](playbook-types/index.md)
+- [Playbooks Language](playbooks-language/index.md)

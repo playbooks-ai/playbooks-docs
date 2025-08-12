@@ -1,6 +1,6 @@
 # Triggers
 
-Triggers are a powerful feature in Playbooks AI that enable declarative event-driven programming through natural language conditions. They allow playbooks to be dynamically invoked when specified conditions are met.
+Triggers are a powerful feature in Playbooks AI that enable declarative event-driven programming through natural language conditions. They allow [playbooks](../playbooks-language/playbooks-language.md) to be dynamically invoked when specified conditions are met.
 
 ## What are Triggers?
 
@@ -20,3 +20,4 @@ Triggers provide several advantages:
 
 - See [Adding Triggers](../guides/adding-triggers.md)
 - Refer to [tutorials](../tutorials/index.md) for other topics
+ - Explore [Playbooks Language](../playbooks-language/playbooks-language.md)

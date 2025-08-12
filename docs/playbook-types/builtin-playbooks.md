@@ -104,3 +104,4 @@ Use the following format: {Loadfile("summary-format.txt")}
 - [Python Playbooks](python-playbooks.md) - Using built-in playbooks in Python
 - [Working with Artifacts](../artifacts/index.md) - More on artifacts
 - [Multi-Agent Systems](../agents/index.md) - Communication between agents
+ - [Variables & Expressions](../guides/variables-and-expressions.md)

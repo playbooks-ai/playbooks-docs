@@ -12,6 +12,6 @@ Goal: Debug a program with breakpoints and observe execution logs.
 - Launch the playbooks program in debug mode using the Run menu from VSCode (see Integrations > VSCode) and step through.
 - You can step through the program and observe variables and the call stack.
 
-Next: Part 7 – Web Server and Playground.
+Next: [Part 7 – Web Server and Playground](part-7-web-server-playground.md).
 
 

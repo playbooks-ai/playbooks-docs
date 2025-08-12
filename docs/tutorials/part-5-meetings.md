@@ -24,6 +24,6 @@ Concepts:
 - Meeting playbooks
 - Broadcast coordination
 
-Next: Part 6 – Observability and debugging.
+Next: [Part 6 – Observability and debugging](part-6-observability-debugging.md).
 
 

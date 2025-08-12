@@ -69,5 +69,10 @@ Tips:
 - Use variables to store responses
 - Keep prompts short and specific
 
-See also: [Tutorials Part 1](../tutorials/part-1-user-interaction.md)
+## See also
+
+- [Tutorials Part 1](../tutorials/part-1-user-interaction.md)
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md)
+- [Built-in Playbooks](../playbook-types/builtin-playbooks.md)
+- [Variables & Expressions](variables-and-expressions.md)
 

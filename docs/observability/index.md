@@ -13,22 +13,9 @@ The observability features in Playbooks AI enable you to:
 - Measure and optimize costs
 - Ensure compliance and auditability
 
-## Debug server
+## VSCode Debugger
 
-Run any program with a built-in debug server:
-
-```bash
-playbooks run my.pb --debug --wait-for-client --stop-on-entry
-```
-
-Flags:
-
-- `--debug`: start the server
-- `--debug-host` / `--debug-port`: address (default `127.0.0.1:7529`)
-- `--wait-for-client`: pause until a client attaches
-- `--stop-on-entry`: break at the first step
-
-Attach from VSCode using the Playbooks debug configuration (see Integrations > VSCode). You can set breakpoints in `.pb`, step, and inspect the call stack.
+Attach from VSCode using the Playbooks debug configuration (see [VSCode Extension](../integrations/vscode.md)). You can set breakpoints in `.pb`, step, and inspect the call stack.
 
 ## Session logs and events
 
@@ -40,6 +27,11 @@ Playbooks emits structured session logs and an event bus stream:
 ## Web Server & Playground
 
 Start the server and open the HTML Playground to visualize agent messages and logs live. See Applications > Web Server and > HTML Playground for details.
+
+## See also
+
+- [VSCode Extension](../integrations/vscode.md)
+- [Run with CLI](../guides/run-with-cli.md)
 
 ## LangFuse Integration
 

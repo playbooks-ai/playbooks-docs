@@ -28,11 +28,13 @@ Playbooks as the CLR is a high-performance, transparent execution environment th
 
 ## Why This Matters
 
-In a fragmented ecosystem, there are attempts to standardize the specification, execution and communication between agents and systems, with notable efforts such as the Model Context Protocol (MCP) and the Agent2Agent (A2A) protocol. We believe that Playbooks CLS and CLR is a more principled way of addressing this fragmentation and can inform the development of a industry standard and a more coherent LLM OS stack.
+In a fragmented ecosystem, there are attempts to standardize the specification, execution and communication between agents and systems, with notable efforts such as the Model Context Protocol ([MCP](../agents/mcp-agent.md)) and the Agent2Agent (A2A) protocol. We believe that Playbooks CLS and CLR is a more principled way of addressing this fragmentation and can inform the development of a industry standard and a more coherent LLM OS stack.
 
 Having such a standard also spurs the development of LLMs that excel at being semantic CPUs, such as the PlaybooksLM model family being developed by the Playbooks AI team. Such models can deliver the same level of safety, reliability and verifiability as traditional software, while being able to execute complex workflows and reasoning tasks.
 
 
-See also:
+## See also
 
-- [Playbooks Assembly Language](playbooks-assembly-language.md)
+- [Playbooks Assembly Language](../playbooks-language/playbooks-assembly-language.md)
+- [Common Language Runtime (CLR)](../runtime/clr.md)
+- [Playbooks Languages](../playbooks-language/index.md)

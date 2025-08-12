@@ -51,4 +51,9 @@ Tip: Run your program with the CLI in debug mode to attach: `playbooks run my.pb
 
 See Observability & Debugging for server flags and workflows.
 
+## See also
+
+- [Observability & Debugging](../observability/index.md)
+- [Run with CLI](../guides/run-with-cli.md)
+
 

@@ -4,7 +4,7 @@ title: Agents
 
 # Agents
 
-Agents are first-class runtime entities in Playbooks. They can:
+[Agents](index.md) are first-class runtime entities in Playbooks. They can:
 
 - Run their own playbooks
 - Send messages to other agents
@@ -78,3 +78,4 @@ remote:
 ## Next Steps
 - See more details about [MCP Agents](mcp-agent.md)
 - Refer to [tutorials](../tutorials/index.md) for other topics
+ - Learn about [Exported and Public Playbooks](exported-and-public-playbooks.md)

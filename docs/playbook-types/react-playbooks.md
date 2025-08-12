@@ -47,7 +47,7 @@ See [Markdown Playbooks - Description placeholders](markdown-playbooks.md#descri
 
 ### Triggers
 
-The `### Triggers` section works the same way as in standard markdown playbooks, defining the conditions under which the playbook should execute.
+The `### Triggers` section works the same way as in standard markdown playbooks, defining the conditions under which the playbook should execute. See [Triggers](../triggers/index.md) for details.
 
 ## Default execution flow
 
@@ -135,3 +135,4 @@ Use WebSearch to find relevant information. Analyze the data critically and pres
 - [Markdown Playbooks](markdown-playbooks.md) - For more structured, step-by-step approaches
 - [Python Playbooks](python-playbooks.md) - For complex logic and integrations
 - [Working with Artifacts](../artifacts/index.md) - How ReAct playbooks can create and store data
+ - [Automating Context Engineering](../advanced/automating-context-engineering.md)

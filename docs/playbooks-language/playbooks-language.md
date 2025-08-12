@@ -105,7 +105,7 @@ The output is a string of the validated city in "Austin, TX" format.
 
 #### 4. Triggers
 
-Triggers define when a playbook should execute. They're specified in a section marked by a `### Triggers` heading. The playbook will execute when **any** of the triggers are met.
+[Triggers](../triggers/index.md) define when a playbook should execute. They're specified in a section marked by a `### Triggers` heading. The playbook will execute when **any** of the triggers are met.
 
 ```markdown
 ### Triggers
@@ -139,6 +139,9 @@ Steps support:
 * Control flow (e.g., `End program`, `Return $result`)
 
 > :bulb: When no steps are provided for a markdown playbook, the runtime treats the playbook's description as a [ReAct-style](../playbook-types/react-playbooks.md) prompt.
+> For external agents/tools, see [MCP Agents](../agents/mcp-agent.md) and [External Playbooks](../playbook-types/external-playbooks.md).
+
+> For full manual control over the prompt and no runtime-enriched context, see [Raw Prompt Playbooks](../playbook-types/raw-prompt-playbooks.md).
 
 #### 6. Notes
 
@@ -215,3 +218,4 @@ This playbook looks up order details for a given order number.
 ## Next steps
 
 * [Playbooks Assembly Language](playbooks-assembly-language.md) - How playbooks are compiled for execution
+* [Variables & Expressions](../guides/variables-and-expressions.md)

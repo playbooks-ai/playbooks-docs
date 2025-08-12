@@ -100,18 +100,6 @@ nav:
     - get-started/index.md
     - Installation: get-started/installation.md
     - Quickstart: get-started/quickstart.md
-  - Guides:
-    - guides/index.md
-    - Adding Triggers: guides/adding-triggers.md
-    - User Interaction: guides/user-interaction.md
-    - Call Playbooks: guides/calling-playbooks.md
-    - Variables & Expressions: guides/variables-and-expressions.md
-    - Run with CLI: guides/run-with-cli.md
-    - Environment Variables: guides/environment-variables.md
-    - Compilation and Cache: guides/compilation-and-cache.md
-  - Integrations:
-    - integrations/vscode.md
-    - integrations/langfuse.md
   - Tutorials:
     - tutorials/index.md
     - Part 0 – Install and first run: tutorials/part-0-install-first-run.md
@@ -127,7 +115,7 @@ nav:
     - Playbooks Language: playbooks-language/playbooks-language.md
     - Playbooks Assembly Language: playbooks-language/playbooks-assembly-language.md
     - Metadata: playbooks-language/metadata.md
-    - Playbooks as the CLS and CLR: playbooks-language/cls.md
+    - Playbooks as the CLS and CLR: advanced/cls.md
   - Playbook Types:
     - playbook-types/index.md
     - Markdown Playbooks: playbook-types/markdown-playbooks.md
@@ -154,13 +142,26 @@ nav:
     - applications/playground.md
   - Observability:
     - observability/index.md
+  - Guides:
+    - guides/index.md
+    - Adding Triggers: guides/adding-triggers.md
+    - User Interaction: guides/user-interaction.md
+    - Call Playbooks: guides/calling-playbooks.md
+    - Variables & Expressions: guides/variables-and-expressions.md
+    - Run with CLI: guides/run-with-cli.md
+    - Environment Variables: guides/environment-variables.md
+    - Compilation and Cache: guides/compilation-and-cache.md
+  - Integrations:
+    - integrations/vscode.md
+    - integrations/langfuse.md
   - FAQs: faqs.md
   - Glossary: glossary.md
   - Advanced Concepts:
     - advanced/index.md
+    - Automating Context Engineering: advanced/automating-context-engineering.md
+    - Playbooks as the CLS and CLR: advanced/cls.md
     - Playbooks Protocol: advanced/playbooks-protocol.md
     - Observer Agents: advanced/observer-agents.md
     - Dynamic Playbook Generation: advanced/dynamic-playbook-generation.md
-    - Dynamic Playbook Rewriting: advanced/dynamic-playbook-rewriting.md
   # - API Reference:
   #   - api-reference/index.md

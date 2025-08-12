@@ -8,7 +8,7 @@ External playbooks are operations executed outside the local runtime. They behav
 
 Examples:
 
-- MCP tools exposed by remote servers (see Agents > MCP Agents)
+- MCP tools exposed by remote servers (see [MCP Agents](../agents/mcp-agent.md))
 - HTTP APIs of external AI agents built with other frameworks
 - (future) Exposed methods from an AI agent communicting using the A2A (Agent-to-Agent) protocol
 
@@ -22,4 +22,8 @@ Notes:
 - External playbooks do not call Playbooks playbooks
 - Handle authentication and transport per provider
 
+## See also
+
+- [MCP Agents](../agents/mcp-agent.md)
+- [Playbooks Protocol](../advanced/playbooks-protocol.md)
 

@@ -134,3 +134,4 @@ Now that you've run your first playbook, you can:
 - Go through the [tutorials](../tutorials/index.md)
 - Learn about [Triggers](../triggers/index.md) for more advanced event-based programming
 - Learn how to create [multi-agent systems](../agents/index.md)
+ - Explore [Markdown vs ReAct vs Raw Prompt](../playbook-types/index.md)

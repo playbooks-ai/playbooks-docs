@@ -160,3 +160,5 @@ Then point your MCP agent `url` at the server (e.g., `http://localhost:8000` if 
 ## Next steps
 
 - Review [tutorials](../tutorials/index.md) for more examples
+ - Learn about [External Playbooks](../playbook-types/external-playbooks.md)
+ - Explore [Exported and Public Playbooks](exported-and-public-playbooks.md)

@@ -20,6 +20,6 @@ Open the HTML Playground (see Applications > HTML Playground), set path to your 
 
 Expected: You see agent messages and execution logs in real time.
 
-Next: Continue with Guides for specific tasks.
+Next: Continue with [Guides](../guides/index.md) for specific tasks.
 
 

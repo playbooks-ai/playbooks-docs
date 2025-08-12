@@ -32,5 +32,9 @@ playbooks run program.pb --debug --wait-for-client --stop-on-entry
 ```
 
 
-See also: [Playbooks CLI](../applications/cli.md)
+## See also
+
+- [Playbooks CLI](../applications/cli.md)
+- [VSCode Extension](../integrations/vscode.md)
+- [Observability & Debugging](../observability/index.md)
 

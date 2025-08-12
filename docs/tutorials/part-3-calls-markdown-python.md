@@ -34,6 +34,12 @@ Concepts:
 - Arguments and return values
 - Mixed execution on a unified call stack
 
-Next: Part 4 – Agent‑to‑Agent calls.
+See also:
+
+- [Python Playbooks](../playbook-types/python-playbooks.md)
+- [Markdown Playbooks](../playbook-types/markdown-playbooks.md)
+- [Triggers](../triggers/index.md)
+
+Next: [Part 4 – Agent‑to‑Agent calls](part-4-agent-to-agent.md).
 
 

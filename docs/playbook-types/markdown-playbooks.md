@@ -124,7 +124,7 @@ Full state: {agent.state}
 
 ### Triggers
 
-The `### Triggers` section defines the conditions under which the playbook should execute. The playbook will run when **any** of the listed triggers are met.
+The `### Triggers` section defines the conditions under which the playbook should execute. The playbook will run when **any** of the listed triggers are met. See [Triggers](../triggers/index.md) for concepts and patterns.
 
 Common trigger types include:
 
@@ -210,11 +210,22 @@ Steps can include:
   - Add $product_total to $grand_total
 ```
 
-#### Playbook calls
+#### Calling other playbooks
+
+Both markdown and Python playbooks can be called using Python function syntax or natural language instruction.
+
 ```markdown
+- Validate the email
 - ValidateEmail($email)
+
+- Figure out how much it would cost to ship $weight to $destination
 - $shipping_cost = CalculateShipping($weight, $destination)
-- ProcessPayment($order_total)
+
+- Process payment
+- ProcessPayment(total=$order_total)
+
+- Ask accountant to calculate the tax amount
+- $tax_amount = Accountant.CalculateTax($order_total)
 ```
 
 #### Control flow
@@ -241,36 +252,27 @@ Notes are used to handle exceptions, provide style guidance, or specify business
 Here's a complete example of a markdown playbook for handling order status inquiries:
 
 ```markdown
-## CheckOrderStatusFlow($authToken)
+## CheckOrder_statusFlow($authToken)
 Check the status of an order.
 
 ### Trigger
 - When the user is authenticated and requests order status
 
 ### Steps
-- Ask user for $orderId
-- $orderStatus = GetOrderStatus($orderId)
-- Extract $expectedDeliveryDate from $orderStatus
-- Say("Your order {$orderId} is expected to be delivered on {$expectedDeliveryDate}.")
+- Ask user for $order_id
+- Get $order_status
+- Extract $expected_delivery_date from $order_status
+- Tell user when their order will be delivered
 
 ### Notes
-- The $orderStatus dictionary includes the keys: orderId, expectedDeliveryDate.
+- The $order_status dictionary includes the keys: order_id, expected_delivery_date.
 - Always confirm that $authToken is valid before calling GetOrderStatus.
 ```
-
-## Best practices
-
-1. **Be specific and clear**: Write steps that clearly describe what the agent should do.
-2. **Use variables consistently**: Use the `$` prefix for all variables and maintain consistent naming.
-3. **Handle edge cases**: Include steps for handling unexpected user responses or system failures.
-4. **Break down complex tasks**: Keep steps simple and focused on a single action.
-5. **Use playbook calls**: Factor out reusable logic into separate playbooks that can be called.
-6. **Provide helpful notes**: Use the Notes section to guide the agent on tone, exceptions, and business rules.
-7. **Use meaningful trigger conditions**: Make trigger conditions specific to ensure playbooks run at the right time.
 
 ## Related topics
 
 - [ReAct Playbooks](react-playbooks.md) - For less structured, reasoning-based approaches
+- [Raw Prompt Playbooks](raw-prompt-playbooks.md) - For simple, one-off playbooks where you want to control the prompt entirely
 - [Python Playbooks](python-playbooks.md) - For complex logic and integrations
 - [Calling Playbooks](../guides/calling-playbooks.md) - How to call one playbook from another
 - [Adding Triggers](../guides/adding-triggers.md) - More about trigger types and usage

@@ -109,3 +109,4 @@ This is an accountant agent that can help with accounting tasks.
 - [Python Playbooks](../playbook-types/python-playbooks.md) - Python-specific features
 - [Playbooks Assembly Language](playbooks-assembly-language.md) - Compilation target
 - [Multi-Agent Systems](../agents/index.md) - Using metadata for agent coordination 
+- [Exported and Public Playbooks](../agents/exported-and-public-playbooks.md)
