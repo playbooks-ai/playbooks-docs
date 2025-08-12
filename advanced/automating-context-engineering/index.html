@@ -2235,11 +2235,11 @@
 
 
 <h1 id="automating-the-art-of-context-engineering-with-stack-based-context-management">Automating the Art of Context Engineering with Stack-Based Context Management<a class="headerlink" href="#automating-the-art-of-context-engineering-with-stack-based-context-management" title="Permanent link">&para;</a></h1>
-<p><strong>Context Engineering</strong> is fast becoming one of the most important disciplines in building effective AI agents. In its simplest form, it’s about deciding <em>what</em> to feed a Large Language Model (LLM) for each generation and <em>how</em> to arrange it so the model performs at its best with minimal token usage. In practice, it has become a nuanced craft: choosing relevant facts, ordering them, summarizing past interactions, compacting verbose histories, and stitching together system and user instructions — all while staying within tight context limits.</p>
+<p><strong>Context Engineering</strong> is fast becoming one of the most important disciplines in building effective AI agents. In its simplest form, it’s about deciding <em>what</em> to feed a Large Language Model (LLM) for each generation and <em>how</em> to arrange it so the model performs at its best with minimal token usage. In practice, it has become a nuanced craft: choosing relevant facts, ordering them, summarizing past interactions, compacting verbose histories, and stitching together system and user instructions - all while staying within tight context limits.</p>
 <p>In most frameworks today, context engineering is <strong>hand-rolled</strong>. Developers write intricate, case-specific logic to decide what to include in each prompt, how to place it, when to summarize, and how to balance detail with brevity. Every complex agent ends up with its own bespoke, fragile context pipeline.</p>
-<p>Playbooks takes a different approach: <strong>automated, stack-based context management</strong> built into the runtime. This makes advanced context engineering available to <em>every</em> agent, without custom code, and evolves with the platform — so all agents benefit as the capabilities grow.</p>
+<p>Playbooks takes a different approach: <strong>automated, stack-based context management</strong> built into the runtime. This makes advanced context engineering available to <em>every</em> agent, without custom code, and evolves with the platform - so all agents benefit as the capabilities grow.</p>
 <h2 id="how-playbooks-automates-context-engineering">How Playbooks Automates Context Engineering<a class="headerlink" href="#how-playbooks-automates-context-engineering" title="Permanent link">&para;</a></h2>
-<p>Playbooks’ runtime constructs each LLM call’s prompt with an optimized blend of <strong>recency, relevance, and compactness</strong> — while preserving a rich execution trace.</p>
+<p>Playbooks’ runtime constructs each LLM call’s prompt with an optimized blend of <strong>recency, relevance, and compactness</strong> - while preserving a rich execution trace.</p>
 <p>At the core is <strong>stack-based context</strong>:</p>
 <ul>
 <li>Each LLM call typically executes just a few lines of a playbook.</li>
@@ -2247,27 +2247,27 @@
 <li>This stack-shaped history is a structured narrative of everything that has happened since the agent began execution.</li>
 </ul>
 <p>When a playbook returns, the runtime <strong>auto-compacts</strong> the context by replacing its detailed trace with an auto-generated summary of what happened during that playbook’s execution. The caller playbook then continues with a concise record of the result, freeing context space while preserving semantic continuity.</p>
-<p>This <strong>stack-based unwinding of context</strong> — with automatic summarization on return — is a capability unique to Playbooks. Other frameworks often use flat rolling buffers or ad-hoc summarizers, losing the hierarchical execution structure and forcing manual summarization strategies.</p>
+<p>This <strong>stack-based unwinding of context</strong> - with automatic summarization on return - is a capability unique to Playbooks. Other frameworks often use flat rolling buffers or ad-hoc summarizers, losing the hierarchical execution structure and forcing manual summarization strategies.</p>
 <h2 id="additional-built-in-context-engineering-features">Additional Built-In Context Engineering Features<a class="headerlink" href="#additional-built-in-context-engineering-features" title="Permanent link">&para;</a></h2>
 <p>Playbooks’ context system goes beyond execution traces. The runtime automatically enriches the prompt with:</p>
 <ul>
 <li><strong>Optimal use of cached prefixes</strong> to avoid repeated token overhead.</li>
-<li><strong>Automatic representation of agent state</strong> — variables, artifacts, and other runtime data.</li>
-<li><strong>Discovery metadata</strong> — a current listing of all agents in the system and their public playbooks.</li>
-<li><strong>Self-description</strong> — the current agent’s own playbooks and triggers.</li>
-<li><strong>Dynamic resource inclusion</strong> — a playbook can pull in needed data (e.g., via <code>LoadFile()</code> in a description placeholder) only for its own execution. Once the playbook finishes, the resource is automatically dropped from context.</li>
+<li><strong>Automatic representation of agent state</strong> - variables, artifacts, and other runtime data.</li>
+<li><strong>Discovery metadata</strong> - a current listing of all agents in the system and their public playbooks.</li>
+<li><strong>Self-description</strong> - the current agent’s own playbooks and triggers.</li>
+<li><strong>Dynamic resource inclusion</strong> - a playbook can pull in needed data (e.g., via <code>LoadFile()</code> in a description placeholder) only for its own execution. Once the playbook finishes, the resource is automatically dropped from context.</li>
 </ul>
-<p>This makes it trivial to give an agent just the right information at just the right time — and to clean it up immediately after, keeping context lean and relevant.</p>
+<p>This makes it trivial to give an agent just the right information at just the right time - and to clean it up immediately after, keeping context lean and relevant.</p>
 <h2 id="full-control-when-needed">Full Control When Needed<a class="headerlink" href="#full-control-when-needed" title="Permanent link">&para;</a></h2>
 <p>While the default stack-based context management handles the majority of cases, some scenarios require <em>total</em> control over the prompt. For those, Playbooks offers <strong>Raw Prompt Playbooks</strong>. In a raw prompt playbook, the runtime adds no automatic context at all, leaving the developer free to craft every detail of what the LLM sees. This provides a clean escape hatch for specialized tasks without sacrificing the benefits of the default system for everything else.</p>
 <h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
-<p>Advanced context engineering has historically been a barrier to scaling agent complexity — it required deep expertise and constant maintenance. Playbooks’ approach turns it into infrastructure:</p>
+<p>Advanced context engineering has historically been a barrier to scaling agent complexity - it required deep expertise and constant maintenance. Playbooks’ approach turns it into infrastructure:</p>
 <ul>
 <li>Complex agents can be built without bespoke prompt pipelines.</li>
 <li>Context is always optimized for both <strong>effectiveness</strong> (enough relevant detail) and <strong>efficiency</strong> (minimal unnecessary tokens).</li>
 <li>Agents naturally benefit from future improvements to the context system without rewriting code.</li>
 </ul>
-<p>By combining <strong>stack-based execution traces</strong>, <strong>automatic compaction</strong>, <strong>dynamic resource management</strong>, and <strong>built-in system intelligence</strong>, Playbooks delivers context engineering as a <strong>platform capability</strong> — not a per-agent chore.</p>
+<p>By combining <strong>stack-based execution traces</strong>, <strong>automatic compaction</strong>, <strong>dynamic resource management</strong>, and <strong>built-in system intelligence</strong>, Playbooks delivers context engineering as a <strong>platform capability</strong> - not a per-agent chore.</p>
 
 
 
