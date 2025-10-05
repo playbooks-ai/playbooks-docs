@@ -1,0 +1,135 @@
+/* Custom styles for Playbooks AI documentation */
+
+body .md-typeset {
+    font-size: 0.9rem;
+}
+/* Custom container for the installation command */
+.install-command-container {
+    margin: 2em 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    padding: 1em;
+}
+
+/* Center logo and text */
+.centered-logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+/* Footer styles */
+.footer {
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Cards grid */
+.grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+/* Card styles */
+.grid.cards>* {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.grid.cards>*:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Material icons adjustments */
+.md-button {
+    transition: all 0.3s ease;
+}
+
+.md-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Code blocks */
+.highlight {
+    border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .install-command-container {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .grid.cards>* {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #111;
+    --md-primary-fg-color--light: #bbb;
+    --md-primary-fg-color--dark: #112748;
+    --md-accent-fg-color: #2d6fd4;
+    --md-default-bg-color: #eee;
+    --md-default-fg-color--light: #000;
+    --md-typeset-a-color: #027199 !important;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #333;
+    --md-primary-fg-color--light: #111;
+    --md-primary-fg-color--dark: #dbaa78;
+    --md-accent-fg-color: #fff;
+    --md-default-bg-color: #111;
+    --md-default-fg-color--light: #ffffff;
+    --md-typeset-a-color: #4ac9ff !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+    background-color: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover {
+    color: var(--md-primary-fg-color);
+    background-color: var(--md-default-fg-color--light);
+}
+
+[data-md-color-scheme="default"] img[src$="#gh-dark-mode-only"] {
+    display: none;
+    /* Hide dark images in light mode */
+}
+
+[data-md-color-scheme="slate"] img[src$="#gh-light-mode-only"] {
+    display: none;
+    /* Hide dark images in light mode */
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .grid.cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+strong {
+    color: var(--md-primary-fg-color--dark);
+}
+
+.language-text code span {
+    white-space: pre-wrap;
+}
+
+.md-content a {
+    text-decoration: underline;
+}
+
+.md-content .language-markdown.highlight a, .md-content .language-diff.highlight a {
+    text-decoration: none;
+}

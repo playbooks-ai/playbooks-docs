@@ -2,131 +2,103 @@
 hide:
   - toc
 ---
-
-<div style="text-align: center;">
-  <div class="centered-logo-text-group">
-    <h1>
-    <img src="assets/images/playbooks-logo.png#gh-light-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
-    <img src="assets/images/playbooks-logo-dark.png#gh-dark-mode-only" alt="Playbooks AI" style="width: 200px; height: 200px;">
-    </h1>
-  </div>
+<div align="center">
+   <h1>
+   <picture>
+      <img alt="Playbooks AI" src="assets/images/playbooks-logo-dark.png#gh-dark-mode-only" width=200 height=200>
+      <img alt="Playbooks AI" src="assets/images/playbooks-logo.png#gh-light-mode-only" width=200 height=200>
+   </picture>
+  <h2 align="center">LLM is your new CPU<br/>Welcome to Software 3.0</h2>
 </div>
 
-## Playbooks AI — Natural Language Programs, Verifiable Control, Multi-Agent
+**Build multi‑agent AI systems** with ease with Python code running on CPU and **natural language code running on LLM**.
 
-**Playbooks AI** introduces a programming paradigm where you define AI agent behavior through **clear, human-readable instructions**, crafted in plain English inside markdown “playbooks” that look like recipes, and are fully executable. Playbooks AI is a software stack for the [**Software 3.0**](https://www.youtube.com/watch?v=LCEmiRjPEtQ) era that seamlessly combines traditional code (Software 1.0), data-trained models (Software 2.0) and behavior defined directly in plain English, executed by LLMs as if they were CPUs (Software 3.0).
+Stop writing prompts and hoping that the LLM will follow them faithfully. Instead, get **verifiable natural language program execution** with Playbooks.
 
-This isn't just prompting and hoping the LLM does the right thing - it’s **Natural Language Programming**. Business users can read, tweak, and approve the specification directly; while developers benefit from consistency, auditability, and full visibility into execution paths.
+Playbooks is an innovative framework for building and executing AI agents using "playbooks" – structured workflows defined in natural language and Python code. Created by [Amol Kelkar](https://www.linkedin.com/in/amol-kelkar/), the framework is part of the world's first Software 3.0 tech stack, Playbooks AI. It includes a **new programming language** (markdown-formatted .pb files) that are compiled to Playbooks Assembly Language (.pbasm files), that are then executed by the Playbooks Runtime.
 
-<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start;">
-  <div style="flex: 1 1 360px; min-width: 320px; background-color: white; border-radius: 8px;">
-    <img alt="Playbooks program example" src="https://www.runplaybooks.ai/_next/image?url=%2Fimages%2Fplaybooks-ai-example-program.png&w=2048&q=75" style="width: 100%; border-radius: 8px; padding: 12px;" />
-    <p style="text-align:center; font-size: 0.9rem; margin-top: 6px;">Natural Language Playbooks program (support.pb)</p>
-  </div>
-  <div style="flex: 1 1 360px; min-width: 320px; background-color: white; border-radius: 8px;">
-    <img alt="VS Code debugger showing step-by-step execution" src="https://www.runplaybooks.ai/_next/image?url=%2Fimages%2Fplaybooks-ai-vscode-debugger.png&w=2048&q=75" style="width: 100%; border-radius: 8px; padding: 12px;" />
-    <p style="text-align:center; font-size: 0.9rem; margin-top: 6px;">Step debugging compiled program (support.pbasm)</p>
-  </div>
-</div>
-
-### How It Works
-
-* **Hybrid stack of English + Python**: Seamlessly combine high-level natural-language steps with embedded Python logic (e.g., for system integration, data processing) and execute on a unified call stack.
-* **Event-driven triggers**: Define reactive workflows using natural-language conditions (like “when X happens, run Y playbook”), radically simplifying the specification of complex workflows. See [Triggers](triggers/index.md).
-* **Reliability + Flexibility**: Every execution is trackable - variables, call stacks, decisions, runtime flow - ensuring compliance, reproducibility, and confidence in agent behavior. At the same time, using LLMs as CPUs means programs are executed intelligently with common sense and high-level instructions.
-* **Multi-agent**: Build systems of collaborating agents with public playbooks and messaging, simply by asking agents to do things or getting agents to participate in multi-party meetings. See [Agents](agents/index.md).
-* **Dynamic generation of playbooks**: Let agents reason over context and objectives, then create new playbooks on the fly to tackle novel tasks. Thanks to the [Playbooks Runtime](runtime/index.md), execution of these dynamically generated playbooks is fully trackable and auditable. Learn more in [Dynamic Playbook Generation](advanced/dynamic-playbook-generation.md).
-* **Observer agents**: Specialized overseers that monitor other agents step-by-step, catching deviations before any action takes effect, and steering them back on course for injectable governance over multi-agent systems. See [Observer Agents](advanced/observer-agents.md).
+Unlike other AI agent frameworks, **Playbooks programs are highly readable**. Business users can understand, change, and approve agent behavior specified in natural language; while developers benefit from the flexibility of running Python code on CPU and natural lanuage code on LLM, on the same call stack, and with full observability and control.
 
 ---
 
-### Why It Matters
+Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
 
-| Participant                       | Benefit                                                                                                                        |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Business Users**                | Can author and refine playbooks in natural language. Transparency and control sit at the specification level. |
-| **Developers & Engineers**        | Gain a reliable runtime instead of black box LLM prompt execution, with observability, testability, triggers, multi-agent coordination, and audit-ready outputs.          |
-| **Governance & Compliance Teams** | Source is English-readable, version-controlled, and verifiable—ideal for reviews, sign-offs, and traceability.                 |
-| **Product Strategy**              | Empowers rapid iteration - tune behaviors by editing `.pb` files, experiment safely, reuse logic, and scale confidently.         |
+Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** is equivalent to more than [10x longer, cryptic LangGraph code](assets/country-facts.langgraph.py).
+````markdown linenums="1" title="country-facts.pb"
+# Country facts agent
+This agent prints interesting facts about nearby countries
 
-
-Under the hood, Playbooks provides a [Common Language Specification (CLS)](advanced/cls.md) and a [Common Language Runtime (CLR)](runtime/clr.md) - the “LLMOS” that validates and supervises program execution.
-
-<div class="install-command-container">
-  <p style="text-align:center;">
-    Get started:
-    <br/>
-    <code>pip install playbooks</code>
-  </p>
-</div>
-
-<p style="text-align:center;">
-  <a href="get-started/quickstart/" class="md-button" style="margin:3px">Quickstart</a>
-  <a href="tutorials/" class="md-button" style="margin:3px">Tutorials</a>
-  <a href="guides/" class="md-button" style="margin:3px">Guides</a>
-  <a href="playbooks-language/" class="md-button" style="margin:3px">Language</a>
-</p>
-
-## Quick example
-
-```markdown
-# Customer support agent
-A demo customer support agent for Playbooks AI
- 
-## Greet the user
-In this playbook, the customer support agent welcomes the user
+## Main
 ### Triggers
 - At the beginning
 ### Steps
-- Tell user about yourself
-- Ask the user for their name
-- Say hello to the user by name
-- Welcome user to Playbooks AI and say goodbye
+- Ask user what $country they are from
+- If user did not provide a country, engage in a conversation and gently nudge them to provide a country
+- List 5 $countries near $country
+- Tell the user the nearby $countries
+- Inform the user that you will now tell them some interesting facts about each of the countries
+- process_countries($countries)
 - End program
+
+```python
+from typing import List
+
+@playbook
+async def process_countries(countries: List[str]):
+    for country in countries:
+        # Calls the natural language playbook 'GetCountryFact' for each country
+        fact = await GetCountryFact(country)
+        await Say("user", f"{country}: {fact}")
 ```
 
-### Run it
+## GetCountryFact($country)
+### Steps
+- Return an unusual historical fact about $country
+````
+## Try out Playbooks in 10 minutes
+You will need Python 3.12+ and your Anthropic API key.
 
-Save the example as `support.pb`, then run:
-
-```bash
+### 1. Install Playbooks
+```
 pip install playbooks
-playbooks run support.pb
 ```
 
----
+### 2. Run example program
+Use one of the following methods -
 
-## Pick your path
+#### a. Playbooks CLI
+```bash
+ANTHROPIC_API_KEY=sk-ant-... playbooks run country-facts.pb
+```
 
-Choose your starting point - each tile is a direct jump into docs with just enough context to know it’s right for you.
+#### b. Playbooks Playground
+```bash
+ANTHROPIC_API_KEY=sk-ant-... playbooks playground
+```
+Put your program path and click "Run Program". You can turn on "Execution Logs" to see the program execution details.
 
+#### c. Python API
+   ```python
+   from playbooks import Playbooks
+
+   pb = Playbooks(["country-facts.pb"]) # absolute or relative path
+   await pb.initialize()
+   await pb.program.run_till_exit()
+   ```
+
+### 3. Step debugging in VSCode (Optional)
+
+Install the **Playbooks Language Support** extension for Visual Studio Code:
+
+1. Open VSCode
+2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Search for "Playbooks Language Support"
+4. Click Install
+
+The extension provides debugging capabilities for playbooks programs, making it easier to develop and troubleshoot your AI agents. Once the plugin is installed, you can open a playbooks .pb file and start debugging!
+
+## Let's build something amazing with Playbooks!
 <div class="grid cards" markdown>
-
-* :material-language-markdown: **Explore Playbooks Language**<br/>
-  Write and refine agent behavior in plain English that anyone can understand and update.<br/>
-  [Get started →](playbooks-language/index.md)
-
-* :material-code-braces: **Build with Python**<br/>
-  Add integrations, custom logic, or optimized computation—bridge English specs with code.<br/>
-  [Learn how →](playbook-types/python-playbooks.md)
-
-* :material-account-group: **Design Multi-Agent Systems**<br/>
-  Create agents that collaborate, share context, and run public or exported playbooks.<br/>
-  [See patterns →](agents/index.md)
-
-* :material-bell-ring: **Automate with Triggers**<br/>
-  Run playbooks automatically on schedules, events, or user actions.<br/>
-  [Set up triggers →](triggers/index.md)
-
-* :material-magnify-scan: **Gain Full Observability**<br/>
-  Inspect every step, replay runs, debug deterministically, and keep audit-ready logs.<br/>
-  [View tools →](observability/index.md)
-
-* :material-shield-check: **Control Autonomy & Safety**<br/>
-  Set guardrails, approvals, and per-step autonomy to keep agents aligned with intent.<br/>
-  [Configure controls →](observability/index.md)
-
+- :material-rocket: **Quickstart** — your first playbook<br/>[Start here →](getting-started/index.md)
+- :material-code-braces: **Tutorials** — learn by doing<br/>[How it works →](tutorials/index.md)
 </div>
-
-
-<div class="footer"></div>

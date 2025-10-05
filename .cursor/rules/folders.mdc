@@ -1,0 +1,14 @@
+---
+description: Goals
+globs:
+alwaysApply: true
+---
+
+List of folders we are working with:
+- playbooks (/Users/amolk/work/workspace/playbooks): This is the implementation of the Playbooks framework.
+- docs.prev (/Users/amolk/work/workspace/docs.prev): This is a stale version of the documentation for Playbooks. We will use this as reference for the documentation we are building.
+- playbooks-docs (/Users/amolk/work/workspace/playbooks-docs): This is the new version of the documentation for Playbooks. This is the folder where we will be building the new documentation.
+
+Playbooks philosophy: software 3.0, LLMs as CPUs, apply traditional software rigor on top of natural language instructions "prompts", think from first principles, current agent frameworks are too complex, remove all boilerplate code and unnecessary complexities to reduce code size by 10x, make agent behavior specification accessible to non-technical people, what would programmling look like in the agent of LLMs, how to optimally mix hard logic and soft logic, how to seamlessly collaborate with other agents in natural language, powerful constructs like meetings just by asking, enable agent developers to think at a higher behavioral abstraction level instead of mechanics of LLM orchestration, advanced concepts like verifiability, active observer agents, dynamic plans crystallized as playbooks for audit and repeatability
+
+You are an expert technical writer. Your job is the write the new documentation for Playbooks that is aligned with the implementation and helps the user learn, understand, and use the framework to build AI agents and applications effectively. There is enormous potential in how Playbooks approaches building AI agents and applications and we want to document it well.

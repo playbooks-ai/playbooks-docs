@@ -13,7 +13,7 @@ copyright: Copyright Playbooks AI 2025
 
 # Custom CSS
 extra_css:
-  - stylesheets/custom.css
+  - assets/stylesheets/custom.css
 
 # Configuration
 theme:
@@ -61,10 +61,13 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
+      line_spans: __codeline__
       pygments_lang_class: true
+      pygments_style: vs
+      noclasses: false
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      url_download: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -96,72 +99,19 @@ plugins:
 # Navigation
 nav:
   - Home: index.md
-  - Get Started:
-    - get-started/index.md
-    - Installation: get-started/installation.md
-    - Quickstart: get-started/quickstart.md
-  - Tutorials:
-    - tutorials/index.md
-    - Part 0 – Install and first run: tutorials/part-0-install-first-run.md
-    - Part 1 – User interaction: tutorials/part-1-user-interaction.md
-    - Part 2 – Triggers: tutorials/part-2-triggers.md
-    - Part 3 – Calls (Markdown ↔ Python): tutorials/part-3-calls-markdown-python.md
-    - Part 4 – Agent‑to‑Agent calls: tutorials/part-4-agent-to-agent.md
-    - Part 5 – Meetings: tutorials/part-5-meetings.md
-    - Part 6 – Observability and debugging: tutorials/part-6-observability-debugging.md
-    - Part 7 – Web Server and Playground: tutorials/part-7-web-server-playground.md
-  - Playbooks Language:
-    - playbooks-language/index.md
-    - Playbooks Language: playbooks-language/playbooks-language.md
-    - Playbooks Assembly Language: playbooks-language/playbooks-assembly-language.md
-    - Metadata: playbooks-language/metadata.md
-    - Playbooks as the CLS and CLR: advanced/cls.md
-  - Playbook Types:
-    - playbook-types/index.md
-    - Markdown Playbooks: playbook-types/markdown-playbooks.md
-    - ReAct Playbooks: playbook-types/react-playbooks.md
-    - Raw Prompt Playbooks: playbook-types/raw-prompt-playbooks.md
-    - Python Playbooks: playbook-types/python-playbooks.md
-    - External Playbooks: playbook-types/external-playbooks.md
-    - Built-in Playbooks: playbook-types/builtin-playbooks.md
-  - Triggers:
-    - triggers/index.md
-  - Artifacts:
-    - artifacts/index.md
-  - Agents:
-    - agents/index.md
-    - MCP Agents: agents/mcp-agent.md
-    - Exported and Public Playbooks: agents/exported-and-public-playbooks.md
-  - Runtime:
-    - runtime/index.md
-    - Common Language Runtime (CLR): runtime/clr.md
-  - Applications:
-    - applications/index.md
-    - applications/cli.md
-    - applications/web-server.md
-    - applications/playground.md
-  - Observability:
-    - observability/index.md
-  - Guides:
-    - guides/index.md
-    - Adding Triggers: guides/adding-triggers.md
-    - User Interaction: guides/user-interaction.md
-    - Call Playbooks: guides/calling-playbooks.md
-    - Variables & Expressions: guides/variables-and-expressions.md
-    - Run with CLI: guides/run-with-cli.md
-    - Environment Variables: guides/environment-variables.md
-    - Compilation and Cache: guides/compilation-and-cache.md
-  - Integrations:
-    - integrations/vscode.md
-    - integrations/langfuse.md
-  - FAQs: faqs.md
-  - Glossary: glossary.md
-  - Advanced Concepts:
-    - advanced/index.md
-    - Automating Context Engineering: advanced/automating-context-engineering.md
-    - Playbooks as the CLS and CLR: advanced/cls.md
-    - Playbooks Protocol: advanced/playbooks-protocol.md
-    - Observer Agents: advanced/observer-agents.md
-    - Dynamic Playbook Generation: advanced/dynamic-playbook-generation.md
-  # - API Reference:
-  #   - api-reference/index.md
+  - Getting Started: getting-started/index.md
+  - Tutorial: tutorials/index.md
+  - Reference:
+    - Configuration System: reference/config.md
+    - Supported Models: reference/models.md
+    - Playbooks AI: reference/playbooks-ai.md
+    - Playbooks Language: reference/playbooks-language.md
+    - Playbooks Assembly Language: reference/playbooks-assembly-language.md
+    - Agents: reference/agents.md
+    - MCP based Agents: reference/mcp-agent.md
+    - Exported and Public Playbooks: reference/exported-and-public-playbooks.md
+    - Playbook Types: reference/playbook-types.md
+    - Built-in Playbooks: reference/builtin-playbooks.md
+    - Triggers: reference/triggers.md
+    - Context Engineering: reference/context-engineering.md
+    - Description Placeholders: reference/description-placeholders.md
