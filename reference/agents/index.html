@@ -10,22 +10,28 @@
       
       
       
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/reference/agents/">
       
       
+        <link rel="prev" href="../playbooks-assembly-language/">
       
-      <link rel="icon" href="/playbooks-ai/playbooks/assets/favicon.png">
+      
+        <link rel="next" href="../mcp-agent/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Playbooks AI</title>
+        <title>Agents - Playbooks AI</title>
       
     
     
-      <link rel="stylesheet" href="/playbooks-ai/playbooks/assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="/playbooks-ai/playbooks/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,11 +50,11 @@
       
     
     
-      <link rel="stylesheet" href="/playbooks-ai/playbooks/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="/playbooks-ai/playbooks/assets/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
     
-    <script>__md_scope=new URL("/playbooks-ai/playbooks/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#agents" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/playbooks-ai/playbooks/." title="Playbooks AI" class="md-header__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+    <a href="../.." title="Playbooks AI" class="md-header__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41z"/></svg>
@@ -105,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Agents
             
           </span>
         </div>
@@ -221,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/playbooks-ai/playbooks/." title="Playbooks AI" class="md-nav__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+    <a href="../.." title="Playbooks AI" class="md-nav__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41z"/></svg>
@@ -251,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -273,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -295,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/tutorials/" class="md-nav__link">
+      <a href="../../tutorials/" class="md-nav__link">
         
   
   
@@ -314,8 +325,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -349,11 +362,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -369,7 +382,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -383,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/config/" class="md-nav__link">
+      <a href="../config/" class="md-nav__link">
         
   
   
@@ -406,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/models/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
@@ -429,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/playbooks-ai/" class="md-nav__link">
+      <a href="../playbooks-ai/" class="md-nav__link">
         
   
   
@@ -452,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/playbooks-language/" class="md-nav__link">
+      <a href="../playbooks-language/" class="md-nav__link">
         
   
   
@@ -475,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/playbooks-assembly-language/" class="md-nav__link">
+      <a href="../playbooks-assembly-language/" class="md-nav__link">
         
   
   
@@ -495,10 +508,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/agents/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -509,6 +531,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -521,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/mcp-agent/" class="md-nav__link">
+      <a href="../mcp-agent/" class="md-nav__link">
         
   
   
@@ -544,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/exported-and-public-playbooks/" class="md-nav__link">
+      <a href="../exported-and-public-playbooks/" class="md-nav__link">
         
   
   
@@ -567,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/playbook-types/" class="md-nav__link">
+      <a href="../playbook-types/" class="md-nav__link">
         
   
   
@@ -590,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/builtin-playbooks/" class="md-nav__link">
+      <a href="../builtin-playbooks/" class="md-nav__link">
         
   
   
@@ -613,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/triggers/" class="md-nav__link">
+      <a href="../triggers/" class="md-nav__link">
         
   
   
@@ -636,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/context-engineering/" class="md-nav__link">
+      <a href="../context-engineering/" class="md-nav__link">
         
   
   
@@ -659,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/playbooks-ai/playbooks/reference/description-placeholders/" class="md-nav__link">
+      <a href="../description-placeholders/" class="md-nav__link">
         
   
   
@@ -699,6 +722,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -710,8 +735,89 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="agents">Agents<a class="headerlink" href="#agents" title="Permanent link">&para;</a></h1>
+<p>Agents are first-class runtime entities in Playbooks. They can:</p>
+<ul>
+<li>Run their own playbooks</li>
+<li>Send messages to other agents</li>
+<li>Call other agents’ <a href="../exported-and-public-playbooks/">public playbooks</a> directly</li>
+<li>Participate in multi-agent meetings</li>
+</ul>
+<p>In multi-agent programs, use natural language to specify messaging, meetings, and public playbook calls.</p>
+<h1 id="playbooks-ai-agents">Playbooks AI Agents<a class="headerlink" href="#playbooks-ai-agents" title="Permanent link">&para;</a></h1>
+<h2 id="create-an-agent">Create an agent<a class="headerlink" href="#create-an-agent" title="Permanent link">&para;</a></h2>
+<p>It is easy to create an AI agent using Playbooks.</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># Hello World Agent</span>
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>This is a simple agent that says hello world.
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gu">### Trigger</span>
+</span><span id="__codeline__-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">-</span><span class="w"> </span>When program starts
+</span><span id="__codeline__-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__codeline__-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">-</span><span class="w"> </span>Say Hello World!
+</span><span id="__codeline__-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div>
+<p>This creates a Hello World agent.</p>
+<h2 id="create-multiple-agents">Create multiple agents<a class="headerlink" href="#create-multiple-agents" title="Permanent link">&para;</a></h2>
+<p>A program is a collection of agents. Agents that are part of a program can natively call each other's <a href="../exported-and-public-playbooks/">public playbooks</a>.</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Agent 1</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gu">## PB1</span>
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>public: true
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">-</span><span class="w"> </span>Say Hello
+</span><span id="__codeline__-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__codeline__-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="gh"># Agent 2</span>
+</span><span id="__codeline__-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="gu">## PB2</span>
+</span><span id="__codeline__-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="gu">### Trigger</span>
+</span><span id="__codeline__-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span>When program starts
+</span><span id="__codeline__-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">-</span><span class="w"> </span>call Agent 1&#39;s PB1
+</span><span id="__codeline__-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">-</span><span class="w"> </span>end program
+</span></code></pre></div>
+<h2 id="create-an-agent-backed-by-an-mcp-server">Create an agent backed by an MCP server<a class="headerlink" href="#create-an-agent-backed-by-an-mcp-server" title="Permanent link">&para;</a></h2>
+<p>It is easy to create an agent that exposes tools from an MCP server as playbooks.</p>
+<p>Say we have an MCP server running at <code>http://localhost:8088/mcp</code> that exposes a <code>get_weather(zipcode: int) -&gt; dict</code> tool that takes a zipcode and returns a weather report.</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># MCP Agent</span>
+</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>remote:
+</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  type: mcp
+</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  transport: streamable-http
+</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  url: http://localhost:8088/mcp
+</span><span id="__codeline__-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__codeline__-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="gh"># Local Agent</span>
+</span><span id="__codeline__-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gu">### Trigger</span>
+</span><span id="__codeline__-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">-</span><span class="w"> </span>When program starts
+</span><span id="__codeline__-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">-</span><span class="w"> </span>ask the user for a zipcode
+</span><span id="__codeline__-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">-</span><span class="w"> </span>get the weather for that zipcode from MCP Agent
+</span><span id="__codeline__-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>describe the weather to the user
+</span><span id="__codeline__-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">-</span><span class="w"> </span>end program
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -731,6 +837,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../playbooks-assembly-language/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks Assembly Language">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Playbooks Assembly Language
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mcp-agent/" class="md-footer__link md-footer__link--next" aria-label="Next: MCP based Agents">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MCP based Agents
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -763,10 +907,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/playbooks-ai/playbooks/", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow"], "search": "/playbooks-ai/playbooks/assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/playbooks-ai/playbooks/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

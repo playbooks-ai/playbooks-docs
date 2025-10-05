@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/tutorials/">
       
       
-        <link rel="prev" href="../get-started/quickstart/">
+        <link rel="prev" href="../getting-started/">
       
       
-        <link rel="next" href="part-0-install-first-run/">
+        <link rel="next" href="../reference/config/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Tutorials - Playbooks AI</title>
+        <title>Tutorial - Playbooks AI</title>
       
     
     
@@ -52,7 +52,7 @@
     
       <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../stylesheets/custom.css">
+      <link rel="stylesheet" href="../assets/stylesheets/custom.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorials" class="md-skip">
+        <a href="#tutorial-building-an-order-status-assistant-with-playbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorials
+              Tutorial
             
           </span>
         </div>
@@ -283,367 +283,249 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
     
       
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
         
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../get-started/" class="md-nav__link ">
-              
   
   
   <span class="md-ellipsis">
-    Get Started
+    Tutorial
     
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Get Started
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../get-started/installation/" class="md-nav__link">
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Installation
+    Tutorial
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../get-started/quickstart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Quickstart
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
       
         
-          
-        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        
+        <li class="md-nav__item">
+  <a href="#playbooks-ai-approach-software-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbooks AI approach: Software 3.0
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#1-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Hello, world!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Hello, world!">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#0101-lets-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      01.01 Let's begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0102-prompt-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      01.02 Prompt Tuning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#2-ask-for-user-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Ask for user input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Ask for user input">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#0201-user-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.01 User input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0202-conversational-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.02 Conversational Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0203-agent-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.03 Agent Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#3-validating-the-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Validating the input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Validating the input">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#0301-validation-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      03.01 Validation Playbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0302-using-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      03.02 Using Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#4-unified-call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Unified call stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Unified call stack">
+      <ul class="md-nav__list">
         
+          <li class="md-nav__item">
+  <a href="#0401-markdown-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.01 Markdown → Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0402-python-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.02 Python → Markdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0403-description-placeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.03 Description placeholders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
-        
+        <li class="md-nav__item">
+  <a href="#explore-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore more
+    </span>
+  </a>
+  
+</li>
       
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
+    </ul>
   
-  
-  <span class="md-ellipsis">
-    Tutorials
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Tutorials
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-0-install-first-run/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 0 – Install and first run
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-1-user-interaction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 1 – User interaction
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-2-triggers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 2 – Triggers
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-3-calls-markdown-python/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 3 – Calls (Markdown ↔ Python)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-4-agent-to-agent/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 4 – Agent‑to‑Agent calls
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-5-meetings/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 5 – Meetings
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-6-observability-debugging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 6 – Observability and debugging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="part-7-web-server-playground/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Part 7 – Web Server and Playground
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
+</nav>
       
     </li>
   
@@ -659,7 +541,21 @@
     
       
         
-          
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -681,33 +577,47 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../playbooks-language/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
-    Playbooks Language
+    Reference
     
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Playbooks Language
+            Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -717,7 +627,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-language/playbooks-language/" class="md-nav__link">
+      <a href="../reference/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/playbooks-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/playbooks-language/" class="md-nav__link">
         
   
   
@@ -740,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-language/playbooks-assembly-language/" class="md-nav__link">
+      <a href="../reference/playbooks-assembly-language/" class="md-nav__link">
         
   
   
@@ -763,403 +719,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-language/metadata/" class="md-nav__link">
+      <a href="../reference/agents/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    Metadata
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/cls/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Playbooks as the CLS and CLR
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../playbook-types/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Playbook Types
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Playbook Types
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/markdown-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Markdown Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/react-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ReAct Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/raw-prompt-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Raw Prompt Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/python-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Python Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/external-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    External Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../playbook-types/builtin-playbooks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Built-in Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../triggers/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Triggers
-    
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Triggers
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../artifacts/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Artifacts
-    
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Artifacts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../agents/" class="md-nav__link ">
-              
   
   
   <span class="md-ellipsis">
@@ -1168,22 +729,10 @@
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Agents
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+      </a>
+    </li>
+  
+
               
             
               
@@ -1193,12 +742,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../agents/mcp-agent/" class="md-nav__link">
+      <a href="../reference/mcp-agent/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    MCP Agents
+    MCP based Agents
     
   </span>
   
@@ -1216,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agents/exported-and-public-playbooks/" class="md-nav__link">
+      <a href="../reference/exported-and-public-playbooks/" class="md-nav__link">
         
   
   
@@ -1232,68 +781,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../runtime/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Runtime
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            Runtime
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
               
                 
   
@@ -1301,101 +788,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../runtime/clr/" class="md-nav__link">
+      <a href="../reference/playbook-types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Common Language Runtime (CLR)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../applications/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Applications
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            Applications
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../applications/cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Playbooks CLI
+    Playbook Types
     
   </span>
   
@@ -1413,12 +811,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../applications/web-server/" class="md-nav__link">
+      <a href="../reference/builtin-playbooks/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Web Server
+    Built-in Playbooks
     
   </span>
   
@@ -1436,164 +834,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../applications/playground/" class="md-nav__link">
+      <a href="../reference/triggers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    HTML Playground
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../observability/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Observability
-    
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
-            <span class="md-nav__icon md-icon"></span>
-            Observability
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../guides/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Guides
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
-            <span class="md-nav__icon md-icon"></span>
-            Guides
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/adding-triggers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Adding Triggers
+    Triggers
     
   </span>
   
@@ -1611,12 +857,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides/user-interaction/" class="md-nav__link">
+      <a href="../reference/context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    User Interaction
+    Context Engineering
     
   </span>
   
@@ -1634,430 +880,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides/calling-playbooks/" class="md-nav__link">
+      <a href="../reference/description-placeholders/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Call Playbooks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/variables-and-expressions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Variables & Expressions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/run-with-cli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Run with CLI
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/environment-variables/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Environment Variables
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/compilation-and-cache/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Compilation and Cache
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
-        
-          
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Integrations
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_13">
-            <span class="md-nav__icon md-icon"></span>
-            Integrations
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/vscode/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    VSCode Extension
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/langfuse/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Langfuse
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faqs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FAQs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Glossary
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../advanced/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Advanced Concepts
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_16" id="__nav_16_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_16">
-            <span class="md-nav__icon md-icon"></span>
-            Advanced Concepts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/automating-context-engineering/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Automating Context Engineering
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/cls/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Playbooks as the CLS and CLR
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/playbooks-protocol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Playbooks Protocol
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/observer-agents/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Observer Agents
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/dynamic-playbook-generation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dynamic Playbook Generation
+    Description Placeholders
     
   </span>
   
@@ -2102,9 +930,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#series" class="md-nav__link">
+  <a href="#playbooks-ai-approach-software-30" class="md-nav__link">
     <span class="md-ellipsis">
-      Series
+      Playbooks AI approach: Software 3.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Hello, world!
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Hello, world!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0101-lets-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      01.01 Let's begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0102-prompt-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      01.02 Prompt Tuning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ask-for-user-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Ask for user input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Ask for user input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0201-user-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.01 User input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0202-conversational-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.02 Conversational Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0203-agent-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      02.03 Agent Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validating-the-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Validating the input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Validating the input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0301-validation-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      03.01 Validation Playbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0302-using-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      03.02 Using Triggers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-unified-call-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Unified call stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Unified call stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0401-markdown-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.01 Markdown → Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0402-python-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.02 Python → Markdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0403-description-placeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      04.03 Description placeholders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore more
     </span>
   </a>
   
@@ -2129,21 +1116,1031 @@
   
 
 
-<h1 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h1>
-<p>Follow this series to learn Playbooks AI step by step. Each part ends with a concrete, verifiable result.</p>
-<p>If you have not installed Playbooks yet, complete the <a href="../get-started/installation/">Installation</a> and <a href="../get-started/quickstart/">Quickstart</a> first.</p>
-<h2 id="series">Series<a class="headerlink" href="#series" title="Permanent link">&para;</a></h2>
+<h1 id="tutorial-building-an-order-status-assistant-with-playbooks">Tutorial: Building an Order Status Assistant with Playbooks<a class="headerlink" href="#tutorial-building-an-order-status-assistant-with-playbooks" title="Permanent link">&para;</a></h1>
+<p>This tutorial introduces new Playbooks programmers to the language, the framework and the basics of building AI agents. We will use a simple example use case of a customer support AI assistant that checks order status. We will start with a simple “hello world”, then add user input, Python playbooks, markdown↔python calls, multi-agent calls, triggers, description placeholders, and finally explore ReAct and Raw playbooks.</p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Prerequisites (see <a href="../get-started/index.md">Getting Started</a>):</p>
 <ul>
-<li><a href="part-0-install-first-run/">Part 0: Install and first run</a></li>
-<li><a href="part-1-user-interaction/">Part 1: User interaction</a></li>
-<li><a href="part-2-triggers/">Part 2: Triggers</a></li>
-<li><a href="part-3-calls-markdown-python/">Part 3: Calling playbooks (Markdown ↔ Python)</a></li>
-<li><a href="part-4-agent-to-agent/">Part 4: Agent‑to‑Agent calls</a></li>
-<li><a href="part-5-meetings/">Part 5: Meetings</a></li>
-<li><a href="part-6-observability-debugging/">Part 6: Observability and debugging</a></li>
-<li><a href="part-7-web-server-playground/">Part 7: Web Server and Playground</a></li>
+<li>Installed Playbooks</li>
+<li>Successfully ran a playbooks program using <code>playbooks run &lt;program&gt;.pb</code></li>
 </ul>
-<p>You can run every step using the examples under <code>tests/data</code>.</p>
+<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Code for this tutorial is available <a href="https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials">here</a></p>
+<hr />
+<h2 id="playbooks-ai-approach-software-30">Playbooks AI approach: Software 3.0<a class="headerlink" href="#playbooks-ai-approach-software-30" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>LLM as a processor</strong>: Your natural language specifications become the program; the runtime compiles and executes them reliably on LLM.</li>
+<li><strong>Programmer friendly</strong>: Agents are classes, playbooks are methods. Multi-agent communication is message passing. Use standard developer tools and IDEs for debugging, code completion, etc.</li>
+<li><strong>Simple syntax</strong>: Use markdown <code>H1</code> tags for agents, <code>H2</code> tags and <code>@playbook</code> decorated Python functions for playbooks. You pick your coding style - <code>$order_id = LoadOrderId()</code>, <code>Load $order_id</code>, <code>Load user's order id</code> are all valid.</li>
+<li><strong>Soft + Hard logic</strong>: Run soft logic on LLM, hard logic on CPU; on the same call stack; mix and match as needed.<ol>
+<li>[LLM] Natural language markdown playbooks for known busiess logic </li>
+<li>[LLM] Natural language ReAct playbooks for dynamic planning</li>
+<li>[LLM] Raw playbooks for full control over the LLM prompt</li>
+<li>[CPU] Python playbooks when you need determinism, external system access, and general computation</li>
+</ol>
+</li>
+<li><strong>Higher abstraction</strong>: Describe behavior at the level of “what the agent should do,” not plumbing or orchestration code. Leads to 10x fewer lines of code.</li>
+<li><strong>Verifiability and observability</strong>: Structured programs, Semantic static program analysis, compilation into LLM-friendly Assembly Language, triggers, post-hoc checks enable reliable behavior despite LLM non-determinism</li>
+<li><strong>Advanced capabilities</strong>: Dynamic playbook generation, observer agents, formal verifiability and more.</li>
+</ul>
+<hr />
+<h2 id="1-hello-world">1) Hello, world!<a class="headerlink" href="#1-hello-world" title="Permanent link">&para;</a></h2>
+<h3 id="0101-lets-begin">01.01 Let's begin<a class="headerlink" href="#0101-lets-begin" title="Permanent link">&para;</a></h3>
+<p>examples/tutorials/01.01/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/01.01/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>You are an agent that greets users and helps with order questions.
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div></td></tr></table></div>
+<p>Note:</p>
+<ul>
+<li>Line 1: <code># Order Support Agent</code> creates an agent. </li>
+<li>Line 3: <code>## Main</code> defines a playbook, which is triggered automatically at the beginning (line 6) of the program execution. </li>
+<li>Line 7: <code>### Steps</code> lists the steps to be executed.</li>
+</ul>
+<details>
+<summary>Output</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt; playbooks run examples/tutorials/01.01/order_assistant.pb
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/01.01/order_assistant.pb&#39;]
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions or issues related to your orders. Whether you need to check order status, make changes, handle returns, or resolve any order-related concerns, I&#39;m ready to assist you. How can I help you today?
+</span></code></pre></div>
+</details>
+
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Playbooks framework caches LLM responses by default. So, if you run the program again, compilation will be skipped and you will see the same output. The cache can be disabled using a <code>playbooks.toml</code> <a href="../reference/config/">configuration file</a>.</p>
+<p><img alt="❗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2757.svg" title=":exclamation:" /> Notice that in the output, the agent listed capabilities that we haven't provided playbooks for.</p>
+<p>Let's improve this by asking the agent to only list capabilties corresponding to the playbooks that we have provided.</p>
+<h3 id="0102-prompt-tuning">01.02 Prompt Tuning<a class="headerlink" href="#0102-prompt-tuning" title="Permanent link">&para;</a></h3>
+<p>examples/tutorials/01.02/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/01.02/order_assistant.pb">order_assistant.pb</a>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span>
+<span class="normal"><a href="#__codelineno-2-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div></td></tr></table></div></p>
+<p>Changes:</p>
+<ul>
+<li>Line 2: We added extra instructions to the agent.</li>
+</ul>
+<details>
+<summary>Output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt; playbooks run examples/tutorials/01.02/order_assistant.pb
+</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/01.02/order_assistant.pb&#39;]
+</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__codeline__-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. However, I should let you know that my capabilities are currently limited to greeting you and providing this basic information. How can I assist you today?
+</span></code></pre></div>
+</details>
+
+<p>Much better!</p>
+<hr />
+<h2 id="2-ask-for-user-input">2) Ask for user input<a class="headerlink" href="#2-ask-for-user-input" title="Permanent link">&para;</a></h2>
+<p>Let's ask the user for their order id.</p>
+<h3 id="0201-user-input">02.01 User input<a class="headerlink" href="#0201-user-input" title="Permanent link">&para;</a></h3>
+<p>examples/tutorials/02.01/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.01/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">-</span><span class="w"> </span>Ask user for their order id
+</span><span id="__codeline__-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">-</span><span class="w"> </span>Thank the user for providing the order id
+</span><span id="__codeline__-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Line 9: Here we ask the user for their order id.</li>
+<li>Line 10: New step to thank the user for providing the order id.</li>
+</ul>
+<details>
+<summary>Output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&gt; playbooks run examples/tutorials/02.01/order_assistant.pb
+</span><span id="__codeline__-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/02.01/order_assistant.pb&#39;]
+</span><span id="__codeline__-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__codeline__-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. I can assist you with order status, tracking information, and other order-related inquiries.
+</span><span id="__codeline__-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__codeline__-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>OrderSupportAgent: To get started, could you please provide me with your order ID?
+</span><span id="__codeline__-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__codeline__-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>User: 47463874
+</span><span id="__codeline__-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__codeline__-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>OrderSupportAgent: Thank you for providing your order ID: 47463874. I have recorded this information.
+</span></code></pre></div>
+</details>
+
+<h3 id="0202-conversational-input">02.02 Conversational Input<a class="headerlink" href="#0202-conversational-input" title="Permanent link">&para;</a></h3>
+<p>We want the agent to wait on line 9 until the user provides their order id. Let's add that instruction.</p>
+<p>examples/tutorials/02.02/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.02/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+</span><span id="__codeline__-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">-</span><span class="w"> </span>Ask user for their order id; engage in a conversation as needed
+</span><span id="__codeline__-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">-</span><span class="w"> </span>Thank the user for providing the order id
+</span><span id="__codeline__-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Line 9: Here we add a new step to engage in a conversation as needed.</li>
+</ul>
+<details>
+<summary>Output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt; playbooks run examples/tutorials/02.02/order_assistant.pb
+</span><span id="__codeline__-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/02.02/order_assistant.pb&#39;]
+</span><span id="__codeline__-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__codeline__-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. I can assist you with order status, tracking information, and other order-related inquiries.
+</span><span id="__codeline__-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__codeline__-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>OrderSupportAgent: To get started, could you please provide me with your order ID? This will help me look up your specific order details.
+</span><span id="__codeline__-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__codeline__-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>User: how are you
+</span><span id="__codeline__-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__codeline__-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>OrderSupportAgent: I&#39;m doing well, thank you for asking! I&#39;m here and ready to help you with your order. Could you please share your order ID so I can assist you with your order-related questions?
+</span><span id="__codeline__-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__codeline__-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>User: hold on.. let me look that up
+</span><span id="__codeline__-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__codeline__-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>OrderSupportAgent: No problem at all! Take your time finding your order ID. I&#39;ll wait here for you.
+</span><span id="__codeline__-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__codeline__-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>User: found it 44344456
+</span><span id="__codeline__-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__codeline__-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>OrderSupportAgent: Perfect! Thank you for providing your order ID: 44344456. I have that recorded now.
+</span></code></pre></div>
+</details>
+
+<p>Notice that now the agent engaged in a conversation with the user while waiting for the order id.</p>
+<h3 id="0203-agent-behavior">02.03 Agent Behavior<a class="headerlink" href="#0203-agent-behavior" title="Permanent link">&para;</a></h3>
+<p>This behavior trait can be added to the agent's instructions so it applies to any time the agent asks the user for some information.</p>
+<p>examples/tutorials/02.03/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.03/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+</span><span id="__codeline__-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__codeline__-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="k">-</span><span class="w"> </span>Ask user for their order id
+</span><span id="__codeline__-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">-</span><span class="w"> </span>Thank the user for providing the order id
+</span><span id="__codeline__-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="k">-</span><span class="w"> </span>End program
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Line 3: We added instructions for the agent</li>
+</ul>
+<details>
+<summary>Output</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt; playbooks run examples/tutorials/02.03/order_assistant.pb
+</span><span id="__codeline__-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/02.03/order_assistant.pb&#39;]
+</span><span id="__codeline__-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__codeline__-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. I can assist you with tracking, status updates, and general order inquiries.
+</span><span id="__codeline__-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__codeline__-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>OrderSupportAgent: To get started, could you please provide your order ID? This will help me look up your specific order details.
+</span><span id="__codeline__-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__codeline__-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>User: how are you
+</span><span id="__codeline__-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__codeline__-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>OrderSupportAgent: I&#39;m doing well, thank you for asking! I&#39;m here and ready to help you with your order questions. To assist you best, I&#39;ll still need your order ID. Could you please share that with me?
+</span><span id="__codeline__-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__codeline__-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>User: nice weather here today.. how is it where you are
+</span><span id="__codeline__-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+</span><span id="__codeline__-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>OrderSupportAgent: That sounds lovely! As an AI assistant, I don&#39;t experience weather, but I&#39;m glad you&#39;re having a nice day. I&#39;d love to help you with your order - could you please share your order ID so I can assist you with any questions or concerns you might have?
+</span><span id="__codeline__-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__codeline__-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>User: sure, i&#39;ll look that up
+</span><span id="__codeline__-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__codeline__-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>OrderSupportAgent: Perfect! Take your time finding your order ID. I&#39;ll be right here waiting to help you once you have it.
+</span><span id="__codeline__-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+</span><span id="__codeline__-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>User: kk it&#39;s 88788790
+</span><span id="__codeline__-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+</span><span id="__codeline__-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>OrderSupportAgent: Thank you for providing your order ID 88788790! I have that recorded now.
+</span></code></pre></div>
+
+</details>
+
+<h2 id="3-validating-the-input">3) Validating the input<a class="headerlink" href="#3-validating-the-input" title="Permanent link">&para;</a></h2>
+<p>Let's add a new playbook to validate the order id.</p>
+<h3 id="0301-validation-playbook">03.01 Validation Playbook<a class="headerlink" href="#0301-validation-playbook" title="Permanent link">&para;</a></h3>
+<p>examples/tutorials/03.01/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.01/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+</span><span id="__codeline__-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+</span><span id="__codeline__-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="k">-</span><span class="w"> </span>Greet the user and explain what you can help with
+</span><span id="__codeline__-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="k">-</span><span class="w"> </span>Ask user for their order id
+</span><span id="__codeline__-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="k">-</span><span class="w"> </span>Validate the order id and keep asking until user provides a valid id
+</span><span id="__codeline__-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="k">-</span><span class="w"> </span>Thank the user for providing the order id
+</span><span id="__codeline__-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="k">-</span><span class="w"> </span>End program
+</span><span id="__codeline__-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__codeline__-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="gu">## Validate order id</span>
+</span><span id="__codeline__-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="k">-</span><span class="w"> </span>If order id is made up of 8 numbers
+</span><span id="__codeline__-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return valid
+</span><span id="__codeline__-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="k">-</span><span class="w"> </span>otherwise
+</span><span id="__codeline__-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return invalid
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Line 15: We added a new playbook to validate the order id.</li>
+<li>Line 11: After user provides the order id, now we call the <code>Validate order id</code> playbook to validate it, and engage with the user until they provide a valid id.</li>
+</ul>
+<details>
+<summary>Output</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&gt; playbooks run examples/tutorials/03.01/order_assistant.pb
+</span><span id="__codeline__-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/03.01/order_assistant.pb&#39;]
+</span><span id="__codeline__-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__codeline__-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with questions about your orders. I can assist you by looking up order information once you provide me with your order ID. How can I help you today?
+</span><span id="__codeline__-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__codeline__-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>OrderSupportAgent: To get started, could you please share your order ID with me? Take your time - I&#39;ll wait for you to provide it or let me know if you&#39;d prefer not to continue.
+</span><span id="__codeline__-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__codeline__-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>User: 8843
+</span><span id="__codeline__-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__codeline__-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>OrderSupportAgent: I see that order ID &#39;8843&#39; isn&#39;t quite right - it looks like it needs to be 8 digits long. Could you please double-check your order ID and share the complete number with me?
+</span><span id="__codeline__-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__codeline__-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>User: 8843A098
+</span><span id="__codeline__-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+</span><span id="__codeline__-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>OrderSupportAgent: I see that order ID &#39;8843A098&#39; contains letters, but order IDs should be exactly 8 digits only. Could you please check your order confirmation and share the correct 8-digit order ID?
+</span><span id="__codeline__-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__codeline__-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>User: 98745968
+</span><span id="__codeline__-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__codeline__-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>OrderSupportAgent: Perfect! Thank you for providing your order ID 98745968. I now have all the information I need to help you with your order.
+</span></code></pre></div>
+</details>
+
+<p><strong>A note to my fellow Software Engineers:</strong></p>
+<p>I know, <code>Return valid</code> looks weird. What is getting returned here exactly? Is it a string or a boolean? We aren't capturing the return value in the call on line 11 either. The call <code>Validate the order id</code> also doesn't match the playbook name <code>Validate order id</code> exactly. It all seems too fuzzy and a bit magical. <em>I realize that it makes you uncomfortable.</em></p>
+<p>You can <strong>make the code explicit</strong>. Declare the playbook like <code>## ValidateOrderId($order_id) -&gt; bool</code>, use <code>return true</code> and <code>return false</code>. Change the call to <code>$valid = ValidateOrderId($order_id)</code>, and so on. Have it your way! This is also valid Playbooks code, but mostly unnecessary because of the compiler (see below). On the other hand, you could -</p>
+<p><strong>Embrace the magic!</strong> LLMs are highly capable semantic execution machines. By themselves, they are not reliable, so your hesitation is justifiable. But this is where the advanced engineering behind Playbooks comes in. The way Playbooks compiler and runtime are designed, you can expect reliable execution of semantic instructions. Of course, as with any AI software, thourough evaluation is still necessary.</p>
+<p>The Playbooks compiler compiles <code>.pb</code> program to Playbooks Assembly Language (<code>.pbasm</code>), which converts some of the semantic instructions into explicit instructions, adds explicit type annotations, and so on. See the compiler generated PBAsm code below (actual <a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.01/Order_Support_Agent_6a901f96b774fe82.pbasm">file</a>) -</p>
+<details>
+<summary>Compiled .pbasm</summary>
+<div class="language-markdown highlight"><span class="filename">Order_Support_Agent_6a901f96b774fe82.pbasm</span><pre><span></span><code><span id="__codeline__-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gh"># OrderSupportAgent</span>
+</span><span id="__codeline__-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+</span><span id="__codeline__-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__codeline__-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="gu">## Main() -&gt; None</span>
+</span><span id="__codeline__-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Main interaction flow for order support assistance
+</span><span id="__codeline__-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__codeline__-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">-</span><span class="w"> </span>T1:BGN At the beginning
+</span><span id="__codeline__-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__codeline__-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="k">-</span><span class="w"> </span>01:QUE Say(user, Greet the user and explain what you can help with)
+</span><span id="__codeline__-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="k">-</span><span class="w"> </span>02:QUE Say(user, Ask user for their $order_id:str); YLD for user; done when user provides an order id or gives up
+</span><span id="__codeline__-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="k">-</span><span class="w"> </span>03:QUE $validation_result:str = ValidateOrderId(order_id=$order_id)
+</span><span id="__codeline__-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="k">-</span><span class="w"> </span>04:YLD for call
+</span><span id="__codeline__-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="k">-</span><span class="w"> </span>05:CND While $validation_result is invalid
+</span><span id="__codeline__-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>05.01:QUE Say(user, Ask user for a valid order id); YLD for user; done when user provides an order id or gives up
+</span><span id="__codeline__-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>05.02:QUE $validation_result:str = ValidateOrderId(order_id=$order_id)
+</span><span id="__codeline__-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>05.03:YLD for call
+</span><span id="__codeline__-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>05.04:JMP 05
+</span><span id="__codeline__-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="k">-</span><span class="w"> </span>06:QUE Say(user, Thank the user for providing the order id)
+</span><span id="__codeline__-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="k">-</span><span class="w"> </span>07:YLD for exit
+</span><span id="__codeline__-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+</span><span id="__codeline__-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="gu">## ValidateOrderId($order_id:str) -&gt; str</span>
+</span><span id="__codeline__-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>Validates if the provided order ID meets the required format
+</span><span id="__codeline__-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>
+</span><span id="__codeline__-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="k">-</span><span class="w"> </span>01:CND If order id is made up of 8 numbers
+</span><span id="__codeline__-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>01.01:RET valid
+</span><span id="__codeline__-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="k">-</span><span class="w"> </span>02:RET invalid
+</span></code></pre></div>
+
+This looks a lot more like actual code, doesn't it? This is Assembly Language for the LLM, with opcodes like `QUE` for function calls, `CND` for conditional logic, and so on.
+
+</details>
+
+<p><strong><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> The goal is to make the agent's behavior specification as readable as possible, as if it is written for a competent employee.</strong></p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Don't use the explicit Python-like syntax unless absolutely necessary.</p>
+<h3 id="0302-using-triggers">03.02 Using Triggers<a class="headerlink" href="#0302-using-triggers" title="Permanent link">&para;</a></h3>
+<p>Triggers is a powerful feature in Playbooks AI that enables declarative event-driven programming through natural language conditions. They allow playbooks to be dynamically invoked when specified conditions are met.</p>
+<p>Let's add a trigger condition to the <code>Validate order id</code> playbook to <strong>automatically run</strong> when the user provides an order id.</p>
+<p>examples/tutorials/03.02/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.02/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w"> </span>- At the beginning
+</span><span id="__codeline__-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w"> </span>### Steps
+</span><span id="__codeline__-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w"> </span>- Greet the user and explain what you can help with
+</span><span id="__codeline__-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="gd">-- Ask user for their order id</span>
+</span><span id="__codeline__-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="gd">-- Validate the order id and keep asking until user provides a valid id</span>
+</span><span id="__codeline__-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="gi">+- Ask user for their order id till user provides a valid order id</span>
+</span><span id="__codeline__-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w"> </span>- Thank the user for providing the order id
+</span><span id="__codeline__-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w"> </span>- End program
+</span><span id="__codeline__-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__codeline__-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w"> </span>## Validate order id
+</span><span id="__codeline__-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="gi">+### Trigger</span>
+</span><span id="__codeline__-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="gi">+- When user provides order id</span>
+</span><span id="__codeline__-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w"> </span>### Steps
+</span><span id="__codeline__-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w"> </span>- If order id is made up of 8 numbers
+</span><span id="__codeline__-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w"> </span>  - Return valid
+</span></code></pre></div>
+<p>Changes:</p>
+<ul>
+<li>We no longer need to explicitly call the <code>Validate order id</code> playbook on line 11.</li>
+<li>We added a trigger condition to the <code>Validate order id</code> playbook to run automatically when the user provides an order id.</li>
+</ul>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Triggers dramatically simplify the code by composing the program's control flow dynamically.</p>
+<hr />
+<h2 id="4-unified-call-stack">4) Unified call stack<a class="headerlink" href="#4-unified-call-stack" title="Permanent link">&para;</a></h2>
+<h3 id="0401-markdown-python">04.01 Markdown → Python<a class="headerlink" href="#0401-markdown-python" title="Permanent link">&para;</a></h3>
+<p>Use Python when you need data access, deterministic logic, or libraries. Define async functions decorated with <code>@playbook</code> inside python code blocks. You can call Python playbooks from any (Markdown or Python) playbook.</p>
+<p>examples/tutorials/04.01/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.01/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-diff highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span>
+<span class="normal"><a href="#__codelineno-14-17">17</a></span>
+<span class="normal"><a href="#__codelineno-14-18">18</a></span>
+<span class="normal"><a href="#__codelineno-14-19">19</a></span>
+<span class="normal"><a href="#__codelineno-14-20">20</a></span>
+<span class="normal"><a href="#__codelineno-14-21">21</a></span>
+<span class="normal"><a href="#__codelineno-14-22">22</a></span>
+<span class="normal"><a href="#__codelineno-14-23">23</a></span>
+<span class="normal"><a href="#__codelineno-14-24">24</a></span>
+<span class="normal"><a href="#__codelineno-14-25">25</a></span>
+<span class="normal"><a href="#__codelineno-14-26">26</a></span>
+<span class="normal"><a href="#__codelineno-14-27">27</a></span>
+<span class="normal"><a href="#__codelineno-14-28">28</a></span>
+<span class="normal"><a href="#__codelineno-14-29">29</a></span>
+<span class="normal"><a href="#__codelineno-14-30">30</a></span>
+<span class="normal"><a href="#__codelineno-14-31">31</a></span>
+<span class="normal"><a href="#__codelineno-14-32">32</a></span>
+<span class="normal"><a href="#__codelineno-14-33">33</a></span>
+<span class="normal"><a href="#__codelineno-14-34">34</a></span>
+<span class="normal"><a href="#__codelineno-14-35">35</a></span>
+<span class="normal"><a href="#__codelineno-14-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w"> </span># Order Support Agent
+</span><span id="__codeline__-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w"> </span>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w"> </span>Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+</span><span id="__codeline__-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+</span><span id="__codeline__-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="gi">+```python</span>
+</span><span id="__codeline__-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="gi">+# In real life you&#39;d query your DB or API here.</span>
+</span><span id="__codeline__-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="gi">+_FAKE_ORDERS = {</span>
+</span><span id="__codeline__-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="gi">+  &quot;43345678&quot;: {&quot;order_id&quot;: &quot;43345678&quot;, &quot;status&quot;: &quot;Shipped&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-02&quot;},</span>
+</span><span id="__codeline__-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="gi">+  &quot;29376452&quot;: {&quot;order_id&quot;: &quot;29376452&quot;, &quot;status&quot;: &quot;Processing&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-05&quot;},</span>
+</span><span id="__codeline__-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="gi">+}</span>
+</span><span id="__codeline__-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="gi">+</span>
+</span><span id="__codeline__-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="gi">+@playbook</span>
+</span><span id="__codeline__-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="gi">+async def GetOrderStatus(order_id: str) -&gt; dict:</span>
+</span><span id="__codeline__-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="gi">+  &quot;&quot;&quot;</span>
+</span><span id="__codeline__-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="gi">+  Lookup an order&#39;s status by id.</span>
+</span><span id="__codeline__-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="gi">+  Returns a dict with order_id, status, expected_delivery_date.</span>
+</span><span id="__codeline__-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="gi">+  &quot;&quot;&quot;</span>
+</span><span id="__codeline__-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="gi">+</span>
+</span><span id="__codeline__-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="gi">+  info = _FAKE_ORDERS.get(order_id.upper())</span>
+</span><span id="__codeline__-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="gi">+  if not info:</span>
+</span><span id="__codeline__-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="gi">+    # Return user-readable errors when called from markdown</span>
+</span><span id="__codeline__-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="gi">+    return {&quot;error&quot;: f&quot;Order {order_id} was not found.&quot;}</span>
+</span><span id="__codeline__-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="gi">+  return info</span>
+</span><span id="__codeline__-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="gi">+```</span>
+</span><span id="__codeline__-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="gi">+</span>
+</span><span id="__codeline__-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w"> </span>## Main
+</span><span id="__codeline__-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w"> </span>### Triggers
+</span><span id="__codeline__-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="w"> </span>- At the beginning
+</span><span id="__codeline__-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="gu">@@ -9,6 +30,7 @@ Whenever you are asking for some information from the user, you engage the user</span>
+</span><span id="__codeline__-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="w"> </span>- Greet the user and explain what you can help with
+</span><span id="__codeline__-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="w"> </span>- Ask user for their order id till user provides a valid order id
+</span><span id="__codeline__-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="w"> </span>- Thank the user for providing the order id
+</span><span id="__codeline__-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="gi">+- Get order status and tell user what it is</span>
+</span><span id="__codeline__-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="w"> </span>- End program
+</span><span id="__codeline__-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35"></a>
+</span><span id="__codeline__-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36"></a><span class="w"> </span>## Validate order id
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Lines 5-25: We added a Python playbook to get the order status.</li>
+<li>Line 33: We added a step to get the order status and tell the user what it is.</li>
+</ul>
+<details>
+<summary>Output (unknown order id)</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&gt; playbooks run examples/tutorials/04.01/order_assistant.pb
+</span><span id="__codeline__-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.01/order_assistant.pb&#39;]
+</span><span id="__codeline__-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__codeline__-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. I can look up order status and provide information about your purchases. How can I assist you today?
+</span><span id="__codeline__-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__codeline__-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>OrderSupportAgent: To get started, could you please provide your order ID? It should be an 8-digit number.
+</span><span id="__codeline__-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__codeline__-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>User: 34564323
+</span><span id="__codeline__-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__codeline__-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>OrderSupportAgent: Thank you for providing your order ID 34564323. Let me look up the status for you.
+</span><span id="__codeline__-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+</span><span id="__codeline__-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>OrderSupportAgent: I&#39;m sorry, but I couldn&#39;t find order 34564323 in our system. Please double-check your order ID or contact customer service if you believe this is an error.
+</span></code></pre></div>
+</details>
+
+<details>
+<summary>Output (known order id)</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&gt; playbooks run examples/tutorials/04.01/order_assistant.pb
+</span><span id="__codeline__-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.01/order_assistant.pb&#39;]
+</span><span id="__codeline__-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__codeline__-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you with any questions about your orders. I can look up order status and provide information about your purchases. How can I assist you today?
+</span><span id="__codeline__-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__codeline__-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>OrderSupportAgent: To get started, could you please provide your order ID? It should be an 8-digit number.
+</span><span id="__codeline__-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__codeline__-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>User: 29376452
+</span><span id="__codeline__-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__codeline__-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>OrderSupportAgent: Thank you for providing your order ID 29376452. Let me look up the status for you.
+</span><span id="__codeline__-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+</span><span id="__codeline__-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>OrderSupportAgent: Great news! I found your order 29376452. The current status is &#39;Processing&#39; and your expected delivery date is October 5th, 2025. Your order is being prepared and will be shipped soon!
+</span></code></pre></div>
+</details>
+
+<hr />
+<h3 id="0402-python-markdown">04.02 Python → Markdown<a class="headerlink" href="#0402-python-markdown" title="Permanent link">&para;</a></h3>
+<p>Let's add a Markdown playbook that summarizes the order status in a specific way, and call it from the <code>GetOrderStatus</code> playbook.</p>
+<p>examples/tutorials/04.02/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.02/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-diff highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span>
+<span class="normal"><a href="#__codelineno-17-17">17</a></span>
+<span class="normal"><a href="#__codelineno-17-18">18</a></span>
+<span class="normal"><a href="#__codelineno-17-19">19</a></span>
+<span class="normal"><a href="#__codelineno-17-20">20</a></span>
+<span class="normal"><a href="#__codelineno-17-21">21</a></span>
+<span class="normal"><a href="#__codelineno-17-22">22</a></span>
+<span class="normal"><a href="#__codelineno-17-23">23</a></span>
+<span class="normal"><a href="#__codelineno-17-24">24</a></span>
+<span class="normal"><a href="#__codelineno-17-25">25</a></span>
+<span class="normal"><a href="#__codelineno-17-26">26</a></span>
+<span class="normal"><a href="#__codelineno-17-27">27</a></span>
+<span class="normal"><a href="#__codelineno-17-28">28</a></span>
+<span class="normal"><a href="#__codelineno-17-29">29</a></span>
+<span class="normal"><a href="#__codelineno-17-30">30</a></span>
+<span class="normal"><a href="#__codelineno-17-31">31</a></span>
+<span class="normal"><a href="#__codelineno-17-32">32</a></span>
+<span class="normal"><a href="#__codelineno-17-33">33</a></span>
+<span class="normal"><a href="#__codelineno-17-34">34</a></span>
+<span class="normal"><a href="#__codelineno-17-35">35</a></span>
+<span class="normal"><a href="#__codelineno-17-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w"> </span># Order Support Agent
+</span><span id="__codeline__-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w"> </span>You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+</span><span id="__codeline__-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w"> </span>Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+</span><span id="__codeline__-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>
+</span><span id="__codeline__-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="gi">+## SummarizeOrderStatus($order_status)</span>
+</span><span id="__codeline__-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="gi">+### Steps</span>
+</span><span id="__codeline__-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="gi">+- If order was shipped</span>
+</span><span id="__codeline__-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="gi">+  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
+</span><span id="__codeline__-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="gi">+- If order is processing</span>
+</span><span id="__codeline__-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="gi">+  - Return a summary apologizing that the order is not shipped yet and don&#39;t provide the expected delivery date unless user asked for it</span>
+</span><span id="__codeline__-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="gi">+</span>
+</span><span id="__codeline__-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="w"> </span>```python
+</span><span id="__codeline__-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="w"> </span># In real life you&#39;d query your DB or API here.
+</span><span id="__codeline__-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="w"> </span>_FAKE_ORDERS = {
+</span><span id="__codeline__-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="gu">@@ -10,17 +17,17 @@ _FAKE_ORDERS = {</span>
+</span><span id="__codeline__-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="w"> </span>}
+</span><span id="__codeline__-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17"></a>
+</span><span id="__codeline__-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18"></a><span class="w"> </span>@playbook
+</span><span id="__codeline__-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19"></a><span class="gd">-async def GetOrderStatus(order_id: str) -&gt; dict:</span>
+</span><span id="__codeline__-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20"></a><span class="gi">+async def GetOrderStatus(order_id: str) -&gt; str:</span>
+</span><span id="__codeline__-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21"></a><span class="w"> </span>  &quot;&quot;&quot;
+</span><span id="__codeline__-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22"></a><span class="w"> </span>  Lookup an order&#39;s status by id.
+</span><span id="__codeline__-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23"></a><span class="gd">-  Returns a dict with order_id, status, expected_delivery_date.</span>
+</span><span id="__codeline__-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24"></a><span class="gi">+  Returns a string describing order status.</span>
+</span><span id="__codeline__-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25"></a><span class="w"> </span>  &quot;&quot;&quot;
+</span><span id="__codeline__-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26"></a>
+</span><span id="__codeline__-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27"></a><span class="w"> </span>  info = _FAKE_ORDERS.get(order_id.upper())
+</span><span id="__codeline__-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28"></a><span class="w"> </span>  if not info:
+</span><span id="__codeline__-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29"></a><span class="w"> </span>    # Return user-readable errors when called from markdown
+</span><span id="__codeline__-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30"></a><span class="gd">-    return {&quot;error&quot;: f&quot;Order {order_id} was not found.&quot;}</span>
+</span><span id="__codeline__-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31"></a><span class="gd">-  return info</span>
+</span><span id="__codeline__-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32"></a><span class="gi">+    return f&quot;Order {order_id} was not found.&quot;</span>
+</span><span id="__codeline__-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33"></a><span class="gi">+  return await SummarizeOrderStatus(info)</span>
+</span><span id="__codeline__-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34"></a><span class="w"> </span>```
+</span><span id="__codeline__-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35"></a>
+</span><span id="__codeline__-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36"></a><span class="w"> </span>## Main
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Lines 5-11: We added a Markdown playbook to summarize the order status.</li>
+<li>Line 33: We call the <code>SummarizeOrderStatus</code> playbook <code>GetOrderStatus</code> playbook.</li>
+</ul>
+<details>
+<summary>Output (shipped order, $1 store credit)</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&gt; playbooks run examples/tutorials/04.02/order_assistant.pb
+</span><span id="__codeline__-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.02/order_assistant.pb&#39;]
+</span><span id="__codeline__-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__codeline__-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you check on your order status. Just provide me with your order ID and I&#39;ll look up the current status for you.
+</span><span id="__codeline__-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__codeline__-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>User: 43345678
+</span><span id="__codeline__-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__codeline__-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>OrderSupportAgent: Thank you for providing your order ID 43345678!
+</span><span id="__codeline__-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+</span><span id="__codeline__-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>OrderSupportAgent: Great news! Your order 43345678 has been shipped and is expected to be delivered on 2025-10-02. If your order gets delayed, you&#39;ll receive $1 store credit as compensation.
+</span></code></pre></div>
+</details>
+
+<details>
+<summary>Output (processing order)</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&gt; playbooks run examples/tutorials/04.02/order_assistant.pb
+</span><span id="__codeline__-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.02/order_assistant.pb&#39;]
+</span><span id="__codeline__-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__codeline__-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you check on your order status. Just provide me with your order ID and I&#39;ll look up the current status for you.
+</span><span id="__codeline__-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+</span><span id="__codeline__-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>User: 29376452
+</span><span id="__codeline__-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+</span><span id="__codeline__-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>OrderSupportAgent: Thank you for providing order ID 29376452. Let me look up the current status for you.
+</span><span id="__codeline__-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+</span><span id="__codeline__-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>OrderSupportAgent: I apologize, but your order is still being processed and hasn&#39;t shipped yet. We&#39;re working on getting it ready for you as soon as possible.
+</span></code></pre></div>
+</details>
+
+<details>
+<summary>Output (processing order, with expected delivery date)</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&gt; playbooks run examples/tutorials/04.02/order_assistant.pb
+</span><span id="__codeline__-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.02/order_assistant.pb&#39;]
+</span><span id="__codeline__-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__codeline__-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you check on your order status. Just provide me with your order ID and I&#39;ll look up the current status for you.
+</span><span id="__codeline__-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__codeline__-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>User: Here it is 29376452.. I am going on vacation soon so wondering if I get it before that.
+</span><span id="__codeline__-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__codeline__-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>OrderSupportAgent: Thank you for providing order ID 29376452! Let me check the status for you right away.
+</span><span id="__codeline__-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__codeline__-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>OrderSupportAgent: Your order #29376452 is currently being processed and hasn&#39;t shipped yet. However, I can see it has an expected delivery date of October 5th, 2025, so it should arrive well before your vacation! We&#39;re working on getting it ready for you as soon as possible.
+</span></code></pre></div>
+</details>
+
+<h3 id="0403-description-placeholders">04.03 Description placeholders<a class="headerlink" href="#0403-description-placeholders" title="Permanent link">&para;</a></h3>
+<p>Now, let's say we want the agent to behave different based on whether a shipped order is overdue or not. We will update the playbook -</p>
+<div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="gd">-  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
+</span><span id="__codeline__-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="gi">+  - If order is overdue</span>
+</span><span id="__codeline__-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="gi">+    - Return summary with apologies for the delay and indicating that $1 store credit was added to user&#39;s account</span>
+</span><span id="__codeline__-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="gi">+  - Otherwise</span>
+</span><span id="__codeline__-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="gi">+    - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
+</span></code></pre></div>
+<p>But, the LLM won't know about today's date so we need to inject that information in the LLM context. Let's use playbook description placeholder feature to add today's date in the description of the <code>SummarizeOrder</code> playbook.</p>
+<div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w"> </span>## SummarizeOrderStatus($order_status)
+</span><span id="__codeline__-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="gi">+Summarize order status, taking into account today&#39;s date {date.today().strftime(&quot;%Y-%m-%d&quot;)}</span>
+</span></code></pre></div>
+<p>Placeholder expression must be a valid Python expression. It will be evaluated, with access to any imports from python code blocks. In this case, we need the <code>date</code> module, so we need to import it in a python code block - see line 15 below.</p>
+<p>examples/tutorials/04.03/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.03/order_assistant.pb">order_assistant.pb</a></p>
+<div class="language-diff highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span>
+<span class="normal"><a href="#__codelineno-23-14">14</a></span>
+<span class="normal"><a href="#__codelineno-23-15">15</a></span>
+<span class="normal"><a href="#__codelineno-23-16">16</a></span>
+<span class="normal"><a href="#__codelineno-23-17">17</a></span>
+<span class="normal"><a href="#__codelineno-23-18">18</a></span>
+<span class="normal"><a href="#__codelineno-23-19">19</a></span>
+<span class="normal"><a href="#__codelineno-23-20">20</a></span>
+<span class="normal"><a href="#__codelineno-23-21">21</a></span>
+<span class="normal"><a href="#__codelineno-23-22">22</a></span>
+<span class="normal"><a href="#__codelineno-23-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="w"> </span>## SummarizeOrderStatus($order_status)
+</span><span id="__codeline__-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="gi">+Summarize order status, taking into account today&#39;s date {date.today().strftime(&quot;%Y-%m-%d&quot;)}</span>
+</span><span id="__codeline__-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="gi">+</span>
+</span><span id="__codeline__-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w"> </span>### Steps
+</span><span id="__codeline__-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w"> </span>- If order was shipped
+</span><span id="__codeline__-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="gd">-  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
+</span><span id="__codeline__-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="gi">+  - If order is overdue</span>
+</span><span id="__codeline__-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="gi">+    - Return summary with apologies for the delay and indicating that $1 store credit was added to user&#39;s account</span>
+</span><span id="__codeline__-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="gi">+  - Otherwise</span>
+</span><span id="__codeline__-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="gi">+    - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
+</span><span id="__codeline__-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w"> </span>- If order is processing
+</span><span id="__codeline__-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="w"> </span>  - Return a summary apologizing that the order is not shipped yet and don&#39;t provide the expected delivery date unless user asked for it
+</span><span id="__codeline__-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13"></a>
+</span><span id="__codeline__-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="w"> </span>```python
+</span><span id="__codeline__-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="gi">+from datetime import date</span>
+</span><span id="__codeline__-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16"></a><span class="gi">+</span>
+</span><span id="__codeline__-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="w"> </span># In real life you&#39;d query your DB or API here.
+</span><span id="__codeline__-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="w"> </span>_FAKE_ORDERS = {
+</span><span id="__codeline__-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="gd">-  &quot;43345678&quot;: {&quot;order_id&quot;: &quot;43345678&quot;, &quot;status&quot;: &quot;Shipped&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-02&quot;},</span>
+</span><span id="__codeline__-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="gi">+  &quot;43345678&quot;: {&quot;order_id&quot;: &quot;43345678&quot;, &quot;status&quot;: &quot;Shipped&quot;, &quot;expected_delivery_date&quot;: &quot;2025-08-02&quot;},</span>
+</span><span id="__codeline__-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="w"> </span>  &quot;29376452&quot;: {&quot;order_id&quot;: &quot;29376452&quot;, &quot;status&quot;: &quot;Processing&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-05&quot;},
+</span><span id="__codeline__-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="w"> </span>}
+</span><span id="__codeline__-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23"></a>```
+</span></code></pre></div></td></tr></table></div>
+<p>Changes:</p>
+<ul>
+<li>Line 2: Added a description with a placeholder for today's date.</li>
+<li>Line 7: Updated the expected delivery date for the shipped order to be 2025-08-02 to trigger the overdue behavior.</li>
+</ul>
+<details>
+<summary>Output</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>&gt; playbooks run examples/tutorials/04.03/order_assistant.pb
+</span><span id="__codeline__-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>ℹ Loading playbooks from: [&#39;examples/tutorials/04.03/order_assistant.pb&#39;]
+</span><span id="__codeline__-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  Compiling agent: Order Support Agent
+</span><span id="__codeline__-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+</span><span id="__codeline__-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>OrderSupportAgent: Hello! I&#39;m your Order Support Agent. I&#39;m here to help you check on your order status. Just provide me with your order ID and I&#39;ll look up the current status for you.
+</span><span id="__codeline__-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__codeline__-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>User: 43345678
+</span><span id="__codeline__-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+</span><span id="__codeline__-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>OrderSupportAgent: Thank you for providing order ID 43345678. Let me look up your order status right away.
+</span><span id="__codeline__-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+</span><span id="__codeline__-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>OrderSupportAgent: I apologize for the significant delay with your order 43345678. Your order was shipped but should have been delivered by August 2nd, 2025. Due to this delay, we&#39;ve added $1 store credit to your account as compensation for the inconvenience.
+</span></code></pre></div>
+</details>
+
+<p>Thanks for making it this far! Take a break. Smell a rose. Play with your cat.</p>
+<p>Go build something cool with Playbooks!</p>
+<hr />
+<p>More sections coming soon -</p>
+<ul>
+<li>
+<p>Multiple agents</p>
+<ul>
+<li>Create an agent with a public playbook</li>
+<li>Call playbook directly</li>
+<li>Send message to agent</li>
+</ul>
+</li>
+<li>
+<p>Triggers: react to user intent and state</p>
+</li>
+<li>ReAct playbooks (no steps, think–act loop)</li>
+<li>Raw playbooks (full prompt control)</li>
+<li>!import directive</li>
+</ul>
+<h2 id="explore-more">Explore more<a class="headerlink" href="#explore-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../reference/agents/">Agents</a></li>
+<li><a href="../reference/mcp-agent/">MCP Agents</a></li>
+<li><a href="../reference/triggers/">Triggers</a></li>
+<li><a href="../reference/playbooks-ai/">Playbooks AI technology stack</a></li>
+</ul>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## 6) Add another agent and call it
+
+Agents are H1 sections. You can call another agent’s playbook like `ShippingAgent.CalculateETA(...)`.
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="gh"># Shipping Agent</span>
+</span><span id="__codeline__-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Helps with shipping-specific tasks.
+</span><span id="__codeline__-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__codeline__-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>```python
+</span><span id="__codeline__-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>from playbooks import playbook
+</span><span id="__codeline__-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>from datetime import datetime, timedelta
+</span><span id="__codeline__-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+</span><span id="__codeline__-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="ni">@playbook</span>(public=True)
+</span><span id="__codeline__-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>async def CalculateETA(status: str, expected_delivery_date: str) -&gt; str:
+</span><span id="__codeline__-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    &quot;&quot;&quot;
+</span><span id="__codeline__-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>    Returns a human-friendly ETA summary string.
+</span><span id="__codeline__-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    &quot;&quot;&quot;
+</span><span id="__codeline__-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    try:
+</span><span id="__codeline__-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>        due = datetime.fromisoformat(expected_delivery_date)
+</span><span id="__codeline__-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>        days = (due.date() - datetime.utcnow().date()).days
+</span><span id="__codeline__-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>        if status.lower() == &quot;shipped&quot;:
+</span><span id="__codeline__-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>            return f&quot;Your package is on the way and should arrive in ~{days} day(s).&quot;
+</span><span id="__codeline__-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>        return f&quot;Estimated delivery is in ~{days} day(s).&quot;
+</span><span id="__codeline__-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>    except Exception:
+</span><span id="__codeline__-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>        return &quot;Estimated delivery date is not available.&quot;
+</span></code></pre></div>
+
+Back in `Order Support Agent`, call it:
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="gu">## SummarizeOrder($order_id, $status, $expected_delivery_date)</span>
+</span><span id="__codeline__-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">-</span><span class="w"> </span>Tell the user &quot;Order {$order_id} is {$status}. It&#39;s expected on {$expected_delivery_date}.&quot;
+</span><span id="__codeline__-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">-</span><span class="w"> </span>$eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
+</span><span id="__codeline__-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">-</span><span class="w"> </span>Tell the user $eta
+</span><span id="__codeline__-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">-</span><span class="w"> </span>Return &quot;done&quot;
+</span></code></pre></div>
+
+Tip:
+- Use `public=True` to expose Python playbooks to other agents.
+
+---
+
+## 7) Triggers: react to user intent and state
+
+Add triggers to run playbooks automatically when conditions are met.
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="gu">## HelpWithOrderStatus</span>
+</span><span id="__codeline__-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">-</span><span class="w"> </span>When user asks about order status
+</span><span id="__codeline__-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">-</span><span class="w"> </span>$order_id = CollectOrderId()
+</span><span id="__codeline__-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="k">-</span><span class="w"> </span>CheckOrderStatus()
+</span></code></pre></div>
+
+Common patterns:
+- Temporal: `- After 5 minutes`
+- Interaction: `- When user provides a new order id`
+- State-based: `- When $attempts is greater than 3`
+- Flow-based: `- After calling CollectOrderId`
+
+---
+
+## 8) Description placeholders
+
+Placeholders inject dynamic context into the description shown to the LLM.
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="gu">## SupportSession</span>
+</span><span id="__codeline__-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>You’re helping customer {$name} with order {$order_id}. Be concise and friendly.
+</span><span id="__codeline__-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+</span><span id="__codeline__-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">-</span><span class="w"> </span>Ask a clarifying question if info is missing
+</span><span id="__codeline__-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="k">-</span><span class="w"> </span>Proceed to CheckOrderStatus()
+</span></code></pre></div>
+
+Placeholders can reference variables, call other playbooks, and evaluate Python expressions like `{round($score * 100)}%`.
+
+---
+
+## 9) ReAct playbooks (no steps, think–act loop)
+
+When steps aren’t known upfront, omit `### Steps`. The default ReAct loop lets the LLM plan, act, and iterate.
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="gu">## InvestigateDelayedOrder</span>
+</span><span id="__codeline__-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
+</span><span id="__codeline__-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__codeline__-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="k">-</span><span class="w"> </span>When user mentions delay or late delivery
+</span></code></pre></div>
+
+Use ReAct for research, multi-step troubleshooting, or open-ended problem solving. Prefer standard markdown steps for prescribed flows.
+
+---
+
+## 10) Raw playbooks (full prompt control)
+
+Use `execution_mode: raw` to send exactly your prompt (after placeholder substitution) as a single-shot LLM call.
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="gu">## CategorizeSupportTicket</span>
+</span><span id="__codeline__-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>execution_mode: raw
+</span><span id="__codeline__-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+</span><span id="__codeline__-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>You will classify the ticket: &quot;{$message}&quot;
+</span><span id="__codeline__-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>Respond with exactly one of:
+</span><span id="__codeline__-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="k">-</span><span class="w"> </span>Order Status
+</span><span id="__codeline__-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">-</span><span class="w"> </span>Refund
+</span><span id="__codeline__-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="k">-</span><span class="w"> </span>Technical Support
+</span><span id="__codeline__-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="k">-</span><span class="w"> </span>Other
+</span></code></pre></div>
+
+Tradeoff: maximum control vs. fewer safety checks. Great for atomic labeling or bespoke prompts.
+
+---
+
+## 11) Coding style: natural language ↔ Python-like
+
+You can write steps in different styles; choose per clarity and reliability.
+
+- Natural language (most readable):
+  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">-</span><span class="w"> </span>Ask for a 6-10 character $order_id and validate it
+</span><span id="__codeline__-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">-</span><span class="w"> </span>Tell the user the ETA
+</span></code></pre></div>
+- Explicit assignments (precise data flow):
+  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">-</span><span class="w"> </span>$order_id = CollectOrderId()
+</span><span id="__codeline__-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">-</span><span class="w"> </span>$order = GetOrderStatus($order_id)
+</span><span id="__codeline__-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">-</span><span class="w"> </span>$eta = Shipping Agent.CalculateETA($order.status, $order.expected_delivery_date)
+</span><span id="__codeline__-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="k">-</span><span class="w"> </span>Return $eta
+</span></code></pre></div>
+- Semantic calls (let the compiler resolve intent):
+  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">-</span><span class="w"> </span>Check the status of the user’s order and provide the ETA
+</span></code></pre></div>
+Guidelines:
+- **Prefer natural language** for control flow and readability.
+- **Use assignments** when passing values across steps or between playbooks.
+- **Prefer semantic calls** when the intent is obvious; fall back to explicit calls for clarity or parameters.
+
+---
+
+## 12) Full example: putting it all together
+
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="gh"># Order Support Agent</span>
+</span><span id="__codeline__-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>Helps customers check order status and ETAs.
+</span><span id="__codeline__-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+</span><span id="__codeline__-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>```python
+</span><span id="__codeline__-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>from playbooks import playbook
+</span><span id="__codeline__-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>from datetime import datetime, timedelta
+</span><span id="__codeline__-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
+</span><span id="__codeline__-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="ge">_FAKE_</span>ORDERS = {
+</span><span id="__codeline__-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>    &quot;A12345&quot;: {&quot;order_id&quot;: &quot;A12345&quot;, &quot;status&quot;: &quot;Shipped&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-02&quot;},
+</span><span id="__codeline__-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>    &quot;B98765&quot;: {&quot;order_id&quot;: &quot;B98765&quot;, &quot;status&quot;: &quot;Processing&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-05&quot;},
+</span><span id="__codeline__-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>}
+</span><span id="__codeline__-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
+</span><span id="__codeline__-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="ni">@playbook</span>
+</span><span id="__codeline__-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>async def GetOrderStatus(order_id: str) -&gt; dict:
+</span><span id="__codeline__-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>    info = <span class="ge">_FAKE_</span>ORDERS.get(order_id.upper())
+</span><span id="__codeline__-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a>    if not info:
+</span><span id="__codeline__-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a>        return {&quot;error&quot;: f&quot;Order {order_id} was not found.&quot;}
+</span><span id="__codeline__-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a>    return info
+</span></code></pre></div>
+
+## Greet
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and ask for their $name
+- Say "Hello, $name! I can help you check your order status."
+- $order_id = CollectOrderId()
+- CheckOrderStatus()
+
+## CollectOrderId
+### Steps
+- Ask for a 6-10 character $order_id (letters and numbers)
+- While $order_id is not alphanumeric or length < 6 or length > 10
+  - Tell the user "That doesn't look like a valid order id."
+  - Ask again for $order_id
+- Return $order_id
+
+## CheckOrderStatus
+### Steps
+- $order = GetOrderStatus($order_id)
+- If $order.error exists
+  - Tell the user $order.error
+  - End program
+- Extract $status, $expected_delivery_date from $order
+- SummarizeOrder($order_id, $status, $expected_delivery_date)
+
+## SummarizeOrder($order_id, $status, $expected_delivery_date)
+### Steps
+- Tell the user "Order {$order_id} is {$status}. It's expected on {$expected_delivery_date}."
+- $eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
+- Tell the user $eta
+- Return "done"
+
+## HelpWithOrderStatus
+### Triggers
+- When user asks about order status
+### Steps
+- $order_id = CollectOrderId()
+- CheckOrderStatus()
+
+## InvestigateDelayedOrder
+The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
+
+### Triggers
+- When user mentions delay or late delivery
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>```markdown
+</span><span id="__codeline__-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a># Shipping Agent
+</span><span id="__codeline__-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Helps with shipping-specific tasks.
+</span><span id="__codeline__-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+</span><span id="__codeline__-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>```python
+</span><span id="__codeline__-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>from playbooks import playbook
+</span><span id="__codeline__-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>from datetime import datetime
+</span><span id="__codeline__-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+</span><span id="__codeline__-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>@playbook(public=True)
+</span><span id="__codeline__-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>async def CalculateETA(status: str, expected_delivery_date: str) -&gt; str:
+</span><span id="__codeline__-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>    try:
+</span><span id="__codeline__-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>        due = datetime.fromisoformat(expected_delivery_date)
+</span><span id="__codeline__-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>        days = (due.date() - datetime.utcnow().date()).days
+</span><span id="__codeline__-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>        if status.lower() == &quot;shipped&quot;:
+</span><span id="__codeline__-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a>            return f&quot;Your package is on the way and should arrive in ~{days} day(s).&quot;
+</span><span id="__codeline__-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>        return f&quot;Estimated delivery is in ~{days} day(s).&quot;
+</span><span id="__codeline__-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>    except Exception:
+</span><span id="__codeline__-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a>        return &quot;Estimated delivery date is not available.&quot;
+</span><span id="__codeline__-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a>```
+</span></code></pre></div>
+
+12b) !include 
+---
+
+## 13) Run and iterate
+
+- Run: `playbooks run order_assistant.pb`
+- If using the web playground, start the server then load your `.pb` (see Applications > HTML Playground).
+- Extend: log in users, verify identity, connect real data sources, add escalation to human support.
+
+---
+
+## 14) Key takeaways
+
+- Combine **markdown steps** for behavior and **Python playbooks** for precision.
+- Use **triggers** to react to events and intent naturally.
+- Choose style per step: **natural language** for readability, **assignments** for data flow, **semantic calls** for intent.
+- Reach for **ReAct** when plans are unknown; **Raw** when you need full prompt control. -->
 
 
 
@@ -2181,7 +2178,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../get-started/quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart">
+          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2191,20 +2188,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Quickstart
+                Getting Started
               </div>
             </div>
           </a>
         
         
           
-          <a href="part-0-install-first-run/" class="md-footer__link md-footer__link--next" aria-label="Next: Part 0 – Install and first run">
+          <a href="../reference/config/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration System">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Part 0 – Install and first run
+                Configuration System
               </div>
             </div>
             <div class="md-footer__button md-icon">
