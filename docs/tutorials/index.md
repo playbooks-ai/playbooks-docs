@@ -2,7 +2,7 @@
 
 This tutorial introduces new Playbooks programmers to the language, the framework and the basics of building AI agents. We will use a simple example use case of a customer support AI assistant that checks order status. We will start with a simple “hello world”, then add user input, Python playbooks, markdown↔python calls, multi-agent calls, triggers, description placeholders, and finally explore ReAct and Raw playbooks.
 
-:warning: Prerequisites (see [Getting Started](../get-started/index.md)):
+:warning: Prerequisites (see [Getting Started](../getting-started/index.md)):
 
 - Installed Playbooks
 - Successfully ran a playbooks program using `playbooks run <program>.pb`

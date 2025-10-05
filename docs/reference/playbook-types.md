@@ -458,7 +458,7 @@ For simple Python tools that don't need triggers or the ability to call markdown
 
 ---
 
-## External Playbooks (MCP Tools)
+## External Playbooks
 
 **Best for:** Consuming tools from MCP servers
 
