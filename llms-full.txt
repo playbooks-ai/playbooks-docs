@@ -1723,6 +1723,89 @@ required_attendees: [Developer, Designer, ProductManager]
 - Return meeting summary
 ```
 
+### Pattern: Collecting Inputs from User
+
+When your agent needs information from the user, always ask for all inputs at once and establish a clear conversation loop until all valid data is acquired:
+
+```markdown
+## Main
+### Steps
+- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+- If user gives up, apologize and return
+- Inform user that you were able to authenticate them
+```
+
+This pattern:
+
+- **Asks for all required information upfront** - more efficient for the user
+- **Includes a clear termination condition** - handles the case where user wants to exit
+- **Validates both inputs before proceeding** - ensures data quality
+- **Avoids sequential asking** - better user experience than asking one at a time
+
+**Why this matters**: Asking for information piece by piece creates a poor user experience. Users appreciate knowing all requirements upfront.
+
+### Pattern: Mock Backend Interactions with Python Playbooks
+
+Think if a certain action would require backend interaction (databases, APIs, authentication services). If so, use Python playbooks to encapsulate that logic. Use mock implementations as necessary to aid in development:
+
+````markdown
+```python
+@playbook
+async def AuthenticateUser($email: str, $pin: str) -> bool:
+    """Authenticate user with email and PIN.
+
+    In production, this would call the actual authentication service.
+    For now, using mock data for development.
+    """
+    # Mock implementation for development
+    return $email == "test@test.com" and $pin == "1234"
+
+@playbook  
+async def FetchUserProfile($user_id: str) -> dict:
+    """Fetch user profile from database.
+
+    Production: Query user database
+    Development: Return mock data
+    """
+    # Mock implementation
+    return {
+        "id": $user_id,
+        "name": "Test User",
+        "preferences": {"theme": "dark"}
+    }
+````
+
+## Main
+
+### Steps
+
+- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+- Authenticate user
+- If user is authenticated
+  - Fetch user profile
+  - Welcome user by name from profile
+- Otherwise
+  - Tell user authentication failed
+
+````
+
+This pattern:
+
+- **Separates backend logic** - keeps the workflow clean and focused
+- **Enables rapid prototyping** - test workflows without backend dependencies
+- **Makes transition to production easier** - just swap mock with real implementation
+- **Documents backend contracts** - clear interface for what backend needs to provide
+- **Testable** - mock data allows thorough testing of workflows
+
+**When to use Python playbooks for backend**:
+
+- Database queries or updates
+- External API calls
+- Authentication/authorization checks
+- Complex business logic calculations
+- File I/O operations
+- Any stateful operations
+
 ### Best Practices Summary
 
 **DO**:
@@ -1738,6 +1821,8 @@ required_attendees: [Developer, Designer, ProductManager]
 - ✅ Use meaningful variable names
 - ✅ Break complex playbooks into smaller ones
 - ✅ Test with different user inputs mentally
+- ✅ Ask for all required information at once with conversation loops
+- ✅ Use mock Python playbooks for backend processes during development
 
 **DON'T**:
 
@@ -1750,8 +1835,10 @@ required_attendees: [Developer, Designer, ProductManager]
 - ❌ Forget to document cross-agent contracts
 - ❌ Overuse triggers - prefer explicit calls when flow is clearer
 - ❌ Use triggers for sequential logic
+- ❌ Ask for inputs one at a time when you need multiple pieces of information
+- ❌ Mix backend API calls directly into workflow steps
 
-______________________________________________________________________
+---
 
 ## Editing Existing Programs
 
@@ -1760,10 +1847,10 @@ ______________________________________________________________________
 When modifying existing Playbooks programs:
 
 1. **Read and understand**: Review the file, understand its structure and intent
-1. **Minimal changes**: Change only what's needed to achieve the goal
-1. **Preserve style**: Match existing natural language vs explicit style
-1. **Maintain consistency**: Keep variable naming and structure patterns
-1. **Test mentally**: Think through execution flow after changes
+2. **Minimal changes**: Change only what's needed to achieve the goal
+3. **Preserve style**: Match existing natural language vs explicit style
+4. **Maintain consistency**: Keep variable naming and structure patterns
+5. **Test mentally**: Think through execution flow after changes
 
 ### Common Edit Patterns
 
@@ -1782,7 +1869,7 @@ Description
 
 ### Steps
 - New logic
-```
+````
 
 **Modifying steps**:
 

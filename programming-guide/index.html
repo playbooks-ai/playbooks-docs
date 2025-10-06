@@ -940,6 +940,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pattern-collecting-inputs-from-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern: Collecting Inputs from User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-mock-backend-interactions-with-python-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern: Mock Backend Interactions with Python Playbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#best-practices-summary" class="md-nav__link">
     <span class="md-ellipsis">
       Best Practices Summary
@@ -2116,6 +2134,24 @@
   <a href="#pattern-meeting-facilitation" class="md-nav__link">
     <span class="md-ellipsis">
       Pattern: Meeting Facilitation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-collecting-inputs-from-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern: Collecting Inputs from User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-mock-backend-interactions-with-python-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern: Mock Backend Interactions with Python Playbooks
     </span>
   </a>
   
@@ -3544,6 +3580,77 @@
 </span><span id="__codeline__-70-17"><a id="__codelineno-70-17" name="__codelineno-70-17" href="#__codelineno-70-17"></a><span class="k">-</span><span class="w"> </span>End meeting
 </span><span id="__codeline__-70-18"><a id="__codelineno-70-18" name="__codelineno-70-18" href="#__codelineno-70-18"></a><span class="k">-</span><span class="w"> </span>Return meeting summary
 </span></code></pre></div>
+<h3 id="pattern-collecting-inputs-from-user">Pattern: Collecting Inputs from User<a class="headerlink" href="#pattern-collecting-inputs-from-user" title="Permanent link">&para;</a></h3>
+<p>When your agent needs information from the user, always ask for all inputs at once and establish a clear conversation loop until all valid data is acquired:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+</span><span id="__codeline__-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="k">-</span><span class="w"> </span>If user gives up, apologize and return
+</span><span id="__codeline__-71-5"><a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="k">-</span><span class="w"> </span>Inform user that you were able to authenticate them
+</span></code></pre></div>
+<p>This pattern:</p>
+<ul>
+<li><strong>Asks for all required information upfront</strong> - more efficient for the user</li>
+<li><strong>Includes a clear termination condition</strong> - handles the case where user wants to exit</li>
+<li><strong>Validates both inputs before proceeding</strong> - ensures data quality</li>
+<li><strong>Avoids sequential asking</strong> - better user experience than asking one at a time</li>
+</ul>
+<p><strong>Why this matters</strong>: Asking for information piece by piece creates a poor user experience. Users appreciate knowing all requirements upfront.</p>
+<h3 id="pattern-mock-backend-interactions-with-python-playbooks">Pattern: Mock Backend Interactions with Python Playbooks<a class="headerlink" href="#pattern-mock-backend-interactions-with-python-playbooks" title="Permanent link">&para;</a></h3>
+<p>Think if a certain action would require backend interaction (databases, APIs, authentication services). If so, use Python playbooks to encapsulate that logic. Use mock implementations as necessary to aid in development:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="sb">```python</span>
+</span><span id="__codeline__-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">AuthenticateUser</span><span class="p">(</span><span class="err">$</span><span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="err">$</span><span class="n">pin</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__codeline__-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Authenticate user with email and PIN.</span>
+</span><span id="__codeline__-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a>
+</span><span id="__codeline__-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="sd">    In production, this would call the actual authentication service.</span>
+</span><span id="__codeline__-72-7"><a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a><span class="sd">    For now, using mock data for development.</span>
+</span><span id="__codeline__-72-8"><a id="__codelineno-72-8" name="__codelineno-72-8" href="#__codelineno-72-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-72-9"><a id="__codelineno-72-9" name="__codelineno-72-9" href="#__codelineno-72-9"></a>    <span class="c1"># Mock implementation for development</span>
+</span><span id="__codeline__-72-10"><a id="__codelineno-72-10" name="__codelineno-72-10" href="#__codelineno-72-10"></a>    <span class="k">return</span> <span class="err">$</span><span class="n">email</span> <span class="o">==</span> <span class="s2">&quot;test@test.com&quot;</span> <span class="ow">and</span> <span class="err">$</span><span class="n">pin</span> <span class="o">==</span> <span class="s2">&quot;1234&quot;</span>
+</span><span id="__codeline__-72-11"><a id="__codelineno-72-11" name="__codelineno-72-11" href="#__codelineno-72-11"></a>
+</span><span id="__codeline__-72-12"><a id="__codelineno-72-12" name="__codelineno-72-12" href="#__codelineno-72-12"></a><span class="nd">@playbook</span>  
+</span><span id="__codeline__-72-13"><a id="__codelineno-72-13" name="__codelineno-72-13" href="#__codelineno-72-13"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">FetchUserProfile</span><span class="p">(</span><span class="err">$</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__codeline__-72-14"><a id="__codelineno-72-14" name="__codelineno-72-14" href="#__codelineno-72-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch user profile from database.</span>
+</span><span id="__codeline__-72-15"><a id="__codelineno-72-15" name="__codelineno-72-15" href="#__codelineno-72-15"></a>
+</span><span id="__codeline__-72-16"><a id="__codelineno-72-16" name="__codelineno-72-16" href="#__codelineno-72-16"></a><span class="sd">    Production: Query user database</span>
+</span><span id="__codeline__-72-17"><a id="__codelineno-72-17" name="__codelineno-72-17" href="#__codelineno-72-17"></a><span class="sd">    Development: Return mock data</span>
+</span><span id="__codeline__-72-18"><a id="__codelineno-72-18" name="__codelineno-72-18" href="#__codelineno-72-18"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-72-19"><a id="__codelineno-72-19" name="__codelineno-72-19" href="#__codelineno-72-19"></a>    <span class="c1"># Mock implementation</span>
+</span><span id="__codeline__-72-20"><a id="__codelineno-72-20" name="__codelineno-72-20" href="#__codelineno-72-20"></a>    <span class="k">return</span> <span class="p">{</span>
+</span><span id="__codeline__-72-21"><a id="__codelineno-72-21" name="__codelineno-72-21" href="#__codelineno-72-21"></a>        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="err">$</span><span class="n">user_id</span><span class="p">,</span>
+</span><span id="__codeline__-72-22"><a id="__codelineno-72-22" name="__codelineno-72-22" href="#__codelineno-72-22"></a>        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test User&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-72-23"><a id="__codelineno-72-23" name="__codelineno-72-23" href="#__codelineno-72-23"></a>        <span class="s2">&quot;preferences&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;theme&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-72-24"><a id="__codelineno-72-24" name="__codelineno-72-24" href="#__codelineno-72-24"></a>    <span class="p">}</span>
+</span><span id="__codeline__-72-25"><a id="__codelineno-72-25" name="__codelineno-72-25" href="#__codelineno-72-25"></a><span class="sb">```</span>
+</span><span id="__codeline__-72-26"><a id="__codelineno-72-26" name="__codelineno-72-26" href="#__codelineno-72-26"></a>
+</span><span id="__codeline__-72-27"><a id="__codelineno-72-27" name="__codelineno-72-27" href="#__codelineno-72-27"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-72-28"><a id="__codelineno-72-28" name="__codelineno-72-28" href="#__codelineno-72-28"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-72-29"><a id="__codelineno-72-29" name="__codelineno-72-29" href="#__codelineno-72-29"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+</span><span id="__codeline__-72-30"><a id="__codelineno-72-30" name="__codelineno-72-30" href="#__codelineno-72-30"></a><span class="k">-</span><span class="w"> </span>Authenticate user
+</span><span id="__codeline__-72-31"><a id="__codelineno-72-31" name="__codelineno-72-31" href="#__codelineno-72-31"></a><span class="k">-</span><span class="w"> </span>If user is authenticated
+</span><span id="__codeline__-72-32"><a id="__codelineno-72-32" name="__codelineno-72-32" href="#__codelineno-72-32"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Fetch user profile
+</span><span id="__codeline__-72-33"><a id="__codelineno-72-33" name="__codelineno-72-33" href="#__codelineno-72-33"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Welcome user by name from profile
+</span><span id="__codeline__-72-34"><a id="__codelineno-72-34" name="__codelineno-72-34" href="#__codelineno-72-34"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-72-35"><a id="__codelineno-72-35" name="__codelineno-72-35" href="#__codelineno-72-35"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user authentication failed
+</span></code></pre></div>
+<p>This pattern:</p>
+<ul>
+<li><strong>Separates backend logic</strong> - keeps the workflow clean and focused</li>
+<li><strong>Enables rapid prototyping</strong> - test workflows without backend dependencies  </li>
+<li><strong>Makes transition to production easier</strong> - just swap mock with real implementation</li>
+<li><strong>Documents backend contracts</strong> - clear interface for what backend needs to provide</li>
+<li><strong>Testable</strong> - mock data allows thorough testing of workflows</li>
+</ul>
+<p><strong>When to use Python playbooks for backend</strong>:</p>
+<ul>
+<li>Database queries or updates</li>
+<li>External API calls</li>
+<li>Authentication/authorization checks</li>
+<li>Complex business logic calculations</li>
+<li>File I/O operations</li>
+<li>Any stateful operations</li>
+</ul>
 <h3 id="best-practices-summary">Best Practices Summary<a class="headerlink" href="#best-practices-summary" title="Permanent link">&para;</a></h3>
 <p><strong>DO</strong>:</p>
 <ul>
@@ -3558,6 +3665,8 @@
 <li>✅ Use meaningful variable names</li>
 <li>✅ Break complex playbooks into smaller ones</li>
 <li>✅ Test with different user inputs mentally</li>
+<li>✅ Ask for all required information at once with conversation loops</li>
+<li>✅ Use mock Python playbooks for backend processes during development</li>
 </ul>
 <p><strong>DON'T</strong>:</p>
 <ul>
@@ -3570,6 +3679,8 @@
 <li>❌ Forget to document cross-agent contracts</li>
 <li>❌ Overuse triggers - prefer explicit calls when flow is clearer</li>
 <li>❌ Use triggers for sequential logic</li>
+<li>❌ Ask for inputs one at a time when you need multiple pieces of information</li>
+<li>❌ Mix backend API calls directly into workflow steps</li>
 </ul>
 <hr />
 <h2 id="editing-existing-programs">Editing Existing Programs<a class="headerlink" href="#editing-existing-programs" title="Permanent link">&para;</a></h2>
@@ -3584,18 +3695,18 @@
 </ol>
 <h3 id="common-edit-patterns">Common Edit Patterns<a class="headerlink" href="#common-edit-patterns" title="Permanent link">&para;</a></h3>
 <p><strong>Adding a new playbook</strong>:
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="gh"># Existing Agent</span>
-</span><span id="__codeline__-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
-</span><span id="__codeline__-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="gu">## Existing Playbook</span>
-</span><span id="__codeline__-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-71-5"><a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a><span class="k">-</span><span class="w"> </span>Existing logic
-</span><span id="__codeline__-71-6"><a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>
-</span><span id="__codeline__-71-7"><a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>&lt;!-- ADD NEW PLAYBOOK HERE --&gt;
-</span><span id="__codeline__-71-8"><a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a><span class="gu">## NewPlaybook($param)</span>
-</span><span id="__codeline__-71-9"><a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a>Description
-</span><span id="__codeline__-71-10"><a id="__codelineno-71-10" name="__codelineno-71-10" href="#__codelineno-71-10"></a>
-</span><span id="__codeline__-71-11"><a id="__codelineno-71-11" name="__codelineno-71-11" href="#__codelineno-71-11"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-71-12"><a id="__codelineno-71-12" name="__codelineno-71-12" href="#__codelineno-71-12"></a><span class="k">-</span><span class="w"> </span>New logic
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="gh"># Existing Agent</span>
+</span><span id="__codeline__-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>
+</span><span id="__codeline__-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a><span class="gu">## Existing Playbook</span>
+</span><span id="__codeline__-73-4"><a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-73-5"><a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a><span class="k">-</span><span class="w"> </span>Existing logic
+</span><span id="__codeline__-73-6"><a id="__codelineno-73-6" name="__codelineno-73-6" href="#__codelineno-73-6"></a>
+</span><span id="__codeline__-73-7"><a id="__codelineno-73-7" name="__codelineno-73-7" href="#__codelineno-73-7"></a>&lt;!-- ADD NEW PLAYBOOK HERE --&gt;
+</span><span id="__codeline__-73-8"><a id="__codelineno-73-8" name="__codelineno-73-8" href="#__codelineno-73-8"></a><span class="gu">## NewPlaybook($param)</span>
+</span><span id="__codeline__-73-9"><a id="__codelineno-73-9" name="__codelineno-73-9" href="#__codelineno-73-9"></a>Description
+</span><span id="__codeline__-73-10"><a id="__codelineno-73-10" name="__codelineno-73-10" href="#__codelineno-73-10"></a>
+</span><span id="__codeline__-73-11"><a id="__codelineno-73-11" name="__codelineno-73-11" href="#__codelineno-73-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-73-12"><a id="__codelineno-73-12" name="__codelineno-73-12" href="#__codelineno-73-12"></a><span class="k">-</span><span class="w"> </span>New logic
 </span></code></pre></div></p>
 <p><strong>Modifying steps</strong>:</p>
 <ul>
@@ -3605,26 +3716,26 @@
 <li>Ensure variable references still work</li>
 </ul>
 <p><strong>Adding a trigger</strong>:
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="gu">## ExistingPlaybook</span>
-</span><span id="__codeline__-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>&lt;!-- ADD THIS SECTION IF MISSING --&gt;
-</span><span id="__codeline__-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="k">-</span><span class="w"> </span>When condition is met
-</span><span id="__codeline__-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a>
-</span><span id="__codeline__-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-72-7"><a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a><span class="k">-</span><span class="w"> </span>Existing steps
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="gu">## ExistingPlaybook</span>
+</span><span id="__codeline__-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>&lt;!-- ADD THIS SECTION IF MISSING --&gt;
+</span><span id="__codeline__-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a><span class="k">-</span><span class="w"> </span>When condition is met
+</span><span id="__codeline__-74-5"><a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a>
+</span><span id="__codeline__-74-6"><a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-74-7"><a id="__codelineno-74-7" name="__codelineno-74-7" href="#__codelineno-74-7"></a><span class="k">-</span><span class="w"> </span>Existing steps
 </span></code></pre></div></p>
 <p><strong>Adding agent behavior</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="gh"># ExistingAgent</span>
-</span><span id="__codeline__-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>&lt;!-- MODIFY THIS DESCRIPTION --&gt;
-</span><span id="__codeline__-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>Existing description. NEW BEHAVIOR: Additional personality trait or capability.
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="gh"># ExistingAgent</span>
+</span><span id="__codeline__-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>&lt;!-- MODIFY THIS DESCRIPTION --&gt;
+</span><span id="__codeline__-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>Existing description. NEW BEHAVIOR: Additional personality trait or capability.
 </span></code></pre></div>
 <p><strong>Converting natural to explicit</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>&lt;!-- BEFORE --&gt;
-</span><span id="__codeline__-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a><span class="k">-</span><span class="w"> </span>Get order details and tell user
-</span><span id="__codeline__-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>
-</span><span id="__codeline__-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>&lt;!-- AFTER (if user requests more structure) --&gt;
-</span><span id="__codeline__-74-5"><a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a><span class="k">-</span><span class="w"> </span>$order = GetOrderDetails($order_id)
-</span><span id="__codeline__-74-6"><a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a><span class="k">-</span><span class="w"> </span>Tell user about $order
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>&lt;!-- BEFORE --&gt;
+</span><span id="__codeline__-76-2"><a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a><span class="k">-</span><span class="w"> </span>Get order details and tell user
+</span><span id="__codeline__-76-3"><a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a>
+</span><span id="__codeline__-76-4"><a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a>&lt;!-- AFTER (if user requests more structure) --&gt;
+</span><span id="__codeline__-76-5"><a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a><span class="k">-</span><span class="w"> </span>$order = GetOrderDetails($order_id)
+</span><span id="__codeline__-76-6"><a id="__codelineno-76-6" name="__codelineno-76-6" href="#__codelineno-76-6"></a><span class="k">-</span><span class="w"> </span>Tell user about $order
 </span></code></pre></div>
 <h3 id="example-edit-request">Example Edit Request<a class="headerlink" href="#example-edit-request" title="Permanent link">&para;</a></h3>
 <p><strong>Request</strong>: "Add validation to ensure order ID is 8 digits"</p>
@@ -3635,18 +3746,18 @@
 <li>Add trigger to invoke validation</li>
 <li>Update main flow to handle invalid input</li>
 </ol>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="k">-</span><span class="w"> </span>Ask user for their $order_id till valid  &lt;!-- MODIFIED --&gt;
-</span><span id="__codeline__-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="k">-</span><span class="w"> </span>Process order
-</span><span id="__codeline__-75-5"><a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a>
-</span><span id="__codeline__-75-6"><a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a><span class="gu">## ValidateOrderId  &lt;!-- NEW PLAYBOOK --&gt;</span>
-</span><span id="__codeline__-75-7"><a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-75-8"><a id="__codelineno-75-8" name="__codelineno-75-8" href="#__codelineno-75-8"></a><span class="k">-</span><span class="w"> </span>When user provides order id
-</span><span id="__codeline__-75-9"><a id="__codelineno-75-9" name="__codelineno-75-9" href="#__codelineno-75-9"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-75-10"><a id="__codelineno-75-10" name="__codelineno-75-10" href="#__codelineno-75-10"></a><span class="k">-</span><span class="w"> </span>If $order_id is not 8 digits
-</span><span id="__codeline__-75-11"><a id="__codelineno-75-11" name="__codelineno-75-11" href="#__codelineno-75-11"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user order ID must be 8 digits
-</span><span id="__codeline__-75-12"><a id="__codelineno-75-12" name="__codelineno-75-12" href="#__codelineno-75-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask for order ID again
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-77-3"><a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="k">-</span><span class="w"> </span>Ask user for their $order_id till valid  &lt;!-- MODIFIED --&gt;
+</span><span id="__codeline__-77-4"><a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a><span class="k">-</span><span class="w"> </span>Process order
+</span><span id="__codeline__-77-5"><a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a>
+</span><span id="__codeline__-77-6"><a id="__codelineno-77-6" name="__codelineno-77-6" href="#__codelineno-77-6"></a><span class="gu">## ValidateOrderId  &lt;!-- NEW PLAYBOOK --&gt;</span>
+</span><span id="__codeline__-77-7"><a id="__codelineno-77-7" name="__codelineno-77-7" href="#__codelineno-77-7"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-77-8"><a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a><span class="k">-</span><span class="w"> </span>When user provides order id
+</span><span id="__codeline__-77-9"><a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-77-10"><a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a><span class="k">-</span><span class="w"> </span>If $order_id is not 8 digits
+</span><span id="__codeline__-77-11"><a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user order ID must be 8 digits
+</span><span id="__codeline__-77-12"><a id="__codelineno-77-12" name="__codelineno-77-12" href="#__codelineno-77-12"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask for order ID again
 </span></code></pre></div>
 <hr />
 <h2 id="understanding-pbasm-compilation">Understanding PBAsm Compilation<a class="headerlink" href="#understanding-pbasm-compilation" title="Permanent link">&para;</a></h2>
@@ -3661,27 +3772,27 @@
 </ul>
 <h3 id="compilation-example">Compilation Example<a class="headerlink" href="#compilation-example" title="Permanent link">&para;</a></h3>
 <p><strong>Source (Playbooks)</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="gu">## GreetUser</span>
-</span><span id="__codeline__-76-2"><a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-76-3"><a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__codeline__-76-4"><a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-76-5"><a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a><span class="k">-</span><span class="w"> </span>Ask user for their name
-</span><span id="__codeline__-76-6"><a id="__codelineno-76-6" name="__codelineno-76-6" href="#__codelineno-76-6"></a><span class="k">-</span><span class="w"> </span>If name provided
-</span><span id="__codeline__-76-7"><a id="__codelineno-76-7" name="__codelineno-76-7" href="#__codelineno-76-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Thank user by name
-</span><span id="__codeline__-76-8"><a id="__codelineno-76-8" name="__codelineno-76-8" href="#__codelineno-76-8"></a><span class="k">-</span><span class="w"> </span>Otherwise
-</span><span id="__codeline__-76-9"><a id="__codelineno-76-9" name="__codelineno-76-9" href="#__codelineno-76-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask again
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="gu">## GreetUser</span>
+</span><span id="__codeline__-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="k">-</span><span class="w"> </span>Ask user for their name
+</span><span id="__codeline__-78-6"><a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a><span class="k">-</span><span class="w"> </span>If name provided
+</span><span id="__codeline__-78-7"><a id="__codelineno-78-7" name="__codelineno-78-7" href="#__codelineno-78-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Thank user by name
+</span><span id="__codeline__-78-8"><a id="__codelineno-78-8" name="__codelineno-78-8" href="#__codelineno-78-8"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-78-9"><a id="__codelineno-78-9" name="__codelineno-78-9" href="#__codelineno-78-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask again
 </span></code></pre></div>
 <p><strong>Compiled (PBAsm)</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="gu">## GreetUser() -&gt; None</span>
-</span><span id="__codeline__-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-77-3"><a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="k">-</span><span class="w"> </span>T1:BGN At the beginning
-</span><span id="__codeline__-77-4"><a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-77-5"><a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a><span class="k">-</span><span class="w"> </span>01:QUE Say(user, Ask user for their $name:str); YLD for user
-</span><span id="__codeline__-77-6"><a id="__codelineno-77-6" name="__codelineno-77-6" href="#__codelineno-77-6"></a><span class="k">-</span><span class="w"> </span>02:CND If $name is provided
-</span><span id="__codeline__-77-7"><a id="__codelineno-77-7" name="__codelineno-77-7" href="#__codelineno-77-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>02.01:QUE Say(user, Thank user by $name); YLD for call
-</span><span id="__codeline__-77-8"><a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a><span class="k">-</span><span class="w"> </span>03:CND Otherwise  
-</span><span id="__codeline__-77-9"><a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>03.01:QUE Say(user, Ask for $name again); YLD for user
-</span><span id="__codeline__-77-10"><a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a><span class="k">-</span><span class="w"> </span>04:RET
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="gu">## GreetUser() -&gt; None</span>
+</span><span id="__codeline__-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-79-3"><a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a><span class="k">-</span><span class="w"> </span>T1:BGN At the beginning
+</span><span id="__codeline__-79-4"><a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-79-5"><a id="__codelineno-79-5" name="__codelineno-79-5" href="#__codelineno-79-5"></a><span class="k">-</span><span class="w"> </span>01:QUE Say(user, Ask user for their $name:str); YLD for user
+</span><span id="__codeline__-79-6"><a id="__codelineno-79-6" name="__codelineno-79-6" href="#__codelineno-79-6"></a><span class="k">-</span><span class="w"> </span>02:CND If $name is provided
+</span><span id="__codeline__-79-7"><a id="__codelineno-79-7" name="__codelineno-79-7" href="#__codelineno-79-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>02.01:QUE Say(user, Thank user by $name); YLD for call
+</span><span id="__codeline__-79-8"><a id="__codelineno-79-8" name="__codelineno-79-8" href="#__codelineno-79-8"></a><span class="k">-</span><span class="w"> </span>03:CND Otherwise  
+</span><span id="__codeline__-79-9"><a id="__codelineno-79-9" name="__codelineno-79-9" href="#__codelineno-79-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>03.01:QUE Say(user, Ask for $name again); YLD for user
+</span><span id="__codeline__-79-10"><a id="__codelineno-79-10" name="__codelineno-79-10" href="#__codelineno-79-10"></a><span class="k">-</span><span class="w"> </span>04:RET
 </span></code></pre></div>
 <h3 id="key-pbasm-concepts">Key PBAsm Concepts<a class="headerlink" href="#key-pbasm-concepts" title="Permanent link">&para;</a></h3>
 <p><strong>Opcodes</strong> (like CPU instructions):</p>
@@ -3725,17 +3836,17 @@
 <hr />
 <h2 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
 <h3 id="minimal-working-program">Minimal Working Program<a class="headerlink" href="#minimal-working-program" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="gh"># MyAgent</span>
-</span><span id="__codeline__-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>Description of what this agent does
-</span><span id="__codeline__-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>
-</span><span id="__codeline__-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-78-6"><a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__codeline__-78-7"><a id="__codelineno-78-7" name="__codelineno-78-7" href="#__codelineno-78-7"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-78-8"><a id="__codelineno-78-8" name="__codelineno-78-8" href="#__codelineno-78-8"></a><span class="k">-</span><span class="w"> </span>Greet user
-</span><span id="__codeline__-78-9"><a id="__codelineno-78-9" name="__codelineno-78-9" href="#__codelineno-78-9"></a><span class="k">-</span><span class="w"> </span>Ask user what they need help with
-</span><span id="__codeline__-78-10"><a id="__codelineno-78-10" name="__codelineno-78-10" href="#__codelineno-78-10"></a><span class="k">-</span><span class="w"> </span>Help them
-</span><span id="__codeline__-78-11"><a id="__codelineno-78-11" name="__codelineno-78-11" href="#__codelineno-78-11"></a><span class="k">-</span><span class="w"> </span>End program
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="gh"># MyAgent</span>
+</span><span id="__codeline__-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>Description of what this agent does
+</span><span id="__codeline__-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>
+</span><span id="__codeline__-80-4"><a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-80-5"><a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-80-6"><a id="__codelineno-80-6" name="__codelineno-80-6" href="#__codelineno-80-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-80-7"><a id="__codelineno-80-7" name="__codelineno-80-7" href="#__codelineno-80-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-80-8"><a id="__codelineno-80-8" name="__codelineno-80-8" href="#__codelineno-80-8"></a><span class="k">-</span><span class="w"> </span>Greet user
+</span><span id="__codeline__-80-9"><a id="__codelineno-80-9" name="__codelineno-80-9" href="#__codelineno-80-9"></a><span class="k">-</span><span class="w"> </span>Ask user what they need help with
+</span><span id="__codeline__-80-10"><a id="__codelineno-80-10" name="__codelineno-80-10" href="#__codelineno-80-10"></a><span class="k">-</span><span class="w"> </span>Help them
+</span><span id="__codeline__-80-11"><a id="__codelineno-80-11" name="__codelineno-80-11" href="#__codelineno-80-11"></a><span class="k">-</span><span class="w"> </span>End program
 </span></code></pre></div>
 <h3 id="cheat-sheet">Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h3>
 <table>
