@@ -15,7 +15,7 @@
 - Installed Playbooks
 - Successfully ran a program using `playbooks run <program>.pb`
 
-:information_source: **Code**: All examples available [here](https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials)
+:information_source: **Code**: All examples available [here](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials)
 
 :bulb: **New to Playbooks?** This tutorial teaches by example. For comprehensive reference, see the [Programming Guide](../programming-guide/index.md).
 
