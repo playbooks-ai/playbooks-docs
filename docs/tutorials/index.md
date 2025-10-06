@@ -1,30 +1,23 @@
-# Tutorial: Building an Order Status Assistant with Playbooks
+# Tutorial: Building an Order Status Assistant
 
-This tutorial introduces new Playbooks programmers to the language, the framework and the basics of building AI agents. We will use a simple example use case of a customer support AI assistant that checks order status. We will start with a simple “hello world”, then add user input, Python playbooks, markdown↔python calls, multi-agent calls, triggers, description placeholders, and finally explore ReAct and Raw playbooks.
+**Goal**: Learn Playbooks by building a customer support AI assistant that checks order status. You'll start with "hello world" and progressively add user input, validation, Python playbooks, and more.
 
-:warning: Prerequisites (see [Getting Started](../getting-started/index.md)):
+**What you'll learn**:
+
+- Writing your first agent and playbook
+- Collecting and validating user input
+- Using triggers for automatic validation
+- Mixing Python and Markdown playbooks
+- Injecting dynamic context with description placeholders
+
+**Prerequisites** (see [Getting Started](../getting-started/index.md)):
 
 - Installed Playbooks
-- Successfully ran a playbooks program using `playbooks run <program>.pb`
+- Successfully ran a program using `playbooks run <program>.pb`
 
+:information_source: **Code**: All examples available [here](https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials)
 
-:information_source: Code for this tutorial is available [here](https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials)
-
----
-
-## Playbooks AI approach: Software 3.0
-
-- **LLM as a processor**: Your natural language specifications become the program; the runtime compiles and executes them reliably on LLM.
-- **Programmer friendly**: Agents are classes, playbooks are methods. Multi-agent communication is message passing. Use standard developer tools and IDEs for debugging, code completion, etc.
-- **Simple syntax**: Use markdown `H1` tags for agents, `H2` tags and `@playbook` decorated Python functions for playbooks. You pick your coding style - `$order_id = LoadOrderId()`, `Load $order_id`, `Load user's order id` are all valid.
-- **Soft + Hard logic**: Run soft logic on LLM, hard logic on CPU; on the same call stack; mix and match as needed.
-    1. [LLM] Natural language markdown playbooks for known busiess logic 
-    2. [LLM] Natural language ReAct playbooks for dynamic planning
-    3. [LLM] Raw playbooks for full control over the LLM prompt
-    4. [CPU] Python playbooks when you need determinism, external system access, and general computation
-- **Higher abstraction**: Describe behavior at the level of “what the agent should do,” not plumbing or orchestration code. Leads to 10x fewer lines of code.
-- **Verifiability and observability**: Structured programs, Semantic static program analysis, compilation into LLM-friendly Assembly Language, triggers, post-hoc checks enable reliable behavior despite LLM non-determinism
-- **Advanced capabilities**: Dynamic playbook generation, observer agents, formal verifiability and more.
+:bulb: **New to Playbooks?** This tutorial teaches by example. For comprehensive reference, see the [Programming Guide](../programming-guide/index.md).
 
 ---
 
@@ -364,15 +357,14 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 
 </details>
 
-**:bulb: The goal is to make the agent's behavior specification as readable as possible, as if it is written for a competent employee.**
+**:bulb: The goal is to make the agent's behavior specification as readable as possible, 
+as if it is written for a competent employee.**
 
-:warning: Don't use the explicit Python-like syntax unless absolutely necessary.
+:books: **Learn more**: See [Natural Language vs Explicit Syntax](../programming-guide/index.md#natural-language-vs-explicit-syntax) in the Programming Guide.
 
 ### 03.02 Using Triggers
 
-Triggers is a powerful feature in Playbooks AI that enables declarative event-driven programming through natural language conditions. They allow playbooks to be dynamically invoked when specified conditions are met.
-
-Let's add a trigger condition to the `Validate order id` playbook to **automatically run** when the user provides an order id.
+Triggers automatically invoke playbooks when conditions are met - like CPU interrupts. Let's add a trigger to the `Validate order id` playbook to **automatically run** when the user provides an order id.
 
 examples/tutorials/03.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.02/order_assistant.pb)
 
@@ -399,15 +391,17 @@ Changes:
 - We no longer need to explicitly call the `Validate order id` playbook on line 11.
 - We added a trigger condition to the `Validate order id` playbook to run automatically when the user provides an order id.
 
-:bulb: Triggers dramatically simplify the code by composing the program's control flow dynamically.
+:bulb: **Key Benefit**: Main flow stays clean. Validation happens automatically. No explicit validation calls needed.
+
+:books: **Learn more**: See [Triggers: Event-Driven Programming](../programming-guide/index.md#triggers-event-driven-programming) for patterns, best practices, and when to use (or avoid) triggers.
 
 ---
 
-## 4) Unified call stack
+## 4) Mixing Python and Markdown Playbooks
 
 ### 04.01 Markdown → Python
 
-Use Python when you need data access, deterministic logic, or libraries. Define async functions decorated with `@playbook` inside python code blocks. You can call Python playbooks from any (Markdown or Python) playbook.
+Use Python playbooks when you need data access, deterministic logic, or external libraries. Define async functions decorated with `@playbook` inside python code blocks.
 
 examples/tutorials/04.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.01/order_assistant.pb)
 
@@ -491,6 +485,8 @@ OrderSupportAgent: Thank you for providing your order ID 29376452. Let me look u
 OrderSupportAgent: Great news! I found your order 29376452. The current status is 'Processing' and your expected delivery date is October 5th, 2025. Your order is being prepared and will be shipped soon!
 ```
 </details>
+
+:books: **Learn more**: See [Python Playbooks - Hard Logic](../programming-guide/index.md#4-python-playbooks-hard-logic) for full details, decorator options, and when to extract Python playbooks to MCP servers.
 
 ---
 
@@ -593,9 +589,9 @@ OrderSupportAgent: Your order #29376452 is currently being processed and hasn't 
 ```
 </details>
 
-### 04.03 Description placeholders
+### 04.03 Description Placeholders
 
-Now, let's say we want the agent to behave different based on whether a shipped order is overdue or not. We will update the playbook -
+We want to check if a shipped order is overdue, but the LLM doesn't know today's date. We can inject dynamic information using **description placeholders** with `{expression}` syntax:
 
 ```diff title="order_assistant.pb"
 -  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
@@ -612,7 +608,7 @@ But, the LLM won't know about today's date so we need to inject that information
 +Summarize order status, taking into account today's date {date.today().strftime("%Y-%m-%d")}
 ```
 
-Placeholder expression must be a valid Python expression. It will be evaluated, with access to any imports from python code blocks. In this case, we need the `date` module, so we need to import it in a python code block - see line 15 below.
+Placeholder expressions are evaluated when the playbook starts. They can access variables, call playbooks, and use Python expressions. Import any needed modules in a Python code block.
 
 examples/tutorials/04.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.03/order_assistant.pb)
 
@@ -665,304 +661,32 @@ OrderSupportAgent: I apologize for the significant delay with your order 4334567
 ```
 </details>
 
-Thanks for making it this far! Take a break. Smell a rose. Play with your cat.
-
-Go build something cool with Playbooks!
+:books: **Learn more**: See [Programming Guide](../programming-guide/index.md) for advanced patterns and best practices.
 
 ---
 
-More sections coming soon -
+## Next Steps
 
-* Multiple agents
+Congratulations! You've built a working order assistant that:
 
-    * Create an agent with a public playbook
-    * Call playbook directly
-    * Send message to agent
+- ✅ Greets users and collects input conversationally
+- ✅ Validates input automatically with triggers
+- ✅ Mixes Python and Markdown playbooks seamlessly
+- ✅ Injects dynamic context with placeholders
 
-* Triggers: react to user intent and state
-* ReAct playbooks (no steps, think–act loop)
-* Raw playbooks (full prompt control)
-* !import directive
+**Continue Learning**:
 
-## Explore more
+- **[Programming Guide](../programming-guide/index.md)** - Comprehensive reference covering all features
+  - [Multi-Agent Programs](../programming-guide/index.md#multi-agent-programs) - Multiple agents, meetings, cross-agent calls
+  - [ReAct Playbooks](../programming-guide/index.md#2-react-playbooks-dynamic-reasoning) - Dynamic planning when steps aren't predetermined
+  - [Raw Playbooks](../programming-guide/index.md#3-raw-prompt-playbooks-full-control) - Full prompt control for single-shot tasks
+  - [Common Patterns](../programming-guide/index.md#common-patterns-and-best-practices) - Best practices and real-world patterns
 
-- [Agents](../reference/agents.md)
-- [MCP Agents](../reference/mcp-agent.md)
-- [Triggers](../reference/triggers.md)
-- [Playbooks AI technology stack](../reference/playbooks-ai.md)
-<!-- 
+**Reference Documentation**:
 
+- [Agents](../reference/agents.md) - Agent configuration and structure
+- [MCP Agents](../reference/mcp-agent.md) - Integrating external tools via MCP
+- [Triggers](../reference/triggers.md) - Event-driven programming details
+- [Playbook Types](../reference/playbook-types.md) - Deep dive on all playbook types
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## 6) Add another agent and call it
-
-Agents are H1 sections. You can call another agent’s playbook like `ShippingAgent.CalculateETA(...)`.
-
-````markdown
-# Shipping Agent
-Helps with shipping-specific tasks.
-
-```python
-from playbooks import playbook
-from datetime import datetime, timedelta
-
-@playbook(public=True)
-async def CalculateETA(status: str, expected_delivery_date: str) -> str:
-    """
-    Returns a human-friendly ETA summary string.
-    """
-    try:
-        due = datetime.fromisoformat(expected_delivery_date)
-        days = (due.date() - datetime.utcnow().date()).days
-        if status.lower() == "shipped":
-            return f"Your package is on the way and should arrive in ~{days} day(s)."
-        return f"Estimated delivery is in ~{days} day(s)."
-    except Exception:
-        return "Estimated delivery date is not available."
-````
-
-Back in `Order Support Agent`, call it:
-
-```markdown
-## SummarizeOrder($order_id, $status, $expected_delivery_date)
-### Steps
-- Tell the user "Order {$order_id} is {$status}. It's expected on {$expected_delivery_date}."
-- $eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
-- Tell the user $eta
-- Return "done"
-```
-
-Tip:
-- Use `public=True` to expose Python playbooks to other agents.
-
----
-
-## 7) Triggers: react to user intent and state
-
-Add triggers to run playbooks automatically when conditions are met.
-
-```markdown
-## HelpWithOrderStatus
-### Triggers
-- When user asks about order status
-### Steps
-- $order_id = CollectOrderId()
-- CheckOrderStatus()
-```
-
-Common patterns:
-- Temporal: `- After 5 minutes`
-- Interaction: `- When user provides a new order id`
-- State-based: `- When $attempts is greater than 3`
-- Flow-based: `- After calling CollectOrderId`
-
----
-
-## 8) Description placeholders
-
-Placeholders inject dynamic context into the description shown to the LLM.
-
-```markdown
-## SupportSession
-You’re helping customer {$name} with order {$order_id}. Be concise and friendly.
-
-### Steps
-- Ask a clarifying question if info is missing
-- Proceed to CheckOrderStatus()
-```
-
-Placeholders can reference variables, call other playbooks, and evaluate Python expressions like `{round($score * 100)}%`.
-
----
-
-## 9) ReAct playbooks (no steps, think–act loop)
-
-When steps aren’t known upfront, omit `### Steps`. The default ReAct loop lets the LLM plan, act, and iterate.
-
-```markdown
-## InvestigateDelayedOrder
-The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
-
-### Triggers
-- When user mentions delay or late delivery
-```
-
-Use ReAct for research, multi-step troubleshooting, or open-ended problem solving. Prefer standard markdown steps for prescribed flows.
-
----
-
-## 10) Raw playbooks (full prompt control)
-
-Use `execution_mode: raw` to send exactly your prompt (after placeholder substitution) as a single-shot LLM call.
-
-```markdown
-## CategorizeSupportTicket
-execution_mode: raw
-
-You will classify the ticket: "{$message}"
-Respond with exactly one of:
-- Order Status
-- Refund
-- Technical Support
-- Other
-```
-
-Tradeoff: maximum control vs. fewer safety checks. Great for atomic labeling or bespoke prompts.
-
----
-
-## 11) Coding style: natural language ↔ Python-like
-
-You can write steps in different styles; choose per clarity and reliability.
-
-- Natural language (most readable):
-  ```markdown
-  - Ask for a 6-10 character $order_id and validate it
-  - Tell the user the ETA
-  ```
-- Explicit assignments (precise data flow):
-  ```markdown
-  - $order_id = CollectOrderId()
-  - $order = GetOrderStatus($order_id)
-  - $eta = Shipping Agent.CalculateETA($order.status, $order.expected_delivery_date)
-  - Return $eta
-  ```
-- Semantic calls (let the compiler resolve intent):
-  ```markdown
-  - Check the status of the user’s order and provide the ETA
-  ```
-Guidelines:
-- **Prefer natural language** for control flow and readability.
-- **Use assignments** when passing values across steps or between playbooks.
-- **Prefer semantic calls** when the intent is obvious; fall back to explicit calls for clarity or parameters.
-
----
-
-## 12) Full example: putting it all together
-
-````markdown
-# Order Support Agent
-Helps customers check order status and ETAs.
-
-```python
-from playbooks import playbook
-from datetime import datetime, timedelta
-
-_FAKE_ORDERS = {
-    "A12345": {"order_id": "A12345", "status": "Shipped", "expected_delivery_date": "2025-10-02"},
-    "B98765": {"order_id": "B98765", "status": "Processing", "expected_delivery_date": "2025-10-05"},
-}
-
-@playbook
-async def GetOrderStatus(order_id: str) -> dict:
-    info = _FAKE_ORDERS.get(order_id.upper())
-    if not info:
-        return {"error": f"Order {order_id} was not found."}
-    return info
-````
-
-## Greet
-### Triggers
-- At the beginning
-### Steps
-- Greet the user and ask for their $name
-- Say "Hello, $name! I can help you check your order status."
-- $order_id = CollectOrderId()
-- CheckOrderStatus()
-
-## CollectOrderId
-### Steps
-- Ask for a 6-10 character $order_id (letters and numbers)
-- While $order_id is not alphanumeric or length < 6 or length > 10
-  - Tell the user "That doesn't look like a valid order id."
-  - Ask again for $order_id
-- Return $order_id
-
-## CheckOrderStatus
-### Steps
-- $order = GetOrderStatus($order_id)
-- If $order.error exists
-  - Tell the user $order.error
-  - End program
-- Extract $status, $expected_delivery_date from $order
-- SummarizeOrder($order_id, $status, $expected_delivery_date)
-
-## SummarizeOrder($order_id, $status, $expected_delivery_date)
-### Steps
-- Tell the user "Order {$order_id} is {$status}. It's expected on {$expected_delivery_date}."
-- $eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
-- Tell the user $eta
-- Return "done"
-
-## HelpWithOrderStatus
-### Triggers
-- When user asks about order status
-### Steps
-- $order_id = CollectOrderId()
-- CheckOrderStatus()
-
-## InvestigateDelayedOrder
-The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
-
-### Triggers
-- When user mentions delay or late delivery
-````
-
-```markdown
-# Shipping Agent
-Helps with shipping-specific tasks.
-
-```python
-from playbooks import playbook
-from datetime import datetime
-
-@playbook(public=True)
-async def CalculateETA(status: str, expected_delivery_date: str) -> str:
-    try:
-        due = datetime.fromisoformat(expected_delivery_date)
-        days = (due.date() - datetime.utcnow().date()).days
-        if status.lower() == "shipped":
-            return f"Your package is on the way and should arrive in ~{days} day(s)."
-        return f"Estimated delivery is in ~{days} day(s)."
-    except Exception:
-        return "Estimated delivery date is not available."
-```
-````
-
-12b) !include 
----
-
-## 13) Run and iterate
-
-- Run: `playbooks run order_assistant.pb`
-- If using the web playground, start the server then load your `.pb` (see Applications > HTML Playground).
-- Extend: log in users, verify identity, connect real data sources, add escalation to human support.
-
----
-
-## 14) Key takeaways
-
-- Combine **markdown steps** for behavior and **Python playbooks** for precision.
-- Use **triggers** to react to events and intent naturally.
-- Choose style per step: **natural language** for readability, **assignments** for data flow, **semantic calls** for intent.
-- Reach for **ReAct** when plans are unknown; **Raw** when you need full prompt control. -->
+**Ready to build?** Start with the [Programming Guide](../programming-guide/index.md) and explore the examples in the [Playbooks repository](https://github.com/playbooks-ai/playbooks/tree/main/examples).
