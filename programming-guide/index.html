@@ -1146,6 +1146,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1182,8 +1186,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1192,8 +1197,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
@@ -1201,6 +1212,8 @@
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2671,15 +2684,19 @@
 </span><span id="__codeline__-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="k">-</span><span class="w"> </span>Get user&#39;s sleep efficiency from MCP
 </span><span id="__codeline__-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="k">-</span><span class="w"> </span>Welcome user and use the info to help them
 </span></code></pre></div>
-<p><strong>When NOT to extract</strong>:
-- ✅ 1-3 Python playbooks that are tightly coupled to agent logic
-- ✅ Python playbooks that call Markdown playbooks (requires <code>@playbook</code>)
-- ✅ Python playbooks with triggers (requires <code>@playbook</code>)</p>
-<p><strong>When to extract</strong>:
-- ✅ 4+ Python playbooks in single agent
-- ✅ Pure utility functions (calculations, API calls, data transformations)
-- ✅ Tools that could be reused by multiple agents
-- ✅ Complex Python logic that benefits from separate testing</p>
+<p><strong>When NOT to extract</strong>:</p>
+<ul>
+<li>✅ 1-3 Python playbooks that are tightly coupled to agent logic</li>
+<li>✅ Python playbooks that call Markdown playbooks (requires <code>@playbook</code>)</li>
+<li>✅ Python playbooks with triggers (requires <code>@playbook</code>)</li>
+</ul>
+<p><strong>When to extract</strong>:</p>
+<ul>
+<li>✅ 4+ Python playbooks in single agent</li>
+<li>✅ Pure utility functions (calculations, API calls, data transformations)</li>
+<li>✅ Tools that could be reused by multiple agents</li>
+<li>✅ Complex Python logic that benefits from separate testing</li>
+</ul>
 <h3 id="5-external-playbooks-remote-tools">5. External Playbooks - Remote Tools<a class="headerlink" href="#5-external-playbooks-remote-tools" title="Permanent link">&para;</a></h3>
 <p><strong>Use when</strong>: Integrating MCP servers, external APIs (roadmap)</p>
 <p><strong>Structure</strong>:

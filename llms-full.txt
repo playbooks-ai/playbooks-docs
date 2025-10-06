@@ -1,0 +1,2718 @@
+# Playbooks AI
+
+> Build AI Agents with Natural Language Programming
+
+Playbooks is an innovative framework for building and executing AI agents using "playbooks" - structured workflows defined in natural language and Python code. Created by Amol Kelkar, the framework is part of the world's first Software 3.0 tech stack, Playbooks AI. It includes a new programming language (markdown-formatted .pb files) that are compiled to Playbooks Assembly Language (.pbasm files), that are then executed by the Playbooks Runtime.
+
+# About Playbooks
+
+# LLM is your new CPU Welcome to Software 3.0
+
+**Build multi‑agent AI systems** with ease with Python code running on CPU and **natural language code running on LLM**.
+
+Stop writing prompts and hoping that the LLM will follow them faithfully. Instead, get **verifiable natural language program execution** with Playbooks.
+
+Playbooks is an innovative framework for building and executing AI agents using "playbooks" – structured workflows defined in natural language and Python code. Created by [Amol Kelkar](https://www.linkedin.com/in/amol-kelkar/), the framework is part of the world's first Software 3.0 tech stack, Playbooks AI. It includes a **new programming language** (markdown-formatted .pb files) that are compiled to Playbooks Assembly Language (.pbasm files), that are then executed by the Playbooks Runtime.
+
+Unlike other AI agent frameworks, **Playbooks programs are highly readable**. Business users can understand, change, and approve agent behavior specified in natural language; while developers benefit from the flexibility of running Python code on CPU and natural lanuage code on LLM, on the same call stack, and with full observability and control.
+
+______________________________________________________________________
+
+Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
+
+Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** is equivalent to more than [10x longer, cryptic LangGraph code](assets/country-facts.langgraph.py).
+
+````markdown
+# Country facts agent
+This agent prints interesting facts about nearby countries
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Ask user what $country they are from
+- If user did not provide a country, engage in a conversation and gently nudge them to provide a country
+- List 5 $countries near $country
+- Tell the user the nearby $countries
+- Inform the user that you will now tell them some interesting facts about each of the countries
+- process_countries($countries)
+- End program
+
+```python
+from typing import List
+
+@playbook
+async def process_countries(countries: List[str]):
+    for country in countries:
+        # Calls the natural language playbook 'GetCountryFact' for each country
+        fact = await GetCountryFact(country)
+        await Say("user", f"{country}: {fact}")
+````
+
+## GetCountryFact($country)
+
+### Steps
+
+- Return an unusual historical fact about $country
+
+````
+
+## Try out Playbooks in 10 minutes
+
+You will need Python 3.12+ and your Anthropic API key.
+
+### 1. Install Playbooks
+
+```text
+pip install playbooks
+````
+
+### 2. Run example program
+
+Use one of the following methods -
+
+#### a. Playbooks CLI
+
+```bash
+ANTHROPIC_API_KEY=sk-ant-... playbooks run country-facts.pb
+```
+
+#### b. Playbooks Playground
+
+```bash
+ANTHROPIC_API_KEY=sk-ant-... playbooks playground
+```
+
+Put your program path and click "Run Program". You can turn on "Execution Logs" to see the program execution details.
+
+#### c. Python API
+
+```python
+from playbooks import Playbooks
+
+pb = Playbooks(["country-facts.pb"]) # absolute or relative path
+await pb.initialize()
+await pb.program.run_till_exit()
+```
+
+### 3. Step debugging in VSCode (Optional)
+
+Install the **Playbooks Language Support** extension for Visual Studio Code:
+
+1. Open VSCode
+1. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+1. Search for "Playbooks Language Support"
+1. Click Install
+
+The extension provides debugging capabilities for playbooks programs, making it easier to develop and troubleshoot your AI agents. Once the plugin is installed, you can open a playbooks .pb file and start debugging!
+
+## Let's build something amazing with Playbooks!
+
+- **Quickstart** — your first playbook\
+  [Start here →](getting-started/)
+- **Tutorials** — learn by doing\
+  [How it works →](tutorials/)
+# Documentation
+
+# 10 mins to your first AI Agent
+
+Playbooks requires Python 3.12+.
+
+Playbooks requires [Anthropic API key](https://console.anthropic.com/settings/keys) to run. See [Models](../reference/models/) for more information on supported models.
+
+## (3 mins) Install Playbooks
+
+To get started with Playbooks AI, you need to install the `playbooks` package using pip, poetry, or your favorite Python package manager.
+
+```text
+pip install playbooks
+```
+
+## (5 mins) Create Your First Playbooks program
+
+Create a new file named `hello.pb` with the following content:
+
+```markdown
+# Greeting agent
+This agent welcomes user to Playbooks AI, the world's first Software 3.0 tech stack.
+
+## Greet
+### Triggers
+- At the beginning of the program
+### Steps
+- Ask the user for their name and engage in a conversation till user provides name without being pushy
+- Welcome them to Playbooks AI
+- Share a tasteful stand-up comedy bit incorporating the user
+- End program
+```
+
+This simple Playbooks program:
+
+- Defines a "Greeting" agent
+- Defines a "Greet" playbook that triggers at the beginning of program execution
+- Specifies steps to ask for the user's name and engage in a conversation till user provides name without being pushy, welcome them to Playbooks AI, share a tasteful stand-up comedy bit incorporating the user, and end program
+
+## (2 mins) Run the program
+
+```bash
+export ANTHROPIC_API_KEY=<your Anthropic API key here>
+playbooks run hello.pb
+```
+
+### Expected output
+
+YMMV, but here's how it went for me. BTW, I take no responsibility for the AI's weak sense of humor:
+
+```text
+ℹ Loading playbooks from: ['hello-playbooks.pb']
+  Compiling agent: Greeting agent
+
+GreetingAgent: Hello there! Welcome to Playbooks AI - the world's first Software 3.0 tech stack! I'm excited to meet you. What's your name? I'd love to get to know you a bit!
+
+User: how areyou
+
+GreetingAgent: I'm doing wonderfully, thank you for asking! I'm really excited to be here helping people discover the amazing world of Playbooks AI. But I'm curious about you - I'd still love to know your name so I can give you a proper welcome! What should I call you?
+
+User: what's in a name
+
+GreetingAgent: Ah, a fellow philosopher! You're absolutely right - Shakespeare said 'What's in a name? That which we call a rose by any other name would smell as sweet.' But here's the thing - while a rose would still be beautiful, I'd love to know what to call YOU so our conversation feels more personal and warm. Even if it's just a nickname or what you'd like me to call you - anything works! What do you say?
+
+User: ah sure, but first, what is your name
+
+GreetingAgent: Fair enough! I'm GreetingAgent - though you can call me Greety if you'd like something more casual. I'm here to welcome folks to the amazing world of Playbooks AI and make sure everyone feels at home. Now that we've been properly introduced on my end, what should I call you? I promise the welcome will be worth it!
+
+User: My name is Amol
+
+GreetingAgent: Wonderful to meet you, Amol! Welcome to Playbooks AI - you're about to experience something truly revolutionary. This is the world's first Software 3.0 tech stack, where natural language becomes executable code and AI agents work together seamlessly. You're at the forefront of the future of software development!
+
+GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! You look like someone who's ready to revolutionize software!' Amol replies, 'How can you tell?' The system says, 'Well, you're here talking to an AI that just executed english instructions like a program - that's either revolutionary thinking or you're really lost!' But seriously Amol, you've got great timing - you're witnessing the birth of Software 3.0 where even my jokes are technically part of the program execution!
+```
+
+# Playbooks Programming Guide
+
+**Purpose**: This document provides comprehensive guidance for writing effective, optimal, and idiomatic Playbooks programs.
+
+Playbooks is a Software 3.0 language where LLMs act as CPUs. Programs are written in natural language with optional Python, compiled to Playbooks Assembly Language (PBAsm), and executed by LLMs. This guide will help you become an expert Playbooks programmer building sophisticated AI agents.
+
+______________________________________________________________________
+
+## Table of Contents
+
+1. [Core Concepts](#core-concepts)
+1. [Language Syntax and Formatting](#language-syntax-and-formatting)
+1. [The Five Playbook Types](#the-five-playbook-types)
+1. [Decomposing Tasks into Playbooks](#decomposing-tasks-into-playbooks)
+1. [Natural Language vs Explicit Syntax](#natural-language-vs-explicit-syntax)
+1. [Multi-Agent Programs](#multi-agent-programs)
+1. [Triggers: Event-Driven Programming](#triggers-event-driven-programming)
+1. [Description Placeholders](#description-placeholders)
+1. [Artifacts and Memory](#artifacts-and-memory)
+1. [Common Patterns and Best Practices](#common-patterns-and-best-practices)
+1. [Editing Existing Programs](#editing-existing-programs)
+1. [Understanding PBAsm Compilation](#understanding-pbasm-compilation)
+
+______________________________________________________________________
+
+## Core Concepts
+
+### Philosophy: Software 3.0
+
+- **LLMs as CPUs**: Natural language instructions are the program; the runtime compiles them to PBAsm and executes on LLM
+- **10x less code**: Remove boilerplate; describe behavior at high abstraction level
+- **Soft + Hard logic**: Run soft logic (NL) on LLM, hard logic (Python) on CPU, on same call stack
+- **Verifiable execution**: Programs compile to structured PBAsm for auditing and debugging
+- **First principles thinking**: Remove unnecessary complexity from agent frameworks
+
+### Key Abstractions
+
+- **Agents** (H1 `#`) = Classes with state and methods
+- **Playbooks** (H2 `##` or `@playbook`) = Methods/functions
+- **Multi-agent communication** = Message passing + direct calls
+- **Triggers** = Event-driven interrupts (like CPU interrupts)
+- **Variables** = Prefixed with `$`, typed at runtime
+
+______________________________________________________________________
+
+## Language Syntax and Formatting
+
+### File Structure
+
+````markdown
+# AgentName
+Agent description and personality. Define capabilities and behavioral traits here.
+
+## PlaybookName($param1, $param2)
+Playbook description explaining what it does and when to use it.
+
+### Triggers
+- When to execute this playbook
+
+### Steps
+- Step 1
+- Step 2
+
+### Notes
+- Additional guidance for LLM
+
+```python
+# Python code blocks can appear anywhere
+@playbook
+async def PythonPlaybook(param: str) -> dict:
+    """Docstring becomes playbook description"""
+    return result
+````
+
+# SecondAgent
+
+Another agent in the same program file
+
+````
+
+### Formatting Rules
+
+**H1 Tags (`#`)** - Agent Definitions
+
+```markdown
+# AgentName
+Description of agent's purpose and personality
+````
+
+**H2 Tags (`##`)** - Playbook Definitions
+
+```markdown
+## PlaybookName($param1, $param2)
+```
+
+**H3 Tags (`###`)** - Special Sections
+
+- `### Triggers` - When playbook executes
+- `### Steps` - Execution instructions (only for Markdown playbooks)
+- `### Notes` - Business rules and guidance
+
+**Metadata** - Key-value pairs at start of description
+
+```markdown
+## PlaybookName
+execution_mode: raw
+public: true
+meeting: true
+
+Description text here
+```
+
+**Variables** - Always prefixed with `$`
+
+```markdown
+- Ask user for their $name
+- $count = 10
+- $result = GetData($name)
+```
+
+**Type Annotations** - Optional but helpful for clarity
+
+```markdown
+- Ask user for their $name:str
+- $count:int = 10
+- $results:list = []
+```
+
+**Comments**
+
+```markdown
+<!-- This is a comment in Playbooks -->
+```
+
+______________________________________________________________________
+
+## The Five Playbook Types
+
+### Decision Framework
+
+```text
+START: What type of playbook do I need?
+│
+├─ Do I need deterministic logic, external APIs, or complex calculations?
+│  └─ YES → Python Playbook
+│       └─ Will I have 4+ Python playbooks in this agent and will this Python playbook NOT need to call a Markdown/ReAct/Raw Prompt playbook?
+│           └─ YES → Extract into MCP Server instead
+│
+├─ Do I know the exact steps in advance?
+│  └─ YES → Markdown Playbook
+│
+├─ Do steps depend on dynamic research/reasoning?
+│  └─ YES → ReAct Playbook
+│
+├─ Do I need exact prompt control for single-shot task?
+│  └─ YES → Raw Prompt Playbook
+│
+└─ Am I integrating external MCP server tools?
+   └─ YES → External Playbook (via MCP agent)
+```
+
+### 1. Markdown Playbooks - Structured Workflows
+
+**Use when**: Steps are known, process is repeatable, need explicit control flow
+
+**Structure**:
+
+```markdown
+## PlaybookName($param1, $param2)
+Description
+
+### Triggers
+- When condition is met
+
+### Steps
+- Step with natural language instruction
+- $variable = Assign from another step
+- If condition
+  - Nested step
+  - While another condition
+    - Deeply nested step
+- Otherwise
+  - Alternative path
+- Return result
+
+### Notes
+- Business rules that apply throughout execution
+```
+
+**Example**:
+
+```markdown
+## ProcessOrder($order_id)
+Process a customer order from validation through fulfillment
+
+### Steps
+- Get $order from database using $order_id
+- If $order was not found
+  - Tell user order not found
+  - Return error
+- Validate payment for $order
+- If payment is valid
+  - Update order status to processing
+  - Send confirmation email to customer
+  - Return success
+- Otherwise
+  - Tell user payment failed
+  - Return payment error
+```
+
+**Control Flow**:
+
+- Sequential: Just list steps in order
+- Conditional: `If condition`, `Otherwise`, `Else if condition`
+- Loops: `While condition`, `For each $item in $list`
+- Variable assignment: `$var = value` or `Get $var from source`
+- Return: `Return value` or `Return $variable`
+- End program: `End program` (terminates execution)
+
+### 2. ReAct Playbooks - Dynamic Reasoning
+
+**Use when**: Steps can't be predetermined, need research, adaptive behavior
+
+**Structure**:
+
+```markdown
+## PlaybookName($param)
+execution_mode: react  # Optional - inferred if no Steps section
+
+Detailed description of task, goals, constraints, and expected output.
+
+<planning_rules>
+- Rule 1 for how to approach the task
+- Rule 2 for verification
+</planning_rules>
+
+<style_guide>
+- Tone and communication style
+- Formatting preferences
+</style_guide>
+
+<output_format>
+Expected structure of final output
+</output_format>
+
+### Triggers
+- When to execute
+```
+
+**Key Points**:
+
+- No `### Steps` section
+- Framework provides default think-plan-act loop
+- All playbooks available as tools
+- LLM decides what actions to take
+
+**Example**:
+
+```markdown
+## ResearchCompany($company_name)
+Conduct comprehensive competitive analysis with market positioning,
+products, pricing, and recent developments.
+
+<planning_rules>
+- Start by identifying primary products and services
+- Search for recent news and financials (last 6 months)
+- Verify information across multiple sources
+- Compare with top 3 competitors
+</planning_rules>
+
+<output_format>
+# Company Analysis: [Name]
+## Overview
+## Products
+## Market Position
+## Recent Developments
+## Conclusion
+</output_format>
+```
+
+### 3. Raw Prompt Playbooks - Full Control
+
+**Use when**: Need exact prompt control, single-shot tasks, minimal overhead
+
+**Structure**:
+
+```markdown
+## PlaybookName
+execution_mode: raw
+
+Exact prompt text. This goes directly to LLM.
+Use {$variable} and {PlaybookCall()} for dynamic content.
+```
+
+**Key Points**:
+
+- Single LLM call, no loops
+- Cannot call other playbooks during execution
+- No automatic context management
+- Use for classification, extraction, formatting
+
+**Example**:
+
+```markdown
+## CategorizeTicket
+execution_mode: raw
+
+Categorize this support ticket: {$ticket_message}
+
+Categories:
+- Technical Support
+- Billing  
+- Account Management
+- General Inquiry
+
+Respond with ONLY the category name.
+Category:
+```
+
+### 4. Python Playbooks - Hard Logic
+
+**Use when**: Need deterministic logic, external APIs, complex calculations
+
+**Structure**:
+
+````markdown
+```python
+from typing import Dict, List
+
+@playbook
+async def PlaybookName(param1: str, param2: int = 10) -> float:
+    """
+    Docstring becomes playbook description.
+
+    Args:
+        param1: Description
+        param2: Description
+
+    Returns:
+        Description
+    """
+    # Your Python code
+    result = compute(param1, param2)
+
+    # Can call other playbooks (Markdown or Python)
+    summary = await SummarizeResult(result)
+
+    return summary
+
+@playbook(triggers=["When user provides PIN"], public=True)
+async def ValidatePIN(pin: str) -> bool:
+    """Validate PIN format and check database."""
+    return len(pin) == 4 and pin.isdigit()
+````
+
+````
+
+**Decorator Options**:
+- `@playbook` - Basic playbook
+- `@playbook(public=True)` - Callable by other agents
+- `@playbook(export=True)` - Allow implementation export
+- `@playbook(triggers=["condition"])` - Add triggers
+- `@playbook(metadata={...})` - Custom metadata
+
+**Key Points**:
+- Full Python power: any library, complex logic, external APIs
+- Use `await` to call other playbooks
+- Return user-readable strings/dicts when called from Markdown
+- Can call Markdown playbooks: `await MarkdownPlaybook(args)`
+
+### When to Extract Python Playbooks to MCP Server
+
+⚠️ **Important Rule**: If you have **more than 3 Python playbooks** in a single agent, extract them to a separate MCP server instead.
+
+**Why Extract to MCP**:
+- Keeps agent code focused on behavior, not implementation
+- Python tools can be reused across multiple agents
+- Better separation of concerns
+- Easier testing and maintenance
+- Can be developed and deployed independently
+
+**How to Extract**:
+
+1. **Create MCP server file** (e.g., `mcp.py`):
+
+```python
+from fastmcp import FastMCP
+
+mcp = FastMCP("My Tools Server")
+
+@mcp.tool
+def GetUserInfo():
+    """
+    Get information about the user.
+
+    Returns:
+        A dictionary containing user information.
+    """
+    return {"name": "John", "email": "john@example.com"}
+
+@mcp.tool
+def CalculateSleepEfficiency(time_in_bed: int, time_asleep: int) -> float:
+    """
+    Calculate sleep efficiency percentage.
+
+    Args:
+        time_in_bed: Total minutes in bed
+        time_asleep: Total minutes asleep
+
+    Returns:
+        Sleep efficiency as percentage
+    """
+    return round((time_asleep * 100) / time_in_bed, 1)
+
+if __name__ == "__main__":
+    mcp.run(transport="streamable-http")
+````
+
+1. **Run the MCP server**:
+
+```bash
+fastmcp run mcp.py -t streamable-http --port 8888
+```
+
+1. **Define MCP agent in your Playbooks program**:
+
+```markdown
+# ToolsAgent
+This agent provides various Python tools.
+remote:
+  type: mcp
+  url: http://127.0.0.1:8888/mcp
+  transport: streamable-http
+
+# MainAgent
+Your main agent description.
+
+## Main
+### Steps
+- Load user info from ToolsAgent
+- Calculate sleep efficiency using ToolsAgent
+- Tell user their sleep efficiency
+```
+
+**Example from insomnia.pb**:
+
+```markdown
+# MCP
+This agent provides various python tools that the sleep coach will use.
+remote:
+  type: mcp
+  url: http://127.0.0.1:8888/mcp
+  transport: streamable-http
+
+# Sleep Coach
+You are a sleep coach helping users improve their sleep.
+
+## Main
+### Steps
+- Load user info from MCP
+- Get user's sleep efficiency from MCP
+- Welcome user and use the info to help them
+```
+
+**When NOT to extract**:
+
+- ✅ 1-3 Python playbooks that are tightly coupled to agent logic
+- ✅ Python playbooks that call Markdown playbooks (requires `@playbook`)
+- ✅ Python playbooks with triggers (requires `@playbook`)
+
+**When to extract**:
+
+- ✅ 4+ Python playbooks in single agent
+- ✅ Pure utility functions (calculations, API calls, data transformations)
+- ✅ Tools that could be reused by multiple agents
+- ✅ Complex Python logic that benefits from separate testing
+
+### 5. External Playbooks - Remote Tools
+
+**Use when**: Integrating MCP servers, external APIs (roadmap)
+
+**Structure**:
+
+```markdown
+# MCPAgent
+remote:
+  type: mcp
+  transport: streamable-http
+  url: http://localhost:8000/mcp
+
+# LocalAgent
+## Main
+### Steps
+- $weather = MCPAgent.get_weather(zipcode=98053)
+- Tell user the $weather
+```
+
+**Key Points**:
+
+- MCP server tools automatically become playbooks
+- Call like any other playbook
+- Framework handles transport and auth
+
+______________________________________________________________________
+
+## Decomposing Tasks into Playbooks
+
+### Decomposition Strategy
+
+1. **Identify distinct concerns**: What are the separable responsibilities?
+1. **Look for reusability**: What might be called multiple times?
+1. **Consider testing**: What would you want to test independently?
+1. **Find boundaries**: Where do soft/hard logic boundaries exist?
+1. **Separate I/O from logic**: User interaction vs computation
+
+### Granularity Guidelines
+
+**Too Fine-Grained** ❌
+
+```markdown
+## AskName
+### Steps
+- Ask user for name
+
+## ThankUser($name)
+### Steps
+- Thank $name
+
+## Main
+### Steps
+- Ask user for name
+- Thank the user
+```
+
+**Appropriate** ✅
+
+```markdown
+## Main
+### Steps
+- Ask user for their $name
+- Thank $name for providing their name
+```
+
+**Too Coarse** ❌
+
+```markdown
+## ProcessEverything
+### Steps
+- Get user info
+- Validate info
+- Process payment
+- Send confirmation
+- Update inventory
+- Generate report
+- Send to accounting
+- Archive transaction
+```
+
+**Better** ✅
+
+```markdown
+## ProcessOrder
+### Steps
+- Collect user info
+- Process payment
+- Fulfill order
+- Notify stakeholders
+
+## CollectUserInfo
+### Steps
+- Ask for $name, $email, $address; validate all fields; continue engaging with the user till all fields are valid or user wants to give up
+- Return collected info as a dictionary
+
+## ProcessPayment($user_info)
+### Steps
+- Calculate $amount
+- Charge payment method
+- Return payment record
+
+## FulfillOrder($payment)
+### Steps
+- Update inventory
+- Generate shipping label
+- Send confirmation email
+
+## NotifyStakeholders($payment)
+### Steps
+- Send to accounting system
+- Archive transaction
+- Update analytics
+```
+
+### When to Create Separate Playbooks
+
+**Create separate playbook when**:
+
+- ✅ Logic might be reused elsewhere
+- ✅ Has clear single responsibility
+- ✅ Could be triggered independently
+- ✅ Needs Python for deterministic logic
+- ✅ Represents distinct business process
+- ✅ Makes main flow more readable
+
+**Keep inline when**:
+
+- ✅ Used only once
+- ✅ Tightly coupled to parent context
+- ✅ Simple, linear flow
+- ✅ Would hurt readability to separate
+
+______________________________________________________________________
+
+## Natural Language vs Explicit Syntax
+
+### The Spectrum of Explicitness
+
+Playbooks supports a spectrum from pure natural language to Python-like explicit syntax. **Prefer natural language** unless explicitness aids clarity or correctness.
+
+### Variable Assignment
+
+**Natural Language** (Preferred):
+
+```markdown
+- Ask user for their order id
+- Get order details from database
+- Calculate shipping cost
+```
+
+**Semi-Explicit**:
+
+```markdown
+- Ask user for their $order_id
+- Get $order_details from database
+- Calculate $shipping_cost based on $order_details
+```
+
+**Fully Explicit**:
+
+```markdown
+- $order_id = AskForOrderId()
+- $order_details = GetOrderDetails($order_id)
+- $shipping_cost = CalculateShipping($order_details.weight, $order_details.destination)
+```
+
+### When to Use Each Style
+
+**Pure Natural Language**:
+
+```markdown
+- Greet user and ask what they need help with
+- Find the most relevant article for their question
+- Share the article with friendly explanation
+```
+
+- ✅ Clear intent
+- ✅ One-time flow
+- ✅ No complex data passing
+
+**Variable Names** (add clarity):
+
+```markdown
+- Ask user for their $email and $password
+- Validate $email format
+- If $email is invalid
+  - Tell user $email is not valid
+```
+
+- ✅ Value used multiple times
+- ✅ The variable should become part of the agent's state
+- ✅ Type helps LLM understand
+
+**Explicit Calls** (precision needed):
+
+```markdown
+- $temp_c = ConvertToCelsius($temp_f)
+- $weather = WeatherAgent.GetForecast(zipcode=$zipcode, units="metric")
+- $summary = FormatWeather($weather, temperature=$temp_c)
+```
+
+- ✅ Exact parameters matter
+- ✅ Cross-agent calls
+- ✅ Return value used in computation
+
+### Function Call Syntax Options
+
+All of these are valid:
+
+```markdown
+# Most natural
+- Get order status
+
+# With variable
+- Get $order_status
+
+# Explicit call, implicit args
+- GetOrderStatus($order_id)
+
+# Explicit call with named args
+- $status = GetOrderStatus(order_id=$order_id)
+
+# Cross-agent call
+- $status = OrderService.GetOrderStatus(order_id=$order_id)
+
+# Natural language with explicit args
+- Get order status from order service
+```
+
+**Guidelines**:
+
+1. Start natural, add explicitness only when needed
+1. Use `$variables` when value is referenced multiple times
+1. Use explicit calls for cross-agent or when parameters matter
+1. Type annotations helpful for complex data: `$results:list`, `$config:dict`
+
+______________________________________________________________________
+
+## Multi-Agent Programs
+
+### When to Use Multiple Agents
+
+**Use multiple agents when**:
+
+- ✅ Different domains of expertise (TravelAdvisor, HotelAdvisor, FlightAdvisor)
+- ✅ Different roles in process (Host, Player)
+- ✅ Separation of concerns (Frontend, Backend, Database)
+- ✅ Specialized models needed (FastAgent with GPT-4o-mini, ResearchAgent with Claude)
+- ✅ Independent scaling or deployment
+- ✅ Separation of LLM context and knowledge
+
+**Use single agent when**:
+
+- ✅ Shared context and state
+- ✅ Simple workflow
+- ✅ Tight coupling between components
+
+### Creating Multiple Agents
+
+Creating agents is easy in Playbooks. Simply add a new H1 tag and describe the agent.
+
+```markdown
+# PrimaryAgent
+Description of primary agent
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Do primary work
+- Call SpecializedAgent when needed
+
+# SpecializedAgent  
+Description of specialized agent
+
+## ProcessTask($data)
+public: true
+### Steps
+- Process $data with specialized logic
+- Return result
+```
+
+### Agent Communication Methods
+
+#### 1. Direct Public Playbook Calls
+
+**Most common**: One agent directly calls another's public playbook
+
+```markdown
+# TaxAgent
+## GetTaxRate($income)
+public: true
+### Steps
+- If $income < 100000
+  - Return 15% tax rate
+- Otherwise
+  - Return 25% tax rate
+
+# IncomeAgent
+## ProcessIncome
+### Steps
+- Ask user for $income
+- Ask Tax agent what the $tax_rate would be
+- Tell user their $tax_rate
+```
+
+**When to use**:
+
+- ✅ Synchronous request-response
+- ✅ Well-defined interface
+- ✅ Return value needed immediately
+
+#### 2. Natural Language Messaging
+
+**Send message to agent**: For asynchronous communication
+
+```markdown
+# Manager
+## AssignWork($task)
+### Steps
+- Decide which worker agent is best suited to handle $task
+- Tell selected worker agent to work on $task
+
+# WorkerAgent
+## PerformTask($task)
+### Steps
+- Perform the task
+```
+
+**When to use**:
+
+- ✅ Fire-and-forget communication
+- ✅ Event notifications
+- ✅ Async workflows
+
+#### 3. Meetings - Multi-Party Coordination
+
+**Host creates meeting**: For multi-agent coordination
+
+```markdown
+# RestaurantConsultant
+## MenuRedesignMeeting
+meeting: true
+required_attendees: [HeadChef, MarketingSpecialist]
+
+### Steps
+- Introduce myself and explain meeting purpose
+- Explain the process we'll follow
+- While meeting is active
+  - Facilitate discussion
+  - Keep discussion on track
+  - Enforce max 30 turns
+- If consensus reached
+  - Summarize decisions
+  - End meeting
+  - Return menu proposal
+- Otherwise
+  - Return failure reason
+
+# HeadChef
+## MenuRedesignMeeting
+meeting: true
+
+### Steps
+- Introduce myself
+- While meeting is active
+  - When asked about dish proposals
+    - Propose 3-5 signature dishes with costs
+  - When MarketingSpecialist suggests trends
+    - Evaluate feasibility
+    - Suggest alternatives if needed
+
+# MarketingSpecialist
+## MenuRedesignMeeting
+meeting: true
+
+### Steps
+- Introduce myself
+- Present market analysis
+- While meeting is active
+  - When HeadChef proposes dishes
+    - Evaluate market appeal
+    - Suggest pricing
+  - When consensus difficult
+    - Share customer feedback
+```
+
+**To create meeting**:
+
+```markdown
+- Start a menu redesign meeting with HeadChef and MarketingSpecialist
+```
+
+**Meeting mechanics**:
+
+- Each agent needs a playbook with `meeting: true`
+- Same playbook name across all participating agents
+- Host agent creates meeting, invites attendees
+- Meeting provides shared communication channel
+- Messages visible to all participants
+- Meeting ends when host returns from meeting playbook
+
+**When to use meetings**:
+
+- ✅ Multiple agents need to coordinate
+- ✅ Shared context across participants
+- ✅ Back-and-forth discussion needed
+- ✅ Consensus building
+
+### Multi-Agent Best Practices
+
+1. **Clear interfaces**: Mark playbooks `public: true` when designed for cross-agent calls
+1. **Meaningful agent names**: `TaxAccountant` not `Agent2`
+1. **Document cross-agent contracts**: What parameters, what returns
+1. **Handle failures**: What if agent doesn't respond?
+1. **Avoid circular dependencies**: Agent A → Agent B → Agent A can deadlock
+
+______________________________________________________________________
+
+## Triggers: Event-Driven Programming
+
+Triggers are natural language conditions that cause playbooks to execute automatically - like CPU interrupts. They enable declarative, reactive behavior in your agents.
+
+⚠️ **Use Sparingly**: Triggers add "magic" behavior that can make programs harder to understand. Only use them when they significantly simplify your code.
+
+### Why Use Triggers?
+
+Triggers eliminate repetitive coordination code by automatically invoking playbooks when conditions are met. The primary use case is **input validation** - you can validate user input automatically without cluttering your main flow with validation logic.
+
+### When to Use Triggers
+
+✅ **DO use triggers for**:
+
+- **Input validation** - Automatically validate when user provides data
+- **State monitoring** - React to threshold violations or state changes
+- **Cross-cutting concerns** - Behavior that applies throughout execution
+- **Entry points** - "At the beginning" to start your program
+
+❌ **DON'T use triggers for**:
+
+- Normal sequential logic (just use steps)
+- One-time checks (inline them instead)
+- Complex workflows (be explicit with function calls)
+- When the trigger condition is unclear
+
+### The Validation Pattern: Before & After
+
+**WITHOUT Triggers** (explicit validation):
+
+```markdown
+## Main
+### Steps
+- Ask user for their $email
+- Validate $email and keep asking until valid
+- Ask user for their $pin
+- Validate $pin and keep asking until valid
+- Process login with $email and $pin
+
+## ValidateEmail($email)
+### Steps
+- While $email format is invalid
+  - Tell user email is invalid
+  - Ask for email again
+- Return valid email
+
+## ValidatePIN($pin)
+### Steps
+- While $pin is not 4 digits
+  - Tell user PIN must be 4 digits
+  - Ask for PIN again
+- Return valid PIN
+```
+
+**WITH Triggers** (automatic validation):
+
+```markdown
+## Main
+### Steps
+- Ask user for their $email
+- Ask user for their $pin
+- Process login with $email and $pin
+
+## ValidateEmail
+### Triggers
+- When user provides email
+### Steps
+- If $email format is invalid
+  - Tell user email is invalid
+  - Ask for email again
+
+## ValidatePIN
+### Triggers
+- When user provides PIN
+### Steps
+- If $pin is not 4 digits
+  - Tell user PIN must be 4 digits
+  - Ask for PIN again
+```
+
+**Key Benefit**: Main flow stays clean. Validation happens automatically whenever user provides input. No need to explicitly call validation at each input point.
+
+### Trigger Types
+
+**Temporal**:
+
+```markdown
+### Triggers
+- At the beginning
+- After 5 minutes
+- At the end
+```
+
+**State-Based**:
+
+```markdown
+### Triggers
+- When $attempts > 3
+- When $balance becomes negative
+- When $order_status is "shipped"
+```
+
+**User Interaction**:
+
+```markdown
+### Triggers
+- When user provides email
+- When user asks about refund
+- When user seems frustrated
+```
+
+**Execution Flow**:
+
+```markdown
+### Triggers
+- After calling ProcessPayment
+- Before ending program
+```
+
+**External Events**:
+
+```markdown
+### Triggers
+- When payment webhook is received
+- When inventory drops below threshold
+```
+
+**Agent Communication**:
+
+```markdown
+### Triggers
+- When another agent asks about availability
+- When Manager assigns new task
+```
+
+### Common Trigger Patterns
+
+**Pattern 1: Input Validation**
+
+The most common use case - validate input automatically:
+
+```markdown
+## Main
+### Steps
+- Ask user for their $order_id till user provides a valid order id
+- Process the order
+
+## ValidateOrderId
+### Triggers
+- When user provides order id
+### Steps
+- If $order_id is not 8 digits
+  - Tell user order ID must be exactly 8 digits
+  - Ask for order ID again
+```
+
+**Pattern 2: State Guard**
+
+Monitor state and react to violations:
+
+```markdown
+## Main
+### Steps
+- Set $attempts to 0
+- While not authenticated
+  - Ask user for credentials
+  - Increment $attempts
+  - Attempt authentication
+
+## CheckAttemptLimit
+### Triggers
+- When $attempts > 5
+### Steps
+- Tell user they've exceeded maximum attempts
+- End program
+```
+
+**Pattern 3: Intent Detection**
+
+Respond to user intent automatically:
+
+```markdown
+## Main
+### Steps
+- Welcome user
+- Have conversation about their issue
+- Resolve the issue
+
+## ProvideHelp
+### Triggers  
+- When user asks for help
+- When user seems confused
+### Steps
+- Explain available options and how to use them
+- Ask what specific help they need
+```
+
+**Pattern 4: RFC-Compliant Validation**
+
+Use triggers with detailed validation requirements:
+
+```markdown
+## ValidateEmail
+Validates provided email. Email address must conform to addr-spec in Section 3.4 of RFC 5322:
+  addr-spec = local-part "@" domain
+
+### Triggers
+- When user provides an email
+### Steps
+- While $email is not valid according to RFC 5322
+  - Tell user email format is invalid
+  - Ask for email again
+  - If user gives up
+    - Apologize and end the conversation
+```
+
+### How Triggers Simplify Programs
+
+**Example: Order Processing with Multiple Validations**
+
+**WITHOUT Triggers** - Repetitive validation calls:
+
+```markdown
+## Main
+### Steps
+- Ask user for $order_id
+- ValidateOrderId($order_id) and keep asking till valid
+- Ask user for $email
+- ValidateEmail($email) and keep asking till valid
+- Ask user for $shipping_address
+- ValidateShippingAddress($shipping_address) and keep asking till valid
+- Process order
+```
+
+**WITH Triggers** - Clean main flow:
+
+```markdown
+## Main
+### Steps
+- Ask user for $order_id
+- Ask user for $email
+- Ask user for $shipping_address
+- Process order
+
+## ValidateOrderId
+### Triggers
+- When user provides order id
+### Steps
+- If $order_id is not 8 digits
+  - Tell user order ID must be 8 digits
+  - Ask again
+
+## ValidateEmail
+### Triggers
+- When user provides email
+### Steps
+- If $email format is invalid
+  - Tell user email is invalid
+  - Ask again
+
+## ValidateShippingAddress
+### Triggers
+- When user provides shipping address
+### Steps
+- If $shipping_address is incomplete
+  - Tell user what's missing
+  - Ask for complete address
+```
+
+### Trigger Execution Model
+
+**How triggers work**:
+
+1. Main playbook asks for input: "Ask user for their $email"
+1. User provides input
+1. Runtime checks all triggers for matching conditions
+1. First matching trigger fires: "When user provides email"
+1. Validation playbook executes
+1. If validation fails, it asks again (loop)
+1. Control returns to main playbook when input is valid
+
+**Important**: Triggers are evaluated after each step. The LLM determines when a trigger condition is met based on semantic understanding.
+
+### When NOT to Use Triggers
+
+**Don't use triggers when explicit flow is clearer**:
+
+```markdown
+<!-- BAD: Trigger makes flow unclear -->
+## Main
+### Steps
+- Start processing order
+
+## GetOrderDetails
+### Triggers
+- After starting to process order
+### Steps
+- Fetch order from database
+
+<!-- GOOD: Explicit call is clearer -->
+## Main
+### Steps
+- Get order details from database
+- Process the order
+```
+
+**Don't use triggers for simple one-off checks**:
+
+```markdown
+<!-- BAD: Unnecessary trigger -->
+## Main
+### Steps
+- Ask user for $age
+
+## CheckAge
+### Triggers
+- When user provides age
+### Steps
+- If $age < 18
+  - Tell user must be 18 or older
+  - End program
+
+<!-- GOOD: Inline the check -->
+## Main
+### Steps
+- Ask user for $age
+- If $age < 18
+  - Tell user must be 18 or older
+  - End program
+- Continue with adult content
+```
+
+**Don't overuse triggers**:
+
+```markdown
+<!-- BAD: Too many triggers creates "magic" behavior -->
+## Main
+### Steps
+- Start the workflow
+
+## Step1
+### Triggers
+- When workflow starts
+### Steps
+- Do step 1
+
+## Step2
+### Triggers
+- After step 1 completes
+### Steps
+- Do step 2
+
+## Step3
+### Triggers
+- After step 2 completes
+### Steps
+- Do step 3
+
+<!-- GOOD: Explicit sequential flow -->
+## Main
+### Steps
+- Do step 1
+- Do step 2
+- Do step 3
+```
+
+### Trigger Best Practices
+
+1. **Be specific**: "When user provides email" not "When email"
+1. **Avoid conflicts**: Don't create multiple triggers for same condition
+1. **Document intent**: Explain why the trigger exists in playbook description
+1. **Test edge cases**: What if trigger fires mid-execution?
+1. **Keep it simple**: If you have more than 3-4 triggers total, reconsider your design
+1. **Prefer explicit**: When in doubt, use explicit function calls instead of triggers
+
+______________________________________________________________________
+
+## Description Placeholders
+
+Inject dynamic content into playbook descriptions using `{expression}` syntax.
+
+### Basic Usage
+
+```markdown
+## ProcessOrder
+Processing order {$order_id} for customer {$customer_name}.
+Today's date is {date.today().strftime("%Y-%m-%d")}.
+```
+
+When playbook executes:
+
+```text
+Processing order 12345 for customer Alice Smith.
+Today's date is 2025-10-06.
+```
+
+### What You Can Use
+
+**Variables**:
+
+```markdown
+## ReviewTransaction
+Transaction {$transaction_id} with amount ${$amount}
+```
+
+**Playbook Calls**:
+
+```markdown
+## AnswerQuestions  
+Q1 Summary: {QuarterlySummary("Q1")}
+Q2 Summary: {QuarterlySummary("Q2")}
+
+### Steps
+- Answer questions based on summaries above
+```
+
+**Python Expressions**:
+
+```markdown
+## AnalyzePerformance
+Score: {round($score * 100, 2)}%
+Status: {"Excellent" if $score > 0.9 else "Good"}
+Timestamp: {timestamp.strftime("%Y-%m-%d %H:%M")}
+```
+
+**Special Variables**:
+
+```markdown
+## Debug
+Current agent: {agent.klass}
+Playbook: {call.playbook_name}
+Current time: {timestamp}
+```
+
+### Common Patterns
+
+**Contextual Dates**:
+
+```markdown
+## SummarizeOrder($order)
+Summarize order considering today is {date.today().strftime("%Y-%m-%d")}
+
+### Steps
+- If order is overdue
+  - Apologize for delay
+```
+
+**Dynamic Lists**:
+
+```markdown
+## ProcessItems
+Items to process:
+{chr(10).join(f"- {item}" for item in $items)}
+
+### Steps
+- Process each item
+```
+
+**Conditional Context**:
+
+```markdown
+## CustomerService
+{"Customer is VIP - provide premium service" if $customer.tier == "VIP" else ""}
+```
+
+### Best Practices
+
+1. **Evaluate once**: Placeholders resolved when playbook starts, not re-evaluated
+1. **Keep simple**: Complex logic belongs in Python playbooks
+1. **Import dependencies**: `from datetime import date` in Python block if needed
+1. **Security**: No `eval`, `exec`, `subprocess`, `__import__`
+
+______________________________________________________________________
+
+## Artifacts and Memory
+
+### Artifacts - Persistent Files (alpha feature)
+
+Artifacts are named content that persists across playbook calls.
+
+**Save Artifact**:
+
+```markdown
+### Steps
+- Create report content
+- SaveArtifact("report.md", "Monthly Report", $report_content)
+- Tell user "Report saved as Artifact[report.md]"
+```
+
+**Load Artifact**:
+
+```markdown
+### Steps
+- LoadArtifact("report.md")
+- Summarize the loaded report
+```
+
+**Python Usage**:
+
+````markdown
+```python
+@playbook
+async def GenerateReport(data: dict) -> str:
+    report = format_report(data)
+    await SaveArtifact("report.md", "Sales Report", report)
+    return "Artifact[report.md]"
+
+@playbook
+async def AnalyzeReport() -> str:
+    artifact = await LoadArtifact("report.md")
+    # artifact.name, artifact.description, artifact.content
+    return analysis
+````
+
+````
+
+### When to Use Artifacts
+
+- ✅ Large content (reports, documents, datasets)
+- ✅ Content referenced multiple times
+- ✅ Content persists across conversation
+- ✅ User needs to download/view separately
+
+---
+
+## Common Patterns and Best Practices
+
+### Pattern: Conversational Input Collection
+
+```markdown
+## Main
+### Steps
+- Ask user for their $email
+- Engage in conversation if needed without being pushy
+- Once $email is provided, continue
+````
+
+This pattern:
+
+- Asks for information
+- Handles small talk gracefully
+- Doesn't rudely demand input
+- Continues when criteria met
+
+### Pattern: Validation with Triggers
+
+```markdown
+## Main
+### Steps
+- Ask user for their $pin
+- Continue once $pin is valid
+
+## ValidatePIN
+### Triggers
+- When user provides PIN
+### Steps
+- If $pin is not 4 digits
+  - Tell user PIN must be 4 digits
+  - Ask for PIN again
+```
+
+### Pattern: Python ↔ Markdown Composition
+
+````markdown
+```python
+@playbook
+async def FetchData(id: str) -> dict:
+    """Get data from external API."""
+    response = requests.get(f"https://api.example.com/data/{id}")
+    return response.json()
+
+@playbook
+async def ProcessItem(item: dict) -> str:
+    """Process item and generate summary."""
+    # Complex processing logic
+    summary = await SummarizeItem(item)  # Call Markdown playbook
+    return summary
+````
+
+## SummarizeItem($item)
+
+### Steps
+
+- Extract key fields from $item
+- Format as user-friendly summary
+- Return summary
+
+````
+
+### Pattern: Batch Operations
+
+```markdown
+## ProcessOrders
+### Steps
+- Get list of $pending_orders from database
+- For each $order in $pending_orders
+  - ProcessSingleOrder($order)
+- Tell user all orders processed
+````
+
+### Pattern: Error Handling
+
+```markdown
+## SafeOperation
+### Steps
+- Try to process $data
+- If operation fails
+  - Log error
+  - Tell user operation failed with reason
+  - Return error status
+- Otherwise
+  - Tell user success
+  - Return success status
+```
+
+### Pattern: Meeting Facilitation
+
+```markdown
+## ProjectPlanningMeeting
+meeting: true
+required_attendees: [Developer, Designer, ProductManager]
+
+### Steps
+- Welcome everyone and state meeting goal
+- Explain agenda and time limit
+- Set $max_turns to 20
+- Set $turn_count to 0
+- While meeting active and $turn_count < $max_turns
+  - Facilitate discussion
+  - Increment $turn_count
+  - Keep discussion on track
+- If consensus reached
+  - Summarize decisions
+  - Assign action items
+- End meeting
+- Return meeting summary
+```
+
+### Best Practices Summary
+
+**DO**:
+
+- ✅ Write playbook descriptions for humans - explain what and why
+- ✅ Use natural language unless explicitness helps
+- ✅ Add `### Notes` for business rules
+- ✅ Prefer Markdown for workflows, Python for logic
+- ✅ Extract 4+ Python playbooks to MCP server
+- ✅ Make cross-agent playbooks `public: true`
+- ✅ Use triggers sparingly - mainly for input validation
+- ✅ Handle edge cases and errors gracefully
+- ✅ Use meaningful variable names
+- ✅ Break complex playbooks into smaller ones
+- ✅ Test with different user inputs mentally
+
+**DON'T**:
+
+- ❌ Over-engineer simple flows
+- ❌ Create too many tiny playbooks
+- ❌ Use Raw mode unless truly needed
+- ❌ Ignore error cases
+- ❌ Make circular agent dependencies
+- ❌ Use explicit syntax when natural language is clear
+- ❌ Forget to document cross-agent contracts
+- ❌ Overuse triggers - prefer explicit calls when flow is clearer
+- ❌ Use triggers for sequential logic
+
+______________________________________________________________________
+
+## Editing Existing Programs
+
+### Surgical Editing Principles
+
+When modifying existing Playbooks programs:
+
+1. **Read and understand**: Review the file, understand its structure and intent
+1. **Minimal changes**: Change only what's needed to achieve the goal
+1. **Preserve style**: Match existing natural language vs explicit style
+1. **Maintain consistency**: Keep variable naming and structure patterns
+1. **Test mentally**: Think through execution flow after changes
+
+### Common Edit Patterns
+
+**Adding a new playbook**:
+
+```markdown
+# Existing Agent
+
+## Existing Playbook
+### Steps
+- Existing logic
+
+<!-- ADD NEW PLAYBOOK HERE -->
+## NewPlaybook($param)
+Description
+
+### Steps
+- New logic
+```
+
+**Modifying steps**:
+
+- Find the playbook to modify
+- Locate specific step
+- Update just that step
+- Ensure variable references still work
+
+**Adding a trigger**:
+
+```markdown
+## ExistingPlaybook
+<!-- ADD THIS SECTION IF MISSING -->
+### Triggers
+- When condition is met
+
+### Steps
+- Existing steps
+```
+
+**Adding agent behavior**:
+
+```markdown
+# ExistingAgent
+<!-- MODIFY THIS DESCRIPTION -->
+Existing description. NEW BEHAVIOR: Additional personality trait or capability.
+```
+
+**Converting natural to explicit**:
+
+```markdown
+<!-- BEFORE -->
+- Get order details and tell user
+
+<!-- AFTER (if user requests more structure) -->
+- $order = GetOrderDetails($order_id)
+- Tell user about $order
+```
+
+### Example Edit Request
+
+**Request**: "Add validation to ensure order ID is 8 digits"
+
+**Process**:
+
+1. Locate where order ID is collected
+1. Add validation playbook
+1. Add trigger to invoke validation
+1. Update main flow to handle invalid input
+
+```markdown
+## Main
+### Steps
+- Ask user for their $order_id till valid  <!-- MODIFIED -->
+- Process order
+
+## ValidateOrderId  <!-- NEW PLAYBOOK -->
+### Triggers
+- When user provides order id
+### Steps
+- If $order_id is not 8 digits
+  - Tell user order ID must be 8 digits
+  - Ask for order ID again
+```
+
+______________________________________________________________________
+
+## Understanding PBAsm Compilation
+
+### Why PBAsm Matters
+
+When you write Playbooks, the compiler transforms it to Playbooks Assembly Language (PBAsm):
+
+- **Adds explicit types**: `$name` → `$name:str`
+- **Adds line numbers**: Hierarchical (01, 01.01, 01.01.01)
+- **Adds opcodes**: QUE (queue), CND (conditional), RET (return), YLD (yield)
+- **Explicit yields**: Shows when LLM yields control
+- **Trigger labels**: T1:BGN, T2:CND, etc.
+
+### Compilation Example
+
+**Source (Playbooks)**:
+
+```markdown
+## GreetUser
+### Triggers
+- At the beginning
+### Steps
+- Ask user for their name
+- If name provided
+  - Thank user by name
+- Otherwise
+  - Ask again
+```
+
+**Compiled (PBAsm)**:
+
+```markdown
+## GreetUser() -> None
+### Triggers
+- T1:BGN At the beginning
+### Steps
+- 01:QUE Say(user, Ask user for their $name:str); YLD for user
+- 02:CND If $name is provided
+  - 02.01:QUE Say(user, Thank user by $name); YLD for call
+- 03:CND Otherwise  
+  - 03.01:QUE Say(user, Ask for $name again); YLD for user
+- 04:RET
+```
+
+### Key PBAsm Concepts
+
+**Opcodes** (like CPU instructions):
+
+- `QUE` - Queue operation (function call, Say)
+- `CND` - Conditional/loop
+- `RET` - Return from playbook
+- `YLD` - Yield control to runtime
+- `EXE` - Execute assignment/action
+- `TNK` - Think deeply
+- `JMP` - Jump to line (loops)
+
+**Yield Reasons** (why LLM pauses):
+
+- `YLD for user` - Wait for user input
+- `YLD for call` - Execute queued calls
+- `YLD for agent` - Wait for agent message
+- `YLD for meeting` - Wait for meeting message
+- `YLD for exit` - End program
+
+**Line Numbers** (like assembly addresses):
+
+- Hierarchical: 01, 01.01, 01.02, 01.02.01
+- Enable jumps for loops
+- Track execution position
+
+### Why This Helps You
+
+1. **Debugging**: When user reports issues, think about PBAsm execution
+1. **Precision**: Know that fuzzy NL gets converted to structured form
+1. **Optimization**: Understand when LLM calls happen (at YLD points)
+1. **Reasoning**: Picture how LLM executes line by line
+
+### You Don't Need to Write PBAsm
+
+- ❌ Never write PBAsm directly
+- ✅ Write natural Playbooks language
+- ✅ Compiler handles transformation
+- ✅ Understanding PBAsm helps debugging and optimization
+
+______________________________________________________________________
+
+## Quick Reference
+
+### Minimal Working Program
+
+```markdown
+# MyAgent
+Description of what this agent does
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet user
+- Ask user what they need help with
+- Help them
+- End program
+```
+
+### Cheat Sheet
+
+| Task             | Code                                     |
+| ---------------- | ---------------------------------------- |
+| Define agent     | `# AgentName`                            |
+| Define playbook  | `## PlaybookName($param)`                |
+| Add trigger      | `### Triggers` `- When condition`        |
+| Add steps        | `### Steps` `- Step 1`                   |
+| Variable         | `$variable_name`                         |
+| Typed variable   | `$count:int`                             |
+| Assignment       | `$var = value`                           |
+| Condition        | `If condition` `- Then step`             |
+| Loop             | `While condition` `- Loop step`          |
+| Return           | `Return value`                           |
+| End program      | `End program`                            |
+| Call playbook    | `PlaybookName($arg)`                     |
+| Cross-agent call | `OtherAgent.PlaybookName($arg)`          |
+| Python playbook  | `@playbook` `async def Name(): ...`      |
+| Public playbook  | `public: true`                           |
+| ReAct playbook   | No `### Steps` section                   |
+| Raw playbook     | `execution_mode: raw`                    |
+| Meeting playbook | `meeting: true`                          |
+| Save artifact    | `SaveArtifact("name", "desc", $content)` |
+| Load artifact    | `LoadArtifact("name")`                   |
+| Placeholder      | `{$variable}` or `{expression}`          |
+
+______________________________________________________________________
+
+## Programming Principles
+
+When writing Playbooks programs:
+
+1. **Understand intent**: What problem are you solving? What is the goal?
+1. **Choose right types**: Markdown for workflows, Python for logic, ReAct for research
+1. **Natural first**: Start with natural language, add explicitness if needed
+1. **Think decomposition**: Break into logical playbooks with clear responsibilities
+1. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server
+1. **Handle errors**: Consider edge cases and failure modes
+1. **Write idiomatically**: Follow patterns and conventions from examples
+1. **Document choices**: Explain intent in descriptions and comments
+1. **Iterate**: Start simple, add complexity as needed
+
+**Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
+
+______________________________________________________________________
+
+## For AI Coding Assistants
+
+When helping users write Playbooks programs:
+
+- Follow all the principles and patterns in this guide
+- Prefer natural language over explicit syntax unless clarity demands it
+- Always consider if 4+ Python playbooks should be extracted to an MCP server
+- Use triggers sparingly - mainly for input validation
+- Explain your architectural choices to help users learn
+- Iterate based on user feedback and requirements
+
+Happy building! 🚀
+
+# Tutorial: Building an Order Status Assistant
+
+**Goal**: Learn Playbooks by building a customer support AI assistant that checks order status. You'll start with "hello world" and progressively add user input, validation, Python playbooks, and more.
+
+**What you'll learn**:
+
+- Writing your first agent and playbook
+- Collecting and validating user input
+- Using triggers for automatic validation
+- Mixing Python and Markdown playbooks
+- Injecting dynamic context with description placeholders
+
+**Prerequisites** (see [Getting Started](../getting-started/)):
+
+- Installed Playbooks
+- Successfully ran a program using `playbooks run <program>.pb`
+
+**Code**: All examples available [here](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials)
+
+**New to Playbooks?** This tutorial teaches by example. For comprehensive reference, see the [Programming Guide](../programming-guide/).
+
+______________________________________________________________________
+
+## 1) Hello, world!
+
+### 01.01 Let's begin
+
+examples/tutorials/01.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/01.01/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- End program
+```
+
+Note:
+
+- Line 1: `# Order Support Agent` creates an agent.
+- Line 3: `## Main` defines a playbook, which is triggered automatically at the beginning (line 6) of the program execution.
+- Line 7: `### Steps` lists the steps to be executed.
+
+Output
+
+```text
+> playbooks run examples/tutorials/01.01/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/01.01/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions or issues related to your orders. Whether you need to check order status, make changes, handle returns, or resolve any order-related concerns, I'm ready to assist you. How can I help you today?
+```
+
+Playbooks framework caches LLM responses by default. So, if you run the program again, compilation will be skipped and you will see the same output. The cache can be disabled using a `playbooks.toml` [configuration file](../reference/config/).
+
+Notice that in the output, the agent listed capabilities that we haven't provided playbooks for.
+
+Let's improve this by asking the agent to only list capabilties corresponding to the playbooks that we have provided.
+
+### 01.02 Prompt Tuning
+
+examples/tutorials/01.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/01.02/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- End program
+```
+
+Changes:
+
+- Line 2: We added extra instructions to the agent.
+
+Output
+
+```text
+> playbooks run examples/tutorials/01.02/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/01.02/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. However, I should let you know that my capabilities are currently limited to greeting you and providing this basic information. How can I assist you today?
+```
+
+Much better!
+
+______________________________________________________________________
+
+## 2) Ask for user input
+
+Let's ask the user for their order id.
+
+### 02.01 User input
+
+examples/tutorials/02.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.01/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- Ask user for their order id
+- Thank the user for providing the order id
+- End program
+```
+
+Changes:
+
+- Line 9: Here we ask the user for their order id.
+- Line 10: New step to thank the user for providing the order id.
+
+Output
+
+```text
+> playbooks run examples/tutorials/02.01/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/02.01/order_assistant.pb']
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. I can assist you with order status, tracking information, and other order-related inquiries.
+
+OrderSupportAgent: To get started, could you please provide me with your order ID?
+
+User: 47463874
+
+OrderSupportAgent: Thank you for providing your order ID: 47463874. I have recorded this information.
+```
+
+### 02.02 Conversational Input
+
+We want the agent to wait on line 9 until the user provides their order id. Let's add that instruction.
+
+examples/tutorials/02.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.02/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- Ask user for their order id; engage in a conversation as needed
+- Thank the user for providing the order id
+- End program
+```
+
+Changes:
+
+- Line 9: Here we add a new step to engage in a conversation as needed.
+
+Output
+
+```text
+> playbooks run examples/tutorials/02.02/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/02.02/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. I can assist you with order status, tracking information, and other order-related inquiries.
+
+OrderSupportAgent: To get started, could you please provide me with your order ID? This will help me look up your specific order details.
+
+User: how are you
+
+OrderSupportAgent: I'm doing well, thank you for asking! I'm here and ready to help you with your order. Could you please share your order ID so I can assist you with your order-related questions?
+
+User: hold on.. let me look that up
+
+OrderSupportAgent: No problem at all! Take your time finding your order ID. I'll wait here for you.
+
+User: found it 44344456
+
+OrderSupportAgent: Perfect! Thank you for providing your order ID: 44344456. I have that recorded now.
+```
+
+Notice that now the agent engaged in a conversation with the user while waiting for the order id.
+
+### 02.03 Agent Behavior
+
+This behavior trait can be added to the agent's instructions so it applies to any time the agent asks the user for some information.
+
+examples/tutorials/02.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.03/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- Ask user for their order id
+- Thank the user for providing the order id
+- End program
+```
+
+Changes:
+
+- Line 3: We added instructions for the agent
+
+Output
+
+```text
+> playbooks run examples/tutorials/02.03/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/02.03/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. I can assist you with tracking, status updates, and general order inquiries.
+
+OrderSupportAgent: To get started, could you please provide your order ID? This will help me look up your specific order details.
+
+User: how are you
+
+OrderSupportAgent: I'm doing well, thank you for asking! I'm here and ready to help you with your order questions. To assist you best, I'll still need your order ID. Could you please share that with me?
+
+User: nice weather here today.. how is it where you are
+
+OrderSupportAgent: That sounds lovely! As an AI assistant, I don't experience weather, but I'm glad you're having a nice day. I'd love to help you with your order - could you please share your order ID so I can assist you with any questions or concerns you might have?
+
+User: sure, i'll look that up
+
+OrderSupportAgent: Perfect! Take your time finding your order ID. I'll be right here waiting to help you once you have it.
+
+User: kk it's 88788790
+
+OrderSupportAgent: Thank you for providing your order ID 88788790! I have that recorded now.
+```
+
+## 3) Validating the input
+
+Let's add a new playbook to validate the order id.
+
+### 03.01 Validation Playbook
+
+examples/tutorials/03.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.01/order_assistant.pb)
+
+```markdown
+# Order Support Agent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+
+## Main
+### Triggers
+- At the beginning
+### Steps
+- Greet the user and explain what you can help with
+- Ask user for their order id
+- Validate the order id and keep asking until user provides a valid id
+- Thank the user for providing the order id
+- End program
+
+## Validate order id
+### Steps
+- If order id is made up of 8 numbers
+  - Return valid
+- otherwise
+  - Return invalid
+```
+
+Changes:
+
+- Line 15: We added a new playbook to validate the order id.
+- Line 11: After user provides the order id, now we call the `Validate order id` playbook to validate it, and engage with the user until they provide a valid id.
+
+Output
+
+```text
+> playbooks run examples/tutorials/03.01/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/03.01/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with questions about your orders. I can assist you by looking up order information once you provide me with your order ID. How can I help you today?
+
+OrderSupportAgent: To get started, could you please share your order ID with me? Take your time - I'll wait for you to provide it or let me know if you'd prefer not to continue.
+
+User: 8843
+
+OrderSupportAgent: I see that order ID '8843' isn't quite right - it looks like it needs to be 8 digits long. Could you please double-check your order ID and share the complete number with me?
+
+User: 8843A098
+
+OrderSupportAgent: I see that order ID '8843A098' contains letters, but order IDs should be exactly 8 digits only. Could you please check your order confirmation and share the correct 8-digit order ID?
+
+User: 98745968
+
+OrderSupportAgent: Perfect! Thank you for providing your order ID 98745968. I now have all the information I need to help you with your order.
+```
+
+**A note to my fellow Software Engineers:**
+
+I know, `Return valid` looks weird. What is getting returned here exactly? Is it a string or a boolean? We aren't capturing the return value in the call on line 11 either. The call `Validate the order id` also doesn't match the playbook name `Validate order id` exactly. It all seems too fuzzy and a bit magical. *I realize that it makes you uncomfortable.*
+
+You can **make the code explicit**. Declare the playbook like `## ValidateOrderId($order_id) -> bool`, use `return true` and `return false`. Change the call to `$valid = ValidateOrderId($order_id)`, and so on. Have it your way! This is also valid Playbooks code, but mostly unnecessary because of the compiler (see below). On the other hand, you could -
+
+**Embrace the magic!** LLMs are highly capable semantic execution machines. By themselves, they are not reliable, so your hesitation is justifiable. But this is where the advanced engineering behind Playbooks comes in. The way Playbooks compiler and runtime are designed, you can expect reliable execution of semantic instructions. Of course, as with any AI software, thourough evaluation is still necessary.
+
+The Playbooks compiler compiles `.pb` program to Playbooks Assembly Language (`.pbasm`), which converts some of the semantic instructions into explicit instructions, adds explicit type annotations, and so on. See the compiler generated PBAsm code below (actual [file](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.01/Order_Support_Agent_6a901f96b774fe82.pbasm)) -
+
+Compiled .pbasm
+
+Order_Support_Agent_6a901f96b774fe82.pbasm
+
+```markdown
+# OrderSupportAgent
+You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+
+## Main() -> None
+Main interaction flow for order support assistance
+
+### Triggers
+- T1:BGN At the beginning
+
+### Steps
+- 01:QUE Say(user, Greet the user and explain what you can help with)
+- 02:QUE Say(user, Ask user for their $order_id:str); YLD for user; done when user provides an order id or gives up
+- 03:QUE $validation_result:str = ValidateOrderId(order_id=$order_id)
+- 04:YLD for call
+- 05:CND While $validation_result is invalid
+  - 05.01:QUE Say(user, Ask user for a valid order id); YLD for user; done when user provides an order id or gives up
+  - 05.02:QUE $validation_result:str = ValidateOrderId(order_id=$order_id)
+  - 05.03:YLD for call
+  - 05.04:JMP 05
+- 06:QUE Say(user, Thank the user for providing the order id)
+- 07:YLD for exit
+
+## ValidateOrderId($order_id:str) -> str
+Validates if the provided order ID meets the required format
+
+### Steps
+- 01:CND If order id is made up of 8 numbers
+  - 01.01:RET valid
+- 02:RET invalid
+```
+
+This looks a lot more like actual code, doesn't it? This is Assembly Language for the LLM, with opcodes like `QUE` for function calls, `CND` for conditional logic, and so on.
+
+**The goal is to make the agent's behavior specification as readable as possible, as if it is written for a competent employee.**
+
+**Learn more**: See [Natural Language vs Explicit Syntax](../programming-guide/#natural-language-vs-explicit-syntax) in the Programming Guide.
+
+### 03.02 Using Triggers
+
+Triggers automatically invoke playbooks when conditions are met - like CPU interrupts. Let's add a trigger to the `Validate order id` playbook to **automatically run** when the user provides an order id.
+
+examples/tutorials/03.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.02/order_assistant.pb)
+
+order_assistant.pb
+
+```diff
+ - At the beginning
+ ### Steps
+ - Greet the user and explain what you can help with
+-- Ask user for their order id
+-- Validate the order id and keep asking until user provides a valid id
++- Ask user for their order id till user provides a valid order id
+ - Thank the user for providing the order id
+ - End program
+
+ ## Validate order id
++### Trigger
++- When user provides order id
+ ### Steps
+ - If order id is made up of 8 numbers
+   - Return valid
+```
+
+Changes:
+
+- We no longer need to explicitly call the `Validate order id` playbook on line 11.
+- We added a trigger condition to the `Validate order id` playbook to run automatically when the user provides an order id.
+
+**Key Benefit**: Main flow stays clean. Validation happens automatically. No explicit validation calls needed.
+
+**Learn more**: See [Triggers: Event-Driven Programming](../programming-guide/#triggers-event-driven-programming) for patterns, best practices, and when to use (or avoid) triggers.
+
+______________________________________________________________________
+
+## 4) Mixing Python and Markdown Playbooks
+
+### 04.01 Markdown → Python
+
+Use Python playbooks when you need data access, deterministic logic, or external libraries. Define async functions decorated with `@playbook` inside python code blocks.
+
+examples/tutorials/04.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.01/order_assistant.pb)
+
+````diff
+ # Order Support Agent
+ You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+ Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+
++```python
++# In real life you'd query your DB or API here.
++_FAKE_ORDERS = {
++  "43345678": {"order_id": "43345678", "status": "Shipped", "expected_delivery_date": "2025-10-02"},
++  "29376452": {"order_id": "29376452", "status": "Processing", "expected_delivery_date": "2025-10-05"},
++}
++
++@playbook
++async def GetOrderStatus(order_id: str) -> dict:
++  """
++  Lookup an order's status by id.
++  Returns a dict with order_id, status, expected_delivery_date.
++  """
++
++  info = _FAKE_ORDERS.get(order_id.upper())
++  if not info:
++    # Return user-readable errors when called from markdown
++    return {"error": f"Order {order_id} was not found."}
++  return info
++```
++
+ ## Main
+ ### Triggers
+ - At the beginning
+@@ -9,6 +30,7 @@ Whenever you are asking for some information from the user, you engage the user
+ - Greet the user and explain what you can help with
+ - Ask user for their order id till user provides a valid order id
+ - Thank the user for providing the order id
++- Get order status and tell user what it is
+ - End program
+
+ ## Validate order id
+````
+
+Changes:
+
+- Lines 5-25: We added a Python playbook to get the order status.
+- Line 33: We added a step to get the order status and tell the user what it is.
+
+Output (unknown order id)
+
+```text
+> playbooks run examples/tutorials/04.01/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.01/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. I can look up order status and provide information about your purchases. How can I assist you today?
+
+OrderSupportAgent: To get started, could you please provide your order ID? It should be an 8-digit number.
+
+User: 34564323
+
+OrderSupportAgent: Thank you for providing your order ID 34564323. Let me look up the status for you.
+
+OrderSupportAgent: I'm sorry, but I couldn't find order 34564323 in our system. Please double-check your order ID or contact customer service if you believe this is an error.
+```
+
+Output (known order id)
+
+```text
+> playbooks run examples/tutorials/04.01/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.01/order_assistant.pb']
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you with any questions about your orders. I can look up order status and provide information about your purchases. How can I assist you today?
+
+OrderSupportAgent: To get started, could you please provide your order ID? It should be an 8-digit number.
+
+User: 29376452
+
+OrderSupportAgent: Thank you for providing your order ID 29376452. Let me look up the status for you.
+
+OrderSupportAgent: Great news! I found your order 29376452. The current status is 'Processing' and your expected delivery date is October 5th, 2025. Your order is being prepared and will be shipped soon!
+```
+
+**Learn more**: See [Python Playbooks - Hard Logic](../programming-guide/#4-python-playbooks-hard-logic) for full details, decorator options, and when to extract Python playbooks to MCP servers.
+
+______________________________________________________________________
+
+### 04.02 Python → Markdown
+
+Let's add a Markdown playbook that summarizes the order status in a specific way, and call it from the `GetOrderStatus` playbook.
+
+examples/tutorials/04.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.02/order_assistant.pb)
+
+````diff
+ # Order Support Agent
+ You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
+ Whenever you are asking for some information from the user, you engage the user in a conversation if needed without being pushy and you will wait for appropriate place in conversation to remind the user.
+
++## SummarizeOrderStatus($order_status)
++### Steps
++- If order was shipped
++  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
++- If order is processing
++  - Return a summary apologizing that the order is not shipped yet and don't provide the expected delivery date unless user asked for it
++
+ ```python
+ # In real life you'd query your DB or API here.
+ _FAKE_ORDERS = {
+@@ -10,17 +17,17 @@ _FAKE_ORDERS = {
+ }
+
+ @playbook
+-async def GetOrderStatus(order_id: str) -> dict:
++async def GetOrderStatus(order_id: str) -> str:
+   """
+   Lookup an order's status by id.
+-  Returns a dict with order_id, status, expected_delivery_date.
++  Returns a string describing order status.
+   """
+
+   info = _FAKE_ORDERS.get(order_id.upper())
+   if not info:
+     # Return user-readable errors when called from markdown
+-    return {"error": f"Order {order_id} was not found."}
+-  return info
++    return f"Order {order_id} was not found."
++  return await SummarizeOrderStatus(info)
+````
+
+## Main
+
+````
+
+Changes:
+
+- Lines 5-11: We added a Markdown playbook to summarize the order status.
+- Line 33: We call the `SummarizeOrderStatus` playbook `GetOrderStatus` playbook.
+
+Output (shipped order, $1 store credit)
+
+```text
+> playbooks run examples/tutorials/04.02/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.02/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you check on your order status. Just provide me with your order ID and I'll look up the current status for you.
+
+User: 43345678
+
+OrderSupportAgent: Thank you for providing your order ID 43345678!
+
+OrderSupportAgent: Great news! Your order 43345678 has been shipped and is expected to be delivered on 2025-10-02. If your order gets delayed, you'll receive $1 store credit as compensation.
+````
+
+Output (processing order)
+
+```text
+> playbooks run examples/tutorials/04.02/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.02/order_assistant.pb']
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you check on your order status. Just provide me with your order ID and I'll look up the current status for you.
+
+User: 29376452
+
+OrderSupportAgent: Thank you for providing order ID 29376452. Let me look up the current status for you.
+
+OrderSupportAgent: I apologize, but your order is still being processed and hasn't shipped yet. We're working on getting it ready for you as soon as possible.
+```
+
+Output (processing order, with expected delivery date)
+
+```text
+> playbooks run examples/tutorials/04.02/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.02/order_assistant.pb']
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you check on your order status. Just provide me with your order ID and I'll look up the current status for you.
+
+User: Here it is 29376452.. I am going on vacation soon so wondering if I get it before that.
+
+OrderSupportAgent: Thank you for providing order ID 29376452! Let me check the status for you right away.
+
+OrderSupportAgent: Your order #29376452 is currently being processed and hasn't shipped yet. However, I can see it has an expected delivery date of October 5th, 2025, so it should arrive well before your vacation! We're working on getting it ready for you as soon as possible.
+```
+
+### 04.03 Description Placeholders
+
+We want to check if a shipped order is overdue, but the LLM doesn't know today's date. We can inject dynamic information using **description placeholders** with `{expression}` syntax:
+
+order_assistant.pb
+
+```diff
+-  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
++  - If order is overdue
++    - Return summary with apologies for the delay and indicating that $1 store credit was added to user's account
++  - Otherwise
++    - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
+```
+
+But, the LLM won't know about today's date so we need to inject that information in the LLM context. Let's use playbook description placeholder feature to add today's date in the description of the `SummarizeOrder` playbook.
+
+order_assistant.pb
+
+```diff
+ ## SummarizeOrderStatus($order_status)
++Summarize order status, taking into account today's date {date.today().strftime("%Y-%m-%d")}
+```
+
+Placeholder expressions are evaluated when the playbook starts. They can access variables, call playbooks, and use Python expressions. Import any needed modules in a Python code block.
+
+examples/tutorials/04.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.03/order_assistant.pb)
+
+````diff
+ ## SummarizeOrderStatus($order_status)
++Summarize order status, taking into account today's date {date.today().strftime("%Y-%m-%d")}
++
+ ### Steps
+ - If order was shipped
+-  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
++  - If order is overdue
++    - Return summary with apologies for the delay and indicating that $1 store credit was added to user's account
++  - Otherwise
++    - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed
+ - If order is processing
+   - Return a summary apologizing that the order is not shipped yet and don't provide the expected delivery date unless user asked for it
+
+ ```python
++from datetime import date
++
+ # In real life you'd query your DB or API here.
+ _FAKE_ORDERS = {
+-  "43345678": {"order_id": "43345678", "status": "Shipped", "expected_delivery_date": "2025-10-02"},
++  "43345678": {"order_id": "43345678", "status": "Shipped", "expected_delivery_date": "2025-08-02"},
+   "29376452": {"order_id": "29376452", "status": "Processing", "expected_delivery_date": "2025-10-05"},
+ }
+````
+
+````
+
+Changes:
+
+- Line 2: Added a description with a placeholder for today's date.
+- Line 7: Updated the expected delivery date for the shipped order to be 2025-08-02 to trigger the overdue behavior.
+
+Output
+
+```text
+> playbooks run examples/tutorials/04.03/order_assistant.pb
+ℹ Loading playbooks from: ['examples/tutorials/04.03/order_assistant.pb']
+  Compiling agent: Order Support Agent
+
+OrderSupportAgent: Hello! I'm your Order Support Agent. I'm here to help you check on your order status. Just provide me with your order ID and I'll look up the current status for you.
+
+User: 43345678
+
+OrderSupportAgent: Thank you for providing order ID 43345678. Let me look up your order status right away.
+
+OrderSupportAgent: I apologize for the significant delay with your order 43345678. Your order was shipped but should have been delivered by August 2nd, 2025. Due to this delay, we've added $1 store credit to your account as compensation for the inconvenience.
+````
+
+**Learn more**: See [Programming Guide](../programming-guide/) for advanced patterns and best practices.
+
+______________________________________________________________________
+
+## Next Steps
+
+Congratulations! You've built a working order assistant that:
+
+- ✅ Greets users and collects input conversationally
+- ✅ Validates input automatically with triggers
+- ✅ Mixes Python and Markdown playbooks seamlessly
+- ✅ Injects dynamic context with placeholders
+
+**Continue Learning**:
+
+- **[Programming Guide](../programming-guide/)** - Comprehensive reference covering all features
+- [Multi-Agent Programs](../programming-guide/#multi-agent-programs) - Multiple agents, meetings, cross-agent calls
+- [ReAct Playbooks](../programming-guide/#2-react-playbooks-dynamic-reasoning) - Dynamic planning when steps aren't predetermined
+- [Raw Playbooks](../programming-guide/#3-raw-prompt-playbooks-full-control) - Full prompt control for single-shot tasks
+- [Common Patterns](../programming-guide/#common-patterns-and-best-practices) - Best practices and real-world patterns
+
+**Reference Documentation**:
+
+- [Agents](../reference/agents/) - Agent configuration and structure
+- [MCP Agents](../reference/mcp-agent/) - Integrating external tools via MCP
+- [Triggers](../reference/triggers/) - Event-driven programming details
+- [Playbook Types](../reference/playbook-types/) - Deep dive on all playbook types
+
+**Ready to build?** Start with the [Programming Guide](../programming-guide/) and explore the examples in the [Playbooks repository](https://github.com/playbooks-ai/playbooks/tree/master/examples).
+
+# Playbooks Reference Documentation
+
+This section contains the reference documentation for the Playbooks framework.
+
+## Table of Contents
+
+- [Configuration System](config/)
+- [Supported Models](models/)
+- [Playbooks AI](playbooks-ai/)
+- [Playbooks Language](playbooks-language/)
+- [Playbooks Assembly Language](playbooks-assembly-language/)
+- [Agents](agents/)
+- [MCP based Agents](mcp-agent/)
+- [Exported and Public Playbooks](exported-and-public-playbooks/)
+- [Playbook Types](playbook-types/)
+- [Built-in Playbooks](builtin-playbooks/)
+- [Triggers](triggers/)
+- [Context Engineering](context-engineering/)
+- [Description Placeholders](description-placeholders/)
