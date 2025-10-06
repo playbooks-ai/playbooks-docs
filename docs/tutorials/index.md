@@ -24,7 +24,7 @@
 ## 1) Hello, world!
 
 ### 01.01 Let's begin
-examples/tutorials/01.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/01.01/order_assistant.pb)
+examples/tutorials/01.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/01.01/order_assistant.pb)
 
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
@@ -63,7 +63,7 @@ Let's improve this by asking the agent to only list capabilties corresponding to
 
 ### 01.02 Prompt Tuning
 
-examples/tutorials/01.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/01.02/order_assistant.pb)
+examples/tutorials/01.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/01.02/order_assistant.pb)
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
 You are an agent that greets users and helps with order questions. Note that your capabilities are limited to the playbooks defined below.
@@ -102,7 +102,7 @@ Let's ask the user for their order id.
 
 ### 02.01 User input
 
-examples/tutorials/02.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.01/order_assistant.pb)
+examples/tutorials/02.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.01/order_assistant.pb)
 
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
@@ -144,7 +144,7 @@ OrderSupportAgent: Thank you for providing your order ID: 47463874. I have recor
 
 We want the agent to wait on line 9 until the user provides their order id. Let's add that instruction.
 
-examples/tutorials/02.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.02/order_assistant.pb)
+examples/tutorials/02.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.02/order_assistant.pb)
 
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
@@ -196,7 +196,7 @@ Notice that now the agent engaged in a conversation with the user while waiting 
 
 This behavior trait can be added to the agent's instructions so it applies to any time the agent asks the user for some information.
 
-examples/tutorials/02.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/02.03/order_assistant.pb)
+examples/tutorials/02.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/02.03/order_assistant.pb)
 
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
@@ -253,7 +253,7 @@ Let's add a new playbook to validate the order id.
 
 ### 03.01 Validation Playbook
 
-examples/tutorials/03.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.01/order_assistant.pb)
+examples/tutorials/03.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.01/order_assistant.pb)
 
 ```markdown linenums="1" title="order_assistant.pb"
 # Order Support Agent
@@ -316,7 +316,7 @@ You can **make the code explicit**. Declare the playbook like `## ValidateOrderI
 
 **Embrace the magic!** LLMs are highly capable semantic execution machines. By themselves, they are not reliable, so your hesitation is justifiable. But this is where the advanced engineering behind Playbooks comes in. The way Playbooks compiler and runtime are designed, you can expect reliable execution of semantic instructions. Of course, as with any AI software, thourough evaluation is still necessary.
 
-The Playbooks compiler compiles `.pb` program to Playbooks Assembly Language (`.pbasm`), which converts some of the semantic instructions into explicit instructions, adds explicit type annotations, and so on. See the compiler generated PBAsm code below (actual [file](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.01/Order_Support_Agent_6a901f96b774fe82.pbasm)) -
+The Playbooks compiler compiles `.pb` program to Playbooks Assembly Language (`.pbasm`), which converts some of the semantic instructions into explicit instructions, adds explicit type annotations, and so on. See the compiler generated PBAsm code below (actual [file](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.01/Order_Support_Agent_6a901f96b774fe82.pbasm)) -
 
 <details>
 <summary>Compiled .pbasm</summary>
@@ -366,7 +366,7 @@ as if it is written for a competent employee.**
 
 Triggers automatically invoke playbooks when conditions are met - like CPU interrupts. Let's add a trigger to the `Validate order id` playbook to **automatically run** when the user provides an order id.
 
-examples/tutorials/03.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.02/order_assistant.pb)
+examples/tutorials/03.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/03.02/order_assistant.pb)
 
 ```diff title="order_assistant.pb"
  - At the beginning
@@ -403,7 +403,7 @@ Changes:
 
 Use Python playbooks when you need data access, deterministic logic, or external libraries. Define async functions decorated with `@playbook` inside python code blocks.
 
-examples/tutorials/04.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.01/order_assistant.pb)
+examples/tutorials/04.01/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.01/order_assistant.pb)
 
 ````diff linenums="1" title="order_assistant.pb"
  # Order Support Agent
@@ -494,7 +494,7 @@ OrderSupportAgent: Great news! I found your order 29376452. The current status i
 
 Let's add a Markdown playbook that summarizes the order status in a specific way, and call it from the `GetOrderStatus` playbook.
 
-examples/tutorials/04.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.02/order_assistant.pb)
+examples/tutorials/04.02/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.02/order_assistant.pb)
 
 ````diff linenums="1" title="order_assistant.pb"
  # Order Support Agent
@@ -610,7 +610,7 @@ But, the LLM won't know about today's date so we need to inject that information
 
 Placeholder expressions are evaluated when the playbook starts. They can access variables, call playbooks, and use Python expressions. Import any needed modules in a Python code block.
 
-examples/tutorials/04.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.03/order_assistant.pb)
+examples/tutorials/04.03/[order_assistant.pb](https://github.com/playbooks-ai/playbooks/tree/master/examples/tutorials/04.03/order_assistant.pb)
 
 ````diff linenums="1" title="order_assistant.pb"
  ## SummarizeOrderStatus($order_status)
@@ -689,4 +689,4 @@ Congratulations! You've built a working order assistant that:
 - [Triggers](../reference/triggers.md) - Event-driven programming details
 - [Playbook Types](../reference/playbook-types.md) - Deep dive on all playbook types
 
-**Ready to build?** Start with the [Programming Guide](../programming-guide/index.md) and explore the examples in the [Playbooks repository](https://github.com/playbooks-ai/playbooks/tree/main/examples).
+**Ready to build?** Start with the [Programming Guide](../programming-guide/index.md) and explore the examples in the [Playbooks repository](https://github.com/playbooks-ai/playbooks/tree/master/examples).
