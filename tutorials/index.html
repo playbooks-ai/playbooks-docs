@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-building-an-order-status-assistant-with-playbooks" class="md-skip">
+        <a href="#tutorial-building-an-order-status-assistant" class="md-skip">
           Skip to content
         </a>
       
@@ -388,15 +388,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#playbooks-ai-approach-software-30" class="md-nav__link">
-    <span class="md-ellipsis">
-      Playbooks AI approach: Software 3.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#1-hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       1) Hello, world!
@@ -505,13 +496,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-unified-call-stack" class="md-nav__link">
+  <a href="#4-mixing-python-and-markdown-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Unified call stack
+      4) Mixing Python and Markdown Playbooks
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4) Unified call stack">
+    <nav class="md-nav" aria-label="4) Mixing Python and Markdown Playbooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -535,7 +526,7 @@
           <li class="md-nav__item">
   <a href="#0403-description-placeholders" class="md-nav__link">
     <span class="md-ellipsis">
-      04.03 Description placeholders
+      04.03 Description Placeholders
     </span>
   </a>
   
@@ -547,9 +538,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explore-more" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Explore more
+      Next Steps
     </span>
   </a>
   
@@ -962,15 +953,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#playbooks-ai-approach-software-30" class="md-nav__link">
-    <span class="md-ellipsis">
-      Playbooks AI approach: Software 3.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#1-hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       1) Hello, world!
@@ -1079,13 +1061,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-unified-call-stack" class="md-nav__link">
+  <a href="#4-mixing-python-and-markdown-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Unified call stack
+      4) Mixing Python and Markdown Playbooks
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4) Unified call stack">
+    <nav class="md-nav" aria-label="4) Mixing Python and Markdown Playbooks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1109,7 +1091,7 @@
           <li class="md-nav__item">
   <a href="#0403-description-placeholders" class="md-nav__link">
     <span class="md-ellipsis">
-      04.03 Description placeholders
+      04.03 Description Placeholders
     </span>
   </a>
   
@@ -1121,9 +1103,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explore-more" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Explore more
+      Next Steps
     </span>
   </a>
   
@@ -1148,31 +1130,23 @@
   
 
 
-<h1 id="tutorial-building-an-order-status-assistant-with-playbooks">Tutorial: Building an Order Status Assistant with Playbooks<a class="headerlink" href="#tutorial-building-an-order-status-assistant-with-playbooks" title="Permanent link">&para;</a></h1>
-<p>This tutorial introduces new Playbooks programmers to the language, the framework and the basics of building AI agents. We will use a simple example use case of a customer support AI assistant that checks order status. We will start with a simple “hello world”, then add user input, Python playbooks, markdown↔python calls, multi-agent calls, triggers, description placeholders, and finally explore ReAct and Raw playbooks.</p>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Prerequisites (see <a href="../getting-started/">Getting Started</a>):</p>
+<h1 id="tutorial-building-an-order-status-assistant">Tutorial: Building an Order Status Assistant<a class="headerlink" href="#tutorial-building-an-order-status-assistant" title="Permanent link">&para;</a></h1>
+<p><strong>Goal</strong>: Learn Playbooks by building a customer support AI assistant that checks order status. You'll start with "hello world" and progressively add user input, validation, Python playbooks, and more.</p>
+<p><strong>What you'll learn</strong>:</p>
+<ul>
+<li>Writing your first agent and playbook</li>
+<li>Collecting and validating user input</li>
+<li>Using triggers for automatic validation</li>
+<li>Mixing Python and Markdown playbooks</li>
+<li>Injecting dynamic context with description placeholders</li>
+</ul>
+<p><strong>Prerequisites</strong> (see <a href="../getting-started/">Getting Started</a>):</p>
 <ul>
 <li>Installed Playbooks</li>
-<li>Successfully ran a playbooks program using <code>playbooks run &lt;program&gt;.pb</code></li>
+<li>Successfully ran a program using <code>playbooks run &lt;program&gt;.pb</code></li>
 </ul>
-<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> Code for this tutorial is available <a href="https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials">here</a></p>
-<hr />
-<h2 id="playbooks-ai-approach-software-30">Playbooks AI approach: Software 3.0<a class="headerlink" href="#playbooks-ai-approach-software-30" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>LLM as a processor</strong>: Your natural language specifications become the program; the runtime compiles and executes them reliably on LLM.</li>
-<li><strong>Programmer friendly</strong>: Agents are classes, playbooks are methods. Multi-agent communication is message passing. Use standard developer tools and IDEs for debugging, code completion, etc.</li>
-<li><strong>Simple syntax</strong>: Use markdown <code>H1</code> tags for agents, <code>H2</code> tags and <code>@playbook</code> decorated Python functions for playbooks. You pick your coding style - <code>$order_id = LoadOrderId()</code>, <code>Load $order_id</code>, <code>Load user's order id</code> are all valid.</li>
-<li><strong>Soft + Hard logic</strong>: Run soft logic on LLM, hard logic on CPU; on the same call stack; mix and match as needed.<ol>
-<li>[LLM] Natural language markdown playbooks for known busiess logic </li>
-<li>[LLM] Natural language ReAct playbooks for dynamic planning</li>
-<li>[LLM] Raw playbooks for full control over the LLM prompt</li>
-<li>[CPU] Python playbooks when you need determinism, external system access, and general computation</li>
-</ol>
-</li>
-<li><strong>Higher abstraction</strong>: Describe behavior at the level of “what the agent should do,” not plumbing or orchestration code. Leads to 10x fewer lines of code.</li>
-<li><strong>Verifiability and observability</strong>: Structured programs, Semantic static program analysis, compilation into LLM-friendly Assembly Language, triggers, post-hoc checks enable reliable behavior despite LLM non-determinism</li>
-<li><strong>Advanced capabilities</strong>: Dynamic playbook generation, observer agents, formal verifiability and more.</li>
-</ul>
+<p><img alt="ℹ" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2139.svg" title=":information_source:" /> <strong>Code</strong>: All examples available <a href="https://github.com/playbooks-ai/playbooks/tree/main/examples/tutorials">here</a></p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> <strong>New to Playbooks?</strong> This tutorial teaches by example. For comprehensive reference, see the <a href="../programming-guide/">Programming Guide</a>.</p>
 <hr />
 <h2 id="1-hello-world">1) Hello, world!<a class="headerlink" href="#1-hello-world" title="Permanent link">&para;</a></h2>
 <h3 id="0101-lets-begin">01.01 Let's begin<a class="headerlink" href="#0101-lets-begin" title="Permanent link">&para;</a></h3>
@@ -1529,11 +1503,11 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 
 </details>
 
-<p><strong><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> The goal is to make the agent's behavior specification as readable as possible, as if it is written for a competent employee.</strong></p>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Don't use the explicit Python-like syntax unless absolutely necessary.</p>
+<p><strong><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> The goal is to make the agent's behavior specification as readable as possible, 
+as if it is written for a competent employee.</strong></p>
+<p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" title=":books:" /> <strong>Learn more</strong>: See <a href="../programming-guide/#natural-language-vs-explicit-syntax">Natural Language vs Explicit Syntax</a> in the Programming Guide.</p>
 <h3 id="0302-using-triggers">03.02 Using Triggers<a class="headerlink" href="#0302-using-triggers" title="Permanent link">&para;</a></h3>
-<p>Triggers is a powerful feature in Playbooks AI that enables declarative event-driven programming through natural language conditions. They allow playbooks to be dynamically invoked when specified conditions are met.</p>
-<p>Let's add a trigger condition to the <code>Validate order id</code> playbook to <strong>automatically run</strong> when the user provides an order id.</p>
+<p>Triggers automatically invoke playbooks when conditions are met - like CPU interrupts. Let's add a trigger to the <code>Validate order id</code> playbook to <strong>automatically run</strong> when the user provides an order id.</p>
 <p>examples/tutorials/03.02/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/03.02/order_assistant.pb">order_assistant.pb</a></p>
 <div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w"> </span>- At the beginning
 </span><span id="__codeline__-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w"> </span>### Steps
@@ -1556,11 +1530,12 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 <li>We no longer need to explicitly call the <code>Validate order id</code> playbook on line 11.</li>
 <li>We added a trigger condition to the <code>Validate order id</code> playbook to run automatically when the user provides an order id.</li>
 </ul>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> Triggers dramatically simplify the code by composing the program's control flow dynamically.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> <strong>Key Benefit</strong>: Main flow stays clean. Validation happens automatically. No explicit validation calls needed.</p>
+<p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" title=":books:" /> <strong>Learn more</strong>: See <a href="../programming-guide/#triggers-event-driven-programming">Triggers: Event-Driven Programming</a> for patterns, best practices, and when to use (or avoid) triggers.</p>
 <hr />
-<h2 id="4-unified-call-stack">4) Unified call stack<a class="headerlink" href="#4-unified-call-stack" title="Permanent link">&para;</a></h2>
+<h2 id="4-mixing-python-and-markdown-playbooks">4) Mixing Python and Markdown Playbooks<a class="headerlink" href="#4-mixing-python-and-markdown-playbooks" title="Permanent link">&para;</a></h2>
 <h3 id="0401-markdown-python">04.01 Markdown → Python<a class="headerlink" href="#0401-markdown-python" title="Permanent link">&para;</a></h3>
-<p>Use Python when you need data access, deterministic logic, or libraries. Define async functions decorated with <code>@playbook</code> inside python code blocks. You can call Python playbooks from any (Markdown or Python) playbook.</p>
+<p>Use Python playbooks when you need data access, deterministic logic, or external libraries. Define async functions decorated with <code>@playbook</code> inside python code blocks.</p>
 <p>examples/tutorials/04.01/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.01/order_assistant.pb">order_assistant.pb</a></p>
 <div class="language-diff highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
@@ -1674,6 +1649,7 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 </span></code></pre></div>
 </details>
 
+<p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" title=":books:" /> <strong>Learn more</strong>: See <a href="../programming-guide/#4-python-playbooks---hard-logic">Python Playbooks - Hard Logic</a> for full details, decorator options, and when to extract Python playbooks to MCP servers.</p>
 <hr />
 <h3 id="0402-python-markdown">04.02 Python → Markdown<a class="headerlink" href="#0402-python-markdown" title="Permanent link">&para;</a></h3>
 <p>Let's add a Markdown playbook that summarizes the order status in a specific way, and call it from the <code>GetOrderStatus</code> playbook.</p>
@@ -1801,8 +1777,8 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 </span></code></pre></div>
 </details>
 
-<h3 id="0403-description-placeholders">04.03 Description placeholders<a class="headerlink" href="#0403-description-placeholders" title="Permanent link">&para;</a></h3>
-<p>Now, let's say we want the agent to behave different based on whether a shipped order is overdue or not. We will update the playbook -</p>
+<h3 id="0403-description-placeholders">04.03 Description Placeholders<a class="headerlink" href="#0403-description-placeholders" title="Permanent link">&para;</a></h3>
+<p>We want to check if a shipped order is overdue, but the LLM doesn't know today's date. We can inject dynamic information using <strong>description placeholders</strong> with <code>{expression}</code> syntax:</p>
 <div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="gd">-  - Return summary indicating expected_delivery_date and $1 store credit if the order gets delayed</span>
 </span><span id="__codeline__-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="gi">+  - If order is overdue</span>
 </span><span id="__codeline__-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="gi">+    - Return summary with apologies for the delay and indicating that $1 store credit was added to user&#39;s account</span>
@@ -1813,7 +1789,7 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 <div class="language-diff highlight"><span class="filename">order_assistant.pb</span><pre><span></span><code><span id="__codeline__-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w"> </span>## SummarizeOrderStatus($order_status)
 </span><span id="__codeline__-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="gi">+Summarize order status, taking into account today&#39;s date {date.today().strftime(&quot;%Y-%m-%d&quot;)}</span>
 </span></code></pre></div>
-<p>Placeholder expression must be a valid Python expression. It will be evaluated, with access to any imports from python code blocks. In this case, we need the <code>date</code> module, so we need to import it in a python code block - see line 15 below.</p>
+<p>Placeholder expressions are evaluated when the playbook starts. They can access variables, call playbooks, and use Python expressions. Import any needed modules in a Python code block.</p>
 <p>examples/tutorials/04.03/<a href="https://github.com/playbooks-ai/playbooks/blob/main/examples/tutorials/04.03/order_assistant.pb">order_assistant.pb</a></p>
 <div class="language-diff highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">order_assistant.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
@@ -1882,297 +1858,32 @@ This looks a lot more like actual code, doesn't it? This is Assembly Language fo
 </span></code></pre></div>
 </details>
 
-<p>Thanks for making it this far! Take a break. Smell a rose. Play with your cat.</p>
-<p>Go build something cool with Playbooks!</p>
+<p><img alt="📚" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" title=":books:" /> <strong>Learn more</strong>: See <a href="../programming-guide/">Programming Guide</a> for advanced patterns and best practices.</p>
 <hr />
-<p>More sections coming soon -</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Congratulations! You've built a working order assistant that:</p>
 <ul>
-<li>
-<p>Multiple agents</p>
+<li>✅ Greets users and collects input conversationally</li>
+<li>✅ Validates input automatically with triggers</li>
+<li>✅ Mixes Python and Markdown playbooks seamlessly</li>
+<li>✅ Injects dynamic context with placeholders</li>
+</ul>
+<p><strong>Continue Learning</strong>:</p>
 <ul>
-<li>Create an agent with a public playbook</li>
-<li>Call playbook directly</li>
-<li>Send message to agent</li>
+<li><strong><a href="../programming-guide/">Programming Guide</a></strong> - Comprehensive reference covering all features</li>
+<li><a href="../programming-guide/#multi-agent-programs">Multi-Agent Programs</a> - Multiple agents, meetings, cross-agent calls</li>
+<li><a href="../programming-guide/#2-react-playbooks---dynamic-reasoning">ReAct Playbooks</a> - Dynamic planning when steps aren't predetermined</li>
+<li><a href="../programming-guide/#3-raw-prompt-playbooks---full-control">Raw Playbooks</a> - Full prompt control for single-shot tasks</li>
+<li><a href="../programming-guide/#common-patterns-and-best-practices">Common Patterns</a> - Best practices and real-world patterns</li>
 </ul>
-</li>
-<li>
-<p>Triggers: react to user intent and state</p>
-</li>
-<li>ReAct playbooks (no steps, think–act loop)</li>
-<li>Raw playbooks (full prompt control)</li>
-<li>!import directive</li>
-</ul>
-<h2 id="explore-more">Explore more<a class="headerlink" href="#explore-more" title="Permanent link">&para;</a></h2>
+<p><strong>Reference Documentation</strong>:</p>
 <ul>
-<li><a href="../reference/agents/">Agents</a></li>
-<li><a href="../reference/mcp-agent/">MCP Agents</a></li>
-<li><a href="../reference/triggers/">Triggers</a></li>
-<li><a href="../reference/playbooks-ai/">Playbooks AI technology stack</a></li>
+<li><a href="../reference/agents/">Agents</a> - Agent configuration and structure</li>
+<li><a href="../reference/mcp-agent/">MCP Agents</a> - Integrating external tools via MCP</li>
+<li><a href="../reference/triggers/">Triggers</a> - Event-driven programming details</li>
+<li><a href="../reference/playbook-types/">Playbook Types</a> - Deep dive on all playbook types</li>
 </ul>
-<!-- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## 6) Add another agent and call it
-
-Agents are H1 sections. You can call another agent’s playbook like `ShippingAgent.CalculateETA(...)`.
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="gh"># Shipping Agent</span>
-</span><span id="__codeline__-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Helps with shipping-specific tasks.
-</span><span id="__codeline__-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
-</span><span id="__codeline__-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>```python
-</span><span id="__codeline__-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>from playbooks import playbook
-</span><span id="__codeline__-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>from datetime import datetime, timedelta
-</span><span id="__codeline__-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
-</span><span id="__codeline__-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="ni">@playbook</span>(public=True)
-</span><span id="__codeline__-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>async def CalculateETA(status: str, expected_delivery_date: str) -&gt; str:
-</span><span id="__codeline__-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    &quot;&quot;&quot;
-</span><span id="__codeline__-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>    Returns a human-friendly ETA summary string.
-</span><span id="__codeline__-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    &quot;&quot;&quot;
-</span><span id="__codeline__-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    try:
-</span><span id="__codeline__-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>        due = datetime.fromisoformat(expected_delivery_date)
-</span><span id="__codeline__-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>        days = (due.date() - datetime.utcnow().date()).days
-</span><span id="__codeline__-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>        if status.lower() == &quot;shipped&quot;:
-</span><span id="__codeline__-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>            return f&quot;Your package is on the way and should arrive in ~{days} day(s).&quot;
-</span><span id="__codeline__-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>        return f&quot;Estimated delivery is in ~{days} day(s).&quot;
-</span><span id="__codeline__-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>    except Exception:
-</span><span id="__codeline__-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>        return &quot;Estimated delivery date is not available.&quot;
-</span></code></pre></div>
-
-Back in `Order Support Agent`, call it:
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="gu">## SummarizeOrder($order_id, $status, $expected_delivery_date)</span>
-</span><span id="__codeline__-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">-</span><span class="w"> </span>Tell the user &quot;Order {$order_id} is {$status}. It&#39;s expected on {$expected_delivery_date}.&quot;
-</span><span id="__codeline__-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">-</span><span class="w"> </span>$eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
-</span><span id="__codeline__-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">-</span><span class="w"> </span>Tell the user $eta
-</span><span id="__codeline__-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">-</span><span class="w"> </span>Return &quot;done&quot;
-</span></code></pre></div>
-
-Tip:
-- Use `public=True` to expose Python playbooks to other agents.
-
----
-
-## 7) Triggers: react to user intent and state
-
-Add triggers to run playbooks automatically when conditions are met.
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="gu">## HelpWithOrderStatus</span>
-</span><span id="__codeline__-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">-</span><span class="w"> </span>When user asks about order status
-</span><span id="__codeline__-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="k">-</span><span class="w"> </span>$order_id = CollectOrderId()
-</span><span id="__codeline__-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="k">-</span><span class="w"> </span>CheckOrderStatus()
-</span></code></pre></div>
-
-Common patterns:
-- Temporal: `- After 5 minutes`
-- Interaction: `- When user provides a new order id`
-- State-based: `- When $attempts is greater than 3`
-- Flow-based: `- After calling CollectOrderId`
-
----
-
-## 8) Description placeholders
-
-Placeholders inject dynamic context into the description shown to the LLM.
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="gu">## SupportSession</span>
-</span><span id="__codeline__-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>You’re helping customer {$name} with order {$order_id}. Be concise and friendly.
-</span><span id="__codeline__-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-</span><span id="__codeline__-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="k">-</span><span class="w"> </span>Ask a clarifying question if info is missing
-</span><span id="__codeline__-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="k">-</span><span class="w"> </span>Proceed to CheckOrderStatus()
-</span></code></pre></div>
-
-Placeholders can reference variables, call other playbooks, and evaluate Python expressions like `{round($score * 100)}%`.
-
----
-
-## 9) ReAct playbooks (no steps, think–act loop)
-
-When steps aren’t known upfront, omit `### Steps`. The default ReAct loop lets the LLM plan, act, and iterate.
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="gu">## InvestigateDelayedOrder</span>
-</span><span id="__codeline__-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
-</span><span id="__codeline__-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
-</span><span id="__codeline__-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="k">-</span><span class="w"> </span>When user mentions delay or late delivery
-</span></code></pre></div>
-
-Use ReAct for research, multi-step troubleshooting, or open-ended problem solving. Prefer standard markdown steps for prescribed flows.
-
----
-
-## 10) Raw playbooks (full prompt control)
-
-Use `execution_mode: raw` to send exactly your prompt (after placeholder substitution) as a single-shot LLM call.
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="gu">## CategorizeSupportTicket</span>
-</span><span id="__codeline__-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>execution_mode: raw
-</span><span id="__codeline__-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
-</span><span id="__codeline__-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>You will classify the ticket: &quot;{$message}&quot;
-</span><span id="__codeline__-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>Respond with exactly one of:
-</span><span id="__codeline__-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="k">-</span><span class="w"> </span>Order Status
-</span><span id="__codeline__-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="k">-</span><span class="w"> </span>Refund
-</span><span id="__codeline__-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="k">-</span><span class="w"> </span>Technical Support
-</span><span id="__codeline__-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="k">-</span><span class="w"> </span>Other
-</span></code></pre></div>
-
-Tradeoff: maximum control vs. fewer safety checks. Great for atomic labeling or bespoke prompts.
-
----
-
-## 11) Coding style: natural language ↔ Python-like
-
-You can write steps in different styles; choose per clarity and reliability.
-
-- Natural language (most readable):
-  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">-</span><span class="w"> </span>Ask for a 6-10 character $order_id and validate it
-</span><span id="__codeline__-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">-</span><span class="w"> </span>Tell the user the ETA
-</span></code></pre></div>
-- Explicit assignments (precise data flow):
-  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">-</span><span class="w"> </span>$order_id = CollectOrderId()
-</span><span id="__codeline__-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">-</span><span class="w"> </span>$order = GetOrderStatus($order_id)
-</span><span id="__codeline__-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="k">-</span><span class="w"> </span>$eta = Shipping Agent.CalculateETA($order.status, $order.expected_delivery_date)
-</span><span id="__codeline__-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="k">-</span><span class="w"> </span>Return $eta
-</span></code></pre></div>
-- Semantic calls (let the compiler resolve intent):
-  <div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">-</span><span class="w"> </span>Check the status of the user’s order and provide the ETA
-</span></code></pre></div>
-Guidelines:
-- **Prefer natural language** for control flow and readability.
-- **Use assignments** when passing values across steps or between playbooks.
-- **Prefer semantic calls** when the intent is obvious; fall back to explicit calls for clarity or parameters.
-
----
-
-## 12) Full example: putting it all together
-
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="gh"># Order Support Agent</span>
-</span><span id="__codeline__-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>Helps customers check order status and ETAs.
-</span><span id="__codeline__-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
-</span><span id="__codeline__-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>```python
-</span><span id="__codeline__-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>from playbooks import playbook
-</span><span id="__codeline__-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>from datetime import datetime, timedelta
-</span><span id="__codeline__-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
-</span><span id="__codeline__-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="ge">_FAKE_</span>ORDERS = {
-</span><span id="__codeline__-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>    &quot;A12345&quot;: {&quot;order_id&quot;: &quot;A12345&quot;, &quot;status&quot;: &quot;Shipped&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-02&quot;},
-</span><span id="__codeline__-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>    &quot;B98765&quot;: {&quot;order_id&quot;: &quot;B98765&quot;, &quot;status&quot;: &quot;Processing&quot;, &quot;expected_delivery_date&quot;: &quot;2025-10-05&quot;},
-</span><span id="__codeline__-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>}
-</span><span id="__codeline__-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
-</span><span id="__codeline__-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="ni">@playbook</span>
-</span><span id="__codeline__-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>async def GetOrderStatus(order_id: str) -&gt; dict:
-</span><span id="__codeline__-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>    info = <span class="ge">_FAKE_</span>ORDERS.get(order_id.upper())
-</span><span id="__codeline__-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a>    if not info:
-</span><span id="__codeline__-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a>        return {&quot;error&quot;: f&quot;Order {order_id} was not found.&quot;}
-</span><span id="__codeline__-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a>    return info
-</span></code></pre></div>
-
-## Greet
-### Triggers
-- At the beginning
-### Steps
-- Greet the user and ask for their $name
-- Say "Hello, $name! I can help you check your order status."
-- $order_id = CollectOrderId()
-- CheckOrderStatus()
-
-## CollectOrderId
-### Steps
-- Ask for a 6-10 character $order_id (letters and numbers)
-- While $order_id is not alphanumeric or length < 6 or length > 10
-  - Tell the user "That doesn't look like a valid order id."
-  - Ask again for $order_id
-- Return $order_id
-
-## CheckOrderStatus
-### Steps
-- $order = GetOrderStatus($order_id)
-- If $order.error exists
-  - Tell the user $order.error
-  - End program
-- Extract $status, $expected_delivery_date from $order
-- SummarizeOrder($order_id, $status, $expected_delivery_date)
-
-## SummarizeOrder($order_id, $status, $expected_delivery_date)
-### Steps
-- Tell the user "Order {$order_id} is {$status}. It's expected on {$expected_delivery_date}."
-- $eta = Shipping Agent.CalculateETA($status, $expected_delivery_date)
-- Tell the user $eta
-- Return "done"
-
-## HelpWithOrderStatus
-### Triggers
-- When user asks about order status
-### Steps
-- $order_id = CollectOrderId()
-- CheckOrderStatus()
-
-## InvestigateDelayedOrder
-The order may be delayed. Determine the cause, verify with at least two signals, and propose a corrective action. Keep customer communication empathetic and brief.
-
-### Triggers
-- When user mentions delay or late delivery
-<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>```markdown
-</span><span id="__codeline__-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a># Shipping Agent
-</span><span id="__codeline__-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Helps with shipping-specific tasks.
-</span><span id="__codeline__-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
-</span><span id="__codeline__-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>```python
-</span><span id="__codeline__-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>from playbooks import playbook
-</span><span id="__codeline__-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>from datetime import datetime
-</span><span id="__codeline__-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
-</span><span id="__codeline__-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>@playbook(public=True)
-</span><span id="__codeline__-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>async def CalculateETA(status: str, expected_delivery_date: str) -&gt; str:
-</span><span id="__codeline__-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>    try:
-</span><span id="__codeline__-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>        due = datetime.fromisoformat(expected_delivery_date)
-</span><span id="__codeline__-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>        days = (due.date() - datetime.utcnow().date()).days
-</span><span id="__codeline__-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>        if status.lower() == &quot;shipped&quot;:
-</span><span id="__codeline__-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a>            return f&quot;Your package is on the way and should arrive in ~{days} day(s).&quot;
-</span><span id="__codeline__-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>        return f&quot;Estimated delivery is in ~{days} day(s).&quot;
-</span><span id="__codeline__-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>    except Exception:
-</span><span id="__codeline__-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a>        return &quot;Estimated delivery date is not available.&quot;
-</span><span id="__codeline__-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a>```
-</span></code></pre></div>
-
-12b) !include 
----
-
-## 13) Run and iterate
-
-- Run: `playbooks run order_assistant.pb`
-- If using the web playground, start the server then load your `.pb` (see Applications > HTML Playground).
-- Extend: log in users, verify identity, connect real data sources, add escalation to human support.
-
----
-
-## 14) Key takeaways
-
-- Combine **markdown steps** for behavior and **Python playbooks** for precision.
-- Use **triggers** to react to events and intent naturally.
-- Choose style per step: **natural language** for readability, **assignments** for data flow, **semantic calls** for intent.
-- Reach for **ReAct** when plans are unknown; **Raw** when you need full prompt control. -->
+<p><strong>Ready to build?</strong> Start with the <a href="../programming-guide/">Programming Guide</a> and explore the examples in the <a href="https://github.com/playbooks-ai/playbooks/tree/main/examples">Playbooks repository</a>.</p>
 
 
 
