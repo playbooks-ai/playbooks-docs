@@ -15,6 +15,11 @@ copyright: Copyright Playbooks AI 2025
 extra_css:
   - assets/stylesheets/custom.css
 
+extra:
+  analytics:
+    provider: Google
+    property: G-KSV70W8EXP
+
 # Configuration
 theme:
   name: material
@@ -100,6 +105,7 @@ plugins:
 nav:
   - Home: index.md
   - Getting Started: getting-started/index.md
+  - Programming Guide: programming-guide/index.md
   - Tutorial: tutorials/index.md
   - Reference:
     - Configuration System: reference/config.md
