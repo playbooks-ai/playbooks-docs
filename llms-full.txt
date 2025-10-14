@@ -282,7 +282,9 @@ ______________________________________________________________________
 
 ### Devin / OpenAI Codex / Amazon Q / Gemini Code Assist
 
-## For autonomous or chat-based AI assistants, include the instructions in your initial prompt
+For autonomous or chat-based AI assistants, include the instructions in your initial prompt
+
+______________________________________________________________________
 
 ## agents.md Format
 
