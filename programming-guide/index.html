@@ -1093,6 +1093,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#more-complex-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      More complex example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       Cheat Sheet
@@ -2287,6 +2296,15 @@
   <a href="#minimal-working-program" class="md-nav__link">
     <span class="md-ellipsis">
       Minimal Working Program
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-complex-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      More complex example
     </span>
   </a>
   
@@ -3848,6 +3866,110 @@
 </span><span id="__codeline__-80-10"><a id="__codelineno-80-10" name="__codelineno-80-10" href="#__codelineno-80-10"></a><span class="k">-</span><span class="w"> </span>Help them
 </span><span id="__codeline__-80-11"><a id="__codelineno-80-11" name="__codelineno-80-11" href="#__codelineno-80-11"></a><span class="k">-</span><span class="w"> </span>End program
 </span></code></pre></div>
+<h3 id="more-complex-example">More complex example<a class="headerlink" href="#more-complex-example" title="Permanent link">&para;</a></h3>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="gh"># Hello world agent</span>
+</span><span id="__codeline__-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>A demo customer support agent for Playbooks AI
+</span><span id="__codeline__-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>
+</span><span id="__codeline__-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a><span class="sb">```python</span>
+</span><span id="__codeline__-81-5"><a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-81-6"><a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">SendOTP</span><span class="p">(</span><span class="n">phone_number</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__codeline__-81-7"><a id="__codelineno-81-7" name="__codelineno-81-7" href="#__codelineno-81-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__codeline__-81-8"><a id="__codelineno-81-8" name="__codelineno-81-8" href="#__codelineno-81-8"></a><span class="sd">    Send OTP to user&#39;s phone number via backend service.</span>
+</span><span id="__codeline__-81-9"><a id="__codelineno-81-9" name="__codelineno-81-9" href="#__codelineno-81-9"></a>
+</span><span id="__codeline__-81-10"><a id="__codelineno-81-10" name="__codelineno-81-10" href="#__codelineno-81-10"></a><span class="sd">    In production, this would call the actual SMS/OTP service.</span>
+</span><span id="__codeline__-81-11"><a id="__codelineno-81-11" name="__codelineno-81-11" href="#__codelineno-81-11"></a><span class="sd">    For development, using mock implementation.</span>
+</span><span id="__codeline__-81-12"><a id="__codelineno-81-12" name="__codelineno-81-12" href="#__codelineno-81-12"></a>
+</span><span id="__codeline__-81-13"><a id="__codelineno-81-13" name="__codelineno-81-13" href="#__codelineno-81-13"></a><span class="sd">    Args:</span>
+</span><span id="__codeline__-81-14"><a id="__codelineno-81-14" name="__codelineno-81-14" href="#__codelineno-81-14"></a><span class="sd">        phone_number: User&#39;s phone number</span>
+</span><span id="__codeline__-81-15"><a id="__codelineno-81-15" name="__codelineno-81-15" href="#__codelineno-81-15"></a>
+</span><span id="__codeline__-81-16"><a id="__codelineno-81-16" name="__codelineno-81-16" href="#__codelineno-81-16"></a><span class="sd">    Returns:</span>
+</span><span id="__codeline__-81-17"><a id="__codelineno-81-17" name="__codelineno-81-17" href="#__codelineno-81-17"></a><span class="sd">        Dictionary with status and OTP (in dev mode only)</span>
+</span><span id="__codeline__-81-18"><a id="__codelineno-81-18" name="__codelineno-81-18" href="#__codelineno-81-18"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-81-19"><a id="__codelineno-81-19" name="__codelineno-81-19" href="#__codelineno-81-19"></a>    <span class="c1"># Mock implementation for development</span>
+</span><span id="__codeline__-81-20"><a id="__codelineno-81-20" name="__codelineno-81-20" href="#__codelineno-81-20"></a>    <span class="c1"># In production, this would call your SMS service</span>
+</span><span id="__codeline__-81-21"><a id="__codelineno-81-21" name="__codelineno-81-21" href="#__codelineno-81-21"></a>    <span class="kn">import</span> <span class="nn">random</span>
+</span><span id="__codeline__-81-22"><a id="__codelineno-81-22" name="__codelineno-81-22" href="#__codelineno-81-22"></a>    <span class="n">otp</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">9999</span><span class="p">))</span>
+</span><span id="__codeline__-81-23"><a id="__codelineno-81-23" name="__codelineno-81-23" href="#__codelineno-81-23"></a>
+</span><span id="__codeline__-81-24"><a id="__codelineno-81-24" name="__codelineno-81-24" href="#__codelineno-81-24"></a>    <span class="c1"># Simulate successful send</span>
+</span><span id="__codeline__-81-25"><a id="__codelineno-81-25" name="__codelineno-81-25" href="#__codelineno-81-25"></a>    <span class="k">return</span> <span class="p">{</span>
+</span><span id="__codeline__-81-26"><a id="__codelineno-81-26" name="__codelineno-81-26" href="#__codelineno-81-26"></a>        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-81-27"><a id="__codelineno-81-27" name="__codelineno-81-27" href="#__codelineno-81-27"></a>        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;OTP sent to </span><span class="si">{</span><span class="n">phone_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-81-28"><a id="__codelineno-81-28" name="__codelineno-81-28" href="#__codelineno-81-28"></a>        <span class="s2">&quot;otp&quot;</span><span class="p">:</span> <span class="n">otp</span>  <span class="c1"># Only for development - remove in production</span>
+</span><span id="__codeline__-81-29"><a id="__codelineno-81-29" name="__codelineno-81-29" href="#__codelineno-81-29"></a>    <span class="p">}</span>
+</span><span id="__codeline__-81-30"><a id="__codelineno-81-30" name="__codelineno-81-30" href="#__codelineno-81-30"></a>
+</span><span id="__codeline__-81-31"><a id="__codelineno-81-31" name="__codelineno-81-31" href="#__codelineno-81-31"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-81-32"><a id="__codelineno-81-32" name="__codelineno-81-32" href="#__codelineno-81-32"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">ValidateOTP</span><span class="p">(</span><span class="n">phone_number</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">otp</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__codeline__-81-33"><a id="__codelineno-81-33" name="__codelineno-81-33" href="#__codelineno-81-33"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__codeline__-81-34"><a id="__codelineno-81-34" name="__codelineno-81-34" href="#__codelineno-81-34"></a><span class="sd">    Validate OTP against backend service.</span>
+</span><span id="__codeline__-81-35"><a id="__codelineno-81-35" name="__codelineno-81-35" href="#__codelineno-81-35"></a>
+</span><span id="__codeline__-81-36"><a id="__codelineno-81-36" name="__codelineno-81-36" href="#__codelineno-81-36"></a><span class="sd">    In production, this would verify OTP with your authentication service.</span>
+</span><span id="__codeline__-81-37"><a id="__codelineno-81-37" name="__codelineno-81-37" href="#__codelineno-81-37"></a><span class="sd">    For development, using mock validation.</span>
+</span><span id="__codeline__-81-38"><a id="__codelineno-81-38" name="__codelineno-81-38" href="#__codelineno-81-38"></a>
+</span><span id="__codeline__-81-39"><a id="__codelineno-81-39" name="__codelineno-81-39" href="#__codelineno-81-39"></a><span class="sd">    Args:</span>
+</span><span id="__codeline__-81-40"><a id="__codelineno-81-40" name="__codelineno-81-40" href="#__codelineno-81-40"></a><span class="sd">        phone_number: User&#39;s phone number</span>
+</span><span id="__codeline__-81-41"><a id="__codelineno-81-41" name="__codelineno-81-41" href="#__codelineno-81-41"></a><span class="sd">        otp: OTP code provided by user</span>
+</span><span id="__codeline__-81-42"><a id="__codelineno-81-42" name="__codelineno-81-42" href="#__codelineno-81-42"></a>
+</span><span id="__codeline__-81-43"><a id="__codelineno-81-43" name="__codelineno-81-43" href="#__codelineno-81-43"></a><span class="sd">    Returns:</span>
+</span><span id="__codeline__-81-44"><a id="__codelineno-81-44" name="__codelineno-81-44" href="#__codelineno-81-44"></a><span class="sd">        True if OTP is valid, False otherwise</span>
+</span><span id="__codeline__-81-45"><a id="__codelineno-81-45" name="__codelineno-81-45" href="#__codelineno-81-45"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-81-46"><a id="__codelineno-81-46" name="__codelineno-81-46" href="#__codelineno-81-46"></a>    <span class="c1"># Mock implementation for development</span>
+</span><span id="__codeline__-81-47"><a id="__codelineno-81-47" name="__codelineno-81-47" href="#__codelineno-81-47"></a>    <span class="c1"># In production, this would validate against your backend</span>
+</span><span id="__codeline__-81-48"><a id="__codelineno-81-48" name="__codelineno-81-48" href="#__codelineno-81-48"></a>
+</span><span id="__codeline__-81-49"><a id="__codelineno-81-49" name="__codelineno-81-49" href="#__codelineno-81-49"></a>    <span class="c1"># For demo: accept any 4-digit OTP</span>
+</span><span id="__codeline__-81-50"><a id="__codelineno-81-50" name="__codelineno-81-50" href="#__codelineno-81-50"></a>    <span class="c1"># In real system, verify against stored OTP with expiration</span>
+</span><span id="__codeline__-81-51"><a id="__codelineno-81-51" name="__codelineno-81-51" href="#__codelineno-81-51"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">otp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">otp</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+</span><span id="__codeline__-81-52"><a id="__codelineno-81-52" name="__codelineno-81-52" href="#__codelineno-81-52"></a><span class="sb">```</span>
+</span><span id="__codeline__-81-53"><a id="__codelineno-81-53" name="__codelineno-81-53" href="#__codelineno-81-53"></a>
+</span><span id="__codeline__-81-54"><a id="__codelineno-81-54" name="__codelineno-81-54" href="#__codelineno-81-54"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-81-55"><a id="__codelineno-81-55" name="__codelineno-81-55" href="#__codelineno-81-55"></a>
+</span><span id="__codeline__-81-56"><a id="__codelineno-81-56" name="__codelineno-81-56" href="#__codelineno-81-56"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-81-57"><a id="__codelineno-81-57" name="__codelineno-81-57" href="#__codelineno-81-57"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-81-58"><a id="__codelineno-81-58" name="__codelineno-81-58" href="#__codelineno-81-58"></a>
+</span><span id="__codeline__-81-59"><a id="__codelineno-81-59" name="__codelineno-81-59" href="#__codelineno-81-59"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-81-60"><a id="__codelineno-81-60" name="__codelineno-81-60" href="#__codelineno-81-60"></a><span class="k">-</span><span class="w"> </span>Welcome user
+</span><span id="__codeline__-81-61"><a id="__codelineno-81-61" name="__codelineno-81-61" href="#__codelineno-81-61"></a><span class="k">-</span><span class="w"> </span>Authenticate user
+</span><span id="__codeline__-81-62"><a id="__codelineno-81-62" name="__codelineno-81-62" href="#__codelineno-81-62"></a><span class="k">-</span><span class="w"> </span>If authentication successful
+</span><span id="__codeline__-81-63"><a id="__codelineno-81-63" name="__codelineno-81-63" href="#__codelineno-81-63"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user about Playbooks AI
+</span><span id="__codeline__-81-64"><a id="__codelineno-81-64" name="__codelineno-81-64" href="#__codelineno-81-64"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask the user for their $name
+</span><span id="__codeline__-81-65"><a id="__codelineno-81-65" name="__codelineno-81-65" href="#__codelineno-81-65"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Say hello to the user by $name
+</span><span id="__codeline__-81-66"><a id="__codelineno-81-66" name="__codelineno-81-66" href="#__codelineno-81-66"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Welcome user to Playbooks AI
+</span><span id="__codeline__-81-67"><a id="__codelineno-81-67" name="__codelineno-81-67" href="#__codelineno-81-67"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-81-68"><a id="__codelineno-81-68" name="__codelineno-81-68" href="#__codelineno-81-68"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user authentication failed
+</span><span id="__codeline__-81-69"><a id="__codelineno-81-69" name="__codelineno-81-69" href="#__codelineno-81-69"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Apologize and end program
+</span><span id="__codeline__-81-70"><a id="__codelineno-81-70" name="__codelineno-81-70" href="#__codelineno-81-70"></a><span class="k">-</span><span class="w"> </span>End program
+</span><span id="__codeline__-81-71"><a id="__codelineno-81-71" name="__codelineno-81-71" href="#__codelineno-81-71"></a>
+</span><span id="__codeline__-81-72"><a id="__codelineno-81-72" name="__codelineno-81-72" href="#__codelineno-81-72"></a><span class="gu">## AuthenticateUser</span>
+</span><span id="__codeline__-81-73"><a id="__codelineno-81-73" name="__codelineno-81-73" href="#__codelineno-81-73"></a>Authenticate user by collecting phone number, sending OTP, and validating the code.
+</span><span id="__codeline__-81-74"><a id="__codelineno-81-74" name="__codelineno-81-74" href="#__codelineno-81-74"></a>
+</span><span id="__codeline__-81-75"><a id="__codelineno-81-75" name="__codelineno-81-75" href="#__codelineno-81-75"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-81-76"><a id="__codelineno-81-76" name="__codelineno-81-76" href="#__codelineno-81-76"></a><span class="k">-</span><span class="w"> </span>Ask user for their $phone_number, engage in conversation till user provides a valid phone number or gives up
+</span><span id="__codeline__-81-77"><a id="__codelineno-81-77" name="__codelineno-81-77" href="#__codelineno-81-77"></a><span class="k">-</span><span class="w"> </span>If user gives up
+</span><span id="__codeline__-81-78"><a id="__codelineno-81-78" name="__codelineno-81-78" href="#__codelineno-81-78"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return authentication failure
+</span><span id="__codeline__-81-79"><a id="__codelineno-81-79" name="__codelineno-81-79" href="#__codelineno-81-79"></a><span class="k">-</span><span class="w"> </span>Send OTP to $phone_number
+</span><span id="__codeline__-81-80"><a id="__codelineno-81-80" name="__codelineno-81-80" href="#__codelineno-81-80"></a><span class="k">-</span><span class="w"> </span>Tell user that OTP has been sent to their phone number
+</span><span id="__codeline__-81-81"><a id="__codelineno-81-81" name="__codelineno-81-81" href="#__codelineno-81-81"></a><span class="k">-</span><span class="w"> </span>Ask user for the $otp they received, engage in conversation till user provides it or gives up
+</span><span id="__codeline__-81-82"><a id="__codelineno-81-82" name="__codelineno-81-82" href="#__codelineno-81-82"></a><span class="k">-</span><span class="w"> </span>If user gives up
+</span><span id="__codeline__-81-83"><a id="__codelineno-81-83" name="__codelineno-81-83" href="#__codelineno-81-83"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return authentication failure
+</span><span id="__codeline__-81-84"><a id="__codelineno-81-84" name="__codelineno-81-84" href="#__codelineno-81-84"></a><span class="k">-</span><span class="w"> </span>Validate the OTP
+</span><span id="__codeline__-81-85"><a id="__codelineno-81-85" name="__codelineno-81-85" href="#__codelineno-81-85"></a><span class="k">-</span><span class="w"> </span>If OTP is valid
+</span><span id="__codeline__-81-86"><a id="__codelineno-81-86" name="__codelineno-81-86" href="#__codelineno-81-86"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return authentication success
+</span><span id="__codeline__-81-87"><a id="__codelineno-81-87" name="__codelineno-81-87" href="#__codelineno-81-87"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-81-88"><a id="__codelineno-81-88" name="__codelineno-81-88" href="#__codelineno-81-88"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user that the OTP didn&#39;t work
+</span><span id="__codeline__-81-89"><a id="__codelineno-81-89" name="__codelineno-81-89" href="#__codelineno-81-89"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask if user want to enter a different one or would like another OTP
+</span><span id="__codeline__-81-90"><a id="__codelineno-81-90" name="__codelineno-81-90" href="#__codelineno-81-90"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If usre provided a new OTP
+</span><span id="__codeline__-81-91"><a id="__codelineno-81-91" name="__codelineno-81-91" href="#__codelineno-81-91"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>jump back to validating it
+</span><span id="__codeline__-81-92"><a id="__codelineno-81-92" name="__codelineno-81-92" href="#__codelineno-81-92"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If user wants to try again
+</span><span id="__codeline__-81-93"><a id="__codelineno-81-93" name="__codelineno-81-93" href="#__codelineno-81-93"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>jump back to asking/validating OTP or sending a new one as appropriate
+</span><span id="__codeline__-81-94"><a id="__codelineno-81-94" name="__codelineno-81-94" href="#__codelineno-81-94"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>If user want to give up
+</span><span id="__codeline__-81-95"><a id="__codelineno-81-95" name="__codelineno-81-95" href="#__codelineno-81-95"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>Return authentication failure
+</span><span id="__codeline__-81-96"><a id="__codelineno-81-96" name="__codelineno-81-96" href="#__codelineno-81-96"></a>
+</span><span id="__codeline__-81-97"><a id="__codelineno-81-97" name="__codelineno-81-97" href="#__codelineno-81-97"></a><span class="gu">## ValidatePhoneNumber</span>
+</span><span id="__codeline__-81-98"><a id="__codelineno-81-98" name="__codelineno-81-98" href="#__codelineno-81-98"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-81-99"><a id="__codelineno-81-99" name="__codelineno-81-99" href="#__codelineno-81-99"></a><span class="k">-</span><span class="w"> </span>When user provides phone number
+</span><span id="__codeline__-81-100"><a id="__codelineno-81-100" name="__codelineno-81-100" href="#__codelineno-81-100"></a>
+</span><span id="__codeline__-81-101"><a id="__codelineno-81-101" name="__codelineno-81-101" href="#__codelineno-81-101"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-81-102"><a id="__codelineno-81-102" name="__codelineno-81-102" href="#__codelineno-81-102"></a><span class="k">-</span><span class="w"> </span>Check if $phone_number is a valid US phone number or not
+</span></code></pre></div>
 <h3 id="cheat-sheet">Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3962,12 +4084,17 @@
 <h2 id="for-ai-coding-assistants">For AI Coding Assistants<a class="headerlink" href="#for-ai-coding-assistants" title="Permanent link">&para;</a></h2>
 <p>When helping users write Playbooks programs:</p>
 <ul>
+<li>Think deeply, plan in detail and review the plan before writing any code</li>
 <li>Follow all the principles and patterns in this guide</li>
 <li>Prefer natural language over explicit syntax unless clarity demands it</li>
 <li>Always consider if 4+ Python playbooks should be extracted to an MCP server</li>
 <li>Use triggers sparingly - mainly for input validation</li>
 <li>Explain your architectural choices to help users learn</li>
 <li>Iterate based on user feedback and requirements</li>
+<li>Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute</li>
+<li>If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate.</li>
+<li>Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.</li>
+<li>When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.</li>
 </ul>
 <p>Happy building! 🚀</p>
 

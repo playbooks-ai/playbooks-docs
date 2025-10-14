@@ -1850,61 +1850,182 @@ Description of what this agent does
 - End program
 ```
 
+### More complex example
+
+````markdown
+# Hello world agent
+A demo customer support agent for Playbooks AI
+
+```python
+@playbook
+async def SendOTP(phone_number: str) -> dict:
+    """
+    Send OTP to user's phone number via backend service.
+
+    In production, this would call the actual SMS/OTP service.
+    For development, using mock implementation.
+
+    Args:
+        phone_number: User's phone number
+
+    Returns:
+        Dictionary with status and OTP (in dev mode only)
+    """
+    # Mock implementation for development
+    # In production, this would call your SMS service
+    import random
+    otp = str(random.randint(1000, 9999))
+
+    # Simulate successful send
+    return {
+        "status": "success",
+        "message": f"OTP sent to {phone_number}",
+        "otp": otp  # Only for development - remove in production
+    }
+
+@playbook
+async def ValidateOTP(phone_number: str, otp: str) -> bool:
+    """
+    Validate OTP against backend service.
+
+    In production, this would verify OTP with your authentication service.
+    For development, using mock validation.
+
+    Args:
+        phone_number: User's phone number
+        otp: OTP code provided by user
+
+    Returns:
+        True if OTP is valid, False otherwise
+    """
+    # Mock implementation for development
+    # In production, this would validate against your backend
+
+    # For demo: accept any 4-digit OTP
+    # In real system, verify against stored OTP with expiration
+    return len(otp) == 4 and otp.isdigit()
+````
+
+## Main
+
+### Triggers
+
+- At the beginning
+
+### Steps
+
+- Welcome user
+- Authenticate user
+- If authentication successful
+  - Tell user about Playbooks AI
+  - Ask the user for their $name
+  - Say hello to the user by $name
+  - Welcome user to Playbooks AI
+- Otherwise
+  - Tell user authentication failed
+  - Apologize and end program
+- End program
+
+## AuthenticateUser
+
+Authenticate user by collecting phone number, sending OTP, and validating the code.
+
+### Steps
+
+- Ask user for their $phone_number, engage in conversation till user provides a valid phone number or gives up
+- If user gives up
+  - Return authentication failure
+- Send OTP to $phone_number
+- Tell user that OTP has been sent to their phone number
+- Ask user for the $otp they received, engage in conversation till user provides it or gives up
+- If user gives up
+  - Return authentication failure
+- Validate the OTP
+- If OTP is valid
+  - Return authentication success
+- Otherwise
+  - Tell user that the OTP didn't work
+  - Ask if user want to enter a different one or would like another OTP
+  - If usre provided a new OTP
+    - jump back to validating it
+  - If user wants to try again
+    - jump back to asking/validating OTP or sending a new one as appropriate
+  - If user want to give up
+    - Return authentication failure
+
+## ValidatePhoneNumber
+
+### Triggers
+
+- When user provides phone number
+
+### Steps
+
+- Check if $phone_number is a valid US phone number or not
+
+````
+
 ### Cheat Sheet
 
-| Task             | Code                                     |
-| ---------------- | ---------------------------------------- |
-| Define agent     | `# AgentName`                            |
-| Define playbook  | `## PlaybookName($param)`                |
-| Add trigger      | `### Triggers` `- When condition`        |
-| Add steps        | `### Steps` `- Step 1`                   |
-| Variable         | `$variable_name`                         |
-| Typed variable   | `$count:int`                             |
-| Assignment       | `$var = value`                           |
-| Condition        | `If condition` `- Then step`             |
-| Loop             | `While condition` `- Loop step`          |
-| Return           | `Return value`                           |
-| End program      | `End program`                            |
-| Call playbook    | `PlaybookName($arg)`                     |
-| Cross-agent call | `OtherAgent.PlaybookName($arg)`          |
-| Python playbook  | `@playbook` `async def Name(): ...`      |
-| Public playbook  | `public: true`                           |
-| ReAct playbook   | No `### Steps` section                   |
-| Raw playbook     | `execution_mode: raw`                    |
-| Meeting playbook | `meeting: true`                          |
-| Save artifact    | `SaveArtifact("name", "desc", $content)` |
-| Load artifact    | `LoadArtifact("name")`                   |
-| Placeholder      | `{$variable}` or `{expression}`          |
+| Task | Code |
+| --- | --- |
+| Define agent | `# AgentName` |
+| Define playbook | `## PlaybookName($param)` |
+| Add trigger | `### Triggers` `- When condition` |
+| Add steps | `### Steps` `- Step 1` |
+| Variable | `$variable_name` |
+| Typed variable | `$count:int` |
+| Assignment | `$var = value` |
+| Condition | `If condition` `- Then step` |
+| Loop | `While condition` `- Loop step` |
+| Return | `Return value` |
+| End program | `End program` |
+| Call playbook | `PlaybookName($arg)` |
+| Cross-agent call | `OtherAgent.PlaybookName($arg)` |
+| Python playbook | `@playbook` `async def Name(): ...` |
+| Public playbook | `public: true` |
+| ReAct playbook | No `### Steps` section |
+| Raw playbook | `execution_mode: raw` |
+| Meeting playbook | `meeting: true` |
+| Save artifact | `SaveArtifact("name", "desc", $content)` |
+| Load artifact | `LoadArtifact("name")` |
+| Placeholder | `{$variable}` or `{expression}` |
 
-______________________________________________________________________
+---
 
 ## Programming Principles
 
 When writing Playbooks programs:
 
 1. **Understand intent**: What problem are you solving? What is the goal?
-1. **Choose right types**: Markdown for workflows, Python for logic, ReAct for research
-1. **Natural first**: Start with natural language, add explicitness if needed
-1. **Think decomposition**: Break into logical playbooks with clear responsibilities
-1. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server
-1. **Handle errors**: Consider edge cases and failure modes
-1. **Write idiomatically**: Follow patterns and conventions from examples
-1. **Document choices**: Explain intent in descriptions and comments
-1. **Iterate**: Start simple, add complexity as needed
+2. **Choose right types**: Markdown for workflows, Python for logic, ReAct for research
+3. **Natural first**: Start with natural language, add explicitness if needed
+4. **Think decomposition**: Break into logical playbooks with clear responsibilities
+5. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server
+6. **Handle errors**: Consider edge cases and failure modes
+7. **Write idiomatically**: Follow patterns and conventions from examples
+8. **Document choices**: Explain intent in descriptions and comments
+9. **Iterate**: Start simple, add complexity as needed
 
 **Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
 
-______________________________________________________________________
+---
 
 ## For AI Coding Assistants
 
 When helping users write Playbooks programs:
 
+- Think deeply, plan in detail and review the plan before writing any code
 - Follow all the principles and patterns in this guide
 - Prefer natural language over explicit syntax unless clarity demands it
 - Always consider if 4+ Python playbooks should be extracted to an MCP server
 - Use triggers sparingly - mainly for input validation
 - Explain your architectural choices to help users learn
 - Iterate based on user feedback and requirements
+- Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute
+- If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate.
+- Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.
+- When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.
 
-Happy building! 🚀
+Happy building! 🚀```
+````
