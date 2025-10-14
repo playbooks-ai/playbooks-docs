@@ -428,9 +428,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generic-migration-instructions" class="md-nav__link">
+  <a href="#migration-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      Generic Migration Instructions
+      Migration Instructions
     </span>
   </a>
   
@@ -986,9 +986,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generic-migration-instructions" class="md-nav__link">
+  <a href="#migration-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      Generic Migration Instructions
+      Migration Instructions
     </span>
   </a>
   
@@ -1100,8 +1100,12 @@
 <li><strong><a href="https://cloud.google.com/gemini/docs/codeassist/overview">Google Gemini Code Assist</a></strong> - Google Cloud's AI coding tool</li>
 </ol>
 <hr />
-<h2 id="generic-migration-instructions">Generic Migration Instructions<a class="headerlink" href="#generic-migration-instructions" title="Permanent link">&para;</a></h2>
-<p>When using any AI coding assistant, provide these instructions to ensure optimal Playbooks code generation:</p>
+<h2 id="migration-instructions">Migration Instructions<a class="headerlink" href="#migration-instructions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>git clone the source agent implementation and open it in your favorite IDE</li>
+<li>Create a <code>playbooks</code> folder in the root of the project where you will create the converted Playbooks program</li>
+<li>
+<p>Provide these instructions to the AI coding assistant</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
 </span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
 </span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -1116,7 +1120,20 @@
 </span><span id="__codeline__-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- Think from first principles: LLMs as CPUs, Software 3.0
 </span><span id="__codeline__-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 </span><span id="__codeline__-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
+</span><span id="__codeline__-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__codeline__-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>====
+</span><span id="__codeline__-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__codeline__-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>Convert the &lt;agent&gt;.py agent implementation to playbooks program at playbooks/&lt;agent&gt;.pb. Create all new files in the playbooks/ folder.
 </span></code></pre></div>
+<p>Replace <agent> with the name of the source agent.</p>
+</li>
+<li>
+<p>Let the coding assistant cook! It will create the playbooks/<agent>.pb file, potentially with other files like an MCP server, a README.md file, and a requirements.txt file, etc.</p>
+</li>
+<li>Review the generated code and make any necessary adjustments</li>
+<li>Start the MCP server, if applicable</li>
+<li>Run the Playbooks program to ensure it works as expected</li>
+</ol>
 <hr />
 <h2 id="configuration-for-each-ai-assistant">Configuration for Each AI Assistant<a class="headerlink" href="#configuration-for-each-ai-assistant" title="Permanent link">&para;</a></h2>
 <h3 id="cursor">Cursor<a class="headerlink" href="#cursor" title="Permanent link">&para;</a></h3>

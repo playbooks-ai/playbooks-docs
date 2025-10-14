@@ -42,26 +42,44 @@ These AI coding assistants can help you migrate your agent code to Playbooks:
 
 ______________________________________________________________________
 
-## Generic Migration Instructions
+## Migration Instructions
 
-When using any AI coding assistant, provide these instructions to ensure optimal Playbooks code generation:
+1. git clone the source agent implementation and open it in your favorite IDE
 
-```text
-You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
-https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
+1. Create a `playbooks` folder in the root of the project where you will create the converted Playbooks program
 
-Key principles:
-- Write minimal, optimal, idiomatic Playbooks programs
-- Use Markdown playbooks for structured workflows
-- Use Python playbooks for deterministic logic and external APIs
-- Use ReAct playbooks for dynamic research and reasoning
-- Extract 4+ Python playbooks into MCP servers
-- Sparingly use triggers for event-driven behavior and multi-agent communication for collaboration
-- Prefer natural language over explicit syntax
-- Think from first principles: LLMs as CPUs, Software 3.0
+1. Provide these instructions to the AI coding assistant
 
-Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
-```
+   ```text
+   You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
+   https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
+
+   Key principles:
+   - Write minimal, optimal, idiomatic Playbooks programs
+   - Use Markdown playbooks for structured workflows
+   - Use Python playbooks for deterministic logic and external APIs
+   - Use ReAct playbooks for dynamic research and reasoning
+   - Extract 4+ Python playbooks into MCP servers
+   - Sparingly use triggers for event-driven behavior and multi-agent communication for collaboration
+   - Prefer natural language over explicit syntax
+   - Think from first principles: LLMs as CPUs, Software 3.0
+
+   Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
+
+   ====
+
+   Convert the <agent>.py agent implementation to playbooks program at playbooks/<agent>.pb. Create all new files in the playbooks/ folder.
+   ```
+
+   Replace with the name of the source agent.
+
+1. Let the coding assistant cook! It will create the playbooks/.pb file, potentially with other files like an MCP server, a README.md file, and a requirements.txt file, etc.
+
+1. Review the generated code and make any necessary adjustments
+
+1. Start the MCP server, if applicable
+
+1. Run the Playbooks program to ensure it works as expected
 
 ______________________________________________________________________
 
