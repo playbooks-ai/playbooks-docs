@@ -68,6 +68,12 @@ Create a `.windsurfrules` file in your project root with the instructions above.
 
 ______________________________________________________________________
 
+### Claude Code
+
+Create a `CLAUDE.md` file in your project root with the instructions above.
+
+______________________________________________________________________
+
 ### GitHub Copilot
 
 **Using workspace instructions (.github/copilot-instructions.md)**
