@@ -223,7 +223,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## Generic Playbooks Instructions
+## Prompt for AI Coding Assistants
 
 Use these instructions with any AI coding assistant to ensure it generates optimal Playbooks code:
 
@@ -284,7 +284,37 @@ Many AI coding assistants support the [agents.md](https://agents.md/) format for
 
 Create an `agents.md` file in your project root:
 
-## `markdown # Playbooks Project Configuration ## Identity You are a Playbooks programming expert. Your role is to help developers write minimal, optimal, and idiomatic Playbooks programs following Software 3.0 principles. ## Context Playbooks is a framework where: - LLMs act as CPUs executing natural language instructions - Programs are 10x smaller than traditional agent frameworks - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging ## Instructions 1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md 2. **Follow the programming guide** for syntax, patterns, and best practices 3. **Think from first principles**: How would this agent behave naturally? 4. **Choose the right playbook types**: - Markdown playbooks for known workflows with explicit steps - Python playbooks for deterministic logic and external API calls - ReAct playbooks for dynamic reasoning and research tasks - MCP servers when you have 4+ Python playbooks 5. **Prefer natural language** over explicit syntax unless clarity demands it 6. **Write minimal code** - remove all unnecessary boilerplate 7. **Explain architectural choices** to help developers learn `
+```text
+# Playbooks Project Configuration
+
+## Identity
+
+You are a Playbooks programming expert. Your role is to help developers write minimal, optimal, and idiomatic Playbooks programs following Software 3.0 principles.
+
+## Context
+
+Playbooks is a framework where:
+- LLMs act as CPUs executing natural language instructions
+- Programs are 10x smaller than traditional agent frameworks
+- Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack
+- Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging
+
+## Instructions
+
+1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
+2. **Follow the programming guide** for syntax, patterns, and best practices
+3. **Think from first principles**: How would this agent behave naturally?
+4. **Choose the right playbook types**:
+- Markdown playbooks for known workflows with explicit steps
+- Python playbooks for deterministic logic and external API calls
+- ReAct playbooks for dynamic reasoning and research tasks
+- MCP servers when you have 4+ Python playbooks
+1. **Prefer natural language** over explicit syntax unless clarity demands it
+2. **Write minimal code** - remove all unnecessary boilerplate
+3. **Explain architectural choices** to help developers learn
+```
+
+______________________________________________________________________
 
 ## Best Practices
 
@@ -304,21 +334,9 @@ Build a Playbooks agent that:
 - Fetches weather data
 - Provides personalized recommendations
 - Handles errors gracefully
-
-Use appropriate playbook types based on the Programming Guide.
 ```
 
-### 2. Reference the Programming Guide
-
-Always direct the AI to the Programming Guide for best results:
-
-```text
-@https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
-
-Convert this workflow into a Playbooks agent...
-```
-
-### 3. Ask for Explanations
+### 2. Ask for Explanations
 
 Request that the AI explain its choices:
 
@@ -329,7 +347,7 @@ Build this agent and explain:
 - How the control flow works
 ```
 
-### 4. Iterate Based on Behavior
+### 3. Iterate Based on Behavior
 
 Test the generated code and provide feedback:
 
@@ -338,11 +356,11 @@ The agent works but feels too rigid. Make it more conversational
 while maintaining the same logic.
 ```
 
-### 5. Request Idiomatic Patterns
+### 4. Request Idiomatic Patterns
 
 ```text
 Rewrite this to be more idiomatic Playbooks code. Use natural language
-where possible and follow Software 3.0 principles.
+where possible and follow Software 3.0 principles. Leverage Playbooks capabilities optimally.
 ```
 
 ______________________________________________________________________
@@ -353,8 +371,6 @@ ______________________________________________________________________
 
 ```text
 I need a [customer support / data analysis / research] agent that [capabilities].
-
-Follow the Playbooks Programming Guide. Use appropriate playbook types.
 ```
 
 ### Add a New Playbook
@@ -448,49 +464,53 @@ Before migrating code, understand:
 
 ### Step 2: If using AI coding assistants
 
-1. Configure your AI assistant: See [Writing with AI Assistants](../ai-assistants/)
+1. Create a `playbooks` folder for the converted code
+
+1. Copy prompt for your AI assistant from [here](../ai-assistants/#prompt-for-ai-coding-assistants)
 
 1. Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
 
    ```text
-   You are a ... <instructions from "Writing with AI Assistants" document>
+   <prompt copied above>
 
-   Read source implementation at <agent>.py carefully. Write an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks/ folder, including mcp.py using fastmcp if necessary.
+   Read source implementation at <agent>.py carefully. Convert to an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks folder. Create MIGRATION.md file at the end with before/after comparison include code size reduction.
    ```
 
-   Use appropriate name for and put in the [base instructions](../ai-assistants/).
+   Use appropriate and file name.
 
 ### Step 3: If doing manual conversion
 
 Use this mapping to translate concepts:
 
-| Source Framework | Concept                           | Playbooks Equivalent           |
-| ---------------- | --------------------------------- | ------------------------------ |
-| **LangGraph**    | State graph                       | Agent with variables           |
-|                  | Nodes                             | Individual playbooks           |
-|                  | Edges                             | Control flow in Steps          |
-|                  | State                             | Agent variables (`$variable`)  |
-|                  | Tools                             | Python playbooks or MCP server |
-| **CrewAI**       | Crew                              | Multi-agent program file       |
-|                  | Agent roles                       | H1 agent definitions           |
-|                  | Tasks                             | H2 playbook definitions        |
-|                  | Tools                             | Python playbooks or MCP server |
-|                  | Process (sequential/hierarchical) | Triggers and control flow      |
-| **AutoGen**      | Agents                            | H1 agent definitions           |
-|                  | Conversations                     | Agent messaging                |
-|                  | Function calling                  | Python playbooks               |
-|                  | Group chat                        | Multi-agent with triggers      |
-| **LangChain**    | Agent                             | H1 agent definition            |
-|                  | Tools                             | Python playbooks or MCP server |
-|                  | ReAct agent                       | ReAct playbook type            |
-|                  | Memory                            | Artifacts or variables         |
-|                  | Chains                            | Playbook Steps                 |
+| Source Framework | Concept                           | Playbooks Equivalent                        |
+| ---------------- | --------------------------------- | ------------------------------------------- |
+| **LangGraph**    | State graph                       | Agent with variables                        |
+|                  | Nodes                             | A playbook to represent a sequence of nodes |
+|                  | Edges                             | Control flow in Steps                       |
+|                  | State                             | Agent variables (`$variable`)               |
+|                  | Tools                             | Python playbooks or MCP server              |
+| **CrewAI**       | Crew                              | Multi-agent Playbooks program file          |
+|                  | Agent roles                       | H1 agent definitions                        |
+|                  | Tasks                             | H2 playbook definitions                     |
+|                  | Tools                             | Python playbooks or MCP server              |
+|                  | Process (sequential/hierarchical) | Triggers and control flow                   |
+| **AutoGen**      | Agents                            | H1 agent definitions                        |
+|                  | Conversations                     | Conversation loop in a playbook             |
+|                  | Function calling                  | Python playbooks                            |
+|                  | Group chat                        | Multi-party meetings                        |
+| **LangChain**    | Agent                             | H1 agent definition                         |
+|                  | Tools                             | Python playbooks or MCP server              |
+|                  | ReAct agent                       | ReAct-type playbook                         |
+|                  | Memory                            | Artifacts or variables                      |
+|                  | Chains                            | Playbook Steps                              |
 
 ### Step 4: Test and Iterate
 
 Run your Playbooks agent:
 
 ```bash
+# export ANTHROPIC_API_KEY=<your Anthropic API key here>
+# make sure python --version is 3.12+
 cd playbooks
 playbooks run <agent>.pb
 ```
@@ -499,12 +519,11 @@ Compare behavior with the original implementation and iterate.
 
 ______________________________________________________________________
 
-## Need Help?
+## Next steps
 
-- **AI Assistants Setup**: [Writing with AI Assistants](../ai-assistants/)
-- **Programming Guide**: [Playbooks Programming Guide](../../programming-guide/)
-- **Documentation**: <https://playbooks-ai.github.io/playbooks-docs/>
-- **GitHub**: <https://github.com/playbooks-ai/playbooks>
+- **Learn the language**: [Programming Guide](../../programming-guide/) - Comprehensive guide to writing effective Playbooks programs
+- **Hands-on learning**: [Tutorials](../../tutorials/) - Step-by-step examples
+- **Deep dive**: [Reference Documentation](../../reference/) - Detailed technical information
 
 ______________________________________________________________________
 

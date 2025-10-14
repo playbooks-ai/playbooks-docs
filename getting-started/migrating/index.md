@@ -48,49 +48,53 @@ Before migrating code, understand:
 
 ### Step 2: If using AI coding assistants
 
-1. Configure your AI assistant: See [Writing with AI Assistants](../ai-assistants/)
+1. Create a `playbooks` folder for the converted code
+
+1. Copy prompt for your AI assistant from [here](../ai-assistants/#prompt-for-ai-coding-assistants)
 
 1. Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
 
    ```text
-   You are a ... <instructions from "Writing with AI Assistants" document>
+   <prompt copied above>
 
-   Read source implementation at <agent>.py carefully. Write an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks/ folder, including mcp.py using fastmcp if necessary.
+   Read source implementation at <agent>.py carefully. Convert to an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks folder. Create MIGRATION.md file at the end with before/after comparison include code size reduction.
    ```
 
-   Use appropriate name for and put in the [base instructions](../ai-assistants/).
+   Use appropriate and file name.
 
 ### Step 3: If doing manual conversion
 
 Use this mapping to translate concepts:
 
-| Source Framework | Concept                           | Playbooks Equivalent           |
-| ---------------- | --------------------------------- | ------------------------------ |
-| **LangGraph**    | State graph                       | Agent with variables           |
-|                  | Nodes                             | Individual playbooks           |
-|                  | Edges                             | Control flow in Steps          |
-|                  | State                             | Agent variables (`$variable`)  |
-|                  | Tools                             | Python playbooks or MCP server |
-| **CrewAI**       | Crew                              | Multi-agent program file       |
-|                  | Agent roles                       | H1 agent definitions           |
-|                  | Tasks                             | H2 playbook definitions        |
-|                  | Tools                             | Python playbooks or MCP server |
-|                  | Process (sequential/hierarchical) | Triggers and control flow      |
-| **AutoGen**      | Agents                            | H1 agent definitions           |
-|                  | Conversations                     | Agent messaging                |
-|                  | Function calling                  | Python playbooks               |
-|                  | Group chat                        | Multi-agent with triggers      |
-| **LangChain**    | Agent                             | H1 agent definition            |
-|                  | Tools                             | Python playbooks or MCP server |
-|                  | ReAct agent                       | ReAct playbook type            |
-|                  | Memory                            | Artifacts or variables         |
-|                  | Chains                            | Playbook Steps                 |
+| Source Framework | Concept                           | Playbooks Equivalent                        |
+| ---------------- | --------------------------------- | ------------------------------------------- |
+| **LangGraph**    | State graph                       | Agent with variables                        |
+|                  | Nodes                             | A playbook to represent a sequence of nodes |
+|                  | Edges                             | Control flow in Steps                       |
+|                  | State                             | Agent variables (`$variable`)               |
+|                  | Tools                             | Python playbooks or MCP server              |
+| **CrewAI**       | Crew                              | Multi-agent Playbooks program file          |
+|                  | Agent roles                       | H1 agent definitions                        |
+|                  | Tasks                             | H2 playbook definitions                     |
+|                  | Tools                             | Python playbooks or MCP server              |
+|                  | Process (sequential/hierarchical) | Triggers and control flow                   |
+| **AutoGen**      | Agents                            | H1 agent definitions                        |
+|                  | Conversations                     | Conversation loop in a playbook             |
+|                  | Function calling                  | Python playbooks                            |
+|                  | Group chat                        | Multi-party meetings                        |
+| **LangChain**    | Agent                             | H1 agent definition                         |
+|                  | Tools                             | Python playbooks or MCP server              |
+|                  | ReAct agent                       | ReAct-type playbook                         |
+|                  | Memory                            | Artifacts or variables                      |
+|                  | Chains                            | Playbook Steps                              |
 
 ### Step 4: Test and Iterate
 
 Run your Playbooks agent:
 
 ```bash
+# export ANTHROPIC_API_KEY=<your Anthropic API key here>
+# make sure python --version is 3.12+
 cd playbooks
 playbooks run <agent>.pb
 ```
@@ -99,12 +103,11 @@ Compare behavior with the original implementation and iterate.
 
 ______________________________________________________________________
 
-## Need Help?
+## Next steps
 
-- **AI Assistants Setup**: [Writing with AI Assistants](../ai-assistants/)
-- **Programming Guide**: [Playbooks Programming Guide](../../programming-guide/)
-- **Documentation**: <https://playbooks-ai.github.io/playbooks-docs/>
-- **GitHub**: <https://github.com/playbooks-ai/playbooks>
+- **Learn the language**: [Programming Guide](../../programming-guide/) - Comprehensive guide to writing effective Playbooks programs
+- **Hands-on learning**: [Tutorials](../../tutorials/) - Step-by-step examples
+- **Deep dive**: [Reference Documentation](../../reference/) - Detailed technical information
 
 ______________________________________________________________________
 

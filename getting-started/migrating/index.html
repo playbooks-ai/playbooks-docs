@@ -495,9 +495,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#need-help" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Need Help?
+      Next steps
     </span>
   </a>
   
@@ -1044,9 +1044,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#need-help" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Need Help?
+      Next steps
     </span>
   </a>
   
@@ -1171,13 +1171,14 @@
 <p><strong>Focus on behavior, not framework mechanics.</strong></p>
 <h3 id="step-2-if-using-ai-coding-assistants">Step 2: If using AI coding assistants<a class="headerlink" href="#step-2-if-using-ai-coding-assistants" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Configure your AI assistant: See <a href="../ai-assistants/">Writing with AI Assistants</a></li>
+<li>Create a <code>playbooks</code> folder for the converted code</li>
+<li>Copy prompt for your AI assistant from <a href="../ai-assistants/#prompt-for-ai-coding-assistants">here</a></li>
 <li>Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
-    <div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are a ... &lt;instructions from &quot;Writing with AI Assistants&quot; document&gt;
+    <div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;prompt copied above&gt;
 </span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Read source implementation at &lt;agent&gt;.py carefully. Write an equivalent Playbooks program in playbooks/&lt;agent&gt;.pb. Create all new files in the playbooks/ folder, including mcp.py using fastmcp if necessary.
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Read source implementation at &lt;agent&gt;.py carefully. Convert to an equivalent Playbooks program in playbooks/&lt;agent&gt;.pb. Create all new files in the playbooks folder. Create MIGRATION.md file at the end with before/after comparison include code size reduction.
 </span></code></pre></div>
-Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base instructions</a>.</li>
+Use appropriate <prompt> and <agent> file name.</li>
 </ol>
 <h3 id="step-3-if-doing-manual-conversion">Step 3: If doing manual conversion<a class="headerlink" href="#step-3-if-doing-manual-conversion" title="Permanent link">&para;</a></h3>
 <p>Use this mapping to translate concepts:</p>
@@ -1198,7 +1199,7 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 <tr>
 <td></td>
 <td>Nodes</td>
-<td>Individual playbooks</td>
+<td>A playbook to represent a sequence of nodes</td>
 </tr>
 <tr>
 <td></td>
@@ -1218,7 +1219,7 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 <tr>
 <td><strong>CrewAI</strong></td>
 <td>Crew</td>
-<td>Multi-agent program file</td>
+<td>Multi-agent Playbooks program file</td>
 </tr>
 <tr>
 <td></td>
@@ -1248,7 +1249,7 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 <tr>
 <td></td>
 <td>Conversations</td>
-<td>Agent messaging</td>
+<td>Conversation loop in a playbook</td>
 </tr>
 <tr>
 <td></td>
@@ -1258,7 +1259,7 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 <tr>
 <td></td>
 <td>Group chat</td>
-<td>Multi-agent with triggers</td>
+<td>Multi-party meetings</td>
 </tr>
 <tr>
 <td><strong>LangChain</strong></td>
@@ -1273,7 +1274,7 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 <tr>
 <td></td>
 <td>ReAct agent</td>
-<td>ReAct playbook type</td>
+<td>ReAct-type playbook</td>
 </tr>
 <tr>
 <td></td>
@@ -1289,17 +1290,18 @@ Use appropriate name for <agent> and put in the <a href="../ai-assistants/">base
 </table>
 <h3 id="step-4-test-and-iterate">Step 4: Test and Iterate<a class="headerlink" href="#step-4-test-and-iterate" title="Permanent link">&para;</a></h3>
 <p>Run your Playbooks agent:
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>playbooks
-</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>playbooks<span class="w"> </span>run<span class="w"> </span>&lt;agent&gt;.pb
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># export ANTHROPIC_API_KEY=&lt;your Anthropic API key here&gt;</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># make sure python --version is 3.12+</span>
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>playbooks
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>playbooks<span class="w"> </span>run<span class="w"> </span>&lt;agent&gt;.pb
 </span></code></pre></div></p>
 <p>Compare behavior with the original implementation and iterate.</p>
 <hr />
-<h2 id="need-help">Need Help?<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>AI Assistants Setup</strong>: <a href="../ai-assistants/">Writing with AI Assistants</a></li>
-<li><strong>Programming Guide</strong>: <a href="../../programming-guide/">Playbooks Programming Guide</a></li>
-<li><strong>Documentation</strong>: <a href="https://playbooks-ai.github.io/playbooks-docs/">https://playbooks-ai.github.io/playbooks-docs/</a></li>
-<li><strong>GitHub</strong>: <a href="https://github.com/playbooks-ai/playbooks">https://github.com/playbooks-ai/playbooks</a></li>
+<li><strong>Learn the language</strong>: <a href="../../programming-guide/">Programming Guide</a> - Comprehensive guide to writing effective Playbooks programs</li>
+<li><strong>Hands-on learning</strong>: <a href="../../tutorials/">Tutorials</a> - Step-by-step examples</li>
+<li><strong>Deep dive</strong>: <a href="../../reference/">Reference Documentation</a> - Detailed technical information</li>
 </ul>
 <hr />
 <p>Happy migrating! 🚀 Enjoy up to 10x code reduction!</p>

@@ -25,7 +25,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## Generic Playbooks Instructions
+## Prompt for AI Coding Assistants
 
 Use these instructions with any AI coding assistant to ensure it generates optimal Playbooks code:
 
@@ -86,7 +86,37 @@ Many AI coding assistants support the [agents.md](https://agents.md/) format for
 
 Create an `agents.md` file in your project root:
 
-## `markdown # Playbooks Project Configuration ## Identity You are a Playbooks programming expert. Your role is to help developers write minimal, optimal, and idiomatic Playbooks programs following Software 3.0 principles. ## Context Playbooks is a framework where: - LLMs act as CPUs executing natural language instructions - Programs are 10x smaller than traditional agent frameworks - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging ## Instructions 1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md 2. **Follow the programming guide** for syntax, patterns, and best practices 3. **Think from first principles**: How would this agent behave naturally? 4. **Choose the right playbook types**: - Markdown playbooks for known workflows with explicit steps - Python playbooks for deterministic logic and external API calls - ReAct playbooks for dynamic reasoning and research tasks - MCP servers when you have 4+ Python playbooks 5. **Prefer natural language** over explicit syntax unless clarity demands it 6. **Write minimal code** - remove all unnecessary boilerplate 7. **Explain architectural choices** to help developers learn `
+```text
+# Playbooks Project Configuration
+
+## Identity
+
+You are a Playbooks programming expert. Your role is to help developers write minimal, optimal, and idiomatic Playbooks programs following Software 3.0 principles.
+
+## Context
+
+Playbooks is a framework where:
+- LLMs act as CPUs executing natural language instructions
+- Programs are 10x smaller than traditional agent frameworks
+- Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack
+- Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging
+
+## Instructions
+
+1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
+2. **Follow the programming guide** for syntax, patterns, and best practices
+3. **Think from first principles**: How would this agent behave naturally?
+4. **Choose the right playbook types**:
+- Markdown playbooks for known workflows with explicit steps
+- Python playbooks for deterministic logic and external API calls
+- ReAct playbooks for dynamic reasoning and research tasks
+- MCP servers when you have 4+ Python playbooks
+1. **Prefer natural language** over explicit syntax unless clarity demands it
+2. **Write minimal code** - remove all unnecessary boilerplate
+3. **Explain architectural choices** to help developers learn
+```
+
+______________________________________________________________________
 
 ## Best Practices
 
@@ -106,21 +136,9 @@ Build a Playbooks agent that:
 - Fetches weather data
 - Provides personalized recommendations
 - Handles errors gracefully
-
-Use appropriate playbook types based on the Programming Guide.
 ```
 
-### 2. Reference the Programming Guide
-
-Always direct the AI to the Programming Guide for best results:
-
-```text
-@https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
-
-Convert this workflow into a Playbooks agent...
-```
-
-### 3. Ask for Explanations
+### 2. Ask for Explanations
 
 Request that the AI explain its choices:
 
@@ -131,7 +149,7 @@ Build this agent and explain:
 - How the control flow works
 ```
 
-### 4. Iterate Based on Behavior
+### 3. Iterate Based on Behavior
 
 Test the generated code and provide feedback:
 
@@ -140,11 +158,11 @@ The agent works but feels too rigid. Make it more conversational
 while maintaining the same logic.
 ```
 
-### 5. Request Idiomatic Patterns
+### 4. Request Idiomatic Patterns
 
 ```text
 Rewrite this to be more idiomatic Playbooks code. Use natural language
-where possible and follow Software 3.0 principles.
+where possible and follow Software 3.0 principles. Leverage Playbooks capabilities optimally.
 ```
 
 ______________________________________________________________________
@@ -155,8 +173,6 @@ ______________________________________________________________________
 
 ```text
 I need a [customer support / data analysis / research] agent that [capabilities].
-
-Follow the Playbooks Programming Guide. Use appropriate playbook types.
 ```
 
 ### Add a New Playbook
