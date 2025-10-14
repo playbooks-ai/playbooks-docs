@@ -71,3 +71,10 @@ GreetingAgent: Wonderful to meet you, Amol! Welcome to Playbooks AI - you're abo
 
 GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! You look like someone who's ready to revolutionize software!' Amol replies, 'How can you tell?' The system says, 'Well, you're here talking to an AI that just executed english instructions like a program - that's either revolutionary thinking or you're really lost!' But seriously Amol, you've got great timing - you're witnessing the birth of Software 3.0 where even my jokes are technically part of the program execution!
 ```
+
+## Next Steps
+
+- Learn how to write effective Playbooks programs with the [Programming Guide](../programming-guide/)
+- If you're coming from LangGraph, CrewAI, or other frameworks, check out [Migrating from Other Frameworks](migrating/)
+- Explore [Tutorials](../tutorials/) for hands-on examples
+- Browse the [Reference Documentation](../reference/) for detailed information

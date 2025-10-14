@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/reference/context-engineering/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/getting-started/migrating/">
       
       
-        <link rel="prev" href="../triggers/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../description-placeholders/">
+        <link rel="next" href="../../programming-guide/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Context Engineering - Playbooks AI</title>
+        <title>Migrating from Other Frameworks - Playbooks AI</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#context-engineering" class="md-skip">
+        <a href="#migrating-from-other-agent-frameworks" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Context Engineering
+              Migrating from Other Frameworks
             
           </span>
         </div>
@@ -291,6 +291,8 @@
       
   
   
+    
+  
   
   
     
@@ -306,15 +308,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../getting-started/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -333,7 +335,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -346,10 +348,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../getting-started/migrating/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Migrating from Other Frameworks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -360,6 +384,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-migrate-to-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Migrate to Playbooks?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-source-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Source Frameworks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-coding-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Coding Assistants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-migration-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic Migration Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-for-each-ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration for Each AI Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration for Each AI Assistant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cursor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windsurf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windsurf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Copilot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agentsmd-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      agents.md Format
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -420,8 +551,6 @@
       
   
   
-    
-  
   
   
     
@@ -461,15 +590,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -488,7 +617,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -504,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../reference/config/" class="md-nav__link">
         
   
   
@@ -527,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
+      <a href="../../reference/models/" class="md-nav__link">
         
   
   
@@ -550,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-ai/" class="md-nav__link">
+      <a href="../../reference/playbooks-ai/" class="md-nav__link">
         
   
   
@@ -573,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-language/" class="md-nav__link">
+      <a href="../../reference/playbooks-language/" class="md-nav__link">
         
   
   
@@ -596,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-assembly-language/" class="md-nav__link">
+      <a href="../../reference/playbooks-assembly-language/" class="md-nav__link">
         
   
   
@@ -619,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agents/" class="md-nav__link">
+      <a href="../../reference/agents/" class="md-nav__link">
         
   
   
@@ -642,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp-agent/" class="md-nav__link">
+      <a href="../../reference/mcp-agent/" class="md-nav__link">
         
   
   
@@ -665,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exported-and-public-playbooks/" class="md-nav__link">
+      <a href="../../reference/exported-and-public-playbooks/" class="md-nav__link">
         
   
   
@@ -688,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbook-types/" class="md-nav__link">
+      <a href="../../reference/playbook-types/" class="md-nav__link">
         
   
   
@@ -711,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../builtin-playbooks/" class="md-nav__link">
+      <a href="../../reference/builtin-playbooks/" class="md-nav__link">
         
   
   
@@ -734,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../triggers/" class="md-nav__link">
+      <a href="../../reference/triggers/" class="md-nav__link">
         
   
   
@@ -754,32 +883,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Context Engineering
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/context-engineering/" class="md-nav__link">
         
   
   
@@ -790,116 +897,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-innovations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Innovations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stack-based-context-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      Stack-based Context Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Stack-based Context Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-caching-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Caching Optimization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prompt Caching Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-prompt-caching-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Prompt Caching Works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#playbooks-cache-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Playbooks Cache Strategy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#programmer-control-over-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      Programmer Control Over Context
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Programmer Control Over Context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#control-mechanisms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Control Mechanisms
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -912,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../description-placeholders/" class="md-nav__link">
+      <a href="../../reference/description-placeholders/" class="md-nav__link">
         
   
   
@@ -962,28 +959,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-innovations" class="md-nav__link">
+  <a href="#why-migrate-to-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Innovations
+      Why Migrate to Playbooks?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stack-based-context-management" class="md-nav__link">
+  <a href="#supported-source-frameworks" class="md-nav__link">
     <span class="md-ellipsis">
-      Stack-based Context Management
+      Supported Source Frameworks
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Stack-based Context Management">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-coding-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Coding Assistants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-migration-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic Migration Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-for-each-ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration for Each AI Assistant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration for Each AI Assistant">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#cursor" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      Cursor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windsurf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windsurf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Copilot
     </span>
   </a>
   
@@ -995,59 +1037,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt-caching-optimization" class="md-nav__link">
+  <a href="#agentsmd-format" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Caching Optimization
+      agents.md Format
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Prompt Caching Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-prompt-caching-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Prompt Caching Works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#playbooks-cache-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Playbooks Cache Strategy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#programmer-control-over-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      Programmer Control Over Context
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Programmer Control Over Context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#control-mechanisms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Control Mechanisms
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1070,91 +1064,80 @@
   
 
 
-<h1 id="context-engineering">Context Engineering<a class="headerlink" href="#context-engineering" title="Permanent link">&para;</a></h1>
-<p>Playbooks automates context engineering, allowing you to focus on writing agent logic while the framework intelligently manages LLM context. This automated approach ensures efficient token usage and optimal performance without manual intervention.</p>
-<h2 id="key-innovations">Key Innovations<a class="headerlink" href="#key-innovations" title="Permanent link">&para;</a></h2>
+<h1 id="migrating-from-other-agent-frameworks">Migrating from Other Agent Frameworks<a class="headerlink" href="#migrating-from-other-agent-frameworks" title="Permanent link">&para;</a></h1>
+<p>If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, you can use AI coding assistants to help translate your existing agent implementations into idiomatic Playbooks code. This guide shows you how. You can expect 60-90% reduction in code size and significant reduction in complexity.</p>
+<hr />
+<h2 id="why-migrate-to-playbooks">Why Migrate to Playbooks?<a class="headerlink" href="#why-migrate-to-playbooks" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><a href="./#stack-based-context-management">Stack-based Context Management</a>
-Automatically compacts context as playbooks complete, preserving semantic information while reducing token usage.</p>
-</li>
-<li>
-<p><a href="./#prompt-caching-optimization">Prompt Caching Optimization</a>
-Intelligently manages context to maximize cache hits, reducing latency and API costs by up to 10x.</p>
-</li>
-<li>
-<p><a href="./#programmer-control-over-context">Programmer Control</a>
-Programmers have control over through specific control mechanisms.</p>
-</li>
+<li><strong>10x less code</strong>: Eliminate boilerplate and framework complexity</li>
+<li><strong>Natural language first</strong>: Write agent behavior in plain English</li>
+<li><strong>Soft + hard logic</strong>: Seamlessly mix LLM reasoning with deterministic Python</li>
+<li><strong>Verifiable execution</strong>: Compiled to auditable PBAsm for debugging</li>
+<li><strong>First principles</strong>: Built from the ground up for the LLM era (Software 3.0)</li>
 </ul>
 <hr />
-<h2 id="stack-based-context-management">Stack-based Context Management<a class="headerlink" href="#stack-based-context-management" title="Permanent link">&para;</a></h2>
-<p>Playbooks uses a stack-based approach to manage LLM context dynamically. As playbooks execute and return, their detailed execution traces are automatically replaced with concise summaries, keeping context focused and efficient.</p>
-<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
-<p>Consider this call stack in a running Playbooks program:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Main
-</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  └─ GetOrderStatus
-</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      └─ SummarizeOrderStatus
+<h2 id="supported-source-frameworks">Supported Source Frameworks<a class="headerlink" href="#supported-source-frameworks" title="Permanent link">&para;</a></h2>
+<p>Playbooks can express the same agent behaviors as these popular frameworks:</p>
+<ol>
+<li><strong><a href="https://langchain-ai.github.io/langgraph/">LangGraph</a></strong> - State graph-based agents from LangChain</li>
+<li><strong><a href="https://www.crewai.com/">CrewAI</a></strong> - Multi-agent collaboration framework</li>
+<li><strong><a href="https://microsoft.github.io/autogen/">AutoGen</a></strong> - Microsoft's multi-agent conversation framework</li>
+<li><strong><a href="https://python.langchain.com/docs/modules/agents/">LangChain Agents</a></strong> - Classic LangChain agent implementations</li>
+<li><strong><a href="https://learn.microsoft.com/en-us/semantic-kernel/">Semantic Kernel</a></strong> - Microsoft's AI orchestration SDK</li>
+<li><strong><a href="https://haystack.deepset.ai/">Haystack</a></strong> - NLP framework with agent capabilities</li>
+<li><strong><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT</a></strong> - Autonomous agent framework</li>
+</ol>
+<hr />
+<h2 id="ai-coding-assistants">AI Coding Assistants<a class="headerlink" href="#ai-coding-assistants" title="Permanent link">&para;</a></h2>
+<p>These AI coding assistants can help you migrate your agent code to Playbooks:</p>
+<ol>
+<li><strong><a href="https://cursor.com/">Cursor</a></strong> - AI-first code editor (VS Code fork)</li>
+<li><strong><a href="https://codeium.com/windsurf">Windsurf</a></strong> - AI-native IDE by Codeium</li>
+<li><strong><a href="https://github.com/features/copilot">GitHub Copilot</a></strong> - Most widely adopted AI pair programmer</li>
+<li><strong><a href="https://devin.ai/">Devin</a></strong> - Cognition's autonomous AI software engineer</li>
+<li><strong><a href="https://openai.com/index/introducing-codex/">OpenAI Codex</a></strong> - GPT-5-Codex powered autonomous coding agent</li>
+<li><strong><a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a></strong> - AWS-integrated coding assistant (formerly CodeWhisperer)</li>
+<li><strong><a href="https://cloud.google.com/gemini/docs/codeassist/overview">Google Gemini Code Assist</a></strong> - Google Cloud's AI coding tool</li>
+</ol>
+<hr />
+<h2 id="generic-migration-instructions">Generic Migration Instructions<a class="headerlink" href="#generic-migration-instructions" title="Permanent link">&para;</a></h2>
+<p>When using any AI coding assistant, provide these instructions to ensure optimal Playbooks code generation:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Key principles:
+</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- Write minimal, optimal, idiomatic Playbooks programs
+</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- Use Markdown playbooks for structured workflows
+</span><span id="__codeline__-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>- Use Python playbooks for deterministic logic and external APIs
+</span><span id="__codeline__-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>- Use ReAct playbooks for dynamic research and reasoning
+</span><span id="__codeline__-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>- Extract 4+ Python playbooks into MCP servers
+</span><span id="__codeline__-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- Sparingly use triggers for event-driven behavior and multi-agent communication for collaboration
+</span><span id="__codeline__-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>- Prefer natural language over explicit syntax
+</span><span id="__codeline__-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- Think from first principles: LLMs as CPUs, Software 3.0
+</span><span id="__codeline__-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__codeline__-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
 </span></code></pre></div>
-<p><strong>During Execution:</strong>
-- When <code>SummarizeOrderStatus</code> is active, the context includes the full execution trace from <code>Main</code> → <code>GetOrderStatus</code> → <code>SummarizeOrderStatus</code>
-- All playbook instructions, inputs, outputs, and intermediate steps are preserved in context</p>
-<p><strong>After Playbook Returns:</strong>
-- When <code>SummarizeOrderStatus</code> completes, its detailed execution trace is replaced with a summary
-- When <code>GetOrderStatus</code> returns to <code>Main</code>, both its traces are replaced with summary
-- So, when <code>Main</code> playbook continues after <code>GetOrderStatus</code> returns, it has a compact context containing only the summary of <code>GetOrderStatus</code> execution, thus reducing context size and token usage</p>
 <hr />
-<h2 id="prompt-caching-optimization">Prompt Caching Optimization<a class="headerlink" href="#prompt-caching-optimization" title="Permanent link">&para;</a></h2>
-<p>Playbooks intelligently leverages prompt caching to minimize latency and reduce API costs. The framework automatically manages cache-friendly context structures.</p>
-<h3 id="how-prompt-caching-works">How Prompt Caching Works<a class="headerlink" href="#how-prompt-caching-works" title="Permanent link">&para;</a></h3>
-<p><strong>Prefix Caching:</strong></p>
+<h2 id="configuration-for-each-ai-assistant">Configuration for Each AI Assistant<a class="headerlink" href="#configuration-for-each-ai-assistant" title="Permanent link">&para;</a></h2>
+<h3 id="cursor">Cursor<a class="headerlink" href="#cursor" title="Permanent link">&para;</a></h3>
+<p><strong>Method 1: Using .cursorrules file</strong></p>
+<p>Create a <code>.cursorrules</code> file in your project root with the instructions above.</p>
+<p><strong>Method 2: Using Cursor Settings</strong></p>
 <ol>
-<li>LLM providers cache the activations of prompt prefixes. Some LLM providers cache prefixes at specified locations in the context. some LLM providers charge extra for adding cache entries.</li>
-<li>When a new request arrives, the longest matching cached prefix is identified</li>
-<li>Cached activations are restored, avoiding reprocessing</li>
-<li>Only tokens beyond the prefix are processed</li>
-</ol>
-<p><strong>Performance Impact:</strong></p>
-<ul>
-<li>Cached tokens: ~10x cheaper and faster than regular tokens</li>
-<li>Cache hit on a 5,000 token prefix saves seconds of latency and significant cost</li>
-</ul>
-<h3 id="playbooks-cache-strategy">Playbooks Cache Strategy<a class="headerlink" href="#playbooks-cache-strategy" title="Permanent link">&para;</a></h3>
-<p>The framework automatically:</p>
-<ol>
-<li>
-<p><strong>Sets Strategic Cache Points</strong>
-Places cache boundaries at stable context segments and prioritizes frequently reused prefixes (system prompts, playbook definitions, call points). Claude allows a maximum of 4 cache points in the context, which the frameworks selects intelligently.</p>
-</li>
-<li>
-<p><strong>Balances Cache Efficiency</strong>
-There are competing factors to balance when it comes to using the cache effectively, while compacting the context to reduce token usage.</p>
-<ul>
-<li>
-<p>The oldest part of the context is the best candidate to be compacted because those details may not be relevant to the current execution. But compacting the oldest part invalidates the prefix cache completely.</p>
-</li>
-<li>
-<p>Compacting the newest part of the context allows for long cache prefix hits, but it may not be the best candidate to be compacted because those details may be relevant to the current execution.</p>
-</li>
-<li>
-<p>As a result, Playbooks framework compacts the middle part of the context, which balances between preserving cache prefix and preserving context for the current execution.</p>
-</li>
-<li>
-<p>Note that as the program proceeds and call stack unwinds, what was the middle part of the context may become the current execution part and thus what was previously compacted away may need to be added back at full detail. This is handled automatically by the framework by preserving the full uncompacted context and progressively adjusting the context on every LLM call.</p>
-</li>
-</ul>
-</li>
+<li>Open Cursor Settings (Cmd/Ctrl + ,)</li>
+<li>Search for "Rules for AI"</li>
+<li>Add the instructions above to the "Rules for AI" text area</li>
 </ol>
 <hr />
-<h2 id="programmer-control-over-context">Programmer Control Over Context<a class="headerlink" href="#programmer-control-over-context" title="Permanent link">&para;</a></h2>
-<p>While Playbooks automates context management, you retain full control when needed for specialized scenarios.</p>
-<h3 id="control-mechanisms">Control Mechanisms<a class="headerlink" href="#control-mechanisms" title="Permanent link">&para;</a></h3>
-<p><strong><a href="../playbook-types/#raw-prompt-playbooks">Raw Prompt Playbooks</a></strong>
-- Write literal prompt text that bypasses automatic context management
-- Useful for expert and narrow prompt engineering scenarios</p>
-<p><strong><a href="../description-placeholders/">Description Placeholders</a></strong>
-- Inject dynamic values into playbook descriptions
-- Inject either inline in the description or as a separarate LLM message.</p>
+<h3 id="windsurf">Windsurf<a class="headerlink" href="#windsurf" title="Permanent link">&para;</a></h3>
+<p>Create a <code>.windsurfrules</code> file in your project root with the instructions above.</p>
+<hr />
+<h3 id="github-copilot">GitHub Copilot<a class="headerlink" href="#github-copilot" title="Permanent link">&para;</a></h3>
+<p><strong>Using workspace instructions (.github/copilot-instructions.md)</strong></p>
+<p>Create <code>.github/copilot-instructions.md</code> with the instructions above.</p>
+<hr />
+<h2 id="agentsmd-format">agents.md Format<a class="headerlink" href="#agentsmd-format" title="Permanent link">&para;</a></h2>
+<p>Many AI coding assistants support the <a href="https://agents.md/">agents.md</a> format. Create an <code>agents.md</code> file in your project root with the instructions above.</p>
 
 
 
@@ -1194,7 +1177,7 @@ There are competing factors to balance when it comes to using the cache effectiv
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../triggers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Triggers">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10 mins to your first AI Agent">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1204,20 +1187,20 @@ There are competing factors to balance when it comes to using the cache effectiv
                 Previous
               </span>
               <div class="md-ellipsis">
-                Triggers
+                10 mins to your first AI Agent
               </div>
             </div>
           </a>
         
         
           
-          <a href="../description-placeholders/" class="md-footer__link md-footer__link--next" aria-label="Next: Description Placeholders">
+          <a href="../../programming-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Programming Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Description Placeholders
+                Programming Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
