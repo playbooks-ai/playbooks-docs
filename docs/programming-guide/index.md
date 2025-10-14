@@ -443,11 +443,13 @@ You are a sleep coach helping users improve their sleep.
 ```
 
 **When NOT to extract**:
+
 - ✅ 1-3 Python playbooks that are tightly coupled to agent logic
 - ✅ Python playbooks that call Markdown playbooks (requires `@playbook`)
 - ✅ Python playbooks with triggers (requires `@playbook`)
 
 **When to extract**:
+
 - ✅ 4+ Python playbooks in single agent
 - ✅ Pure utility functions (calculations, API calls, data transformations)
 - ✅ Tools that could be reused by multiple agents
@@ -1494,6 +1496,86 @@ required_attendees: [Developer, Designer, ProductManager]
 - Return meeting summary
 ```
 
+### Pattern: Collecting Inputs from User
+
+When your agent needs information from the user, always ask for all inputs at once and establish a clear conversation loop until all valid data is acquired:
+
+```markdown
+## Main
+### Steps
+- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+- If user gives up, apologize and return
+- Inform user that you were able to authenticate them
+```
+
+This pattern:
+
+- **Asks for all required information upfront** - more efficient for the user
+- **Includes a clear termination condition** - handles the case where user wants to exit
+- **Validates both inputs before proceeding** - ensures data quality
+- **Avoids sequential asking** - better user experience than asking one at a time
+
+**Why this matters**: Asking for information piece by piece creates a poor user experience. Users appreciate knowing all requirements upfront.
+
+### Pattern: Mock Backend Interactions with Python Playbooks
+
+Think if a certain action would require backend interaction (databases, APIs, authentication services). If so, use Python playbooks to encapsulate that logic. Use mock implementations as necessary to aid in development:
+
+````markdown
+```python
+@playbook
+async def AuthenticateUser($email: str, $pin: str) -> bool:
+    """Authenticate user with email and PIN.
+    
+    In production, this would call the actual authentication service.
+    For now, using mock data for development.
+    """
+    # Mock implementation for development
+    return $email == "test@test.com" and $pin == "1234"
+
+@playbook  
+async def FetchUserProfile($user_id: str) -> dict:
+    """Fetch user profile from database.
+    
+    Production: Query user database
+    Development: Return mock data
+    """
+    # Mock implementation
+    return {
+        "id": $user_id,
+        "name": "Test User",
+        "preferences": {"theme": "dark"}
+    }
+```
+
+## Main
+### Steps
+- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+- Authenticate user
+- If user is authenticated
+  - Fetch user profile
+  - Welcome user by name from profile
+- Otherwise
+  - Tell user authentication failed
+````
+
+This pattern:
+
+- **Separates backend logic** - keeps the workflow clean and focused
+- **Enables rapid prototyping** - test workflows without backend dependencies  
+- **Makes transition to production easier** - just swap mock with real implementation
+- **Documents backend contracts** - clear interface for what backend needs to provide
+- **Testable** - mock data allows thorough testing of workflows
+
+**When to use Python playbooks for backend**:
+
+- Database queries or updates
+- External API calls
+- Authentication/authorization checks
+- Complex business logic calculations
+- File I/O operations
+- Any stateful operations
+
 ### Best Practices Summary
 
 **DO**:
@@ -1509,6 +1591,8 @@ required_attendees: [Developer, Designer, ProductManager]
 - ✅ Use meaningful variable names
 - ✅ Break complex playbooks into smaller ones
 - ✅ Test with different user inputs mentally
+- ✅ Ask for all required information at once with conversation loops
+- ✅ Use mock Python playbooks for backend processes during development
 
 **DON'T**:
 
@@ -1521,6 +1605,8 @@ required_attendees: [Developer, Designer, ProductManager]
 - ❌ Forget to document cross-agent contracts
 - ❌ Overuse triggers - prefer explicit calls when flow is clearer
 - ❌ Use triggers for sequential logic
+- ❌ Ask for inputs one at a time when you need multiple pieces of information
+- ❌ Mix backend API calls directly into workflow steps
 
 ---
 
@@ -1722,6 +1808,113 @@ Description of what this agent does
 - End program
 ```
 
+### More complex example
+
+````markdown
+# Hello world agent
+A demo customer support agent for Playbooks AI
+
+```python
+@playbook
+async def SendOTP(phone_number: str) -> dict:
+    """
+    Send OTP to user's phone number via backend service.
+
+    In production, this would call the actual SMS/OTP service.
+    For development, using mock implementation.
+
+    Args:
+        phone_number: User's phone number
+
+    Returns:
+        Dictionary with status and OTP (in dev mode only)
+    """
+    # Mock implementation for development
+    # In production, this would call your SMS service
+    import random
+    otp = str(random.randint(1000, 9999))
+
+    # Simulate successful send
+    return {
+        "status": "success",
+        "message": f"OTP sent to {phone_number}",
+        "otp": otp  # Only for development - remove in production
+    }
+
+@playbook
+async def ValidateOTP(phone_number: str, otp: str) -> bool:
+    """
+    Validate OTP against backend service.
+
+    In production, this would verify OTP with your authentication service.
+    For development, using mock validation.
+
+    Args:
+        phone_number: User's phone number
+        otp: OTP code provided by user
+
+    Returns:
+        True if OTP is valid, False otherwise
+    """
+    # Mock implementation for development
+    # In production, this would validate against your backend
+
+    # For demo: accept any 4-digit OTP
+    # In real system, verify against stored OTP with expiration
+    return len(otp) == 4 and otp.isdigit()
+```
+
+## Main
+
+### Triggers
+- At the beginning
+
+### Steps
+- Welcome user
+- Authenticate user
+- If authentication successful
+  - Tell user about Playbooks AI
+  - Ask the user for their $name
+  - Say hello to the user by $name
+  - Welcome user to Playbooks AI
+- Otherwise
+  - Tell user authentication failed
+  - Apologize and end program
+- End program
+
+## AuthenticateUser
+Authenticate user by collecting phone number, sending OTP, and validating the code.
+
+### Steps
+- Ask user for their $phone_number, engage in conversation till user provides a valid phone number or gives up
+- If user gives up
+  - Return authentication failure
+- Send OTP to $phone_number
+- Tell user that OTP has been sent to their phone number
+- Ask user for the $otp they received, engage in conversation till user provides it or gives up
+- If user gives up
+  - Return authentication failure
+- Validate the OTP
+- If OTP is valid
+  - Return authentication success
+- Otherwise
+  - Tell user that the OTP didn't work
+  - Ask if user want to enter a different one or would like another OTP
+  - If usre provided a new OTP
+    - jump back to validating it
+  - If user wants to try again
+    - jump back to asking/validating OTP or sending a new one as appropriate
+  - If user want to give up
+    - Return authentication failure
+
+## ValidatePhoneNumber
+### Triggers
+- When user provides phone number
+
+### Steps
+- Check if $phone_number is a valid US phone number or not
+````
+
 ### Cheat Sheet
 
 | Task | Code |
@@ -1772,12 +1965,17 @@ When writing Playbooks programs:
 
 When helping users write Playbooks programs:
 
+- Think deeply, plan in detail and review the plan before writing any code
 - Follow all the principles and patterns in this guide
 - Prefer natural language over explicit syntax unless clarity demands it
 - Always consider if 4+ Python playbooks should be extracted to an MCP server
 - Use triggers sparingly - mainly for input validation
 - Explain your architectural choices to help users learn
 - Iterate based on user feedback and requirements
+- Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute
+- If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate.
+- Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.
+- When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.
 
 Happy building! 🚀
 

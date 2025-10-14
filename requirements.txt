@@ -4,3 +4,4 @@ pymdown-extensions>=9.9.0
 mkdocstrings>=0.22.0
 mkdocstrings[python]>=0.22.0
 mkdocs-argparse
+mkdocs-llmstxt
