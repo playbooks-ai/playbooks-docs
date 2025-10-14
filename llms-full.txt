@@ -190,44 +190,28 @@ GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! 
 
 ## Next Steps
 
-- Learn how to write effective Playbooks programs with the [Programming Guide](../programming-guide/)
-- If you're coming from LangGraph, CrewAI, or other frameworks, check out [Migrating from Other Frameworks](migrating/)
-- Explore [Tutorials](../tutorials/) for hands-on examples
-- Browse the [Reference Documentation](../reference/) for detailed information
+- **Learn the language**: [Programming Guide](../programming-guide/) - Comprehensive guide to writing effective Playbooks programs
+- **Accelerate development**: [Writing with AI Assistants](ai-assistants/) - Configure AI coding assistants for optimal Playbooks code generation
+- **Migrate existing code**: [Migrating from Other Frameworks](migrating/) - Convert from LangGraph, CrewAI, AutoGen, and other frameworks
+- **Hands-on learning**: [Tutorials](../tutorials/) - Step-by-step examples
+- **Deep dive**: [Reference Documentation](../reference/) - Detailed technical information
 
-# Migrating from Other Agent Frameworks
+# Writing Playbooks with AI Coding Assistants
 
-If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, you can use AI coding assistants to help translate your existing agent implementations into idiomatic Playbooks code. This guide shows you how. You can expect 60-90% reduction in code size and significant reduction in complexity.
-
-______________________________________________________________________
-
-## Why Migrate to Playbooks?
-
-- **10x less code**: Eliminate boilerplate and framework complexity
-- **Natural language first**: Write agent behavior in plain English
-- **Soft + hard logic**: Seamlessly mix LLM reasoning with deterministic Python
-- **Verifiable execution**: Compiled to auditable PBAsm for debugging
-- **First principles**: Built from the ground up for the LLM era (Software 3.0)
+AI coding assistants can significantly accelerate Playbooks development by understanding natural language instructions and generating idiomatic code. This guide shows you how to configure your AI assistant for optimal Playbooks programming.
 
 ______________________________________________________________________
 
-## Supported Source Frameworks
+## Why Use AI Assistants for Playbooks?
 
-Playbooks can express the same agent behaviors as these popular frameworks:
-
-1. **[LangGraph](https://langchain-ai.github.io/langgraph/)** - State graph-based agents from LangChain
-1. **[CrewAI](https://www.crewai.com/)** - Multi-agent collaboration framework
-1. **[AutoGen](https://microsoft.github.io/autogen/)** - Microsoft's multi-agent conversation framework
-1. **[LangChain Agents](https://python.langchain.com/docs/modules/agents/)** - Classic LangChain agent implementations
-1. **[Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/)** - Microsoft's AI orchestration SDK
-1. **[Haystack](https://haystack.deepset.ai/)** - NLP framework with agent capabilities
-1. **[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)** - Autonomous agent framework
+- **Natural language understanding**: AI assistants excel at translating intent into Playbooks' natural language syntax
+- **Best practices enforcement**: Properly configured assistants follow Playbooks conventions and patterns
+- **Faster development**: Generate boilerplate, suggest playbook decomposition, and write idiomatic code
+- **Learning aid**: See how experienced Playbooks programmers would structure your agents
 
 ______________________________________________________________________
 
-## AI Coding Assistants
-
-These AI coding assistants can help you migrate your agent code to Playbooks:
+## Supported AI Coding Assistants
 
 1. **[Cursor](https://cursor.com/)** - AI-first code editor (VS Code fork)
 1. **[Windsurf](https://codeium.com/windsurf)** - AI-native IDE by Codeium
@@ -239,48 +223,28 @@ These AI coding assistants can help you migrate your agent code to Playbooks:
 
 ______________________________________________________________________
 
-## Migration Instructions
+## Generic Playbooks Instructions
 
-1. git clone the source agent implementation and open it in your favorite IDE
+Use these instructions with any AI coding assistant to ensure it generates optimal Playbooks code:
 
-1. Create a `playbooks` folder in the root of the project where you will create the converted Playbooks program
+```text
+You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
+https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
 
-1. Provide these instructions to the AI coding assistant
-
-   ```text
-   You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
-   https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
-
-   Key principles:
-   - Write minimal, optimal, idiomatic Playbooks programs
-   - Use Markdown playbooks for structured workflows
-   - Use Python playbooks for deterministic logic and external APIs
-   - Use ReAct playbooks for dynamic research and reasoning
-   - Extract 4+ Python playbooks into MCP servers
-   - Sparingly use triggers for event-driven behavior and multi-agent communication for collaboration
-   - Prefer natural language over explicit syntax
-   - Think from first principles: LLMs as CPUs, Software 3.0
-
-   Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
-
-   ====
-
-   Convert the <agent>.py agent implementation to playbooks program at playbooks/<agent>.pb. Create all new files in the playbooks/ folder.
-   ```
-
-   Replace with the name of the source agent.
-
-1. Let the coding assistant cook! It will create the playbooks/.pb file, potentially with other files like an MCP server, a README.md file, and a requirements.txt file, etc.
-
-1. Review the generated code and make any necessary adjustments
-
-1. Start the MCP server, if applicable
-
-1. Run the Playbooks program to ensure it works as expected
+Key principles:
+- Write minimal, optimal, idiomatic Playbooks programs
+- Use Markdown playbooks for structured workflows
+- Use Python playbooks for deterministic logic and external APIs
+- Use ReAct playbooks for dynamic research and reasoning
+- Extract 4+ Python playbooks into MCP servers
+- Sparingly use triggers for event-driven behavior
+- Prefer natural language over explicit syntax
+- Think from first principles: LLMs as CPUs, Software 3.0
+```
 
 ______________________________________________________________________
 
-## Configuration for Each AI Assistant
+## Configuration by Assistant
 
 ### Cursor
 
@@ -290,7 +254,7 @@ Create a `.cursorrules` file in your project root with the instructions above.
 
 **Method 2: Using Cursor Settings**
 
-1. Open Cursor Settings (Cmd/Ctrl + ,)
+1. Open Cursor Settings (`Cmd/Ctrl + ,`)
 1. Search for "Rules for AI"
 1. Add the instructions above to the "Rules for AI" text area
 
@@ -310,9 +274,241 @@ Create `.github/copilot-instructions.md` with the instructions above.
 
 ______________________________________________________________________
 
+### Devin / OpenAI Codex / Amazon Q / Gemini Code Assist
+
+## For autonomous or chat-based AI assistants, include the instructions in your initial prompt
+
 ## agents.md Format
 
-Many AI coding assistants support the [agents.md](https://agents.md/) format. Create an `agents.md` file in your project root with the instructions above.
+Many AI coding assistants support the [agents.md](https://agents.md/) format for project-level AI configuration.
+
+Create an `agents.md` file in your project root:
+
+## `markdown # Playbooks Project Configuration ## Identity You are a Playbooks programming expert. Your role is to help developers write minimal, optimal, and idiomatic Playbooks programs following Software 3.0 principles. ## Context Playbooks is a framework where: - LLMs act as CPUs executing natural language instructions - Programs are 10x smaller than traditional agent frameworks - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging ## Instructions 1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md 2. **Follow the programming guide** for syntax, patterns, and best practices 3. **Think from first principles**: How would this agent behave naturally? 4. **Choose the right playbook types**: - Markdown playbooks for known workflows with explicit steps - Python playbooks for deterministic logic and external API calls - ReAct playbooks for dynamic reasoning and research tasks - MCP servers when you have 4+ Python playbooks 5. **Prefer natural language** over explicit syntax unless clarity demands it 6. **Write minimal code** - remove all unnecessary boilerplate 7. **Explain architectural choices** to help developers learn `
+
+## Best Practices
+
+### 1. Start with High-Level Intent
+
+Instead of:
+
+```text
+Create a function that calls an API and processes the response
+```
+
+Try:
+
+```text
+Build a Playbooks agent that:
+- Takes user's location
+- Fetches weather data
+- Provides personalized recommendations
+- Handles errors gracefully
+
+Use appropriate playbook types based on the Programming Guide.
+```
+
+### 2. Reference the Programming Guide
+
+Always direct the AI to the Programming Guide for best results:
+
+```text
+@https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
+
+Convert this workflow into a Playbooks agent...
+```
+
+### 3. Ask for Explanations
+
+Request that the AI explain its choices:
+
+```text
+Build this agent and explain:
+- Why you chose each playbook type
+- When MCP extraction would be beneficial
+- How the control flow works
+```
+
+### 4. Iterate Based on Behavior
+
+Test the generated code and provide feedback:
+
+```text
+The agent works but feels too rigid. Make it more conversational
+while maintaining the same logic.
+```
+
+### 5. Request Idiomatic Patterns
+
+```text
+Rewrite this to be more idiomatic Playbooks code. Use natural language
+where possible and follow Software 3.0 principles.
+```
+
+______________________________________________________________________
+
+## Common Tasks
+
+### Create a New Agent
+
+```text
+I need a [customer support / data analysis / research] agent that [capabilities].
+
+Follow the Playbooks Programming Guide. Use appropriate playbook types.
+```
+
+### Add a New Playbook
+
+```text
+Add a playbook to my agent that [specific task]. Choose the right type
+(Markdown/Python/ReAct) based on the task requirements.
+```
+
+### Extract to MCP Server
+
+```text
+I have 5+ Python playbooks in this agent. Extract them to an MCP server
+following Playbooks best practices.
+```
+
+### Debug Behavior
+
+```text
+This agent isn't behaving as expected: [description of issue].
+Review the code and suggest fixes following Playbooks conventions.
+```
+
+### Optimize for Conciseness
+
+```text
+This agent works but the code is verbose. Refactor to be more concise
+while maintaining clarity. Target 10x code reduction.
+```
+
+______________________________________________________________________
+
+## Next Steps
+
+- **Get started**: [Install Playbooks](../) and create your first agent
+- **Learn patterns**: Study the [Programming Guide](../../programming-guide/)
+- **Migrate existing code**: See [Migrating from Other Frameworks](../migrating/)
+- **Explore examples**: Browse [Tutorials](../../tutorials/)
+
+______________________________________________________________________
+
+Happy building with AI! 🤖🚀
+
+# Migrating from Other Agent Frameworks
+
+If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. **You can expect 60-90% reduction in code size** and significant reduction in complexity.
+
+______________________________________________________________________
+
+## Why Migrate to Playbooks?
+
+| Benefit                    | Description                                             |
+| -------------------------- | ------------------------------------------------------- |
+| **10x less code**          | Eliminate boilerplate and framework complexity          |
+| **Natural language first** | Write agent behavior in plain English                   |
+| **Soft + hard logic**      | Seamlessly mix LLM reasoning with deterministic Python  |
+| **Verifiable execution**   | Compiled to auditable PBAsm for debugging               |
+| **First principles**       | Built from the ground up for the LLM era (Software 3.0) |
+| **No framework lock-in**   | Natural language programs are portable                  |
+
+______________________________________________________________________
+
+## Supported Source Frameworks
+
+Playbooks can express the same agent behaviors as these popular frameworks:
+
+| Framework                                                                 | Type                        | Playbooks Advantage                                          |
+| ------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------ |
+| **[LangGraph](https://langchain-ai.github.io/langgraph/)**                | State graph-based agents    | Replace complex state graphs with natural language workflows |
+| **[CrewAI](https://www.crewai.com/)**                                     | Multi-agent collaboration   | Native multi-agent support without role/task boilerplate     |
+| **[AutoGen](https://microsoft.github.io/autogen/)**                       | Multi-agent conversations   | Simpler agent communication with triggers                    |
+| **[LangChain Agents](https://python.langchain.com/docs/modules/agents/)** | Classic agent patterns      | Natural language replaces chain composition                  |
+| **[Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/)** | AI orchestration SDK        | Direct LLM execution vs orchestration layer                  |
+| **[Haystack](https://haystack.deepset.ai/)**                              | NLP with agent capabilities | Focused on agents, not general NLP                           |
+| **[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)**            | Autonomous agents           | Structured playbooks vs autonomous loops                     |
+
+______________________________________________________________________
+
+## Migration Process
+
+### Step 1: Understand Your Agent's Behavior
+
+Before migrating code, understand:
+
+- What does the agent do?
+- What are the key workflows?
+- What tools/functions does it use?
+- How do agents communicate (if multi-agent)?
+
+**Focus on behavior, not framework mechanics.**
+
+### Step 2: If using AI coding assistants
+
+1. Configure your AI assistant: See [Writing with AI Assistants](../ai-assistants/)
+
+1. Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
+
+   ```text
+   You are a ... <instructions from "Writing with AI Assistants" document>
+
+   Read source implementation at <agent>.py carefully. Write an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks/ folder, including mcp.py using fastmcp if necessary.
+   ```
+
+   Use appropriate name for and put in the [base instructions](../ai-assistants/).
+
+### Step 3: If doing manual conversion
+
+Use this mapping to translate concepts:
+
+| Source Framework | Concept                           | Playbooks Equivalent           |
+| ---------------- | --------------------------------- | ------------------------------ |
+| **LangGraph**    | State graph                       | Agent with variables           |
+|                  | Nodes                             | Individual playbooks           |
+|                  | Edges                             | Control flow in Steps          |
+|                  | State                             | Agent variables (`$variable`)  |
+|                  | Tools                             | Python playbooks or MCP server |
+| **CrewAI**       | Crew                              | Multi-agent program file       |
+|                  | Agent roles                       | H1 agent definitions           |
+|                  | Tasks                             | H2 playbook definitions        |
+|                  | Tools                             | Python playbooks or MCP server |
+|                  | Process (sequential/hierarchical) | Triggers and control flow      |
+| **AutoGen**      | Agents                            | H1 agent definitions           |
+|                  | Conversations                     | Agent messaging                |
+|                  | Function calling                  | Python playbooks               |
+|                  | Group chat                        | Multi-agent with triggers      |
+| **LangChain**    | Agent                             | H1 agent definition            |
+|                  | Tools                             | Python playbooks or MCP server |
+|                  | ReAct agent                       | ReAct playbook type            |
+|                  | Memory                            | Artifacts or variables         |
+|                  | Chains                            | Playbook Steps                 |
+
+### Step 4: Test and Iterate
+
+Run your Playbooks agent:
+
+```bash
+cd playbooks
+playbooks run <agent>.pb
+```
+
+Compare behavior with the original implementation and iterate.
+
+______________________________________________________________________
+
+## Need Help?
+
+- **AI Assistants Setup**: [Writing with AI Assistants](../ai-assistants/)
+- **Programming Guide**: [Playbooks Programming Guide](../../programming-guide/)
+- **Documentation**: <https://playbooks-ai.github.io/playbooks-docs/>
+- **GitHub**: <https://github.com/playbooks-ai/playbooks>
+
+______________________________________________________________________
+
+Happy migrating! 🚀 Enjoy up to 10x code reduction!
 
 # Playbooks Programming Guide
 

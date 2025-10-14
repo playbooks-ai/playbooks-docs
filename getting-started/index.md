@@ -74,7 +74,8 @@ GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! 
 
 ## Next Steps
 
-- Learn how to write effective Playbooks programs with the [Programming Guide](../programming-guide/)
-- If you're coming from LangGraph, CrewAI, or other frameworks, check out [Migrating from Other Frameworks](migrating/)
-- Explore [Tutorials](../tutorials/) for hands-on examples
-- Browse the [Reference Documentation](../reference/) for detailed information
+- **Learn the language**: [Programming Guide](../programming-guide/) - Comprehensive guide to writing effective Playbooks programs
+- **Accelerate development**: [Writing with AI Assistants](ai-assistants/) - Configure AI coding assistants for optimal Playbooks code generation
+- **Migrate existing code**: [Migrating from Other Frameworks](migrating/) - Convert from LangGraph, CrewAI, AutoGen, and other frameworks
+- **Hands-on learning**: [Tutorials](../tutorials/) - Step-by-step examples
+- **Deep dive**: [Reference Documentation](../reference/) - Detailed technical information
