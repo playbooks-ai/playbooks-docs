@@ -108,6 +108,7 @@ plugins:
         - index.md: About Playbooks AI
         Documentation: 
         - getting-started/index.md: Getting Started
+        - getting-started/migrating.md: Migrating from Other Frameworks
         - programming-guide/index.md: Programming Guide
         - tutorials/index.md: Tutorials
         - reference/index.md: Reference
@@ -115,7 +116,9 @@ plugins:
 # Navigation
 nav:
   - Home: index.md
-  - Getting Started: getting-started/index.md
+  - Getting Started: 
+    - getting-started/index.md
+    - Migrating from Other Frameworks: getting-started/migrating.md
   - Programming Guide: programming-guide/index.md
   - Tutorial: tutorials/index.md
   - Reference:
