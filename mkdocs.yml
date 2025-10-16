@@ -108,6 +108,7 @@ plugins:
         - index.md: About Playbooks AI
         Documentation: 
         - getting-started/index.md: Getting Started
+        - getting-started/ai-assistants.md: Writing with AI Assistants
         - getting-started/migrating.md: Migrating from Other Frameworks
         - programming-guide/index.md: Programming Guide
         - tutorials/index.md: Tutorials
@@ -118,7 +119,8 @@ nav:
   - Home: index.md
   - Getting Started: 
     - getting-started/index.md
-    - Migrating from Other Frameworks: getting-started/migrating.md
+    - AI Coding Assistants: getting-started/ai-assistants.md
+    - Migrating from Other Agent Frameworks: getting-started/migrating.md
   - Programming Guide: programming-guide/index.md
   - Tutorial: tutorials/index.md
   - Reference:
@@ -128,6 +130,7 @@ nav:
     - Playbooks AI: reference/playbooks-ai.md
     - Playbooks Language: reference/playbooks-language.md
     - Playbooks Assembly Language: reference/playbooks-assembly-language.md
+    - Playbooks vs Traditional Frameworks: reference/playbooks-traditional-comparison.md
     - Agents: reference/agents.md
     - MCP based Agents: reference/mcp-agent.md
     - Exported and Public Playbooks: reference/exported-and-public-playbooks.md

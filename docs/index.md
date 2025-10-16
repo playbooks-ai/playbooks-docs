@@ -23,7 +23,7 @@ Unlike other AI agent frameworks, **Playbooks programs are highly readable**. Bu
 
 Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
 
-Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** is equivalent to more than [10x longer, cryptic LangGraph code](assets/country-facts.langgraph.py).
+Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** accomplishes the same task as implementations that are [ significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison.md).
 ````markdown linenums="1" title="country-facts.pb"
 # Country facts agent
 This agent prints interesting facts about nearby countries
@@ -99,6 +99,7 @@ The extension provides debugging capabilities for playbooks programs, making it 
 
 ## Let's build something amazing with Playbooks!
 <div class="grid cards" markdown>
-- :material-rocket: **Quickstart** — your first playbook<br/>[Start here →](getting-started/index.md)
-- :material-code-braces: **Tutorials** — learn by doing<br/>[How it works →](tutorials/index.md)
+- :material-rocket: **Quickstart** - your first playbook<br/>[Start here →](getting-started/index.md)
+- :material-code-braces: **Tutorials** - learn by doing<br/>[How it works →](tutorials/index.md)
+- :material-chart-box: **Playbooks vs Traditional Frameworks** - see the difference<br/>[Compare approaches →](reference/playbooks-traditional-comparison.md)
 </div>

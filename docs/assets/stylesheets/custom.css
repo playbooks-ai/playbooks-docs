@@ -130,6 +130,6 @@ strong {
     text-decoration: underline;
 }
 
-.md-content .language-markdown.highlight a, .md-content .language-diff.highlight a {
+.md-content .language-markdown.highlight a, .md-content .language-diff.highlight a, .md-content .language-python.highlight a {
     text-decoration: none;
 }

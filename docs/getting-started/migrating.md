@@ -1,113 +1,109 @@
 # Migrating from Other Agent Frameworks
 
-If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, you can use AI coding assistants to help translate your existing agent implementations into idiomatic Playbooks code. This guide shows you how. You can expect 60-90% reduction in code size and significant reduction in complexity.
+If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. You can expect [significant reduction in complexity and code size](../reference/playbooks-traditional-comparison.md).
 
 ---
 
 ## Why Migrate to Playbooks?
 
-- **10x less code**: Eliminate boilerplate and framework complexity
-- **Natural language first**: Write agent behavior in plain English
-- **Soft + hard logic**: Seamlessly mix LLM reasoning with deterministic Python
-- **Verifiable execution**: Compiled to auditable PBAsm for debugging
-- **First principles**: Built from the ground up for the LLM era (Software 3.0)
+| Benefit | Description |
+|---------|-------------|
+| **less code** | Eliminate boilerplate and framework complexity |
+| **Natural language first** | Write agent behavior in plain English |
+| **Soft + hard logic** | Seamlessly mix LLM reasoning with deterministic Python |
+| **Verifiable execution** | Compiled to auditable PBAsm for debugging |
+| **First principles** | Built from the ground up for the LLM era (Software 3.0) |
+| **No framework lock-in** | Natural language programs are portable |
 
 ---
 
-## Supported Source Frameworks
+## Traditional Agent Frameworks
 
 Playbooks can express the same agent behaviors as these popular frameworks:
 
-1. **[LangGraph](https://langchain-ai.github.io/langgraph/)** - State graph-based agents from LangChain
-2. **[CrewAI](https://www.crewai.com/)** - Multi-agent collaboration framework
-3. **[AutoGen](https://microsoft.github.io/autogen/)** - Microsoft's multi-agent conversation framework
-4. **[LangChain Agents](https://python.langchain.com/docs/modules/agents/)** - Classic LangChain agent implementations
-5. **[Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/)** - Microsoft's AI orchestration SDK
-6. **[Haystack](https://haystack.deepset.ai/)** - NLP framework with agent capabilities
-7. **[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)** - Autonomous agent framework
+| Framework | Type | Playbooks Advantage |
+|-----------|------|---------------------|
+| **[LangGraph](https://langchain-ai.github.io/langgraph/)** | State graph-based agents | Replace complex state graphs with natural language workflows |
+| **[CrewAI](https://www.crewai.com/)** | Multi-agent collaboration | Native multi-agent support without role/task boilerplate |
+| **[AutoGen](https://microsoft.github.io/autogen/)** | Multi-agent conversations | Simpler agent communication with triggers |
+| **[LangChain Agents](https://python.langchain.com/docs/modules/agents/)** | Classic agent patterns | Natural language replaces chain composition |
+| **[Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/)** | AI orchestration SDK | Direct LLM execution vs orchestration layer |
+| **[Haystack](https://haystack.deepset.ai/)** | NLP with agent capabilities | Focused on agents, not general NLP |
+| **[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)** | Autonomous agents | Structured playbooks vs autonomous loops |
 
 ---
 
-## AI Coding Assistants
+## Migration Process
 
-These AI coding assistants can help you migrate your agent code to Playbooks:
+### Step 1: Understand Your Agent's Behavior
 
-1. **[Cursor](https://cursor.com/)** - AI-first code editor (VS Code fork)
-2. **[Windsurf](https://codeium.com/windsurf)** - AI-native IDE by Codeium
-3. **[GitHub Copilot](https://github.com/features/copilot)** - Most widely adopted AI pair programmer
-4. **[Devin](https://devin.ai/)** - Cognition's autonomous AI software engineer
-5. **[OpenAI Codex](https://openai.com/index/introducing-codex/)** - GPT-5-Codex powered autonomous coding agent
-6. **[Amazon Q Developer](https://aws.amazon.com/q/developer/)** - AWS-integrated coding assistant (formerly CodeWhisperer)
-7. **[Google Gemini Code Assist](https://cloud.google.com/gemini/docs/codeassist/overview)** - Google Cloud's AI coding tool
+Before migrating code, understand:
 
----
+- What does the agent do?
+- What are the key workflows?
+- What tools/functions does it use?
+- How do agents communicate (if multi-agent)?
 
-## Migration Instructions
+**Focus on behavior, not framework mechanics.**
 
-1. git clone the source agent implementation and open it in your favorite IDE
-2. Create a `playbooks` folder in the root of the project where you will create the converted Playbooks program
-3. Provide these instructions to the AI coding assistant
+### Step 2: If using AI coding assistants
 
+1. Create a `playbooks` folder for the converted code
+2. Copy prompt for your AI assistant from [here](../ai-assistants/#prompt-for-ai-coding-assistants)
+3. Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
     ```
-    You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
-    https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
+    <prompt copied above>
 
-    Key principles:
-    - Write minimal, optimal, idiomatic Playbooks programs
-    - Use Markdown playbooks for structured workflows
-    - Use Python playbooks for deterministic logic and external APIs
-    - Use ReAct playbooks for dynamic research and reasoning
-    - Extract 4+ Python playbooks into MCP servers
-    - Sparingly use triggers for event-driven behavior and multi-agent communication for collaboration
-    - Prefer natural language over explicit syntax
-    - Think from first principles: LLMs as CPUs, Software 3.0
-
-    Produce a MIGRATION.md file with code size comparison and instructions on how to run the Playbooks program (note Playbooks requires Python 3.12+ and ANTHROPIC_API_KEY environment variable).
-
-    ====
-
-    Convert the <agent>.py agent implementation to playbooks program at playbooks/<agent>.pb. Create all new files in the playbooks/ folder.
+    Read source implementation at <agent>.py carefully. Convert to an equivalent Playbooks program in playbooks/<agent>.pb. Create all new files in the playbooks folder. Create MIGRATION.md file at the end with before/after comparison include code size reduction.
     ```
+Use appropriate <prompt> and <agent> file name.
 
-    Replace <agent> with the name of the source agent.
+### Step 3: If doing manual conversion
 
-4. Let the coding assistant cook! It will create the playbooks/<agent>.pb file, potentially with other files like an MCP server, a README.md file, and a requirements.txt file, etc.
-5. Review the generated code and make any necessary adjustments
-6. Start the MCP server, if applicable
-7. Run the Playbooks program to ensure it works as expected
+Use this mapping to translate concepts:
+
+| Source Framework | Concept | Playbooks Equivalent |
+|------------------|---------|---------------------|
+| **LangGraph** | State graph | Agent with variables |
+| | Nodes | A playbook to represent a sequence of nodes |
+| | Edges | Control flow in Steps |
+| | State | Agent variables (`$variable`) |
+| | Tools | Python playbooks or MCP server |
+| **CrewAI** | Crew | Multi-agent Playbooks program file |
+| | Agent roles | H1 agent definitions |
+| | Tasks | H2 playbook definitions |
+| | Tools | Python playbooks or MCP server |
+| | Process (sequential/hierarchical) | Triggers and control flow |
+| **AutoGen** | Agents | H1 agent definitions |
+| | Conversations | Conversation loop in a playbook |
+| | Function calling | Python playbooks |
+| | Group chat | Multi-party meetings |
+| **LangChain** | Agent | H1 agent definition |
+| | Tools | Python playbooks or MCP server |
+| | ReAct agent | ReAct-type playbook |
+| | Memory | Artifacts or variables |
+| | Chains | Playbook Steps |
+
+### Step 4: Test and Iterate
+
+Run your Playbooks agent:
+```bash
+# export ANTHROPIC_API_KEY=<your Anthropic API key here>
+# make sure python --version is 3.12+
+cd playbooks
+playbooks run <agent>.pb
+```
+
+Compare behavior with the original implementation and iterate.
+
 ---
 
-## Configuration for Each AI Assistant
+## Next steps
 
-### Cursor
-
-**Method 1: Using .cursorrules file**
-
-Create a `.cursorrules` file in your project root with the instructions above.
-
-**Method 2: Using Cursor Settings**
-
-1. Open Cursor Settings (Cmd/Ctrl + ,)
-2. Search for "Rules for AI"
-3. Add the instructions above to the "Rules for AI" text area
+- **Learn the language**: [Programming Guide](../programming-guide/index.md) - Comprehensive guide to writing effective Playbooks programs
+- **Hands-on learning**: [Tutorials](../tutorials/index.md) - Step-by-step examples
+- **Deep dive**: [Reference Documentation](../reference/index.md) - Detailed technical information
 
 ---
 
-### Windsurf
-
-Create a `.windsurfrules` file in your project root with the instructions above.
-
-
----
-
-### GitHub Copilot
-
-**Using workspace instructions (.github/copilot-instructions.md)**
-
-Create `.github/copilot-instructions.md` with the instructions above.
-
----
-
-## agents.md Format
-
-Many AI coding assistants support the [agents.md](https://agents.md/) format. Create an `agents.md` file in your project root with the instructions above.
+Happy migrating! 🚀
