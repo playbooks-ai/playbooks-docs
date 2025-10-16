@@ -17,3 +17,4 @@ This section contains the reference documentation for the Playbooks framework.
 - [Triggers](triggers/)
 - [Context Engineering](context-engineering/)
 - [Description Placeholders](description-placeholders/)
+- [Playbooks vs Traditional Frameworks](playbooks-traditional-comparison/)

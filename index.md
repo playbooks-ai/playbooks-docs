@@ -12,7 +12,7 @@ ______________________________________________________________________
 
 Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
 
-Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** is equivalent to more than [10x longer, cryptic LangGraph code](assets/country-facts.langgraph.py).
+Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** accomplishes the same task as implementations that are [significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison/).
 
 ````markdown
 # Country facts agent
@@ -100,7 +100,9 @@ The extension provides debugging capabilities for playbooks programs, making it 
 
 ## Let's build something amazing with Playbooks!
 
-- **Quickstart** — your first playbook\
+- **Quickstart** - your first playbook\
   [Start here →](getting-started/)
-- **Tutorials** — learn by doing\
+- **Tutorials** - learn by doing\
   [How it works →](tutorials/)
+- **Playbooks vs Traditional Frameworks** - see the difference\
+  [Compare approaches →](reference/playbooks-langgraph-comparison.md)

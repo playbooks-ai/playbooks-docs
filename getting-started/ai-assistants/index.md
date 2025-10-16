@@ -105,7 +105,7 @@ You are a Playbooks programming expert. Your role is to help developers write mi
 
 Playbooks is a framework where:
 - LLMs act as CPUs executing natural language instructions
-- Programs are 10x smaller than traditional agent frameworks
+- Programs are up to 10x smaller than traditional agent frameworks
 - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack
 - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging
 
@@ -208,7 +208,7 @@ Review the code and suggest fixes following Playbooks conventions.
 
 ```text
 This agent works but the code is verbose. Refactor to be more concise
-while maintaining clarity. Target 10x code reduction.
+while maintaining clarity.
 ```
 
 ______________________________________________________________________

@@ -1,6 +1,6 @@
 # Migrating from Other Agent Frameworks
 
-If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. **You can expect 60-90% reduction in code size** and significant reduction in complexity.
+If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. You can expect [significant reduction in complexity and code size](reference/playbooks-traditional-comparison.md).
 
 ______________________________________________________________________
 
@@ -8,7 +8,7 @@ ______________________________________________________________________
 
 | Benefit                    | Description                                             |
 | -------------------------- | ------------------------------------------------------- |
-| **10x less code**          | Eliminate boilerplate and framework complexity          |
+| **less code**              | Eliminate boilerplate and framework complexity          |
 | **Natural language first** | Write agent behavior in plain English                   |
 | **Soft + hard logic**      | Seamlessly mix LLM reasoning with deterministic Python  |
 | **Verifiable execution**   | Compiled to auditable PBAsm for debugging               |
@@ -17,7 +17,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## Supported Source Frameworks
+## Traditional Agent Frameworks
 
 Playbooks can express the same agent behaviors as these popular frameworks:
 
@@ -111,4 +111,4 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-Happy migrating! 🚀 Enjoy up to 10x code reduction!
+Happy migrating! 🚀

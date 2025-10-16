@@ -1,0 +1,2166 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build AI Agents with Natural Language Programming">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/reference/playbooks-traditional-comparison/">
+      
+      
+        <link rel="prev" href="../playbooks-assembly-language/">
+      
+      
+        <link rel="next" href="../agents/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Playbooks vs Traditional Frameworks - Playbooks AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-KSV70W8EXP"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-KSV70W8EXP",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-KSV70W8EXP",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="slate" data-md-color-accent="slate">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#playbooks-vs-traditional-agent-frameworks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Playbooks AI" class="md-header__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Playbooks AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Playbooks vs Traditional Frameworks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="slate" data-md-color-accent="slate"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/playbooks-ai/playbooks" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    playbooks
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Playbooks AI" class="md-nav__button md-logo" aria-label="Playbooks AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41z"/></svg>
+
+    </a>
+    Playbooks AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/playbooks-ai/playbooks" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    playbooks
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/ai-assistants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Coding Assistants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating from Other Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbooks-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbooks-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks Language
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbooks-assembly-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks Assembly Language
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Playbooks vs Traditional Frameworks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbooks vs Traditional Frameworks
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-playbooks-implementation-29-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Playbooks Implementation: 29 Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Playbooks Implementation: 29 Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening-in-the-playbooks-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Happening in the Playbooks Code?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-framework-implementation-272-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional Framework Implementation: 272 Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traditional Framework Implementation: 272 Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening-in-the-langgraph-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Happening in the LangGraph Code?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Matters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Accessibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maintainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Maintainability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cognitive-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cognitive Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-development-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Development Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verifiability" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verifiability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-each-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Each Approach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Each Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-playbooks-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Playbooks If:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-traditional-frameworks-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Traditional Frameworks If:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It Yourself
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP based Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exported-and-public-playbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exported and Public Playbooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Playbook Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtin-playbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Built-in Playbooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triggers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../description-placeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description Placeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Challenge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-playbooks-implementation-29-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Playbooks Implementation: 29 Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Playbooks Implementation: 29 Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening-in-the-playbooks-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Happening in the Playbooks Code?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traditional-framework-implementation-272-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional Framework Implementation: 272 Lines
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traditional Framework Implementation: 272 Lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-happening-in-the-langgraph-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Happening in the LangGraph Code?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Matters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Accessibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maintainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Maintainability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cognitive-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cognitive Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-development-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Development Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-verifiability" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Verifiability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-each-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Each Approach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Each Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-playbooks-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Playbooks If:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-traditional-frameworks-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Traditional Frameworks If:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try It Yourself
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="playbooks-vs-traditional-agent-frameworks">Playbooks vs Traditional Agent Frameworks<a class="headerlink" href="#playbooks-vs-traditional-agent-frameworks" title="Permanent link">&para;</a></h1>
+<p>One of the core promises of Playbooks is <strong>radical simplicity</strong>: building AI agents should be accessible, readable, and maintainable. To illustrate this difference, let's compare how the same agent is built in Playbooks versus traditional agent frameworks. We'll use LangGraph as a representative example of graph-based orchestration frameworks. </p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> It is easy to migrate from traditional agent frameworks to Playbooks. See <a href="../../getting-started/migrating/">Migrating from Other Agent Frameworks</a> for details.</p>
+<h2 id="the-challenge">The Challenge<a class="headerlink" href="#the-challenge" title="Permanent link">&para;</a></h2>
+<p>We'll build a "Country Facts Agent" that:</p>
+<ol>
+<li>Asks the user what country they're from</li>
+<li>Handles conversational back-and-forth if the user doesn't immediately provide a country</li>
+<li>Finds 5 nearby countries</li>
+<li>Retrieves and shares interesting historical facts about each country</li>
+<li>Gracefully exits</li>
+</ol>
+<p>This is a realistic agent with multiple steps, conditional logic, LLM calls, and Python code execution-perfect for comparing frameworks.</p>
+<hr />
+<h2 id="the-playbooks-implementation-29-lines">The Playbooks Implementation: 29 Lines<a class="headerlink" href="#the-playbooks-implementation-29-lines" title="Permanent link">&para;</a></h2>
+<p>Here is <strong>country-facts.pb</strong>, a Playbooks program. This <strong>29 line, highly readable program</strong> accomplishes the same task as the much longer traditional framework implementation shown below.</p>
+<div class="language-markdown highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">country-facts.pb</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># Country facts agent</span>
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>This agent prints interesting facts about nearby countries
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">-</span><span class="w"> </span>Ask user what $country they are from
+</span><span id="__codeline__-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">-</span><span class="w"> </span>If user did not provide a country, engage in a conversation and gently nudge them to provide a country
+</span><span id="__codeline__-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">-</span><span class="w"> </span>List 5 $countries near $country
+</span><span id="__codeline__-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Tell the user the nearby $countries
+</span><span id="__codeline__-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Inform the user that you will now tell them some interesting facts about each of the countries
+</span><span id="__codeline__-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>process_countries($countries)
+</span><span id="__codeline__-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">-</span><span class="w"> </span>End program
+</span><span id="__codeline__-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+</span><span id="__codeline__-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="sb">```python</span>
+</span><span id="__codeline__-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+</span><span id="__codeline__-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__codeline__-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">process_countries</span><span class="p">(</span><span class="n">countries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+</span><span id="__codeline__-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+</span><span id="__codeline__-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="c1"># Calls the natural language playbook &#39;GetCountryFact&#39; for each country</span>
+</span><span id="__codeline__-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="n">fact</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetCountryFact</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+</span><span id="__codeline__-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="k">await</span> <span class="n">Say</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">fact</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sb">```</span>
+</span><span id="__codeline__-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+</span><span id="__codeline__-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="gu">## GetCountryFact($country)</span>
+</span><span id="__codeline__-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="k">-</span><span class="w"> </span>Return an unusual historical fact about $country
+</span></code></pre></div></td></tr></table></div>
+<h3 id="whats-happening-in-the-playbooks-code">What's Happening in the Playbooks Code?<a class="headerlink" href="#whats-happening-in-the-playbooks-code" title="Permanent link">&para;</a></h3>
+<p>The Playbooks program naturally expresses agent behavior:</p>
+<ul>
+<li><strong>Lines 4-14</strong>: The <code>Main</code> playbook defines the conversational flow in plain English. No state management, no routing logic - just the steps the agent should follow.</li>
+<li><strong>Line 13</strong>: Python code seamlessly integrates - the natural language playbook calls <code>process_countries()</code>, a Python playbook.</li>
+<li><strong>Lines 19-24</strong>: The Python playbook <code>process_countries</code> uses standard Python control flow (a for loop) and awaits both a natural language playbook (<code>GetCountryFact</code>) and a built-in playbook (<code>Say</code>).</li>
+<li><strong>Lines 27-29</strong>: <code>GetCountryFact</code> is another natural language playbook that returns a fact.</li>
+</ul>
+<p>Notice there's <strong>no boilerplate</strong>: no graph definitions, no state schemas, no routing functions, no manual prompt engineering. Just behavior specification.</p>
+<hr />
+<h2 id="traditional-framework-implementation-272-lines">Traditional Framework Implementation: 272 Lines<a class="headerlink" href="#traditional-framework-implementation-272-lines" title="Permanent link">&para;</a></h2>
+<p>For comparison, here's how the same agent is built using LangGraph, a leading agent framework. Similar complexity would be found in other traditional frameworks like CrewAI, AutoGen, or custom LangChain implementations.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">country-facts.langgraph.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-1-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-1-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-1-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-1-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-1-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-1-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-1-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-1-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-1-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-1-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-1-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-1-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-1-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-1-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-1-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-1-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-1-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-1-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-1-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-1-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-1-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-1-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-1-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-1-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-1-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-1-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-1-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-1-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-1-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-1-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-1-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-1-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-1-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-1-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-1-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-1-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-1-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-1-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-1-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-1-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-1-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-1-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-1-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-1-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-1-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-1-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-1-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-1-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-1-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-1-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-1-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-1-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-1-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-1-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-1-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-1-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-1-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-1-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-1-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-1-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-1-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-1-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-1-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-1-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-1-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-1-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-1-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-1-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-1-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-1-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-1-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-1-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-1-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-1-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-1-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-1-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-1-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-1-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-1-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-1-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-1-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-1-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-1-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-1-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-1-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-1-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-1-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-1-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-1-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-1-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-1-100">100</a></span>
+<span class="normal"><a href="#__codelineno-1-101">101</a></span>
+<span class="normal"><a href="#__codelineno-1-102">102</a></span>
+<span class="normal"><a href="#__codelineno-1-103">103</a></span>
+<span class="normal"><a href="#__codelineno-1-104">104</a></span>
+<span class="normal"><a href="#__codelineno-1-105">105</a></span>
+<span class="normal"><a href="#__codelineno-1-106">106</a></span>
+<span class="normal"><a href="#__codelineno-1-107">107</a></span>
+<span class="normal"><a href="#__codelineno-1-108">108</a></span>
+<span class="normal"><a href="#__codelineno-1-109">109</a></span>
+<span class="normal"><a href="#__codelineno-1-110">110</a></span>
+<span class="normal"><a href="#__codelineno-1-111">111</a></span>
+<span class="normal"><a href="#__codelineno-1-112">112</a></span>
+<span class="normal"><a href="#__codelineno-1-113">113</a></span>
+<span class="normal"><a href="#__codelineno-1-114">114</a></span>
+<span class="normal"><a href="#__codelineno-1-115">115</a></span>
+<span class="normal"><a href="#__codelineno-1-116">116</a></span>
+<span class="normal"><a href="#__codelineno-1-117">117</a></span>
+<span class="normal"><a href="#__codelineno-1-118">118</a></span>
+<span class="normal"><a href="#__codelineno-1-119">119</a></span>
+<span class="normal"><a href="#__codelineno-1-120">120</a></span>
+<span class="normal"><a href="#__codelineno-1-121">121</a></span>
+<span class="normal"><a href="#__codelineno-1-122">122</a></span>
+<span class="normal"><a href="#__codelineno-1-123">123</a></span>
+<span class="normal"><a href="#__codelineno-1-124">124</a></span>
+<span class="normal"><a href="#__codelineno-1-125">125</a></span>
+<span class="normal"><a href="#__codelineno-1-126">126</a></span>
+<span class="normal"><a href="#__codelineno-1-127">127</a></span>
+<span class="normal"><a href="#__codelineno-1-128">128</a></span>
+<span class="normal"><a href="#__codelineno-1-129">129</a></span>
+<span class="normal"><a href="#__codelineno-1-130">130</a></span>
+<span class="normal"><a href="#__codelineno-1-131">131</a></span>
+<span class="normal"><a href="#__codelineno-1-132">132</a></span>
+<span class="normal"><a href="#__codelineno-1-133">133</a></span>
+<span class="normal"><a href="#__codelineno-1-134">134</a></span>
+<span class="normal"><a href="#__codelineno-1-135">135</a></span>
+<span class="normal"><a href="#__codelineno-1-136">136</a></span>
+<span class="normal"><a href="#__codelineno-1-137">137</a></span>
+<span class="normal"><a href="#__codelineno-1-138">138</a></span>
+<span class="normal"><a href="#__codelineno-1-139">139</a></span>
+<span class="normal"><a href="#__codelineno-1-140">140</a></span>
+<span class="normal"><a href="#__codelineno-1-141">141</a></span>
+<span class="normal"><a href="#__codelineno-1-142">142</a></span>
+<span class="normal"><a href="#__codelineno-1-143">143</a></span>
+<span class="normal"><a href="#__codelineno-1-144">144</a></span>
+<span class="normal"><a href="#__codelineno-1-145">145</a></span>
+<span class="normal"><a href="#__codelineno-1-146">146</a></span>
+<span class="normal"><a href="#__codelineno-1-147">147</a></span>
+<span class="normal"><a href="#__codelineno-1-148">148</a></span>
+<span class="normal"><a href="#__codelineno-1-149">149</a></span>
+<span class="normal"><a href="#__codelineno-1-150">150</a></span>
+<span class="normal"><a href="#__codelineno-1-151">151</a></span>
+<span class="normal"><a href="#__codelineno-1-152">152</a></span>
+<span class="normal"><a href="#__codelineno-1-153">153</a></span>
+<span class="normal"><a href="#__codelineno-1-154">154</a></span>
+<span class="normal"><a href="#__codelineno-1-155">155</a></span>
+<span class="normal"><a href="#__codelineno-1-156">156</a></span>
+<span class="normal"><a href="#__codelineno-1-157">157</a></span>
+<span class="normal"><a href="#__codelineno-1-158">158</a></span>
+<span class="normal"><a href="#__codelineno-1-159">159</a></span>
+<span class="normal"><a href="#__codelineno-1-160">160</a></span>
+<span class="normal"><a href="#__codelineno-1-161">161</a></span>
+<span class="normal"><a href="#__codelineno-1-162">162</a></span>
+<span class="normal"><a href="#__codelineno-1-163">163</a></span>
+<span class="normal"><a href="#__codelineno-1-164">164</a></span>
+<span class="normal"><a href="#__codelineno-1-165">165</a></span>
+<span class="normal"><a href="#__codelineno-1-166">166</a></span>
+<span class="normal"><a href="#__codelineno-1-167">167</a></span>
+<span class="normal"><a href="#__codelineno-1-168">168</a></span>
+<span class="normal"><a href="#__codelineno-1-169">169</a></span>
+<span class="normal"><a href="#__codelineno-1-170">170</a></span>
+<span class="normal"><a href="#__codelineno-1-171">171</a></span>
+<span class="normal"><a href="#__codelineno-1-172">172</a></span>
+<span class="normal"><a href="#__codelineno-1-173">173</a></span>
+<span class="normal"><a href="#__codelineno-1-174">174</a></span>
+<span class="normal"><a href="#__codelineno-1-175">175</a></span>
+<span class="normal"><a href="#__codelineno-1-176">176</a></span>
+<span class="normal"><a href="#__codelineno-1-177">177</a></span>
+<span class="normal"><a href="#__codelineno-1-178">178</a></span>
+<span class="normal"><a href="#__codelineno-1-179">179</a></span>
+<span class="normal"><a href="#__codelineno-1-180">180</a></span>
+<span class="normal"><a href="#__codelineno-1-181">181</a></span>
+<span class="normal"><a href="#__codelineno-1-182">182</a></span>
+<span class="normal"><a href="#__codelineno-1-183">183</a></span>
+<span class="normal"><a href="#__codelineno-1-184">184</a></span>
+<span class="normal"><a href="#__codelineno-1-185">185</a></span>
+<span class="normal"><a href="#__codelineno-1-186">186</a></span>
+<span class="normal"><a href="#__codelineno-1-187">187</a></span>
+<span class="normal"><a href="#__codelineno-1-188">188</a></span>
+<span class="normal"><a href="#__codelineno-1-189">189</a></span>
+<span class="normal"><a href="#__codelineno-1-190">190</a></span>
+<span class="normal"><a href="#__codelineno-1-191">191</a></span>
+<span class="normal"><a href="#__codelineno-1-192">192</a></span>
+<span class="normal"><a href="#__codelineno-1-193">193</a></span>
+<span class="normal"><a href="#__codelineno-1-194">194</a></span>
+<span class="normal"><a href="#__codelineno-1-195">195</a></span>
+<span class="normal"><a href="#__codelineno-1-196">196</a></span>
+<span class="normal"><a href="#__codelineno-1-197">197</a></span>
+<span class="normal"><a href="#__codelineno-1-198">198</a></span>
+<span class="normal"><a href="#__codelineno-1-199">199</a></span>
+<span class="normal"><a href="#__codelineno-1-200">200</a></span>
+<span class="normal"><a href="#__codelineno-1-201">201</a></span>
+<span class="normal"><a href="#__codelineno-1-202">202</a></span>
+<span class="normal"><a href="#__codelineno-1-203">203</a></span>
+<span class="normal"><a href="#__codelineno-1-204">204</a></span>
+<span class="normal"><a href="#__codelineno-1-205">205</a></span>
+<span class="normal"><a href="#__codelineno-1-206">206</a></span>
+<span class="normal"><a href="#__codelineno-1-207">207</a></span>
+<span class="normal"><a href="#__codelineno-1-208">208</a></span>
+<span class="normal"><a href="#__codelineno-1-209">209</a></span>
+<span class="normal"><a href="#__codelineno-1-210">210</a></span>
+<span class="normal"><a href="#__codelineno-1-211">211</a></span>
+<span class="normal"><a href="#__codelineno-1-212">212</a></span>
+<span class="normal"><a href="#__codelineno-1-213">213</a></span>
+<span class="normal"><a href="#__codelineno-1-214">214</a></span>
+<span class="normal"><a href="#__codelineno-1-215">215</a></span>
+<span class="normal"><a href="#__codelineno-1-216">216</a></span>
+<span class="normal"><a href="#__codelineno-1-217">217</a></span>
+<span class="normal"><a href="#__codelineno-1-218">218</a></span>
+<span class="normal"><a href="#__codelineno-1-219">219</a></span>
+<span class="normal"><a href="#__codelineno-1-220">220</a></span>
+<span class="normal"><a href="#__codelineno-1-221">221</a></span>
+<span class="normal"><a href="#__codelineno-1-222">222</a></span>
+<span class="normal"><a href="#__codelineno-1-223">223</a></span>
+<span class="normal"><a href="#__codelineno-1-224">224</a></span>
+<span class="normal"><a href="#__codelineno-1-225">225</a></span>
+<span class="normal"><a href="#__codelineno-1-226">226</a></span>
+<span class="normal"><a href="#__codelineno-1-227">227</a></span>
+<span class="normal"><a href="#__codelineno-1-228">228</a></span>
+<span class="normal"><a href="#__codelineno-1-229">229</a></span>
+<span class="normal"><a href="#__codelineno-1-230">230</a></span>
+<span class="normal"><a href="#__codelineno-1-231">231</a></span>
+<span class="normal"><a href="#__codelineno-1-232">232</a></span>
+<span class="normal"><a href="#__codelineno-1-233">233</a></span>
+<span class="normal"><a href="#__codelineno-1-234">234</a></span>
+<span class="normal"><a href="#__codelineno-1-235">235</a></span>
+<span class="normal"><a href="#__codelineno-1-236">236</a></span>
+<span class="normal"><a href="#__codelineno-1-237">237</a></span>
+<span class="normal"><a href="#__codelineno-1-238">238</a></span>
+<span class="normal"><a href="#__codelineno-1-239">239</a></span>
+<span class="normal"><a href="#__codelineno-1-240">240</a></span>
+<span class="normal"><a href="#__codelineno-1-241">241</a></span>
+<span class="normal"><a href="#__codelineno-1-242">242</a></span>
+<span class="normal"><a href="#__codelineno-1-243">243</a></span>
+<span class="normal"><a href="#__codelineno-1-244">244</a></span>
+<span class="normal"><a href="#__codelineno-1-245">245</a></span>
+<span class="normal"><a href="#__codelineno-1-246">246</a></span>
+<span class="normal"><a href="#__codelineno-1-247">247</a></span>
+<span class="normal"><a href="#__codelineno-1-248">248</a></span>
+<span class="normal"><a href="#__codelineno-1-249">249</a></span>
+<span class="normal"><a href="#__codelineno-1-250">250</a></span>
+<span class="normal"><a href="#__codelineno-1-251">251</a></span>
+<span class="normal"><a href="#__codelineno-1-252">252</a></span>
+<span class="normal"><a href="#__codelineno-1-253">253</a></span>
+<span class="normal"><a href="#__codelineno-1-254">254</a></span>
+<span class="normal"><a href="#__codelineno-1-255">255</a></span>
+<span class="normal"><a href="#__codelineno-1-256">256</a></span>
+<span class="normal"><a href="#__codelineno-1-257">257</a></span>
+<span class="normal"><a href="#__codelineno-1-258">258</a></span>
+<span class="normal"><a href="#__codelineno-1-259">259</a></span>
+<span class="normal"><a href="#__codelineno-1-260">260</a></span>
+<span class="normal"><a href="#__codelineno-1-261">261</a></span>
+<span class="normal"><a href="#__codelineno-1-262">262</a></span>
+<span class="normal"><a href="#__codelineno-1-263">263</a></span>
+<span class="normal"><a href="#__codelineno-1-264">264</a></span>
+<span class="normal"><a href="#__codelineno-1-265">265</a></span>
+<span class="normal"><a href="#__codelineno-1-266">266</a></span>
+<span class="normal"><a href="#__codelineno-1-267">267</a></span>
+<span class="normal"><a href="#__codelineno-1-268">268</a></span>
+<span class="normal"><a href="#__codelineno-1-269">269</a></span>
+<span class="normal"><a href="#__codelineno-1-270">270</a></span>
+<span class="normal"><a href="#__codelineno-1-271">271</a></span>
+<span class="normal"><a href="#__codelineno-1-272">272</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="sd">Country Facts Agent - LangGraph Implementation</span>
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="sd">This agent asks for a user&#39;s country, finds nearby countries,</span>
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="sd">and shares interesting historical facts about each one.</span>
+</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+</span><span id="__codeline__-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TypedDict</span>
+</span><span id="__codeline__-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+</span><span id="__codeline__-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kn">from</span> <span class="nn">langchain_core.messages</span> <span class="kn">import</span> <span class="n">AIMessage</span><span class="p">,</span> <span class="n">BaseMessage</span><span class="p">,</span> <span class="n">HumanMessage</span>
+</span><span id="__codeline__-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kn">from</span> <span class="nn">langchain_core.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+</span><span id="__codeline__-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span><span id="__codeline__-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="kn">from</span> <span class="nn">langgraph.graph</span> <span class="kn">import</span> <span class="n">END</span><span class="p">,</span> <span class="n">StateGraph</span>
+</span><span id="__codeline__-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="kn">from</span> <span class="nn">langgraph.graph.message</span> <span class="kn">import</span> <span class="n">add_messages</span>
+</span><span id="__codeline__-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>
+</span><span id="__codeline__-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1"># Initialize the LLM (you can replace with any LangChain-compatible LLM)</span>
+</span><span id="__codeline__-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</span><span id="__codeline__-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+</span><span id="__codeline__-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>
+</span><span id="__codeline__-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="c1"># Define the state structure</span>
+</span><span id="__codeline__-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="k">class</span> <span class="nc">AgentState</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+</span><span id="__codeline__-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="n">messages</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">BaseMessage</span><span class="p">],</span> <span class="n">add_messages</span><span class="p">]</span>
+</span><span id="__codeline__-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="n">user_country</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__codeline__-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="n">nearby_countries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__codeline__-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="n">country_facts</span><span class="p">:</span> <span class="nb">dict</span>
+</span><span id="__codeline__-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>    <span class="n">current_step</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__codeline__-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="n">countries_to_process</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__codeline__-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>    <span class="n">processed_countries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="__codeline__-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>
+</span><span id="__codeline__-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>
+</span><span id="__codeline__-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="c1"># Node functions</span>
+</span><span id="__codeline__-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="k">def</span> <span class="nf">ask_for_country</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentState</span><span class="p">:</span>
+</span><span id="__codeline__-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Ask the user what country they are from.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">AIMessage</span><span class="p">(</span>
+</span><span id="__codeline__-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Hello! I&#39;m here to share interesting facts about countries near you. What country are you from?&quot;</span>
+</span><span id="__codeline__-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="p">)</span>
+</span><span id="__codeline__-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">response</span><span class="p">],</span> <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;waiting_for_country&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37"></a>
+</span><span id="__codeline__-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38"></a>
+</span><span id="__codeline__-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="k">def</span> <span class="nf">process_user_response</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentState</span><span class="p">:</span>
+</span><span id="__codeline__-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Process user&#39;s response and extract country if provided.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a>    <span class="n">last_message</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__codeline__-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a>
+</span><span id="__codeline__-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_message</span><span class="p">,</span> <span class="n">HumanMessage</span><span class="p">):</span>
+</span><span id="__codeline__-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44"></a>        <span class="k">return</span> <span class="n">state</span>
+</span><span id="__codeline__-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45"></a>
+</span><span id="__codeline__-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46"></a>    <span class="c1"># Use LLM to extract country from user&#39;s message</span>
+</span><span id="__codeline__-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47"></a>    <span class="n">extract_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span>
+</span><span id="__codeline__-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48"></a>        <span class="p">[</span>
+</span><span id="__codeline__-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49"></a>            <span class="p">(</span>
+</span><span id="__codeline__-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50"></a>                <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51"></a>                <span class="s2">&quot;Extract the country name from the user&#39;s message. If no country is mentioned, respond with &#39;NONE&#39;. Only respond with the country name or &#39;NONE&#39;.&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52"></a>            <span class="p">),</span>
+</span><span id="__codeline__-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53"></a>            <span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="__codeline__-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54"></a>        <span class="p">]</span>
+</span><span id="__codeline__-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55"></a>    <span class="p">)</span>
+</span><span id="__codeline__-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56"></a>
+</span><span id="__codeline__-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57"></a>    <span class="n">chain</span> <span class="o">=</span> <span class="n">extract_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span><span id="__codeline__-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">last_message</span><span class="o">.</span><span class="n">content</span><span class="p">})</span>
+</span><span id="__codeline__-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59"></a>    <span class="n">country</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__codeline__-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60"></a>
+</span><span id="__codeline__-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61"></a>    <span class="k">if</span> <span class="n">country</span> <span class="ow">and</span> <span class="n">country</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;user_country&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;find_nearby_countries&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__codeline__-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a>        <span class="c1"># Gently nudge for country</span>
+</span><span id="__codeline__-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a>        <span class="n">nudge_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span>
+</span><span id="__codeline__-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a>            <span class="p">[</span>
+</span><span id="__codeline__-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a>                <span class="p">(</span>
+</span><span id="__codeline__-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a>                    <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a>                    <span class="s2">&quot;The user hasn&#39;t provided their country yet. Engage in friendly conversation and gently nudge them to share what country they&#39;re from. Be conversational and natural.&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a>                <span class="p">),</span>
+</span><span id="__codeline__-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a>                <span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="__codeline__-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a>            <span class="p">]</span>
+</span><span id="__codeline__-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73"></a>        <span class="p">)</span>
+</span><span id="__codeline__-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74"></a>
+</span><span id="__codeline__-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75"></a>        <span class="n">chain</span> <span class="o">=</span> <span class="n">nudge_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span><span id="__codeline__-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76"></a>        <span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">last_message</span><span class="o">.</span><span class="n">content</span><span class="p">})</span>
+</span><span id="__codeline__-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77"></a>
+</span><span id="__codeline__-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">response</span><span class="p">],</span> <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;waiting_for_country&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79"></a>
+</span><span id="__codeline__-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80"></a>
+</span><span id="__codeline__-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="k">def</span> <span class="nf">find_nearby_countries</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentState</span><span class="p">:</span>
+</span><span id="__codeline__-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Find 5 countries near the user&#39;s country.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83"></a>    <span class="n">nearby_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span>
+</span><span id="__codeline__-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a>        <span class="p">[</span>
+</span><span id="__codeline__-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a>            <span class="p">(</span>
+</span><span id="__codeline__-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a>                <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a>                <span class="s2">&quot;List exactly 5 countries that are geographically near </span><span class="si">{country}</span><span class="s2">. Respond with only the country names separated by commas, nothing else.&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88"></a>            <span class="p">),</span>
+</span><span id="__codeline__-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89"></a>            <span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;Find nearby countries&quot;</span><span class="p">),</span>
+</span><span id="__codeline__-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90"></a>        <span class="p">]</span>
+</span><span id="__codeline__-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91"></a>    <span class="p">)</span>
+</span><span id="__codeline__-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92"></a>
+</span><span id="__codeline__-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93"></a>    <span class="n">chain</span> <span class="o">=</span> <span class="n">nearby_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span><span id="__codeline__-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;user_country&quot;</span><span class="p">]})</span>
+</span><span id="__codeline__-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95"></a>
+</span><span id="__codeline__-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96"></a>    <span class="c1"># Parse the countries from the response</span>
+</span><span id="__codeline__-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97"></a>    <span class="n">countries</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)][:</span><span class="mi">5</span><span class="p">]</span>
+</span><span id="__codeline__-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98"></a>
+</span><span id="__codeline__-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99"></a>    <span class="c1"># Inform user about the nearby countries</span>
+</span><span id="__codeline__-1-100"><a id="__codelineno-1-100" name="__codelineno-1-100"></a>    <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Great! I found these 5 countries near </span><span class="si">{</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;user_country&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span><span class="si">}</span><span class="s2">. Let me share some interesting historical facts about each of them!&quot;</span>
+</span><span id="__codeline__-1-101"><a id="__codelineno-1-101" name="__codelineno-1-101"></a>
+</span><span id="__codeline__-1-102"><a id="__codelineno-1-102" name="__codelineno-1-102"></a>    <span class="k">return</span> <span class="p">{</span>
+</span><span id="__codeline__-1-103"><a id="__codelineno-1-103" name="__codelineno-1-103"></a>        <span class="s2">&quot;nearby_countries&quot;</span><span class="p">:</span> <span class="n">countries</span><span class="p">,</span>
+</span><span id="__codeline__-1-104"><a id="__codelineno-1-104" name="__codelineno-1-104"></a>        <span class="s2">&quot;countries_to_process&quot;</span><span class="p">:</span> <span class="n">countries</span><span class="p">,</span>
+</span><span id="__codeline__-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105"></a>        <span class="s2">&quot;processed_countries&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__codeline__-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106"></a>        <span class="s2">&quot;country_facts&quot;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__codeline__-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107"></a>        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">message</span><span class="p">)],</span>
+</span><span id="__codeline__-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108"></a>        <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;process_countries&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109"></a>    <span class="p">}</span>
+</span><span id="__codeline__-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110"></a>
+</span><span id="__codeline__-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111"></a>
+</span><span id="__codeline__-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="k">def</span> <span class="nf">get_country_fact</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentState</span><span class="p">:</span>
+</span><span id="__codeline__-1-113"><a id="__codelineno-1-113" name="__codelineno-1-113"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Get an unusual historical fact about the next country to process.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;countries_to_process&quot;</span><span class="p">):</span>
+</span><span id="__codeline__-1-115"><a id="__codelineno-1-115" name="__codelineno-1-115"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;complete&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-1-116"><a id="__codelineno-1-116" name="__codelineno-1-116"></a>
+</span><span id="__codeline__-1-117"><a id="__codelineno-1-117" name="__codelineno-1-117"></a>    <span class="c1"># Get the next country to process</span>
+</span><span id="__codeline__-1-118"><a id="__codelineno-1-118" name="__codelineno-1-118"></a>    <span class="n">country</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;countries_to_process&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__codeline__-1-119"><a id="__codelineno-1-119" name="__codelineno-1-119"></a>
+</span><span id="__codeline__-1-120"><a id="__codelineno-1-120" name="__codelineno-1-120"></a>    <span class="c1"># Use LLM to get an unusual historical fact</span>
+</span><span id="__codeline__-1-121"><a id="__codelineno-1-121" name="__codelineno-1-121"></a>    <span class="n">fact_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span>
+</span><span id="__codeline__-1-122"><a id="__codelineno-1-122" name="__codelineno-1-122"></a>        <span class="p">[</span>
+</span><span id="__codeline__-1-123"><a id="__codelineno-1-123" name="__codelineno-1-123"></a>            <span class="p">(</span>
+</span><span id="__codeline__-1-124"><a id="__codelineno-1-124" name="__codelineno-1-124"></a>                <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-125"><a id="__codelineno-1-125" name="__codelineno-1-125"></a>                <span class="s2">&quot;Provide one unusual and interesting historical fact about </span><span class="si">{country}</span><span class="s2">. The fact should be surprising, educational, and engaging. Keep it to 2-3 sentences.&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-126"><a id="__codelineno-1-126" name="__codelineno-1-126"></a>            <span class="p">),</span>
+</span><span id="__codeline__-1-127"><a id="__codelineno-1-127" name="__codelineno-1-127"></a>            <span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;Give me a fact&quot;</span><span class="p">),</span>
+</span><span id="__codeline__-1-128"><a id="__codelineno-1-128" name="__codelineno-1-128"></a>        <span class="p">]</span>
+</span><span id="__codeline__-1-129"><a id="__codelineno-1-129" name="__codelineno-1-129"></a>    <span class="p">)</span>
+</span><span id="__codeline__-1-130"><a id="__codelineno-1-130" name="__codelineno-1-130"></a>
+</span><span id="__codeline__-1-131"><a id="__codelineno-1-131" name="__codelineno-1-131"></a>    <span class="n">chain</span> <span class="o">=</span> <span class="n">fact_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span><span id="__codeline__-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">})</span>
+</span><span id="__codeline__-1-133"><a id="__codelineno-1-133" name="__codelineno-1-133"></a>    <span class="n">fact</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">content</span>
+</span><span id="__codeline__-1-134"><a id="__codelineno-1-134" name="__codelineno-1-134"></a>
+</span><span id="__codeline__-1-135"><a id="__codelineno-1-135" name="__codelineno-1-135"></a>    <span class="c1"># Store the fact and update state</span>
+</span><span id="__codeline__-1-136"><a id="__codelineno-1-136" name="__codelineno-1-136"></a>    <span class="n">country_facts</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;country_facts&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</span><span id="__codeline__-1-137"><a id="__codelineno-1-137" name="__codelineno-1-137"></a>    <span class="n">country_facts</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">fact</span>
+</span><span id="__codeline__-1-138"><a id="__codelineno-1-138" name="__codelineno-1-138"></a>
+</span><span id="__codeline__-1-139"><a id="__codelineno-1-139" name="__codelineno-1-139"></a>    <span class="c1"># Remove processed country and add to processed list</span>
+</span><span id="__codeline__-1-140"><a id="__codelineno-1-140" name="__codelineno-1-140"></a>    <span class="n">remaining_countries</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;countries_to_process&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="__codeline__-1-141"><a id="__codelineno-1-141" name="__codelineno-1-141"></a>    <span class="n">processed</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;processed_countries&quot;</span><span class="p">,</span> <span class="p">[])</span> <span class="o">+</span> <span class="p">[</span><span class="n">country</span><span class="p">]</span>
+</span><span id="__codeline__-1-142"><a id="__codelineno-1-142" name="__codelineno-1-142"></a>
+</span><span id="__codeline__-1-143"><a id="__codelineno-1-143" name="__codelineno-1-143"></a>    <span class="c1"># Create message with the fact</span>
+</span><span id="__codeline__-1-144"><a id="__codelineno-1-144" name="__codelineno-1-144"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;**</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">**: </span><span class="si">{</span><span class="n">fact</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-145"><a id="__codelineno-1-145" name="__codelineno-1-145"></a>
+</span><span id="__codeline__-1-146"><a id="__codelineno-1-146" name="__codelineno-1-146"></a>    <span class="k">return</span> <span class="p">{</span>
+</span><span id="__codeline__-1-147"><a id="__codelineno-1-147" name="__codelineno-1-147"></a>        <span class="s2">&quot;country_facts&quot;</span><span class="p">:</span> <span class="n">country_facts</span><span class="p">,</span>
+</span><span id="__codeline__-1-148"><a id="__codelineno-1-148" name="__codelineno-1-148"></a>        <span class="s2">&quot;countries_to_process&quot;</span><span class="p">:</span> <span class="n">remaining_countries</span><span class="p">,</span>
+</span><span id="__codeline__-1-149"><a id="__codelineno-1-149" name="__codelineno-1-149"></a>        <span class="s2">&quot;processed_countries&quot;</span><span class="p">:</span> <span class="n">processed</span><span class="p">,</span>
+</span><span id="__codeline__-1-150"><a id="__codelineno-1-150" name="__codelineno-1-150"></a>        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">message</span><span class="p">],</span>
+</span><span id="__codeline__-1-151"><a id="__codelineno-1-151" name="__codelineno-1-151"></a>        <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;process_countries&quot;</span> <span class="k">if</span> <span class="n">remaining_countries</span> <span class="k">else</span> <span class="s2">&quot;complete&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-152"><a id="__codelineno-1-152" name="__codelineno-1-152"></a>    <span class="p">}</span>
+</span><span id="__codeline__-1-153"><a id="__codelineno-1-153" name="__codelineno-1-153"></a>
+</span><span id="__codeline__-1-154"><a id="__codelineno-1-154" name="__codelineno-1-154"></a>
+</span><span id="__codeline__-1-155"><a id="__codelineno-1-155" name="__codelineno-1-155"></a><span class="k">def</span> <span class="nf">end_program</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AgentState</span><span class="p">:</span>
+</span><span id="__codeline__-1-156"><a id="__codelineno-1-156" name="__codelineno-1-156"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;End the program with a closing message.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-157"><a id="__codelineno-1-157" name="__codelineno-1-157"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">AIMessage</span><span class="p">(</span>
+</span><span id="__codeline__-1-158"><a id="__codelineno-1-158" name="__codelineno-1-158"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;That&#39;s all the fascinating facts about the countries near you! I hope you found these historical tidbits interesting. Feel free to ask if you&#39;d like to learn about countries from another region!&quot;</span>
+</span><span id="__codeline__-1-159"><a id="__codelineno-1-159" name="__codelineno-1-159"></a>    <span class="p">)</span>
+</span><span id="__codeline__-1-160"><a id="__codelineno-1-160" name="__codelineno-1-160"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">message</span><span class="p">],</span> <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;end&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-1-161"><a id="__codelineno-1-161" name="__codelineno-1-161"></a>
+</span><span id="__codeline__-1-162"><a id="__codelineno-1-162" name="__codelineno-1-162"></a>
+</span><span id="__codeline__-1-163"><a id="__codelineno-1-163" name="__codelineno-1-163"></a><span class="c1"># Routing functions</span>
+</span><span id="__codeline__-1-164"><a id="__codelineno-1-164" name="__codelineno-1-164"></a><span class="k">def</span> <span class="nf">route_after_user_input</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-1-165"><a id="__codelineno-1-165" name="__codelineno-1-165"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine next step after user input.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-166"><a id="__codelineno-1-166" name="__codelineno-1-166"></a>    <span class="k">if</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;waiting_for_country&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-167"><a id="__codelineno-1-167" name="__codelineno-1-167"></a>        <span class="k">return</span> <span class="s2">&quot;process_response&quot;</span>
+</span><span id="__codeline__-1-168"><a id="__codelineno-1-168" name="__codelineno-1-168"></a>    <span class="k">return</span> <span class="s2">&quot;end&quot;</span>
+</span><span id="__codeline__-1-169"><a id="__codelineno-1-169" name="__codelineno-1-169"></a>
+</span><span id="__codeline__-1-170"><a id="__codelineno-1-170" name="__codelineno-1-170"></a>
+</span><span id="__codeline__-1-171"><a id="__codelineno-1-171" name="__codelineno-1-171"></a><span class="k">def</span> <span class="nf">route_after_processing</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-1-172"><a id="__codelineno-1-172" name="__codelineno-1-172"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine next step after processing user response.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-173"><a id="__codelineno-1-173" name="__codelineno-1-173"></a>    <span class="k">if</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;find_nearby_countries&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-174"><a id="__codelineno-1-174" name="__codelineno-1-174"></a>        <span class="k">return</span> <span class="s2">&quot;find_nearby&quot;</span>
+</span><span id="__codeline__-1-175"><a id="__codelineno-1-175" name="__codelineno-1-175"></a>    <span class="k">elif</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;waiting_for_country&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-176"><a id="__codelineno-1-176" name="__codelineno-1-176"></a>        <span class="k">return</span> <span class="s2">&quot;wait_for_input&quot;</span>
+</span><span id="__codeline__-1-177"><a id="__codelineno-1-177" name="__codelineno-1-177"></a>    <span class="k">return</span> <span class="s2">&quot;end&quot;</span>
+</span><span id="__codeline__-1-178"><a id="__codelineno-1-178" name="__codelineno-1-178"></a>
+</span><span id="__codeline__-1-179"><a id="__codelineno-1-179" name="__codelineno-1-179"></a>
+</span><span id="__codeline__-1-180"><a id="__codelineno-1-180" name="__codelineno-1-180"></a><span class="k">def</span> <span class="nf">route_after_countries_found</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-1-181"><a id="__codelineno-1-181" name="__codelineno-1-181"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine next step after finding countries.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-182"><a id="__codelineno-1-182" name="__codelineno-1-182"></a>    <span class="k">if</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;process_countries&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-183"><a id="__codelineno-1-183" name="__codelineno-1-183"></a>        <span class="k">return</span> <span class="s2">&quot;get_fact&quot;</span>
+</span><span id="__codeline__-1-184"><a id="__codelineno-1-184" name="__codelineno-1-184"></a>    <span class="k">return</span> <span class="s2">&quot;end&quot;</span>
+</span><span id="__codeline__-1-185"><a id="__codelineno-1-185" name="__codelineno-1-185"></a>
+</span><span id="__codeline__-1-186"><a id="__codelineno-1-186" name="__codelineno-1-186"></a>
+</span><span id="__codeline__-1-187"><a id="__codelineno-1-187" name="__codelineno-1-187"></a><span class="k">def</span> <span class="nf">route_after_fact</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-1-188"><a id="__codelineno-1-188" name="__codelineno-1-188"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine next step after getting a fact.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-189"><a id="__codelineno-1-189" name="__codelineno-1-189"></a>    <span class="k">if</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;process_countries&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-190"><a id="__codelineno-1-190" name="__codelineno-1-190"></a>        <span class="k">return</span> <span class="s2">&quot;get_fact&quot;</span>
+</span><span id="__codeline__-1-191"><a id="__codelineno-1-191" name="__codelineno-1-191"></a>    <span class="k">elif</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;current_step&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;complete&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-192"><a id="__codelineno-1-192" name="__codelineno-1-192"></a>        <span class="k">return</span> <span class="s2">&quot;end_program&quot;</span>
+</span><span id="__codeline__-1-193"><a id="__codelineno-1-193" name="__codelineno-1-193"></a>    <span class="k">return</span> <span class="s2">&quot;end&quot;</span>
+</span><span id="__codeline__-1-194"><a id="__codelineno-1-194" name="__codelineno-1-194"></a>
+</span><span id="__codeline__-1-195"><a id="__codelineno-1-195" name="__codelineno-1-195"></a>
+</span><span id="__codeline__-1-196"><a id="__codelineno-1-196" name="__codelineno-1-196"></a><span class="c1"># Build the graph</span>
+</span><span id="__codeline__-1-197"><a id="__codelineno-1-197" name="__codelineno-1-197"></a><span class="n">workflow</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">AgentState</span><span class="p">)</span>
+</span><span id="__codeline__-1-198"><a id="__codelineno-1-198" name="__codelineno-1-198"></a>
+</span><span id="__codeline__-1-199"><a id="__codelineno-1-199" name="__codelineno-1-199"></a><span class="c1"># Add nodes</span>
+</span><span id="__codeline__-1-200"><a id="__codelineno-1-200" name="__codelineno-1-200"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;ask_country&quot;</span><span class="p">,</span> <span class="n">ask_for_country</span><span class="p">)</span>
+</span><span id="__codeline__-1-201"><a id="__codelineno-1-201" name="__codelineno-1-201"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;process_response&quot;</span><span class="p">,</span> <span class="n">process_user_response</span><span class="p">)</span>
+</span><span id="__codeline__-1-202"><a id="__codelineno-1-202" name="__codelineno-1-202"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;find_nearby&quot;</span><span class="p">,</span> <span class="n">find_nearby_countries</span><span class="p">)</span>
+</span><span id="__codeline__-1-203"><a id="__codelineno-1-203" name="__codelineno-1-203"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;get_fact&quot;</span><span class="p">,</span> <span class="n">get_country_fact</span><span class="p">)</span>
+</span><span id="__codeline__-1-204"><a id="__codelineno-1-204" name="__codelineno-1-204"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;end_program&quot;</span><span class="p">,</span> <span class="n">end_program</span><span class="p">)</span>
+</span><span id="__codeline__-1-205"><a id="__codelineno-1-205" name="__codelineno-1-205"></a>
+</span><span id="__codeline__-1-206"><a id="__codelineno-1-206" name="__codelineno-1-206"></a><span class="c1"># Set entry point</span>
+</span><span id="__codeline__-1-207"><a id="__codelineno-1-207" name="__codelineno-1-207"></a><span class="n">workflow</span><span class="o">.</span><span class="n">set_entry_point</span><span class="p">(</span><span class="s2">&quot;ask_country&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-208"><a id="__codelineno-1-208" name="__codelineno-1-208"></a>
+</span><span id="__codeline__-1-209"><a id="__codelineno-1-209" name="__codelineno-1-209"></a><span class="c1"># Add edges</span>
+</span><span id="__codeline__-1-210"><a id="__codelineno-1-210" name="__codelineno-1-210"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;ask_country&quot;</span><span class="p">,</span> <span class="s2">&quot;wait_for_input&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-211"><a id="__codelineno-1-211" name="__codelineno-1-211"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+</span><span id="__codeline__-1-212"><a id="__codelineno-1-212" name="__codelineno-1-212"></a>    <span class="s2">&quot;wait_for_input&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-213"><a id="__codelineno-1-213" name="__codelineno-1-213"></a>    <span class="n">route_after_user_input</span><span class="p">,</span>
+</span><span id="__codeline__-1-214"><a id="__codelineno-1-214" name="__codelineno-1-214"></a>    <span class="p">{</span><span class="s2">&quot;process_response&quot;</span><span class="p">:</span> <span class="s2">&quot;process_response&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">END</span><span class="p">},</span>
+</span><span id="__codeline__-1-215"><a id="__codelineno-1-215" name="__codelineno-1-215"></a><span class="p">)</span>
+</span><span id="__codeline__-1-216"><a id="__codelineno-1-216" name="__codelineno-1-216"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+</span><span id="__codeline__-1-217"><a id="__codelineno-1-217" name="__codelineno-1-217"></a>    <span class="s2">&quot;process_response&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-218"><a id="__codelineno-1-218" name="__codelineno-1-218"></a>    <span class="n">route_after_processing</span><span class="p">,</span>
+</span><span id="__codeline__-1-219"><a id="__codelineno-1-219" name="__codelineno-1-219"></a>    <span class="p">{</span><span class="s2">&quot;find_nearby&quot;</span><span class="p">:</span> <span class="s2">&quot;find_nearby&quot;</span><span class="p">,</span> <span class="s2">&quot;wait_for_input&quot;</span><span class="p">:</span> <span class="s2">&quot;wait_for_input&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">END</span><span class="p">},</span>
+</span><span id="__codeline__-1-220"><a id="__codelineno-1-220" name="__codelineno-1-220"></a><span class="p">)</span>
+</span><span id="__codeline__-1-221"><a id="__codelineno-1-221" name="__codelineno-1-221"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+</span><span id="__codeline__-1-222"><a id="__codelineno-1-222" name="__codelineno-1-222"></a>    <span class="s2">&quot;find_nearby&quot;</span><span class="p">,</span> <span class="n">route_after_countries_found</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;get_fact&quot;</span><span class="p">:</span> <span class="s2">&quot;get_fact&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">END</span><span class="p">}</span>
+</span><span id="__codeline__-1-223"><a id="__codelineno-1-223" name="__codelineno-1-223"></a><span class="p">)</span>
+</span><span id="__codeline__-1-224"><a id="__codelineno-1-224" name="__codelineno-1-224"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+</span><span id="__codeline__-1-225"><a id="__codelineno-1-225" name="__codelineno-1-225"></a>    <span class="s2">&quot;get_fact&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-226"><a id="__codelineno-1-226" name="__codelineno-1-226"></a>    <span class="n">route_after_fact</span><span class="p">,</span>
+</span><span id="__codeline__-1-227"><a id="__codelineno-1-227" name="__codelineno-1-227"></a>    <span class="p">{</span><span class="s2">&quot;get_fact&quot;</span><span class="p">:</span> <span class="s2">&quot;get_fact&quot;</span><span class="p">,</span> <span class="s2">&quot;end_program&quot;</span><span class="p">:</span> <span class="s2">&quot;end_program&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="n">END</span><span class="p">},</span>
+</span><span id="__codeline__-1-228"><a id="__codelineno-1-228" name="__codelineno-1-228"></a><span class="p">)</span>
+</span><span id="__codeline__-1-229"><a id="__codelineno-1-229" name="__codelineno-1-229"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;end_program&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span><span id="__codeline__-1-230"><a id="__codelineno-1-230" name="__codelineno-1-230"></a>
+</span><span id="__codeline__-1-231"><a id="__codelineno-1-231" name="__codelineno-1-231"></a><span class="c1"># Add a wait node for user input (this would integrate with your UI)</span>
+</span><span id="__codeline__-1-232"><a id="__codelineno-1-232" name="__codelineno-1-232"></a><span class="n">workflow</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;wait_for_input&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+</span><span id="__codeline__-1-233"><a id="__codelineno-1-233" name="__codelineno-1-233"></a>
+</span><span id="__codeline__-1-234"><a id="__codelineno-1-234" name="__codelineno-1-234"></a><span class="c1"># Compile the graph</span>
+</span><span id="__codeline__-1-235"><a id="__codelineno-1-235" name="__codelineno-1-235"></a><span class="n">app</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+</span><span id="__codeline__-1-236"><a id="__codelineno-1-236" name="__codelineno-1-236"></a>
+</span><span id="__codeline__-1-237"><a id="__codelineno-1-237" name="__codelineno-1-237"></a><span class="c1"># Example usage</span>
+</span><span id="__codeline__-1-238"><a id="__codelineno-1-238" name="__codelineno-1-238"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-239"><a id="__codelineno-1-239" name="__codelineno-1-239"></a>    <span class="kn">import</span> <span class="nn">asyncio</span>
+</span><span id="__codeline__-1-240"><a id="__codelineno-1-240" name="__codelineno-1-240"></a>
+</span><span id="__codeline__-1-241"><a id="__codelineno-1-241" name="__codelineno-1-241"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_agent</span><span class="p">():</span>
+</span><span id="__codeline__-1-242"><a id="__codelineno-1-242" name="__codelineno-1-242"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Run the country facts agent.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-1-243"><a id="__codelineno-1-243" name="__codelineno-1-243"></a>        <span class="c1"># Initialize state</span>
+</span><span id="__codeline__-1-244"><a id="__codelineno-1-244" name="__codelineno-1-244"></a>        <span class="n">initial_state</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__codeline__-1-245"><a id="__codelineno-1-245" name="__codelineno-1-245"></a>            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__codeline__-1-246"><a id="__codelineno-1-246" name="__codelineno-1-246"></a>            <span class="s2">&quot;user_country&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__codeline__-1-247"><a id="__codelineno-1-247" name="__codelineno-1-247"></a>            <span class="s2">&quot;nearby_countries&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__codeline__-1-248"><a id="__codelineno-1-248" name="__codelineno-1-248"></a>            <span class="s2">&quot;country_facts&quot;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__codeline__-1-249"><a id="__codelineno-1-249" name="__codelineno-1-249"></a>            <span class="s2">&quot;current_step&quot;</span><span class="p">:</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-250"><a id="__codelineno-1-250" name="__codelineno-1-250"></a>            <span class="s2">&quot;countries_to_process&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__codeline__-1-251"><a id="__codelineno-1-251" name="__codelineno-1-251"></a>            <span class="s2">&quot;processed_countries&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__codeline__-1-252"><a id="__codelineno-1-252" name="__codelineno-1-252"></a>        <span class="p">}</span>
+</span><span id="__codeline__-1-253"><a id="__codelineno-1-253" name="__codelineno-1-253"></a>
+</span><span id="__codeline__-1-254"><a id="__codelineno-1-254" name="__codelineno-1-254"></a>        <span class="c1"># Run the agent</span>
+</span><span id="__codeline__-1-255"><a id="__codelineno-1-255" name="__codelineno-1-255"></a>        <span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">astream</span><span class="p">(</span><span class="n">initial_state</span><span class="p">):</span>
+</span><span id="__codeline__-1-256"><a id="__codelineno-1-256" name="__codelineno-1-256"></a>            <span class="c1"># Print the latest messages</span>
+</span><span id="__codeline__-1-257"><a id="__codelineno-1-257" name="__codelineno-1-257"></a>            <span class="k">for</span> <span class="n">node_name</span><span class="p">,</span> <span class="n">node_state</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__codeline__-1-258"><a id="__codelineno-1-258" name="__codelineno-1-258"></a>                <span class="k">if</span> <span class="s2">&quot;messages&quot;</span> <span class="ow">in</span> <span class="n">node_state</span> <span class="ow">and</span> <span class="n">node_state</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">]:</span>
+</span><span id="__codeline__-1-259"><a id="__codelineno-1-259" name="__codelineno-1-259"></a>                    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">node_state</span><span class="p">[</span><span class="s2">&quot;messages&quot;</span><span class="p">]:</span>
+</span><span id="__codeline__-1-260"><a id="__codelineno-1-260" name="__codelineno-1-260"></a>                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">AIMessage</span><span class="p">):</span>
+</span><span id="__codeline__-1-261"><a id="__codelineno-1-261" name="__codelineno-1-261"></a>                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Agent: </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-262"><a id="__codelineno-1-262" name="__codelineno-1-262"></a>                        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">HumanMessage</span><span class="p">):</span>
+</span><span id="__codeline__-1-263"><a id="__codelineno-1-263" name="__codelineno-1-263"></a>                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User: </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-264"><a id="__codelineno-1-264" name="__codelineno-1-264"></a>
+</span><span id="__codeline__-1-265"><a id="__codelineno-1-265" name="__codelineno-1-265"></a>            <span class="c1"># Check if waiting for user input</span>
+</span><span id="__codeline__-1-266"><a id="__codelineno-1-266" name="__codelineno-1-266"></a>            <span class="k">if</span> <span class="n">node_name</span> <span class="o">==</span> <span class="s2">&quot;wait_for_input&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-1-267"><a id="__codelineno-1-267" name="__codelineno-1-267"></a>                <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;You: &quot;</span><span class="p">)</span>
+</span><span id="__codeline__-1-268"><a id="__codelineno-1-268" name="__codelineno-1-268"></a>                <span class="c1"># Add user message to state and continue</span>
+</span><span id="__codeline__-1-269"><a id="__codelineno-1-269" name="__codelineno-1-269"></a>                <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">ainvoke</span><span class="p">({</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">user_input</span><span class="p">)]})</span>
+</span><span id="__codeline__-1-270"><a id="__codelineno-1-270" name="__codelineno-1-270"></a>
+</span><span id="__codeline__-1-271"><a id="__codelineno-1-271" name="__codelineno-1-271"></a>    <span class="c1"># Run the async function</span>
+</span><span id="__codeline__-1-272"><a id="__codelineno-1-272" name="__codelineno-1-272"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_agent</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="whats-happening-in-the-langgraph-code">What's Happening in the LangGraph Code?<a class="headerlink" href="#whats-happening-in-the-langgraph-code" title="Permanent link">&para;</a></h3>
+<p>The LangGraph implementation includes:</p>
+<ul>
+<li><strong>Lines 19-27</strong>: A TypedDict defining the state structure with 7 fields to track conversation state, countries, facts, and control flow.</li>
+<li><strong>Lines 30-160</strong>: Six node functions (<code>ask_for_country</code>, <code>process_user_response</code>, <code>find_nearby_countries</code>, <code>get_country_fact</code>, <code>end_program</code>) that manually manage state transitions.</li>
+<li><strong>Lines 163-193</strong>: Four routing functions to determine which node to execute next based on state.</li>
+<li><strong>Lines 196-232</strong>: Graph construction code wiring together nodes, edges, conditional edges, and routing logic.</li>
+<li><strong>Lines 234-272</strong>: Additional scaffolding for running the agent.</li>
+</ul>
+<p>This requires the developer to:</p>
+<ol>
+<li>Explicitly manage all state transformations</li>
+<li>Define all possible execution paths</li>
+<li>Write routing logic for every decision point</li>
+<li>Manually craft prompts for each LLM call</li>
+<li>Handle the mechanics of graph execution</li>
+</ol>
+<p>Most critically: <strong>the agent's behavior is scattered across multiple functions and routing logic</strong>. Understanding what the agent does requires reading the entire file and mentally reconstructing the flow.</p>
+<hr />
+<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Playbooks</th>
+<th>Traditional Framework (LangGraph)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lines of Code</strong></td>
+<td>29</td>
+<td>250+</td>
+</tr>
+<tr>
+<td><strong>Readability</strong></td>
+<td>Natural language, immediately understandable</td>
+<td>Requires understanding graphs, state machines, routing</td>
+</tr>
+<tr>
+<td><strong>State Management</strong></td>
+<td>Automatic</td>
+<td>Manual state definitions with many fields</td>
+</tr>
+<tr>
+<td><strong>Control Flow</strong></td>
+<td>Natural steps + Python control structures</td>
+<td>Explicit graph with nodes, edges, routing functions</td>
+</tr>
+<tr>
+<td><strong>Prompt Engineering</strong></td>
+<td>Declarative (LLM infers from steps)</td>
+<td>Imperative (manually write each prompt)</td>
+</tr>
+<tr>
+<td><strong>Mixed Execution</strong></td>
+<td>Python and natural language on same call stack</td>
+<td>Separate nodes requiring state passing</td>
+</tr>
+<tr>
+<td><strong>Business User Friendly</strong></td>
+<td>✅ Yes - readable and modifiable</td>
+<td>❌ No - requires programming expertise</td>
+</tr>
+<tr>
+<td><strong>Maintainability</strong></td>
+<td>High - behavior is centralized</td>
+<td>Low - logic is distributed</td>
+</tr>
+<tr>
+<td><strong>Debugging</strong></td>
+<td>Step through playbooks like functions</td>
+<td>Trace through graph execution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
+<h3 id="1-accessibility">1. <strong>Accessibility</strong><a class="headerlink" href="#1-accessibility" title="Permanent link">&para;</a></h3>
+<p>The Playbooks version can be read, understood, and even modified by non-technical stakeholders. A product manager can review the <code>Main</code> playbook and understand exactly what the agent does. They could even propose changes:</p>
+<blockquote>
+<p>"After asking for the country, let's also ask if they'd like facts about culture or history."</p>
+</blockquote>
+<p>With LangGraph, this requires a developer to understand state machines, modify routing logic, and update multiple node functions.</p>
+<h3 id="2-maintainability">2. <strong>Maintainability</strong><a class="headerlink" href="#2-maintainability" title="Permanent link">&para;</a></h3>
+<p>In Playbooks, the agent's behavior is <strong>centralized</strong> in the <code>Main</code> playbook. Want to add a step? Add a line. Want to change the order? Reorder the steps.</p>
+<p>In LangGraph, behavior is <strong>distributed</strong> across state definitions, node functions, routing functions, and graph edges. A simple change might require modifying 4-5 different sections.</p>
+<h3 id="3-cognitive-load">3. <strong>Cognitive Load</strong><a class="headerlink" href="#3-cognitive-load" title="Permanent link">&para;</a></h3>
+<p>Playbooks lets you <strong>think at the behavioral level</strong>: "What should the agent do?"</p>
+<p>LangGraph requires thinking at the <strong>mechanical level</strong>: "How do I wire up state, nodes, and edges to make this happen?"</p>
+<h3 id="4-development-speed">4. <strong>Development Speed</strong><a class="headerlink" href="#4-development-speed" title="Permanent link">&para;</a></h3>
+<p>The 11x reduction in code size isn't just about lines-it's about <strong>time to value</strong>. Building an agent in Playbooks takes minutes. Building the equivalent in LangGraph takes hours.</p>
+<h3 id="5-verifiability">5. <strong>Verifiability</strong><a class="headerlink" href="#5-verifiability" title="Permanent link">&para;</a></h3>
+<p>Because Playbooks programs are concise and readable, they're easier to verify. You can audit agent behavior by reading 29 lines instead of 272.</p>
+<hr />
+<h2 id="when-to-use-each-approach">When to Use Each Approach<a class="headerlink" href="#when-to-use-each-approach" title="Permanent link">&para;</a></h2>
+<h3 id="choose-playbooks-if">Choose Playbooks If:<a class="headerlink" href="#choose-playbooks-if" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ You want to build agents quickly with minimal boilerplate</li>
+<li>✅ Non-technical stakeholders need to understand/approve agent behavior</li>
+<li>✅ You value readability and maintainability over low-level control</li>
+<li>✅ You want seamless mixing of Python and natural language</li>
+<li>✅ You prefer declarative behavior specification</li>
+</ul>
+<h3 id="choose-traditional-frameworks-if">Choose Traditional Frameworks If:<a class="headerlink" href="#choose-traditional-frameworks-if" title="Permanent link">&para;</a></h3>
+<ul>
+<li>⚙️ You need extremely fine-grained control over every LLM call and state transition</li>
+<li>⚙️ You're comfortable with graph-based programming paradigms</li>
+<li>⚙️ Your team consists entirely of experienced developers</li>
+<li>⚙️ You want to manually optimize every aspect of execution</li>
+</ul>
+<hr />
+<h2 id="try-it-yourself">Try It Yourself<a class="headerlink" href="#try-it-yourself" title="Permanent link">&para;</a></h2>
+<p>Both implementations are available:</p>
+<ul>
+<li><strong>Playbooks</strong>: Copy the <code>.pb</code> file above and run it</li>
+<li><strong>LangGraph example</strong>: See <a href="../../assets/country-facts.langgraph.py">country-facts.langgraph.py</a></li>
+</ul>
+<p>Run them side by side and experience the difference firsthand.</p>
+<p>Then ask yourself: <strong>Which would you rather maintain?</strong></p>
+<hr />
+<h2 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../getting-started/">Getting Started with Playbooks</a></li>
+<li><a href="../../getting-started/migrating/">Migrating from Other Agent Frameworks</a></li>
+<li><a href="../../programming-guide/">Playbooks Programming Guide</a></li>
+<li><a href="../playbooks-assembly-language/">Understanding Playbooks Assembly Language</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../playbooks-assembly-language/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks Assembly Language">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Playbooks Assembly Language
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Agents">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Agents
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright Playbooks AI 2025
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

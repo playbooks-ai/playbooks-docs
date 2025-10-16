@@ -20,7 +20,7 @@ ______________________________________________________________________
 
 Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
 
-Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** is equivalent to more than [10x longer, cryptic LangGraph code](assets/country-facts.langgraph.py).
+Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** accomplishes the same task as implementations that are [significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison/).
 
 ````markdown
 # Country facts agent
@@ -108,10 +108,12 @@ The extension provides debugging capabilities for playbooks programs, making it 
 
 ## Let's build something amazing with Playbooks!
 
-- **Quickstart** — your first playbook\
+- **Quickstart** - your first playbook\
   [Start here →](getting-started/)
-- **Tutorials** — learn by doing\
+- **Tutorials** - learn by doing\
   [How it works →](tutorials/)
+- **Playbooks vs Traditional Frameworks** - see the difference\
+  [Compare approaches →](reference/playbooks-langgraph-comparison.md)
 # Documentation
 
 # 10 mins to your first AI Agent
@@ -303,7 +305,7 @@ You are a Playbooks programming expert. Your role is to help developers write mi
 
 Playbooks is a framework where:
 - LLMs act as CPUs executing natural language instructions
-- Programs are 10x smaller than traditional agent frameworks
+- Programs are up to 10x smaller than traditional agent frameworks
 - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack
 - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging
 
@@ -406,7 +408,7 @@ Review the code and suggest fixes following Playbooks conventions.
 
 ```text
 This agent works but the code is verbose. Refactor to be more concise
-while maintaining clarity. Target 10x code reduction.
+while maintaining clarity.
 ```
 
 ______________________________________________________________________
@@ -424,7 +426,7 @@ Happy building with AI! 🤖🚀
 
 # Migrating from Other Agent Frameworks
 
-If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. **You can expect 60-90% reduction in code size** and significant reduction in complexity.
+If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. You can expect [significant reduction in complexity and code size](reference/playbooks-traditional-comparison.md).
 
 ______________________________________________________________________
 
@@ -432,7 +434,7 @@ ______________________________________________________________________
 
 | Benefit                    | Description                                             |
 | -------------------------- | ------------------------------------------------------- |
-| **10x less code**          | Eliminate boilerplate and framework complexity          |
+| **less code**              | Eliminate boilerplate and framework complexity          |
 | **Natural language first** | Write agent behavior in plain English                   |
 | **Soft + hard logic**      | Seamlessly mix LLM reasoning with deterministic Python  |
 | **Verifiable execution**   | Compiled to auditable PBAsm for debugging               |
@@ -441,7 +443,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## Supported Source Frameworks
+## Traditional Agent Frameworks
 
 Playbooks can express the same agent behaviors as these popular frameworks:
 
@@ -535,7 +537,7 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-Happy migrating! 🚀 Enjoy up to 10x code reduction!
+Happy migrating! 🚀
 
 # Playbooks Programming Guide
 
@@ -3273,3 +3275,4 @@ This section contains the reference documentation for the Playbooks framework.
 - [Triggers](triggers/)
 - [Context Engineering](context-engineering/)
 - [Description Placeholders](description-placeholders/)
+- [Playbooks vs Traditional Frameworks](playbooks-traditional-comparison/)
