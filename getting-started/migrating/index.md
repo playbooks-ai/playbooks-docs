@@ -1,6 +1,6 @@
 # Migrating from Other Agent Frameworks
 
-If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. You can expect [significant reduction in complexity and code size](reference/playbooks-traditional-comparison.md).
+If you're coming from other agent frameworks like LangGraph, CrewAI, or AutoGen, this guide will help you translate your existing implementations into idiomatic Playbooks code. You can expect [significant reduction in complexity and code size](../../reference/playbooks-traditional-comparison/).
 
 ______________________________________________________________________
 

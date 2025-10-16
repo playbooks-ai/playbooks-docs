@@ -105,4 +105,4 @@ The extension provides debugging capabilities for playbooks programs, making it 
 - **Tutorials** - learn by doing\
   [How it works →](tutorials/)
 - **Playbooks vs Traditional Frameworks** - see the difference\
-  [Compare approaches →](reference/playbooks-langgraph-comparison.md)
+  [Compare approaches →](reference/playbooks-traditional-comparison/)
