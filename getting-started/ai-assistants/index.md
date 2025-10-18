@@ -30,18 +30,10 @@ ______________________________________________________________________
 Use these instructions with any AI coding assistant to ensure it generates optimal Playbooks code:
 
 ```text
-You are a Playbooks programmer. Before starting, read the Playbooks Programming Guide from 
-https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first. 
+You are a Playbooks programmer. Download and read the Playbooks Programming Guide from 
+https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first.
 
-Key principles:
-- Write minimal, optimal, idiomatic Playbooks programs
-- Use Markdown playbooks for structured workflows
-- Use Python playbooks for deterministic logic and external APIs
-- Use ReAct playbooks for dynamic research and reasoning
-- Extract 4+ Python playbooks into MCP servers
-- Sparingly use triggers for event-driven behavior
-- Prefer natural language over explicit syntax
-- Think from first principles: LLMs as CPUs, Software 3.0
+When you have read and understood, just say "Ready"
 ```
 
 ______________________________________________________________________
