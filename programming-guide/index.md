@@ -80,57 +80,28 @@ Another agent in the same program file
 
 ### Formatting Rules
 
-**H1 Tags (`#`)** - Agent Definitions
+**Heading Tags**:
+- `# AgentName` - Agent definitions with description
+- `## PlaybookName($params)` - Playbook definitions
+- `### Triggers`, `### Steps`, `### Notes` - Special sections within playbooks
 
-```markdown
-# AgentName
-Description of agent's purpose and personality
-````
-
-**H2 Tags (`##`)** - Playbook Definitions
-
-```markdown
-## PlaybookName($param1, $param2)
-```
-
-**H3 Tags (`###`)** - Special Sections
-
-- `### Triggers` - When playbook executes
-- `### Steps` - Execution instructions (only for Markdown playbooks)
-- `### Notes` - Business rules and guidance
-
-**Metadata** - Key-value pairs at start of description
+**Metadata** - Key-value pairs at start of playbook description:
 
 ```markdown
 ## PlaybookName
 execution_mode: raw
 public: true
-meeting: true
+````
 
-Description text here
-```
-
-**Variables** - Always prefixed with `$`
+**Variables** - Always prefixed with `$`, optional type annotations:
 
 ```markdown
 - Ask user for their $name
-- $count = 10
+- $count:int = 10
 - $result = GetData($name)
 ```
 
-**Type Annotations** - Optional but helpful for clarity
-
-```markdown
-- Ask user for their $name:str
-- $count:int = 10
-- $results:list = []
-```
-
-**Comments**
-
-```markdown
-<!-- This is a comment in Playbooks -->
-```
+**Comments**: `<!-- This is a comment in Playbooks -->`
 
 ______________________________________________________________________
 
@@ -543,22 +514,7 @@ ______________________________________________________________________
 - Thank $name for providing their name
 ```
 
-**Too Coarse** ❌
-
-```markdown
-## ProcessEverything
-### Steps
-- Get user info
-- Validate info
-- Process payment
-- Send confirmation
-- Update inventory
-- Generate report
-- Send to accounting
-- Archive transaction
-```
-
-**Better** ✅
+**Better Decomposition** ✅
 
 ```markdown
 ## ProcessOrder
@@ -566,30 +522,16 @@ ______________________________________________________________________
 - Collect user info
 - Process payment
 - Fulfill order
-- Notify stakeholders
 
 ## CollectUserInfo
 ### Steps
-- Ask for $name, $email, $address; validate all fields; continue engaging with the user till all fields are valid or user wants to give up
-- Return collected info as a dictionary
+- Ask for $name, $email, $address; validate all fields
+- Return collected info as dictionary
 
 ## ProcessPayment($user_info)
 ### Steps
-- Calculate $amount
-- Charge payment method
+- Calculate $amount and charge payment
 - Return payment record
-
-## FulfillOrder($payment)
-### Steps
-- Update inventory
-- Generate shipping label
-- Send confirmation email
-
-## NotifyStakeholders($payment)
-### Steps
-- Send to accounting system
-- Archive transaction
-- Update analytics
 ```
 
 ### When to Create Separate Playbooks
@@ -628,15 +570,7 @@ Playbooks supports a spectrum from pure natural language to Python-like explicit
 - Calculate shipping cost
 ```
 
-**Semi-Explicit**:
-
-```markdown
-- Ask user for their $order_id
-- Get $order_details from database
-- Calculate $shipping_cost based on $order_details
-```
-
-**Fully Explicit**:
+**Explicit**:
 
 ```markdown
 - $order_id = AskForOrderId()
@@ -688,23 +622,14 @@ Playbooks supports a spectrum from pure natural language to Python-like explicit
 All of these are valid:
 
 ```markdown
-# Most natural
+# Natural language
 - Get order status
 
-# With variable
-- Get $order_status
-
-# Explicit call, implicit args
-- GetOrderStatus($order_id)
-
-# Explicit call with named args
+# Explicit call with variable
 - $status = GetOrderStatus(order_id=$order_id)
 
 # Cross-agent call
 - $status = OrderService.GetOrderStatus(order_id=$order_id)
-
-# Natural language with explicit args
-- Get order status from order service
 ```
 
 **Guidelines**:
@@ -764,42 +689,34 @@ public: true
 
 #### 1. Direct Public Playbook Calls
 
-**Most common**: One agent directly calls another's public playbook
+One agent directly calls another's public playbook:
 
 ```markdown
 # TaxAgent
 ## GetTaxRate($income)
 public: true
 ### Steps
-- If $income < 100000
-  - Return 15% tax rate
-- Otherwise
-  - Return 25% tax rate
+- Calculate and return tax rate based on $income
 
 # IncomeAgent
 ## ProcessIncome
 ### Steps
 - Ask user for $income
-- Ask Tax agent what the $tax_rate would be
+- Get $tax_rate from TaxAgent
 - Tell user their $tax_rate
 ```
 
-**When to use**:
-
-- ✅ Synchronous request-response
-- ✅ Well-defined interface
-- ✅ Return value needed immediately
+Use for synchronous request-response with immediate return value.
 
 #### 2. Natural Language Messaging
 
-**Send message to agent**: For asynchronous communication
+Send messages for asynchronous communication:
 
 ```markdown
 # Manager
 ## AssignWork($task)
 ### Steps
-- Decide which worker agent is best suited to handle $task
-- Tell selected worker agent to work on $task
+- Tell WorkerAgent to perform $task
 
 # WorkerAgent
 ## PerformTask($task)
@@ -807,15 +724,11 @@ public: true
 - Perform the task
 ```
 
-**When to use**:
-
-- ✅ Fire-and-forget communication
-- ✅ Event notifications
-- ✅ Async workflows
+Use for fire-and-forget communication and async workflows.
 
 #### 3. Meetings - Multi-Party Coordination
 
-**Host creates meeting**: For multi-agent coordination
+Host creates meeting for multi-agent coordination:
 
 ```markdown
 # RestaurantConsultant
@@ -842,27 +755,18 @@ required_attendees: [HeadChef, MarketingSpecialist]
 meeting: true
 
 ### Steps
-- Introduce myself
+- Introduce myself and propose signature dishes
 - While meeting is active
-  - When asked about dish proposals
-    - Propose 3-5 signature dishes with costs
-  - When MarketingSpecialist suggests trends
-    - Evaluate feasibility
-    - Suggest alternatives if needed
+  - Respond to questions and evaluate suggestions
 
 # MarketingSpecialist
 ## MenuRedesignMeeting
 meeting: true
 
 ### Steps
-- Introduce myself
 - Present market analysis
 - While meeting is active
-  - When HeadChef proposes dishes
-    - Evaluate market appeal
-    - Suggest pricing
-  - When consensus difficult
-    - Share customer feedback
+  - Evaluate proposals and suggest pricing
 ```
 
 **To create meeting**:
@@ -925,59 +829,33 @@ Triggers eliminate repetitive coordination code by automatically invoking playbo
 
 ### The Validation Pattern: Before & After
 
-**WITHOUT Triggers** (explicit validation):
+**WITHOUT Triggers**:
 
 ```markdown
 ## Main
 ### Steps
 - Ask user for their $email
 - Validate $email and keep asking until valid
-- Ask user for their $pin
-- Validate $pin and keep asking until valid
-- Process login with $email and $pin
-
-## ValidateEmail($email)
-### Steps
-- While $email format is invalid
-  - Tell user email is invalid
-  - Ask for email again
-- Return valid email
-
-## ValidatePIN($pin)
-### Steps
-- While $pin is not 4 digits
-  - Tell user PIN must be 4 digits
-  - Ask for PIN again
-- Return valid PIN
+- Process login with $email
 ```
 
-**WITH Triggers** (automatic validation):
+**WITH Triggers** (cleaner):
 
 ```markdown
 ## Main
 ### Steps
 - Ask user for their $email
-- Ask user for their $pin
-- Process login with $email and $pin
+- Process login with $email
 
 ## ValidateEmail
 ### Triggers
 - When user provides email
 ### Steps
 - If $email format is invalid
-  - Tell user email is invalid
-  - Ask for email again
-
-## ValidatePIN
-### Triggers
-- When user provides PIN
-### Steps
-- If $pin is not 4 digits
-  - Tell user PIN must be 4 digits
-  - Ask for PIN again
+  - Tell user email is invalid and ask again
 ```
 
-**Key Benefit**: Main flow stays clean. Validation happens automatically whenever user provides input. No need to explicitly call validation at each input point.
+**Key Benefit**: Main flow stays clean. Validation happens automatically when user provides input, eliminating repetitive validation calls.
 
 ### Trigger Types
 
@@ -1034,26 +912,7 @@ Triggers eliminate repetitive coordination code by automatically invoking playbo
 
 ### Common Trigger Patterns
 
-**Pattern 1: Input Validation**
-
-The most common use case - validate input automatically:
-
-```markdown
-## Main
-### Steps
-- Ask user for their $order_id till user provides a valid order id
-- Process the order
-
-## ValidateOrderId
-### Triggers
-- When user provides order id
-### Steps
-- If $order_id is not 8 digits
-  - Tell user order ID must be exactly 8 digits
-  - Ask for order ID again
-```
-
-**Pattern 2: State Guard**
+**Pattern 1: State Guard**
 
 Monitor state and react to violations:
 
@@ -1064,7 +923,7 @@ Monitor state and react to violations:
 - While not authenticated
   - Ask user for credentials
   - Increment $attempts
-  - Attempt authentication
+  - Authenticate user
 
 ## CheckAttemptLimit
 ### Triggers
@@ -1074,7 +933,7 @@ Monitor state and react to violations:
 - End program
 ```
 
-**Pattern 3: Intent Detection**
+**Pattern 2: Intent Detection**
 
 Respond to user intent automatically:
 
@@ -1094,174 +953,7 @@ Respond to user intent automatically:
 - Ask what specific help they need
 ```
 
-**Pattern 4: RFC-Compliant Validation**
-
-Use triggers with detailed validation requirements:
-
-```markdown
-## ValidateEmail
-Validates provided email. Email address must conform to addr-spec in Section 3.4 of RFC 5322:
-  addr-spec = local-part "@" domain
-
-### Triggers
-- When user provides an email
-### Steps
-- While $email is not valid according to RFC 5322
-  - Tell user email format is invalid
-  - Ask for email again
-  - If user gives up
-    - Apologize and end the conversation
-```
-
-### How Triggers Simplify Programs
-
-**Example: Order Processing with Multiple Validations**
-
-**WITHOUT Triggers** - Repetitive validation calls:
-
-```markdown
-## Main
-### Steps
-- Ask user for $order_id
-- ValidateOrderId($order_id) and keep asking till valid
-- Ask user for $email
-- ValidateEmail($email) and keep asking till valid
-- Ask user for $shipping_address
-- ValidateShippingAddress($shipping_address) and keep asking till valid
-- Process order
-```
-
-**WITH Triggers** - Clean main flow:
-
-```markdown
-## Main
-### Steps
-- Ask user for $order_id
-- Ask user for $email
-- Ask user for $shipping_address
-- Process order
-
-## ValidateOrderId
-### Triggers
-- When user provides order id
-### Steps
-- If $order_id is not 8 digits
-  - Tell user order ID must be 8 digits
-  - Ask again
-
-## ValidateEmail
-### Triggers
-- When user provides email
-### Steps
-- If $email format is invalid
-  - Tell user email is invalid
-  - Ask again
-
-## ValidateShippingAddress
-### Triggers
-- When user provides shipping address
-### Steps
-- If $shipping_address is incomplete
-  - Tell user what's missing
-  - Ask for complete address
-```
-
-### Trigger Execution Model
-
-**How triggers work**:
-
-1. Main playbook asks for input: "Ask user for their $email"
-1. User provides input
-1. Runtime checks all triggers for matching conditions
-1. First matching trigger fires: "When user provides email"
-1. Validation playbook executes
-1. If validation fails, it asks again (loop)
-1. Control returns to main playbook when input is valid
-
 **Important**: Triggers are evaluated after each step. The LLM determines when a trigger condition is met based on semantic understanding.
-
-### When NOT to Use Triggers
-
-**Don't use triggers when explicit flow is clearer**:
-
-```markdown
-<!-- BAD: Trigger makes flow unclear -->
-## Main
-### Steps
-- Start processing order
-
-## GetOrderDetails
-### Triggers
-- After starting to process order
-### Steps
-- Fetch order from database
-
-<!-- GOOD: Explicit call is clearer -->
-## Main
-### Steps
-- Get order details from database
-- Process the order
-```
-
-**Don't use triggers for simple one-off checks**:
-
-```markdown
-<!-- BAD: Unnecessary trigger -->
-## Main
-### Steps
-- Ask user for $age
-
-## CheckAge
-### Triggers
-- When user provides age
-### Steps
-- If $age < 18
-  - Tell user must be 18 or older
-  - End program
-
-<!-- GOOD: Inline the check -->
-## Main
-### Steps
-- Ask user for $age
-- If $age < 18
-  - Tell user must be 18 or older
-  - End program
-- Continue with adult content
-```
-
-**Don't overuse triggers**:
-
-```markdown
-<!-- BAD: Too many triggers creates "magic" behavior -->
-## Main
-### Steps
-- Start the workflow
-
-## Step1
-### Triggers
-- When workflow starts
-### Steps
-- Do step 1
-
-## Step2
-### Triggers
-- After step 1 completes
-### Steps
-- Do step 2
-
-## Step3
-### Triggers
-- After step 2 completes
-### Steps
-- Do step 3
-
-<!-- GOOD: Explicit sequential flow -->
-## Main
-### Steps
-- Do step 1
-- Do step 2
-- Do step 3
-```
 
 ### Trigger Best Practices
 
@@ -1302,7 +994,7 @@ Today's date is 2025-10-06.
 Transaction {$transaction_id} with amount ${$amount}
 ```
 
-**Playbook Calls**:
+**Results of Playbook Calls**:
 
 ```markdown
 ## AnswerQuestions  
@@ -1342,17 +1034,6 @@ Summarize order considering today is {date.today().strftime("%Y-%m-%d")}
 ### Steps
 - If order is overdue
   - Apologize for delay
-```
-
-**Dynamic Lists**:
-
-```markdown
-## ProcessItems
-Items to process:
-{chr(10).join(f"- {item}" for item in $items)}
-
-### Steps
-- Process each item
 ```
 
 **Conditional Context**:
@@ -1424,55 +1105,15 @@ async def AnalyzeReport() -> str:
 
 ## Common Patterns and Best Practices
 
-### Pattern: Conversational Input Collection
-
-```markdown
-## Main
-### Steps
-- Ask user for their $email
-- Engage in conversation if needed without being pushy
-- Once $email is provided, continue
-````
-
-This pattern:
-
-- Asks for information
-- Handles small talk gracefully
-- Doesn't rudely demand input
-- Continues when criteria met
-
-### Pattern: Validation with Triggers
-
-```markdown
-## Main
-### Steps
-- Ask user for their $pin
-- Continue once $pin is valid
-
-## ValidatePIN
-### Triggers
-- When user provides PIN
-### Steps
-- If $pin is not 4 digits
-  - Tell user PIN must be 4 digits
-  - Ask for PIN again
-```
-
 ### Pattern: Python ↔ Markdown Composition
 
-````markdown
+```markdown
 ```python
 @playbook
-async def FetchData(id: str) -> dict:
-    """Get data from external API."""
-    response = requests.get(f"https://api.example.com/data/{id}")
-    return response.json()
-
-@playbook
 async def ProcessItem(item: dict) -> str:
-    """Process item and generate summary."""
-    # Complex processing logic
-    summary = await SummarizeItem(item)  # Call Markdown playbook
+    """Fetch and process data with complex logic."""
+    data = external_api.get(item['id'])
+    summary = await SummarizeItem(data)  # Call Markdown playbook
     return summary
 ````
 
@@ -1480,21 +1121,15 @@ async def ProcessItem(item: dict) -> str:
 
 ### Steps
 
-- Extract key fields from $item
-- Format as user-friendly summary
-- Return summary
+- Format $item as user-friendly summary
 
 ````
 
 ### Pattern: Batch Operations
 
 ```markdown
-## ProcessOrders
-### Steps
-- Get list of $pending_orders from database
 - For each $order in $pending_orders
   - ProcessSingleOrder($order)
-- Tell user all orders processed
 ````
 
 ### Pattern: Error Handling
@@ -1510,29 +1145,6 @@ async def ProcessItem(item: dict) -> str:
 - Otherwise
   - Tell user success
   - Return success status
-```
-
-### Pattern: Meeting Facilitation
-
-```markdown
-## ProjectPlanningMeeting
-meeting: true
-required_attendees: [Developer, Designer, ProductManager]
-
-### Steps
-- Welcome everyone and state meeting goal
-- Explain agenda and time limit
-- Set $max_turns to 20
-- Set $turn_count to 0
-- While meeting active and $turn_count < $max_turns
-  - Facilitate discussion
-  - Increment $turn_count
-  - Keep discussion on track
-- If consensus reached
-  - Summarize decisions
-  - Assign action items
-- End meeting
-- Return meeting summary
 ```
 
 ### Pattern: Collecting Inputs from User
@@ -1669,13 +1281,6 @@ When modifying existing Playbooks programs:
 **Adding a new playbook**:
 
 ```markdown
-# Existing Agent
-
-## Existing Playbook
-### Steps
-- Existing logic
-
-<!-- ADD NEW PLAYBOOK HERE -->
 ## NewPlaybook($param)
 Description
 
@@ -1683,69 +1288,7 @@ Description
 - New logic
 ````
 
-**Modifying steps**:
-
-- Find the playbook to modify
-- Locate specific step
-- Update just that step
-- Ensure variable references still work
-
-**Adding a trigger**:
-
-```markdown
-## ExistingPlaybook
-<!-- ADD THIS SECTION IF MISSING -->
-### Triggers
-- When condition is met
-
-### Steps
-- Existing steps
-```
-
-**Adding agent behavior**:
-
-```markdown
-# ExistingAgent
-<!-- MODIFY THIS DESCRIPTION -->
-Existing description. NEW BEHAVIOR: Additional personality trait or capability.
-```
-
-**Converting natural to explicit**:
-
-```markdown
-<!-- BEFORE -->
-- Get order details and tell user
-
-<!-- AFTER (if user requests more structure) -->
-- $order = GetOrderDetails($order_id)
-- Tell user about $order
-```
-
-### Example Edit Request
-
-**Request**: "Add validation to ensure order ID is 8 digits"
-
-**Process**:
-
-1. Locate where order ID is collected
-1. Add validation playbook
-1. Add trigger to invoke validation
-1. Update main flow to handle invalid input
-
-```markdown
-## Main
-### Steps
-- Ask user for their $order_id till valid  <!-- MODIFIED -->
-- Process order
-
-## ValidateOrderId  <!-- NEW PLAYBOOK -->
-### Triggers
-- When user provides order id
-### Steps
-- If $order_id is not 8 digits
-  - Tell user order ID must be 8 digits
-  - Ask for order ID again
-```
+**Modifying steps**: Find the playbook, locate the specific step, update it, and ensure variable references still work.
 
 ______________________________________________________________________
 
@@ -1763,60 +1306,19 @@ When you write Playbooks, the compiler transforms it to Playbooks Assembly Langu
 
 ### Compilation Example
 
-**Source (Playbooks)**:
+**Source**: `- Ask user for their name`
 
-```markdown
-## GreetUser
-### Triggers
-- At the beginning
-### Steps
-- Ask user for their name
-- If name provided
-  - Thank user by name
-- Otherwise
-  - Ask again
-```
+**Compiled**: `- 01:QUE Say(user, Ask user for their $name:str); YLD for user`
 
-**Compiled (PBAsm)**:
-
-```markdown
-## GreetUser() -> None
-### Triggers
-- T1:BGN At the beginning
-### Steps
-- 01:QUE Say(user, Ask user for their $name:str); YLD for user
-- 02:CND If $name is provided
-  - 02.01:QUE Say(user, Thank user by $name); YLD for call
-- 03:CND Otherwise  
-  - 03.01:QUE Say(user, Ask for $name again); YLD for user
-- 04:RET
-```
+Adds: line numbers (01), opcodes (QUE), explicit types ($name:str), yield points (YLD for user).
 
 ### Key PBAsm Concepts
 
-**Opcodes** (like CPU instructions):
+**Opcodes**: QUE (queue operation), CND (conditional), RET (return), YLD (yield), EXE (execute), TNK (think), JMP (jump)
 
-- `QUE` - Queue operation (function call, Say)
-- `CND` - Conditional/loop
-- `RET` - Return from playbook
-- `YLD` - Yield control to runtime
-- `EXE` - Execute assignment/action
-- `TNK` - Think deeply
-- `JMP` - Jump to line (loops)
+**Yield Reasons**: `for user` (wait for input), `for call` (execute queued calls), `for agent` (wait for message), `for exit` (end program)
 
-**Yield Reasons** (why LLM pauses):
-
-- `YLD for user` - Wait for user input
-- `YLD for call` - Execute queued calls
-- `YLD for agent` - Wait for agent message
-- `YLD for meeting` - Wait for meeting message
-- `YLD for exit` - End program
-
-**Line Numbers** (like assembly addresses):
-
-- Hierarchical: 01, 01.01, 01.02, 01.02.01
-- Enable jumps for loops
-- Track execution position
+**Line Numbers**: Hierarchical (01, 01.01, 01.02) enable jumps and track execution position
 
 ### Why This Helps You
 
@@ -1852,60 +1354,17 @@ Description of what this agent does
 - End program
 ```
 
-### More complex example
+### Complete Example
 
 ````markdown
-# Hello world agent
-A demo customer support agent for Playbooks AI
+# TaskAgent
+You help users manage their tasks efficiently.
 
 ```python
 @playbook
-async def SendOTP(phone_number: str) -> dict:
-    """
-    Send OTP to user's phone number via backend service.
-
-    In production, this would call the actual SMS/OTP service.
-    For development, using mock implementation.
-
-    Args:
-        phone_number: User's phone number
-
-    Returns:
-        Dictionary with status and OTP (in dev mode only)
-    """
-    # Mock implementation for development
-    # In production, this would call your SMS service
-    import random
-    otp = str(random.randint(1000, 9999))
-
-    # Simulate successful send
-    return {
-        "status": "success",
-        "message": f"OTP sent to {phone_number}",
-        "otp": otp  # Only for development - remove in production
-    }
-
-@playbook
-async def ValidateOTP(phone_number: str, otp: str) -> bool:
-    """
-    Validate OTP against backend service.
-
-    In production, this would verify OTP with your authentication service.
-    For development, using mock validation.
-
-    Args:
-        phone_number: User's phone number
-        otp: OTP code provided by user
-
-    Returns:
-        True if OTP is valid, False otherwise
-    """
-    # Mock implementation for development
-    # In production, this would validate against your backend
-
-    # For demo: accept any 4-digit OTP
-    # In real system, verify against stored OTP with expiration
-    return len(otp) == 4 and otp.isdigit()
+async def SaveTask(task: str) -> dict:
+    """Save task to database (mock implementation)."""
+    return {"id": "123", "task": task, "status": "pending"}
 ````
 
 ## Main
@@ -1916,54 +1375,33 @@ async def ValidateOTP(phone_number: str, otp: str) -> bool:
 
 ### Steps
 
-- Welcome user
-- Authenticate user
-- If authentication successful
-  - Tell user about Playbooks AI
-  - Ask the user for their $name
-  - Say hello to the user by $name
-  - Welcome user to Playbooks AI
-- Otherwise
-  - Tell user authentication failed
-  - Apologize and end program
+- Greet user
+- Ask what they'd like to do
+- If user wants to add a task
+  - Add a new task
+- If user wants to list tasks
+  - Show all pending tasks
 - End program
 
-## AuthenticateUser
-
-Authenticate user by collecting phone number, sending OTP, and validating the code.
+## AddTask
 
 ### Steps
 
-- Ask user for their $phone_number, engage in conversation till user provides a valid phone number or gives up
-- If user gives up
-  - Return authentication failure
-- Send OTP to $phone_number
-- Tell user that OTP has been sent to their phone number
-- Ask user for the $otp they received, engage in conversation till user provides it or gives up
-- If user gives up
-  - Return authentication failure
-- Validate the OTP
-- If OTP is valid
-  - Return authentication success
-- Otherwise
-  - Tell user that the OTP didn't work
-  - Ask if user want to enter a different one or would like another OTP
-  - If usre provided a new OTP
-    - jump back to validating it
-  - If user wants to try again
-    - jump back to asking/validating OTP or sending a new one as appropriate
-  - If user want to give up
-    - Return authentication failure
+- Ask user for $task_description
+- Save the task
+- Tell user task was added successfully
 
-## ValidatePhoneNumber
+## ValidateTaskDescription
 
 ### Triggers
 
-- When user provides phone number
+- When user provides task description
 
 ### Steps
 
-- Check if $phone_number is a valid US phone number or not
+- If $task_description is empty
+  - Tell user task cannot be empty
+  - Ask again
 
 ````
 
@@ -1995,39 +1433,29 @@ Authenticate user by collecting phone number, sending OTP, and validating the co
 
 ---
 
-## Programming Principles
+## Programming Principles (EXTREMELY IMPORTANT!)
 
-When writing Playbooks programs:
+**Core Principles** - When writing Playbooks programs:
 
 1. **Understand intent**: What problem are you solving? What is the goal?
 2. **Choose right types**: Markdown for workflows, Python for logic, ReAct for research
-3. **Natural first**: Start with natural language, add explicitness if needed
+3. **Natural first**: Start with natural language, add explicitness only when clarity demands it
 4. **Think decomposition**: Break into logical playbooks with clear responsibilities
-5. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server using fastmcp and use an MCP agent as a proxy to call the MCP server from your Playbooks program.
+5. **⚠️ Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server using fastmcp and use an MCP agent as a proxy
 6. **Handle errors**: Consider edge cases and failure modes
-7. **Write idiomatically**: Follow patterns and conventions from examples
+7. **Write idiomatically**: Follow patterns and conventions from examples - write code that reads like a human wrote it
 8. **Document choices**: Explain intent in descriptions and comments
 9. **Iterate**: Start simple, add complexity as needed
 
+**For AI Assistants** - Additional guidance when helping users:
+
+- **Think deeply**: Plan in detail and review the plan before writing any code
+- **Teach while building**: Explain architectural choices to help users learn
+- **Use triggers sparingly**: Mainly for input validation, not normal control flow
+- **Optimal Playbooks**: Write idiomatic code that uses Playbooks capabilities optimally to produce minimal, clean, readable programs
+- **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' conciseness (often 10x smaller)
+
 **Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
-
----
-
-## For AI Coding Assistants
-
-When helping users write Playbooks programs:
-
-- Think deeply, plan in detail and review the plan before writing any code
-- Follow all the principles and patterns in this guide
-- Prefer natural language over explicit syntax unless clarity demands it
-- Always consider if 4+ Python playbooks should be extracted to an MCP server
-- Use triggers sparingly - mainly for input validation
-- Explain your architectural choices to help users learn
-- Iterate based on user feedback and requirements
-- Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute
-- If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate. Use fastmcp to create the MCP server and then use an MCP agent as a proxy to call the MCP server from your Playbooks program.
-- Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.
-- When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.
 
 Happy building! 🚀```
 ````
