@@ -2779,6 +2779,7 @@
 <ol>
 <li><strong>Create MCP server file</strong> (e.g., <code>mcp.py</code>):</li>
 </ol>
+<p>Use the <a href="https://fastmcp.com">FastMCP</a> library to create an MCP server.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__codeline__-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">fastmcp</span> <span class="kn">import</span> <span class="n">FastMCP</span>
 </span><span id="__codeline__-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 </span><span id="__codeline__-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">mcp</span> <span class="o">=</span> <span class="n">FastMCP</span><span class="p">(</span><span class="s2">&quot;My Tools Server&quot;</span><span class="p">)</span>
@@ -4186,7 +4187,7 @@
 <li><strong>Choose right types</strong>: Markdown for workflows, Python for logic, ReAct for research</li>
 <li><strong>Natural first</strong>: Start with natural language, add explicitness if needed</li>
 <li><strong>Think decomposition</strong>: Break into logical playbooks with clear responsibilities</li>
-<li><strong>Extract to MCP</strong>: If you have 4+ Python playbooks, extract them to an MCP server</li>
+<li><strong>Extract to MCP</strong>: If you have 4+ Python playbooks, extract them to an MCP server using fastmcp and use an MCP agent as a proxy to call the MCP server from your Playbooks program.</li>
 <li><strong>Handle errors</strong>: Consider edge cases and failure modes</li>
 <li><strong>Write idiomatically</strong>: Follow patterns and conventions from examples</li>
 <li><strong>Document choices</strong>: Explain intent in descriptions and comments</li>
@@ -4205,7 +4206,7 @@
 <li>Explain your architectural choices to help users learn</li>
 <li>Iterate based on user feedback and requirements</li>
 <li>Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute</li>
-<li>If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate.</li>
+<li>If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate. Use fastmcp to create the MCP server and then use an MCP agent as a proxy to call the MCP server from your Playbooks program.</li>
 <li>Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.</li>
 <li>When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.</li>
 </ul>

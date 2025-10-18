@@ -383,6 +383,8 @@ async def ValidatePIN(pin: str) -> bool:
 
 1. **Create MCP server file** (e.g., `mcp.py`):
 
+Use the [FastMCP](https://fastmcp.com) library to create an MCP server.
+
 ```python
 from fastmcp import FastMCP
 
@@ -2001,7 +2003,7 @@ When writing Playbooks programs:
 2. **Choose right types**: Markdown for workflows, Python for logic, ReAct for research
 3. **Natural first**: Start with natural language, add explicitness if needed
 4. **Think decomposition**: Break into logical playbooks with clear responsibilities
-5. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server
+5. **Extract to MCP**: If you have 4+ Python playbooks, extract them to an MCP server using fastmcp and use an MCP agent as a proxy to call the MCP server from your Playbooks program.
 6. **Handle errors**: Consider edge cases and failure modes
 7. **Write idiomatically**: Follow patterns and conventions from examples
 8. **Document choices**: Explain intent in descriptions and comments
@@ -2023,7 +2025,7 @@ When helping users write Playbooks programs:
 - Explain your architectural choices to help users learn
 - Iterate based on user feedback and requirements
 - Make sure that the program reads like a human wrote it and something that an AI model would be able to understand and execute
-- If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate.
+- If you need to write many python functions, put them into an MCP server with mock or real implementations as appropriate. Use fastmcp to create the MCP server and then use an MCP agent as a proxy to call the MCP server from your Playbooks program.
 - Make sure to write ideomatic Playbooks code that uses Playbooks capabilities optimally to produce minimal, clean, readable, well organized Playbooks programs.
 - When converting/importing/migrating from LangGraph, CrewAI, etc. agent frameworks, make sure to produce the same behavior, but also represented using all of Playbooks capabilities which may produce significantly concise implementation compared to LangGraph.
 
