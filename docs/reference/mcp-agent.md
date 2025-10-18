@@ -17,26 +17,31 @@ The Model Context Protocol (MCP) is an open protocol that standardizes how AI ap
 
 ## Create an MCP agent
 
-To create an MCP agent, you need to specify the agent's metadata with remote configuration:
+To create an MCP agent, you need to specify the agent's remote configuration. The agent acts as a proxy to the MCP server, making all its tools available as playbooks.
+
+### Basic Example
 
 ```md
-# Example MCP Server
+# My MCP
+This agent provides various python tools.
 remote:
   type: mcp
-  url: memory://test
-  transport: memory
+  url: http://127.0.0.1:8888/mcp
+  transport: streamable-http
+```
 
-# Example MCP Client Agent
+Once defined, you can call tools from the MCP server in your instructions:
 
+```md
+# Assistant
 ## Main
-
 ### Triggers
 - When program starts
 
 ### Steps
-- get secret from Example MCP Server
-- reveal secret to user
-- end program
+- Call ListProjects from My MCP
+- Display the project list to the user
+- End program
 ```
 
 ### Configuration Options
@@ -47,7 +52,7 @@ The MCP agent configuration supports the following options:
 |--------|----------|-------------|---------|
 | `type` | Yes | Must be `mcp` for MCP agents | - |
 | `url` | Yes | The MCP server URL or command | - |
-| `transport` | No | Transport type (`sse`, `stdio`, `websocket`) | `sse` |
+| `transport` | No | Transport type (`sse`, `stdio`, `websocket`, `streamable-http`) | `sse` |
 | `timeout` | No | Timeout in seconds for tool calls | `30.0` |
 | `auth` | No | Authentication configuration object | `{}` |
 
@@ -55,9 +60,10 @@ The MCP agent configuration supports the following options:
 
 MCP agents support different transport protocols:
 
-- SSE (Server-Sent Events)
-- stdio
-- WebSocket
+- **SSE (Server-Sent Events)**: Default transport for HTTP-based MCP servers
+- **streamable-http**: HTTP-based streaming transport
+- **stdio**: Standard input/output for local processes
+- **WebSocket**: WebSocket-based transport for persistent connections
 
 ## How MCP Agents Work
 
@@ -71,24 +77,22 @@ MCP agents support different transport protocols:
 Once connected, all MCP tools are automatically available as playbooks. You can call them just like any other playbook:
 
 ```md
-# Weather MCP Agent
-metadata:
-  remote:
-    type: mcp
-    url: http://weather-service.example.com/mcp
-    transport: sse
----
+# Weather MCP
 This agent connects to a weather MCP service.
+remote:
+  type: mcp
+  url: http://weather-service.example.com/mcp
+  transport: sse
 
 # Weather Assistant
 ## Main
-### Trigger
+### Triggers
 - When program starts
 
 ### Steps
 - Say "Welcome to Weather Assistant! What location would you like weather for?"
 - Get user's location
-- Call Weather MCP Agent's get_current_weather with location=$location
+- Call get_current_weather from Weather MCP with location=$location
 - Display the weather: "Current weather in $location: $weather"
 - End program
 ```
@@ -99,26 +103,22 @@ You can use multiple MCP agents in a single program:
 
 ```md
 # Weather MCP
-metadata:
-  remote:
-    type: mcp
-    url: http://weather-api.com/mcp
----
 Weather service integration.
+remote:
+  type: mcp
+  url: http://weather-api.com/mcp
 
 # News MCP
-metadata:
-  remote:
-    type: mcp
-    url: http://news-api.com/mcp
----
 News service integration.
+remote:
+  type: mcp
+  url: http://news-api.com/mcp
 
 # Assistant
 ## DailyBriefing
 ### Steps
-- Get weather from Weather MCP's get_current_weather for New York
-- Get news from News MCP's get_top_headlines with technology category
+- Call get_current_weather from Weather MCP for New York
+- Call get_top_headlines from News MCP with technology category
 - Create briefing combining weather and news
 - Present briefing to user
 ```
@@ -129,16 +129,14 @@ For MCP servers that require authentication:
 
 ```md
 # Secure API Agent
-metadata:
-  remote:
-    type: mcp
-    url: https://api.example.com/mcp
-    transport: sse
-    auth:
-      type: bearer
-      token: ${API_TOKEN}
----
 Connects to a secured MCP endpoint.
+remote:
+  type: mcp
+  url: https://api.example.com/mcp
+  transport: sse
+  auth:
+    type: bearer
+    token: ${API_TOKEN}
 ```
 
 ## Run an MCP server (examples)
@@ -147,12 +145,3 @@ You can create simple MCP servers with `fastmcp`. Example servers in the repo:
 
 - Insomnia server: `tests/data/insomnia/mcp.py`
 - Travel advisor server: `tests/data/travel_advisor/mcp.py`
-
-Run them with:
-
-```bash
-python tests/data/insomnia/mcp.py
-python tests/data/travel_advisor/mcp.py
-```
-
-Then point your MCP agent `url` at the server (e.g., `http://localhost:8000` if using streamable-http) and set `transport` accordingly.
