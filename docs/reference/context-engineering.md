@@ -7,6 +7,8 @@ Playbooks automates context engineering, allowing you to focus on writing agent 
 - [Stack-based Context Management](./context-engineering.md#stack-based-context-management)
 Automatically compacts context as playbooks complete, preserving semantic information while reducing token usage.
 
+- [Artifacts](../programming-guide/artifacts.md) Automatic, efficient use of long content in LLM context.
+
 - [Prompt Caching Optimization](./context-engineering.md#prompt-caching-optimization)
 Intelligently manages context to maximize cache hits, reducing latency and API costs by up to 10x.
 
@@ -30,12 +32,15 @@ Main
 
 **During Execution:**
 - When `SummarizeOrderStatus` is active, the context includes the full execution trace from `Main` → `GetOrderStatus` → `SummarizeOrderStatus`
-- All playbook instructions, inputs, outputs, and intermediate steps are preserved in context
+- Long content is automatically stored as artifact so the value is not duplicated in the context multiple times.
+- All playbook instructions, inputs, outputs, artifacts, and intermediate steps are preserved in context
 
 **After Playbook Returns:**
-- When `SummarizeOrderStatus` completes, its detailed execution trace is replaced with a summary
+- When `SummarizeOrderStatus` completes, its detailed execution trace is replaced with a summary. Any artifacts created/loaded in `SummarizeOrderStatus` are unloaded from context.
 - When `GetOrderStatus` returns to `Main`, both its traces are replaced with summary
 - So, when `Main` playbook continues after `GetOrderStatus` returns, it has a compact context containing only the summary of `GetOrderStatus` execution, thus reducing context size and token usage
+
+**👉 [Complete Artifacts Guide](../programming-guide/artifacts.md)** - Detailed explanation, API reference, and usage patterns
 
 ---
 
@@ -90,3 +95,7 @@ While Playbooks automates context management, you retain full control when neede
 **[Description Placeholders](./description-placeholders.md)**
 - Inject dynamic values into playbook descriptions
 - Inject either inline in the description or as a separarate LLM message.
+
+**[Artifacts](../programming-guide/artifacts.md)**
+- Control when large content enters/exits context through explicit artifact creation with `SaveArtifact()` and loading with `LoadArtifact()`
+- Influence automatic artifact creation threshold via `artifact_result_threshold` configuration
