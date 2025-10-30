@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/reference/mcp-agent/">
+        <link rel="canonical" href="https://github.com/playbooks-ai/playbooks/programming-guide/artifacts/">
       
       
-        <link rel="prev" href="../agents/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../exported-and-public-playbooks/">
+        <link rel="next" href="../python-only-agents/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>MCP based Agents - Playbooks AI</title>
+        <title>Artifacts - Playbooks AI</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mcp-agents" class="md-skip">
+        <a href="#artifacts-in-playbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP based Agents
+              Artifacts
             
           </span>
         </div>
@@ -401,6 +401,8 @@
       
   
   
+    
+  
   
   
     
@@ -418,15 +420,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../programming-guide/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -445,7 +447,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Programming Guide
@@ -458,10 +460,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../programming-guide/artifacts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Artifacts
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -472,6 +496,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Artifacts?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-duplication-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Duplication Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Duplication Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-context-loading-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Context Loading Works
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-artifact-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Artifact Creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-artifact-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicit Artifact Creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saveartifactname-summary-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      SaveArtifact(name, summary, value)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadartifactartifact_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoadArtifact(artifact_name)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-properties-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact Properties (Python)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -484,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../programming-guide/python-only-agents/" class="md-nav__link">
+      <a href="../python-only-agents/" class="md-nav__link">
         
   
   
@@ -533,8 +679,6 @@
       
   
   
-    
-  
   
   
     
@@ -576,15 +720,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -603,7 +747,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Reference
@@ -619,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
+      <a href="../../reference/config/" class="md-nav__link">
         
   
   
@@ -642,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/" class="md-nav__link">
+      <a href="../../reference/models/" class="md-nav__link">
         
   
   
@@ -665,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-ai/" class="md-nav__link">
+      <a href="../../reference/playbooks-ai/" class="md-nav__link">
         
   
   
@@ -688,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-language/" class="md-nav__link">
+      <a href="../../reference/playbooks-language/" class="md-nav__link">
         
   
   
@@ -711,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-assembly-language/" class="md-nav__link">
+      <a href="../../reference/playbooks-assembly-language/" class="md-nav__link">
         
   
   
@@ -734,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks-traditional-comparison/" class="md-nav__link">
+      <a href="../../reference/playbooks-traditional-comparison/" class="md-nav__link">
         
   
   
@@ -757,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agents/" class="md-nav__link">
+      <a href="../../reference/agents/" class="md-nav__link">
         
   
   
@@ -777,32 +921,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    MCP based Agents
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/mcp-agent/" class="md-nav__link">
         
   
   
@@ -813,131 +935,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is MCP?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-an-mcp-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create an MCP agent
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Create an MCP agent">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport types
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-mcp-agents-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How MCP Agents Work
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-mcp-tools-as-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use MCP tools as playbooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combine-multiple-mcp-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Combine multiple MCP agents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-an-mcp-server-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run an MCP server (examples)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -950,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exported-and-public-playbooks/" class="md-nav__link">
+      <a href="../../reference/exported-and-public-playbooks/" class="md-nav__link">
         
   
   
@@ -973,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbook-types/" class="md-nav__link">
+      <a href="../../reference/playbook-types/" class="md-nav__link">
         
   
   
@@ -996,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../builtin-playbooks/" class="md-nav__link">
+      <a href="../../reference/builtin-playbooks/" class="md-nav__link">
         
   
   
@@ -1019,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../triggers/" class="md-nav__link">
+      <a href="../../reference/triggers/" class="md-nav__link">
         
   
   
@@ -1042,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../context-engineering/" class="md-nav__link">
+      <a href="../../reference/context-engineering/" class="md-nav__link">
         
   
   
@@ -1065,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../description-placeholders/" class="md-nav__link">
+      <a href="../../reference/description-placeholders/" class="md-nav__link">
         
   
   
@@ -1115,55 +1112,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#what-are-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      What Are Artifacts?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-mcp" class="md-nav__link">
+  <a href="#context-duplication-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      What is MCP?
+      Context Duplication Problem
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-an-mcp-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create an MCP agent
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Create an MCP agent">
+    <nav class="md-nav" aria-label="Context Duplication Problem">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
+  <a href="#how-context-loading-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport types
+      How Context Loading Works
     </span>
   </a>
   
@@ -1175,45 +1145,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-mcp-agents-work" class="md-nav__link">
+  <a href="#automatic-artifact-creation" class="md-nav__link">
     <span class="md-ellipsis">
-      How MCP Agents Work
+      Automatic Artifact Creation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-mcp-tools-as-playbooks" class="md-nav__link">
+  <a href="#explicit-artifact-creation" class="md-nav__link">
     <span class="md-ellipsis">
-      Use MCP tools as playbooks
+      Explicit Artifact Creation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#combine-multiple-mcp-agents" class="md-nav__link">
+  <a href="#artifact-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Combine multiple MCP agents
+      Artifact API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Artifact API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saveartifactname-summary-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      SaveArtifact(name, summary, value)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#loadartifactartifact_name" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication
+      LoadArtifact(artifact_name)
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-properties-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact Properties (Python)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#run-an-mcp-server-examples" class="md-nav__link">
+  <a href="#usage-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Run an MCP server (examples)
+      Usage Notes
     </span>
   </a>
   
@@ -1238,160 +1232,73 @@
   
 
 
-<h1 id="mcp-agents">MCP Agents<a class="headerlink" href="#mcp-agents" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Connect to external MCP servers and expose their tools as callable playbooks.</p>
-<h2 id="what-is-mcp">What is MCP?<a class="headerlink" href="#what-is-mcp" title="Permanent link">&para;</a></h2>
-<p>The Model Context Protocol (MCP) is an open protocol that standardizes how AI applications can access external tools and data sources. MCP servers expose tools that can perform various tasks like:</p>
-<ul>
-<li>Accessing databases</li>
-<li>Making API calls</li>
-<li>Performing calculations</li>
-<li>Interacting with file systems</li>
-<li>Running specialized algorithms</li>
-<li>And much more</li>
-</ul>
-<h2 id="create-an-mcp-agent">Create an MCP agent<a class="headerlink" href="#create-an-mcp-agent" title="Permanent link">&para;</a></h2>
-<p>To create an MCP agent, you need to specify the agent's remote configuration. The agent acts as a proxy to the MCP server, making all its tools available as playbooks.</p>
-<h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># My MCP</span>
-</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>This agent provides various python tools.
-</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>remote:
-</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  type: mcp
-</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  url: http://127.0.0.1:8888/mcp
-</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  transport: streamable-http
+<h1 id="artifacts-in-playbooks">Artifacts in Playbooks<a class="headerlink" href="#artifacts-in-playbooks" title="Permanent link">&para;</a></h1>
+<p>Artifacts implement pass-by-reference semantics suitable for variables holding large amounts of text. If large values are passed between playbooks using pass-by-value, the content gets duplicated in LLM context multiple times, which makes the program execution slower and more expensive. Artifacts solve this by storing content once and passing only the reference.</p>
+<hr />
+<h2 id="what-are-artifacts">What Are Artifacts?<a class="headerlink" href="#what-are-artifacts" title="Permanent link">&para;</a></h2>
+<p>An artifact is a variable holding named reference to large text content. Just like a variable, it has a name (like <code>$report</code>) and value. In addition, it also has a short one-line summary describing its content. Artifacts are automatically created when a value longer than a threshold is returned from a playbook or when a variable is set to a long value. When created, the content is added to LLM context so the LLM can reference the content by its name. Once the playbook returns, the content is removed from LLM context. However, if the artifact is referenced again later, it will be loaded back into LLM context automatically.</p>
+<hr />
+<h2 id="context-duplication-problem">Context Duplication Problem<a class="headerlink" href="#context-duplication-problem" title="Permanent link">&para;</a></h2>
+<p>When large values are passed between playbooks as regular variables, the content appears in LLM context multiple times. Consider this flow:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">-</span><span class="w"> </span>Load $document = ReadFile(&quot;doc.md&quot;)     # Content in context
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">-</span><span class="w"> </span>Process $document                       # Content duplicated when sent
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">-</span><span class="w"> </span>Analyze $document                       # Content duplicated when sent
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">-</span><span class="w"> </span>Review $document                        # Content duplicated when sent
 </span></code></pre></div>
-<p>Once defined, you can call tools from the MCP server in your instructions:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Assistant</span>
-</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">-</span><span class="w"> </span>When program starts
-</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__codeline__-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span>Call ListProjects from My MCP
-</span><span id="__codeline__-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">-</span><span class="w"> </span>Display the project list to the user
-</span><span id="__codeline__-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">-</span><span class="w"> </span>End program
+<p>The content gets duplicated as it's sent as an argument, appears as a local variable in the receiving playbook, and shows up again in the state sent to the LLM.</p>
+<p>Artifacts fix this by implementing pass-by-reference. Instead of passing the content, only the artifact name is passed:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">-</span><span class="w"> </span>Load $document = ReadFile(&quot;doc.md&quot;)     # Artifact created automatically (content loaded into context)
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">-</span><span class="w"> </span>Process $document                       # Only name sent
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">-</span><span class="w"> </span>Analyze $document                       # Only name sent
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">-</span><span class="w"> </span>Review $document                        # Only name sent
 </span></code></pre></div>
-<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
-<p>The MCP agent configuration supports the following options:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Required</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td>Yes</td>
-<td>Must be <code>mcp</code> for MCP agents</td>
-<td>-</td>
-</tr>
-<tr>
-<td><code>url</code></td>
-<td>Yes</td>
-<td>The MCP server URL or command</td>
-<td>-</td>
-</tr>
-<tr>
-<td><code>transport</code></td>
-<td>No</td>
-<td>Transport type (<code>sse</code>, <code>stdio</code>, <code>websocket</code>, <code>streamable-http</code>)</td>
-<td><code>sse</code></td>
-</tr>
-<tr>
-<td><code>timeout</code></td>
-<td>No</td>
-<td>Timeout in seconds for tool calls</td>
-<td><code>30.0</code></td>
-</tr>
-<tr>
-<td><code>auth</code></td>
-<td>No</td>
-<td>Authentication configuration object</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="transport-types">Transport types<a class="headerlink" href="#transport-types" title="Permanent link">&para;</a></h3>
-<p>MCP agents support different transport protocols:</p>
-<ul>
-<li><strong>SSE (Server-Sent Events)</strong>: Default transport for HTTP-based MCP servers</li>
-<li><strong>streamable-http</strong>: HTTP-based streaming transport</li>
-<li><strong>stdio</strong>: Standard input/output for local processes</li>
-<li><strong>WebSocket</strong>: WebSocket-based transport for persistent connections</li>
-</ul>
-<h2 id="how-mcp-agents-work">How MCP Agents Work<a class="headerlink" href="#how-mcp-agents-work" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Connection</strong>: When the program starts, the MCP agent connects to the specified server</li>
-<li><strong>Tool Discovery</strong>: The agent automatically discovers all available tools from the server</li>
-<li><strong>Playbook Creation</strong>: Each MCP tool becomes a playbook that can be called</li>
-<li><strong>Execution</strong>: When a playbook is called, the agent forwards the request to the MCP server</li>
-</ol>
-<h2 id="use-mcp-tools-as-playbooks">Use MCP tools as playbooks<a class="headerlink" href="#use-mcp-tools-as-playbooks" title="Permanent link">&para;</a></h2>
-<p>Once connected, all MCP tools are automatically available as playbooks. You can call them just like any other playbook:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Weather MCP</span>
-</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This agent connects to a weather MCP service.
-</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>remote:
-</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  type: mcp
-</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  url: http://weather-service.example.com/mcp
-</span><span id="__codeline__-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  transport: sse
-</span><span id="__codeline__-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__codeline__-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gh"># Weather Assistant</span>
-</span><span id="__codeline__-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">-</span><span class="w"> </span>When program starts
-</span><span id="__codeline__-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__codeline__-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>Say &quot;Welcome to Weather Assistant! What location would you like weather for?&quot;
-</span><span id="__codeline__-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">-</span><span class="w"> </span>Get user&#39;s location
-</span><span id="__codeline__-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">-</span><span class="w"> </span>Call get_current_weather from Weather MCP with location=$location
-</span><span id="__codeline__-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">-</span><span class="w"> </span>Display the weather: &quot;Current weather in $location: $weather&quot;
-</span><span id="__codeline__-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">-</span><span class="w"> </span>End program
+<p>All playbooks reference the same artifact by name, so the content exists once.</p>
+<h3 id="how-context-loading-works">How Context Loading Works<a class="headerlink" href="#how-context-loading-works" title="Permanent link">&para;</a></h3>
+<p>Think of it like lazy loading. When you create an artifact by returning large content, that content goes into context for the current playbook. The playbook can work with it normally. When the playbook returns, the runtime unloads the content from context to keep things efficient—but the artifact still exists as a reference (name + summary) in the current state. For example, the following state is sent to LLM -</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;variables&quot;: {
+</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &quot;$a_2bc92b04&quot;: &quot;Output from ReadText(file1.txt)&quot;,
+</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;$summary&quot;: &quot;Summary of text from file1.txt&quot;
+</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  },
 </span></code></pre></div>
-<h2 id="combine-multiple-mcp-agents">Combine multiple MCP agents<a class="headerlink" href="#combine-multiple-mcp-agents" title="Permanent link">&para;</a></h2>
-<p>You can use multiple MCP agents in a single program:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Weather MCP</span>
-</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Weather service integration.
-</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>remote:
-</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  type: mcp
-</span><span id="__codeline__-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  url: http://weather-api.com/mcp
-</span><span id="__codeline__-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__codeline__-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="gh"># News MCP</span>
-</span><span id="__codeline__-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>News service integration.
-</span><span id="__codeline__-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>remote:
-</span><span id="__codeline__-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  type: mcp
-</span><span id="__codeline__-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  url: http://news-api.com/mcp
-</span><span id="__codeline__-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__codeline__-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="gh"># Assistant</span>
-</span><span id="__codeline__-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="gu">## DailyBriefing</span>
-</span><span id="__codeline__-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">-</span><span class="w"> </span>Call get_current_weather from Weather MCP for New York
-</span><span id="__codeline__-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">-</span><span class="w"> </span>Call get_top_headlines from News MCP with technology category
-</span><span id="__codeline__-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">-</span><span class="w"> </span>Create briefing combining weather and news
-</span><span id="__codeline__-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">-</span><span class="w"> </span>Present briefing to user
+<p>Note that the two artifacts are are listed with their summaries. These can be used as normal variables. For example,</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">-</span><span class="w"> </span>Show $summary to the user
 </span></code></pre></div>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>For MCP servers that require authentication:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># Secure API Agent</span>
-</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Connects to a secured MCP endpoint.
-</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>remote:
-</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  type: mcp
-</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  url: https://api.example.com/mcp
-</span><span id="__codeline__-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  transport: sse
-</span><span id="__codeline__-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  auth:
-</span><span id="__codeline__-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    type: bearer
-</span><span id="__codeline__-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    token: ${API_TOKEN}
+<p>When the playbook that created/loaded the artifact returns, the runtime automatically unloads the artifact from context. However, the artifact still exists as a reference (name + summary) in the current state.</p>
+<p>Later, when you reference that artifact again in another playbook, the runtime will automatically load it back into context. For example,</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">-</span><span class="w"> </span>Get the list of laws mentioned in file1.txt
 </span></code></pre></div>
-<h2 id="run-an-mcp-server-examples">Run an MCP server (examples)<a class="headerlink" href="#run-an-mcp-server-examples" title="Permanent link">&para;</a></h2>
-<p>You can create simple MCP servers with <code>fastmcp</code>. Example servers in the repo:</p>
-<ul>
-<li>Insomnia server: <code>tests/data/insomnia/mcp.py</code></li>
-<li>Travel advisor server: <code>tests/data/travel_advisor/mcp.py</code></li>
-</ul>
+<p>Here, the a_2bc92b04 artifact is referenced again by the LLM. The runtime will automatically load it back into context.</p>
+<p>The key insight is that artifact names are always available (they're in the state), so you can reference them freely. The content gets loaded automatically when needed, keeping context lean while still giving the LLM access to large data whenever it needs it.</p>
+<hr />
+<h2 id="automatic-artifact-creation">Automatic Artifact Creation<a class="headerlink" href="#automatic-artifact-creation" title="Permanent link">&para;</a></h2>
+<p>When a playbook returns a value longer than a threshold (configurable via <code>artifact_result_threshold</code> in <code>playbooks.toml</code>), Playbooks automatically creates an artifact:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">ReadFile</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__codeline__-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># if longer than artifact_result_threshold, auto-creates artifact with name $a_&lt;hash&gt;</span>
+</span></code></pre></div>
+<p>The artifact name is based on a content hash, which keeps names stable across runs and prevents duplicate artifacts and cache misses.</p>
+<h2 id="explicit-artifact-creation">Explicit Artifact Creation<a class="headerlink" href="#explicit-artifact-creation" title="Permanent link">&para;</a></h2>
+<p>For important content, create artifacts with meaningful names using <code>SaveArtifact()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__codeline__-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">GenerateReport</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;content</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">*</span><span class="mi">100</span>
+</span><span id="__codeline__-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">await</span> <span class="n">SaveArtifact</span><span class="p">(</span><span class="s2">&quot;$report&quot;</span><span class="p">,</span> <span class="s2">&quot;100 lines of content&quot;</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
+</span><span id="__codeline__-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="k">return</span> <span class="s2">&quot;$report&quot;</span>
+</span></code></pre></div>
+<p>This makes the code more readable and the artifact's purpose clearer.</p>
+<hr />
+<h2 id="artifact-api">Artifact API<a class="headerlink" href="#artifact-api" title="Permanent link">&para;</a></h2>
+<h3 id="saveartifactname-summary-value">SaveArtifact(name, summary, value)<a class="headerlink" href="#saveartifactname-summary-value" title="Permanent link">&para;</a></h3>
+<p>Create an artifact with an explicit name. The function signature is <code>async def SaveArtifact(name: str, summary: str, value: str) -&gt; str</code>. The <code>name</code> parameter is the variable name (with or without <code>$</code> prefix), <code>summary</code> is a one-line description, and <code>value</code> is the content as a string. It returns the artifact name.</p>
+<h3 id="loadartifactartifact_name">LoadArtifact(artifact_name)<a class="headerlink" href="#loadartifactartifact_name" title="Permanent link">&para;</a></h3>
+<p>Force-load an artifact's content into context. In most cases, this happens automatically when you reference an artifact. Use this only when you want to explicitly ensure content is in context before it's needed.</p>
+<p>The function signature is <code>async def LoadArtifact(artifact_name: str)</code>. It returns None.</p>
+<h3 id="artifact-properties-python">Artifact Properties (Python)<a class="headerlink" href="#artifact-properties-python" title="Permanent link">&para;</a></h3>
+<p>When working with artifacts in Python, access the name, summary, and full content via <code>artifact.name</code>, <code>artifact.summary</code>, and <code>artifact.value</code>.</p>
+<hr />
+<h2 id="usage-notes">Usage Notes<a class="headerlink" href="#usage-notes" title="Permanent link">&para;</a></h2>
+<p>Artifacts work transparently with playbook arguments and returns, so you can pass them around just like regular variables. Content is automatically loaded back into context when you reference an artifact, keeping things efficient without requiring explicit management. Use meaningful names for important content via <code>SaveArtifact()</code>, while hash-based auto-generated names are fine for temporary artifacts since they're stable across runs. If needed, adjust the character threshold for automatic artifact creation in <code>playbooks.toml</code> under <code>artifact_result_threshold</code>.</p>
 
 
 
@@ -1431,7 +1338,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Agents">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Playbooks Programming Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1441,20 +1348,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Agents
+                Playbooks Programming Guide
               </div>
             </div>
           </a>
         
         
           
-          <a href="../exported-and-public-playbooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Exported and Public Playbooks">
+          <a href="../python-only-agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Python-Only Agents">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Exported and Public Playbooks
+                Python-Only Agents
               </div>
             </div>
             <div class="md-footer__button md-icon">

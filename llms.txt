@@ -13,7 +13,9 @@ Playbooks is an innovative framework for building and executing AI agents using 
 - [10 mins to your first AI Agent](https://github.com/playbooks-ai/playbooks/getting-started/index.md): Getting Started
 - [AI Coding Assistants](https://github.com/playbooks-ai/playbooks/getting-started/ai-assistants/index.md): Writing with AI Assistants
 - [Migrating from Other Agent Frameworks](https://github.com/playbooks-ai/playbooks/getting-started/migrating/index.md): Migrating from Other Frameworks
-- [Programming Guide](https://github.com/playbooks-ai/playbooks/programming-guide/index.md): Programming Guide
+- [Playbooks Programming Guide](https://github.com/playbooks-ai/playbooks/programming-guide/index.md): Programming Guide
+- [Artifacts](https://github.com/playbooks-ai/playbooks/programming-guide/artifacts/index.md): Artifacts Guide
+- [Python-Only Agents](https://github.com/playbooks-ai/playbooks/programming-guide/python-only-agents/index.md): Python-Only Agents Guide
 - [Tutorial](https://github.com/playbooks-ai/playbooks/tutorials/index.md): Tutorials
 - [Playbooks Reference Documentation](https://github.com/playbooks-ai/playbooks/reference/index.md): Reference
 

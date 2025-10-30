@@ -403,9 +403,31 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../programming-guide/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../programming-guide/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -414,7 +436,73 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming-guide/artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artifacts
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming-guide/python-only-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python-Only Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1129,6 +1217,9 @@
 Automatically compacts context as playbooks complete, preserving semantic information while reducing token usage.</p>
 </li>
 <li>
+<p><a href="../../programming-guide/artifacts/">Artifacts</a> Automatic, efficient use of long content in LLM context.</p>
+</li>
+<li>
 <p><a href="./#prompt-caching-optimization">Prompt Caching Optimization</a>
 Intelligently manages context to maximize cache hits, reducing latency and API costs by up to 10x.</p>
 </li>
@@ -1148,11 +1239,13 @@ Programmers have control over through specific control mechanisms.</p>
 </span></code></pre></div>
 <p><strong>During Execution:</strong>
 - When <code>SummarizeOrderStatus</code> is active, the context includes the full execution trace from <code>Main</code> → <code>GetOrderStatus</code> → <code>SummarizeOrderStatus</code>
-- All playbook instructions, inputs, outputs, and intermediate steps are preserved in context</p>
+- Long content is automatically stored as artifact so the value is not duplicated in the context multiple times.
+- All playbook instructions, inputs, outputs, artifacts, and intermediate steps are preserved in context</p>
 <p><strong>After Playbook Returns:</strong>
-- When <code>SummarizeOrderStatus</code> completes, its detailed execution trace is replaced with a summary
+- When <code>SummarizeOrderStatus</code> completes, its detailed execution trace is replaced with a summary. Any artifacts created/loaded in <code>SummarizeOrderStatus</code> are unloaded from context.
 - When <code>GetOrderStatus</code> returns to <code>Main</code>, both its traces are replaced with summary
 - So, when <code>Main</code> playbook continues after <code>GetOrderStatus</code> returns, it has a compact context containing only the summary of <code>GetOrderStatus</code> execution, thus reducing context size and token usage</p>
+<p><strong>👉 <a href="../../programming-guide/artifacts/">Complete Artifacts Guide</a></strong> - Detailed explanation, API reference, and usage patterns</p>
 <hr />
 <h2 id="prompt-caching-optimization">Prompt Caching Optimization<a class="headerlink" href="#prompt-caching-optimization" title="Permanent link">&para;</a></h2>
 <p>Playbooks intelligently leverages prompt caching to minimize latency and reduce API costs. The framework automatically manages cache-friendly context structures.</p>
@@ -1205,6 +1298,9 @@ There are competing factors to balance when it comes to using the cache effectiv
 <p><strong><a href="../description-placeholders/">Description Placeholders</a></strong>
 - Inject dynamic values into playbook descriptions
 - Inject either inline in the description or as a separarate LLM message.</p>
+<p><strong><a href="../../programming-guide/artifacts/">Artifacts</a></strong>
+- Control when large content enters/exits context through explicit artifact creation with <code>SaveArtifact()</code> and loading with <code>LoadArtifact()</code>
+- Influence automatic artifact creation threshold via <code>artifact_result_threshold</code> configuration</p>
 
 
 

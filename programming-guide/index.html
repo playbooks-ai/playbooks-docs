@@ -16,7 +16,7 @@
         <link rel="prev" href="../getting-started/migrating/">
       
       
-        <link rel="next" href="../tutorials/">
+        <link rel="next" href="artifacts/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Programming Guide - Playbooks AI</title>
+        <title>Playbooks Programming Guide - Playbooks AI</title>
       
     
     
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Programming Guide
+              Playbooks Programming Guide
             
           </span>
         </div>
@@ -405,16 +405,31 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
           
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
   <span class="md-ellipsis">
@@ -423,735 +438,72 @@
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="artifacts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Programming Guide
+    Artifacts
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="python-only-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python-Only Agents
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Concepts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#philosophy-software-30" class="md-nav__link">
-    <span class="md-ellipsis">
-      Philosophy: Software 3.0
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-abstractions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Abstractions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#language-syntax-and-formatting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Language Syntax and Formatting
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Language Syntax and Formatting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#formatting-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Formatting Rules
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-five-playbook-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Five Playbook Types
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Five Playbook Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decision-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decision Framework
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#1-markdown-playbooks-structured-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Markdown Playbooks - Structured Workflows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-react-playbooks-dynamic-reasoning" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. ReAct Playbooks - Dynamic Reasoning
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-raw-prompt-playbooks-full-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Raw Prompt Playbooks - Full Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-python-playbooks-hard-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Python Playbooks - Hard Logic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-extract-python-playbooks-to-mcp-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Extract Python Playbooks to MCP Server
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-external-playbooks-remote-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. External Playbooks - Remote Tools
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decomposing-tasks-into-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decomposing Tasks into Playbooks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Decomposing Tasks into Playbooks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decomposition-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decomposition Strategy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#granularity-guidelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      Granularity Guidelines
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-create-separate-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Create Separate Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#natural-language-vs-explicit-syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Natural Language vs Explicit Syntax
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Natural Language vs Explicit Syntax">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-spectrum-of-explicitness" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Spectrum of Explicitness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-assignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variable Assignment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-each-style" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use Each Style
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-call-syntax-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Function Call Syntax Options
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-agent-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi-Agent Programs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multi-Agent Programs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-multiple-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use Multiple Agents
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating-multiple-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating Multiple Agents
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#agent-communication-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Agent Communication Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Agent Communication Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-direct-public-playbook-calls" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Direct Public Playbook Calls
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-natural-language-messaging" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Natural Language Messaging
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-meetings-multi-party-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Meetings - Multi-Party Coordination
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-agent-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi-Agent Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#triggers-event-driven-programming" class="md-nav__link">
-    <span class="md-ellipsis">
-      Triggers: Event-Driven Programming
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Triggers: Event-Driven Programming">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-use-triggers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Use Triggers?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-triggers" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use Triggers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-validation-pattern-before-after" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Validation Pattern: Before &amp; After
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trigger-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trigger Types
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-trigger-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Trigger Patterns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#trigger-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trigger Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description-placeholders" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description Placeholders
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Description Placeholders">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-can-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      What You Can Use
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Patterns
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#artifacts-and-memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      Artifacts and Memory
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Artifacts and Memory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#artifacts-persistent-files-alpha-feature" class="md-nav__link">
-    <span class="md-ellipsis">
-      Artifacts - Persistent Files (alpha feature)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use Artifacts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-patterns-and-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Patterns and Best Practices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Patterns and Best Practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pattern-python-markdown-composition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern: Python ↔ Markdown Composition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-batch-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern: Batch Operations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern: Error Handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-collecting-inputs-from-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern: Collecting Inputs from User
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-mock-backend-interactions-with-python-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern: Mock Backend Interactions with Python Playbooks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#best-practices-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices Summary
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editing-existing-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Editing Existing Programs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Editing Existing Programs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#surgical-editing-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Surgical Editing Principles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-edit-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Edit Patterns
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-pbasm-compilation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding PBAsm Compilation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding PBAsm Compilation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-pbasm-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why PBAsm Matters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compilation-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilation Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-pbasm-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key PBAsm Concepts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-this-helps-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why This Helps You
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#you-dont-need-to-write-pbasm" class="md-nav__link">
-    <span class="md-ellipsis">
-      You Don't Need to Write PBAsm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Reference
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimal-working-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      Minimal Working Program
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#complete-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Complete Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cheat-sheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cheat Sheet
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#programming-principles-extremely-important" class="md-nav__link">
-    <span class="md-ellipsis">
-      Programming Principles (EXTREMELY IMPORTANT!)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2066,28 +1418,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#artifacts-and-memory" class="md-nav__link">
+  <a href="#artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Artifacts and Memory
+      Artifacts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Artifacts and Memory">
+    <nav class="md-nav" aria-label="Artifacts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#artifacts-persistent-files-alpha-feature" class="md-nav__link">
+  <a href="#artifacts-efficient-long-content-handling" class="md-nav__link">
     <span class="md-ellipsis">
-      Artifacts - Persistent Files (alpha feature)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use Artifacts
+      Artifacts - Efficient Long Content Handling
     </span>
   </a>
   
@@ -2344,7 +1687,7 @@
 <li><a href="#multi-agent-programs">Multi-Agent Programs</a></li>
 <li><a href="#triggers-event-driven-programming">Triggers: Event-Driven Programming</a></li>
 <li><a href="#description-placeholders">Description Placeholders</a></li>
-<li><a href="#artifacts-and-memory">Artifacts and Memory</a></li>
+<li><a href="#artifacts">Artifacts</a></li>
 <li><a href="#common-patterns-and-best-practices">Common Patterns and Best Practices</a></li>
 <li><a href="#editing-existing-programs">Editing Existing Programs</a></li>
 <li><a href="#understanding-pbasm-compilation">Understanding PBAsm Compilation</a></li>
@@ -2606,6 +1949,7 @@
 - Use <code>await</code> to call other playbooks
 - Return user-readable strings/dicts when called from Markdown
 - Can call Markdown playbooks: <code>await MarkdownPlaybook(args)</code></p>
+<p><strong>Python-Only Agents</strong>: You can build entire agents using only Python playbooks without any LLM calls. This is useful for deterministic workflows, prototyping, testing, or scenarios where you don't need AI reasoning. See the <strong><a href="python-only-agents/">Python-Only Agents Guide</a></strong> for details.</p>
 <h3 id="when-to-extract-python-playbooks-to-mcp-server">When to Extract Python Playbooks to MCP Server<a class="headerlink" href="#when-to-extract-python-playbooks-to-mcp-server" title="Permanent link">&para;</a></h3>
 <p>⚠️ <strong>Important Rule</strong>: If you have <strong>more than 3 Python playbooks</strong> in a single agent, extract them to a separate MCP server instead.</p>
 <p><strong>Why Extract to MCP</strong>:
@@ -3167,81 +2511,65 @@
 <li><strong>Security</strong>: No <code>eval</code>, <code>exec</code>, <code>subprocess</code>, <code>__import__</code></li>
 </ol>
 <hr />
-<h2 id="artifacts-and-memory">Artifacts and Memory<a class="headerlink" href="#artifacts-and-memory" title="Permanent link">&para;</a></h2>
-<h3 id="artifacts-persistent-files-alpha-feature">Artifacts - Persistent Files (alpha feature)<a class="headerlink" href="#artifacts-persistent-files-alpha-feature" title="Permanent link">&para;</a></h3>
-<p>Artifacts are named content that persists across playbook calls.</p>
-<p><strong>Save Artifact</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="k">-</span><span class="w"> </span>Create report content
-</span><span id="__codeline__-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="k">-</span><span class="w"> </span>SaveArtifact(&quot;report.md&quot;, &quot;Monthly Report&quot;, $report_content)
-</span><span id="__codeline__-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="k">-</span><span class="w"> </span>Tell user &quot;Report saved as Artifact[report.md]&quot;
-</span></code></pre></div>
-<p><strong>Load Artifact</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="k">-</span><span class="w"> </span>LoadArtifact(&quot;report.md&quot;)
-</span><span id="__codeline__-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="k">-</span><span class="w"> </span>Summarize the loaded report
-</span></code></pre></div>
-<p><strong>Python Usage</strong>:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="sb">```python</span>
-</span><span id="__codeline__-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nd">@playbook</span>
-</span><span id="__codeline__-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">GenerateReport</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__codeline__-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>    <span class="n">report</span> <span class="o">=</span> <span class="n">format_report</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span id="__codeline__-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>    <span class="k">await</span> <span class="n">SaveArtifact</span><span class="p">(</span><span class="s2">&quot;report.md&quot;</span><span class="p">,</span> <span class="s2">&quot;Sales Report&quot;</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
-</span><span id="__codeline__-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>    <span class="k">return</span> <span class="s2">&quot;Artifact[report.md]&quot;</span>
-</span><span id="__codeline__-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>
-</span><span id="__codeline__-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="nd">@playbook</span>
-</span><span id="__codeline__-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">AnalyzeReport</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__codeline__-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>    <span class="n">artifact</span> <span class="o">=</span> <span class="k">await</span> <span class="n">LoadArtifact</span><span class="p">(</span><span class="s2">&quot;report.md&quot;</span><span class="p">)</span>
-</span><span id="__codeline__-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>    <span class="c1"># artifact.name, artifact.description, artifact.content</span>
-</span><span id="__codeline__-50-12"><a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>    <span class="k">return</span> <span class="n">analysis</span>
-</span><span id="__codeline__-50-13"><a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a><span class="sb">```</span>
-</span></code></pre></div>
-<h3 id="when-to-use-artifacts">When to Use Artifacts<a class="headerlink" href="#when-to-use-artifacts" title="Permanent link">&para;</a></h3>
-<ul>
-<li>✅ Large content (reports, documents, datasets)</li>
-<li>✅ Content referenced multiple times</li>
-<li>✅ Content persists across conversation</li>
-<li>✅ User needs to download/view separately</li>
-</ul>
+<h2 id="artifacts">Artifacts<a class="headerlink" href="#artifacts" title="Permanent link">&para;</a></h2>
+<h3 id="artifacts-efficient-long-content-handling">Artifacts - Efficient Long Content Handling<a class="headerlink" href="#artifacts-efficient-long-content-handling" title="Permanent link">&para;</a></h3>
+<p>Artifacts implement pass-by-reference semantics for long text content or large objects. When large values are passed between playbooks using pass-by-value, the content gets duplicated in LLM context multiple times. Artifacts solve this by storing content once and passing only the reference.</p>
+<p><strong>The Problem</strong>: Large values passed between playbooks get duplicated:
+- When sent as an argument
+- As a local variable in the receiving playbook
+- In the state sent to the LLM</p>
+<p><strong>The Solution</strong>: Artifacts work like lazy loading:
+- Content stored once, referenced by name
+- Automatically loaded into context when referenced
+- Unloaded from context after returning from the playbook that loaded it</p>
+<p><strong>Usage</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__codeline__-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="c1"># Automatic artifact creation (&gt;80 chars)</span>
+</span><span id="__codeline__-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="err">$</span><span class="n">document</span> <span class="o">=</span> <span class="n">ReadFile</span><span class="p">(</span><span class="s2">&quot;doc.md&quot;</span><span class="p">)</span>
+</span><span id="__codeline__-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>
+</span><span id="__codeline__-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="c1"># Explicit artifact creation</span>
+</span><span id="__codeline__-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a><span class="k">await</span> <span class="n">SaveArtifact</span><span class="p">(</span><span class="s2">&quot;$report&quot;</span><span class="p">,</span> <span class="s2">&quot;Q3 Report&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;&quot;some content...&quot;&quot;&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p>👉 <strong><a href="artifacts/">Complete Guide</a></strong> - Detailed explanation, paged memory model, API reference, and usage notes</p>
+<p><strong>Tip</strong>: Minimize artifact context time by loading and using them in separate playbooks. The artifact unloads when the playbook returns, keeping context small for later processing.</p>
 <hr />
 <h2 id="common-patterns-and-best-practices">Common Patterns and Best Practices<a class="headerlink" href="#common-patterns-and-best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="pattern-python-markdown-composition">Pattern: Python ↔ Markdown Composition<a class="headerlink" href="#pattern-python-markdown-composition" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="sb">```python</span>
-</span><span id="__codeline__-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nd">@playbook</span>
-</span><span id="__codeline__-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">ProcessItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__codeline__-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch and process data with complex logic.&quot;&quot;&quot;</span>
-</span><span id="__codeline__-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">external_api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
-</span><span id="__codeline__-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>    <span class="n">summary</span> <span class="o">=</span> <span class="k">await</span> <span class="n">SummarizeItem</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Call Markdown playbook</span>
-</span><span id="__codeline__-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    <span class="k">return</span> <span class="n">summary</span>
-</span><span id="__codeline__-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="sb">```</span>
-</span><span id="__codeline__-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a>
-</span><span id="__codeline__-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a><span class="gu">## SummarizeItem($item)</span>
-</span><span id="__codeline__-51-11"><a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-51-12"><a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="k">-</span><span class="w"> </span>Format $item as user-friendly summary
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="sb">```python</span>
+</span><span id="__codeline__-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">ProcessItem</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__codeline__-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch and process data with complex logic.&quot;&quot;&quot;</span>
+</span><span id="__codeline__-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">external_api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+</span><span id="__codeline__-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>    <span class="n">summary</span> <span class="o">=</span> <span class="k">await</span> <span class="n">SummarizeItem</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Call Markdown playbook</span>
+</span><span id="__codeline__-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>    <span class="k">return</span> <span class="n">summary</span>
+</span><span id="__codeline__-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="sb">```</span>
+</span><span id="__codeline__-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>
+</span><span id="__codeline__-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="gu">## SummarizeItem($item)</span>
+</span><span id="__codeline__-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-49-12"><a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="k">-</span><span class="w"> </span>Format $item as user-friendly summary
 </span></code></pre></div>
 <h3 id="pattern-batch-operations">Pattern: Batch Operations<a class="headerlink" href="#pattern-batch-operations" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="k">-</span><span class="w"> </span>For each $order in $pending_orders
-</span><span id="__codeline__-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>ProcessSingleOrder($order)
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="k">-</span><span class="w"> </span>For each $order in $pending_orders
+</span><span id="__codeline__-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>ProcessSingleOrder($order)
 </span></code></pre></div>
 <h3 id="pattern-error-handling">Pattern: Error Handling<a class="headerlink" href="#pattern-error-handling" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="gu">## SafeOperation</span>
-</span><span id="__codeline__-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="k">-</span><span class="w"> </span>Try to process $data
-</span><span id="__codeline__-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a><span class="k">-</span><span class="w"> </span>If operation fails
-</span><span id="__codeline__-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Log error
-</span><span id="__codeline__-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user operation failed with reason
-</span><span id="__codeline__-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return error status
-</span><span id="__codeline__-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a><span class="k">-</span><span class="w"> </span>Otherwise
-</span><span id="__codeline__-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user success
-</span><span id="__codeline__-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return success status
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="gu">## SafeOperation</span>
+</span><span id="__codeline__-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="k">-</span><span class="w"> </span>Try to process $data
+</span><span id="__codeline__-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="k">-</span><span class="w"> </span>If operation fails
+</span><span id="__codeline__-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Log error
+</span><span id="__codeline__-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user operation failed with reason
+</span><span id="__codeline__-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return error status
+</span><span id="__codeline__-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user success
+</span><span id="__codeline__-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Return success status
 </span></code></pre></div>
 <h3 id="pattern-collecting-inputs-from-user">Pattern: Collecting Inputs from User<a class="headerlink" href="#pattern-collecting-inputs-from-user" title="Permanent link">&para;</a></h3>
 <p>When your agent needs information from the user, always ask for all inputs at once and establish a clear conversation loop until all valid data is acquired:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
-</span><span id="__codeline__-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="k">-</span><span class="w"> </span>If user gives up, apologize and return
-</span><span id="__codeline__-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="k">-</span><span class="w"> </span>Inform user that you were able to authenticate them
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+</span><span id="__codeline__-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="k">-</span><span class="w"> </span>If user gives up, apologize and return
+</span><span id="__codeline__-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="k">-</span><span class="w"> </span>Inform user that you were able to authenticate them
 </span></code></pre></div>
 <p>This pattern:</p>
 <ul>
@@ -3253,41 +2581,41 @@
 <p><strong>Why this matters</strong>: Asking for information piece by piece creates a poor user experience. Users appreciate knowing all requirements upfront.</p>
 <h3 id="pattern-mock-backend-interactions-with-python-playbooks">Pattern: Mock Backend Interactions with Python Playbooks<a class="headerlink" href="#pattern-mock-backend-interactions-with-python-playbooks" title="Permanent link">&para;</a></h3>
 <p>Think if a certain action would require backend interaction (databases, APIs, authentication services). If so, use Python playbooks to encapsulate that logic. Use mock implementations as necessary to aid in development:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="sb">```python</span>
-</span><span id="__codeline__-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="nd">@playbook</span>
-</span><span id="__codeline__-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">AuthenticateUser</span><span class="p">(</span><span class="err">$</span><span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="err">$</span><span class="n">pin</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__codeline__-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Authenticate user with email and PIN.</span>
-</span><span id="__codeline__-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>
-</span><span id="__codeline__-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="sd">    In production, this would call the actual authentication service.</span>
-</span><span id="__codeline__-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="sd">    For now, using mock data for development.</span>
-</span><span id="__codeline__-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__codeline__-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>    <span class="c1"># Mock implementation for development</span>
-</span><span id="__codeline__-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a>    <span class="k">return</span> <span class="err">$</span><span class="n">email</span> <span class="o">==</span> <span class="s2">&quot;test@test.com&quot;</span> <span class="ow">and</span> <span class="err">$</span><span class="n">pin</span> <span class="o">==</span> <span class="s2">&quot;1234&quot;</span>
-</span><span id="__codeline__-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a>
-</span><span id="__codeline__-55-12"><a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="nd">@playbook</span>  
-</span><span id="__codeline__-55-13"><a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">FetchUserProfile</span><span class="p">(</span><span class="err">$</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-</span><span id="__codeline__-55-14"><a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch user profile from database.</span>
-</span><span id="__codeline__-55-15"><a id="__codelineno-55-15" name="__codelineno-55-15" href="#__codelineno-55-15"></a>
-</span><span id="__codeline__-55-16"><a id="__codelineno-55-16" name="__codelineno-55-16" href="#__codelineno-55-16"></a><span class="sd">    Production: Query user database</span>
-</span><span id="__codeline__-55-17"><a id="__codelineno-55-17" name="__codelineno-55-17" href="#__codelineno-55-17"></a><span class="sd">    Development: Return mock data</span>
-</span><span id="__codeline__-55-18"><a id="__codelineno-55-18" name="__codelineno-55-18" href="#__codelineno-55-18"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__codeline__-55-19"><a id="__codelineno-55-19" name="__codelineno-55-19" href="#__codelineno-55-19"></a>    <span class="c1"># Mock implementation</span>
-</span><span id="__codeline__-55-20"><a id="__codelineno-55-20" name="__codelineno-55-20" href="#__codelineno-55-20"></a>    <span class="k">return</span> <span class="p">{</span>
-</span><span id="__codeline__-55-21"><a id="__codelineno-55-21" name="__codelineno-55-21" href="#__codelineno-55-21"></a>        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="err">$</span><span class="n">user_id</span><span class="p">,</span>
-</span><span id="__codeline__-55-22"><a id="__codelineno-55-22" name="__codelineno-55-22" href="#__codelineno-55-22"></a>        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test User&quot;</span><span class="p">,</span>
-</span><span id="__codeline__-55-23"><a id="__codelineno-55-23" name="__codelineno-55-23" href="#__codelineno-55-23"></a>        <span class="s2">&quot;preferences&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;theme&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">}</span>
-</span><span id="__codeline__-55-24"><a id="__codelineno-55-24" name="__codelineno-55-24" href="#__codelineno-55-24"></a>    <span class="p">}</span>
-</span><span id="__codeline__-55-25"><a id="__codelineno-55-25" name="__codelineno-55-25" href="#__codelineno-55-25"></a><span class="sb">```</span>
-</span><span id="__codeline__-55-26"><a id="__codelineno-55-26" name="__codelineno-55-26" href="#__codelineno-55-26"></a>
-</span><span id="__codeline__-55-27"><a id="__codelineno-55-27" name="__codelineno-55-27" href="#__codelineno-55-27"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-55-28"><a id="__codelineno-55-28" name="__codelineno-55-28" href="#__codelineno-55-28"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-55-29"><a id="__codelineno-55-29" name="__codelineno-55-29" href="#__codelineno-55-29"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
-</span><span id="__codeline__-55-30"><a id="__codelineno-55-30" name="__codelineno-55-30" href="#__codelineno-55-30"></a><span class="k">-</span><span class="w"> </span>Authenticate user
-</span><span id="__codeline__-55-31"><a id="__codelineno-55-31" name="__codelineno-55-31" href="#__codelineno-55-31"></a><span class="k">-</span><span class="w"> </span>If user is authenticated
-</span><span id="__codeline__-55-32"><a id="__codelineno-55-32" name="__codelineno-55-32" href="#__codelineno-55-32"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Fetch user profile
-</span><span id="__codeline__-55-33"><a id="__codelineno-55-33" name="__codelineno-55-33" href="#__codelineno-55-33"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Welcome user by name from profile
-</span><span id="__codeline__-55-34"><a id="__codelineno-55-34" name="__codelineno-55-34" href="#__codelineno-55-34"></a><span class="k">-</span><span class="w"> </span>Otherwise
-</span><span id="__codeline__-55-35"><a id="__codelineno-55-35" name="__codelineno-55-35" href="#__codelineno-55-35"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user authentication failed
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="sb">```python</span>
+</span><span id="__codeline__-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">AuthenticateUser</span><span class="p">(</span><span class="err">$</span><span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="err">$</span><span class="n">pin</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__codeline__-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Authenticate user with email and PIN.</span>
+</span><span id="__codeline__-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>
+</span><span id="__codeline__-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a><span class="sd">    In production, this would call the actual authentication service.</span>
+</span><span id="__codeline__-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a><span class="sd">    For now, using mock data for development.</span>
+</span><span id="__codeline__-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>    <span class="c1"># Mock implementation for development</span>
+</span><span id="__codeline__-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a>    <span class="k">return</span> <span class="err">$</span><span class="n">email</span> <span class="o">==</span> <span class="s2">&quot;test@test.com&quot;</span> <span class="ow">and</span> <span class="err">$</span><span class="n">pin</span> <span class="o">==</span> <span class="s2">&quot;1234&quot;</span>
+</span><span id="__codeline__-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11" href="#__codelineno-53-11"></a>
+</span><span id="__codeline__-53-12"><a id="__codelineno-53-12" name="__codelineno-53-12" href="#__codelineno-53-12"></a><span class="nd">@playbook</span>  
+</span><span id="__codeline__-53-13"><a id="__codelineno-53-13" name="__codelineno-53-13" href="#__codelineno-53-13"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">FetchUserProfile</span><span class="p">(</span><span class="err">$</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__codeline__-53-14"><a id="__codelineno-53-14" name="__codelineno-53-14" href="#__codelineno-53-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch user profile from database.</span>
+</span><span id="__codeline__-53-15"><a id="__codelineno-53-15" name="__codelineno-53-15" href="#__codelineno-53-15"></a>
+</span><span id="__codeline__-53-16"><a id="__codelineno-53-16" name="__codelineno-53-16" href="#__codelineno-53-16"></a><span class="sd">    Production: Query user database</span>
+</span><span id="__codeline__-53-17"><a id="__codelineno-53-17" name="__codelineno-53-17" href="#__codelineno-53-17"></a><span class="sd">    Development: Return mock data</span>
+</span><span id="__codeline__-53-18"><a id="__codelineno-53-18" name="__codelineno-53-18" href="#__codelineno-53-18"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__codeline__-53-19"><a id="__codelineno-53-19" name="__codelineno-53-19" href="#__codelineno-53-19"></a>    <span class="c1"># Mock implementation</span>
+</span><span id="__codeline__-53-20"><a id="__codelineno-53-20" name="__codelineno-53-20" href="#__codelineno-53-20"></a>    <span class="k">return</span> <span class="p">{</span>
+</span><span id="__codeline__-53-21"><a id="__codelineno-53-21" name="__codelineno-53-21" href="#__codelineno-53-21"></a>        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="err">$</span><span class="n">user_id</span><span class="p">,</span>
+</span><span id="__codeline__-53-22"><a id="__codelineno-53-22" name="__codelineno-53-22" href="#__codelineno-53-22"></a>        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test User&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-53-23"><a id="__codelineno-53-23" name="__codelineno-53-23" href="#__codelineno-53-23"></a>        <span class="s2">&quot;preferences&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;theme&quot;</span><span class="p">:</span> <span class="s2">&quot;dark&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-53-24"><a id="__codelineno-53-24" name="__codelineno-53-24" href="#__codelineno-53-24"></a>    <span class="p">}</span>
+</span><span id="__codeline__-53-25"><a id="__codelineno-53-25" name="__codelineno-53-25" href="#__codelineno-53-25"></a><span class="sb">```</span>
+</span><span id="__codeline__-53-26"><a id="__codelineno-53-26" name="__codelineno-53-26" href="#__codelineno-53-26"></a>
+</span><span id="__codeline__-53-27"><a id="__codelineno-53-27" name="__codelineno-53-27" href="#__codelineno-53-27"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-53-28"><a id="__codelineno-53-28" name="__codelineno-53-28" href="#__codelineno-53-28"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-53-29"><a id="__codelineno-53-29" name="__codelineno-53-29" href="#__codelineno-53-29"></a><span class="k">-</span><span class="w"> </span>Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
+</span><span id="__codeline__-53-30"><a id="__codelineno-53-30" name="__codelineno-53-30" href="#__codelineno-53-30"></a><span class="k">-</span><span class="w"> </span>Authenticate user
+</span><span id="__codeline__-53-31"><a id="__codelineno-53-31" name="__codelineno-53-31" href="#__codelineno-53-31"></a><span class="k">-</span><span class="w"> </span>If user is authenticated
+</span><span id="__codeline__-53-32"><a id="__codelineno-53-32" name="__codelineno-53-32" href="#__codelineno-53-32"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Fetch user profile
+</span><span id="__codeline__-53-33"><a id="__codelineno-53-33" name="__codelineno-53-33" href="#__codelineno-53-33"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Welcome user by name from profile
+</span><span id="__codeline__-53-34"><a id="__codelineno-53-34" name="__codelineno-53-34" href="#__codelineno-53-34"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-53-35"><a id="__codelineno-53-35" name="__codelineno-53-35" href="#__codelineno-53-35"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user authentication failed
 </span></code></pre></div>
 <p>This pattern:</p>
 <ul>
@@ -3350,11 +2678,11 @@
 </ol>
 <h3 id="common-edit-patterns">Common Edit Patterns<a class="headerlink" href="#common-edit-patterns" title="Permanent link">&para;</a></h3>
 <p><strong>Adding a new playbook</strong>:
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="gu">## NewPlaybook($param)</span>
-</span><span id="__codeline__-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>Description
-</span><span id="__codeline__-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>
-</span><span id="__codeline__-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="k">-</span><span class="w"> </span>New logic
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="gu">## NewPlaybook($param)</span>
+</span><span id="__codeline__-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>Description
+</span><span id="__codeline__-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>
+</span><span id="__codeline__-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="k">-</span><span class="w"> </span>New logic
 </span></code></pre></div></p>
 <p><strong>Modifying steps</strong>: Find the playbook, locate the specific step, update it, and ensure variable references still work.</p>
 <hr />
@@ -3393,56 +2721,56 @@
 <hr />
 <h2 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
 <h3 id="minimal-working-program">Minimal Working Program<a class="headerlink" href="#minimal-working-program" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="gh"># MyAgent</span>
-</span><span id="__codeline__-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>Description of what this agent does
-</span><span id="__codeline__-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>
-</span><span id="__codeline__-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__codeline__-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-57-8"><a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a><span class="k">-</span><span class="w"> </span>Greet user
-</span><span id="__codeline__-57-9"><a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a><span class="k">-</span><span class="w"> </span>Ask user what they need help with
-</span><span id="__codeline__-57-10"><a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a><span class="k">-</span><span class="w"> </span>Help them
-</span><span id="__codeline__-57-11"><a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a><span class="k">-</span><span class="w"> </span>End program
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="gh"># MyAgent</span>
+</span><span id="__codeline__-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>Description of what this agent does
+</span><span id="__codeline__-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
+</span><span id="__codeline__-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-55-7"><a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-55-8"><a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="k">-</span><span class="w"> </span>Greet user
+</span><span id="__codeline__-55-9"><a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a><span class="k">-</span><span class="w"> </span>Ask user what they need help with
+</span><span id="__codeline__-55-10"><a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a><span class="k">-</span><span class="w"> </span>Help them
+</span><span id="__codeline__-55-11"><a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="k">-</span><span class="w"> </span>End program
 </span></code></pre></div>
 <h3 id="complete-example">Complete Example<a class="headerlink" href="#complete-example" title="Permanent link">&para;</a></h3>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="gh"># TaskAgent</span>
-</span><span id="__codeline__-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>You help users manage their tasks efficiently.
-</span><span id="__codeline__-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>
-</span><span id="__codeline__-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="sb">```python</span>
-</span><span id="__codeline__-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="nd">@playbook</span>
-</span><span id="__codeline__-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">SaveTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-</span><span id="__codeline__-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Save task to database (mock implementation).&quot;&quot;&quot;</span>
-</span><span id="__codeline__-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;pending&quot;</span><span class="p">}</span>
-</span><span id="__codeline__-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="sb">```</span>
-</span><span id="__codeline__-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a>
-</span><span id="__codeline__-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-58-12"><a id="__codelineno-58-12" name="__codelineno-58-12" href="#__codelineno-58-12"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-58-13"><a id="__codelineno-58-13" name="__codelineno-58-13" href="#__codelineno-58-13"></a><span class="k">-</span><span class="w"> </span>At the beginning
-</span><span id="__codeline__-58-14"><a id="__codelineno-58-14" name="__codelineno-58-14" href="#__codelineno-58-14"></a>
-</span><span id="__codeline__-58-15"><a id="__codelineno-58-15" name="__codelineno-58-15" href="#__codelineno-58-15"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-58-16"><a id="__codelineno-58-16" name="__codelineno-58-16" href="#__codelineno-58-16"></a><span class="k">-</span><span class="w"> </span>Greet user
-</span><span id="__codeline__-58-17"><a id="__codelineno-58-17" name="__codelineno-58-17" href="#__codelineno-58-17"></a><span class="k">-</span><span class="w"> </span>Ask what they&#39;d like to do
-</span><span id="__codeline__-58-18"><a id="__codelineno-58-18" name="__codelineno-58-18" href="#__codelineno-58-18"></a><span class="k">-</span><span class="w"> </span>If user wants to add a task
-</span><span id="__codeline__-58-19"><a id="__codelineno-58-19" name="__codelineno-58-19" href="#__codelineno-58-19"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Add a new task
-</span><span id="__codeline__-58-20"><a id="__codelineno-58-20" name="__codelineno-58-20" href="#__codelineno-58-20"></a><span class="k">-</span><span class="w"> </span>If user wants to list tasks
-</span><span id="__codeline__-58-21"><a id="__codelineno-58-21" name="__codelineno-58-21" href="#__codelineno-58-21"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Show all pending tasks
-</span><span id="__codeline__-58-22"><a id="__codelineno-58-22" name="__codelineno-58-22" href="#__codelineno-58-22"></a><span class="k">-</span><span class="w"> </span>End program
-</span><span id="__codeline__-58-23"><a id="__codelineno-58-23" name="__codelineno-58-23" href="#__codelineno-58-23"></a>
-</span><span id="__codeline__-58-24"><a id="__codelineno-58-24" name="__codelineno-58-24" href="#__codelineno-58-24"></a><span class="gu">## AddTask</span>
-</span><span id="__codeline__-58-25"><a id="__codelineno-58-25" name="__codelineno-58-25" href="#__codelineno-58-25"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-58-26"><a id="__codelineno-58-26" name="__codelineno-58-26" href="#__codelineno-58-26"></a><span class="k">-</span><span class="w"> </span>Ask user for $task_description
-</span><span id="__codeline__-58-27"><a id="__codelineno-58-27" name="__codelineno-58-27" href="#__codelineno-58-27"></a><span class="k">-</span><span class="w"> </span>Save the task
-</span><span id="__codeline__-58-28"><a id="__codelineno-58-28" name="__codelineno-58-28" href="#__codelineno-58-28"></a><span class="k">-</span><span class="w"> </span>Tell user task was added successfully
-</span><span id="__codeline__-58-29"><a id="__codelineno-58-29" name="__codelineno-58-29" href="#__codelineno-58-29"></a>
-</span><span id="__codeline__-58-30"><a id="__codelineno-58-30" name="__codelineno-58-30" href="#__codelineno-58-30"></a><span class="gu">## ValidateTaskDescription</span>
-</span><span id="__codeline__-58-31"><a id="__codelineno-58-31" name="__codelineno-58-31" href="#__codelineno-58-31"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-58-32"><a id="__codelineno-58-32" name="__codelineno-58-32" href="#__codelineno-58-32"></a><span class="k">-</span><span class="w"> </span>When user provides task description
-</span><span id="__codeline__-58-33"><a id="__codelineno-58-33" name="__codelineno-58-33" href="#__codelineno-58-33"></a>
-</span><span id="__codeline__-58-34"><a id="__codelineno-58-34" name="__codelineno-58-34" href="#__codelineno-58-34"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-58-35"><a id="__codelineno-58-35" name="__codelineno-58-35" href="#__codelineno-58-35"></a><span class="k">-</span><span class="w"> </span>If $task_description is empty
-</span><span id="__codeline__-58-36"><a id="__codelineno-58-36" name="__codelineno-58-36" href="#__codelineno-58-36"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user task cannot be empty
-</span><span id="__codeline__-58-37"><a id="__codelineno-58-37" name="__codelineno-58-37" href="#__codelineno-58-37"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask again
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="gh"># TaskAgent</span>
+</span><span id="__codeline__-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>You help users manage their tasks efficiently.
+</span><span id="__codeline__-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>
+</span><span id="__codeline__-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="sb">```python</span>
+</span><span id="__codeline__-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">SaveTask</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="__codeline__-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Save task to database (mock implementation).&quot;&quot;&quot;</span>
+</span><span id="__codeline__-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123&quot;</span><span class="p">,</span> <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;pending&quot;</span><span class="p">}</span>
+</span><span id="__codeline__-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="sb">```</span>
+</span><span id="__codeline__-56-10"><a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a>
+</span><span id="__codeline__-56-11"><a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-56-12"><a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-56-13"><a id="__codelineno-56-13" name="__codelineno-56-13" href="#__codelineno-56-13"></a><span class="k">-</span><span class="w"> </span>At the beginning
+</span><span id="__codeline__-56-14"><a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a>
+</span><span id="__codeline__-56-15"><a id="__codelineno-56-15" name="__codelineno-56-15" href="#__codelineno-56-15"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-56-16"><a id="__codelineno-56-16" name="__codelineno-56-16" href="#__codelineno-56-16"></a><span class="k">-</span><span class="w"> </span>Greet user
+</span><span id="__codeline__-56-17"><a id="__codelineno-56-17" name="__codelineno-56-17" href="#__codelineno-56-17"></a><span class="k">-</span><span class="w"> </span>Ask what they&#39;d like to do
+</span><span id="__codeline__-56-18"><a id="__codelineno-56-18" name="__codelineno-56-18" href="#__codelineno-56-18"></a><span class="k">-</span><span class="w"> </span>If user wants to add a task
+</span><span id="__codeline__-56-19"><a id="__codelineno-56-19" name="__codelineno-56-19" href="#__codelineno-56-19"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Add a new task
+</span><span id="__codeline__-56-20"><a id="__codelineno-56-20" name="__codelineno-56-20" href="#__codelineno-56-20"></a><span class="k">-</span><span class="w"> </span>If user wants to list tasks
+</span><span id="__codeline__-56-21"><a id="__codelineno-56-21" name="__codelineno-56-21" href="#__codelineno-56-21"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Show all pending tasks
+</span><span id="__codeline__-56-22"><a id="__codelineno-56-22" name="__codelineno-56-22" href="#__codelineno-56-22"></a><span class="k">-</span><span class="w"> </span>End program
+</span><span id="__codeline__-56-23"><a id="__codelineno-56-23" name="__codelineno-56-23" href="#__codelineno-56-23"></a>
+</span><span id="__codeline__-56-24"><a id="__codelineno-56-24" name="__codelineno-56-24" href="#__codelineno-56-24"></a><span class="gu">## AddTask</span>
+</span><span id="__codeline__-56-25"><a id="__codelineno-56-25" name="__codelineno-56-25" href="#__codelineno-56-25"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-56-26"><a id="__codelineno-56-26" name="__codelineno-56-26" href="#__codelineno-56-26"></a><span class="k">-</span><span class="w"> </span>Ask user for $task_description
+</span><span id="__codeline__-56-27"><a id="__codelineno-56-27" name="__codelineno-56-27" href="#__codelineno-56-27"></a><span class="k">-</span><span class="w"> </span>Save the task
+</span><span id="__codeline__-56-28"><a id="__codelineno-56-28" name="__codelineno-56-28" href="#__codelineno-56-28"></a><span class="k">-</span><span class="w"> </span>Tell user task was added successfully
+</span><span id="__codeline__-56-29"><a id="__codelineno-56-29" name="__codelineno-56-29" href="#__codelineno-56-29"></a>
+</span><span id="__codeline__-56-30"><a id="__codelineno-56-30" name="__codelineno-56-30" href="#__codelineno-56-30"></a><span class="gu">## ValidateTaskDescription</span>
+</span><span id="__codeline__-56-31"><a id="__codelineno-56-31" name="__codelineno-56-31" href="#__codelineno-56-31"></a><span class="gu">### Triggers</span>
+</span><span id="__codeline__-56-32"><a id="__codelineno-56-32" name="__codelineno-56-32" href="#__codelineno-56-32"></a><span class="k">-</span><span class="w"> </span>When user provides task description
+</span><span id="__codeline__-56-33"><a id="__codelineno-56-33" name="__codelineno-56-33" href="#__codelineno-56-33"></a>
+</span><span id="__codeline__-56-34"><a id="__codelineno-56-34" name="__codelineno-56-34" href="#__codelineno-56-34"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-56-35"><a id="__codelineno-56-35" name="__codelineno-56-35" href="#__codelineno-56-35"></a><span class="k">-</span><span class="w"> </span>If $task_description is empty
+</span><span id="__codeline__-56-36"><a id="__codelineno-56-36" name="__codelineno-56-36" href="#__codelineno-56-36"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Tell user task cannot be empty
+</span><span id="__codeline__-56-37"><a id="__codelineno-56-37" name="__codelineno-56-37" href="#__codelineno-56-37"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Ask again
 </span></code></pre></div>
 <h3 id="cheat-sheet">Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h3>
 <table>
@@ -3619,13 +2947,13 @@
         
         
           
-          <a href="../tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorial">
+          <a href="artifacts/" class="md-footer__link md-footer__link--next" aria-label="Next: Artifacts">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Tutorial
+                Artifacts
               </div>
             </div>
             <div class="md-footer__button md-icon">

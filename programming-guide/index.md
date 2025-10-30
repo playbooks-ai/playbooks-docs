@@ -16,7 +16,7 @@ ______________________________________________________________________
 1. [Multi-Agent Programs](#multi-agent-programs)
 1. [Triggers: Event-Driven Programming](#triggers-event-driven-programming)
 1. [Description Placeholders](#description-placeholders)
-1. [Artifacts and Memory](#artifacts-and-memory)
+1. [Artifacts](#artifacts)
 1. [Common Patterns and Best Practices](#common-patterns-and-best-practices)
 1. [Editing Existing Programs](#editing-existing-programs)
 1. [Understanding PBAsm Compilation](#understanding-pbasm-compilation)
@@ -338,6 +338,8 @@ async def ValidatePIN(pin: str) -> bool:
 - Use `await` to call other playbooks
 - Return user-readable strings/dicts when called from Markdown
 - Can call Markdown playbooks: `await MarkdownPlaybook(args)`
+
+**Python-Only Agents**: You can build entire agents using only Python playbooks without any LLM calls. This is useful for deterministic workflows, prototyping, testing, or scenarios where you don't need AI reasoning. See the **[Python-Only Agents Guide](python-only-agents/)** for details.
 
 ### When to Extract Python Playbooks to MCP Server
 
@@ -1052,62 +1054,45 @@ Summarize order considering today is {date.today().strftime("%Y-%m-%d")}
 
 ______________________________________________________________________
 
-## Artifacts and Memory
+## Artifacts
 
-### Artifacts - Persistent Files (alpha feature)
+### Artifacts - Efficient Long Content Handling
 
-Artifacts are named content that persists across playbook calls.
+Artifacts implement pass-by-reference semantics for long text content or large objects. When large values are passed between playbooks using pass-by-value, the content gets duplicated in LLM context multiple times. Artifacts solve this by storing content once and passing only the reference.
 
-**Save Artifact**:
+**The Problem**: Large values passed between playbooks get duplicated:
 
-```markdown
-### Steps
-- Create report content
-- SaveArtifact("report.md", "Monthly Report", $report_content)
-- Tell user "Report saved as Artifact[report.md]"
-```
+- When sent as an argument
+- As a local variable in the receiving playbook
+- In the state sent to the LLM
 
-**Load Artifact**:
+**The Solution**: Artifacts work like lazy loading:
 
-```markdown
-### Steps
-- LoadArtifact("report.md")
-- Summarize the loaded report
-```
+- Content stored once, referenced by name
+- Automatically loaded into context when referenced
+- Unloaded from context after returning from the playbook that loaded it
 
-**Python Usage**:
+**Usage**:
 
-````markdown
 ```python
-@playbook
-async def GenerateReport(data: dict) -> str:
-    report = format_report(data)
-    await SaveArtifact("report.md", "Sales Report", report)
-    return "Artifact[report.md]"
+# Automatic artifact creation (>80 chars)
+$document = ReadFile("doc.md")
 
-@playbook
-async def AnalyzeReport() -> str:
-    artifact = await LoadArtifact("report.md")
-    # artifact.name, artifact.description, artifact.content
-    return analysis
-````
+# Explicit artifact creation
+await SaveArtifact("$report", "Q3 Report", """some content...""")
+```
 
-````
+👉 **[Complete Guide](artifacts/)** - Detailed explanation, paged memory model, API reference, and usage notes
 
-### When to Use Artifacts
+**Tip**: Minimize artifact context time by loading and using them in separate playbooks. The artifact unloads when the playbook returns, keeping context small for later processing.
 
-- ✅ Large content (reports, documents, datasets)
-- ✅ Content referenced multiple times
-- ✅ Content persists across conversation
-- ✅ User needs to download/view separately
-
----
+______________________________________________________________________
 
 ## Common Patterns and Best Practices
 
 ### Pattern: Python ↔ Markdown Composition
 
-```markdown
+````markdown
 ```python
 @playbook
 async def ProcessItem(item: dict) -> str:
