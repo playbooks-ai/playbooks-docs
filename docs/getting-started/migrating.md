@@ -49,7 +49,7 @@ Before migrating code, understand:
 ### Step 2: If using AI coding assistants
 
 1. Create a `playbooks` folder for the converted code
-2. Copy prompt for your AI assistant from [here](../ai-assistants/#prompt-for-ai-coding-assistants)
+2. Copy prompt for your AI assistant from [here](ai-assistants.md#prompt-for-ai-coding-assistants)
 3. Ask the AI assistant to convert the source implementation to Playbooks with the following prompt:
     ```
     <prompt copied above>

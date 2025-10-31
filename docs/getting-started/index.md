@@ -1,18 +1,24 @@
-# 10 mins to your first AI Agent
+# Build Your First AI Agent in 10 Minutes
 
-:warning: Playbooks requires Python 3.12+.
+Welcome to Playbooks! In this quickstart, you'll build your first AI agent that greets users with natural language programming.
 
-:warning: Playbooks requires [Anthropic API key](https://console.anthropic.com/settings/keys) to run. See [Models](../reference/models.md) for more information on supported models.
+## Prerequisites
 
-## (3 mins) Install Playbooks
+Before you begin:
 
-To get started with Playbooks AI, you need to install the `playbooks` package using pip, poetry, or your favorite Python package manager.
+- **Python 3.12+** is required
+- **Anthropic API key** - Get yours at [console.anthropic.com](https://console.anthropic.com/settings/keys)
+- See [Models](../reference/models.md) for information on other supported LLM providers
 
-```
+## Install Playbooks
+
+Install the `playbooks` package using pip, poetry, or your preferred Python package manager:
+
+```bash
 pip install playbooks
 ```
 
-## (5 mins) Create Your First Playbooks program
+## Create Your First Playbooks Program
 
 Create a new file named `hello.pb` with the following content:
 
@@ -30,18 +36,32 @@ This agent welcomes user to Playbooks AI, the world's first Software 3.0 tech st
 - End program
 ```
 
-This simple Playbooks program:
+### Understanding the Program
 
-- Defines a "Greeting" agent
-- Defines a "Greet" playbook that triggers at the beginning of program execution
-- Specifies steps to ask for the user's name and engage in a conversation till user provides name without being pushy, welcome them to Playbooks AI, share a tasteful stand-up comedy bit incorporating the user, and end program
+This simple 11-line Playbooks program demonstrates the core concepts:
 
-## (2 mins) Run the program
+- **Agent definition** (line 1-2): Describes what the agent does
+- **Playbook** (line 4): Named workflow that can be triggered and called
+- **Triggers** (line 5-6): When the playbook should run (at program start)
+- **Steps** (line 7-11): Natural language instructions executed by the LLM
+
+Notice how readable this is – business users can understand exactly what the agent will do without knowing any code!
+
+## Run the Program
+
+Set your API key and run the program:
 
 ```bash
 export ANTHROPIC_API_KEY=<your Anthropic API key here>
 playbooks run hello.pb
 ```
+
+The Playbooks runtime will:
+
+1. **Compile** your `.pb` file to Playbooks Assembly Language (`.pbasm`)
+2. **Load** the compiled program
+3. **Execute** the steps, with the LLM following your natural language instructions
+4. **Handle** the conversation interactively in your terminal
 
 ### Expected output
 YMMV, but here's how it went for me. BTW, I take no responsibility for the AI's weak sense of humor:
@@ -71,10 +91,53 @@ GreetingAgent: Wonderful to meet you, Amol! Welcome to Playbooks AI - you're abo
 GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! You look like someone who's ready to revolutionize software!' Amol replies, 'How can you tell?' The system says, 'Well, you're here talking to an AI that just executed english instructions like a program - that's either revolutionary thinking or you're really lost!' But seriously Amol, you've got great timing - you're witnessing the birth of Software 3.0 where even my jokes are technically part of the program execution!
 ```
 
-## Next Steps
+## What You Just Built
 
-- **Learn the language**: [Programming Guide](../programming-guide/index.md) - Comprehensive guide to writing effective Playbooks programs
-- **Accelerate development**: [Writing with AI Assistants](ai-assistants.md) - Configure AI coding assistants for optimal Playbooks code generation
-- **Migrate existing code**: [Migrating from Other Frameworks](migrating.md) - Convert from LangGraph, CrewAI, AutoGen, and other frameworks
-- **Hands-on learning**: [Tutorials](../tutorials/index.md) - Step-by-step examples
-- **Deep dive**: [Reference Documentation](../reference/index.md) - Detailed technical information
+You've created a working AI agent using natural language programming. Here's what makes this different:
+
+- **High-level thinking**: You described what the agent should do, not how to do it. No orchestration code, just behavior specification.
+- **Natural exception handling**: The LLM will handle edge cases gracefully without explicit code for every contingency.
+- **Readable by everyone**: Stakeholders can review and approve the agent's behavior directly - it's just natural language.
+- **Verifiable execution**: Unlike prompt engineering, the runtime guarantees your steps execute in order. You can debug with breakpoints in VSCode.
+
+## What's Next
+
+<div class="grid cards" markdown>
+
+- :material-book-open-variant: **Programming Guide**
+  
+    Learn the Playbooks language and framework
+    
+    [Read the guide →](../programming-guide/index.md)
+
+- :material-school: **Tutorials**
+  
+    Build real agents with step-by-step examples
+    
+    [Try the tutorials →](../tutorials/index.md)
+
+- :material-play: **vs Traditional Frameworks**
+  
+    See how Playbooks differs from LangGraph, CrewAI, AutoGen
+    
+    [Compare approaches →](../reference/playbooks-traditional-comparison.md)
+
+- :material-microsoft-visual-studio-code: **Using AI Coding Assistants**
+  
+    Write Playbooks programs using Claude, Cursor, or GitHub Copilot
+    
+    [Configure assistants →](ai-assistants.md)
+
+- :material-swap-horizontal: **Migrating from Other Frameworks**
+  
+    Convert existing agents to Playbooks
+    
+    [Migration guide →](migrating.md)
+
+- :material-code-json: **Reference**
+  
+    Complete technical documentation
+    
+    [Browse docs →](../reference/index.md)
+
+</div>
