@@ -1,8 +1,16 @@
 # Playbooks Programming Guide
 
-**Purpose**: This document provides comprehensive guidance for writing effective, optimal, and idiomatic Playbooks programs.
+> **Software 3.0 programming, where natural language is code and LLMs are CPUs.**
 
-Playbooks is a Software 3.0 language where LLMs act as CPUs. Programs are written in natural language with optional Python, compiled to Playbooks Assembly Language (PBAsm), and executed by LLMs. This guide will help you become an expert Playbooks programmer building sophisticated AI agents.
+This is the comprehensive guide for writing Playbooks programs. Whether you're building your first agent or working on complex multi-agent systems, you'll learn to think at a higher behavioral abstraction level and leverage powerful framework features.
+
+## What's Covered
+
+- Think at the right abstraction level: specify agent behavior, not implementation mechanics
+- Mix natural language and Python seamlessly on the same call stack
+- Use powerful abstractions like multi-agent meetings, triggers, and dynamic plans
+- Handle edge cases naturally without explicit code for every contingency
+- Build complex, nuanced agent behaviors that are readable and verifiable
 
 ______________________________________________________________________
 
@@ -28,10 +36,11 @@ ______________________________________________________________________
 ### Philosophy: Software 3.0
 
 - **LLMs as CPUs**: Natural language instructions are the program; the runtime compiles them to PBAsm and executes on LLM
-- **10x less code**: Remove boilerplate; describe behavior at high abstraction level
+- **High-level behavior specification**: Describe what agents should do, not how to do it; focus on behavior, not mechanics
 - **Soft + Hard logic**: Run soft logic (NL) on LLM, hard logic (Python) on CPU, on same call stack
+- **Natural exception handling**: LLM handles edge cases without explicit code for every contingency
 - **Verifiable execution**: Programs compile to structured PBAsm for auditing and debugging
-- **First principles thinking**: Remove unnecessary complexity from agent frameworks
+- **Powerful abstractions**: Meetings, triggers, seamless integration - complex patterns built into the framework
 
 ### Key Abstractions
 
@@ -1438,7 +1447,7 @@ async def SaveTask(task: str) -> dict:
 - **Teach while building**: Explain architectural choices to help users learn
 - **Use triggers sparingly**: Mainly for input validation, not normal control flow
 - **Optimal Playbooks**: Write idiomatic code that uses Playbooks capabilities optimally to produce minimal, clean, readable programs
-- **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' conciseness (often 10x smaller)
+- **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' higher-level abstractions and natural language specifications
 
 **Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
 

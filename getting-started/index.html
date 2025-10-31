@@ -24,7 +24,7 @@
     
     
       
-        <title>10 mins to your first AI Agent - Playbooks AI</title>
+        <title>Build Your First AI Agent in 10 Minutes - Playbooks AI</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-mins-to-your-first-ai-agent" class="md-skip">
+        <a href="#build-your-first-ai-agent-in-10-minutes" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10 mins to your first AI Agent
+              Build Your First AI Agent in 10 Minutes
             
           </span>
         </div>
@@ -968,31 +968,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#3-mins-install-playbooks" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      (3 mins) Install Playbooks
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-mins-create-your-first-playbooks-program" class="md-nav__link">
+  <a href="#install-playbooks" class="md-nav__link">
     <span class="md-ellipsis">
-      (5 mins) Create Your First Playbooks program
+      Install Playbooks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-mins-run-the-program" class="md-nav__link">
+  <a href="#create-your-first-playbooks-program" class="md-nav__link">
     <span class="md-ellipsis">
-      (2 mins) Run the program
+      Create Your First Playbooks Program
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="(2 mins) Run the program">
+    <nav class="md-nav" aria-label="Create Your First Playbooks Program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Program
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run the Program
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run the Program">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1010,9 +1034,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#what-you-just-built" class="md-nav__link">
     <span class="md-ellipsis">
-      Next Steps
+      What You Just Built
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next
     </span>
   </a>
   
@@ -1037,14 +1070,20 @@
   
 
 
-<h1 id="10-mins-to-your-first-ai-agent">10 mins to your first AI Agent<a class="headerlink" href="#10-mins-to-your-first-ai-agent" title="Permanent link">&para;</a></h1>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Playbooks requires Python 3.12+.</p>
-<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Playbooks requires <a href="https://console.anthropic.com/settings/keys">Anthropic API key</a> to run. See <a href="../reference/models/">Models</a> for more information on supported models.</p>
-<h2 id="3-mins-install-playbooks">(3 mins) Install Playbooks<a class="headerlink" href="#3-mins-install-playbooks" title="Permanent link">&para;</a></h2>
-<p>To get started with Playbooks AI, you need to install the <code>playbooks</code> package using pip, poetry, or your favorite Python package manager.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install playbooks
+<h1 id="build-your-first-ai-agent-in-10-minutes">Build Your First AI Agent in 10 Minutes<a class="headerlink" href="#build-your-first-ai-agent-in-10-minutes" title="Permanent link">&para;</a></h1>
+<p>Welcome to Playbooks! In this quickstart, you'll build your first AI agent that greets users with natural language programming.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before you begin:</p>
+<ul>
+<li><strong>Python 3.12+</strong> is required</li>
+<li><strong>Anthropic API key</strong> - Get yours at <a href="https://console.anthropic.com/settings/keys">console.anthropic.com</a></li>
+<li>See <a href="../reference/models/">Models</a> for information on other supported LLM providers</li>
+</ul>
+<h2 id="install-playbooks">Install Playbooks<a class="headerlink" href="#install-playbooks" title="Permanent link">&para;</a></h2>
+<p>Install the <code>playbooks</code> package using pip, poetry, or your preferred Python package manager:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>playbooks
 </span></code></pre></div>
-<h2 id="5-mins-create-your-first-playbooks-program">(5 mins) Create Your First Playbooks program<a class="headerlink" href="#5-mins-create-your-first-playbooks-program" title="Permanent link">&para;</a></h2>
+<h2 id="create-your-first-playbooks-program">Create Your First Playbooks Program<a class="headerlink" href="#create-your-first-playbooks-program" title="Permanent link">&para;</a></h2>
 <p>Create a new file named <code>hello.pb</code> with the following content:</p>
 <div class="language-markdown highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1068,16 +1107,27 @@
 </span><span id="__codeline__-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span>Share a tasteful stand-up comedy bit incorporating the user
 </span><span id="__codeline__-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="k">-</span><span class="w"> </span>End program
 </span></code></pre></div></td></tr></table></div>
-<p>This simple Playbooks program:</p>
+<h3 id="understanding-the-program">Understanding the Program<a class="headerlink" href="#understanding-the-program" title="Permanent link">&para;</a></h3>
+<p>This simple 11-line Playbooks program demonstrates the core concepts:</p>
 <ul>
-<li>Defines a "Greeting" agent</li>
-<li>Defines a "Greet" playbook that triggers at the beginning of program execution</li>
-<li>Specifies steps to ask for the user's name and engage in a conversation till user provides name without being pushy, welcome them to Playbooks AI, share a tasteful stand-up comedy bit incorporating the user, and end program</li>
+<li><strong>Agent definition</strong> (line 1-2): Describes what the agent does</li>
+<li><strong>Playbook</strong> (line 4): Named workflow that can be triggered and called</li>
+<li><strong>Triggers</strong> (line 5-6): When the playbook should run (at program start)</li>
+<li><strong>Steps</strong> (line 7-11): Natural language instructions executed by the LLM</li>
 </ul>
-<h2 id="2-mins-run-the-program">(2 mins) Run the program<a class="headerlink" href="#2-mins-run-the-program" title="Permanent link">&para;</a></h2>
+<p>Notice how readable this is – business users can understand exactly what the agent will do without knowing any code!</p>
+<h2 id="run-the-program">Run the Program<a class="headerlink" href="#run-the-program" title="Permanent link">&para;</a></h2>
+<p>Set your API key and run the program:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span>&lt;your<span class="w"> </span>Anthropic<span class="w"> </span>API<span class="w"> </span>key<span class="w"> </span>here&gt;
 </span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>playbooks<span class="w"> </span>run<span class="w"> </span>hello.pb
 </span></code></pre></div>
+<p>The Playbooks runtime will:</p>
+<ol>
+<li><strong>Compile</strong> your <code>.pb</code> file to Playbooks Assembly Language (<code>.pbasm</code>)</li>
+<li><strong>Load</strong> the compiled program</li>
+<li><strong>Execute</strong> the steps, with the LLM following your natural language instructions</li>
+<li><strong>Handle</strong> the conversation interactively in your terminal</li>
+</ol>
 <h3 id="expected-output">Expected output<a class="headerlink" href="#expected-output" title="Permanent link">&para;</a></h3>
 <p>YMMV, but here's how it went for me. BTW, I take no responsibility for the AI's weak sense of humor:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ℹ Loading playbooks from: [&#39;hello-playbooks.pb&#39;]
@@ -1103,14 +1153,49 @@
 </span><span id="__codeline__-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
 </span><span id="__codeline__-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>GreetingAgent: So Amol walks into Playbooks AI... and the system says &#39;Welcome! You look like someone who&#39;s ready to revolutionize software!&#39; Amol replies, &#39;How can you tell?&#39; The system says, &#39;Well, you&#39;re here talking to an AI that just executed english instructions like a program - that&#39;s either revolutionary thinking or you&#39;re really lost!&#39; But seriously Amol, you&#39;ve got great timing - you&#39;re witnessing the birth of Software 3.0 where even my jokes are technically part of the program execution!
 </span></code></pre></div>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<h2 id="what-you-just-built">What You Just Built<a class="headerlink" href="#what-you-just-built" title="Permanent link">&para;</a></h2>
+<p>You've created a working AI agent using natural language programming. Here's what makes this different:</p>
 <ul>
-<li><strong>Learn the language</strong>: <a href="../programming-guide/">Programming Guide</a> - Comprehensive guide to writing effective Playbooks programs</li>
-<li><strong>Accelerate development</strong>: <a href="ai-assistants/">Writing with AI Assistants</a> - Configure AI coding assistants for optimal Playbooks code generation</li>
-<li><strong>Migrate existing code</strong>: <a href="migrating/">Migrating from Other Frameworks</a> - Convert from LangGraph, CrewAI, AutoGen, and other frameworks</li>
-<li><strong>Hands-on learning</strong>: <a href="../tutorials/">Tutorials</a> - Step-by-step examples</li>
-<li><strong>Deep dive</strong>: <a href="../reference/">Reference Documentation</a> - Detailed technical information</li>
+<li><strong>High-level thinking</strong>: You described what the agent should do, not how to do it. No orchestration code, just behavior specification.</li>
+<li><strong>Natural exception handling</strong>: The LLM will handle edge cases gracefully without explicit code for every contingency.</li>
+<li><strong>Readable by everyone</strong>: Stakeholders can review and approve the agent's behavior directly - it's just natural language.</li>
+<li><strong>Verifiable execution</strong>: Unlike prompt engineering, the runtime guarantees your steps execute in order. You can debug with breakpoints in VSCode.</li>
 </ul>
+<h2 id="whats-next">What's Next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Programming Guide</strong></p>
+<p>Learn the Playbooks language and framework</p>
+<p><a href="../programming-guide/">Read the guide →</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg></span> <strong>Tutorials</strong></p>
+<p>Build real agents with step-by-step examples</p>
+<p><a href="../tutorials/">Try the tutorials →</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7z"/></svg></span> <strong>vs Traditional Frameworks</strong></p>
+<p>See how Playbooks differs from LangGraph, CrewAI, AutoGen</p>
+<p><a href="../reference/playbooks-traditional-comparison/">Compare approaches →</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.86.86 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> <strong>Using AI Coding Assistants</strong></p>
+<p>Write Playbooks programs using Claude, Cursor, or GitHub Copilot</p>
+<p><a href="ai-assistants/">Configure assistants →</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21 9-4-4v3h-7v2h7v3M7 11l-4 4 4 4v-3h7v-2H7z"/></svg></span> <strong>Migrating from Other Frameworks</strong></p>
+<p>Convert existing agents to Playbooks</p>
+<p><a href="migrating/">Migration guide →</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"/></svg></span> <strong>Reference</strong></p>
+<p>Complete technical documentation</p>
+<p><a href="../reference/">Browse docs →</a></p>
+</li>
+</ul>
+</div>
 
 
 

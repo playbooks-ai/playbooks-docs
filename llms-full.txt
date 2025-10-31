@@ -8,19 +8,11 @@ Playbooks is an innovative framework for building and executing AI agents using 
 
 # LLM is your new CPU Welcome to Software 3.0
 
-**Build multi‑agent AI systems** with ease with Python code running on CPU and **natural language code running on LLM**.
+> **Playbooks is a framework and runtime for building verifiable multi-agent AI systems with Natural Language Programs.**
 
-Stop writing prompts and hoping that the LLM will follow them faithfully. Instead, get **verifiable natural language program execution** with Playbooks.
+Describe what your agents should do, not how to do it. Focus on agent behavior at a high level while the LLM handles implementation details and edge cases. Mix natural language and Python seamlessly on the same call stack. Get verifiable execution, full observability, and programs that business users can actually read and approve.
 
-Playbooks is an innovative framework for building and executing AI agents using "playbooks" – structured workflows defined in natural language and Python code. Created by [Amol Kelkar](https://www.linkedin.com/in/amol-kelkar/), the framework is part of the world's first Software 3.0 tech stack, Playbooks AI. It includes a **new programming language** (markdown-formatted .pb files) that are compiled to Playbooks Assembly Language (.pbasm files), that are then executed by the Playbooks Runtime.
-
-Unlike other AI agent frameworks, **Playbooks programs are highly readable**. Business users can understand, change, and approve agent behavior specified in natural language; while developers benefit from the flexibility of running Python code on CPU and natural lanuage code on LLM, on the same call stack, and with full observability and control.
-
-______________________________________________________________________
-
-Here is an example Playbooks program. It contains both Python and natural language "playbooks", i.e. functions. Notice how natural language playbook `Main` (line 4) calls (line 13) a Python playbook `process_countries` (line 20), which in turn calls (line 23) a natural language playbook `GetCountryFact` (line 27).
-
-Here is **country-facts.pb**, an example Playbooks program. This **29 line, highly readable Playbooks program** accomplishes the same task as implementations that are [significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison/).
+Here's a complete **29-line Playbooks program** that orchestrates natural language and Python code together. Notice how the `Main` playbook (line 4) calls Python function `process_countries` (line 20), which then calls natural language playbook `GetCountryFact` (line 27).
 
 ````markdown
 # Country facts agent
@@ -57,80 +49,155 @@ async def process_countries(countries: List[str]):
 
 ````
 
-## Try out Playbooks in 10 minutes
+This accomplishes the same task as implementations that are [significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison/#traditional-framework-implementation-272-lines).
 
-You will need Python 3.12+ and your Anthropic API key.
+## What is Software 3.0?
 
-### 1. Install Playbooks
+Software 3.0 is the evolution from hand-coded algorithms (Software 1.0) and learned neural network weights (Software 2.0) to **natural language as the primary programming interface**.
 
-```text
+In Playbooks, you write programs in human language that execute directly on large language models. The LLM acts as a semantic CPU that interprets and runs your instructions. Instead of translating business logic into formal code syntax or training models on data, you describe what you want in natural language, mix it seamlessly with Python when needed, and get verifiable, observable execution.
+
+This changes how you build AI systems: business stakeholders can read and approve the actual program logic, AI systems become transparent rather than black boxes, and sophisticated agent behaviors become accessible without sacrificing control or understanding.
+
+## Why Playbooks?
+
+**Think at a Higher Level**
+: Focus on what your agent should do, not implementation mechanics. Define complex, nuanced behaviors without getting lost in orchestration details. The framework handles the low-level execution.
+
+**Natural Exception Handling**
+: The LLM handles edge cases and exceptional conditions smoothly without explicit code for every contingency. Your agents adapt to unexpected situations naturally.
+
+**Powerful Abstractions**
+: Multi-agent meetings for complex coordination. Triggers for event-driven behavior. Seamless mixing of natural language and Python. Abstractions that would take hundreds of lines in other frameworks are built-in.
+
+**Readable by Everyone**
+: Business stakeholders can read and approve the actual program logic. No more "black box" AI systems. What you write is what executes.
+
+**Verifiable & Observable**
+: Unlike prompt engineering where you hope the LLM follows instructions, Playbooks guarantees verifiable execution. Step debugging in VSCode, detailed execution logs, full observability.
+
+## Get Started in 10 Minutes
+
+Build your first AI agent with Playbooks. You'll need Python 3.12+ and an [Anthropic API key](https://console.anthropic.com/settings/keys).
+
+### Install Playbooks
+
+```bash
 pip install playbooks
 ````
 
-### 2. Run example program
+### Create and Run Your First Agent
 
-Use one of the following methods -
+Create a file `hello.pb`:
 
-#### a. Playbooks CLI
+```markdown
+# Greeting agent
+This agent welcomes users to Playbooks AI
+
+## Greet
+### Triggers
+- At the beginning of the program
+### Steps
+- Ask the user for their name
+- Welcome them to Playbooks AI, the world's first Software 3.0 tech stack
+- End program
+```
+
+Run it:
 
 ```bash
-ANTHROPIC_API_KEY=sk-ant-... playbooks run country-facts.pb
+export ANTHROPIC_API_KEY=sk-ant-...
+playbooks run hello.pb
 ```
 
-#### b. Playbooks Playground
+That's it! You've just built and run your first AI agent with natural language programming.
+
+### Run the Country Facts Example
+
+Try the more advanced example from above:
 
 ```bash
-ANTHROPIC_API_KEY=sk-ant-... playbooks playground
+playbooks run country-facts.pb
 ```
 
-Put your program path and click "Run Program". You can turn on "Execution Logs" to see the program execution details.
+You can also use the **Playground** for interactive development:
 
-#### c. Python API
-
-```python
-from playbooks import Playbooks
-
-pb = Playbooks(["country-facts.pb"]) # absolute or relative path
-await pb.initialize()
-await pb.program.run_till_exit()
+```bash
+playbooks playground
 ```
 
-### 3. Step debugging in VSCode (Optional)
+The Playground provides a visual interface to run programs, view execution logs, and iterate quickly.
 
-Install the **Playbooks Language Support** extension for Visual Studio Code:
+### Step Debugging in VSCode
 
-1. Open VSCode
-1. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+For production development, install the **Playbooks Language Support** extension:
+
+1. Open VSCode Extensions (Ctrl+Shift+X / Cmd+Shift+X)
 1. Search for "Playbooks Language Support"
 1. Click Install
 
-The extension provides debugging capabilities for playbooks programs, making it easier to develop and troubleshoot your AI agents. Once the plugin is installed, you can open a playbooks .pb file and start debugging!
+Now you can set breakpoints and step through your agent's execution, just like traditional code!
 
-## Let's build something amazing with Playbooks!
+## Learn More
 
-- **Quickstart** - your first playbook\
-  [Start here →](getting-started/)
-- **Tutorials** - learn by doing\
-  [How it works →](tutorials/)
-- **Playbooks vs Traditional Frameworks** - see the difference\
+- **Quickstart Guide**
+
+  Build your first agent
+
+  [Get started →](getting-started/)
+
+- **Programming Guide**
+
+  Learn the Playbooks language and framework
+
+  [Read the guide →](programming-guide/)
+
+- **Tutorials**
+
+  Build real agents with step-by-step examples
+
+  [Try the tutorials →](tutorials/)
+
+- **vs Traditional Frameworks**
+
+  See how Playbooks compares to LangGraph, CrewAI, AutoGen
+
   [Compare approaches →](reference/playbooks-traditional-comparison/)
+
+- **Reference**
+
+  Complete technical documentation
+
+  [Browse docs →](reference/)
+
+- **Using AI Coding Assistants**
+
+  Write Playbooks programs using Claude, Cursor, or GitHub Copilot
+
+  [Configure assistants →](getting-started/ai-assistants/)
 # Documentation
 
-# 10 mins to your first AI Agent
+# Build Your First AI Agent in 10 Minutes
 
-Playbooks requires Python 3.12+.
+Welcome to Playbooks! In this quickstart, you'll build your first AI agent that greets users with natural language programming.
 
-Playbooks requires [Anthropic API key](https://console.anthropic.com/settings/keys) to run. See [Models](../reference/models/) for more information on supported models.
+## Prerequisites
 
-## (3 mins) Install Playbooks
+Before you begin:
 
-To get started with Playbooks AI, you need to install the `playbooks` package using pip, poetry, or your favorite Python package manager.
+- **Python 3.12+** is required
+- **Anthropic API key** - Get yours at [console.anthropic.com](https://console.anthropic.com/settings/keys)
+- See [Models](../reference/models/) for information on other supported LLM providers
 
-```text
+## Install Playbooks
+
+Install the `playbooks` package using pip, poetry, or your preferred Python package manager:
+
+```bash
 pip install playbooks
 ```
 
-## (5 mins) Create Your First Playbooks program
+## Create Your First Playbooks Program
 
 Create a new file named `hello.pb` with the following content:
 
@@ -148,18 +215,32 @@ This agent welcomes user to Playbooks AI, the world's first Software 3.0 tech st
 - End program
 ```
 
-This simple Playbooks program:
+### Understanding the Program
 
-- Defines a "Greeting" agent
-- Defines a "Greet" playbook that triggers at the beginning of program execution
-- Specifies steps to ask for the user's name and engage in a conversation till user provides name without being pushy, welcome them to Playbooks AI, share a tasteful stand-up comedy bit incorporating the user, and end program
+This simple 11-line Playbooks program demonstrates the core concepts:
 
-## (2 mins) Run the program
+- **Agent definition** (line 1-2): Describes what the agent does
+- **Playbook** (line 4): Named workflow that can be triggered and called
+- **Triggers** (line 5-6): When the playbook should run (at program start)
+- **Steps** (line 7-11): Natural language instructions executed by the LLM
+
+Notice how readable this is – business users can understand exactly what the agent will do without knowing any code!
+
+## Run the Program
+
+Set your API key and run the program:
 
 ```bash
 export ANTHROPIC_API_KEY=<your Anthropic API key here>
 playbooks run hello.pb
 ```
+
+The Playbooks runtime will:
+
+1. **Compile** your `.pb` file to Playbooks Assembly Language (`.pbasm`)
+1. **Load** the compiled program
+1. **Execute** the steps, with the LLM following your natural language instructions
+1. **Handle** the conversation interactively in your terminal
 
 ### Expected output
 
@@ -190,13 +271,52 @@ GreetingAgent: Wonderful to meet you, Amol! Welcome to Playbooks AI - you're abo
 GreetingAgent: So Amol walks into Playbooks AI... and the system says 'Welcome! You look like someone who's ready to revolutionize software!' Amol replies, 'How can you tell?' The system says, 'Well, you're here talking to an AI that just executed english instructions like a program - that's either revolutionary thinking or you're really lost!' But seriously Amol, you've got great timing - you're witnessing the birth of Software 3.0 where even my jokes are technically part of the program execution!
 ```
 
-## Next Steps
+## What You Just Built
 
-- **Learn the language**: [Programming Guide](../programming-guide/) - Comprehensive guide to writing effective Playbooks programs
-- **Accelerate development**: [Writing with AI Assistants](ai-assistants/) - Configure AI coding assistants for optimal Playbooks code generation
-- **Migrate existing code**: [Migrating from Other Frameworks](migrating/) - Convert from LangGraph, CrewAI, AutoGen, and other frameworks
-- **Hands-on learning**: [Tutorials](../tutorials/) - Step-by-step examples
-- **Deep dive**: [Reference Documentation](../reference/) - Detailed technical information
+You've created a working AI agent using natural language programming. Here's what makes this different:
+
+- **High-level thinking**: You described what the agent should do, not how to do it. No orchestration code, just behavior specification.
+- **Natural exception handling**: The LLM will handle edge cases gracefully without explicit code for every contingency.
+- **Readable by everyone**: Stakeholders can review and approve the agent's behavior directly - it's just natural language.
+- **Verifiable execution**: Unlike prompt engineering, the runtime guarantees your steps execute in order. You can debug with breakpoints in VSCode.
+
+## What's Next
+
+- **Programming Guide**
+
+  Learn the Playbooks language and framework
+
+  [Read the guide →](../programming-guide/)
+
+- **Tutorials**
+
+  Build real agents with step-by-step examples
+
+  [Try the tutorials →](../tutorials/)
+
+- **vs Traditional Frameworks**
+
+  See how Playbooks differs from LangGraph, CrewAI, AutoGen
+
+  [Compare approaches →](../reference/playbooks-traditional-comparison/)
+
+- **Using AI Coding Assistants**
+
+  Write Playbooks programs using Claude, Cursor, or GitHub Copilot
+
+  [Configure assistants →](ai-assistants/)
+
+- **Migrating from Other Frameworks**
+
+  Convert existing agents to Playbooks
+
+  [Migration guide →](migrating/)
+
+- **Reference**
+
+  Complete technical documentation
+
+  [Browse docs →](../reference/)
 
 # Writing Playbooks with AI Coding Assistants
 
@@ -297,9 +417,10 @@ You are a Playbooks programming expert. Your role is to help developers write mi
 
 Playbooks is a framework where:
 - LLMs act as CPUs executing natural language instructions
-- Programs are up to 10x smaller than traditional agent frameworks
+- You specify agent behavior at a high level, not implementation mechanics
 - Soft logic (LLM reasoning) and hard logic (Python) run on the same call stack
 - Code compiles to verifiable PBAsm (Playbooks Assembly Language) for debugging
+- LLMs handle edge cases naturally without explicit code for every contingency
 
 ## Instructions
 
@@ -533,9 +654,17 @@ Happy migrating! 🚀
 
 # Playbooks Programming Guide
 
-**Purpose**: This document provides comprehensive guidance for writing effective, optimal, and idiomatic Playbooks programs.
+> **Software 3.0 programming, where natural language is code and LLMs are CPUs.**
 
-Playbooks is a Software 3.0 language where LLMs act as CPUs. Programs are written in natural language with optional Python, compiled to Playbooks Assembly Language (PBAsm), and executed by LLMs. This guide will help you become an expert Playbooks programmer building sophisticated AI agents.
+This is the comprehensive guide for writing Playbooks programs. Whether you're building your first agent or working on complex multi-agent systems, you'll learn to think at a higher behavioral abstraction level and leverage powerful framework features.
+
+## What's Covered
+
+- Think at the right abstraction level: specify agent behavior, not implementation mechanics
+- Mix natural language and Python seamlessly on the same call stack
+- Use powerful abstractions like multi-agent meetings, triggers, and dynamic plans
+- Handle edge cases naturally without explicit code for every contingency
+- Build complex, nuanced agent behaviors that are readable and verifiable
 
 ______________________________________________________________________
 
@@ -561,10 +690,11 @@ ______________________________________________________________________
 ### Philosophy: Software 3.0
 
 - **LLMs as CPUs**: Natural language instructions are the program; the runtime compiles them to PBAsm and executes on LLM
-- **10x less code**: Remove boilerplate; describe behavior at high abstraction level
+- **High-level behavior specification**: Describe what agents should do, not how to do it; focus on behavior, not mechanics
 - **Soft + Hard logic**: Run soft logic (NL) on LLM, hard logic (Python) on CPU, on same call stack
+- **Natural exception handling**: LLM handles edge cases without explicit code for every contingency
 - **Verifiable execution**: Programs compile to structured PBAsm for auditing and debugging
-- **First principles thinking**: Remove unnecessary complexity from agent frameworks
+- **Powerful abstractions**: Meetings, triggers, seamless integration - complex patterns built into the framework
 
 ### Key Abstractions
 
@@ -1971,7 +2101,7 @@ async def SaveTask(task: str) -> dict:
 - **Teach while building**: Explain architectural choices to help users learn
 - **Use triggers sparingly**: Mainly for input validation, not normal control flow
 - **Optimal Playbooks**: Write idiomatic code that uses Playbooks capabilities optimally to produce minimal, clean, readable programs
-- **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' conciseness (often 10x smaller)
+- **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' higher-level abstractions and natural language specifications
 
 **Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
 

@@ -968,6 +968,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#whats-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
       Table of Contents
@@ -1674,8 +1683,18 @@
 
 
 <h1 id="playbooks-programming-guide">Playbooks Programming Guide<a class="headerlink" href="#playbooks-programming-guide" title="Permanent link">&para;</a></h1>
-<p><strong>Purpose</strong>: This document provides comprehensive guidance for writing effective, optimal, and idiomatic Playbooks programs.</p>
-<p>Playbooks is a Software 3.0 language where LLMs act as CPUs. Programs are written in natural language with optional Python, compiled to Playbooks Assembly Language (PBAsm), and executed by LLMs. This guide will help you become an expert Playbooks programmer building sophisticated AI agents.</p>
+<blockquote>
+<p><strong>Software 3.0 programming, where natural language is code and LLMs are CPUs.</strong></p>
+</blockquote>
+<p>This is the comprehensive guide for writing Playbooks programs. Whether you're building your first agent or working on complex multi-agent systems, you'll learn to think at a higher behavioral abstraction level and leverage powerful framework features.</p>
+<h2 id="whats-covered">What's Covered<a class="headerlink" href="#whats-covered" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Think at the right abstraction level: specify agent behavior, not implementation mechanics</li>
+<li>Mix natural language and Python seamlessly on the same call stack</li>
+<li>Use powerful abstractions like multi-agent meetings, triggers, and dynamic plans</li>
+<li>Handle edge cases naturally without explicit code for every contingency</li>
+<li>Build complex, nuanced agent behaviors that are readable and verifiable</li>
+</ul>
 <hr />
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1697,10 +1716,11 @@
 <h3 id="philosophy-software-30">Philosophy: Software 3.0<a class="headerlink" href="#philosophy-software-30" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>LLMs as CPUs</strong>: Natural language instructions are the program; the runtime compiles them to PBAsm and executes on LLM</li>
-<li><strong>10x less code</strong>: Remove boilerplate; describe behavior at high abstraction level</li>
+<li><strong>High-level behavior specification</strong>: Describe what agents should do, not how to do it; focus on behavior, not mechanics</li>
 <li><strong>Soft + Hard logic</strong>: Run soft logic (NL) on LLM, hard logic (Python) on CPU, on same call stack</li>
+<li><strong>Natural exception handling</strong>: LLM handles edge cases without explicit code for every contingency</li>
 <li><strong>Verifiable execution</strong>: Programs compile to structured PBAsm for auditing and debugging</li>
-<li><strong>First principles thinking</strong>: Remove unnecessary complexity from agent frameworks</li>
+<li><strong>Powerful abstractions</strong>: Meetings, triggers, seamless integration - complex patterns built into the framework</li>
 </ul>
 <h3 id="key-abstractions">Key Abstractions<a class="headerlink" href="#key-abstractions" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2887,7 +2907,7 @@
 <li><strong>Teach while building</strong>: Explain architectural choices to help users learn</li>
 <li><strong>Use triggers sparingly</strong>: Mainly for input validation, not normal control flow</li>
 <li><strong>Optimal Playbooks</strong>: Write idiomatic code that uses Playbooks capabilities optimally to produce minimal, clean, readable programs</li>
-<li><strong>Framework migrations</strong>: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' conciseness (often 10x smaller)</li>
+<li><strong>Framework migrations</strong>: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' higher-level abstractions and natural language specifications</li>
 </ul>
 <p><strong>Remember</strong>: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.</p>
 <p>Happy building! 🚀</p>
