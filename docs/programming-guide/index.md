@@ -1162,16 +1162,6 @@ async def FetchUserProfile($user_id: str) -> dict:
     }
 ```
 
-## Main
-### Steps
-- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
-- Authenticate user
-- If user is authenticated
-  - Fetch user profile
-  - Welcome user by name from profile
-- Otherwise
-  - Tell user authentication failed
-````
 
 This pattern:
 
@@ -1190,6 +1180,35 @@ This pattern:
 - File I/O operations
 - Any stateful operations
 
+### Anti-Pattern: Using step bullets for listing items, implicit loops, and redundant instructions
+
+Bad example:
+
+```markdown
+### Steps
+- Tell user about the plan
+  - Phase 1: Understanding and Decomposition
+  - Phase 2: Hypothesis Generation  
+  - Phase 3: Synthesis Assessment
+- Use agent collaboration
+- After each phase, ask MetaCognitionAgent if the phase was executed optimally
+```
+
+This anti-pattern has the following problems:
+- Each bullet point under Steps must be a statement to execute. The Phase 1, Phase 2, Phase 3 bullets are not, so should be in the same bullet as "Tell user"
+- Redundant instruction "Use agent collaboration" that can't be executed as a statement
+- Implicit loop "After each phase"
+
+Here's the correct way to write it:
+```markdown
+### Steps
+- Tell user about the plan - Phase 1: Understanding and Decomposition, Phase 2: Hypothesis Generation, Phase 3: Synthesis Assessment
+- Go through each phase in order
+  - Execute the phase with agent collaboration until the phase is complete
+  - Ask MetaCognitionAgent if the phase was executed optimally
+```
+
+
 ### Best Practices Summary
 
 **DO**:
@@ -1207,6 +1226,7 @@ This pattern:
 - ✅ Test with different user inputs mentally
 - ✅ Ask for all required information at once with conversation loops
 - ✅ Use mock Python playbooks for backend processes during development
+- ✅ Each step bullet must be a complete executable statement.
 
 **DON'T**:
 
@@ -1286,7 +1306,7 @@ Adds: line numbers (01), opcodes (QUE), explicit types ($name:str), yield points
 3. **Optimization**: Understand when LLM calls happen (at YLD points)
 4. **Reasoning**: Picture how LLM executes line by line
 
-### You Don't Need to Write PBAsm
+### Don't Write PBAsm
 
 - ❌ Never write PBAsm directly
 - ✅ Write natural Playbooks language
