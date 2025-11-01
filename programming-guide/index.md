@@ -1193,20 +1193,6 @@ async def FetchUserProfile($user_id: str) -> dict:
     }
 ````
 
-## Main
-
-### Steps
-
-- Ask user for $email and $pin, engage in a conversation till user provides valid values or gives up
-- Authenticate user
-- If user is authenticated
-  - Fetch user profile
-  - Welcome user by name from profile
-- Otherwise
-  - Tell user authentication failed
-
-````
-
 This pattern:
 
 - **Separates backend logic** - keeps the workflow clean and focused
@@ -1223,6 +1209,36 @@ This pattern:
 - Complex business logic calculations
 - File I/O operations
 - Any stateful operations
+
+### Anti-Pattern: Using step bullets for listing items, implicit loops, and redundant instructions
+
+Bad example:
+
+```markdown
+### Steps
+- Tell user about the plan
+  - Phase 1: Understanding and Decomposition
+  - Phase 2: Hypothesis Generation  
+  - Phase 3: Synthesis Assessment
+- Use agent collaboration
+- After each phase, ask MetaCognitionAgent if the phase was executed optimally
+```
+
+This anti-pattern has the following problems:
+
+- Each bullet point under Steps must be a statement to execute. The Phase 1, Phase 2, Phase 3 bullets are not, so should be in the same bullet as "Tell user"
+- Redundant instruction "Use agent collaboration" that can't be executed as a statement
+- Implicit loop "After each phase"
+
+Here's the correct way to write it:
+
+```markdown
+### Steps
+- Tell user about the plan - Phase 1: Understanding and Decomposition, Phase 2: Hypothesis Generation, Phase 3: Synthesis Assessment
+- Go through each phase in order
+  - Execute the phase with agent collaboration until the phase is complete
+  - Ask MetaCognitionAgent if the phase was executed optimally
+```
 
 ### Best Practices Summary
 
@@ -1241,6 +1257,7 @@ This pattern:
 - ✅ Test with different user inputs mentally
 - ✅ Ask for all required information at once with conversation loops
 - ✅ Use mock Python playbooks for backend processes during development
+- ✅ Each step bullet must be a complete executable statement.
 
 **DON'T**:
 
@@ -1256,7 +1273,7 @@ This pattern:
 - ❌ Ask for inputs one at a time when you need multiple pieces of information
 - ❌ Mix backend API calls directly into workflow steps
 
----
+______________________________________________________________________
 
 ## Editing Existing Programs
 
@@ -1265,10 +1282,10 @@ This pattern:
 When modifying existing Playbooks programs:
 
 1. **Read and understand**: Review the file, understand its structure and intent
-2. **Minimal changes**: Change only what's needed to achieve the goal
-3. **Preserve style**: Match existing natural language vs explicit style
-4. **Maintain consistency**: Keep variable naming and structure patterns
-5. **Test mentally**: Think through execution flow after changes
+1. **Minimal changes**: Change only what's needed to achieve the goal
+1. **Preserve style**: Match existing natural language vs explicit style
+1. **Maintain consistency**: Keep variable naming and structure patterns
+1. **Test mentally**: Think through execution flow after changes
 
 ### Common Edit Patterns
 
@@ -1280,7 +1297,7 @@ Description
 
 ### Steps
 - New logic
-````
+```
 
 **Modifying steps**: Find the playbook, locate the specific step, update it, and ensure variable references still work.
 
@@ -1321,7 +1338,7 @@ Adds: line numbers (01), opcodes (QUE), explicit types ($name:str), yield points
 1. **Optimization**: Understand when LLM calls happen (at YLD points)
 1. **Reasoning**: Picture how LLM executes line by line
 
-### You Don't Need to Write PBAsm
+### Don't Write PBAsm
 
 - ❌ Never write PBAsm directly
 - ✅ Write natural Playbooks language
@@ -1350,7 +1367,7 @@ Description of what this agent does
 
 ### Complete Example
 
-````markdown
+`````markdown
 # TaskAgent
 You help users manage their tasks efficiently.
 
@@ -1359,16 +1376,13 @@ You help users manage their tasks efficiently.
 async def SaveTask(task: str) -> dict:
     """Save task to database (mock implementation)."""
     return {"id": "123", "task": task, "status": "pending"}
-````
+```
 
 ## Main
-
 ### Triggers
-
 - At the beginning
 
 ### Steps
-
 - Greet user
 - Ask what they'd like to do
 - If user wants to add a task
@@ -1378,26 +1392,20 @@ async def SaveTask(task: str) -> dict:
 - End program
 
 ## AddTask
-
 ### Steps
-
 - Ask user for $task_description
 - Save the task
 - Tell user task was added successfully
 
 ## ValidateTaskDescription
-
 ### Triggers
-
 - When user provides task description
 
 ### Steps
-
 - If $task_description is empty
   - Tell user task cannot be empty
   - Ask again
-
-````
+```
 
 ### Cheat Sheet
 
@@ -1451,5 +1459,5 @@ async def SaveTask(task: str) -> dict:
 
 **Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
 
-Happy building! 🚀```
-````
+Happy building! 🚀````
+`````
