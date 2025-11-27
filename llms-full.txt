@@ -333,15 +333,14 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-## Supported AI Coding Assistants
+## Suggested AI Coding Assistants
 
+1. **[Claude Code](https://claude.ai/code)** - Anthropic's AI coding assistant
 1. **[Cursor](https://cursor.com/)** - AI-first code editor (VS Code fork)
 1. **[Windsurf](https://codeium.com/windsurf)** - AI-native IDE by Codeium
 1. **[GitHub Copilot](https://github.com/features/copilot)** - Most widely adopted AI pair programmer
 1. **[Devin](https://devin.ai/)** - Cognition's autonomous AI software engineer
 1. **[OpenAI Codex](https://openai.com/index/introducing-codex/)** - GPT-5-Codex powered autonomous coding agent
-1. **[Amazon Q Developer](https://aws.amazon.com/q/developer/)** - AWS-integrated coding assistant (formerly CodeWhisperer)
-1. **[Google Gemini Code Assist](https://cloud.google.com/gemini/docs/codeassist/overview)** - Google Cloud's AI coding tool
 
 ______________________________________________________________________
 

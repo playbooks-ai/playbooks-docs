@@ -978,6 +978,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#state-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Compression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-this-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      When This Helps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prompt-caching-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       Prompt Caching Optimization
@@ -1133,6 +1166,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#state-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Compression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-this-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      When This Helps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prompt-caching-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       Prompt Caching Optimization
@@ -1217,7 +1283,12 @@
 Automatically compacts context as playbooks complete, preserving semantic information while reducing token usage.</p>
 </li>
 <li>
-<p><a href="../../programming-guide/artifacts/">Artifacts</a> Automatic, efficient use of long content in LLM context.</p>
+<p><a href="./#state-compression">State Compression</a>
+Uses I-frame/P-frame technique (similar to video compression) to efficiently represent state changes across LLM calls.</p>
+</li>
+<li>
+<p><a href="../../programming-guide/artifacts/">Artifacts</a>
+Automatic, efficient use of long content in LLM context.</p>
 </li>
 <li>
 <p><a href="./#prompt-caching-optimization">Prompt Caching Optimization</a>
@@ -1225,7 +1296,7 @@ Intelligently manages context to maximize cache hits, reducing latency and API c
 </li>
 <li>
 <p><a href="./#programmer-control-over-context">Programmer Control</a>
-Programmers have control over through specific control mechanisms.</p>
+Programmers have control through specific control mechanisms.</p>
 </li>
 </ul>
 <hr />
@@ -1247,12 +1318,68 @@ Programmers have control over through specific control mechanisms.</p>
 - So, when <code>Main</code> playbook continues after <code>GetOrderStatus</code> returns, it has a compact context containing only the summary of <code>GetOrderStatus</code> execution, thus reducing context size and token usage</p>
 <p><strong>👉 <a href="../../programming-guide/artifacts/">Complete Artifacts Guide</a></strong> - Detailed explanation, API reference, and usage patterns</p>
 <hr />
+<h2 id="state-compression">State Compression<a class="headerlink" href="#state-compression" title="Permanent link">&para;</a></h2>
+<p>MPEG video compression uses I-frames (full images) and P-frames (only the pixels that changed since the last frame) to reduce video file size. Playbooks uses a similar technique to efficiently represent state changes across LLM calls. Instead of sending the full state on every call, the framework sends incremental changes, significantly reducing token usage when state is large.</p>
+<h3 id="how-it-works_1">How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
+<p><strong>I-frames (Full State):</strong>
+The first LLM call includes the complete state representation:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s2">&quot;Host(agent 1000)&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s2">&quot;HumanAgent(User, User, human)&quot;</span>
+</span><span id="__codeline__-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__codeline__-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>P-frames (Predicted/Delta):</strong>
+Subsequent calls only include what changed. If nothing changed, the state representation is empty:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>empty
+</span></code></pre></div>
+<p>If two new agents were created:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;new_agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="s2">&quot;Player(agent 1001, name:MysticMind)&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s2">&quot;Player(agent 1002, name:SharpGuesser)&quot;</span>
+</span><span id="__codeline__-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__codeline__-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>If an agent was terminated and a variable was set:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;new_variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="nt">&quot;latest_move&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Place X at position 5&quot;</span>
+</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;deleted_agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__codeline__-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="s2">&quot;Player(agent 1002, name:SharpGuesser)&quot;</span>
+</span><span id="__codeline__-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__codeline__-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Periodic I-frames:</strong>
+After <code>state_compression.full_state_interval</code> P-frames (configured in <code>playbooks.toml</code>), the framework sends a new I-frame with full state:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__codeline__-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;variables&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__codeline__-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nt">&quot;latest_move&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Place O at position 2&quot;</span>
+</span><span id="__codeline__-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__codeline__-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__codeline__-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="s2">&quot;Host(agent 1000)&quot;</span><span class="p">,</span>
+</span><span id="__codeline__-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="s2">&quot;HumanAgent(User, User, human)&quot;</span>
+</span><span id="__codeline__-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__codeline__-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="when-this-helps">When This Helps<a class="headerlink" href="#when-this-helps" title="Permanent link">&para;</a></h3>
+<p>State compression saves significant tokens when:</p>
+<ul>
+<li>There are many variables</li>
+<li>Variables have large values (e.g., lists, complex objects)</li>
+<li>Multiple agents exist but change infrequently</li>
+<li>State is mostly stable between calls</li>
+</ul>
+<hr />
 <h2 id="prompt-caching-optimization">Prompt Caching Optimization<a class="headerlink" href="#prompt-caching-optimization" title="Permanent link">&para;</a></h2>
 <p>Playbooks intelligently leverages prompt caching to minimize latency and reduce API costs. The framework automatically manages cache-friendly context structures.</p>
 <h3 id="how-prompt-caching-works">How Prompt Caching Works<a class="headerlink" href="#how-prompt-caching-works" title="Permanent link">&para;</a></h3>
 <p><strong>Prefix Caching:</strong></p>
 <ol>
-<li>LLM providers cache the activations of prompt prefixes. Some LLM providers cache prefixes at specified locations in the context. some LLM providers charge extra for adding cache entries.</li>
+<li>LLM providers cache the activations of prompt prefixes. Some LLM providers cache prefixes at specified locations in the context. Some LLM providers charge extra for adding cache entries.</li>
 <li>When a new request arrives, the longest matching cached prefix is identified</li>
 <li>Cached activations are restored, avoiding reprocessing</li>
 <li>Only tokens beyond the prefix are processed</li>
@@ -1267,7 +1394,7 @@ Programmers have control over through specific control mechanisms.</p>
 <ol>
 <li>
 <p><strong>Sets Strategic Cache Points</strong>
-Places cache boundaries at stable context segments and prioritizes frequently reused prefixes (system prompts, playbook definitions, call points). Claude allows a maximum of 4 cache points in the context, which the frameworks selects intelligently.</p>
+Places cache boundaries at stable context segments and prioritizes frequently reused prefixes (system prompts, playbook definitions, call points). Claude allows a maximum of 4 cache points in the context, which the framework selects intelligently.</p>
 </li>
 <li>
 <p><strong>Balances Cache Efficiency</strong>
@@ -1297,7 +1424,7 @@ There are competing factors to balance when it comes to using the cache effectiv
 - Useful for expert and narrow prompt engineering scenarios</p>
 <p><strong><a href="../description-placeholders/">Description Placeholders</a></strong>
 - Inject dynamic values into playbook descriptions
-- Inject either inline in the description or as a separarate LLM message.</p>
+- Inject either inline in the description or as a separate LLM message.</p>
 <p><strong><a href="../../programming-guide/artifacts/">Artifacts</a></strong>
 - Control when large content enters/exits context through explicit artifact creation with <code>SaveArtifact()</code> and loading with <code>LoadArtifact()</code>
 - Influence automatic artifact creation threshold via <code>artifact_result_threshold</code> configuration</p>
