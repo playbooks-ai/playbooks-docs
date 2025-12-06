@@ -6,16 +6,16 @@ Playbooks is an innovative framework for building and executing AI agents using 
 
 ## About Playbooks
 
-- [Home](https://github.com/playbooks-ai/playbooks/index.md): About Playbooks AI
+- [Home](https://docs.runplaybooks.ai/index.md): About Playbooks AI
 
 ## Documentation
 
-- [Build Your First AI Agent in 10 Minutes](https://github.com/playbooks-ai/playbooks/getting-started/index.md): Getting Started
-- [AI Coding Assistants](https://github.com/playbooks-ai/playbooks/getting-started/ai-assistants/index.md): Writing with AI Assistants
-- [Migrating from Other Agent Frameworks](https://github.com/playbooks-ai/playbooks/getting-started/migrating/index.md): Migrating from Other Frameworks
-- [Playbooks Programming Guide](https://github.com/playbooks-ai/playbooks/programming-guide/index.md): Programming Guide
-- [Artifacts](https://github.com/playbooks-ai/playbooks/programming-guide/artifacts/index.md): Artifacts Guide
-- [Python-Only Agents](https://github.com/playbooks-ai/playbooks/programming-guide/python-only-agents/index.md): Python-Only Agents Guide
-- [Tutorial](https://github.com/playbooks-ai/playbooks/tutorials/index.md): Tutorials
-- [Playbooks Reference Documentation](https://github.com/playbooks-ai/playbooks/reference/index.md): Reference
+- [Build Your First AI Agent in 10 Minutes](https://docs.runplaybooks.ai/getting-started/index.md): Getting Started
+- [AI Coding Assistants](https://docs.runplaybooks.ai/getting-started/ai-assistants/index.md): Writing with AI Assistants
+- [Migrating from Other Agent Frameworks](https://docs.runplaybooks.ai/getting-started/migrating/index.md): Migrating from Other Frameworks
+- [Playbooks Programming Guide](https://docs.runplaybooks.ai/programming-guide/index.md): Programming Guide
+- [Artifacts](https://docs.runplaybooks.ai/programming-guide/artifacts/index.md): Artifacts Guide
+- [Python-Only Agents](https://docs.runplaybooks.ai/programming-guide/python-only-agents/index.md): Python-Only Agents Guide
+- [Tutorial](https://docs.runplaybooks.ai/tutorials/index.md): Tutorials
+- [Playbooks Reference Documentation](https://docs.runplaybooks.ai/reference/index.md): Reference
 
