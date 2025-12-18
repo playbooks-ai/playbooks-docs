@@ -1133,101 +1133,136 @@
 <h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h1>
 <p>Playbooks is tested and optimized for the following models:</p>
 <ul>
-<li>Anthropic Claude Haiku 4.5 ("claude-haiku-4-5-20251001")</li>
-<li>Anthropic Claude Sonnet 4.5 ("claude-sonnet-4-5-20250929")</li>
-<li>Anthropic Claude Opus 4.5 ("claude-opus-4-5-20251101")</li>
-<li>Anthropic Claude Sonnet 4 ("claude-sonnet-4-20250514")</li>
-<li>PlaybooksLM</li>
+<li>
+<p>Anthropic Claude Haiku 4.5 ("claude-haiku-4-5-20251001"): Lightweight, fast and cost-effective model for general purpose use.
+    <div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-haiku-4-5-20251001&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Anthropic Claude Sonnet 4.5 ("claude-sonnet-4-5-20250929"): Powerful, general purpose model for complex tasks, reasoning, multi-agent collaboration.
+    <div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
+</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5-20250929&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Anthropic Claude Opus 4.5 ("claude-opus-4-5-20251101"): Powerful, general purpose model for complex tasks, reasoning, multi-agent collaboration, multi-agent collaboration, dynamic playbook generation and goal driven workflows.
+    <div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
+</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-opus-4-5-20251101&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>xAI Grok 4.1 Fast Non-Reasoning ("xai/grok-4-1-fast-non-reasoning"): Fast, non-reasoning model for general purpose use.
+    <div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;xai&quot;</span>
+</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;grok-4-1-fast-non-reasoning&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>PlaybooksLM (proprietary, Enterprise-grade model developed by Playbooks AI, contact us at <a href="mailto:contact@runplaybooks.ai">contact@runplaybooks.ai</a> for more information)
+    <div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;playbooks&quot;</span>
+</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;playbookslm&quot;</span>
+</span></code></pre></div></p>
+</li>
 </ul>
 <p>Playbooks framework uses complex prompts that are optimized for Anthropic models. As a result, other frontier LLMs such as GPT-5, Gemini 2.5 Pro and Grok 4 may work, but additional testing and tuning may be required. Our current focus is on improving the core capabilities of the framework and demonstrating a novel way of programming AI agents. We plan to add testing and support for other models gradually. </p>
-<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> As of Nov 2025, we recommend using Haiku 4.5 for experimentation and development. If you are using meetings or complex multi-agent interactions, we recommend using Sonnet 4.5 or Opus 4.5.</p>
-<p>For production use, you may continue using Haiku 4.5 or switch to PlaybooksLM for lower latency, lower cost and full control over data privacy &amp; security. PlaybooksLM is a proprietary, Enterprise-grade model developed by Playbooks AI. Please contact us at <a href="mailto:contact@runplaybooks.ai">contact@runplaybooks.ai</a> for more information.</p>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a1.svg" title=":bulb:" /> As of Nov 2025, we recommend using Grok 4.1 Fast Non-Reasoning ("xai/grok-4-1-fast-non-reasoning") for experimentation and development. If you are using meetings or complex multi-agent interactions, we recommend using Sonnet 4.5 or Opus 4.5.</p>
+<p>For production use, you may continue using Grok 4.1 Fast, Haiku 4.5, Sonnet 4.5 or switch to PlaybooksLM for lower latency, lower cost and full control over data privacy &amp; security. PlaybooksLM is a proprietary, Enterprise-grade model developed by Playbooks AI. Please contact us at <a href="mailto:contact@runplaybooks.ai">contact@runplaybooks.ai</a> for more information.</p>
 <h2 id="configuring-llm-providers-in-playbooks">Configuring LLM Providers in Playbooks<a class="headerlink" href="#configuring-llm-providers-in-playbooks" title="Permanent link">&para;</a></h2>
 <h3 id="api-key-based-providers">API Key-Based Providers<a class="headerlink" href="#api-key-based-providers" title="Permanent link">&para;</a></h3>
 <p>For providers that use API keys (OpenAI, Anthropic, Google AI, Groq, OpenRouter), set the model in <code>playbooks.toml</code> and the corresponding API key as an environment variable.</p>
 <p><strong>Example 1: Anthropic (Claude)</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
-</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5-20250929&quot;</span>
-</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
+</span><span id="__codeline__-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5-20250929&quot;</span>
+</span><span id="__codeline__-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-ant-...&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-ant-...&quot;</span>
 </span></code></pre></div>
 <p><strong>Example 2: OpenAI (GPT-4)</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;openai&quot;</span>
-</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gpt-5&quot;</span>
-</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;openai&quot;</span>
+</span><span id="__codeline__-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gpt-5&quot;</span>
+</span><span id="__codeline__-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span>
 </span></code></pre></div>
 <p><strong>Example 3: Google AI (Gemini API)</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;google&quot;</span>
-</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gemini-pro&quot;</span>
-</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;google&quot;</span>
+</span><span id="__codeline__-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gemini-pro&quot;</span>
+</span><span id="__codeline__-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
 </span></code></pre></div>
 <hr />
 <h3 id="credential-based-providers-no-api-key-required">Credential-Based Providers (No API Key Required)<a class="headerlink" href="#credential-based-providers-no-api-key-required" title="Permanent link">&para;</a></h3>
 <p>For cloud providers that use IAM/credential-based authentication, set the model with the provider prefix and configure cloud credentials via standard mechanisms.</p>
 <p><strong>Example 4: Google Vertex AI</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
-</span><span id="__codeline__-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/gemini-1.5-flash&quot;</span>
-</span><span id="__codeline__-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
+</span><span id="__codeline__-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/gemini-1.5-flash&quot;</span>
+</span><span id="__codeline__-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Authenticate via gcloud</span>
-</span><span id="__codeline__-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login
-</span><span id="__codeline__-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__codeline__-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Set project and location</span>
-</span><span id="__codeline__-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_PROJECT</span><span class="o">=</span><span class="s2">&quot;your-project-id&quot;</span>
-</span><span id="__codeline__-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_LOCATION</span><span class="o">=</span><span class="s2">&quot;us-central1&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Authenticate via gcloud</span>
+</span><span id="__codeline__-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login
+</span><span id="__codeline__-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__codeline__-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Set project and location</span>
+</span><span id="__codeline__-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_PROJECT</span><span class="o">=</span><span class="s2">&quot;your-project-id&quot;</span>
+</span><span id="__codeline__-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_LOCATION</span><span class="o">=</span><span class="s2">&quot;us-central1&quot;</span>
 </span></code></pre></div>
 <p><strong>Example 5: AWS Bedrock</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bedrock&quot;</span>
-</span><span id="__codeline__-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bedrock/anthropic.claude-v2&quot;</span>
-</span><span id="__codeline__-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bedrock&quot;</span>
+</span><span id="__codeline__-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bedrock/anthropic.claude-v2&quot;</span>
+</span><span id="__codeline__-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Set AWS credentials</span>
-</span><span id="__codeline__-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
-</span><span id="__codeline__-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
-</span><span id="__codeline__-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_REGION_NAME</span><span class="o">=</span><span class="s2">&quot;us-east-1&quot;</span>
-</span><span id="__codeline__-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-</span><span id="__codeline__-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Or use IAM roles in AWS environment (no env vars needed)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Set AWS credentials</span>
+</span><span id="__codeline__-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+</span><span id="__codeline__-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+</span><span id="__codeline__-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_REGION_NAME</span><span class="o">=</span><span class="s2">&quot;us-east-1&quot;</span>
+</span><span id="__codeline__-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__codeline__-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1"># Or use IAM roles in AWS environment (no env vars needed)</span>
 </span></code></pre></div>
 <p><strong>Example 6: Claude on Vertex AI</strong></p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
-</span><span id="__codeline__-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/claude-sonnet-4&quot;</span>
-</span><span id="__codeline__-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
+</span><span id="__codeline__-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/claude-sonnet-4&quot;</span>
+</span><span id="__codeline__-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Uses gcloud ADC, NOT ANTHROPIC_API_KEY</span>
-</span><span id="__codeline__-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login
-</span><span id="__codeline__-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_PROJECT</span><span class="o">=</span><span class="s2">&quot;your-project-id&quot;</span>
-</span><span id="__codeline__-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_LOCATION</span><span class="o">=</span><span class="s2">&quot;us-central1&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__codeline__-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Uses gcloud ADC, NOT ANTHROPIC_API_KEY</span>
+</span><span id="__codeline__-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login
+</span><span id="__codeline__-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_PROJECT</span><span class="o">=</span><span class="s2">&quot;your-project-id&quot;</span>
+</span><span id="__codeline__-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VERTEXAI_LOCATION</span><span class="o">=</span><span class="s2">&quot;us-central1&quot;</span>
 </span></code></pre></div>
 <hr />
 <h3 id="separate-compilation-model">Separate Compilation Model<a class="headerlink" href="#separate-compilation-model" title="Permanent link">&para;</a></h3>
 <p>You can use a different (often cheaper/faster) model for compilation:</p>
-<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># playbooks.toml</span>
-</span><span id="__codeline__-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">[model]</span>
-</span><span id="__codeline__-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
-</span><span id="__codeline__-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5-20250929&quot;</span>
-</span><span id="__codeline__-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
-</span><span id="__codeline__-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-</span><span id="__codeline__-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">[model.compilation]</span>
-</span><span id="__codeline__-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
-</span><span id="__codeline__-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/gemini-1.5-flash&quot;</span>
-</span><span id="__codeline__-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span>
+<div class="language-toml highlight"><pre><span></span><code><span id="__codeline__-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># playbooks.toml</span>
+</span><span id="__codeline__-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">[model]</span>
+</span><span id="__codeline__-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;anthropic&quot;</span>
+</span><span id="__codeline__-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5-20250929&quot;</span>
+</span><span id="__codeline__-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+</span><span id="__codeline__-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__codeline__-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">[model.compilation]</span>
+</span><span id="__codeline__-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai&quot;</span>
+</span><span id="__codeline__-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vertex_ai/gemini-1.5-flash&quot;</span>
+</span><span id="__codeline__-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span>
 </span></code></pre></div>
 <hr />
 <h3 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h3>
