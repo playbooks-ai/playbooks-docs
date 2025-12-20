@@ -1,6 +1,6 @@
 # Project information
 site_name: Playbooks AI
-site_url: https://github.com/playbooks-ai/playbooks
+site_url: https://docs.runplaybooks.ai
 site_description: >-
   Build AI Agents with Natural Language Programming
 
@@ -138,6 +138,7 @@ nav:
     - Playbooks vs Traditional Frameworks: reference/playbooks-traditional-comparison.md
     - Agents: reference/agents.md
     - MCP based Agents: reference/mcp-agent.md
+    - Meetings: reference/meetings.md
     - Exported and Public Playbooks: reference/exported-and-public-playbooks.md
     - Playbook Types: reference/playbook-types.md
     - Built-in Playbooks: reference/builtin-playbooks.md

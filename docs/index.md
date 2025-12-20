@@ -3,15 +3,19 @@ hide:
   - toc
 ---
 <div align="center">
-   <h1>
+   <h1 style="margin-bottom: 0;">
    <picture>
       <img alt="Playbooks AI" src="assets/images/playbooks-logo-dark.png#gh-dark-mode-only" width=200 height=200>
       <img alt="Playbooks AI" src="assets/images/playbooks-logo.png#gh-light-mode-only" width=200 height=200>
    </picture>
-  <h2 align="center">LLM is your new CPU<br/>Welcome to Software 3.0</h2>
+    </h1>
+    <div style="max-width: 500px; font-weight: light; font-size: 1.1rem; margin-bottom: 2em;">
+        Playbooks is a framework and runtime for building verifiable multi-agent AI systems with Natural Language Programs.
+    </div>
 </div>
 
-> **Playbooks is a framework and runtime for building verifiable multi-agent AI systems with Natural Language Programs.**
+
+![Playbooks](assets/images/playbooks-illustrated.jpeg)
 
 Describe what your agents should do, not how to do it. Focus on agent behavior at a high level while the LLM handles implementation details and edge cases. Mix natural language and Python seamlessly on the same call stack. Get verifiable execution, full observability, and programs that business users can actually read and approve.
 

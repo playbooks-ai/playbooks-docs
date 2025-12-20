@@ -75,3 +75,65 @@ remote:
 - describe the weather to the user
 - end program
 ```
+
+## Waiting for agent responses
+
+When an agent waits for a response from another agent, Playbooks uses **adaptive waiting** - intelligent, context-aware waiting without hard timeouts.
+
+### How it works
+
+Instead of rigid timeouts that force binary wait-or-abort decisions, agents receive periodic notifications (every 5 seconds) while waiting:
+
+- **Status updates** showing how long they've been waiting
+- **Interrupt messages** from other sources (user, other agents)
+- **The opportunity** to decide whether to continue waiting, take alternative action, or escalate
+
+The agent's LLM makes contextual decisions based on task urgency, expected wait times, and available alternatives. There is no hard maximum wait time.
+
+### Providing context
+
+Use the **Notes section** to give agents guidance about expected wait times and alternatives:
+
+```md
+# SupportAgent
+## HandleRefundRequest
+### Steps
+- Ask user for their order ID
+- Ask OrderVerification agent to verify the order
+- Wait for verification result
+- If order is verified
+  - Process refund
+- Otherwise
+  - Inform user verification failed
+
+### Notes
+- Order verification typically takes 3-5 seconds
+- If verification takes longer than 30 seconds, there may be a backend issue
+- Consider offering to escalate to a supervisor in that case
+```
+
+### Example behavior
+
+**At 5 seconds**: Agent sees typical time is 3-5 seconds, decides to keep waiting.
+
+**At 15 seconds**: Agent informs user: "Verification is taking longer than usual, please bear with me..."
+
+**At 30 seconds**: Agent reaches the threshold mentioned in Notes and offers to escalate: "Would you like me to escalate this to a supervisor?"
+
+If OrderVerification responds at any point, the agent immediately continues with the normal workflow. Adaptive waiting is transparent when everything works as expected.
+
+### Example: Alternative strategies
+
+```md
+# DataCoordinator
+## FetchAnalytics
+### Steps
+- Ask DataAgent for the analytics report
+- Wait for the report
+- Present the report to user
+
+### Notes
+- DataAgent typically responds in 5-10 seconds
+- If no response after 15 seconds, check StatusAgent for service status
+- If the service is down, inform user and offer to open a support ticket
+```

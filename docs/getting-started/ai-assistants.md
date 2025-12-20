@@ -13,15 +13,14 @@ AI coding assistants can significantly accelerate Playbooks development by under
 
 ---
 
-## Supported AI Coding Assistants
+## Suggested AI Coding Assistants
 
-1. **[Cursor](https://cursor.com/)** - AI-first code editor (VS Code fork)
-2. **[Windsurf](https://codeium.com/windsurf)** - AI-native IDE by Codeium
-3. **[GitHub Copilot](https://github.com/features/copilot)** - Most widely adopted AI pair programmer
-4. **[Devin](https://devin.ai/)** - Cognition's autonomous AI software engineer
-5. **[OpenAI Codex](https://openai.com/index/introducing-codex/)** - GPT-5-Codex powered autonomous coding agent
-6. **[Amazon Q Developer](https://aws.amazon.com/q/developer/)** - AWS-integrated coding assistant (formerly CodeWhisperer)
-7. **[Google Gemini Code Assist](https://cloud.google.com/gemini/docs/codeassist/overview)** - Google Cloud's AI coding tool
+1. **[Claude Code](https://claude.ai/code)** - Anthropic's AI coding assistant
+2. **[Cursor](https://cursor.com/)** - AI-first code editor (VS Code fork)
+3. **[Windsurf](https://codeium.com/windsurf)** - AI-native IDE by Codeium
+4. **[GitHub Copilot](https://github.com/features/copilot)** - Most widely adopted AI pair programmer
+5. **[Devin](https://devin.ai/)** - Cognition's autonomous AI software engineer
+6. **[OpenAI Codex](https://openai.com/index/introducing-codex/)** - GPT-5-Codex powered autonomous coding agent
 
 ---
 
@@ -31,7 +30,7 @@ Use these instructions with any AI coding assistant to ensure it generates optim
 
 ```
 You are a Playbooks programmer. Download and read the Playbooks Programming Guide from 
-https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first.
+https://docs.runplaybooks.ai/programming-guide/index.md first.
 
 When you have read and understood, just say "Ready"
 ```
@@ -105,7 +104,7 @@ Create an `agents.md` file in your project root:
 
     ## Instructions
 
-    1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
+    1. **Always start by reading**: https://docs.runplaybooks.ai/programming-guide/index.md
     2. **Follow the programming guide** for syntax, patterns, and best practices
     3. **Think from first principles**: How would this agent behave naturally?
     4. **Choose the right playbook types**:

@@ -7,13 +7,18 @@ Playbooks automates context engineering, allowing you to focus on writing agent 
 - [Stack-based Context Management](./context-engineering.md#stack-based-context-management)
 Automatically compacts context as playbooks complete, preserving semantic information while reducing token usage.
 
-- [Artifacts](../programming-guide/artifacts.md) Automatic, efficient use of long content in LLM context.
+- [State Compression](./context-engineering.md#state-compression)
+Uses I-frame/P-frame technique (similar to video compression) to efficiently represent state changes across LLM calls.
+
+- [Artifacts](../programming-guide/artifacts.md)
+Automatic, efficient use of long content in LLM context.
 
 - [Prompt Caching Optimization](./context-engineering.md#prompt-caching-optimization)
 Intelligently manages context to maximize cache hits, reducing latency and API costs by up to 10x.
 
 - [Programmer Control](./context-engineering.md#programmer-control-over-context)
-Programmers have control over through specific control mechanisms.
+Programmers have control through specific control mechanisms.
+
 ---
 
 ## Stack-based Context Management
@@ -44,6 +49,83 @@ Main
 
 ---
 
+## State Compression
+
+MPEG video compression uses I-frames (full images) and P-frames (only the pixels that changed since the last frame) to reduce video file size. Playbooks uses a similar technique to efficiently represent state changes across LLM calls. Instead of sending the full state on every call, the framework sends incremental changes, significantly reducing token usage when state is large.
+
+### How It Works
+
+**I-frames (Full State):**
+The first LLM call includes the complete state representation:
+
+```json
+{
+    "variables": {},
+    "agents": [
+    "Host(agent 1000)",
+    "HumanAgent(User, User, human)"
+    ]
+}
+```
+
+**P-frames (Predicted/Delta):**
+Subsequent calls only include what changed. If nothing changed, the state representation is empty:
+
+```
+empty
+```
+
+If two new agents were created:
+
+```json
+{
+    "new_agents": [
+    "Player(agent 1001, name:MysticMind)",
+    "Player(agent 1002, name:SharpGuesser)"
+    ]
+}
+```
+
+If an agent was terminated and a variable was set:
+
+```json
+{
+    "new_variables": {
+        "latest_move": "Place X at position 5"
+    },
+    "deleted_agents": [
+        "Player(agent 1002, name:SharpGuesser)"
+    ]
+}
+```
+
+**Periodic I-frames:**
+After `state_compression.full_state_interval` P-frames (configured in `playbooks.toml`), the framework sends a new I-frame with full state:
+
+```json
+
+{
+    "variables": {
+        "latest_move": "Place O at position 2"
+    },
+    "agents": [
+        "Host(agent 1000)",
+        "HumanAgent(User, User, human)"
+    ]
+}
+```
+
+### When This Helps
+
+State compression saves significant tokens when:
+
+- There are many variables
+- Variables have large values (e.g., lists, complex objects)
+- Multiple agents exist but change infrequently
+- State is mostly stable between calls
+
+---
+
 ## Prompt Caching Optimization
 
 Playbooks intelligently leverages prompt caching to minimize latency and reduce API costs. The framework automatically manages cache-friendly context structures.
@@ -52,7 +134,7 @@ Playbooks intelligently leverages prompt caching to minimize latency and reduce 
 
 **Prefix Caching:**
 
-1. LLM providers cache the activations of prompt prefixes. Some LLM providers cache prefixes at specified locations in the context. some LLM providers charge extra for adding cache entries.
+1. LLM providers cache the activations of prompt prefixes. Some LLM providers cache prefixes at specified locations in the context. Some LLM providers charge extra for adding cache entries.
 2. When a new request arrives, the longest matching cached prefix is identified
 3. Cached activations are restored, avoiding reprocessing
 4. Only tokens beyond the prefix are processed
@@ -67,7 +149,7 @@ Playbooks intelligently leverages prompt caching to minimize latency and reduce 
 The framework automatically:
 
 1. **Sets Strategic Cache Points**
-Places cache boundaries at stable context segments and prioritizes frequently reused prefixes (system prompts, playbook definitions, call points). Claude allows a maximum of 4 cache points in the context, which the frameworks selects intelligently.
+Places cache boundaries at stable context segments and prioritizes frequently reused prefixes (system prompts, playbook definitions, call points). Claude allows a maximum of 4 cache points in the context, which the framework selects intelligently.
 
 2. **Balances Cache Efficiency**
 There are competing factors to balance when it comes to using the cache effectively, while compacting the context to reduce token usage.
@@ -94,7 +176,7 @@ While Playbooks automates context management, you retain full control when neede
 
 **[Description Placeholders](./description-placeholders.md)**
 - Inject dynamic values into playbook descriptions
-- Inject either inline in the description or as a separarate LLM message.
+- Inject either inline in the description or as a separate LLM message.
 
 **[Artifacts](../programming-guide/artifacts.md)**
 - Control when large content enters/exits context through explicit artifact creation with `SaveArtifact()` and loading with `LoadArtifact()`

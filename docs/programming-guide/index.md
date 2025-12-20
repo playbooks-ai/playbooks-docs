@@ -712,6 +712,8 @@ Send messages for asynchronous communication:
 
 Use for fire-and-forget communication and async workflows.
 
+**Adaptive waiting:** Agents use intelligent, context-aware waiting without hard timeouts. When waiting for responses, agents receive periodic notifications (every 5 seconds) allowing them to decide whether to continue waiting, take alternative action, or escalate. There is no hard maximum wait time - the agent decides based on context. Add expected time information and alternative strategies in the Notes section to guide the agent's decisions.
+
 #### 3. Meetings - Multi-Party Coordination
 
 Host creates meeting for multi-agent coordination:
@@ -768,6 +770,7 @@ meeting: true
 - Host agent creates meeting, invites attendees
 - Meeting provides shared communication channel
 - Messages visible to all participants
+- Participants can share variables through meeting shared state
 - Meeting ends when host returns from meeting playbook
 
 **When to use meetings**:
@@ -776,6 +779,40 @@ meeting: true
 - ✅ Shared context across participants
 - ✅ Back-and-forth discussion needed
 - ✅ Consensus building
+
+**Meeting shared state**:
+
+Participants can share variables through meeting shared state, which is accessible to all meeting participants for reading and writing:
+
+```markdown
+# GameHost
+## GameSession
+meeting: true
+
+### Steps
+- Initialize game board in meeting shared state and ask first player to make their move
+- While game is not over
+  - Wait for player move
+  - Update game board in shared state
+  - Check for winner
+  - If game is over
+    - Announce the winner
+  - Otherwise
+    - Ask next player to make their move
+
+# Player
+## GameSession
+meeting: true
+
+### Steps
+- Wait for host to start the game
+- While game is not over
+  - Wait for host to ask me to make my move
+  - Read current game board from meeting shared state and decide move
+  - Tell everyone what my move is
+```
+
+Use shared state when participants need to coordinate on shared data structures like game boards, collaborative documents, or shared counters.
 
 ### Multi-Agent Best Practices
 
@@ -1161,6 +1198,7 @@ async def FetchUserProfile($user_id: str) -> dict:
         "preferences": {"theme": "dark"}
     }
 ```
+````
 
 
 This pattern:
@@ -1417,14 +1455,16 @@ async def SaveTask(task: str) -> dict:
 8. **Document choices**: Explain intent in descriptions and comments
 9. **Iterate**: Start simple, add complexity as needed
 
-**For AI Assistants** - Additional guidance when helping users:
+**For AI Assistants** - Additional guidance for Claude, Cursor, Gemini, Grok, etc. when writing code:
 
 - **Think deeply**: Plan in detail and review the plan before writing any code
 - **Teach while building**: Explain architectural choices to help users learn
 - **Use triggers sparingly**: Mainly for input validation, not normal control flow
 - **Optimal Playbooks**: Write idiomatic code that uses Playbooks capabilities optimally to produce minimal, clean, readable programs
 - **Framework migrations**: When converting from LangGraph, CrewAI, etc., produce the same behavior but leverage Playbooks' higher-level abstractions and natural language specifications
+- Each # (i.e. H1 tag) defines an agent and its contents are up to the next H1 tag or end of the file. When creating a new agent, create it at the end of the file.
+- When running MCP server in memory using memory://./path/to/mcp.py, you need to pip install any dependencies for the MCP server into the same environment as the Playbooks program.
 
-**Remember**: You're writing Software 3.0 - programs that execute on LLMs. Embrace natural language while maintaining precision. The compiler and runtime handle the complexity.
+**Remember**: You're writing Software 3.0 - natural language programs that execute on LLMs. Embrace natural language for maximum expressiveness while maintaining precision.
 
 Happy building! 🚀

@@ -28,11 +28,13 @@ Sends a message to a specified target (agent or user).
 **(Hidden/Internal Playbook)**
 Internal implementation of `Say`
 
-### `WaitForMessage(source_agent_id: str) -> str | None`
+### `WaitForMessage(source_agent_id: str, timeout: float = None) -> str | None`
 
 **(Hidden/Internal Playbook)**
 
 Waits for a message from a specific agent or user. This is a low-level communication primitive typically used internally for agent-to-agent coordination.
+
+**Adaptive waiting:** The framework uses intelligent, context-aware waiting without hard timeouts. Agents receive periodic notifications (every 5 seconds) while waiting, allowing them to make contextual decisions about whether to continue waiting, take alternative action, or escalate. The agent's LLM decides based on task context and expected wait times. There is no hard maximum wait time.
 
 For example, when executing a step like `"Ask user for account number"`, the playbook will send a message to the user using `SendMessage("human", "What is your account number?")` and wait for the user's response using `WaitForMessage("human")`.
 
