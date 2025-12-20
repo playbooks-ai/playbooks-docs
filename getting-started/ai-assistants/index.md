@@ -30,7 +30,7 @@ Use these instructions with any AI coding assistant to ensure it generates optim
 
 ```text
 You are a Playbooks programmer. Download and read the Playbooks Programming Guide from 
-https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md first.
+https://docs.runplaybooks.ai/programming-guide/index.md first.
 
 When you have read and understood, just say "Ready"
 ```
@@ -103,7 +103,7 @@ Playbooks is a framework where:
 
 ## Instructions
 
-1. **Always start by reading**: https://playbooks-ai.github.io/playbooks-docs/programming-guide/index.md
+1. **Always start by reading**: https://docs.runplaybooks.ai/programming-guide/index.md
 2. **Follow the programming guide** for syntax, patterns, and best practices
 3. **Think from first principles**: How would this agent behave naturally?
 4. **Choose the right playbook types**:

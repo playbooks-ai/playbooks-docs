@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.runplaybooks.ai/reference/mcp-agent/">
+        <link rel="canonical" href="https://docs.runplaybooks.ai/reference/meetings/">
       
       
-        <link rel="prev" href="../agents/">
+        <link rel="prev" href="../mcp-agent/">
       
       
-        <link rel="next" href="../meetings/">
+        <link rel="next" href="../exported-and-public-playbooks/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>MCP based Agents - Playbooks AI</title>
+        <title>Meetings - Playbooks AI</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mcp-agents" class="md-skip">
+        <a href="#meetings" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP based Agents
+              Meetings
             
           </span>
         </div>
@@ -779,6 +779,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP based Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -796,7 +819,7 @@
   
   
   <span class="md-ellipsis">
-    MCP based Agents
+    Meetings
     
   </span>
   
@@ -809,7 +832,7 @@
   
   
   <span class="md-ellipsis">
-    MCP based Agents
+    Meetings
     
   </span>
   
@@ -841,46 +864,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-mcp" class="md-nav__link">
+  <a href="#when-to-use-meetings" class="md-nav__link">
     <span class="md-ellipsis">
-      What is MCP?
+      When to Use Meetings
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-mcp-agent" class="md-nav__link">
+  <a href="#creating-a-meeting" class="md-nav__link">
     <span class="md-ellipsis">
-      Create an MCP agent
+      Creating a Meeting
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Create an MCP agent">
+    <nav class="md-nav" aria-label="Creating a Meeting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
+  <a href="#basic-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Example
+      Basic Structure
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
+  <a href="#starting-a-meeting" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration Options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport types
+      Starting a Meeting
     </span>
   </a>
   
@@ -892,45 +906,108 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-mcp-agents-work" class="md-nav__link">
+  <a href="#required-vs-optional-attendees" class="md-nav__link">
     <span class="md-ellipsis">
-      How MCP Agents Work
+      Required vs Optional Attendees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required vs Optional Attendees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-and-optional-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required and Optional Attendees
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#use-mcp-tools-as-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use MCP tools as playbooks
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#combine-multiple-mcp-agents" class="md-nav__link">
+  <a href="#meeting-lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
-      Combine multiple MCP agents
+      Meeting Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meeting Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creation
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-invitation" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication
+      2. Invitation
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#3-active-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Active Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Termination
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#run-an-mcp-server-examples" class="md-nav__link">
+  <a href="#shared-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Run an MCP server (examples)
+      Shared State
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-shared-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Shared State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
     </span>
   </a>
   
@@ -940,29 +1017,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../meetings/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Meetings
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1149,46 +1203,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-mcp" class="md-nav__link">
+  <a href="#when-to-use-meetings" class="md-nav__link">
     <span class="md-ellipsis">
-      What is MCP?
+      When to Use Meetings
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-mcp-agent" class="md-nav__link">
+  <a href="#creating-a-meeting" class="md-nav__link">
     <span class="md-ellipsis">
-      Create an MCP agent
+      Creating a Meeting
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Create an MCP agent">
+    <nav class="md-nav" aria-label="Creating a Meeting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example" class="md-nav__link">
+  <a href="#basic-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Example
+      Basic Structure
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
+  <a href="#starting-a-meeting" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration Options
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transport-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Transport types
+      Starting a Meeting
     </span>
   </a>
   
@@ -1200,45 +1245,108 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-mcp-agents-work" class="md-nav__link">
+  <a href="#required-vs-optional-attendees" class="md-nav__link">
     <span class="md-ellipsis">
-      How MCP Agents Work
+      Required vs Optional Attendees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required vs Optional Attendees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-and-optional-attendees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required and Optional Attendees
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#use-mcp-tools-as-playbooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use MCP tools as playbooks
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#combine-multiple-mcp-agents" class="md-nav__link">
+  <a href="#meeting-lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
-      Combine multiple MCP agents
+      Meeting Lifecycle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meeting Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Creation
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-invitation" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication
+      2. Invitation
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#3-active-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Active Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Termination
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#run-an-mcp-server-examples" class="md-nav__link">
+  <a href="#shared-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Run an MCP server (examples)
+      Shared State
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-shared-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Shared State
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
     </span>
   </a>
   
@@ -1263,159 +1371,120 @@
   
 
 
-<h1 id="mcp-agents">MCP Agents<a class="headerlink" href="#mcp-agents" title="Permanent link">&para;</a></h1>
+<h1 id="meetings">Meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h1>
+<p>Meetings enable multi-agent coordination through structured group conversations. They provide a shared communication channel where multiple agents can collaborate, share information, and reach consensus.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Connect to external MCP servers and expose their tools as callable playbooks.</p>
-<h2 id="what-is-mcp">What is MCP?<a class="headerlink" href="#what-is-mcp" title="Permanent link">&para;</a></h2>
-<p>The Model Context Protocol (MCP) is an open protocol that standardizes how AI applications can access external tools and data sources. MCP servers expose tools that can perform various tasks like:</p>
+<p>Meetings are first-class abstractions in Playbooks for multi-party coordination. Unlike one-to-one messaging or direct public playbook calls, meetings allow multiple agents to participate in an ongoing conversation with shared context.</p>
+<p><strong>Key capabilities:</strong></p>
 <ul>
-<li>Accessing databases</li>
-<li>Making API calls</li>
-<li>Performing calculations</li>
-<li>Interacting with file systems</li>
-<li>Running specialized algorithms</li>
-<li>And much more</li>
+<li><strong>Multi-party coordination</strong> - Host and multiple attendees collaborate in real-time</li>
+<li><strong>Shared communication channel</strong> - All messages visible to all participants</li>
+<li><strong>Shared state</strong> - Participants can read and write to a shared data structure</li>
+<li><strong>Required attendees</strong> - Ensure critical stakeholders are present before proceeding</li>
+<li><strong>Meeting lifecycle</strong> - Clear start, active phase, and end phases</li>
 </ul>
-<h2 id="create-an-mcp-agent">Create an MCP agent<a class="headerlink" href="#create-an-mcp-agent" title="Permanent link">&para;</a></h2>
-<p>To create an MCP agent, you need to specify the agent's remote configuration. The agent acts as a proxy to the MCP server, making all its tools available as playbooks.</p>
-<h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># My MCP</span>
-</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>This agent provides various python tools.
-</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>remote:
-</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  type: mcp
-</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  url: http://127.0.0.1:8888/mcp
-</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  transport: streamable-http
-</span></code></pre></div>
-<p>Once defined, you can call tools from the MCP server in your instructions:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Assistant</span>
-</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">-</span><span class="w"> </span>When program starts
-</span><span id="__codeline__-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__codeline__-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span>Call ListProjects from My MCP
-</span><span id="__codeline__-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">-</span><span class="w"> </span>Display the project list to the user
-</span><span id="__codeline__-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
-<p>The MCP agent configuration supports the following options:</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Required</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td>Yes</td>
-<td>Must be <code>mcp</code> for MCP agents</td>
-<td>-</td>
-</tr>
-<tr>
-<td><code>url</code></td>
-<td>Yes</td>
-<td>The MCP server URL or command</td>
-<td>-</td>
-</tr>
-<tr>
-<td><code>transport</code></td>
-<td>No</td>
-<td>Transport type (<code>sse</code>, <code>stdio</code>, <code>websocket</code>, <code>streamable-http</code>)</td>
-<td><code>sse</code></td>
-</tr>
-<tr>
-<td><code>timeout</code></td>
-<td>No</td>
-<td>Timeout in seconds for tool calls</td>
-<td><code>30.0</code></td>
-</tr>
-<tr>
-<td><code>auth</code></td>
-<td>No</td>
-<td>Authentication configuration object</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="transport-types">Transport types<a class="headerlink" href="#transport-types" title="Permanent link">&para;</a></h3>
-<p>MCP agents support different transport protocols:</p>
+<h2 id="when-to-use-meetings">When to Use Meetings<a class="headerlink" href="#when-to-use-meetings" title="Permanent link">&para;</a></h2>
+<p>✅ <strong>Use meetings when:</strong></p>
 <ul>
-<li><strong>SSE (Server-Sent Events)</strong>: Default transport for HTTP-based MCP servers</li>
-<li><strong>streamable-http</strong>: HTTP-based streaming transport</li>
-<li><strong>stdio</strong>: Standard input/output for local processes</li>
-<li><strong>WebSocket</strong>: WebSocket-based transport for persistent connections</li>
+<li>Multiple agents need to collaborate on a shared task</li>
+<li>Back-and-forth discussion is needed between participants</li>
+<li>Agents need to build consensus or make joint decisions</li>
+<li>Shared context must be maintained across all participants</li>
+<li>Complex coordination with 3+ agents</li>
 </ul>
-<h2 id="how-mcp-agents-work">How MCP Agents Work<a class="headerlink" href="#how-mcp-agents-work" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Connection</strong>: When the program starts, the MCP agent connects to the specified server</li>
-<li><strong>Tool Discovery</strong>: The agent automatically discovers all available tools from the server</li>
-<li><strong>Playbook Creation</strong>: Each MCP tool becomes a playbook that can be called</li>
-<li><strong>Execution</strong>: When a playbook is called, the agent forwards the request to the MCP server</li>
-</ol>
-<h2 id="use-mcp-tools-as-playbooks">Use MCP tools as playbooks<a class="headerlink" href="#use-mcp-tools-as-playbooks" title="Permanent link">&para;</a></h2>
-<p>Once connected, all MCP tools are automatically available as playbooks. You can call them just like any other playbook:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Weather MCP</span>
-</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>This agent connects to a weather MCP service.
-</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>remote:
-</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  type: mcp
-</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  url: http://weather-service.example.com/mcp
-</span><span id="__codeline__-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  transport: sse
-</span><span id="__codeline__-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__codeline__-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gh"># Weather Assistant</span>
-</span><span id="__codeline__-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gu">## Main</span>
-</span><span id="__codeline__-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="gu">### Triggers</span>
-</span><span id="__codeline__-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">-</span><span class="w"> </span>When program starts
-</span><span id="__codeline__-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__codeline__-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>Say &quot;Welcome to Weather Assistant! What location would you like weather for?&quot;
-</span><span id="__codeline__-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">-</span><span class="w"> </span>Get user&#39;s location
-</span><span id="__codeline__-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">-</span><span class="w"> </span>Call get_current_weather from Weather MCP with location=$location
-</span><span id="__codeline__-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">-</span><span class="w"> </span>Display the weather: &quot;Current weather in $location: $weather&quot;
-</span><span id="__codeline__-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">-</span><span class="w"> </span>End program
-</span></code></pre></div>
-<h2 id="combine-multiple-mcp-agents">Combine multiple MCP agents<a class="headerlink" href="#combine-multiple-mcp-agents" title="Permanent link">&para;</a></h2>
-<p>You can use multiple MCP agents in a single program:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Weather MCP</span>
-</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Weather service integration.
-</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>remote:
-</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  type: mcp
-</span><span id="__codeline__-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  url: http://weather-api.com/mcp
-</span><span id="__codeline__-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__codeline__-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="gh"># News MCP</span>
-</span><span id="__codeline__-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>News service integration.
-</span><span id="__codeline__-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>remote:
-</span><span id="__codeline__-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  type: mcp
-</span><span id="__codeline__-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  url: http://news-api.com/mcp
-</span><span id="__codeline__-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__codeline__-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="gh"># Assistant</span>
-</span><span id="__codeline__-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="gu">## DailyBriefing</span>
-</span><span id="__codeline__-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="gu">### Steps</span>
-</span><span id="__codeline__-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">-</span><span class="w"> </span>Call get_current_weather from Weather MCP for New York
-</span><span id="__codeline__-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">-</span><span class="w"> </span>Call get_top_headlines from News MCP with technology category
-</span><span id="__codeline__-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">-</span><span class="w"> </span>Create briefing combining weather and news
-</span><span id="__codeline__-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">-</span><span class="w"> </span>Present briefing to user
-</span></code></pre></div>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>For MCP servers that require authentication:</p>
-<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># Secure API Agent</span>
-</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Connects to a secured MCP endpoint.
-</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>remote:
-</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  type: mcp
-</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  url: https://api.example.com/mcp
-</span><span id="__codeline__-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  transport: sse
-</span><span id="__codeline__-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  auth:
-</span><span id="__codeline__-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    type: bearer
-</span><span id="__codeline__-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    token: ${API_TOKEN}
-</span></code></pre></div>
-<h2 id="run-an-mcp-server-examples">Run an MCP server (examples)<a class="headerlink" href="#run-an-mcp-server-examples" title="Permanent link">&para;</a></h2>
-<p>You can create simple MCP servers with <code>fastmcp</code>. Example servers in the repo:</p>
+<p>❌ <strong>Don't use meetings when:</strong></p>
 <ul>
-<li>Insomnia server: <code>tests/data/insomnia/mcp.py</code></li>
-<li>Travel advisor server: <code>tests/data/travel_advisor/mcp.py</code></li>
+<li>Simple request-response between two agents (use <a href="../exported-and-public-playbooks/">public playbooks</a>)</li>
+<li>Fire-and-forget communication (use messaging)</li>
+<li>Agents don't need to see each other's messages</li>
+<li>Linear, sequential delegation is sufficient</li>
+</ul>
+<h2 id="creating-a-meeting">Creating a Meeting<a class="headerlink" href="#creating-a-meeting" title="Permanent link">&para;</a></h2>
+<h3 id="basic-structure">Basic Structure<a class="headerlink" href="#basic-structure" title="Permanent link">&para;</a></h3>
+<p>Each participating agent defines a meeting playbook with <code>meeting: true</code> metadata:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gh"># HostAgent</span>
+</span><span id="__codeline__-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gu">## PlanningSession</span>
+</span><span id="__codeline__-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>meeting: true
+</span><span id="__codeline__-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__codeline__-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">-</span><span class="w"> </span>...
+</span><span id="__codeline__-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__codeline__-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gh"># ParticipantAgent</span>
+</span><span id="__codeline__-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="gu">## PlanningSession</span>
+</span><span id="__codeline__-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>meeting: true
+</span><span id="__codeline__-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__codeline__-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>...
+</span></code></pre></div>
+<h3 id="starting-a-meeting">Starting a Meeting<a class="headerlink" href="#starting-a-meeting" title="Permanent link">&para;</a></h3>
+<p>The host agent starts a meeting using natural language:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">-</span><span class="w"> </span>Start a planning session with TeamLead and Engineer
+</span><span id="__codeline__-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">-</span><span class="w"> </span>...
+</span></code></pre></div>
+<p>The framework automatically:
+1. Creates instances of TeamLead and Engineer agents
+2. Creates the meeting
+3. Invites specified attendees
+4. Waits for them to join
+5. Sets up shared state and a shared communication channel for the meeting
+6. Routes messages between participants</p>
+<h2 id="required-vs-optional-attendees">Required vs Optional Attendees<a class="headerlink" href="#required-vs-optional-attendees" title="Permanent link">&para;</a></h2>
+<h3 id="required-and-optional-attendees">Required and Optional Attendees<a class="headerlink" href="#required-and-optional-attendees" title="Permanent link">&para;</a></h3>
+<p>Specify critical participants who must be present before the meeting begins and optional participants who are invited but not required for the meeting to proceed:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## Main</span>
+</span><span id="__codeline__-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__codeline__-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="k">-</span><span class="w"> </span>Start a strategy meeting
+</span><span id="__codeline__-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__codeline__-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="gu">## StrategyMeeting</span>
+</span><span id="__codeline__-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>meeting: true
+</span><span id="__codeline__-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>required_attendees: [CFO, CTO]
+</span><span id="__codeline__-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>optional_attendees: [VP_Sales]
+</span><span id="__codeline__-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__codeline__-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">-</span><span class="w"> </span>...
+</span></code></pre></div>
+<h2 id="meeting-lifecycle">Meeting Lifecycle<a class="headerlink" href="#meeting-lifecycle" title="Permanent link">&para;</a></h2>
+<h3 id="1-creation">1. Creation<a class="headerlink" href="#1-creation" title="Permanent link">&para;</a></h3>
+<p>The host agent initiates the meeting:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">-</span><span class="w"> </span>Start a code review meeting with SeniorDev and TechLead
+</span></code></pre></div>
+<h3 id="2-invitation">2. Invitation<a class="headerlink" href="#2-invitation" title="Permanent link">&para;</a></h3>
+<p>The framework sends invitations to all specified attendees. Participants receive the invitation and accept by starting their appropriate meeting playbook.</p>
+<h3 id="3-active-phase">3. Active Phase<a class="headerlink" href="#3-active-phase" title="Permanent link">&para;</a></h3>
+<p>During the meeting, each participant follows instructions in their meeting playbook. Typically meeting playbooks have a <code>while meeting is in progress</code> loop with steps to:</p>
+<ul>
+<li>Send meeting messages visible to all attendees</li>
+<li>Read meeting messages from other participants</li>
+<li>Access and modify shared state</li>
+<li>Think and coordinate on shared goals</li>
+<li>Wait for either specific participants or anyone from the meeting to say something</li>
+</ul>
+<h3 id="4-termination">4. Termination<a class="headerlink" href="#4-termination" title="Permanent link">&para;</a></h3>
+<p>The meeting <strong>ends when the host agent returns from its meeting playbook</strong>. When the meeting ends, all participants receive an end-of-meeting signal.</p>
+<h2 id="shared-state">Shared State<a class="headerlink" href="#shared-state" title="Permanent link">&para;</a></h2>
+<p>Meeting participants can share variables through a shared state object accessible to all attendees.</p>
+<h3 id="accessing-shared-state">Accessing Shared State<a class="headerlink" href="#accessing-shared-state" title="Permanent link">&para;</a></h3>
+<p>From markdown playbooks:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">-</span><span class="w"> </span>Set current player to Player1 in meeting shared state
+</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">-</span><span class="w"> </span>Look at game board from the meeting shared state and consider my move
+</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">-</span><span class="w"> </span>...
+</span></code></pre></div>
+<p>From Python playbooks:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__codeline__-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@playbook</span>
+</span><span id="__codeline__-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">RunAlgorithm</span><span class="p">():</span>
+</span><span id="__codeline__-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">if</span> <span class="n">meeting</span><span class="o">.</span><span class="n">shared_state</span><span class="o">.</span><span class="n">game_board</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;X&quot;</span><span class="p">:</span>
+</span><span id="__codeline__-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">meeting</span><span class="o">.</span><span class="n">shared_state</span><span class="o">.</span><span class="n">game_board</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
+</span><span id="__codeline__-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">meeting</span><span class="o">.</span><span class="n">shared_state</span><span class="o">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="s2">&quot;defensive&quot;</span>
+</span></code></pre></div>
+<p>Note that <code>meeting.shared_state</code> is a <code>Box</code> object that allows both <code>["attr"]</code> or <code>.attr</code> access.</p>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../agents/">Agents</a> - Creating and managing agents that participate in meetings</li>
+<li><a href="../builtin-playbooks/">Built-in Playbooks</a> - Meeting-related playbooks like <code>InviteToMeeting()</code></li>
+<li><a href="../triggers/">Triggers</a> - Using triggers to respond to meeting invitations</li>
+<li><a href="../../programming-guide/#multi-agent-programs">Programming Guide: Multi-Agent Programs</a> - High-level overview and patterns</li>
 </ul>
 
 
@@ -1456,7 +1525,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Agents">
+          <a href="../mcp-agent/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MCP based Agents">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1466,20 +1535,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Agents
+                MCP based Agents
               </div>
             </div>
           </a>
         
         
           
-          <a href="../meetings/" class="md-footer__link md-footer__link--next" aria-label="Next: Meetings">
+          <a href="../exported-and-public-playbooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Exported and Public Playbooks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Meetings
+                Exported and Public Playbooks
               </div>
             </div>
             <div class="md-footer__button md-icon">

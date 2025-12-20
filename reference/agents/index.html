@@ -572,6 +572,8 @@
       
         
       
+        
+      
     
     
     
@@ -796,6 +798,29 @@
   
   <span class="md-ellipsis">
     MCP based Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meetings
     
   </span>
   
@@ -1047,6 +1072,52 @@
 </span><span id="__codeline__-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">-</span><span class="w"> </span>get the weather for that zipcode from MCP Agent
 </span><span id="__codeline__-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>describe the weather to the user
 </span><span id="__codeline__-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">-</span><span class="w"> </span>end program
+</span></code></pre></div>
+<h2 id="waiting-for-agent-responses">Waiting for agent responses<a class="headerlink" href="#waiting-for-agent-responses" title="Permanent link">&para;</a></h2>
+<p>When an agent waits for a response from another agent, Playbooks uses <strong>adaptive waiting</strong> - intelligent, context-aware waiting without hard timeouts.</p>
+<h3 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p>Instead of rigid timeouts that force binary wait-or-abort decisions, agents receive periodic notifications (every 5 seconds) while waiting:</p>
+<ul>
+<li><strong>Status updates</strong> showing how long they've been waiting</li>
+<li><strong>Interrupt messages</strong> from other sources (user, other agents)</li>
+<li><strong>The opportunity</strong> to decide whether to continue waiting, take alternative action, or escalate</li>
+</ul>
+<p>The agent's LLM makes contextual decisions based on task urgency, expected wait times, and available alternatives. There is no hard maximum wait time.</p>
+<h3 id="providing-context">Providing context<a class="headerlink" href="#providing-context" title="Permanent link">&para;</a></h3>
+<p>Use the <strong>Notes section</strong> to give agents guidance about expected wait times and alternatives:</p>
+<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># SupportAgent</span>
+</span><span id="__codeline__-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="gu">## HandleRefundRequest</span>
+</span><span id="__codeline__-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>Ask user for their order ID
+</span><span id="__codeline__-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">-</span><span class="w"> </span>Ask OrderVerification agent to verify the order
+</span><span id="__codeline__-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">-</span><span class="w"> </span>Wait for verification result
+</span><span id="__codeline__-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">-</span><span class="w"> </span>If order is verified
+</span><span id="__codeline__-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Process refund
+</span><span id="__codeline__-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">-</span><span class="w"> </span>Otherwise
+</span><span id="__codeline__-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="k">-</span><span class="w"> </span>Inform user verification failed
+</span><span id="__codeline__-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__codeline__-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="gu">### Notes</span>
+</span><span id="__codeline__-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">-</span><span class="w"> </span>Order verification typically takes 3-5 seconds
+</span><span id="__codeline__-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">-</span><span class="w"> </span>If verification takes longer than 30 seconds, there may be a backend issue
+</span><span id="__codeline__-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">-</span><span class="w"> </span>Consider offering to escalate to a supervisor in that case
+</span></code></pre></div>
+<h3 id="example-behavior">Example behavior<a class="headerlink" href="#example-behavior" title="Permanent link">&para;</a></h3>
+<p><strong>At 5 seconds</strong>: Agent sees typical time is 3-5 seconds, decides to keep waiting.</p>
+<p><strong>At 15 seconds</strong>: Agent informs user: "Verification is taking longer than usual, please bear with me..."</p>
+<p><strong>At 30 seconds</strong>: Agent reaches the threshold mentioned in Notes and offers to escalate: "Would you like me to escalate this to a supervisor?"</p>
+<p>If OrderVerification responds at any point, the agent immediately continues with the normal workflow. Adaptive waiting is transparent when everything works as expected.</p>
+<h3 id="example-alternative-strategies">Example: Alternative strategies<a class="headerlink" href="#example-alternative-strategies" title="Permanent link">&para;</a></h3>
+<div class="language-md highlight"><pre><span></span><code><span id="__codeline__-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># DataCoordinator</span>
+</span><span id="__codeline__-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gu">## FetchAnalytics</span>
+</span><span id="__codeline__-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gu">### Steps</span>
+</span><span id="__codeline__-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">-</span><span class="w"> </span>Ask DataAgent for the analytics report
+</span><span id="__codeline__-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">-</span><span class="w"> </span>Wait for the report
+</span><span id="__codeline__-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">-</span><span class="w"> </span>Present the report to user
+</span><span id="__codeline__-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__codeline__-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="gu">### Notes</span>
+</span><span id="__codeline__-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">-</span><span class="w"> </span>DataAgent typically responds in 5-10 seconds
+</span><span id="__codeline__-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">-</span><span class="w"> </span>If no response after 15 seconds, check StatusAgent for service status
+</span><span id="__codeline__-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">-</span><span class="w"> </span>If the service is down, inform user and offer to open a support ticket
 </span></code></pre></div>
 
 

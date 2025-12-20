@@ -11,6 +11,7 @@ This section contains the reference documentation for the Playbooks framework.
 - [Playbooks Assembly Language](playbooks-assembly-language/)
 - [Agents](agents/)
 - [MCP based Agents](mcp-agent/)
+- [Meetings](meetings/)
 - [Exported and Public Playbooks](exported-and-public-playbooks/)
 - [Playbook Types](playbook-types/)
 - [Built-in Playbooks](builtin-playbooks/)

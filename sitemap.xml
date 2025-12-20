@@ -2,94 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.runplaybooks.ai/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/getting-started/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/getting-started/ai-assistants/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/getting-started/migrating/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/programming-guide/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/programming-guide/artifacts/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/programming-guide/python-only-agents/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/agents/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/builtin-playbooks/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/config/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/context-engineering/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/description-placeholders/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/exported-and-public-playbooks/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/mcp-agent/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.runplaybooks.ai/reference/meetings/</loc>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/models/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/playbook-types/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/playbooks-ai/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/playbooks-assembly-language/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/playbooks-language/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/playbooks-traditional-comparison/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/reference/triggers/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
     <url>
          <loc>https://docs.runplaybooks.ai/tutorials/</loc>
-         <lastmod>2025-12-19</lastmod>
+         <lastmod>2025-12-20</lastmod>
     </url>
 </urlset>
