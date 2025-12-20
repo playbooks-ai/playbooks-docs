@@ -1230,6 +1230,8 @@ async def FetchUserProfile($user_id: str) -> dict:
     }
 ````
 
+````
+
 This pattern:
 
 - **Separates backend logic** - keeps the workflow clean and focused
@@ -1259,7 +1261,7 @@ Bad example:
   - Phase 3: Synthesis Assessment
 - Use agent collaboration
 - After each phase, ask MetaCognitionAgent if the phase was executed optimally
-```
+````
 
 This anti-pattern has the following problems:
 
@@ -1404,7 +1406,7 @@ Description of what this agent does
 
 ### Complete Example
 
-`````markdown
+````markdown
 # TaskAgent
 You help users manage their tasks efficiently.
 
@@ -1413,13 +1415,16 @@ You help users manage their tasks efficiently.
 async def SaveTask(task: str) -> dict:
     """Save task to database (mock implementation)."""
     return {"id": "123", "task": task, "status": "pending"}
-```
+````
 
 ## Main
+
 ### Triggers
+
 - At the beginning
 
 ### Steps
+
 - Greet user
 - Ask what they'd like to do
 - If user wants to add a task
@@ -1429,20 +1434,26 @@ async def SaveTask(task: str) -> dict:
 - End program
 
 ## AddTask
+
 ### Steps
+
 - Ask user for $task_description
 - Save the task
 - Tell user task was added successfully
 
 ## ValidateTaskDescription
+
 ### Triggers
+
 - When user provides task description
 
 ### Steps
+
 - If $task_description is empty
   - Tell user task cannot be empty
   - Ask again
-```
+
+````
 
 ### Cheat Sheet
 
@@ -1498,5 +1509,5 @@ async def SaveTask(task: str) -> dict:
 
 **Remember**: You're writing Software 3.0 - natural language programs that execute on LLMs. Embrace natural language for maximum expressiveness while maintaining precision.
 
-Happy building! 🚀````
-`````
+Happy building! 🚀```
+````
