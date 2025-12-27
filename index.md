@@ -1,8 +1,6 @@
 # 
 
-Playbooks is a framework and runtime for building verifiable multi-agent AI systems with Natural Language Programs.
-
-**Playbooks is a semantic programming system for AI agents**
+Playbooks is a semantic programming system for AI agents
 
 Playbooks is a programming language, a stable semantic intermediate representation (PBAsm), and a runtime for building and running AI agents.
 
