@@ -2,13 +2,73 @@
 
 Playbooks is a framework and runtime for building verifiable multi-agent AI systems with Natural Language Programs.
 
-Describe what your agents should do, not how to do it. Focus on agent behavior at a high level while the LLM handles implementation details and edge cases. Mix natural language and Python seamlessly on the same call stack. Get verifiable execution, full observability, and programs that business users can actually read and approve.
+**Playbooks is a semantic programming system for AI agents**
 
-Here's a complete **29-line Playbooks program** that orchestrates natural language and Python code together. Notice how the `Main` playbook (line 4) calls Python function `process_countries` (line 20), which then calls natural language playbook `GetCountryFact` (line 27).
+Playbooks is a programming language, a stable semantic intermediate representation (PBAsm), and a runtime for building and running AI agents.
+
+It treats large language models as **semantic execution engines (similar to CPUs)**. You write programs that describe *intent and behavior*, compile them into a semantic instruction set, and execute them on a runtime that owns control flow, context, time, and autonomy.
+
+This enables AI systems that are:
+
+- long-lived and resumable
+- inspectable and debuggable
+- safe to pause, wait, and recover
+- tuned to desired autonomy level
+- forward-compatible as models improve
+
+Playbooks is built for that moment when building AI agents as rigid workflows or unreliable ReAct loops becomes a challenge.
+
+> Strict determinism is the wrong abstraction for AI systems. AI systems need predictable behavior and outcomes, even though their internal reasoning and execution may be probabilistic.
+
+## What Playbooks is
+
+Playbooks consists of **three inseparable parts**:
+
+### 1. A human-readable programming language
+
+Programs are written in structured natural language, with optional Python for deterministic logic.
+
+These are **executable specifications**, not prompts.
+
+### 2. A semantic intermediate representation (PBAsm)
+
+Programs compile into PBAsm — a low-level instruction set designed specifically for LLM execution.
+
+PBAsm defines:
+
+- explicit call stacks and execution frames
+- yields, waits, and interrupts
+- scoped variables and lifetimes
+- resumable execution boundaries
+
+This intermediate representation is what makes structured context management and forward compatibility possible. The compiler ensures that the same program can be executed on various LLMs, including future models. This is similar to how LLVM ensures that the same code can be executed on various CPUs, including future ones.
+
+Note that PBAsm standardizes execution structure and contracts, while the model supplies the reasoning.
+
+PBAsm represents a Common Language Specification (CLS) for AI systems — a shared execution contract independent of any one framework. PBAsm is intentionally small: it standardizes execution structure (frames, yields, calls, returns, scopes), not model semantics. We welcome the community to build transpilers from other agent frameworks to PBAsm, so applications built using those frameworks can be executed on the Playbooks runtime.
+
+### 3. An execution runtime
+
+The Playbooks runtime:
+
+- can execute specified control flow reliably, unlike prompt-based approaches
+- manages context using execution call stack frames, not as an ever-growing prompt
+- treats time and waiting as first-class primitives
+- enforces autonomy boundaries
+- executes guardrailed, just-in-time generated code
+- manages agent lifecycle and communication
+
+You get workflow intent adherence, along with adaptability and resilience.
+
+Similar to Java or .NET virtual machines, the Playbooks runtime is a virtual machine and the Common Language Runtime (CLR) for AI systems.
+
+## A minimal example (example.pb)
+
+Playbooks programs are written in markdown. Each # defines an agent, ## defines a playbook. Optional python playbooks are functions decorated with @playbook. Natural language and python playbooks execute on the same call stack.
 
 ````markdown
-# Country facts agent
-This agent prints interesting facts about nearby countries
+# Facts about nearby countries
+This program prints interesting facts about nearby countries
 
 ## Main
 ### Triggers
@@ -19,7 +79,7 @@ This agent prints interesting facts about nearby countries
 - List 5 $countries near $country
 - Tell the user the nearby $countries
 - Inform the user that you will now tell them some interesting facts about each of the countries
-- process_countries($countries)
+- Process the $countries
 - End program
 
 ```python
@@ -27,10 +87,11 @@ from typing import List
 
 @playbook
 async def process_countries(countries: List[str]):
-    for country in countries:
-        # Calls the natural language playbook 'GetCountryFact' for each country
-        fact = await GetCountryFact(country)
-        await Say("user", f"{country}: {fact}")
+  # Python loop iterates through the list provided by the NL playbook
+  for country in countries:
+    # Python calls the NL playbook 'GetCountryFact' for each country
+    fact = await GetCountryFact(country)
+    await Say("user", f"{country}: {fact}")
 ````
 
 ## GetCountryFact($country)
@@ -41,94 +102,105 @@ async def process_countries(countries: List[str]):
 
 ````
 
-This accomplishes the same task as implementations that are [significantly longer and more complex using traditional agent frameworks](reference/playbooks-traditional-comparison/#traditional-framework-implementation-272-lines).
+This program:
 
-## What is Software 3.0?
+- mixes natural language and Python on the same call stack
+- pauses safely for user input
+- resumes from a well-defined execution point
+- remains readable and reviewable
 
-Software 3.0 is the evolution from hand-coded algorithms (Software 1.0) and learned neural network weights (Software 2.0) to **natural language as the primary programming interface**.
+What you read is what actually runs.
 
-In Playbooks, you write programs in human language that execute directly on large language models. The LLM acts as a semantic CPU that interprets and runs your instructions. Instead of translating business logic into formal code syntax or training models on data, you describe what you want in natural language, mix it seamlessly with Python when needed, and get verifiable, observable execution.
+## Why Playbooks exists
 
-This changes how you build AI systems: business stakeholders can read and approve the actual program logic, AI systems become transparent rather than black boxes, and sophisticated agent behaviors become accessible without sacrificing control or understanding.
+Most agent systems today fall into one of two camps:
 
-## Why Playbooks?
+- Python workflows orchestrating LLM calls (LangGraph, AutoGen, ADK, Strands, etc.), or
+- model-centric loops where the model remains the primary orchestrator (ReAct-style agents, Claude Skills-style procedural packages, etc.)
 
-**Think at a Higher Level**
-: Focus on what your agent should do, not implementation mechanics. Define complex, nuanced behaviors without getting lost in orchestration details. The framework handles the low-level execution.
+Today's agent frameworks become challenging as systems grow, because:
 
-**Natural Exception Handling**
-: The LLM handles edge cases and exceptional conditions smoothly without explicit code for every contingency. Your agents adapt to unexpected situations naturally.
+- control flow determinism and reasoning fluidity are forced to compete in the same abstraction layer
+- it is the engineer's responsibility to manage LLM context, and that becomes increasingly complex and error-prone as systems become more complex
+- agent behavior needs non-trivial mental transformation into checkpointable, reentrant workflow code
+- **behavior ossifies around the capabilities of today’s LLMs**
 
-**Powerful Abstractions**
-: Multi-agent meetings for complex coordination. Triggers for event-driven behavior. Seamless mixing of natural language and Python. Abstractions that would take hundreds of lines in other frameworks are built-in.
+Playbooks takes a different approach:
 
-**Readable by Everyone**
-: Business stakeholders can read and approve the actual program logic. No more "black box" AI systems. What you write is what executes.
+> **Programs are stable.  
+> Execution improves as LLMs improve.**
 
-**Verifiable & Observable**
-: Unlike prompt engineering where you hope the LLM follows instructions, Playbooks guarantees verifiable execution. Step debugging in VSCode, detailed execution logs, full observability.
+As models get better, Playbooks programs automatically get better — without rewriting orchestration logic, retries, or compensations. This is similar to the approach taken by Claude Skills, but with a more principled foundation.
 
-## Get Started in 10 Minutes
+## What Playbooks is *not*
 
-Build your first AI agent with Playbooks. You'll need Python 3.12+ and an [Anthropic API key](https://console.anthropic.com/settings/keys).
+- Not a prompt framework, graph builder, or no-code tool
+- Not an AI coding assistant
+- Not *just* another agent framework
 
-### Install Playbooks
+Playbooks overlaps with agent frameworks, but operates at a deeper layer.
+
+It is closer to:
+
+- a programming language
+- a semantic VM
+- an execution target for AI software
+
+Think **LLVM + a runtime**, not “just another agent framework”.
+
+## When Playbooks makes sense
+
+Playbooks is useful in **two related situations**.
+
+### 1. Designing agent behavior clearly and iterating fast
+
+Playbooks makes it easy to express and review agent behavior:
+
+- Subject-matter experts can write playbooks (SOPs) to test and iterate on the behavior
+- Engineers get precise behavior specifications
+- Diffs show *what the agent does*, not orchestration plumbing
+- Iteration happens at the level of intent, not implementation details
+
+Teams use Playbooks here like a **design system for agent behavior** — similar to how Figma is used for UI design.
+
+During development, these designs are executed using the Playbooks runtime. Once the behavior is stable, engineers can either:
+
+- productionize directly using the Playbooks runtime, or
+- treat it as a behavior specification and implement in another framework, if your organization has a preferred agent framework.
+
+### 2. Running long-lived, reliable AI systems
+
+Playbooks becomes essential when AI systems must:
+
+- run for hours, days, or weeks
+- pause and resume safely
+- wait for humans or external events
+- survive failures and restarts
+- explain *where* they are and *why*
+- remain stable as models improve
+
+At this point, teams run production agents using the Playbooks runtime.
+
+## When you probably don’t need Playbooks
+
+If your system:
+
+- has a single, real-time human-in-the-loop
+- uses a single AI agent
+- does not need auditability or verifiability
+
+...then a lighter-weight framework is likely sufficient.
+
+Playbooks is optimized for systems that **outgrow** that phase.
+
+## Getting started
 
 ```bash
 pip install playbooks
+playbooks run example.pb
 ````
 
-### Create and Run Your First Agent
-
-Create a file `hello.pb`:
-
-```markdown
-# Greeting agent
-This agent welcomes users to Playbooks AI
-
-## Greet
-### Triggers
-- At the beginning of the program
-### Steps
-- Ask the user for their name
-- Welcome them to Playbooks AI, the world's first Software 3.0 tech stack
-- End program
-```
-
-Run it:
-
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-playbooks run hello.pb
-```
-
-That's it! You've just built and run your first AI agent with natural language programming.
-
-### Run the Country Facts Example
-
-Try the more advanced example from above:
-
-```bash
-playbooks run country-facts.pb
-```
-
-You can also use the **Playground** for interactive development:
-
-```bash
-playbooks playground
-```
-
-The Playground provides a visual interface to run programs, view execution logs, and iterate quickly.
-
-### Step Debugging in VSCode
-
-For production development, install the **Playbooks Language Support** extension:
-
-1. Open VSCode Extensions (Ctrl+Shift+X / Cmd+Shift+X)
-1. Search for "Playbooks Language Support"
-1. Click Install
-
-Now you can set breakpoints and step through your agent's execution, just like traditional code!
+Visit our [documentation](https://docs.runplaybooks.ai) for comprehensive guides, tutorials, and reference materials.
 
 ## Learn More
 
